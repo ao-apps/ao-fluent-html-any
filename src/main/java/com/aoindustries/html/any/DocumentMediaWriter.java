@@ -55,12 +55,13 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 	}
 
 	@Override
+	@SuppressWarnings("unchecked")
 	protected DocumentMediaWriter<D> getTextWriter() throws UnsupportedEncodingException {
 		if(textWriter == null) {
 			MediaEncoder textEncoder = MediaEncoder.getInstance(document.encodingContext, MediaType.TEXT, getEncoder().getValidMediaInputType());
 			textWriter = (textEncoder == null) ? this : new DocumentMediaWriter<>(document, textEncoder, this);
 		}
-		return this;
+		return (DocumentMediaWriter<D>)textWriter;
 	}
 
 	@Override
