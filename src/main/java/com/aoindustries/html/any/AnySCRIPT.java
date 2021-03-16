@@ -236,6 +236,7 @@ abstract public class AnySCRIPT<
 	// TODO:     Similar for "text", too.
 	// TODO: Interface for "out" with default methods? (Another for "text", too)
 	@SuppressWarnings("UseSpecificCatch")
+	// TODO: No "out", just closing "__"?
 	public E out(Object script) throws IOException {
 		while(script instanceof IOSupplierE<?, ?>) {
 			try {
@@ -275,6 +276,7 @@ abstract public class AnySCRIPT<
 	/**
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
+	// TODO: No "out", just closing "__"?
 	public <Ex extends Throwable> E out(IOSupplierE<?, Ex> script) throws IOException, Ex {
 		return out((script == null) ? null : script.get());
 	}
@@ -295,6 +297,7 @@ abstract public class AnySCRIPT<
 	/**
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
+	// TODO: No "out", just closing "__"?
 	public <Ex extends Throwable> E out(ScriptWriter<D, Ex> script) throws IOException, Ex {
 		if(script != null) {
 			MediaEncoder encoder = getMediaEncoder(getMediaType());
@@ -319,7 +322,7 @@ abstract public class AnySCRIPT<
 	 * This is well suited for use in a try-with-resources block.
 	 */
 	// TODO: __() method to end text?  Call it "ContentWriter"?
-	public DocumentMediaWriter<D> out__() throws IOException {
+	public DocumentMediaWriter<D> _c() throws IOException {
 		MediaEncoder encoder = getMediaEncoder(getMediaType());
 		Writer out = document.getUnsafe(null);
 		startBody(out);

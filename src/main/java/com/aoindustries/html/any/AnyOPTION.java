@@ -32,6 +32,7 @@ import com.aoindustries.util.i18n.MarkupCoercion;
 import com.aoindustries.util.i18n.MarkupType;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Optional;
 
 /**
  * <ul>
@@ -140,12 +141,16 @@ abstract public class AnyOPTION<
 
 	/**
 	 * Writes the text body then closes this element.
-	 * Supports translation markup type {@link MarkupType#XHTML}.
+	 * Supports translation markup type {@link MarkupType#TEXT}.
 	 *
 	 * @return  The parent content model this element is within
 	 */
 	@SuppressWarnings("UseSpecificCatch")
-	public PC text__(Object text) throws IOException {
+	public PC __(Object text) throws IOException {
+		// Support Optional
+		while(text instanceof Optional) {
+			text = ((Optional<?>)text).orElse(null);
+		}
 		while(text instanceof IOSupplierE<?, ?>) {
 			try {
 				text = ((IOSupplierE<?, ?>)text).get();
@@ -155,7 +160,7 @@ abstract public class AnyOPTION<
 		}
 		if(text instanceof MediaWritable) {
 			try {
-				return text__((MediaWritable<?>)text);
+				return __((MediaWritable<?>)text);
 			} catch(Throwable t) {
 				throw Throwables.wrap(t, IOException.class, IOException::new);
 			}
@@ -190,14 +195,14 @@ abstract public class AnyOPTION<
 
 	/**
 	 * Writes the text body then closes this element.
-	 * Supports translation markup type {@link MarkupType#XHTML}.
+	 * Supports translation markup type {@link MarkupType#TEXT}.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  The parent content model this element is within
 	 */
-	public <Ex extends Throwable> PC text__(IOSupplierE<?, Ex> text) throws IOException, Ex {
-		return text__((text == null) ? null : text.get());
+	public <Ex extends Throwable> PC __(IOSupplierE<?, Ex> text) throws IOException, Ex {
+		return __((text == null) ? null : text.get());
 	}
 
 	/**
@@ -208,7 +213,7 @@ abstract public class AnyOPTION<
 	 *
 	 * @return  The parent content model this element is within
 	 */
-	public <Ex extends Throwable> PC text__(MediaWritable<Ex> text) throws IOException, Ex {
+	public <Ex extends Throwable> PC __(MediaWritable<Ex> text) throws IOException, Ex {
 		if(text == null) {
 			return __();
 		} else {
@@ -247,7 +252,7 @@ abstract public class AnyOPTION<
 	 * This is well suited for use in a try-with-resources block.
 	 */
 	// TODO: __() method on DocumentMediaWriter to end text?  Call it "ContentWriter"?
-	public DocumentMediaWriter<D> text__() throws IOException {
+	public DocumentMediaWriter<D> _c() throws IOException {
 		Writer out = document.getUnsafe(null);
 		document.autoIndent(out).unsafe(out, '>').incDepth();
 		boolean oldAutonli = document.getAutonli();
@@ -258,15 +263,15 @@ abstract public class AnyOPTION<
 			@Override
 			public void close() throws IOException {
 				// Get a new "out", just in case changed before closing, such as in legacy JSP taglibs
-				Writer out = document.getUnsafe(null);
+				Writer out2 = document.getUnsafe(null);
 				document
 					.setIndent(oldIndent)
 					.setAutonli(oldAutonli)
 					// Set in "unsafe" below: .clearAtnl() // Unknown, safe to assume not at newline
 					.decDepth()
 					// Assumed not at newline: .autoIndent()
-					.unsafe(out, "</option>", false)
-					.autoNl(out);
+					.unsafe(out2, "</option>", false)
+					.autoNl(out2);
 			}
 		};
 	}

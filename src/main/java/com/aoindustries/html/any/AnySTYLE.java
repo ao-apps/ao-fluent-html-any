@@ -197,6 +197,7 @@ abstract public class AnySTYLE<
 	// TODO: Out parameter with MediaType, that automatically picks the encoder
 	// TODO: Separate "Write" for direct writing (no encoding)?
 	@SuppressWarnings("UseSpecificCatch")
+	// TODO: No "out", just closing "__"?
 	public E out(Object style) throws IOException {
 		while(style instanceof IOSupplierE<?, ?>) {
 			try {
@@ -237,6 +238,7 @@ abstract public class AnySTYLE<
 	/**
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
+	// TODO: No "out", just closing "__"?
 	public <Ex extends Throwable> E out(IOSupplierE<?, Ex> style) throws IOException, Ex {
 		return out((style == null) ? null : style.get());
 	}
@@ -257,6 +259,7 @@ abstract public class AnySTYLE<
 	/**
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
+	// TODO: No "out", just closing "__"?
 	public <Ex extends Throwable> E out(StyleWriter<D, Ex> style) throws IOException, Ex {
 		if(style != null) {
 			MediaEncoder encoder = getMediaEncoder(getMediaType());
@@ -281,7 +284,7 @@ abstract public class AnySTYLE<
 	 * This is well suited for use in a try-with-resources block.
 	 */
 	// TODO: __() method to end text?  Call it "ContentWriter"?
-	public DocumentMediaWriter<D> out__() throws IOException {
+	public DocumentMediaWriter<D> _c() throws IOException {
 		MediaEncoder encoder = getMediaEncoder(getMediaType());
 		Writer out = document.getUnsafe(null);
 		startBody(out);
