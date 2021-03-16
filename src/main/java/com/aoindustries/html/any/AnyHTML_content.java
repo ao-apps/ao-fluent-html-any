@@ -22,6 +22,8 @@
  */
 package com.aoindustries.html.any;
 
+import com.aoindustries.io.function.IOConsumerE;
+import com.aoindustries.io.function.IORunnableE;
 import java.io.IOException;
 
 /**
@@ -52,22 +54,144 @@ public interface AnyHTML_content<
 	 * </p>
 	 */
 	@Factory("head")
-	default void head() throws IOException {
-		throw new AssertionError("TODO: Implement head");
+	AnyHEAD<D, __, ?, ?, ?> head() throws IOException;
+
+	/**
+	 * Creates a head element with no attributes and the given foot.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">4.2.1 The head element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("head")
+	default <Ex extends Throwable> __ head__(IORunnableE<Ex> head) throws IOException, Ex {
+		return head().__(head);
 	}
-	// TODO: Head tag will not indent
+
+	/**
+	 * Creates a head element with no attributes and the given foot.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">4.2.1 The head element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("head")
+	default <Ex extends Throwable> __ head__any(IOConsumerE<? super AnyHEAD__<D, __, ? extends AnyHEAD__<D, __, ?>>, Ex> head) throws IOException, Ex {
+		return head().__(head);
+	}
+
+	/**
+	 * Creates an empty head element with no attributes.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">4.2.1 The head element</a>.
+	 * </p>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("head")
+	default __ head__() throws IOException {
+		return head().__();
+	}
+
+	/**
+	 * Creates a head element with no attributes then begins element content
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">4.2.1 The head element</a>.
+	 * </p>
+	 *
+	 * @return  The content model of this element, which will be the parent content model of child elements.
+	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @see  Closeable#__()
+	 * @see  Closeable#close()
+	 */
+	@Factory("head")
+	AnyHEAD_c<D, __, ?> head_c() throws IOException;
 	// </editor-fold>
 	// <editor-fold defaultstate="collapsed" desc="BODY">
 	/**
 	 * Opens a new body element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">4.3.1 The body element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">4.3.1 The body element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;: The Document Body element - HTML: HyperText Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_body.asp">HTML body tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("body")
-	default void body() throws IOException {
-		throw new AssertionError("TODO: Implement body");
+	AnyBODY<D, __, ?, ?, ?> body() throws IOException;
+
+	/**
+	 * Creates a body element with no attributes and the given foot.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">4.3.1 The body element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;: The Document Body element - HTML: HyperText Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_body.asp">HTML body tag</a>.</li>
+	 * </ul>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("body")
+	default <Ex extends Throwable> __ body__(IORunnableE<Ex> body) throws IOException, Ex {
+		return body().__(body);
 	}
-	// TODO: Body tag will not indent
+
+	/**
+	 * Creates a body element with no attributes and the given foot.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">4.3.1 The body element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;: The Document Body element - HTML: HyperText Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_body.asp">HTML body tag</a>.</li>
+	 * </ul>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("body")
+	default <Ex extends Throwable> __ body__any(IOConsumerE<? super AnyBODY__<D, __, ? extends AnyBODY__<D, __, ?>>, Ex> body) throws IOException, Ex {
+		return body().__(body);
+	}
+
+	/**
+	 * Creates an empty body element with no attributes.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">4.3.1 The body element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;: The Document Body element - HTML: HyperText Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_body.asp">HTML body tag</a>.</li>
+	 * </ul>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("body")
+	default __ body__() throws IOException {
+		return body().__();
+	}
+
+	/**
+	 * Creates a body element with no attributes then begins element content
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">4.3.1 The body element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;: The Document Body element - HTML: HyperText Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_body.asp">HTML body tag</a>.</li>
+	 * </ul>
+	 *
+	 * @return  The content model of this element, which will be the parent content model of child elements.
+	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @see  Closeable#__()
+	 * @see  Closeable#close()
+	 */
+	@Factory("body")
+	AnyBODY_c<D, __, ?> body_c() throws IOException;
 	// </editor-fold>
 }
