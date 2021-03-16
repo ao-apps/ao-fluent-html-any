@@ -23,7 +23,9 @@
 package com.aoindustries.html.any;
 
 import com.aoindustries.encoding.Doctype;
+import com.aoindustries.encoding.MediaWritable;
 import com.aoindustries.io.function.IOSupplierE;
+import com.aoindustries.util.i18n.MarkupType;
 import java.io.IOException;
 
 /**
@@ -161,8 +163,53 @@ public interface AnyMetadataContent<
 	 * </p>
 	 */
 	@Factory("title")
-	default void title() throws IOException {
-		throw new AssertionError("TODO: Implement title");
+	AnyTITLE<D, __, ?> title() throws IOException;
+
+	/**
+	 * Creates a title element with no attributes and the given text.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
+	 * </p>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("title")
+	default __ title__(Object text) throws IOException {
+		return title().__(text);
 	}
+
+	/**
+	 * Creates a title element with no attributes and the given text.
+	 * Supports translation markup type {@link MarkupType#TEXT}.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("title")
+	default <Ex extends Throwable> __ title__(IOSupplierE<?, Ex> text) throws IOException, Ex {
+		return title().__(text);
+	}
+
+	/**
+	 * Creates a title element with no attributes and the given text.
+	 * Does not perform any translation markups.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("title")
+	default <Ex extends Throwable> __ title__(MediaWritable<Ex> text) throws IOException, Ex {
+		return title().__(text);
+	}
+
+	// TODO: title_c() here, once DocumentMediaWriter implements a __() method?
 	// </editor-fold>
 }
