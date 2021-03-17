@@ -184,7 +184,10 @@ public interface AnyUnion_Interactive_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element">4.10.6 The button element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement button
 	 */
+	@Deprecated
 	@Factory("button")
 	default void button() throws IOException {
 		throw new AssertionError("TODO: Implement button");
@@ -565,7 +568,10 @@ public interface AnyUnion_Interactive_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement label
 	 */
+	@Deprecated
 	@Factory("label")
 	default void label() throws IOException {
 		throw new AssertionError("TODO: Implement label");
@@ -647,7 +653,10 @@ public interface AnyUnion_Interactive_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement textarea
 	 */
+	@Deprecated
 	@Factory("textarea")
 	default void textarea() throws IOException {
 		throw new AssertionError("TODO: Implement textarea");

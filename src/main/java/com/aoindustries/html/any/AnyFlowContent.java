@@ -93,7 +93,10 @@ public interface AnyFlowContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element">4.11.4 The dialog element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement dialog
 	 */
+	@Deprecated
 	@Factory("dialog")
 	default void dialog() throws IOException {
 		throw new AssertionError("TODO: Implement dialog");

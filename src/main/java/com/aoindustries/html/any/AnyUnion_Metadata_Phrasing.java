@@ -139,7 +139,10 @@ public interface AnyUnion_Metadata_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element">4.12.2 The noscript element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement noscript
 	 */
+	@Deprecated
 	@Factory("noscript")
 	default void noscript() throws IOException {
 		throw new AssertionError("TODO: Implement noscript");

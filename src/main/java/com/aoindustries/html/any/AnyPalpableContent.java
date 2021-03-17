@@ -326,7 +326,10 @@ public interface AnyPalpableContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element">4.10.15 The fieldset element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement fieldset
 	 */
+	@Deprecated
 	@Factory("fieldset")
 	default void fieldset() throws IOException {
 		throw new AssertionError("TODO: Implement fieldset");
@@ -338,7 +341,10 @@ public interface AnyPalpableContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">4.4.12 The figure element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement figure
 	 */
+	@Deprecated
 	@Factory("figure")
 	default void figure() throws IOException {
 		throw new AssertionError("TODO: Implement figure");
@@ -643,7 +649,7 @@ public interface AnyPalpableContent<
 	AnyMAIN<D, __, ?, ?, ?> main() throws IOException;
 
 	/**
-	 * Creates a main element with no attributes and the given foot.
+	 * Creates a main element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element">4.4.14 The main element</a>.
 	 * </p>
@@ -658,7 +664,7 @@ public interface AnyPalpableContent<
 	}
 
 	/**
-	 * Creates a main element with no attributes and the given foot.
+	 * Creates a main element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element">4.4.14 The main element</a>.
 	 * </p>
@@ -732,7 +738,7 @@ public interface AnyPalpableContent<
 	AnyOL<D, __, ?, ?, ?> ol() throws IOException;
 
 	/**
-	 * Creates an ol element with no attributes and the given foot.
+	 * Creates an ol element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element">4.4.5 The ol element</a>.
 	 * </p>
@@ -747,7 +753,7 @@ public interface AnyPalpableContent<
 	}
 
 	/**
-	 * Creates an ol element with no attributes and the given foot.
+	 * Creates an ol element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element">4.4.5 The ol element</a>.
 	 * </p>
@@ -1061,7 +1067,7 @@ public interface AnyPalpableContent<
 	AnyUL<D, __, ?, ?, ?> ul() throws IOException;
 
 	/**
-	 * Creates a ul element with no attributes and the given foot.
+	 * Creates a ul element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element">4.4.6 The ul element</a>.
 	 * </p>
@@ -1076,7 +1082,7 @@ public interface AnyPalpableContent<
 	}
 
 	/**
-	 * Creates a ul element with no attributes and the given foot.
+	 * Creates a ul element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element">4.4.6 The ul element</a>.
 	 * </p>

@@ -22,6 +22,8 @@
  */
 package com.aoindustries.html.any;
 
+import com.aoindustries.io.function.IOConsumerE;
+import com.aoindustries.io.function.IORunnableE;
 import com.aoindustries.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -51,7 +53,10 @@ public interface AnyUnion_Embedded_Interactive<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">4.8.10 The audio element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement audio
 	 */
+	@Deprecated
 	@Factory("audio")
 	default void audio() throws IOException {
 		throw new AssertionError("TODO: Implement audio");
@@ -63,7 +68,10 @@ public interface AnyUnion_Embedded_Interactive<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-embed-element">4.8.6 The embed element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement embed
 	 */
+	@Deprecated
 	@Factory("embed")
 	default void embed() throws IOException {
 		throw new AssertionError("TODO: Implement embed");
@@ -75,7 +83,10 @@ public interface AnyUnion_Embedded_Interactive<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element">4.8.5 The iframe element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement iframe
 	 */
+	@Deprecated
 	@Factory("iframe")
 	default void iframe() throws IOException {
 		throw new AssertionError("TODO: Implement iframe");
@@ -122,9 +133,88 @@ public interface AnyUnion_Embedded_Interactive<
 	 * </p>
 	 */
 	@Factory("object")
-	default void object() throws IOException {
-		throw new AssertionError("TODO: Implement object");
+	AnyOBJECT<D, __, ?, ?, ?> object() throws IOException;
+
+	/**
+	 * Creates an object element with no attributes and the given body.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">4.8.7 The object element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("object")
+	default <Ex extends Throwable> __ object__(IORunnableE<Ex> object) throws IOException, Ex {
+		return object().__(object);
 	}
+
+	/**
+	 * Creates an object element with no attributes and the given body.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">4.8.7 The object element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 * @param  object  The content model of this element, which will be the parent content model of child elements.
+	 *                 <p>
+	 *                 Due to limitations in Java generics, this content model does not directly reflect the parent content
+	 *                 model, despite this being a transparent content model.  Rather, it includes only the content model that
+	 *                 always applies to this element type.
+	 *                 </p>
+	 *                 <p><em>
+	 *                 For the full, context-aware content model, which will likely include more elements,
+	 *                 {@linkplain AnyOBJECT__#pc() use the parent content model directly}.
+	 *                 </em></p>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @see  AnyOBJECT__#pc()
+	 */
+	@Factory("object")
+	default <Ex extends Throwable> __ object__any(IOConsumerE<? super AnyOBJECT__<D, __, ? extends AnyOBJECT__<D, __, ?>>, Ex> object) throws IOException, Ex {
+		return object().__(object);
+	}
+
+	/**
+	 * Creates an empty object element with no attributes.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">4.8.7 The object element</a>.
+	 * </p>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("object")
+	default __ object__() throws IOException {
+		return object().__();
+	}
+
+	/**
+	 * Creates an object element with no attributes then begins element content
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">4.8.7 The object element</a>.
+	 * </p>
+	 *
+	 * @return  The content model of this element, which will be the parent content model of child elements.
+	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *          <p>
+	 *          Due to limitations in Java generics, this content model does not directly reflect the parent content
+	 *          model, despite this being a transparent content model.  Rather, it includes only the content model that
+	 *          always applies to this element type.
+	 *          </p>
+	 *          <p><em>
+	 *          For the full, context-aware content model, which will likely include more elements,
+	 *          {@linkplain AnyOBJECT_c#pc() use the parent content model directly}.
+	 *          </em></p>
+	 *
+	 * @see  Closeable#__()
+	 * @see  Closeable#close()
+	 * @see  AnyOBJECT_c#pc()
+	 */
+	@Factory("object")
+	AnyOBJECT_c<D, __, ?> object_c() throws IOException;
 	// </editor-fold>
 	// <editor-fold defaultstate="collapsed" desc="VIDEO">
 	/**
@@ -132,7 +222,10 @@ public interface AnyUnion_Embedded_Interactive<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">4.8.9 The video element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement video
 	 */
+	@Deprecated
 	@Factory("video")
 	default void video() throws IOException {
 		throw new AssertionError("TODO: Implement video");

@@ -43,6 +43,7 @@ public class ElementContentModelTest {
 			AnyDIV_content.class,
 			AnyDL_content.class,
 			AnyHTML_content.class,
+			AnyOBJECT_content.class,
 			AnyOPTGROUP_content.class,
 			AnySELECT_content.class,
 			AnyTABLE_content.class,

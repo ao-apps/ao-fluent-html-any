@@ -57,7 +57,7 @@ public interface AnyHTML_content<
 	AnyHEAD<D, __, ?, ?, ?> head() throws IOException;
 
 	/**
-	 * Creates a head element with no attributes and the given foot.
+	 * Creates a head element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">4.2.1 The head element</a>.
 	 * </p>
@@ -72,7 +72,7 @@ public interface AnyHTML_content<
 	}
 
 	/**
-	 * Creates a head element with no attributes and the given foot.
+	 * Creates a head element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">4.2.1 The head element</a>.
 	 * </p>
@@ -128,7 +128,7 @@ public interface AnyHTML_content<
 	AnyBODY<D, __, ?, ?, ?> body() throws IOException;
 
 	/**
-	 * Creates a body element with no attributes and the given foot.
+	 * Creates a body element with no attributes and the given body.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">4.3.1 The body element</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;: The Document Body element - HTML: HyperText Markup Language | MDN</a>.</li>
@@ -145,7 +145,7 @@ public interface AnyHTML_content<
 	}
 
 	/**
-	 * Creates a body element with no attributes and the given foot.
+	 * Creates a body element with no attributes and the given body.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">4.3.1 The body element</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;: The Document Body element - HTML: HyperText Markup Language | MDN</a>.</li>

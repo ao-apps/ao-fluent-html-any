@@ -403,7 +403,10 @@ public interface AnyPhrasingContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">4.12.4 The slot element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement slot
 	 */
+	@Deprecated
 	@Factory("slot")
 	default void slot() throws IOException {
 		throw new AssertionError("TODO: Implement slot");
@@ -427,7 +430,10 @@ public interface AnyPhrasingContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element">4.5.28 The wbr element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement wbr
 	 */
+	@Deprecated
 	@Factory("wbr")
 	default void wbr() throws IOException {
 		throw new AssertionError("TODO: Implement wbr");

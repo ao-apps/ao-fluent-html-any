@@ -42,8 +42,7 @@ import java.io.Writer;
  */
 abstract public class AnyPARAM<
 	D  extends AnyDocument<D>,
-	// TODO: PC extends AnyObjectContent<D, PC>
-	PC extends Content<D, PC>,
+	PC extends AnyOBJECT_content<D, PC>,
 	E  extends AnyPARAM<D, PC, E>
 > extends Void<D, PC, E> implements
 	com.aoindustries.html.any.attributes.Text.Name<E>,

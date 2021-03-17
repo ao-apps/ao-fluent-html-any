@@ -51,7 +51,10 @@ public interface AnyUnion_Embedded_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">4.12.5 The canvas element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement canvas
 	 */
+	@Deprecated
 	@Factory("canvas")
 	default void canvas() throws IOException {
 		throw new AssertionError("TODO: Implement canvas");

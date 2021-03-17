@@ -46,7 +46,7 @@ abstract public class AnyOUTPUT<
 > extends
 	NormalText<D, PC, E, __, _c> implements
 	// TODO: for
-	// TODO: form
+	com.aoindustries.html.any.attributes.Text.Form<E>,
 	com.aoindustries.html.any.attributes.Text.Name<E>,
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	AlmostGlobalAttributes<E>

@@ -64,7 +64,10 @@ public interface AnyInteractiveContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element">4.11.1 The details element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement details
 	 */
+	@Deprecated
 	@Factory("details")
 	default void details() throws IOException {
 		throw new AssertionError("TODO: Implement details");
@@ -86,7 +89,7 @@ public interface AnyInteractiveContent<
 	AnyMENU<D, __, ?, ?, ?> menu() throws IOException;
 
 	/**
-	 * Creates a menu element with no attributes and the given foot.
+	 * Creates a menu element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.
 	 * </p>
@@ -101,7 +104,7 @@ public interface AnyInteractiveContent<
 	}
 
 	/**
-	 * Creates a menu element with no attributes and the given foot.
+	 * Creates a menu element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.
 	 * </p>

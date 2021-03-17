@@ -26,10 +26,7 @@ import java.io.IOException;
 import java.io.Writer;
 
 /**
- * <ul>
- * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element">4.4.4 The blockquote element</a>.</li>
- * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">&lt;blockquote&gt;: The Block Quotation element</a>.</li>
- * </ul>
+ * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">4.8.7 The object element</a>.
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within
@@ -39,43 +36,38 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyBLOCKQUOTE<
+abstract public class AnyOBJECT<
 	D  extends AnyDocument<D>,
-	PC extends AnyPalpableContent<D, PC>,
-	E  extends AnyBLOCKQUOTE<D, PC, E, __, _c>,
-	__ extends AnyBLOCKQUOTE__<D, PC, __>,
+	PC extends AnyUnion_Embedded_Interactive<D, PC>,
+	E  extends AnyOBJECT<D, PC, E, __, _c>,
+	__ extends AnyOBJECT__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyBLOCKQUOTE_c<D, PC, _c>
+	_c extends AnyOBJECT_c<D, PC, _c>
 > extends
-	NormalText<D, PC, E, __, _c> implements
-	com.aoindustries.html.any.attributes.Url.Cite<E>,
+	Normal<D, PC, E, __, _c> implements
+	com.aoindustries.html.any.attributes.Url.Data<E>,
+	com.aoindustries.html.any.attributes.Text.Type<E>,
+	com.aoindustries.html.any.attributes.Text.Name<E>,
+	com.aoindustries.html.any.attributes.Text.Form<E>,
+	com.aoindustries.html.any.attributes.Integer.Width<E>,
+	com.aoindustries.html.any.attributes.Integer.Height<E>,
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	AlmostGlobalAttributes<E>
 {
 
-	protected AnyBLOCKQUOTE(D document, PC pc) {
+	protected AnyOBJECT(D document, PC pc) {
 		super(document, pc);
 	}
 
 	@Override
 	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<blockquote", false);
+		document.autoIndent(out).unsafe(out, "<object", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void doBeforeBody(Writer out) throws IOException {
-		document.autoNl(out);
-	}
-
-	@Override
 	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
-		if(closeAttributes) {
-			document.autoIndent(out).unsafe(out, "></blockquote>", false);
-		} else {
-			document.autoNli(out).unsafe(out, "</blockquote>", false);
-		}
-		document.autoNl(out);
+		document.autoIndent(out).unsafe(out, closeAttributes ? "></object>" : "</object>", false);
 	}
 }

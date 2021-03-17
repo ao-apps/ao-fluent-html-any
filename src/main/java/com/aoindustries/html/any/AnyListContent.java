@@ -63,7 +63,7 @@ public interface AnyListContent<
 	AnyLI<D, __, ?, ?, ?> li() throws IOException;
 
 	/**
-	 * Creates a li element with no attributes and the given foot.
+	 * Creates a li element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.
 	 * </p>
@@ -78,7 +78,7 @@ public interface AnyListContent<
 	}
 
 	/**
-	 * Creates a li element with no attributes and the given foot.
+	 * Creates a li element with no attributes and the given body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.
 	 * </p>

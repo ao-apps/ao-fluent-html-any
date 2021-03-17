@@ -1676,7 +1676,10 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element">4.5.10 The ruby element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement ruby
 	 */
+	@Deprecated
 	@Factory("ruby")
 	default void ruby() throws IOException {
 		throw new AssertionError("TODO: Implement ruby");
@@ -2265,7 +2268,10 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element">4.5.14 The time element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement time
 	 */
+	@Deprecated
 	@Factory("time")
 	default void time() throws IOException {
 		throw new AssertionError("TODO: Implement time");

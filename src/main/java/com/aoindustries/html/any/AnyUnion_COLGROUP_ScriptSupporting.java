@@ -50,7 +50,10 @@ public interface AnyUnion_COLGROUP_ScriptSupporting<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element">4.12.3 The template element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement template
 	 */
+	@Deprecated
 	@Factory("template")
 	default void template() throws IOException {
 		throw new AssertionError("TODO: Implement template");

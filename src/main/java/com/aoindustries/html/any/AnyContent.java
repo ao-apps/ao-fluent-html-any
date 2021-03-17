@@ -76,6 +76,7 @@ public interface AnyContent<
 	AnyDIV_content<D, __>,
 	AnyDL_content<D, __>,
 	AnyHTML_content<D, __>,
+	AnyOBJECT_content<D, __>,
 	// Inherited: AnyOPTGROUP_content<D, __>
 	AnySELECT_content<D, __>,
 	AnyTABLE_content<D, __>,
@@ -197,7 +198,10 @@ public interface AnyContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element">4.4.13 The figcaption element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement figcaption
 	 */
+	@Deprecated
 	@Factory("figcaption")
 	default void figcaption() throws IOException {
 		throw new AssertionError("TODO: Implement figcaption");
@@ -222,7 +226,10 @@ public interface AnyContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element">4.5.11 The rt element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement rt
 	 */
+	@Deprecated
 	@Factory("rt")
 	default void rt() throws IOException {
 		throw new AssertionError("TODO: Implement rt");
@@ -235,7 +242,10 @@ public interface AnyContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">4.5.12 The rp element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement rp
 	 */
+	@Deprecated
 	@Factory("rp")
 	default void rp() throws IOException {
 		throw new AssertionError("TODO: Implement rp");
@@ -268,7 +278,10 @@ public interface AnyContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element">4.8.2 The source element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement source
 	 */
+	@Deprecated
 	@Factory("source")
 	default void source() throws IOException {
 		throw new AssertionError("TODO: Implement source");
@@ -279,35 +292,7 @@ public interface AnyContent<
 	// Inherited: IFRAME
 	// Inherited: EMBED
 	// Inherited: OBJECT
-	// <editor-fold defaultstate="collapsed" desc="PARAM">
-	// TODO: __ extends AnyObjectContent<D, __>
-	/**
-	 * Opens a new param element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-param-element">4.8.8 The param element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param">&lt;param&gt; - HTML: Hypertext Markup Language</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_param.asp">HTML param tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("param")
-	AnyPARAM<D, __, ?> param() throws IOException;
-
-	/**
-	 * Creates a param element with the given name and value.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-param-element">4.8.8 The param element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param">&lt;param&gt; - HTML: Hypertext Markup Language</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_param.asp">HTML param tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("param")
-	default __ param__(Object name, Object value) throws IOException {
-		return param().name(name).value(value).__();
-	}
-	// TODO: More types like supported by ao-taglib (ParamsTag.java), including collection types, as "params__"?
-	// </editor-fold>
+	// Inherited: PARAM
 	// Inherited: VIDEO
 	// Inherited: AUDIO
 	// <editor-fold defaultstate="collapsed" desc="TRACK">
@@ -316,7 +301,10 @@ public interface AnyContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/media.html#the-track-element">4.8.11 The track element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement track
 	 */
+	@Deprecated
 	@Factory("track")
 	default void track() throws IOException {
 		throw new AssertionError("TODO: Implement track");
@@ -356,7 +344,10 @@ public interface AnyContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element">4.10.16 The legend element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement legend
 	 */
+	@Deprecated
 	@Factory("legend")
 	default void legend() throws IOException {
 		throw new AssertionError("TODO: Implement legend");
@@ -370,7 +361,10 @@ public interface AnyContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element">4.11.2 The summary element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement summary
 	 */
+	@Deprecated
 	@Factory("summary")
 	default void summary() throws IOException {
 		throw new AssertionError("TODO: Implement summary");

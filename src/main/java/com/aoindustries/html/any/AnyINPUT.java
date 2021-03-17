@@ -63,7 +63,7 @@ abstract public class AnyINPUT<
 	com.aoindustries.html.any.attributes.Boolean.Autofocus<E>,
 	// TODO: dirname
 	com.aoindustries.html.any.attributes.Boolean.Disabled<E>,
-	// TODO: form (only type "submit" and "image"?)
+	com.aoindustries.html.any.attributes.Text.Form<E>,
 	// TODO: inputmode here or global?
 	// TODO: list
 	// TODO: max

@@ -22,59 +22,47 @@
  */
 package com.aoindustries.html.any;
 
-import java.io.IOException;
-
 /**
- * <ul>
- * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedded-content-2">3.2.5.2.6 Embedded content</a>.</li>
- * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Content_categories#embedded_content">Embedded content</a>.</li>
- * </ul>
+ * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">4.8.7 The object element</a>.
+ * <p>
+ * Due to limitations in Java generics, this content model does not directly reflect the parent content
+ * model, despite this being a transparent content model.  Rather, it includes only the content model that
+ * always applies to this element type.
+ * </p>
+ * <p><em>
+ * For the full, context-aware content model, which will likely include more elements,
+ * {@linkplain #pc() use the parent content model directly}.
+ * </em></p>
  *
  * @param  <D>   This document type
+ * @param  <PC>  The parent content model this element is within
  * @param  <__>  This content model, which will be the parent content model of child elements
+ *
+ * @see  #pc()
  *
  * @author  AO Industries, Inc.
  */
-public interface AnyEmbeddedContent<
+abstract public class AnyOBJECT__<
 	D  extends AnyDocument<D>,
-	__ extends AnyEmbeddedContent<D, __>
-> extends
-	//
-	// Unions:
-	//
-	AnyUnion_Embedded_Interactive<D, __>,
-	AnyUnion_Embedded_Palpable_Phrasing<D, __>
+	PC extends AnyUnion_Embedded_Interactive<D, PC>,
+	__ extends AnyOBJECT__<D, PC, __>
+>
+	extends Normal__<D, PC, __>
+	implements AnyOBJECT_content<D, __> {
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
-{
-	//
-	// Factories:
-	//
-	// Inherited: AUDIO
-	// Inherited: CANVAS
-	// Inherited: EMBED
-	// Inherited: IFRAME
-	// Inherited: IMG
-	// Inherited: MathML math
-	// Inherited: OBJECT
-	// <editor-fold defaultstate="collapsed" desc="PICTURE">
-	/**
-	 * Opens a new picture element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element">4.8.1 The picture element</a>.
-	 * </p>
-	 *
-	 * @deprecated  TODO: Implement picture
-	 */
-	@Deprecated
-	@Factory("picture")
-	default void picture() throws IOException {
-		throw new AssertionError("TODO: Implement picture");
+	protected AnyOBJECT__(AnyOBJECT<D, PC, ?, __, ?> element) {
+		super(element);
 	}
-	// </editor-fold>
-	// Inherited: SVG svg
-	// Inherited: VIDEO
+
+	/**
+	 * Gets the parent content model, which may also be used for creating child elements.
+	 * <p><em>
+	 * This is the full, context-aware content model, which will likely include more elements.
+	 * </em></p>
+	 *
+	 * @return  The parent content model this element is within
+	 */
+	public PC pc() {
+		return element.pc;
+	}
 }

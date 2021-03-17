@@ -50,7 +50,7 @@ abstract public class AnySELECT<
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	// TODO: autocomplete
 	com.aoindustries.html.any.attributes.Boolean.Disabled<E>,
-	// TODO: form
+	com.aoindustries.html.any.attributes.Text.Form<E>,
 	com.aoindustries.html.any.attributes.Boolean.Multiple<E>,
 	com.aoindustries.html.any.attributes.Text.Name<E>,
 	com.aoindustries.html.any.attributes.Boolean.Required<E>,

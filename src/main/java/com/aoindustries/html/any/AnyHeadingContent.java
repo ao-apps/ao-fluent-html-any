@@ -723,7 +723,10 @@ public interface AnyHeadingContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element">4.3.7 The hgroup element</a>.
 	 * </p>
+	 *
+	 * @deprecated  TODO: Implement hgroup
 	 */
+	@Deprecated
 	@Factory("hgroup")
 	default void hgroup() throws IOException {
 		throw new AssertionError("TODO: Implement hgroup");
