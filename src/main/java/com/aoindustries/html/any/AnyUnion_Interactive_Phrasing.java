@@ -568,14 +568,83 @@ public interface AnyUnion_Interactive_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
 	 * </p>
-	 *
-	 * @deprecated  TODO: Implement label
 	 */
-	@Deprecated
 	@Factory("label")
-	default void label() throws IOException {
-		throw new AssertionError("TODO: Implement label");
+	AnyLABEL<D, __, ?, ?, ?> label() throws IOException;
+
+	// TODO: Shortcuts for "for" attribute, like a:href
+
+	/**
+	 * Creates a label element with no attributes and the given body.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("label")
+	default <Ex extends Throwable> __ label__(IORunnableE<Ex> label) throws IOException, Ex {
+		return label().__(label);
 	}
+
+	/**
+	 * Creates a label element with no attributes and the given body.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("label")
+	default <Ex extends Throwable> __ label__any(IOConsumerE<? super AnyLABEL__<D, __, ? extends AnyLABEL__<D, __, ?>>, Ex> label) throws IOException, Ex {
+		return label().__(label);
+	}
+
+	/**
+	 * Creates a label element with no attributes and a text body.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
+	 * </p>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("label")
+	default __ label__(Object text) throws IOException {
+		return label().__(text);
+	}
+
+	/**
+	 * Creates an empty label element with no attributes.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
+	 * </p>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("label")
+	default __ label__() throws IOException {
+		return label().__();
+	}
+
+	/**
+	 * Creates a label element with no attributes then begins element content
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
+	 * </p>
+	 *
+	 * @return  The content model of this element, which will be the parent content model of child elements.
+	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @see  Closeable#__()
+	 * @see  Closeable#close()
+	 */
+	@Factory("label")
+	AnyLABEL_c<D, __, ?> label_c() throws IOException;
 	// </editor-fold>
 	// Inherited: OBJECT
 	// <editor-fold defaultstate="collapsed" desc="SELECT">

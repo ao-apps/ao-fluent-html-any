@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.io.Writer;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element">4.10.12 The output element</a>.
+ * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within
@@ -36,35 +36,34 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyOUTPUT<
+// TODO: Phrasing content, but with no descendant labelable elements unless it is the element's labeled control, and no descendant label elements.
+abstract public class AnyLABEL<
 	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-	E  extends AnyOUTPUT<D, PC, E, __, _c>,
-	__ extends AnyOUTPUT__<D, PC, __>,
+	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+	E  extends AnyLABEL<D, PC, E, __, _c>,
+	__ extends AnyLABEL__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyOUTPUT_c<D, PC, _c>
+	_c extends AnyLABEL_c<D, PC, _c>
 > extends
 	NormalText<D, PC, E, __, _c> implements
-	// TODO: for, like AnyLABEL.for, but attribute named "ForArray", with support for multiple values like the Class attribute.
-	com.aoindustries.html.any.attributes.Text.Form<E>,
-	com.aoindustries.html.any.attributes.Text.Name<E>,
+	com.aoindustries.html.any.attributes.Text.For<E>,
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	AlmostGlobalAttributes<E>
 {
 
-	protected AnyOUTPUT(D document, PC pc) {
+	protected AnyLABEL(D document, PC pc) {
 		super(document, pc);
 	}
 
 	@Override
 	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<output", false);
+		document.autoIndent(out).unsafe(out, "<label", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
 	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
-		document.autoIndent(out).unsafe(out, closeAttributes ? "></output>" : "</output>", false);
+		document.autoIndent(out).unsafe(out, closeAttributes ? "></label>" : "</label>", false);
 	}
 }
