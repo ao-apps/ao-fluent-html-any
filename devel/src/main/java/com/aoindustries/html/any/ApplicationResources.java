@@ -39,7 +39,7 @@ public final class ApplicationResources extends EditableResourceBundle {
 	);
 
 	static File getSourceFile(String filename) {
-		return new File(System.getProperty("user.home") + "/maven2/ao/ao-fluent-html-any/src/main/resources/com/aoindustries/html/any", filename);
+		return new File(System.getProperty("user.home") + "/maven2/ao/oss/fluent-html-any/src/main/resources/com/aoindustries/html/any", filename);
 	}
 
 	public ApplicationResources() {

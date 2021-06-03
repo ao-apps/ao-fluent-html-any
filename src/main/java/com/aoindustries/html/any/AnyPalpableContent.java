@@ -249,7 +249,7 @@ public interface AnyPalpableContent<
 	// Inherited: DETAILS
 	// Inherited: DFN
 	// Inherited: DIV
-	// <editor-fold defaultstate="collapsed" desc="DL - if childen contain at least one name/value pair">
+	// <editor-fold defaultstate="collapsed" desc="DL - if children contain at least one name/value pair">
 	/**
 	 * Opens a new dl element.
 	 * <p>

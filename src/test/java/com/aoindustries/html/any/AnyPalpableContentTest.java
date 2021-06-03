@@ -114,7 +114,7 @@ public class AnyPalpableContentTest {
 			"details",
 			"dfn",
 			"div",
-			"dl", // if childen contain at least one name/value pair
+			"dl", // if children contain at least one name/value pair
 			"em",
 			"embed",
 			"fieldset",
