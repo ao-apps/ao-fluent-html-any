@@ -44,6 +44,7 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.ResourceBundle;
 import java.util.function.Function;
 
 /**
@@ -55,7 +56,7 @@ import java.util.function.Function;
 // TODO: Review which attributes should be trimmed and/or nullIfEmpty
 public class Attributes {
 
-	public static final Resources RESOURCES = Resources.getResources(Attributes.class);
+	public static final Resources RESOURCES = Resources.getResources(ResourceBundle::getBundle, Attributes.class);
 
 	/** Make no instances. */
 	private Attributes() {}

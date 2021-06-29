@@ -25,6 +25,7 @@ package com.aoapps.html.any;
 import com.aoapps.lang.LocalizedIllegalStateException;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ResourceBundle;
 import java.util.function.Function;
 
 /**
@@ -58,7 +59,8 @@ abstract public class AnyA<
 	AlmostGlobalAttributes<E>
 {
 
-	private static final com.aoapps.lang.i18n.Resources RESOURCES = com.aoapps.lang.i18n.Resources.getResources(AnyA.class);
+	private static final com.aoapps.lang.i18n.Resources RESOURCES =
+		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyA.class);
 
 	protected AnyA(D document, PC pc) {
 		super(document, pc);

@@ -34,6 +34,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.Locale;
 import java.util.Map;
+import java.util.ResourceBundle;
 import java.util.function.Function;
 
 /**
@@ -80,7 +81,7 @@ abstract public class AnyINPUT<
 {
 
 	private static final com.aoapps.lang.i18n.Resources RESOURCES =
-		com.aoapps.lang.i18n.Resources.getResources(AnyINPUT.class);
+		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyINPUT.class);
 
 	protected AnyINPUT(D document, PC pc) {
 		super(document, pc);

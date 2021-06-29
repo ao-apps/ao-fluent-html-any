@@ -20,22 +20,29 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-fluent-html-any.  If not, see <http://www.gnu.org/licenses/>.
  */
-package com.aoapps.html.any;
+package com.aoapps.html.any.i18n;
 
-import java.util.ResourceBundle;
+import com.aoapps.hodgepodge.i18n.EditableResourceBundle;
+import com.aoapps.hodgepodge.i18n.EditableResourceBundleSet;
+import java.io.File;
+import java.util.Locale;
 
 /**
- * Provides a simplified interface for obtaining localized values from the ApplicationResources.properties files.
- *
  * @author  AO Industries, Inc.
  */
-final class Resources {
+public final class ApplicationResources extends EditableResourceBundle {
 
-	static final com.aoapps.lang.i18n.Resources PACKAGE_RESOURCES =
-		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, Resources.class.getPackage());
+	static final EditableResourceBundleSet bundleSet = new EditableResourceBundleSet(
+		ApplicationResources.class,
+		Locale.ROOT,
+		Locale.JAPANESE
+	);
 
-	/**
-	 * Make no instances.
-	 */
-	private Resources() {}
+	static File getSourceFile(String filename) {
+		return new File(System.getProperty("user.home") + "/maven2/ao/oss/fluent-html-any/src/main/resources/com/aoapps/html/any/i18n", filename);
+	}
+
+	public ApplicationResources() {
+		super(Locale.ROOT, bundleSet, getSourceFile("ApplicationResources.properties"));
+	}
 }

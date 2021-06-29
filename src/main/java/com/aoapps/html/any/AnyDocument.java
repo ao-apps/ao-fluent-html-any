@@ -42,6 +42,7 @@ import java.io.Writer;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 /**
  * Fluent Java DSL for high-performance HTML generation.
@@ -63,7 +64,8 @@ abstract public class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	public static final Charset ENCODING = StandardCharsets.UTF_8;
 
-	static final com.aoapps.lang.i18n.Resources RESOURCES = com.aoapps.lang.i18n.Resources.getResources(AnyDocument.class);
+	static final com.aoapps.lang.i18n.Resources RESOURCES =
+		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyDocument.class);
 
 	public final EncodingContext encodingContext;
 	// TODO: Remove this and just use encodingContext?

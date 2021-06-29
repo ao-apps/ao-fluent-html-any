@@ -37,7 +37,7 @@ along with ao-fluent-html-any.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2021-03-14T22:32:34-05:00"
-		dateModified="2021-06-03T22:53:21-05:00"
+		dateModified="2021-06-27T16:13:41-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -49,6 +49,7 @@ along with ao-fluent-html-any.  If not, see <http://www.gnu.org/licenses />.
 				scmUrl="@{project.scm.url}"
 			>
 				<ul>
+					<li>Now supports Java 9+ modules with included <code>module-info.class</code>.</li>
 					<li>Maven artifact relocated from <code>com.aoindustries:ao-fluent-html-any</code> to <code>com.aoapps:ao-fluent-html-any</code>.</li>
 					<li>Package renamed from <code>com.aoindustries.html.any</code> to <code>com.aoapps.html.any</code>.</li>
 				</ul>

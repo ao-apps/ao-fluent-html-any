@@ -34,6 +34,7 @@ import com.aoapps.lang.io.ContentType;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ResourceBundle;
 import java.util.function.Function;
 
 /**
@@ -74,7 +75,7 @@ abstract public class AnyLINK<
 {
 
 	private static final com.aoapps.lang.i18n.Resources RESOURCES =
-		com.aoapps.lang.i18n.Resources.getResources(AnyLINK.class);
+		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyLINK.class);
 
 	protected AnyLINK(D document, PC pc) {
 		super(document, pc);
