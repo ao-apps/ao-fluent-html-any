@@ -34,7 +34,7 @@ module com.aoapps.html.any {
 	exports com.aoapps.html.any.attributes.event.form;
 	exports com.aoapps.html.any.attributes.event.keyboard;
 	exports com.aoapps.html.any.attributes.event.media;
-	// TODO: exports com.aoapps.html.any.attributes.event.misc;
+	exports com.aoapps.html.any.attributes.event.misc;
 	exports com.aoapps.html.any.attributes.event.mouse;
 	exports com.aoapps.html.any.attributes.event.window;
 	// Direct
