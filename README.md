@@ -9,6 +9,12 @@
 
 [![Build](https://github.com/aoindustries/ao-fluent-html-any/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/ao-fluent-html-any/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-fluent-html-any/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-fluent-html-any)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-any&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=com.aoapps%3Aao-fluent-html-any)
+[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-any&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-any&metric=ncloc)  
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-any&metric=reliability_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-any&metric=Reliability)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-any&metric=security_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-any&metric=Security)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-any&metric=sqale_rating)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-any&metric=Maintainability)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-any&metric=coverage)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-any&metric=Coverage)
 
 Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
 
