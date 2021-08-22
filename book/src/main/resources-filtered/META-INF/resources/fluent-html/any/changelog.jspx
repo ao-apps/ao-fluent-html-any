@@ -37,7 +37,7 @@ along with ao-fluent-html-any.  If not, see <http://www.gnu.org/licenses />.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2021-03-14T22:32:34-05:00"
-		dateModified="2021-07-05T11:20:52-05:00"
+		dateModified="2021-08-22T09:46:18-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -47,7 +47,11 @@ along with ao-fluent-html-any.  If not, see <http://www.gnu.org/licenses />.
 				artifactId="@{documented.artifactId}"
 				repository="@{nexusUrl}content/repositories/snapshots/"
 				scmUrl="@{project.scm.url}"
-			/>
+			>
+				<ul>
+					<li>Fixed NPE in streaming text encoding in <code>MediaWriter</code>.</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release

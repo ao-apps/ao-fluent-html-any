@@ -276,7 +276,7 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 	@Override
 	public DocumentMediaWriter<D> text() throws IOException {
 		DocumentMediaWriter<D> tw = getTextWriter();
-		if(tw != this) textWriter.getEncoder().writePrefixTo(this);
+		if(tw != this) tw.getEncoder().writePrefixTo(this);
 		return new DocumentMediaWriter<D>(
 			document,
 			tw.getEncoder(),
@@ -284,7 +284,7 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 		) {
 			@Override
 			public void close() throws IOException {
-				if(tw != this) textWriter.getEncoder().writeSuffixTo(this);
+				if(tw != this) tw.getEncoder().writeSuffixTo(this);
 			}
 		};
 	}
