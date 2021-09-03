@@ -55,7 +55,8 @@ abstract public class AnySELECT<
 	com.aoapps.html.any.attributes.Text.Name<E>,
 	com.aoapps.html.any.attributes.Boolean.Required<E>,
 	com.aoapps.html.any.attributes.Integer.Size<E>,
-	AlmostGlobalAttributes<E>
+	AlmostGlobalAttributes<E>,
+	com.aoapps.html.any.attributes.event.form.Onchange<E>
 {
 
 	protected AnySELECT(D document, PC pc) {
