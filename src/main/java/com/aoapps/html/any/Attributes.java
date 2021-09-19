@@ -56,7 +56,7 @@ import java.util.function.Function;
 // TODO: Review which attributes should be trimmed and/or nullIfEmpty
 public class Attributes {
 
-	public static final Resources RESOURCES = Resources.getResources(ResourceBundle::getBundle, Attributes.class);
+	public static final Resources RESOURCES = Resources.getResources(Attributes.class, ResourceBundle::getBundle);
 
 	/** Make no instances. */
 	private Attributes() {}

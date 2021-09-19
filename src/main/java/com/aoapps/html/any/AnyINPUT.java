@@ -81,7 +81,7 @@ abstract public class AnyINPUT<
 {
 
 	private static final com.aoapps.lang.i18n.Resources RESOURCES =
-		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyINPUT.class);
+		com.aoapps.lang.i18n.Resources.getResources(AnyINPUT.class, ResourceBundle::getBundle);
 
 	protected AnyINPUT(D document, PC pc) {
 		super(document, pc);

@@ -60,7 +60,7 @@ abstract public class AnyA<
 {
 
 	private static final com.aoapps.lang.i18n.Resources RESOURCES =
-		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyA.class);
+		com.aoapps.lang.i18n.Resources.getResources(AnyA.class, ResourceBundle::getBundle);
 
 	protected AnyA(D document, PC pc) {
 		super(document, pc);
