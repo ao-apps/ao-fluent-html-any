@@ -23,7 +23,6 @@
 package com.aoapps.html.any;
 
 import com.aoapps.encoding.MediaWritable;
-import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import static com.aoapps.encoding.TextInXhtmlEncoder.textInXhtmlEncoder;
 import com.aoapps.hodgepodge.i18n.MarkupCoercion;
 import com.aoapps.hodgepodge.i18n.MarkupType;
@@ -135,8 +134,7 @@ abstract public class AnyOPTION<
 	 */
 	@Override
 	public E value(Object value) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "value", MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
+		return com.aoapps.html.any.attributes.Text.Value.super.value(value);
 	}
 
 	/**

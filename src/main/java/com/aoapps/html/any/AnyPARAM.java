@@ -78,14 +78,4 @@ abstract public class AnyPARAM<
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return Attributes.Text.attribute(element, "name", MarkupType.NONE, name, false, false, textInXhtmlAttributeEncoder);
 	}
-
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_param_value.asp">HTML param value Attribute</a>.
-	 */
-	@Override
-	public E value(Object value) throws IOException {
-		// Overridden to not trim-to-null
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "value", MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
-	}
 }

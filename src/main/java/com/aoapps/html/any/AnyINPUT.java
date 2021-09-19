@@ -470,7 +470,7 @@ abstract public class AnyINPUT<
 				(typeEnum == null) ? null : typeEnum.getMarkupType(),
 				value,
 				false,
-				true,
+				false,
 				textInXhtmlAttributeEncoder
 			);
 		}
@@ -516,7 +516,7 @@ abstract public class AnyINPUT<
 				Dynamic.Type.BUTTON.getMarkupType(),
 				value,
 				false,
-				true,
+				false,
 				textInXhtmlAttributeEncoder
 			);
 		}
@@ -1503,7 +1503,7 @@ abstract public class AnyINPUT<
 				Dynamic.Type.RESET.getMarkupType(),
 				value,
 				false,
-				true,
+				false,
 				textInXhtmlAttributeEncoder
 			);
 		}
@@ -1690,7 +1690,7 @@ abstract public class AnyINPUT<
 				Dynamic.Type.SUBMIT.getMarkupType(),
 				value,
 				false,
-				true,
+				false,
 				textInXhtmlAttributeEncoder
 			);
 		}

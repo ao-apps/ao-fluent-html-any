@@ -45,8 +45,7 @@ public interface Value<E extends Element<?, ?, E> & Value<E>> {
 	@Attributes.Funnel
 	default E value(Object value) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		// TODO: Review if trim-to-null is the best default.  Maybe default to "false" and override where should be true instead.
-		return Attributes.Text.attribute(element, "value", MarkupType.NONE, value, false, true, textInXhtmlAttributeEncoder);
+		return Attributes.Text.attribute(element, "value", MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
 	}
 
 	/**
