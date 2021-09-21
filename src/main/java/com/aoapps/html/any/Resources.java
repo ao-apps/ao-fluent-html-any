@@ -31,15 +31,8 @@ import java.util.ResourceBundle;
  */
 final class Resources {
 
-	@SuppressWarnings("unchecked")
-	static final com.aoapps.lang.i18n.Resources PACKAGE_RESOURCES = com.aoapps.lang.i18n.Resources.getResources(
-		com.aoapps.lang.function.Suppliers.coalesce(
-			Resources.class::getClassLoader,
-			ClassLoader::getSystemClassLoader
-		).get(),
-		ResourceBundle::getBundle,
-		Resources.class.getPackage()
-	);
+	static final com.aoapps.lang.i18n.Resources PACKAGE_RESOURCES =
+		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, Resources.class.getPackage());
 
 	/**
 	 * Make no instances.

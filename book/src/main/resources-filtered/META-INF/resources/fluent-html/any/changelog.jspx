@@ -49,7 +49,6 @@ along with ao-fluent-html-any.  If not, see <http://www.gnu.org/licenses />.
 				scmUrl="@{project.scm.url}"
 			>
 				<ul>
-					<li>Updated dependencies.</li>
 					<li>value attributes no longer convert empty string to null, and thus <code>value=""</code> now works as expected.</li>
 				</ul>
 			</changelog:release>

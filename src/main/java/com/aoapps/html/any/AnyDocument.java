@@ -65,7 +65,7 @@ abstract public class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	public static final Charset ENCODING = StandardCharsets.UTF_8;
 
 	static final com.aoapps.lang.i18n.Resources RESOURCES =
-		com.aoapps.lang.i18n.Resources.getResources(AnyDocument.class, ResourceBundle::getBundle);
+		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyDocument.class);
 
 	public final EncodingContext encodingContext;
 	// TODO: Remove this and just use encodingContext?

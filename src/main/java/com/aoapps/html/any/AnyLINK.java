@@ -75,7 +75,7 @@ abstract public class AnyLINK<
 {
 
 	private static final com.aoapps.lang.i18n.Resources RESOURCES =
-		com.aoapps.lang.i18n.Resources.getResources(AnyLINK.class, ResourceBundle::getBundle);
+		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyLINK.class);
 
 	protected AnyLINK(D document, PC pc) {
 		super(document, pc);
