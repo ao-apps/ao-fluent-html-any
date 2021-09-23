@@ -24,4 +24,6 @@ module com.aoapps.html.any.devel {
 	exports com.aoapps.html.any.i18n;
 	// Direct
 	requires com.aoapps.hodgepodge; // <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId>
+	// Java SE
+	requires java.logging;
 }
