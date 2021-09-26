@@ -163,7 +163,7 @@ abstract public class AnyMETA<
 
 		/**
 		 * Defines a cookie for the page. Its content must follow the syntax defined in the
-		 * <a href="https://tools.ietf.org/html/draft-ietf-httpstate-cookie-14">IETF HTTP Cookie Specification</a>.
+		 * <a href="https://datatracker.ietf.org/doc/html/draft-ietf-httpstate-cookie-14">IETF HTTP Cookie Specification</a>.
 		 *
 		 * @deprecated  Do not use this instruction, as it is obsolete. Use the HTTP header
 		 *              <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie">Set-Cookie</a>
