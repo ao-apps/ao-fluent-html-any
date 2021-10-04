@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyDATALIST_c<
+public abstract class AnyDATALIST_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyPhrasingContent<D, PC>,
 	_c extends AnyDATALIST_c<D, PC, _c>

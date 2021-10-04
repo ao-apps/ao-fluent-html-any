@@ -37,7 +37,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyBDI<
+public abstract class AnyBDI<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
 	E  extends AnyBDI<D, PC, E, __, _c>,

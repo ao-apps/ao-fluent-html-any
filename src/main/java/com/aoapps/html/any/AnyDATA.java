@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyDATA<
+public abstract class AnyDATA<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
 	E  extends AnyDATA<D, PC, E, __, _c>,

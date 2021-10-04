@@ -42,7 +42,7 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 @SuppressWarnings("deprecation")
-abstract public class AnyTABLE<
+public abstract class AnyTABLE<
 	D  extends AnyDocument<D>,
 	PC extends AnyPalpableContent<D, PC>,
 	E  extends AnyTABLE<D, PC, E, __, _c>,

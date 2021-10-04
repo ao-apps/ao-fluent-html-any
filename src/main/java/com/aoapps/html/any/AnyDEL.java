@@ -35,7 +35,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyDEL<
+public abstract class AnyDEL<
 	D  extends AnyDocument<D>,
 	PC extends AnyPhrasingContent<D, PC>,
 	E  extends AnyDEL<D, PC, E, _c>,

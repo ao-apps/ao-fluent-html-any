@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyARTICLE<
+public abstract class AnyARTICLE<
 	D  extends AnyDocument<D>,
 	PC extends AnySectioningContent<D, PC>,
 	E  extends AnyARTICLE<D, PC, E, __, _c>,

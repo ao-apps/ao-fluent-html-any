@@ -34,7 +34,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class NormalText__<
+public abstract class NormalText__<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	__ extends NormalText__<D, PC, __>

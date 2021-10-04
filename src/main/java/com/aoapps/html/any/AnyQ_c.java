@@ -34,7 +34,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyQ_c<
+public abstract class AnyQ_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
 	_c extends AnyQ_c<D, PC, _c>

@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyNAV<
+public abstract class AnyNAV<
 	D  extends AnyDocument<D>,
 	PC extends AnySectioningContent<D, PC>,
 	E  extends AnyNAV<D, PC, E, __, _c>,

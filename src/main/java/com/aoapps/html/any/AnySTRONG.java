@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnySTRONG<
+public abstract class AnySTRONG<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
 	E  extends AnySTRONG<D, PC, E, __, _c>,

@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyTH__<
+public abstract class AnyTH__<
 	D  extends AnyDocument<D>,
 	PC extends AnyTR_content<D, PC>,
 	__ extends AnyTH__<D, PC, __>

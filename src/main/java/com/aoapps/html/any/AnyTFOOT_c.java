@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyTFOOT_c<
+public abstract class AnyTFOOT_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyTABLE_content<D, PC>,
 	_c extends AnyTFOOT_c<D, PC, _c>

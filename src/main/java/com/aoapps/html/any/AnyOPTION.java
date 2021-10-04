@@ -45,7 +45,7 @@ import java.util.Optional;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyOPTION<
+public abstract class AnyOPTION<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_DATALIST_OPTGROUP<D, PC>,
 	E  extends AnyOPTION<D, PC, E>

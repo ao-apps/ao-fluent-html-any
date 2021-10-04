@@ -39,7 +39,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyQ<
+public abstract class AnyQ<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
 	E  extends AnyQ<D, PC, E, __, _c>,

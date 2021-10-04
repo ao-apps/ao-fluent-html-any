@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyTBODY__<
+public abstract class AnyTBODY__<
 	D  extends AnyDocument<D>,
 	PC extends AnyTABLE_content<D, PC>,
 	__ extends AnyTBODY__<D, PC, __>

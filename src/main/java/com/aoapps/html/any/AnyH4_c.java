@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyH4_c<
+public abstract class AnyH4_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyHeadingContent<D, PC>,
 	_c extends AnyH4_c<D, PC, _c>

@@ -41,7 +41,7 @@ import java.util.Locale;
  * @author  AO Industries, Inc.
  */
 @SuppressWarnings("deprecation") // TODO: Why here?  Review if needed everywhere is used
-abstract public class AnyHTML<
+public abstract class AnyHTML<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	E  extends AnyHTML<D, PC, E, __, _c>,

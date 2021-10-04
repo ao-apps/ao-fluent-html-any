@@ -33,7 +33,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class Transparent<
+public abstract class Transparent<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	E  extends Transparent<D, PC, E, _c>,
@@ -51,7 +51,7 @@ abstract public class Transparent<
 	 * @return  The parent content model this element is within
 	 */
 	@Override
-	final protected PC new__() {
+	protected final PC new__() {
 		return pc;
 	}
 }

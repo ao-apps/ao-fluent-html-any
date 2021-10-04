@@ -34,7 +34,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyBLOCKQUOTE_c<
+public abstract class AnyBLOCKQUOTE_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyPalpableContent<D, PC>,
 	_c extends AnyBLOCKQUOTE_c<D, PC, _c>

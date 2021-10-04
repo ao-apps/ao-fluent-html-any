@@ -207,7 +207,7 @@ public interface AnyUnion_Interactive_Phrasing<
 	 * @param  <__>  This content model, which will be the parent content model of child elements
 	 */
 	// TODO: Should this become an interface?
-	abstract public static class InputFactory<
+	public abstract static class InputFactory<
 		D  extends AnyDocument<D>,
 		__ extends AnyUnion_Interactive_Phrasing<D, __>
 	> {
@@ -227,7 +227,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/tag_input.asp">HTML input tag</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Dynamic<D, __, ?> dynamic() throws IOException;
+		public abstract AnyINPUT.Dynamic<D, __, ?> dynamic() throws IOException;
 
 		/**
 		 * <ul>
@@ -237,7 +237,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type.asp">HTML input type Attribute</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Dynamic<D, __, ?> dynamic(String type) throws IOException;
+		public abstract AnyINPUT.Dynamic<D, __, ?> dynamic(String type) throws IOException;
 
 		/**
 		 * <ul>
@@ -262,7 +262,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type.asp">HTML input type Attribute</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Dynamic<D, __, ?> dynamic(AnyINPUT.Dynamic.Type type) throws IOException;
+		public abstract AnyINPUT.Dynamic<D, __, ?> dynamic(AnyINPUT.Dynamic.Type type) throws IOException;
 
 		/**
 		 * <ul>
@@ -287,7 +287,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_button.asp">HTML input type="button"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Button<D, __, ?> button() throws IOException;
+		public abstract AnyINPUT.Button<D, __, ?> button() throws IOException;
 
 		/**
 		 * <ul>
@@ -297,7 +297,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_checkbox.asp">HTML input type="checkbox"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Checkbox<D, __, ?> checkbox() throws IOException;
+		public abstract AnyINPUT.Checkbox<D, __, ?> checkbox() throws IOException;
 
 		/**
 		 * <ul>
@@ -307,7 +307,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_color.asp">HTML input type="color"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Color<D, __, ?> color() throws IOException;
+		public abstract AnyINPUT.Color<D, __, ?> color() throws IOException;
 
 		/**
 		 * <ul>
@@ -317,7 +317,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_date.asp">HTML input type="date"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Date<D, __, ?> date() throws IOException;
+		public abstract AnyINPUT.Date<D, __, ?> date() throws IOException;
 
 		/**
 		 * <ul>
@@ -327,7 +327,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_datetime-local.asp">HTML input type="datetime-local"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.DatetimeLocal<D, __, ?> datetimeLocal() throws IOException;
+		public abstract AnyINPUT.DatetimeLocal<D, __, ?> datetimeLocal() throws IOException;
 
 		/**
 		 * <ul>
@@ -337,7 +337,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_email.asp">HTML input type="email"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Email<D, __, ?> email() throws IOException;
+		public abstract AnyINPUT.Email<D, __, ?> email() throws IOException;
 
 		/**
 		 * <ul>
@@ -347,7 +347,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_file.asp">HTML input type="file"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.File<D, __, ?> file() throws IOException;
+		public abstract AnyINPUT.File<D, __, ?> file() throws IOException;
 
 		/**
 		 * <ul>
@@ -357,7 +357,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_hidden.asp">HTML input type="hidden"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Hidden<D, __, ?> hidden() throws IOException;
+		public abstract AnyINPUT.Hidden<D, __, ?> hidden() throws IOException;
 
 		/**
 		 * <ul>
@@ -367,7 +367,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_image.asp">HTML input type="image"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Image<D, __, ?> image() throws IOException;
+		public abstract AnyINPUT.Image<D, __, ?> image() throws IOException;
 
 		/**
 		 * <ul>
@@ -377,7 +377,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_month.asp">HTML input type="month"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Month<D, __, ?> month() throws IOException;
+		public abstract AnyINPUT.Month<D, __, ?> month() throws IOException;
 
 		/**
 		 * <ul>
@@ -387,7 +387,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_number.asp">HTML input type="number"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Number<D, __, ?> number() throws IOException;
+		public abstract AnyINPUT.Number<D, __, ?> number() throws IOException;
 
 		/**
 		 * <ul>
@@ -397,7 +397,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_password.asp">HTML input type="password"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Password<D, __, ?> password() throws IOException;
+		public abstract AnyINPUT.Password<D, __, ?> password() throws IOException;
 
 		/**
 		 * <ul>
@@ -407,7 +407,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_radio.asp">HTML input type="radio"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Radio<D, __, ?> radio() throws IOException;
+		public abstract AnyINPUT.Radio<D, __, ?> radio() throws IOException;
 
 		/**
 		 * <ul>
@@ -417,7 +417,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_range.asp">HTML input type="range"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Range<D, __, ?> range() throws IOException;
+		public abstract AnyINPUT.Range<D, __, ?> range() throws IOException;
 
 		/**
 		 * <ul>
@@ -427,7 +427,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_reset.asp">HTML input type="reset"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Reset<D, __, ?> reset() throws IOException;
+		public abstract AnyINPUT.Reset<D, __, ?> reset() throws IOException;
 
 		/**
 		 * <ul>
@@ -437,7 +437,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_search.asp">HTML input type="search"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Search<D, __, ?> search() throws IOException;
+		public abstract AnyINPUT.Search<D, __, ?> search() throws IOException;
 
 		/**
 		 * <ul>
@@ -447,7 +447,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_submit.asp">HTML input type="submit"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Submit<D, __, ?> submit() throws IOException;
+		public abstract AnyINPUT.Submit<D, __, ?> submit() throws IOException;
 
 		/**
 		 * <ul>
@@ -506,7 +506,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_tel.asp">HTML input type="tel"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Tel<D, __, ?> tel() throws IOException;
+		public abstract AnyINPUT.Tel<D, __, ?> tel() throws IOException;
 
 		/**
 		 * <ul>
@@ -516,7 +516,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_text.asp">HTML input type="text"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Text<D, __, ?> text() throws IOException;
+		public abstract AnyINPUT.Text<D, __, ?> text() throws IOException;
 
 		/**
 		 * <ul>
@@ -526,7 +526,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_time.asp">HTML input type="time"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Time<D, __, ?> time() throws IOException;
+		public abstract AnyINPUT.Time<D, __, ?> time() throws IOException;
 
 		/**
 		 * <ul>
@@ -536,7 +536,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_url.asp">HTML input type="url"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Url<D, __, ?> url() throws IOException;
+		public abstract AnyINPUT.Url<D, __, ?> url() throws IOException;
 
 		/**
 		 * <ul>
@@ -546,7 +546,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 * <li>See <a href="https://www.w3schools.com/tags/att_input_type_week.asp">HTML input type="week"</a>.</li>
 		 * </ul>
 		 */
-		abstract public AnyINPUT.Week<D, __, ?> week() throws IOException;
+		public abstract AnyINPUT.Week<D, __, ?> week() throws IOException;
 	}
 
 	/**

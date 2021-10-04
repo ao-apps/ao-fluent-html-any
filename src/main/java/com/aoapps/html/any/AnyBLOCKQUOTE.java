@@ -39,7 +39,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyBLOCKQUOTE<
+public abstract class AnyBLOCKQUOTE<
 	D  extends AnyDocument<D>,
 	PC extends AnyPalpableContent<D, PC>,
 	E  extends AnyBLOCKQUOTE<D, PC, E, __, _c>,

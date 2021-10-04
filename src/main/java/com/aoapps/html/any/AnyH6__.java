@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyH6__<
+public abstract class AnyH6__<
 	D  extends AnyDocument<D>,
 	PC extends AnyHeadingContent<D, PC>,
 	__ extends AnyH6__<D, PC, __>

@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyMENU_c<
+public abstract class AnyMENU_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyInteractiveContent<D, PC>,
 	_c extends AnyMENU_c<D, PC, _c>

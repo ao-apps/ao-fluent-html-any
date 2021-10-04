@@ -57,7 +57,7 @@ import java.util.ResourceBundle;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyDocument<D extends AnyDocument<D>> implements AnyContent<D, D> {
+public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyContent<D, D> {
 
 	/**
 	 * The default, and recommended, encoding for (X)HTML.

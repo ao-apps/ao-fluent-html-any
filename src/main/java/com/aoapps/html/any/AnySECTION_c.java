@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnySECTION_c<
+public abstract class AnySECTION_c<
 	D  extends AnyDocument<D>,
 	PC extends AnySectioningContent<D, PC>,
 	_c extends AnySECTION_c<D, PC, _c>

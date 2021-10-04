@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyTHEAD_c<
+public abstract class AnyTHEAD_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyTABLE_content<D, PC>,
 	_c extends AnyTHEAD_c<D, PC, _c>

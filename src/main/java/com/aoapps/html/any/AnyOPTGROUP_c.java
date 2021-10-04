@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyOPTGROUP_c<
+public abstract class AnyOPTGROUP_c<
 	D  extends AnyDocument<D>,
 	PC extends AnySELECT_content<D, PC>,
 	_c extends AnyOPTGROUP_c<D, PC, _c>

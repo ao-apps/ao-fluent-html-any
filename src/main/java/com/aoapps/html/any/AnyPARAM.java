@@ -40,7 +40,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyPARAM<
+public abstract class AnyPARAM<
 	D  extends AnyDocument<D>,
 	PC extends AnyOBJECT_content<D, PC>,
 	E  extends AnyPARAM<D, PC, E>

@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyOBJECT<
+public abstract class AnyOBJECT<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Embedded_Interactive<D, PC>,
 	E  extends AnyOBJECT<D, PC, E, __, _c>,

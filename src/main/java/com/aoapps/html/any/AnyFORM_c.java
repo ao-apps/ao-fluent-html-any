@@ -34,7 +34,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyFORM_c<
+public abstract class AnyFORM_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyPalpableContent<D, PC>,
 	_c extends AnyFORM_c<D, PC, _c>

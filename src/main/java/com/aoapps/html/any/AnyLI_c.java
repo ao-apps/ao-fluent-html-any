@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyLI_c<
+public abstract class AnyLI_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyListContent<D, PC>,
 	_c extends AnyLI_c<D, PC, _c>

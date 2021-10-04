@@ -39,7 +39,7 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 @SuppressWarnings("deprecation")
-abstract public class AnyHR<
+public abstract class AnyHR<
 	D  extends AnyDocument<D>,
 	PC extends AnyFlowContent<D, PC>,
 	E  extends AnyHR<D, PC, E>

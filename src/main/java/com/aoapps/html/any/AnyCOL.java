@@ -40,7 +40,7 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 @SuppressWarnings("deprecation")
-abstract public class AnyCOL<
+public abstract class AnyCOL<
 	D  extends AnyDocument<D>,
 	PC extends AnyCOLGROUP_content<D, PC>,
 	E  extends AnyCOL<D, PC, E>

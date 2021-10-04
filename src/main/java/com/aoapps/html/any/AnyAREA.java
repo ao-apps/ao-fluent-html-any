@@ -39,7 +39,7 @@ import java.util.function.Function;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyAREA<
+public abstract class AnyAREA<
 	D  extends AnyDocument<D>,
 	PC extends AnyPhrasingContent<D, PC>,
 	E  extends AnyAREA<D, PC, E>

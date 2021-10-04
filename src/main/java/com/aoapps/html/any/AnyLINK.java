@@ -50,7 +50,7 @@ import java.util.function.Function;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyLINK<
+public abstract class AnyLINK<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Metadata_Phrasing<D, PC>,
 	E  extends AnyLINK<D, PC, E>

@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyHEAD<
+public abstract class AnyHEAD<
 	D  extends AnyDocument<D>,
 	PC extends AnyHTML_content<D, PC>,
 	E  extends AnyHEAD<D, PC, E, __, _c>,

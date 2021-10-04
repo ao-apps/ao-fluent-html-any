@@ -42,7 +42,7 @@ import java.util.Optional;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyTITLE<
+public abstract class AnyTITLE<
 	D  extends AnyDocument<D>,
 	PC extends AnyMetadataContent<D, PC>,
 	E  extends AnyTITLE<D, PC, E>

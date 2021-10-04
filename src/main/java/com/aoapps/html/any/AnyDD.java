@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyDD<
+public abstract class AnyDD<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_DIV_DL<D, PC>,
 	E  extends AnyDD<D, PC, E, __, _c>,

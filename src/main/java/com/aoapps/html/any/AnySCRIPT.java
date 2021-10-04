@@ -52,7 +52,7 @@ import java.util.Locale;
  * @author  AO Industries, Inc.
  */
 // TODO: Extend RawTextElement: https://html.spec.whatwg.org/multipage/syntax.html#raw-text-elements
-abstract public class AnySCRIPT<
+public abstract class AnySCRIPT<
 	D  extends AnyDocument<D>,
 	PC extends AnyScriptSupportingContent<D, PC>,
 	E  extends AnySCRIPT<D, PC, E>

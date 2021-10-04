@@ -40,7 +40,7 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 // TODO: Flow content, but with no form element descendants.
-abstract public class AnyFORM<
+public abstract class AnyFORM<
 	D  extends AnyDocument<D>,
 	PC extends AnyPalpableContent<D, PC>,
 	E  extends AnyFORM<D, PC, E, __, _c>,

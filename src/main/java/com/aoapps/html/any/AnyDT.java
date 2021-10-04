@@ -37,7 +37,7 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 // TODO: Flow content, but with no header, footer, sectioning content, or heading content descendants.
-abstract public class AnyDT<
+public abstract class AnyDT<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_DIV_DL<D, PC>,
 	E  extends AnyDT<D, PC, E, __, _c>,

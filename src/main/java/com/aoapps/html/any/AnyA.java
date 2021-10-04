@@ -40,7 +40,7 @@ import java.util.function.Function;
  */
 // TODO: Transparent, but there must be no interactive content descendent, a element descendent, or descendent with
 //       the tabindex attribute specified.
-abstract public class AnyA<
+public abstract class AnyA<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 	E  extends AnyA<D, PC, E, _c>,

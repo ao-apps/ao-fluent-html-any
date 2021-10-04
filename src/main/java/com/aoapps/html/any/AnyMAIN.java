@@ -37,7 +37,7 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 // TODO: Where flow content is expected, but only if it is a hierarchically correct main element.
-abstract public class AnyMAIN<
+public abstract class AnyMAIN<
 	D  extends AnyDocument<D>,
 	PC extends AnyPalpableContent<D, PC>,
 	E  extends AnyMAIN<D, PC, E, __, _c>,

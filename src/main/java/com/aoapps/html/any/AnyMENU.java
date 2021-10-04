@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyMENU<
+public abstract class AnyMENU<
 	D  extends AnyDocument<D>,
 	PC extends AnyInteractiveContent<D, PC>,
 	E  extends AnyMENU<D, PC, E, __, _c>,

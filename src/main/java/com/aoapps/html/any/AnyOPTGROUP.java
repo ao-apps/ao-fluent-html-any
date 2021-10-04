@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyOPTGROUP<
+public abstract class AnyOPTGROUP<
 	D  extends AnyDocument<D>,
 	PC extends AnySELECT_content<D, PC>,
 	E  extends AnyOPTGROUP<D, PC, E, __, _c>,

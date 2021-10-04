@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyASIDE<
+public abstract class AnyASIDE<
 	D  extends AnyDocument<D>,
 	PC extends AnySectioningContent<D, PC>,
 	E  extends AnyASIDE<D, PC, E, __, _c>,

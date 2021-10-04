@@ -37,7 +37,7 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 // TODO: Flow content, but with no descendant table elements.
-abstract public class AnyCAPTION<
+public abstract class AnyCAPTION<
 	D  extends AnyDocument<D>,
 	PC extends AnyTABLE_content<D, PC>,
 	E  extends AnyCAPTION<D, PC, E, __, _c>,

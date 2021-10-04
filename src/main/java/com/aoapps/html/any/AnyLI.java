@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyLI<
+public abstract class AnyLI<
 	D  extends AnyDocument<D>,
 	PC extends AnyListContent<D, PC>,
 	E  extends AnyLI<D, PC, E, __, _c>,

@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnySELECT_c<
+public abstract class AnySELECT_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 	_c extends AnySELECT_c<D, PC, _c>

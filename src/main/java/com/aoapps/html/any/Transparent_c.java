@@ -42,7 +42,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class Transparent_c<
+public abstract class Transparent_c<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	_c extends Transparent_c<D, PC, _c>

@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyCOLGROUP<
+public abstract class AnyCOLGROUP<
 	D  extends AnyDocument<D>,
 	PC extends AnyTABLE_content<D, PC>,
 	E  extends AnyCOLGROUP<D, PC, E, __, _c>,

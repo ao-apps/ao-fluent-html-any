@@ -40,7 +40,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyBODY<
+public abstract class AnyBODY<
 	D  extends AnyDocument<D>,
 	PC extends AnyHTML_content<D, PC>,
 	E  extends AnyBODY<D, PC, E, __, _c>,

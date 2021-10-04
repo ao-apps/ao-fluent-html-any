@@ -37,7 +37,7 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 // TODO: Phrasing content, but with no descendant labelable elements unless it is the element's labeled control, and no descendant label elements.
-abstract public class AnyLABEL<
+public abstract class AnyLABEL<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 	E  extends AnyLABEL<D, PC, E, __, _c>,

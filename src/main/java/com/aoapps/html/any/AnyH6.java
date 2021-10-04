@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyH6<
+public abstract class AnyH6<
 	D  extends AnyDocument<D>,
 	PC extends AnyHeadingContent<D, PC>,
 	E  extends AnyH6<D, PC, E, __, _c>,
@@ -62,7 +62,7 @@ abstract public class AnyH6<
 	}
 
 	@Override
-	final public int getRank() {
+	public final int getRank() {
 		return 6;
 	}
 }

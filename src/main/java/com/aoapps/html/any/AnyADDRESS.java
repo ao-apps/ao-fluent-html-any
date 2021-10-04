@@ -37,7 +37,7 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 // TODO: Flow content, but with no heading content descendants, no sectioning content descendants, and no header, footer, or address element descendants.
-abstract public class AnyADDRESS<
+public abstract class AnyADDRESS<
 	D  extends AnyDocument<D>,
 	PC extends AnyPalpableContent<D, PC>,
 	E  extends AnyADDRESS<D, PC, E, __, _c>,

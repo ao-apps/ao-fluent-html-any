@@ -39,7 +39,7 @@ import java.util.function.Function;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyMETA<
+public abstract class AnyMETA<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Metadata_Phrasing<D, PC>,
 	E  extends AnyMETA<D, PC, E>

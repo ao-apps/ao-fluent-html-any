@@ -37,7 +37,7 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 // TODO: Phrasing content, but there must be no progress element descendants.
-abstract public class AnyPROGRESS<
+public abstract class AnyPROGRESS<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
 	E  extends AnyPROGRESS<D, PC, E, __, _c>,

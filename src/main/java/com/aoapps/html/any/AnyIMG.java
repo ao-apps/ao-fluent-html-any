@@ -39,7 +39,7 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 @SuppressWarnings("deprecation")
-abstract public class AnyIMG<
+public abstract class AnyIMG<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Embedded_Interactive<D, PC>,
 	E  extends AnyIMG<D, PC, E>

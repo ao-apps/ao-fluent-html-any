@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyTFOOT<
+public abstract class AnyTFOOT<
 	D  extends AnyDocument<D>,
 	PC extends AnyTABLE_content<D, PC>,
 	E  extends AnyTFOOT<D, PC, E, __, _c>,

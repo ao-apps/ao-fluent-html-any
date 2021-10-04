@@ -35,7 +35,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class Void<
+public abstract class Void<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	E  extends Void<D, PC, E>

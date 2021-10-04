@@ -38,7 +38,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class Normal<
+public abstract class Normal<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	E  extends Normal<D, PC, E, __, _c>,
@@ -78,7 +78,7 @@ abstract public class Normal<
 	 * @param  closeAttributes  When {@code true}, must end attributes with {@code '>'} before writing the closing tag.
 	 *                          These are expected to be combined to a single write.
 	 */
-	abstract protected void writeClose(Writer out, boolean closeAttributes) throws IOException;
+	protected abstract void writeClose(Writer out, boolean closeAttributes) throws IOException;
 
 	/**
 	 * Ends attributes, invokes the body, then closes this element.

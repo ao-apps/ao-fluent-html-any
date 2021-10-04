@@ -45,7 +45,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class TransparentText_c<
+public abstract class TransparentText_c<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	_c extends TransparentText_c<D, PC, _c>

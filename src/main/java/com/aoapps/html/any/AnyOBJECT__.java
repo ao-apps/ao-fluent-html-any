@@ -42,7 +42,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyOBJECT__<
+public abstract class AnyOBJECT__<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Embedded_Interactive<D, PC>,
 	__ extends AnyOBJECT__<D, PC, __>

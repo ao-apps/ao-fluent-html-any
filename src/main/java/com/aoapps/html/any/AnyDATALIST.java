@@ -36,7 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyDATALIST<
+public abstract class AnyDATALIST<
 	D  extends AnyDocument<D>,
 	PC extends AnyPhrasingContent<D, PC>,
 	E  extends AnyDATALIST<D, PC, E, __, _c>,

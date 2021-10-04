@@ -56,7 +56,7 @@ import java.util.function.Function;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyINPUT<
+public abstract class AnyINPUT<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 	E  extends AnyINPUT<D, PC, E>
@@ -204,7 +204,7 @@ abstract public class AnyINPUT<
 	 */
 	@SuppressWarnings("deprecation")
 	// TODO: Rename "AnyDynamic" (and others)?  Would then be able to get rid of "AnyINPUT."/"INPUT." prefix in references
-	abstract public static class Dynamic<
+	public abstract static class Dynamic<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Dynamic<D, PC, E>
@@ -483,7 +483,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Button<
+	public abstract static class Button<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Button<D, PC, E>
@@ -529,7 +529,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Checkbox<
+	public abstract static class Checkbox<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Checkbox<D, PC, E>
@@ -558,7 +558,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Color<
+	public abstract static class Color<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Color<D, PC, E>
@@ -639,7 +639,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Date<
+	public abstract static class Date<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Date<D, PC, E>
@@ -722,7 +722,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class DatetimeLocal<
+	public abstract static class DatetimeLocal<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends DatetimeLocal<D, PC, E>
@@ -804,7 +804,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Email<
+	public abstract static class Email<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Email<D, PC, E>
@@ -897,7 +897,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class File<
+	public abstract static class File<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends File<D, PC, E>
@@ -971,7 +971,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Hidden<
+	public abstract static class Hidden<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Hidden<D, PC, E>
@@ -1002,7 +1002,7 @@ abstract public class AnyINPUT<
 	 * @param  <E>   This element type
 	 */
 	@SuppressWarnings("deprecation")
-	abstract public static class Image<
+	public abstract static class Image<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Image<D, PC, E>
@@ -1092,7 +1092,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Month<
+	public abstract static class Month<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Month<D, PC, E>
@@ -1176,7 +1176,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Number<
+	public abstract static class Number<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Number<D, PC, E>
@@ -1276,7 +1276,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Password<
+	public abstract static class Password<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Password<D, PC, E>
@@ -1361,7 +1361,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Radio<
+	public abstract static class Radio<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Radio<D, PC, E>
@@ -1390,7 +1390,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Range<
+	public abstract static class Range<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Range<D, PC, E>
@@ -1470,7 +1470,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Reset<
+	public abstract static class Reset<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Reset<D, PC, E>
@@ -1516,7 +1516,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Search<
+	public abstract static class Search<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Search<D, PC, E>
@@ -1652,7 +1652,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Submit<
+	public abstract static class Submit<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Submit<D, PC, E>
@@ -1703,7 +1703,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Tel<
+	public abstract static class Tel<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Tel<D, PC, E>
@@ -1797,7 +1797,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Text<
+	public abstract static class Text<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Text<D, PC, E>
@@ -1834,7 +1834,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Time<
+	public abstract static class Time<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Time<D, PC, E>
@@ -1915,7 +1915,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Url<
+	public abstract static class Url<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Url<D, PC, E>
@@ -2008,7 +2008,7 @@ abstract public class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
-	abstract public static class Week<
+	public abstract static class Week<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Week<D, PC, E>

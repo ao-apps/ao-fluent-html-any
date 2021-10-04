@@ -37,7 +37,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyBR<
+public abstract class AnyBR<
 	D  extends AnyDocument<D>,
 	PC extends AnyPhrasingContent<D, PC>,
 	E  extends AnyBR<D, PC, E>

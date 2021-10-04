@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyNAV__<
+public abstract class AnyNAV__<
 	D  extends AnyDocument<D>,
 	PC extends AnySectioningContent<D, PC>,
 	__ extends AnyNAV__<D, PC, __>

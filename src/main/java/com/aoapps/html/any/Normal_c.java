@@ -34,7 +34,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // TODO: Can this extend Normal__?  Should it?
-abstract public class Normal_c<
+public abstract class Normal_c<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	_c extends Normal_c<D, PC, _c>

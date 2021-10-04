@@ -39,7 +39,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class TransparentText<
+public abstract class TransparentText<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	E  extends TransparentText<D, PC, E, _c>,

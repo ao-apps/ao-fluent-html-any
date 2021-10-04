@@ -38,7 +38,7 @@ import java.io.Writer;
  */
 // TODO: indent before, and newline after?  Review whitespace rules.  (this decision will affect AnyFORM, too)
 //       https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace
-abstract public class AnySELECT<
+public abstract class AnySELECT<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 	E  extends AnySELECT<D, PC, E, __, _c>,

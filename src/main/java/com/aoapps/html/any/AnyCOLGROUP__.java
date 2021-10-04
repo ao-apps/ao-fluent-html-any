@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyCOLGROUP__<
+public abstract class AnyCOLGROUP__<
 	D  extends AnyDocument<D>,
 	PC extends AnyTABLE_content<D, PC>,
 	__ extends AnyCOLGROUP__<D, PC, __>

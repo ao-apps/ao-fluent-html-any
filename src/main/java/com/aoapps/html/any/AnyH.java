@@ -33,7 +33,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyH<
+public abstract class AnyH<
 	D  extends AnyDocument<D>,
 	PC extends AnyHeadingContent<D, PC>,
 	E  extends AnyH<D, PC, E, __, _c>,

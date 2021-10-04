@@ -38,7 +38,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyBASE<
+public abstract class AnyBASE<
 	D  extends AnyDocument<D>,
 	PC extends AnyMetadataContent<D, PC>,
 	E  extends AnyBASE<D, PC, E>

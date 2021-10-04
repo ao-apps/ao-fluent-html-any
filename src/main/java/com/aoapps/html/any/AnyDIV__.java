@@ -31,7 +31,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class AnyDIV__<
+public abstract class AnyDIV__<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_DL_Palpable<D, PC>,
 	__ extends AnyDIV__<D, PC, __>

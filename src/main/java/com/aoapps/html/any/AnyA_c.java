@@ -33,7 +33,7 @@ package com.aoapps.html.any;
  */
 // TODO: Transparent, but there must be no interactive content descendent, a element descendent, or descendent with
 //       the tabindex attribute specified.
-abstract public class AnyA_c<
+public abstract class AnyA_c<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 	_c extends AnyA_c<D, PC, _c>

@@ -39,7 +39,7 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 // TODO: Phrasing content, but there must be no dfn element descendants.
-abstract public class AnyDFN<
+public abstract class AnyDFN<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
 	E  extends AnyDFN<D, PC, E, __, _c>,

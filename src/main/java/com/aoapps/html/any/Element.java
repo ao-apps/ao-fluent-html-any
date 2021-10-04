@@ -37,7 +37,7 @@ import java.io.Writer;
  */
 // TODO: Should every element have a __() closing method?
 //       Should every element implement Closeable, even if does not have a specific __()?
-abstract public class Element<
+public abstract class Element<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	E  extends Element<D, PC, E>
@@ -232,5 +232,5 @@ abstract public class Element<
 	 * @return  The element instance to use.
 	 *          This may substitute the element with a different instance, when appropriate.
 	 */
-	abstract protected E writeOpen(Writer out) throws IOException;
+	protected abstract E writeOpen(Writer out) throws IOException;
 }

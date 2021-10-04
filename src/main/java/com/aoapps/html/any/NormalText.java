@@ -39,7 +39,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-abstract public class NormalText<
+public abstract class NormalText<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	E  extends NormalText<D, PC, E, __, _c>,
