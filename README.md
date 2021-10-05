@@ -1,4 +1,4 @@
-# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/aoindustries) [AO OSS](https://github.com/aoindustries/ao-oss) / [Fluent HTML](https://github.com/aoindustries/ao-fluent-html) / [Any](https://github.com/aoindustries/ao-fluent-html-any)
+# [<img src="ao-logo.png" alt="AO Logo" width="35" height="40">](https://github.com/ao-apps) [AO OSS](https://github.com/ao-apps/ao-oss) / [Fluent HTML](https://github.com/ao-apps/ao-fluent-html) / [Any](https://github.com/ao-apps/ao-fluent-html-any)
 
 [![project: alpha](https://oss.aoapps.com/ao-badges/project-alpha.svg)](https://aoindustries.com/life-cycle#project-alpha)
 [![management: preview](https://oss.aoapps.com/ao-badges/management-preview.svg)](https://aoindustries.com/life-cycle#management-preview)
@@ -7,7 +7,7 @@
 [![semantic versioning: 2.0.0](https://oss.aoapps.com/ao-badges/semver-2.0.0.svg)](http://semver.org/spec/v2.0.0.html)
 [![license: LGPL v3](https://oss.aoapps.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
-[![Build](https://github.com/aoindustries/ao-fluent-html-any/workflows/Build/badge.svg?branch=master)](https://github.com/aoindustries/ao-fluent-html-any/actions?query=workflow%3ABuild)
+[![Build](https://github.com/ao-apps/ao-fluent-html-any/workflows/Build/badge.svg?branch=master)](https://github.com/ao-apps/ao-fluent-html-any/actions?query=workflow%3ABuild)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-fluent-html-any/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.aoapps/ao-fluent-html-any)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-any&metric=alert_status)](https://sonarcloud.io/dashboard?branch=master&id=com.aoapps%3Aao-fluent-html-any)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?branch=master&project=com.aoapps%3Aao-fluent-html-any&metric=ncloc)](https://sonarcloud.io/component_measures?branch=master&id=com.aoapps%3Aao-fluent-html-any&metric=ncloc)  
@@ -23,7 +23,7 @@ Base abstract classes and interfaces for Fluent Java DSL for high-performance HT
 * [Changelog](https://oss.aoapps.com/fluent-html/any/changelog)
 * [API Docs](https://oss.aoapps.com/fluent-html/any/apidocs/)
 * [Maven Central Repository](https://search.maven.org/artifact/com.aoapps/ao-fluent-html-any)
-* [GitHub](https://github.com/aoindustries/ao-fluent-html-any)
+* [GitHub](https://github.com/ao-apps/ao-fluent-html-any)
 
 ## Contact Us
 For questions or support, please [contact us](https://aoindustries.com/contact):
