@@ -108,18 +108,18 @@ public abstract class AnySTYLE<
 
 	private final String type;
 
-	public AnySTYLE(D document, PC pc) {
+	protected AnySTYLE(D document, PC pc) {
 		super(document, pc);
 		this.type = null;
 	}
 
-	public AnySTYLE(D document, PC pc, String type) {
+	protected AnySTYLE(D document, PC pc, String type) {
 		super(document, pc);
 		type = Strings.trimNullIfEmpty(type);
 		this.type = (type == null) ? null : type.toLowerCase(Locale.ROOT);
 	}
 
-	public AnySTYLE(D document, PC pc, Type type) {
+	protected AnySTYLE(D document, PC pc, Type type) {
 		super(document, pc);
 		this.type = (type == null) ? null : type.getContentType();
 	}
