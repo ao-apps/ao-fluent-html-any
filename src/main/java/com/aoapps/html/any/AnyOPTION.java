@@ -257,6 +257,7 @@ public abstract class AnyOPTION<
 		if(oldAutonli) document.setAutonli(false);
 		boolean oldIndent = document.getIndent();
 		if(oldIndent) document.setIndent(false);
+		// Java 9: new DocumentMediaWriter<>
 		return new DocumentMediaWriter<D>(document, textInXhtmlEncoder, out) {
 			@Override
 			public void close() throws IOException {

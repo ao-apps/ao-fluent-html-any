@@ -326,6 +326,7 @@ public abstract class AnySCRIPT<
 		MediaEncoder encoder = getMediaEncoder(getMediaType());
 		Writer out = document.getUnsafe(null);
 		startBody(out);
+		// Java 9: new DocumentMediaWriter<>
 		return new DocumentMediaWriter<D>(document, encoder, out) {
 			@Override
 			public void close() throws IOException {

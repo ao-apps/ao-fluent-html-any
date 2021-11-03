@@ -277,6 +277,7 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 	public DocumentMediaWriter<D> text() throws IOException {
 		DocumentMediaWriter<D> tw = getTextWriter();
 		if(tw != this) tw.getEncoder().writePrefixTo(this);
+		// Java 9: new DocumentMediaWriter<>
 		return new DocumentMediaWriter<D>(
 			document,
 			tw.getEncoder(),
