@@ -93,6 +93,6 @@ public interface Formmethod<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E formmethod(IOSupplierE<? extends V, Ex> formmethod) throws IOException, Ex {
-		return formmethod((formmethod == null) ? (V)null : formmethod.get());
+		return formmethod((formmethod == null) ? null : formmethod.get());
 	}
 }

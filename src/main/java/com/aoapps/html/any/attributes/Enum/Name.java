@@ -85,6 +85,6 @@ public interface Name<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E name(IOSupplierE<? extends V, Ex> name) throws IOException, Ex {
-		return name((name== null) ? (V)null : name.get());
+		return name((name == null) ? null : name.get());
 	}
 }

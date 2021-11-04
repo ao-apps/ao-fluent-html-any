@@ -93,6 +93,6 @@ public interface Formtarget<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E formtarget(IOSupplierE<? extends V, Ex> formtarget) throws IOException, Ex {
-		return formtarget((formtarget == null) ? (V)null : formtarget.get());
+		return formtarget((formtarget == null) ? null : formtarget.get());
 	}
 }

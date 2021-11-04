@@ -164,7 +164,7 @@ public interface Dir<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E dir(IOSupplierE<? extends V, Ex> dir) throws IOException, Ex {
-		return dir((dir== null) ? (V)null : dir.get());
+		return dir((dir == null) ? null : dir.get());
 	}
 
 	/**

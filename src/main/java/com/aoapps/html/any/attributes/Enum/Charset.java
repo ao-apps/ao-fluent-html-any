@@ -110,7 +110,7 @@ public interface Charset<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {
-		return charset((charset == null) ? (V)null : charset.get());
+		return charset((charset == null) ? null : charset.get());
 	}
 
 	/**

@@ -258,7 +258,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
 				}
 			}
 		}
-		return coords(sb.length() == 0 ? (String)null : sb.toString());
+		return coords(sb.length() == 0 ? null : sb.toString());
 	}
 
 	/**

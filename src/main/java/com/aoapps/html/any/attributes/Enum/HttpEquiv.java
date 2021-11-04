@@ -98,6 +98,6 @@ public interface HttpEquiv<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E httpEquiv(IOSupplierE<? extends V, Ex> httpEquiv) throws IOException, Ex {
-		return httpEquiv((httpEquiv== null) ? (V)null : httpEquiv.get());
+		return httpEquiv((httpEquiv== null) ? null : httpEquiv.get());
 	}
 }

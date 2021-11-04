@@ -98,7 +98,7 @@ public interface Target<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E target(IOSupplierE<? extends V, Ex> target) throws IOException, Ex {
-		return target((target == null) ? (V)null : target.get());
+		return target((target == null) ? null : target.get());
 	}
 
 	/**

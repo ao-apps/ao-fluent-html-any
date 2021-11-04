@@ -84,6 +84,6 @@ public interface Type<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E type(IOSupplierE<? extends V, Ex> type) throws IOException, Ex {
-		return type((type== null) ? (V)null : type.get());
+		return type((type == null) ? null : type.get());
 	}
 }

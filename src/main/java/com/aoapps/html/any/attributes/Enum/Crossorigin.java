@@ -84,6 +84,6 @@ public interface Crossorigin<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E crossorigin(IOSupplierE<? extends V, Ex> crossorigin) throws IOException, Ex {
-		return crossorigin((crossorigin== null) ? (V)null : crossorigin.get());
+		return crossorigin((crossorigin == null) ? null : crossorigin.get());
 	}
 }

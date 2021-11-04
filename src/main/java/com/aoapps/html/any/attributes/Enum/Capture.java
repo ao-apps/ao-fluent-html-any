@@ -109,6 +109,6 @@ public interface Capture<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E capture(IOSupplierE<? extends V, Ex> capture) throws IOException, Ex {
-		return capture((capture== null) ? (V)null : capture.get());
+		return capture((capture == null) ? null : capture.get());
 	}
 }

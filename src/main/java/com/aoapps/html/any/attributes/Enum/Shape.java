@@ -84,6 +84,6 @@ public interface Shape<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E shape(IOSupplierE<? extends V, Ex> shape) throws IOException, Ex {
-		return shape((shape== null) ? (V)null : shape.get());
+		return shape((shape == null) ? null : shape.get());
 	}
 }

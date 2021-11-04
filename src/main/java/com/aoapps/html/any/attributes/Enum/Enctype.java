@@ -99,7 +99,7 @@ public interface Enctype<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E enctype(IOSupplierE<? extends V, Ex> enctype) throws IOException, Ex {
-		return enctype((enctype == null) ? (V)null : enctype.get());
+		return enctype((enctype == null) ? null : enctype.get());
 	}
 
 	/**

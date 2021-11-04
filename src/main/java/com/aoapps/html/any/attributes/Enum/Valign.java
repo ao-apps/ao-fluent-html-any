@@ -99,6 +99,6 @@ public interface Valign<
 	@Deprecated
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E valign(IOSupplierE<? extends V, Ex> valign) throws IOException, Ex {
-		return valign((valign== null) ? (V)null : valign.get());
+		return valign((valign == null) ? null : valign.get());
 	}
 }

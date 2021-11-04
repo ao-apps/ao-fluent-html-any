@@ -84,6 +84,6 @@ public interface Rel<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E rel(IOSupplierE<? extends V, Ex> rel) throws IOException, Ex {
-		return rel((rel== null) ? (V)null : rel.get());
+		return rel((rel == null) ? null : rel.get());
 	}
 }

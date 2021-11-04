@@ -112,7 +112,7 @@ public interface Autocomplete<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E autocomplete(IOSupplierE<? extends V, Ex> autocomplete) throws IOException, Ex {
-		return autocomplete((autocomplete== null) ? (V)null : autocomplete.get());
+		return autocomplete((autocomplete == null) ? null : autocomplete.get());
 	}
 
 	/**

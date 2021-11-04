@@ -98,7 +98,7 @@ public interface Method<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E method(IOSupplierE<? extends V, Ex> method) throws IOException, Ex {
-		return method((method == null) ? (V)null : method.get());
+		return method((method == null) ? null : method.get());
 	}
 
 	/**

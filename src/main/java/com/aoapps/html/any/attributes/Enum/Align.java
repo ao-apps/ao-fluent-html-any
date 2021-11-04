@@ -99,6 +99,6 @@ public interface Align<
 	@Deprecated
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E align(IOSupplierE<? extends V, Ex> align) throws IOException, Ex {
-		return align((align== null) ? (V)null : align.get());
+		return align((align == null) ? null : align.get());
 	}
 }

@@ -93,6 +93,6 @@ public interface Formenctype<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E formenctype(IOSupplierE<? extends V, Ex> formenctype) throws IOException, Ex {
-		return formenctype((formenctype == null) ? (V)null : formenctype.get());
+		return formenctype((formenctype == null) ? null : formenctype.get());
 	}
 }
