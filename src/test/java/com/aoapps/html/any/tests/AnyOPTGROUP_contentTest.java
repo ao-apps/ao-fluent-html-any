@@ -90,7 +90,7 @@ public class AnyOPTGROUP_contentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -108,6 +108,6 @@ public class AnyOPTGROUP_contentTest {
 			-1,
 			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyOPTGROUP_content.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyOPTGROUP_content.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyOPTGROUP_content.class);
 	}
 }

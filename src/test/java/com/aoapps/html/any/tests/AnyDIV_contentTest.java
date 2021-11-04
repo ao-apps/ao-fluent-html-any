@@ -118,7 +118,7 @@ public class AnyDIV_contentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -223,6 +223,6 @@ public class AnyDIV_contentTest {
 			-1,
 			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyDIV_content.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyDIV_content.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDIV_content.class);
 	}
 }

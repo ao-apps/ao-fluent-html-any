@@ -114,7 +114,7 @@ public class AnyFlowContentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -217,6 +217,6 @@ public class AnyFlowContentTest {
 			-1,
 			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyFlowContent.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyFlowContent.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyFlowContent.class);
 	}
 }

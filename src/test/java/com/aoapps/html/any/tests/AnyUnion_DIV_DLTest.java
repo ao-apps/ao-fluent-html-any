@@ -85,7 +85,7 @@ public class AnyUnion_DIV_DLTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -101,6 +101,6 @@ public class AnyUnion_DIV_DLTest {
 			-1,
 			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DIV_DL.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyUnion_DIV_DL.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DIV_DL.class);
 	}
 }

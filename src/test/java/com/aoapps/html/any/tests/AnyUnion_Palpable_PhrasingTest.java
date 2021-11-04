@@ -92,7 +92,7 @@ public class AnyUnion_Palpable_PhrasingTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -151,6 +151,6 @@ public class AnyUnion_Palpable_PhrasingTest {
 			-1,
 			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Palpable_Phrasing.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyUnion_Palpable_Phrasing.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_Palpable_Phrasing.class);
 	}
 }

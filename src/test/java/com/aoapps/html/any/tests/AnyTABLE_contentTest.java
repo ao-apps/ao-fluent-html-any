@@ -90,7 +90,7 @@ public class AnyTABLE_contentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -113,6 +113,6 @@ public class AnyTABLE_contentTest {
 			-1,
 			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyTABLE_content.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyTABLE_content.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyTABLE_content.class);
 	}
 }

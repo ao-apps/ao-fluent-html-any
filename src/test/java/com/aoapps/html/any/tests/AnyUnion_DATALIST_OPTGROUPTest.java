@@ -85,7 +85,7 @@ public class AnyUnion_DATALIST_OPTGROUPTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -100,6 +100,6 @@ public class AnyUnion_DATALIST_OPTGROUPTest {
 			-1,
 			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DATALIST_OPTGROUP.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyUnion_DATALIST_OPTGROUP.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DATALIST_OPTGROUP.class);
 	}
 }

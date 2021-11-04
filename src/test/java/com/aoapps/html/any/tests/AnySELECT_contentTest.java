@@ -91,7 +91,7 @@ public class AnySELECT_contentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -110,6 +110,6 @@ public class AnySELECT_contentTest {
 			-1,
 			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnySELECT_content.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnySELECT_content.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnySELECT_content.class);
 	}
 }

@@ -85,7 +85,7 @@ public class AnyUnion_Embedded_InteractiveTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -105,6 +105,6 @@ public class AnyUnion_Embedded_InteractiveTest {
 			-1,
 			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Embedded_Interactive.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyUnion_Embedded_Interactive.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_Embedded_Interactive.class);
 	}
 }

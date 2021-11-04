@@ -36,9 +36,9 @@ import org.junit.Assert;
  * @author  AO Industries, Inc.
  */
 @SuppressWarnings({"rawtypes", "unchecked"})
-public class InheritanceTests {
+public final class InheritanceTestHelper {
 
-	private InheritanceTests() {}
+	private InheritanceTestHelper() {}
 
 	public static <C extends Content> void testInterfaces(
 		Class<C> testFromClazz,

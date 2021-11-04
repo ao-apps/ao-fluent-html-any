@@ -88,7 +88,7 @@ public class AnyTR_contentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -107,6 +107,6 @@ public class AnyTR_contentTest {
 			-1,
 			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyTR_content.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyTR_content.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyTR_content.class);
 	}
 }

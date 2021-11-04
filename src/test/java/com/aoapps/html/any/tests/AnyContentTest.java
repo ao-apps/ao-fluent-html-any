@@ -80,17 +80,17 @@ public class AnyContentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
 			//
-			FactoryTest.getAllFactories()
+			FactoryTestHelper.getAllFactories()
 		);
 	}
 
 	@Test
 	public void testNoImplementInherited() {
-		InheritanceTests.testNoImplementInherited(Content.class, AnyContent.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyContent.class);
 	}
 }

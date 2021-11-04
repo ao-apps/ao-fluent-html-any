@@ -90,7 +90,7 @@ public class AnyMetadataContentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -113,6 +113,6 @@ public class AnyMetadataContentTest {
 			-1,
 			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyMetadataContent.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyMetadataContent.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyMetadataContent.class);
 	}
 }

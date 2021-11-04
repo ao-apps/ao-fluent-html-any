@@ -102,7 +102,7 @@ public class AnyPhrasingContentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -174,6 +174,6 @@ public class AnyPhrasingContentTest {
 			-1,
 			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyPhrasingContent.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyPhrasingContent.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyPhrasingContent.class);
 	}
 }

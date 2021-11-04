@@ -80,17 +80,17 @@ public class AnyDocumentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
 			//
-			FactoryTest.getAllFactories()
+			FactoryTestHelper.getAllFactories()
 		);
 	}
 
 	@Test
 	public void testNoImplementInherited() {
-		InheritanceTests.testNoImplementInherited(Content.class, AnyDocument.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDocument.class);
 	}
 }

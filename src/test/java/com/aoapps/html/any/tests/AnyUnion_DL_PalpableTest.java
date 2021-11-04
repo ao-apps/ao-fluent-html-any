@@ -85,7 +85,7 @@ public class AnyUnion_DL_PalpableTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -100,6 +100,6 @@ public class AnyUnion_DL_PalpableTest {
 			-1,
 			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DL_Palpable.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyUnion_DL_Palpable.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DL_Palpable.class);
 	}
 }

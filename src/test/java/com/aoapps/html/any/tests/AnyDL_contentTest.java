@@ -92,7 +92,7 @@ public class AnyDL_contentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -112,6 +112,6 @@ public class AnyDL_contentTest {
 			-1,
 			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyDL_content.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyDL_content.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDL_content.class);
 	}
 }

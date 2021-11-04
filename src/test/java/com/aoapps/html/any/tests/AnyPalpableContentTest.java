@@ -102,7 +102,7 @@ public class AnyPalpableContentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -191,6 +191,6 @@ public class AnyPalpableContentTest {
 			-1,
 			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyPalpableContent.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyPalpableContent.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyPalpableContent.class);
 	}
 }

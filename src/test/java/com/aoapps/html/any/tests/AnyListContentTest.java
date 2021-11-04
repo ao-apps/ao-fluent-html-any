@@ -88,7 +88,7 @@ public class AnyListContentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -106,6 +106,6 @@ public class AnyListContentTest {
 			-1,
 			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyListContent.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyListContent.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyListContent.class);
 	}
 }

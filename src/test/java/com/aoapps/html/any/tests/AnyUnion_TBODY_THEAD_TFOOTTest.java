@@ -88,7 +88,7 @@ public class AnyUnion_TBODY_THEAD_TFOOTTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -105,6 +105,6 @@ public class AnyUnion_TBODY_THEAD_TFOOTTest {
 			-1,
 			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_TBODY_THEAD_TFOOT.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyUnion_TBODY_THEAD_TFOOT.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_TBODY_THEAD_TFOOT.class);
 	}
 }

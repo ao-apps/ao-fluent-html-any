@@ -106,7 +106,7 @@ public class AnyDATALIST_contentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -179,6 +179,6 @@ public class AnyDATALIST_contentTest {
 			-1,
 			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyDATALIST_content.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyDATALIST_content.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDATALIST_content.class);
 	}
 }

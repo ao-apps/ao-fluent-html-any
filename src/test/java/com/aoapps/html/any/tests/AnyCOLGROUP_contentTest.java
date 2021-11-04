@@ -86,7 +86,7 @@ public class AnyCOLGROUP_contentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -103,6 +103,6 @@ public class AnyCOLGROUP_contentTest {
 			-1,
 			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyCOLGROUP_content.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyCOLGROUP_content.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyCOLGROUP_content.class);
 	}
 }

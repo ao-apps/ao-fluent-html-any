@@ -85,7 +85,7 @@ public class AnyUnion_COLGROUP_ScriptSupportingTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -100,6 +100,6 @@ public class AnyUnion_COLGROUP_ScriptSupportingTest {
 			-1,
 			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_COLGROUP_ScriptSupporting.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyUnion_COLGROUP_ScriptSupporting.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_COLGROUP_ScriptSupporting.class);
 	}
 }

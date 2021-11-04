@@ -88,7 +88,7 @@ public class AnyUnion_Metadata_PhrasingTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -107,6 +107,6 @@ public class AnyUnion_Metadata_PhrasingTest {
 			-1,
 			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Metadata_Phrasing.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyUnion_Metadata_Phrasing.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_Metadata_Phrasing.class);
 	}
 }

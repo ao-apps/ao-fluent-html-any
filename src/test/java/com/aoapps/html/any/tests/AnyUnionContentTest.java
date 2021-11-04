@@ -63,7 +63,7 @@ public class AnyUnionContentTest {
 	}
 
 	static void testUnions(Class<? extends Content> clazz, Class<? extends Content> ... expected) {
-		InheritanceTests.testInterfaces(
+		InheritanceTestHelper.testInterfaces(
 			Content.class,
 			iface -> iface.getSimpleName().startsWith("AnyUnion_"),
 			getAllUnions(),
@@ -75,7 +75,7 @@ public class AnyUnionContentTest {
 	@Test
 	public void testNoImplementInherited() {
 		for(Class<? extends Content> iface : getAllUnions()) {
-			InheritanceTests.testNoImplementInherited(Content.class, iface);
+			InheritanceTestHelper.testNoImplementInherited(Content.class, iface);
 		}
 	}
 }

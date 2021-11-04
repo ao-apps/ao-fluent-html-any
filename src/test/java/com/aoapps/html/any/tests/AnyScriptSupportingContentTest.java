@@ -86,7 +86,7 @@ public class AnyScriptSupportingContentTest {
 
 	@Test
 	public void testFactories() throws IOException {
-		FactoryTest.testFactories(
+		FactoryTestHelper.testFactories(
 			testingClass,
 			//
 			// Factories:
@@ -103,6 +103,6 @@ public class AnyScriptSupportingContentTest {
 			-1,
 			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyScriptSupportingContent.class)
 		);
-		InheritanceTests.testNoImplementInherited(Content.class, AnyScriptSupportingContent.class);
+		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyScriptSupportingContent.class);
 	}
 }
