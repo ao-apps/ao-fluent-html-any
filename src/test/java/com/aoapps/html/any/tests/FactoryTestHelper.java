@@ -45,14 +45,15 @@ import org.junit.Assert;
  * @author  AO Industries, Inc.
  */
 @SuppressWarnings("rawtypes")
-public final class FactoryTestHelper {
+public abstract class FactoryTestHelper {
+
+	/** Make no instances. */
+	private FactoryTestHelper() {throw new AssertionError();}
 
 	/**
 	 * Using constant to avoid making Factory annotation public.
 	 */
 	private static final String FACTORY_CLASSNAME = "com.aoapps.html.any.Factory"; // Factory.class.getCanonicalName()
-
-	private FactoryTestHelper() {}
 
 	/**
 	 * Gets the set of all element factory names.

@@ -54,12 +54,12 @@ import java.util.function.Function;
  */
 // TODO: We should probably be using long/Long for integer values.
 // TODO: Review which attributes should be trimmed and/or nullIfEmpty
-public class Attributes {
-
-	public static final Resources RESOURCES = Resources.getResources(ResourceBundle::getBundle, Attributes.class);
+public abstract class Attributes {
 
 	/** Make no instances. */
-	private Attributes() {}
+	private Attributes() {throw new AssertionError();}
+
+	public static final Resources RESOURCES = Resources.getResources(ResourceBundle::getBundle, Attributes.class);
 
 	/**
 	 * Special value used in-place of return values that should result in an empty
@@ -130,10 +130,10 @@ public class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Boolean
 	 */
-	public static class Boolean {
+	public abstract static class Boolean {
 
 		/** Make no instances. */
-		private Boolean() {}
+		private Boolean() {throw new AssertionError();}
 
 		/**
 		 * @param  <E>   This element type
@@ -169,10 +169,10 @@ public class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Dimension
 	 */
-	public static class Dimension {
+	public abstract static class Dimension {
 
 		/** Make no instances. */
-		private Dimension() {}
+		private Dimension() {throw new AssertionError();}
 
 		/**
 		 * @param  <E>   This element type
@@ -211,10 +211,10 @@ public class Attributes {
 	 * @see  com.aoapps.html.any.attributes.event.media
 	 * @see  com.aoapps.html.any.attributes.event.misc
 	 */
-	public static class Event {
+	public abstract static class Event {
 
 		/** Make no instances. */
-		private Event() {}
+		private Event() {throw new AssertionError();}
 
 		/**
 		 * @param  <E>   This element type
@@ -233,10 +233,10 @@ public class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Integer
 	 */
-	public static class Integer {
+	public abstract static class Integer {
 
 		/** Make no instances. */
-		private Integer() {}
+		private Integer() {throw new AssertionError();}
 
 		/**
 		 * @param  <E>   This element type
@@ -274,10 +274,10 @@ public class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.String
 	 */
-	public static class String {
+	public abstract static class String {
 
 		/** Make no instances. */
-		private String() {}
+		private String() {throw new AssertionError();}
 
 		/**
 		 * @param  <E>   This element type
@@ -330,10 +330,10 @@ public class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Text
 	 */
-	public static class Text {
+	public abstract static class Text {
 
 		/** Make no instances. */
-		private Text() {}
+		private Text() {throw new AssertionError();}
 
 		/**
 		 * @param  <E>   This element type
@@ -526,10 +526,10 @@ public class Attributes {
 	 * @see  com.aoapps.html.any.attributes.Url
 	 */
 	// TODO: Encoding URL via encoding context
-	public static class Url {
+	public abstract static class Url {
 
 		/** Make no instances. */
-		private Url() {}
+		private Url() {throw new AssertionError();}
 
 		/**
 		 * @param  <E>   This element type

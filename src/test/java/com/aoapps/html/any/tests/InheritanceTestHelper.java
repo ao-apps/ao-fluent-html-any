@@ -36,9 +36,10 @@ import org.junit.Assert;
  * @author  AO Industries, Inc.
  */
 @SuppressWarnings({"rawtypes", "unchecked"})
-public final class InheritanceTestHelper {
+public abstract class InheritanceTestHelper {
 
-	private InheritanceTestHelper() {}
+	/** Make no instances. */
+	private InheritanceTestHelper() {throw new AssertionError();}
 
 	public static <C extends Content> void testInterfaces(
 		Class<C> testFromClazz,

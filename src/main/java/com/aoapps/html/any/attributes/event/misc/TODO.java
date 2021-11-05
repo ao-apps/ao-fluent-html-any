@@ -26,4 +26,5 @@ package com.aoapps.html.any.attributes.event.misc;
  * TODO: Implement attributes in this package.
  */
 public class TODO {
+
 }

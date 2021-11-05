@@ -61,7 +61,10 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
 	 * </ul>
 	 */
-	public static final class data {
+	public abstract static class data {
+
+		/** Make no instances. */
+		private data() {throw new AssertionError();}
 
 		/**
 		 * The required prefix for data-* HTML attributes.
@@ -180,8 +183,6 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 			}
 			return jsName.toString();
 		}
-
-		private data() {}
 	}
 
 	/**
@@ -262,7 +263,10 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
 	 * </ul>
 	 */
-	public static final class dataset {
+	public abstract static class dataset {
+
+		/** Make no instances. */
+		private dataset() {throw new AssertionError();}
 
 		/**
 		 * <p>
@@ -352,8 +356,6 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 			}
 			return attrName.toString();
 		}
-
-		private dataset() {}
 	}
 
 	/**

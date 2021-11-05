@@ -64,7 +64,10 @@ public interface Dir<
 	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML Global dir Attribute</a>.</li>
 	 * </ul>
 	 */
-	public static final class dir {
+	public abstract static class dir {
+
+		/** Make no instances. */
+		private dir() {throw new AssertionError();}
 
 		/**
 		 * Normalizes a dir attribute.
@@ -100,8 +103,6 @@ public interface Dir<
 				return ValidResult.getInstance();
 			}
 		}
-
-		private dir() {}
 	}
 
 	/**

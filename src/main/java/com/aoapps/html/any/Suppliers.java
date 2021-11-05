@@ -34,9 +34,10 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // TODO: Move to ao-lang, since it is very similar to the new Iterables utility class.
-public class Suppliers {
+public abstract class Suppliers {
 
-	private Suppliers() {}
+	/** Make no instances. */
+	private Suppliers() {throw new AssertionError();}
 
 	/**
 	 * Variant bounded by {@link com.aoapps.html.any.Circle}, since can't have multiple methods with different bounds due to erasure.
