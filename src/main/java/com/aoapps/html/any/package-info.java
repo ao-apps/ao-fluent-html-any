@@ -27,7 +27,7 @@
  *   {@linkplain Element element}, {@linkplain Attributes attributes}, and {@link Content content}.
  * </p>
  * <p>
- *   This package makes extensive use of parameterized types, may of them self-referential.  This is primarily so that
+ *   This package makes extensive use of parameterized types, many of them self-referential.  This is primarily so that
  *   code-assistance can provide the full context of the current element/attribute/content.  The verbosity caused by
  *   the expanding type parameters is not expected to be intrusive for two reasons: <code>var</code> is available for
  *   local variables in newer versions of Java, and the type definitions provide meaningful limits to wildcard bounds
