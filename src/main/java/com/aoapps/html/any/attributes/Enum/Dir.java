@@ -64,7 +64,7 @@ public interface Dir<
 	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML Global dir Attribute</a>.</li>
 	 * </ul>
 	 */
-	public final static class dir {
+	public static final class dir {
 
 		/** Make no instances. */
 		private dir() {throw new AssertionError();}

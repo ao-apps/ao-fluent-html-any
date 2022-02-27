@@ -61,7 +61,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
 	 * </ul>
 	 */
-	public final static class data {
+	public static final class data {
 
 		/** Make no instances. */
 		private data() {throw new AssertionError();}
@@ -263,7 +263,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
 	 * </ul>
 	 */
-	public final static class dataset {
+	public static final class dataset {
 
 		/** Make no instances. */
 		private dataset() {throw new AssertionError();}

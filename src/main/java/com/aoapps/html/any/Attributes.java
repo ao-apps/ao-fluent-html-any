@@ -130,7 +130,7 @@ public final class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Boolean
 	 */
-	public final static class Boolean {
+	public static final class Boolean {
 
 		/** Make no instances. */
 		private Boolean() {throw new AssertionError();}
@@ -169,7 +169,7 @@ public final class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Dimension
 	 */
-	public final static class Dimension {
+	public static final class Dimension {
 
 		/** Make no instances. */
 		private Dimension() {throw new AssertionError();}
@@ -211,7 +211,7 @@ public final class Attributes {
 	 * @see  com.aoapps.html.any.attributes.event.media
 	 * @see  com.aoapps.html.any.attributes.event.misc
 	 */
-	public final static class Event {
+	public static final class Event {
 
 		/** Make no instances. */
 		private Event() {throw new AssertionError();}
@@ -233,7 +233,7 @@ public final class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Integer
 	 */
-	public final static class Integer {
+	public static final class Integer {
 
 		/** Make no instances. */
 		private Integer() {throw new AssertionError();}
@@ -274,7 +274,7 @@ public final class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.String
 	 */
-	public final static class String {
+	public static final class String {
 
 		/** Make no instances. */
 		private String() {throw new AssertionError();}
@@ -330,7 +330,7 @@ public final class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Text
 	 */
-	public final static class Text {
+	public static final class Text {
 
 		/** Make no instances. */
 		private Text() {throw new AssertionError();}
@@ -526,7 +526,7 @@ public final class Attributes {
 	 * @see  com.aoapps.html.any.attributes.Url
 	 */
 	// TODO: Encoding URL via encoding context
-	public final static class Url {
+	public static final class Url {
 
 		/** Make no instances. */
 		private Url() {throw new AssertionError();}
