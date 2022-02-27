@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -61,7 +61,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
 	 * </ul>
 	 */
-	public abstract static class data {
+	public final static class data {
 
 		/** Make no instances. */
 		private data() {throw new AssertionError();}
@@ -263,7 +263,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
 	 * </ul>
 	 */
-	public abstract static class dataset {
+	public final static class dataset {
 
 		/** Make no instances. */
 		private dataset() {throw new AssertionError();}

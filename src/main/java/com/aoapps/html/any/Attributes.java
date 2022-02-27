@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -54,7 +54,7 @@ import java.util.function.Function;
  */
 // TODO: We should probably be using long/Long for integer values.
 // TODO: Review which attributes should be trimmed and/or nullIfEmpty
-public abstract class Attributes {
+public final class Attributes {
 
 	/** Make no instances. */
 	private Attributes() {throw new AssertionError();}
@@ -130,7 +130,7 @@ public abstract class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Boolean
 	 */
-	public abstract static class Boolean {
+	public final static class Boolean {
 
 		/** Make no instances. */
 		private Boolean() {throw new AssertionError();}
@@ -169,7 +169,7 @@ public abstract class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Dimension
 	 */
-	public abstract static class Dimension {
+	public final static class Dimension {
 
 		/** Make no instances. */
 		private Dimension() {throw new AssertionError();}
@@ -211,7 +211,7 @@ public abstract class Attributes {
 	 * @see  com.aoapps.html.any.attributes.event.media
 	 * @see  com.aoapps.html.any.attributes.event.misc
 	 */
-	public abstract static class Event {
+	public final static class Event {
 
 		/** Make no instances. */
 		private Event() {throw new AssertionError();}
@@ -233,7 +233,7 @@ public abstract class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Integer
 	 */
-	public abstract static class Integer {
+	public final static class Integer {
 
 		/** Make no instances. */
 		private Integer() {throw new AssertionError();}
@@ -274,7 +274,7 @@ public abstract class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.String
 	 */
-	public abstract static class String {
+	public final static class String {
 
 		/** Make no instances. */
 		private String() {throw new AssertionError();}
@@ -330,7 +330,7 @@ public abstract class Attributes {
 	 *
 	 * @see  com.aoapps.html.any.attributes.Text
 	 */
-	public abstract static class Text {
+	public final static class Text {
 
 		/** Make no instances. */
 		private Text() {throw new AssertionError();}
@@ -526,7 +526,7 @@ public abstract class Attributes {
 	 * @see  com.aoapps.html.any.attributes.Url
 	 */
 	// TODO: Encoding URL via encoding context
-	public abstract static class Url {
+	public final static class Url {
 
 		/** Make no instances. */
 		private Url() {throw new AssertionError();}

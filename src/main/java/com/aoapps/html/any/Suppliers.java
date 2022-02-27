@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -34,7 +34,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // TODO: Move to ao-lang, since it is very similar to the new Iterables utility class.
-public abstract class Suppliers {
+public final class Suppliers {
 
 	/** Make no instances. */
 	private Suppliers() {throw new AssertionError();}
