@@ -29,7 +29,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
 		<relativePath>../parent/pom.xml</relativePath>
 	</parent>
 
-	<groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId><version>0.6.1-SNAPSHOT</version>
+	<groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId><version>0.6.1</version>
 	<packaging>bundle</packaging>
 
 	<properties>
@@ -84,7 +84,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
 		<connection>scm:git:git://github.com/ao-apps/ao-fluent-html-any.git</connection>
 		<developerConnection>scm:git:git@github.com:ao-apps/ao-fluent-html-any.git</developerConnection>
 		<url>https://github.com/ao-apps/ao-fluent-html-any</url>
-		<tag>HEAD</tag>
+		<tag>ao-fluent-html-any-0.6.1</tag>
 	</scm>
 
 	<issueManagement>
