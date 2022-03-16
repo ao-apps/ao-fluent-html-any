@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -31,7 +31,11 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#attr-fe-autofocus">HTML Standard</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus">autofocus</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
@@ -40,7 +44,11 @@ import java.io.IOException;
 public interface Autofocus<E extends Element<?, ?, E> & Autofocus<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#attr-fe-autofocus">HTML Standard</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus">autofocus</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E autofocus(boolean autofocus) throws IOException {
@@ -57,7 +65,11 @@ public interface Autofocus<E extends Element<?, ?, E> & Autofocus<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#attr-fe-autofocus">HTML Standard</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus">autofocus</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.</li>
+	 * </ul>
 	 *
 	 * @see #autofocus(boolean)
 	 */
@@ -66,7 +78,11 @@ public interface Autofocus<E extends Element<?, ?, E> & Autofocus<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#attr-fe-autofocus">HTML Standard</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autofocus">autofocus</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
