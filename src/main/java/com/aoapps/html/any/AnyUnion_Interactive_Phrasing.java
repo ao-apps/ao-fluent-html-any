@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -187,6 +187,8 @@ public interface AnyUnion_Interactive_Phrasing<
 	 *
 	 * @deprecated  TODO: Implement button
 	 */
+	// TODO: Global Attributes: https://www.w3schools.com/tags/ref_standardattributes.asp
+	// TODO: com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
 	@Deprecated
 	@Factory("button")
 	default void button() throws IOException {
