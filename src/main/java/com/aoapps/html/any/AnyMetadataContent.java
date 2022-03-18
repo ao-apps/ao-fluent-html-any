@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,8 +23,8 @@
 package com.aoapps.html.any;
 
 import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.MediaWritable;
-import com.aoapps.hodgepodge.i18n.MarkupType;
+import com.aoapps.lang.io.function.IOConsumerE;
+import com.aoapps.lang.io.function.IORunnableE;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -163,10 +163,40 @@ public interface AnyMetadataContent<
 	 * </p>
 	 */
 	@Factory("title")
-	AnyTITLE<D, __, ?> title() throws IOException;
+	AnyTITLE<D, __, ?, ?, ?> title() throws IOException;
 
 	/**
-	 * Creates a title element with no attributes and the given text.
+	 * Creates a title element with no attributes and the given body.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("title")
+	default <Ex extends Throwable> __ title__(IORunnableE<Ex> title) throws IOException, Ex {
+		return title().__(title);
+	}
+
+	/**
+	 * Creates a title element with no attributes and the given body.
+	 * <p>
+	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
+	 * </p>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("title")
+	default <Ex extends Throwable> __ title__any(IOConsumerE<? super AnyTITLE__<D, __, ? extends AnyTITLE__<D, __, ?>>, Ex> title) throws IOException, Ex {
+		return title().__(title);
+	}
+
+	/**
+	 * Creates a title element with no attributes and a text body.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
 	 * </p>
@@ -178,38 +208,34 @@ public interface AnyMetadataContent<
 		return title().__(text);
 	}
 
+// Empty element not expected.  Requires "Text that is not inter-element whitespace":
+//	/**
+//	 * Creates an empty title element with no attributes.
+//	 * <p>
+//	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
+//	 * </p>
+//	 *
+//	 * @return  This content model, which will be the parent content model of child elements
+//	 */
+//	@Factory("title")
+//	default __ title__() throws IOException {
+//		return title().__();
+//	}
+
 	/**
-	 * Creates a title element with no attributes and the given text.
-	 * Supports translation markup type {@link MarkupType#TEXT}.
+	 * Creates a title element with no attributes then begins element content
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
 	 * </p>
 	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 * @return  The content model of this element, which will be the parent content model of child elements.
+	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+	 *          the tag.  This is well suited for use in a try-with-resources block.
 	 *
-	 * @return  This content model, which will be the parent content model of child elements
+	 * @see  Closeable#__()
+	 * @see  Closeable#close()
 	 */
 	@Factory("title")
-	default <Ex extends Throwable> __ title__(IOSupplierE<?, Ex> text) throws IOException, Ex {
-		return title().__(text);
-	}
-
-	/**
-	 * Creates a title element with no attributes and the given text.
-	 * Does not perform any translation markups.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
-	 * </p>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("title")
-	default <Ex extends Throwable> __ title__(MediaWritable<Ex> text) throws IOException, Ex {
-		return title().__(text);
-	}
-
-	// TODO: title_c() here, once DocumentMediaWriter implements a __() method?
+	AnyTITLE_c<D, __, ?> title_c() throws IOException;
 	// </editor-fold>
 }

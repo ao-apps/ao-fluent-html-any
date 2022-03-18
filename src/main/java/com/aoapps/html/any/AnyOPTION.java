@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,15 +23,9 @@
 package com.aoapps.html.any;
 
 import com.aoapps.encoding.MediaWritable;
-import static com.aoapps.encoding.TextInXhtmlEncoder.textInXhtmlEncoder;
-import com.aoapps.hodgepodge.i18n.MarkupCoercion;
-import com.aoapps.hodgepodge.i18n.MarkupType;
-import com.aoapps.lang.Throwables;
-import com.aoapps.lang.io.NoCloseWriter;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.Writer;
-import java.util.Optional;
 
 /**
  * <ul>
@@ -42,14 +36,19 @@ import java.util.Optional;
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within
  * @param  <E>   This element type
+ * @param  <__>  This content model, which will be the parent content model of child elements
+ * @param  <_c>  This content model as {@link Closeable}, which will be the parent content model of child elements
  *
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOPTION<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_DATALIST_OPTGROUP<D, PC>,
-	E  extends AnyOPTION<D, PC, E>
-> extends Element<D, PC, E> implements
+	E  extends AnyOPTION<D, PC, E, __, _c>,
+	__ extends AnyOPTION__<D, PC, __>,
+	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+	_c extends AnyOPTION_c<D, PC, _c>
+> extends NormalText<D, PC, E, __, _c> implements
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
 	com.aoapps.html.any.attributes.Text.Label<E>,
 	com.aoapps.html.any.attributes.Boolean.Selected<E>,
@@ -58,8 +57,22 @@ public abstract class AnyOPTION<
 	AlmostGlobalAttributes<E>
 {
 
+	private boolean oldAutonli;
+	private boolean oldIndent;
+	private int oldDepth;
+
 	protected AnyOPTION(D document, PC pc) {
 		super(document, pc);
+	}
+
+	/**
+	 * Does not have indented content.
+	 *
+	 * @return {@code false} - does not indent
+	 */
+	@Override
+	protected boolean isContentIndented() {
+		return false;
 	}
 
 	@Override
@@ -67,6 +80,16 @@ public abstract class AnyOPTION<
 		document.autoNli(out).unsafe(out, "<option", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
+	}
+
+	@Override
+	protected void doBeforeBody(Writer out) throws IOException {
+		oldAutonli = document.getAutonli();
+		if(oldAutonli) document.setAutonli(false);
+		oldIndent = document.getIndent();
+		if(oldIndent) document.setIndent(false);
+		oldDepth = document.getDepth();
+		if(oldDepth != 0) document.setDepth(0);
 	}
 
 	/**
@@ -137,152 +160,18 @@ public abstract class AnyOPTION<
 		return com.aoapps.html.any.attributes.Text.Value.super.value(value);
 	}
 
-	/**
-	 * Writes the text body then closes this element.
-	 * Supports translation markup type {@link MarkupType#TEXT}.
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	@SuppressWarnings("UseSpecificCatch")
-	public PC __(Object text) throws IOException {
-		// Support Optional
-		while(text instanceof Optional) {
-			text = ((Optional<?>)text).orElse(null);
-		}
-		while(text instanceof IOSupplierE<?, ?>) {
-			try {
-				text = ((IOSupplierE<?, ?>)text).get();
-			} catch(Throwable t) {
-				throw Throwables.wrap(t, IOException.class, IOException::new);
-			}
-		}
-		if(text instanceof MediaWritable) {
-			try {
-				return __((MediaWritable<?>)text);
-			} catch(Throwable t) {
-				throw Throwables.wrap(t, IOException.class, IOException::new);
-			}
-		}
-		if(text == null) {
-			return __();
+	// TODO: How to ensure markup type NONE when no value set or TEXT when set?
+	@Override
+	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
+		document
+			.setDepth(oldDepth)
+			.setIndent(oldIndent)
+			.setAutonli(oldAutonli);
+		if(closeAttributes) {
+			document.autoIndent(out).unsafe(out, "></option>", false);
 		} else {
-			Writer out = document.getUnsafe(null);
-			document.autoIndent(out).unsafe(out, '>').incDepth();
-			boolean oldAutonli = document.getAutonli();
-			if(oldAutonli) document.setAutonli(false);
-			boolean oldIndent = document.getIndent();
-			if(oldIndent) document.setIndent(false);
-			try {
-				// TODO: Only allow markup when the value has been set (auto-set value from text like ao-taglib?)
-				// Allow text markup from translations
-				MarkupCoercion.write(text, MarkupType.TEXT, true, textInXhtmlEncoder, false, out);
-			} finally {
-				document
-					.setIndent(oldIndent)
-					.setAutonli(oldAutonli);
-			}
-			document
-				// Set in "unsafe" below: .clearAtnl() // Unknown, safe to assume not at newline
-				.decDepth()
-				// Assumed not at newline: .autoIndent()
-				.unsafe(out, "</option>", false)
-				.autoNl(out);
-			return pc;
+			document.unsafe(out, "</option>", false);
 		}
-	}
-
-	/**
-	 * Writes the text body then closes this element.
-	 * Supports translation markup type {@link MarkupType#TEXT}.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	public <Ex extends Throwable> PC __(IOSupplierE<?, Ex> text) throws IOException, Ex {
-		return __((text == null) ? null : text.get());
-	}
-
-	/**
-	 * Writes the text body then closes this element.
-	 * Does not perform any translation markups.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	public <Ex extends Throwable> PC __(MediaWritable<Ex> text) throws IOException, Ex {
-		if(text == null) {
-			return __();
-		} else {
-			Writer out = document.getUnsafe(null);
-			document.autoIndent(out).unsafe(out, '>').incDepth();
-			boolean oldAutonli = document.getAutonli();
-			if(oldAutonli) document.setAutonli(false);
-			boolean oldIndent = document.getIndent();
-			if(oldIndent) document.setIndent(false);
-			try {
-				text.writeTo(
-					new DocumentMediaWriter<>(
-						document,
-						textInXhtmlEncoder,
-						new NoCloseWriter(out)
-					)
-				);
-			} finally {
-				document
-					.setIndent(oldIndent)
-					.setAutonli(oldAutonli);
-			}
-			document
-				// Set in "unsafe" below: .clearAtnl() // Unknown, safe to assume not at newline
-				.decDepth()
-				// Assumed not at newline: .autoIndent()
-				.unsafe(out, "</option>", false).
-				autoNl(out);
-			return pc;
-		}
-	}
-
-	/**
-	 * Writes a text body then closes this element.
-	 * Does not perform any translation markups.
-	 * This is well suited for use in a try-with-resources block.
-	 */
-	// TODO: __() method on DocumentMediaWriter to end text?  Call it "ContentWriter"?
-	public DocumentMediaWriter<D> _c() throws IOException {
-		Writer out = document.getUnsafe(null);
-		document.autoIndent(out).unsafe(out, '>').incDepth();
-		boolean oldAutonli = document.getAutonli();
-		if(oldAutonli) document.setAutonli(false);
-		boolean oldIndent = document.getIndent();
-		if(oldIndent) document.setIndent(false);
-		// Java 9: new DocumentMediaWriter<>
-		return new DocumentMediaWriter<D>(document, textInXhtmlEncoder, out) {
-			@Override
-			public void close() throws IOException {
-				// Get a new "out", just in case changed before closing, such as in legacy JSP taglibs
-				Writer out2 = document.getUnsafe(null);
-				document
-					.setIndent(oldIndent)
-					.setAutonli(oldAutonli)
-					// Set in "unsafe" below: .clearAtnl() // Unknown, safe to assume not at newline
-					.decDepth()
-					// Assumed not at newline: .autoIndent()
-					.unsafe(out2, "</option>", false)
-					.autoNl(out2);
-			}
-		};
-	}
-
-	/**
-	 * Closes this element to form an empty option.
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	public PC __() throws IOException {
-		Writer out = document.getUnsafe(null);
-		document.autoIndent(out).unsafe(out, "></option>", false).autoNl(out);
-		return pc;
+		document.autoNl(out);
 	}
 }

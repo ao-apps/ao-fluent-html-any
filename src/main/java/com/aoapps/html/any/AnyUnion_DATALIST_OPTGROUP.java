@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,6 +22,8 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.lang.io.function.IOConsumerE;
+import com.aoapps.lang.io.function.IORunnableE;
 import java.io.IOException;
 
 /**
@@ -53,7 +55,53 @@ public interface AnyUnion_DATALIST_OPTGROUP<
 	 * </ul>
 	 */
 	@Factory("option")
-	AnyOPTION<D, __, ?> option() throws IOException;
+	AnyOPTION<D, __, ?, ?, ?> option() throws IOException;
+
+	/**
+	 * Creates an option element with no attributes and the given body.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element">4.10.10 The option element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_option.asp">HTML option tag</a>.</li>
+	 * </ul>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("option")
+	default <Ex extends Throwable> __ option__(IORunnableE<Ex> option) throws IOException, Ex {
+		return option().__(option);
+	}
+
+	/**
+	 * Creates an option element with no attributes and the given body.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element">4.10.10 The option element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_option.asp">HTML option tag</a>.</li>
+	 * </ul>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("option")
+	default <Ex extends Throwable> __ option__any(IOConsumerE<? super AnyOPTION__<D, __, ? extends AnyOPTION__<D, __, ?>>, Ex> option) throws IOException, Ex {
+		return option().__(option);
+	}
+
+	/**
+	 * Creates an option element with no attributes and a text body.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element">4.10.10 The option element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_option.asp">HTML option tag</a>.</li>
+	 * </ul>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("option")
+	default __ option__(Object text) throws IOException {
+		return option().__(text);
+	}
 
 	/**
 	 * Creates an empty option element with no attributes.
@@ -68,5 +116,22 @@ public interface AnyUnion_DATALIST_OPTGROUP<
 	default __ option__() throws IOException {
 		return option().__();
 	}
+
+	/**
+	 * Creates an option element with no attributes then begins element content
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element">4.10.10 The option element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_option.asp">HTML option tag</a>.</li>
+	 * </ul>
+	 *
+	 * @return  The content model of this element, which will be the parent content model of child elements.
+	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @see  Closeable#__()
+	 * @see  Closeable#close()
+	 */
+	@Factory("option")
+	AnyOPTION_c<D, __, ?> option_c() throws IOException;
 	// </editor-fold>
 }
