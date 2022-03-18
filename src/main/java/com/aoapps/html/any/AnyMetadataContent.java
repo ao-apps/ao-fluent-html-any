@@ -23,6 +23,7 @@
 package com.aoapps.html.any;
 
 import com.aoapps.encoding.Doctype;
+import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.io.function.IOConsumerE;
 import com.aoapps.lang.io.function.IORunnableE;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -197,6 +198,7 @@ public interface AnyMetadataContent<
 
 	/**
 	 * Creates a title element with no attributes and a text body.
+	 * TODO: Supports translation markup type {@link MarkupType#TEXT}.
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.
 	 * </p>

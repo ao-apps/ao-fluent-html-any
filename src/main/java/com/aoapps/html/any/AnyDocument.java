@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -875,6 +875,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getUnsafe(null), csq);
 	}
 
+	// TODO: Supports translation markup
 	D text(Writer out, CharSequence csq) throws IOException {
 		if(csq != null) {
 			int len = csq.length();
@@ -928,7 +929,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	public D text(Object text) throws IOException {
 		return text(getUnsafe(null), text);
 	}
-
+// TODO: Compare to text() implemented by AnyTextContent, to see how it handles markuptype=text within TextContent, and how to have <option> only do markup when value attribute is set.
 	@SuppressWarnings("UseSpecificCatch")
 	D text(Writer out, Object text) throws IOException {
 		// Support Optional
@@ -964,6 +965,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 			}
 			// Allow text markup from translations
 			autoIndent(out);
+			// TODO: Way to temp-disable markups from within OPTION (without value set) and TEXTAREA, or to make HTML comment mark-up only.  All places from AnyTextContent
 			MarkupCoercion.write(text, MarkupType.XHTML, false, textInXhtmlEncoder, false, out);
 			clearAtnl(); // Unknown, safe to assume not at newline
 		}

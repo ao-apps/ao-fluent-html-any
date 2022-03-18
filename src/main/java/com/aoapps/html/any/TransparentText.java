@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -59,6 +59,7 @@ public abstract class TransparentText<
 	 * @see  AnyDocument#text(java.lang.Object)
 	 */
 	// Matches NormalText.__(Object)
+	// TODO: More overrides, such as IOSupplier and such?
 	public PC __(Object text) throws IOException {
 		Writer out = document.getUnsafe(null);
 		if(text != null) {
