@@ -136,6 +136,8 @@ public interface Dir<
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @see #dir(java.lang.String)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
@@ -148,6 +150,8 @@ public interface Dir<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">dir - HTML: Hypertext Markup Language | MDN</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML Global dir Attribute</a>.</li>
 	 * </ul>
+	 *
+	 * @see #dir(java.lang.String)
 	 */
 	default E dir(V dir) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -162,6 +166,8 @@ public interface Dir<
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @see #dir(java.lang.Enum)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E dir(IOSupplierE<? extends V, Ex> dir) throws IOException, Ex {

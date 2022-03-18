@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -51,7 +51,7 @@ public abstract class TransparentText_c<
 	_c extends TransparentText_c<D, PC, _c>
 >
 	extends Transparent_c<D, PC, _c>
-	implements AnyUnion_Palpable_Phrasing<D, _c> {
+	implements AnyTextContent<D, _c> {
 
 	protected TransparentText_c(TransparentText<D, PC, ?, _c> element) {
 		super(element);

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -38,7 +38,7 @@ public abstract class NormalText__<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
 	__ extends NormalText__<D, PC, __>
-> extends Normal__<D, PC, __> implements AnyUnion_Palpable_Phrasing<D, __> {
+> extends Normal__<D, PC, __> implements AnyTextContent<D, __> {
 
 	protected NormalText__(NormalText<D, PC, ?, __, ?> element) {
 		super(element);

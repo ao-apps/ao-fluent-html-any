@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,10 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * A normal element that can have textual content.
- * <p>
- * See <a href="https://html.spec.whatwg.org/multipage/syntax.html#normal-elements">13.1.2 Elements / Normal elements</a>.
- * </p>
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">&lt;textarea&gt;: The Textarea element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_textarea.asp">HTML textarea tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within
@@ -34,15 +35,15 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-public abstract class NormalText_c<
+public abstract class AnyTEXTAREA_c<
 	D  extends AnyDocument<D>,
-	PC extends Content<D, PC>,
-	_c extends NormalText_c<D, PC, _c>
+	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+	_c extends AnyTEXTAREA_c<D, PC, _c>
 >
-	extends Normal_c<D, PC, _c>
+	extends NormalText_c<D, PC, _c>
 	implements AnyTextContent<D, _c> {
 
-	protected NormalText_c(NormalText<D, PC, ?, ?, _c> element) {
+	protected AnyTEXTAREA_c(AnyTEXTAREA<D, PC, ?, ?, _c> element) {
 		super(element);
 	}
 }

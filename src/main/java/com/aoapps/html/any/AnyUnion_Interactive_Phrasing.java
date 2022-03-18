@@ -721,18 +721,96 @@ public interface AnyUnion_Interactive_Phrasing<
 	// <editor-fold defaultstate="collapsed" desc="TEXTAREA">
 	/**
 	 * Opens a new textarea element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.
-	 * </p>
-	 *
-	 * @deprecated  TODO: Implement textarea
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">&lt;textarea&gt;: The Textarea element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_textarea.asp">HTML textarea tag</a>.</li>
+	 * </ul>
 	 */
-	@Deprecated
 	@Factory("textarea")
-	default void textarea() throws IOException {
-		throw new AssertionError("TODO: Implement textarea");
+	AnyTEXTAREA<D, __, ?, ?, ?> textarea() throws IOException;
+
+	/**
+	 * Creates a textarea element with no attributes and the given body.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">&lt;textarea&gt;: The Textarea element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_textarea.asp">HTML textarea tag</a>.</li>
+	 * </ul>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("textarea")
+	default <Ex extends Throwable> __ textarea__(IORunnableE<Ex> textarea) throws IOException, Ex {
+		return textarea().__(textarea);
 	}
-	// TODO: Set indentation depth back to zero before invoking body
+
+	/**
+	 * Creates a textarea element with no attributes and the given body.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">&lt;textarea&gt;: The Textarea element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_textarea.asp">HTML textarea tag</a>.</li>
+	 * </ul>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("textarea")
+	default <Ex extends Throwable> __ textarea__any(IOConsumerE<? super AnyTEXTAREA__<D, __, ? extends AnyTEXTAREA__<D, __, ?>>, Ex> textarea) throws IOException, Ex {
+		return textarea().__(textarea);
+	}
+
+	/**
+	 * Creates a textarea element with no attributes and a text body.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">&lt;textarea&gt;: The Textarea element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_textarea.asp">HTML textarea tag</a>.</li>
+	 * </ul>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("textarea")
+	default __ textarea__(Object text) throws IOException {
+		return textarea().__(text);
+	}
+
+	/**
+	 * Creates an empty textarea element with no attributes.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">&lt;textarea&gt;: The Textarea element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_textarea.asp">HTML textarea tag</a>.</li>
+	 * </ul>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Factory("textarea")
+	default __ textarea__() throws IOException {
+		return textarea().__();
+	}
+
+	/**
+	 * Creates a textarea element with no attributes then begins element content
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">&lt;textarea&gt;: The Textarea element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_textarea.asp">HTML textarea tag</a>.</li>
+	 * </ul>
+	 *
+	 * @return  The content model of this element, which will be the parent content model of child elements.
+	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @see  Closeable#__()
+	 * @see  Closeable#close()
+	 */
+	@Factory("textarea")
+	AnyTEXTAREA_c<D, __, ?> textarea_c() throws IOException;
 	// </editor-fold>
 	// Inherited: VIDEO
 }

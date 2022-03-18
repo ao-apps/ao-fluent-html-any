@@ -38,7 +38,7 @@ import java.io.IOException;
  */
 public interface AnyTextContent<
 	D  extends AnyDocument<D>,
-	__ extends AnyUnion_Palpable_Phrasing<D, __>
+	__ extends AnyTextContent<D, __>
 > extends TextWriter<__>,
 	Content<D, __> {
 

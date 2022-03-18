@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -51,6 +51,7 @@ public abstract class AnyPRE<
 
 	private boolean oldAutonli;
 	private boolean oldIndent;
+	private int oldDepth;
 
 	protected AnyPRE(D document, PC pc) {
 		super(document, pc);
@@ -79,11 +80,14 @@ public abstract class AnyPRE<
 		if(oldAutonli) document.setAutonli(false);
 		oldIndent = document.getIndent();
 		if(oldIndent) document.setIndent(false);
+		oldDepth = document.getDepth();
+		if(oldDepth != 0) document.setDepth(0);
 	}
 
 	@Override
 	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
 		document
+			.setDepth(oldDepth)
 			.setIndent(oldIndent)
 			.setAutonli(oldAutonli);
 		if(closeAttributes) {
