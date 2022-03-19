@@ -48,8 +48,7 @@ public abstract class AnyTEXTAREA<
 	__ extends AnyTEXTAREA__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyTEXTAREA_c<D, PC, _c>
-> extends
-	NormalText<D, PC, E, __, _c> implements
+> extends NormalText<D, PC, E, __, _c> implements
 	com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyTEXTAREA.Autocomplete>,
 	com.aoapps.html.any.attributes.Integer.Cols<E>,
 	// TODO: dirname

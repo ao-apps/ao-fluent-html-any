@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -40,8 +40,7 @@ public abstract class AnyDEL<
 	PC extends AnyPhrasingContent<D, PC>,
 	E  extends AnyDEL<D, PC, E, _c>,
 	_c extends AnyDEL_c<D, PC, _c>
-> extends
-	Transparent<D, PC, E, _c> implements
+> extends Transparent<D, PC, E, _c> implements
 	com.aoapps.html.any.attributes.Url.Cite<E>,
 	// TODO: datetime
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp

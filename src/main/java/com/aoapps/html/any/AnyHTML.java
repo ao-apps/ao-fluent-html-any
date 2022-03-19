@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -48,8 +48,7 @@ public abstract class AnyHTML<
 	__ extends AnyHTML__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyHTML_c<D, PC, _c>
-> extends
-	Normal<D, PC, E, __, _c>
+> extends Normal<D, PC, E, __, _c>
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	// Not on <html>: AlmostGlobalAttributes<E>
 {

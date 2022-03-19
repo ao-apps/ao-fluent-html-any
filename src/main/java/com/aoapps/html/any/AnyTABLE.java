@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,8 +49,7 @@ public abstract class AnyTABLE<
 	__ extends AnyTABLE__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyTABLE_c<D, PC, _c>
-> extends
-	Normal<D, PC, E, __, _c> implements
+> extends Normal<D, PC, E, __, _c> implements
 	com.aoapps.html.any.attributes.Enum.Align<E, AnyTABLE.Align>,
 	// TODO: bgcolor (deprecated)
 	com.aoapps.html.any.attributes.Integer.Border<E>,

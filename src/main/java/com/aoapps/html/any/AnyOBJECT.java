@@ -43,8 +43,7 @@ public abstract class AnyOBJECT<
 	__ extends AnyOBJECT__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyOBJECT_c<D, PC, _c>
-> extends
-	Normal<D, PC, E, __, _c> implements
+> extends Normal<D, PC, E, __, _c> implements
 	com.aoapps.html.any.attributes.Url.Data<E>,
 	com.aoapps.html.any.attributes.Text.Type<E>,
 	com.aoapps.html.any.attributes.Text.Name<E>,

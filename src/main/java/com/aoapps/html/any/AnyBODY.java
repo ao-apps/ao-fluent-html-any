@@ -47,8 +47,7 @@ public abstract class AnyBODY<
 	__ extends AnyBODY__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyBODY_c<D, PC, _c>
-> extends
-	Normal<D, PC, E, __, _c> implements
+> extends Normal<D, PC, E, __, _c> implements
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	AlmostGlobalAttributes<E>,
 	com.aoapps.html.any.attributes.event.Onafterprint<E>,

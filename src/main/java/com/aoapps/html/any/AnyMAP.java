@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -40,8 +40,7 @@ public abstract class AnyMAP<
 	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
 	E  extends AnyMAP<D, PC, E, _c>,
 	_c extends AnyMAP_c<D, PC, _c>
-> extends
-	TransparentText<D, PC, E, _c> implements
+> extends TransparentText<D, PC, E, _c> implements
 	com.aoapps.html.any.attributes.Text.Name<E>,
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	AlmostGlobalAttributes<E>

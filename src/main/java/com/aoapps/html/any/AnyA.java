@@ -45,8 +45,7 @@ public abstract class AnyA<
 	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 	E  extends AnyA<D, PC, E, _c>,
 	_c extends AnyA_c<D, PC, _c>
-> extends
-	Transparent<D, PC, E, _c> implements
+> extends Transparent<D, PC, E, _c> implements
 	com.aoapps.html.any.attributes.Url.Href<E>,
 	com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
 	// TODO: download

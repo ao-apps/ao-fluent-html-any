@@ -45,8 +45,7 @@ public abstract class AnySELECT<
 	__ extends AnySELECT__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnySELECT_c<D, PC, _c>
-> extends
-	Normal<D, PC, E, __, _c> implements
+> extends Normal<D, PC, E, __, _c> implements
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	// TODO: autocomplete
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
