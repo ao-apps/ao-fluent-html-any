@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,14 +29,7 @@ module com.aoapps.html.any {
 	exports com.aoapps.html.any.attributes.String;
 	exports com.aoapps.html.any.attributes.Text;
 	exports com.aoapps.html.any.attributes.Url;
-	exports com.aoapps.html.any.attributes.event.clipboard;
-	exports com.aoapps.html.any.attributes.event.drag;
-	exports com.aoapps.html.any.attributes.event.form;
-	exports com.aoapps.html.any.attributes.event.keyboard;
-	exports com.aoapps.html.any.attributes.event.media;
-	exports com.aoapps.html.any.attributes.event.misc;
-	exports com.aoapps.html.any.attributes.event.mouse;
-	exports com.aoapps.html.any.attributes.event.window;
+	exports com.aoapps.html.any.attributes.event;
 	// Direct
 	requires com.aoapps.collections; // <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId>
 	requires com.aoapps.encoding; // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>

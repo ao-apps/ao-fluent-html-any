@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,20 +35,20 @@ package com.aoapps.html.any;
  */
 public interface AlmostGlobalAttributes<E extends Element<?, ?, E> & AlmostGlobalAttributes<E>> extends
 	// Form
-	com.aoapps.html.any.attributes.event.form.Onblur<E>,
-	com.aoapps.html.any.attributes.event.form.Onfocus<E>,
+	com.aoapps.html.any.attributes.event.Onblur<E>,
+	com.aoapps.html.any.attributes.event.Onfocus<E>,
 	// Keyboard
-	com.aoapps.html.any.attributes.event.keyboard.Onkeydown<E>,
-	com.aoapps.html.any.attributes.event.keyboard.Onkeypress<E>,
-	com.aoapps.html.any.attributes.event.keyboard.Onkeyup<E>,
+	com.aoapps.html.any.attributes.event.Onkeydown<E>,
+	com.aoapps.html.any.attributes.event.Onkeypress<E>,
+	com.aoapps.html.any.attributes.event.Onkeyup<E>,
 	// Mouse
-	com.aoapps.html.any.attributes.event.mouse.Onclick<E>,
-	com.aoapps.html.any.attributes.event.mouse.Ondblclick<E>,
-	com.aoapps.html.any.attributes.event.mouse.Onmousedown<E>,
-	com.aoapps.html.any.attributes.event.mouse.Onmousemove<E>,
-	com.aoapps.html.any.attributes.event.mouse.Onmouseout<E>,
-	com.aoapps.html.any.attributes.event.mouse.Onmouseover<E>,
-	com.aoapps.html.any.attributes.event.mouse.Onmouseup<E>
+	com.aoapps.html.any.attributes.event.Onclick<E>,
+	com.aoapps.html.any.attributes.event.Ondblclick<E>,
+	com.aoapps.html.any.attributes.event.Onmousedown<E>,
+	com.aoapps.html.any.attributes.event.Onmousemove<E>,
+	com.aoapps.html.any.attributes.event.Onmouseout<E>,
+	com.aoapps.html.any.attributes.event.Onmouseover<E>,
+	com.aoapps.html.any.attributes.event.Onmouseup<E>
 {
 	// No methods, just adding event types
 }

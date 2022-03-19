@@ -202,14 +202,7 @@ public final class Attributes {
 	/**
 	 * See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
 	 *
-	 * @see  com.aoapps.html.any.attributes.event.window
-	 * @see  com.aoapps.html.any.attributes.event.form
-	 * @see  com.aoapps.html.any.attributes.event.keyboard
-	 * @see  com.aoapps.html.any.attributes.event.mouse
-	 * @see  com.aoapps.html.any.attributes.event.drag
-	 * @see  com.aoapps.html.any.attributes.event.clipboard
-	 * @see  com.aoapps.html.any.attributes.event.media
-	 * @see  com.aoapps.html.any.attributes.event.misc
+	 * @see  com.aoapps.html.any.attributes.event
 	 */
 	public static final class Event {
 

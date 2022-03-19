@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -51,30 +51,30 @@ public abstract class AnyBODY<
 	Normal<D, PC, E, __, _c> implements
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	AlmostGlobalAttributes<E>,
-	com.aoapps.html.any.attributes.event.window.Onafterprint<E>,
-	com.aoapps.html.any.attributes.event.window.Onbeforeprint<E>,
-	com.aoapps.html.any.attributes.event.window.Onbeforeunload<E>,
-	com.aoapps.html.any.attributes.event.window.Onhashchange<E>,
+	com.aoapps.html.any.attributes.event.Onafterprint<E>,
+	com.aoapps.html.any.attributes.event.Onbeforeprint<E>,
+	com.aoapps.html.any.attributes.event.Onbeforeunload<E>,
+	com.aoapps.html.any.attributes.event.Onhashchange<E>,
 	// TODO: onlanguagechange (experimental per MDN)
-	com.aoapps.html.any.attributes.event.window.Onmessage<E>,
+	com.aoapps.html.any.attributes.event.Onmessage<E>,
 	// TODO: onmessageerror (not on MDN)
-	com.aoapps.html.any.attributes.event.window.Onoffline<E>,
-	com.aoapps.html.any.attributes.event.window.Ononline<E>,
-	com.aoapps.html.any.attributes.event.window.Onpagehide<E>, // not on MDN
-	com.aoapps.html.any.attributes.event.window.Onpageshow<E>, // not on MDN
-	com.aoapps.html.any.attributes.event.window.Onpopstate<E>,
+	com.aoapps.html.any.attributes.event.Onoffline<E>,
+	com.aoapps.html.any.attributes.event.Ononline<E>,
+	com.aoapps.html.any.attributes.event.Onpagehide<E>, // not on MDN
+	com.aoapps.html.any.attributes.event.Onpageshow<E>, // not on MDN
+	com.aoapps.html.any.attributes.event.Onpopstate<E>,
 	// TODO: onredo (MDN only)
 	// TODO: onrejectionhandled
-	com.aoapps.html.any.attributes.event.window.Onstorage<E>,
+	com.aoapps.html.any.attributes.event.Onstorage<E>,
 	// TODO: onundo (MDN only)
 	// TODO: onunhandledrejection (not on MDN)
-	com.aoapps.html.any.attributes.event.window.Onunload<E>,
+	com.aoapps.html.any.attributes.event.Onunload<E>,
 	// TODO: Are the following supposed to be global event handlers? https://html.spec.whatwg.org/multipage/webappapis.html
 	// TODO: onblur
-	com.aoapps.html.any.attributes.event.window.Onerror<E>,
+	com.aoapps.html.any.attributes.event.Onerror<E>,
 	// TODO: onfocus
-	com.aoapps.html.any.attributes.event.window.Onload<E>,
-	com.aoapps.html.any.attributes.event.window.Onresize<E>
+	com.aoapps.html.any.attributes.event.Onload<E>,
+	com.aoapps.html.any.attributes.event.Onresize<E>
 	// TODO: onscroll? (not listed on body?)
 {
 

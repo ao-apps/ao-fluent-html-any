@@ -67,7 +67,7 @@ public abstract class AnyTEXTAREA<
 	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	AlmostGlobalAttributes<E>,
-	com.aoapps.html.any.attributes.event.form.Onchange<E>
+	com.aoapps.html.any.attributes.event.Onchange<E>
 {
 
 	private boolean oldAutonli;

@@ -76,7 +76,7 @@ public abstract class AnyINPUT<
 	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	AlmostGlobalAttributes<E>,
-	com.aoapps.html.any.attributes.event.form.Oninvalid<E>
+	com.aoapps.html.any.attributes.event.Oninvalid<E>
 {
 
 	private static final com.aoapps.lang.i18n.Resources RESOURCES =
@@ -232,13 +232,13 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		com.aoapps.html.any.attributes.Integer.WidthHtml5Only<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.media.Onabort<E>,
-		com.aoapps.html.any.attributes.event.window.Onerror<E>,
-		com.aoapps.html.any.attributes.event.window.Onload<E>,
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>,
-		com.aoapps.html.any.attributes.event.form.Onsearch<E>,
-		com.aoapps.html.any.attributes.event.form.Onselect<E>
+		com.aoapps.html.any.attributes.event.Onabort<E>,
+		com.aoapps.html.any.attributes.event.Onerror<E>,
+		com.aoapps.html.any.attributes.event.Onload<E>,
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Onsearch<E>,
+		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
 
 		private String type;
@@ -536,7 +536,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Checked<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>
 	{
 
 		protected Checkbox(D document, PC pc) {
@@ -567,8 +567,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected Color(D document, PC pc) {
@@ -648,8 +648,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected Date(D document, PC pc) {
@@ -731,8 +731,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected DatetimeLocal(D document, PC pc) {
@@ -818,9 +818,9 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>,
-		com.aoapps.html.any.attributes.event.form.Onselect<E> // Guessed (to match Placeholder)
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
 	{
 
 		protected Email(D document, PC pc) {
@@ -906,8 +906,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Multiple<E>,
 		// Does not support value per https://www.w3schools.com/tags/att_input_value.asp: com.aoapps.html.any.attributes.Text.Value<File>
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Onselect<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
 
 		protected File(D document, PC pc) {
@@ -1018,9 +1018,9 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		com.aoapps.html.any.attributes.Integer.WidthHtml5Only<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.media.Onabort<E>,
-		com.aoapps.html.any.attributes.event.window.Onerror<E>,
-		com.aoapps.html.any.attributes.event.window.Onload<E>
+		com.aoapps.html.any.attributes.event.Onabort<E>,
+		com.aoapps.html.any.attributes.event.Onerror<E>,
+		com.aoapps.html.any.attributes.event.Onload<E>
 	{
 
 		protected Image(D document, PC pc) {
@@ -1101,8 +1101,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected Month(D document, PC pc) {
@@ -1185,8 +1185,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>, // TODO: Review types (this and others), perhaps Attributes.Number or similar?
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected Number(D document, PC pc) {
@@ -1288,9 +1288,9 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>,
-		com.aoapps.html.any.attributes.event.form.Onselect<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
 
 		protected Password(D document, PC pc) {
@@ -1368,7 +1368,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Checked<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>
 	{
 
 		protected Radio(D document, PC pc) {
@@ -1398,8 +1398,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected Range(D document, PC pc) {
@@ -1529,10 +1529,10 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>,
-		com.aoapps.html.any.attributes.event.form.Onsearch<E>,
-		com.aoapps.html.any.attributes.event.form.Onselect<E> // Guessed (to match Placeholder)
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Onsearch<E>,
+		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
 	{
 
 		protected Search(D document, PC pc) {
@@ -1716,9 +1716,9 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>,
-		com.aoapps.html.any.attributes.event.form.Onselect<E> // Guessed (to match Placeholder)
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
 	{
 
 		protected Tel(D document, PC pc) {
@@ -1810,9 +1810,9 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>,
-		com.aoapps.html.any.attributes.event.form.Onselect<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
 
 		protected Text(D document, PC pc) {
@@ -1843,8 +1843,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected Time(D document, PC pc) {
@@ -1928,9 +1928,9 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>,
-		com.aoapps.html.any.attributes.event.form.Onselect<E> // Guessed (to match Placeholder)
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
 	{
 
 		protected Url(D document, PC pc) {
@@ -2017,8 +2017,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.form.Onchange<E>,
-		com.aoapps.html.any.attributes.event.form.Oninput<E>
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected Week(D document, PC pc) {

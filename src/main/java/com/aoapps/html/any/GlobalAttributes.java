@@ -67,24 +67,24 @@ public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<
 	// TODO: translate (experimental)
 	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	// Form
-	com.aoapps.html.any.attributes.event.form.Oncontextmenu<E>,
+	com.aoapps.html.any.attributes.event.Oncontextmenu<E>,
 	// TODO: onautocomplete
 	// TODO: onautocompleteerror
 	// Mouse
-	com.aoapps.html.any.attributes.event.mouse.Onmousewheel<E>,
-	com.aoapps.html.any.attributes.event.mouse.Onwheel<E>,
+	com.aoapps.html.any.attributes.event.Onmousewheel<E>,
+	com.aoapps.html.any.attributes.event.Onwheel<E>,
 	// Drag
-	com.aoapps.html.any.attributes.event.drag.Ondrag<E>,
-	com.aoapps.html.any.attributes.event.drag.Ondragend<E>,
-	com.aoapps.html.any.attributes.event.drag.Ondragenter<E>,
-	com.aoapps.html.any.attributes.event.drag.Ondragleave<E>,
-	com.aoapps.html.any.attributes.event.drag.Ondragover<E>,
-	com.aoapps.html.any.attributes.event.drag.Ondragstart<E>,
-	com.aoapps.html.any.attributes.event.drag.Ondrop<E>,
+	com.aoapps.html.any.attributes.event.Ondrag<E>,
+	com.aoapps.html.any.attributes.event.Ondragend<E>,
+	com.aoapps.html.any.attributes.event.Ondragenter<E>,
+	com.aoapps.html.any.attributes.event.Ondragleave<E>,
+	com.aoapps.html.any.attributes.event.Ondragover<E>,
+	com.aoapps.html.any.attributes.event.Ondragstart<E>,
+	com.aoapps.html.any.attributes.event.Ondrop<E>,
 	// Clipboard
-	com.aoapps.html.any.attributes.event.clipboard.Oncopy<E>,
-	com.aoapps.html.any.attributes.event.clipboard.Oncut<E>,
-	com.aoapps.html.any.attributes.event.clipboard.Onpaste<E>
+	com.aoapps.html.any.attributes.event.Oncopy<E>,
+	com.aoapps.html.any.attributes.event.Oncut<E>,
+	com.aoapps.html.any.attributes.event.Onpaste<E>
 	// TODO: onsort? https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
 {
 	// No methods, just adding attributes
