@@ -22,9 +22,12 @@
  */
 package com.aoapps.html.any.attributes.event;
 
+import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.html.any.Attributes;
+import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -33,16 +36,28 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
 
 	/**
 	 * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E onstorage(Object onstorage) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
+		if(element.getDocument().doctype != Doctype.HTML5) {
+			throw new LocalizedIllegalArgumentException(
+				RESOURCES,
+				"onlySupportedInHtml5",
+				element.getDocument().doctype,
+				"onstorage"
+			);
+		}
 		return Attributes.Event.attribute(element, "onstorage", onstorage);
 	}
 
@@ -50,6 +65,8 @@ public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
 	 * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #onstorage(java.lang.Object)
 	 */
@@ -61,6 +78,8 @@ public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
 	 * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #onstorage(java.lang.Object)
 	 */

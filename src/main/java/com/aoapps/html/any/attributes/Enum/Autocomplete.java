@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -47,6 +47,8 @@ import java.util.function.Function;
  * @param  <E>   This element type
  * @param  <V>   This enum type to use for this attribute
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Autocomplete<
@@ -60,6 +62,8 @@ public interface Autocomplete<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E autocomplete(String autocomplete) throws IOException {
@@ -83,6 +87,8 @@ public interface Autocomplete<
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E autocomplete(Suppliers.String<Ex> autocomplete) throws IOException, Ex {
@@ -95,6 +101,8 @@ public interface Autocomplete<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	default E autocomplete(V autocomplete) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -109,6 +117,8 @@ public interface Autocomplete<
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E autocomplete(IOSupplierE<? extends V, Ex> autocomplete) throws IOException, Ex {
@@ -121,6 +131,8 @@ public interface Autocomplete<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E autocomplete(String ... autocomplete) throws IOException {
@@ -169,6 +181,8 @@ public interface Autocomplete<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	@SuppressWarnings("unchecked") // generic varargs

@@ -37,7 +37,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2021-03-14T22:32:34-05:00"
-		dateModified="2022-03-18T20:50:58-05:00"
+		dateModified="2022-03-21T03:54:02-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -65,6 +65,9 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
 						Although the <ao:a href="https://www.w3schools.com/tags/ref_eventattributes.asp">event categories provided by w3schools</ao:a>
 						are conceptually helpful, they are not part of <ao:a href="https://html.spec.whatwg.org/multipage/">the HTML specification</ao:a>.
 					</li>
+					<li>Implemented many more <ao:a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes">global attributes</ao:a>.</li>
+					<li>Added very thorough doctype checks for all HTML 5 elements and attributes.</li>
+					<li>Annotated javadocs <code>@since HTML 5</code> for all HTML 5 elements and attributes.</li>
 				</ul>
 			</changelog:release>
 		</c:if>

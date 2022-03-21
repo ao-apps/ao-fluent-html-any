@@ -46,7 +46,6 @@ public abstract class AnySELECT<
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnySELECT_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	// TODO: autocomplete
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
 	com.aoapps.html.any.attributes.Text.Form<E>,
@@ -54,11 +53,11 @@ public abstract class AnySELECT<
 	com.aoapps.html.any.attributes.Text.Name<E>,
 	com.aoapps.html.any.attributes.Boolean.Required<E>,
 	com.aoapps.html.any.attributes.Integer.Size<E>,
-	// Global Attributes: https://www.w3schools.com/tags/ref_standardattributes.asp
+	// Global Attributes overrides
 	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>,
-	com.aoapps.html.any.attributes.event.Onchange<E>
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.Onchange<E>,
+	com.aoapps.html.any.attributes.event.Oninput<E>
 {
 
 	protected AnySELECT(D document, PC pc) {

@@ -58,12 +58,11 @@ public abstract class AnyIMG<
 	com.aoapps.html.any.attributes.String.Usemap<E>,
 	// TODO: vspace
 	com.aoapps.html.any.attributes.Integer.Width<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>,
+	// TODO: More events
+	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.Onabort<E>,
 	com.aoapps.html.any.attributes.event.Onerror<E>,
 	com.aoapps.html.any.attributes.event.Onload<E>
-	// TODO: More events
 {
 
 	protected AnyIMG(D document, PC pc) {

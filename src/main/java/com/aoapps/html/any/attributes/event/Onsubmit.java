@@ -29,17 +29,32 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onsubmit.asp">HTML onsubmit Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
-public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> {
+// Matches OnsubmitUnexpected
+@SuppressWarnings("deprecation")
+public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends OnsubmitUnexpected<E> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onsubmit.asp">HTML onsubmit Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
+	 * </ul>
 	 */
+	@Override
 	@Attributes.Funnel
 	default E onsubmit(Object onsubmit) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -47,23 +62,37 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onsubmit.asp">HTML onsubmit Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onsubmit(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onsubmit(IOSupplierE<?, Ex> onsubmit) throws IOException, Ex {
 		return onsubmit((onsubmit == null) ? null : onsubmit.get());
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onsubmit.asp">HTML onsubmit Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onsubmit(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onsubmit(MediaWritable<Ex> onsubmit) throws IOException, Ex {
 		return onsubmit((Object)onsubmit);
 	}

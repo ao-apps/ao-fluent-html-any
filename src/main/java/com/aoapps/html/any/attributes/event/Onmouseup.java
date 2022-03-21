@@ -29,16 +29,29 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onmouseup.asp">HTML onmouseup Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
+// Matches OnmouseupUnexpected
 public interface Onmouseup<E extends Element<?, ?, E> & Onmouseup<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmouseup.asp">HTML onmouseup Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E onmouseup(Object onmouseup) throws IOException {
@@ -47,7 +60,13 @@ public interface Onmouseup<E extends Element<?, ?, E> & Onmouseup<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmouseup.asp">HTML onmouseup Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -58,7 +77,13 @@ public interface Onmouseup<E extends Element<?, ?, E> & Onmouseup<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmouseup.asp">HTML onmouseup Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

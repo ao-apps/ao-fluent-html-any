@@ -32,16 +32,32 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_ondragover.asp">HTML ondragover Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragover">3.2.6 Global attributes / ondragover</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragover">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragover</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragover">8.1.7.2.1 IDL definitions / ondragover</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragover">GlobalEventHandlers.ondragover</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_ondragover.asp">ondragover Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
+ *
+ * @since HTML 5
  *
  * @author  AO Industries, Inc.
  */
 public interface Ondragover<E extends Element<?, ?, E> & Ondragover<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ondragover.asp">HTML ondragover Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragover">3.2.6 Global attributes / ondragover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragover">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragover">8.1.7.2.1 IDL definitions / ondragover</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragover">GlobalEventHandlers.ondragover</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragover.asp">ondragover Event</a>.</li>
+	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E ondragover(Object ondragover) throws IOException {
@@ -58,9 +74,17 @@ public interface Ondragover<E extends Element<?, ?, E> & Ondragover<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ondragover.asp">HTML ondragover Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragover">3.2.6 Global attributes / ondragover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragover">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragover">8.1.7.2.1 IDL definitions / ondragover</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragover">GlobalEventHandlers.ondragover</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragover.asp">ondragover Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #ondragover(java.lang.Object)
 	 */
@@ -69,9 +93,17 @@ public interface Ondragover<E extends Element<?, ?, E> & Ondragover<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ondragover.asp">HTML ondragover Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragover">3.2.6 Global attributes / ondragover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragover">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragover">8.1.7.2.1 IDL definitions / ondragover</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragover">GlobalEventHandlers.ondragover</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragover.asp">ondragover Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #ondragover(java.lang.Object)
 	 */

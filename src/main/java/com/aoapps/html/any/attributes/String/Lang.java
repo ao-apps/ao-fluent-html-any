@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -33,8 +33,9 @@ import java.util.Locale;
 /**
  * <ul>
  * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
- * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">lang - HTML: HyperText Markup Language | MDN</a>.</li>
- * <li>See <a href="https://www.w3schools.com/tags/att_lang.asp">HTML lang Attribute</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
  * </ul>
  *
  * @param  <E>   This element type
@@ -48,8 +49,9 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 	/**
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">lang - HTML: HyperText Markup Language | MDN</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_lang.asp">HTML lang Attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
 	 * </ul>
 	 */
 	@Attributes.Funnel
@@ -61,8 +63,9 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 	/**
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">lang - HTML: HyperText Markup Language | MDN</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_lang.asp">HTML lang Attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
@@ -77,8 +80,9 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 	/**
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">lang - HTML: HyperText Markup Language | MDN</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_lang.asp">HTML lang Attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
 	 * </ul>
 	 *
 	 * @see #lang(java.lang.String)
@@ -90,8 +94,9 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 	/**
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">lang - HTML: HyperText Markup Language | MDN</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_lang.asp">HTML lang Attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown

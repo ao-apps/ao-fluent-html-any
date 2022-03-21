@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -44,6 +44,8 @@ import java.util.function.Function;
  * @param  <E>   This element type
  * @param  <V>   This enum type to use for this attribute
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 // TODO: Support java Charset, too
@@ -58,6 +60,8 @@ public interface Charset<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E charset(String charset) throws IOException {
@@ -81,6 +85,8 @@ public interface Charset<
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
@@ -93,6 +99,8 @@ public interface Charset<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	default E charset(V charset) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -107,6 +115,8 @@ public interface Charset<
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {
@@ -118,6 +128,8 @@ public interface Charset<
 	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
 	 * <li>See <a href="https://www.iana.org/assignments/character-sets/character-sets.xhtml">Character Sets</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	public enum Value implements Function<AnyDocument<?>, String> {
 		// TODO: Add other charsets here?

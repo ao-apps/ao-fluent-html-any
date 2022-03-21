@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,13 +37,27 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
+@SuppressWarnings("deprecation")
 public abstract class AnyBR<
 	D  extends AnyDocument<D>,
 	PC extends AnyPhrasingContent<D, PC>,
 	E  extends AnyBR<D, PC, E>
-> extends Void<D, PC, E>
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	// Not on <br>: AlmostGlobalAttributes<E>
+> extends Void<D, PC, E> implements
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>
 {
 
 	protected AnyBR(D document, PC pc) {

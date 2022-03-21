@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,6 +42,8 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface List<E extends Element<?, ?, E> & List<E>> {
@@ -52,6 +54,8 @@ public interface List<E extends Element<?, ?, E> & List<E>> {
 	 * <li>See <a href="https://www.w3schools.com/tags/att_input_list.asp">HTML input list Attribute</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdeflist">&lt;input&gt;: The Input (Form Input) element</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E list(Object list) throws IOException {
@@ -76,6 +80,8 @@ public interface List<E extends Element<?, ?, E> & List<E>> {
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #list(java.lang.Object)
 	 */
 	default <Ex extends Throwable> E list(IOSupplierE<?, Ex> list) throws IOException, Ex {
@@ -90,6 +96,8 @@ public interface List<E extends Element<?, ?, E> & List<E>> {
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #list(java.lang.Object)
 	 */

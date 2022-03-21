@@ -32,7 +32,13 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onwheel.asp">HTML onwheel Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwheel">3.2.6 Global attributes / onwheel</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwheel">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwheel</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwheel">8.1.7.2.1 IDL definitions / onwheel</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwheel">GlobalEventHandlers.onwheel</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
@@ -41,7 +47,13 @@ import java.io.IOException;
 public interface Onwheel<E extends Element<?, ?, E> & Onwheel<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onwheel.asp">HTML onwheel Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwheel">3.2.6 Global attributes / onwheel</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwheel">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwheel</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwheel">8.1.7.2.1 IDL definitions / onwheel</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwheel">GlobalEventHandlers.onwheel</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel Event</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E onwheel(Object onwheel) throws IOException {
@@ -58,7 +70,13 @@ public interface Onwheel<E extends Element<?, ?, E> & Onwheel<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onwheel.asp">HTML onwheel Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwheel">3.2.6 Global attributes / onwheel</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwheel">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwheel</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwheel">8.1.7.2.1 IDL definitions / onwheel</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwheel">GlobalEventHandlers.onwheel</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -69,7 +87,13 @@ public interface Onwheel<E extends Element<?, ?, E> & Onwheel<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onwheel.asp">HTML onwheel Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwheel">3.2.6 Global attributes / onwheel</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwheel">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwheel</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwheel">8.1.7.2.1 IDL definitions / onwheel</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwheel">GlobalEventHandlers.onwheel</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onwheel.asp">onwheel Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

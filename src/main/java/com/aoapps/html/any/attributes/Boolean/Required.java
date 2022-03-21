@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,12 +35,16 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Required<E extends Element<?, ?, E> & Required<E>> {
 
 	/**
 	 * See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E required(boolean required) throws IOException {
@@ -59,6 +63,8 @@ public interface Required<E extends Element<?, ?, E> & Required<E>> {
 	/**
 	 * See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #required(boolean)
 	 */
 	default E required(Boolean required) throws IOException {
@@ -69,6 +75,8 @@ public interface Required<E extends Element<?, ?, E> & Required<E>> {
 	 * See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #required(java.lang.Boolean)
 	 */

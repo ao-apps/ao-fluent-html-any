@@ -53,21 +53,35 @@ import java.util.Locale;
  * @author  AO Industries, Inc.
  */
 // TODO: Extend RawTextElement: https://html.spec.whatwg.org/multipage/syntax.html#raw-text-elements
+@SuppressWarnings("deprecation")
 public abstract class AnySTYLE<
 	D  extends AnyDocument<D>,
 	PC extends AnyMetadataContent<D, PC>,
 	E  extends AnySTYLE<D, PC, E>
 > extends Element<D, PC, E> implements
 	com.aoapps.html.any.attributes.Text.Media<E>,
-	// Global Attributes: https://www.w3schools.com/tags/ref_standardattributes.asp
+	// Global Attributes overrides
 	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	// Not on <style>: AlmostGlobalAttributes<E>
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
 	com.aoapps.html.any.attributes.event.Onerror<E>, // Only listed at https://www.w3schools.com/tags/ref_attributes.asp
-	com.aoapps.html.any.attributes.event.Onload<E>
+	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+	com.aoapps.html.any.attributes.event.Onload<E>,
+	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>
 {
 
 	/**

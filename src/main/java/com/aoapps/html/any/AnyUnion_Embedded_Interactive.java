@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -54,11 +54,13 @@ public interface AnyUnion_Embedded_Interactive<
 	 * See <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">4.8.10 The audio element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement audio
 	 */
 	@Deprecated
 	@Factory("audio")
-	default void audio() throws IOException {
+	default AnyAUDIO audio() throws IOException {
 		throw new AssertionError("TODO: Implement audio");
 	}
 	// </editor-fold>
@@ -73,7 +75,7 @@ public interface AnyUnion_Embedded_Interactive<
 	 */
 	@Deprecated
 	@Factory("embed")
-	default void embed() throws IOException {
+	default AnyEMBED embed() throws IOException {
 		throw new AssertionError("TODO: Implement embed");
 	}
 	// </editor-fold>
@@ -88,7 +90,7 @@ public interface AnyUnion_Embedded_Interactive<
 	 */
 	@Deprecated
 	@Factory("iframe")
-	default void iframe() throws IOException {
+	default AnyIFRAME iframe() throws IOException {
 		throw new AssertionError("TODO: Implement iframe");
 	}
 	// </editor-fold>
@@ -223,11 +225,13 @@ public interface AnyUnion_Embedded_Interactive<
 	 * See <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">4.8.9 The video element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement video
 	 */
 	@Deprecated
 	@Factory("video")
-	default void video() throws IOException {
+	default AnyVIDEO video() throws IOException {
 		throw new AssertionError("TODO: Implement video");
 	}
 	// </editor-fold>

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -38,8 +38,11 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
+// Matches Width
 public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> extends Width<E> {
 
 	/**
@@ -47,6 +50,8 @@ public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> 
 	 * <p>
 	 * The width attribute is new in HTML5.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Override
 	@Attributes.Funnel
@@ -68,6 +73,8 @@ public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> 
 	 * <p>
 	 * The width attribute is new in HTML5.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Override
 	@Attributes.Funnel
@@ -91,6 +98,8 @@ public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> 
 	 * </p>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #width(java.lang.Integer)
 	 */

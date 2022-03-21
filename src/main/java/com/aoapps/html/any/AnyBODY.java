@@ -48,8 +48,7 @@ public abstract class AnyBODY<
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyBODY_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>,
+	// Event Attributes
 	com.aoapps.html.any.attributes.event.Onafterprint<E>,
 	com.aoapps.html.any.attributes.event.Onbeforeprint<E>,
 	com.aoapps.html.any.attributes.event.Onbeforeunload<E>,
@@ -68,13 +67,10 @@ public abstract class AnyBODY<
 	// TODO: onundo (MDN only)
 	// TODO: onunhandledrejection (not on MDN)
 	com.aoapps.html.any.attributes.event.Onunload<E>,
-	// TODO: Are the following supposed to be global event handlers? https://html.spec.whatwg.org/multipage/webappapis.html
-	// TODO: onblur
+	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.Onerror<E>,
-	// TODO: onfocus
 	com.aoapps.html.any.attributes.event.Onload<E>,
 	com.aoapps.html.any.attributes.event.Onresize<E>
-	// TODO: onscroll? (not listed on body?)
 {
 
 	protected AnyBODY(D document, PC pc) {

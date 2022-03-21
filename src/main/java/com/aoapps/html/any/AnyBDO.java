@@ -37,6 +37,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
+@SuppressWarnings("deprecation")
 public abstract class AnyBDO<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
@@ -45,8 +46,21 @@ public abstract class AnyBDO<
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyBDO_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>
 {
 
 	protected AnyBDO(D document, PC pc) {

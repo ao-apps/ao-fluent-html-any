@@ -22,6 +22,9 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.encoding.Doctype;
+import static com.aoapps.html.any.Elements.RESOURCES;
+import com.aoapps.lang.LocalizedIllegalArgumentException;
 import java.io.IOException;
 import java.io.Writer;
 
@@ -34,6 +37,8 @@ import java.io.Writer;
  * @param  <__>  This content model, which will be the parent content model of child elements
  * @param  <_c>  This content model as {@link Closeable}, which will be the parent content model of child elements
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 // TODO: Flow content, but with no header or footer element descendants.
@@ -44,13 +49,18 @@ public abstract class AnyFOOTER<
 	__ extends AnyFOOTER__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyFOOTER_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
-{
+> extends NormalText<D, PC, E, __, _c> {
 
 	protected AnyFOOTER(D document, PC pc) {
 		super(document, pc);
+		if(document.doctype != Doctype.HTML5) {
+			throw new LocalizedIllegalArgumentException(
+				RESOURCES,
+				"onlySupportedInHtml5",
+				document.doctype,
+				"<footer>"
+			);
+		}
 	}
 
 	@Override

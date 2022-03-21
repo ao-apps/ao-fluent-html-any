@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -215,6 +215,8 @@ public interface AnyPhrasingContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("datalist")
 	AnyDATALIST<D, __, ?, ?, ?> datalist() throws IOException;
@@ -228,6 +230,8 @@ public interface AnyPhrasingContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("datalist")
 	default <Ex extends Throwable> __ datalist__(IORunnableE<Ex> datalist) throws IOException, Ex {
@@ -243,6 +247,8 @@ public interface AnyPhrasingContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("datalist")
 	default <Ex extends Throwable> __ datalist__any(IOConsumerE<? super AnyDATALIST__<D, __, ? extends AnyDATALIST__<D, __, ?>>, Ex> datalist) throws IOException, Ex {
@@ -256,6 +262,8 @@ public interface AnyPhrasingContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("datalist")
 	default __ datalist__(Object text) throws IOException {
@@ -269,6 +277,8 @@ public interface AnyPhrasingContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("datalist")
 	default __ datalist__() throws IOException {
@@ -284,6 +294,8 @@ public interface AnyPhrasingContent<
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @since HTML 5
 	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
@@ -404,11 +416,13 @@ public interface AnyPhrasingContent<
 	 * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">4.12.4 The slot element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement slot
 	 */
 	@Deprecated
 	@Factory("slot")
-	default void slot() throws IOException {
+	default AnySLOT slot() throws IOException {
 		throw new AssertionError("TODO: Implement slot");
 	}
 	// </editor-fold>
@@ -435,7 +449,7 @@ public interface AnyPhrasingContent<
 	 */
 	@Deprecated
 	@Factory("wbr")
-	default void wbr() throws IOException {
+	default AnyWBR wbr() throws IOException {
 		throw new AssertionError("TODO: Implement wbr");
 	}
 	// </editor-fold>

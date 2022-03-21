@@ -52,6 +52,7 @@ import java.util.Locale;
  * @author  AO Industries, Inc.
  */
 // TODO: Extend RawTextElement: https://html.spec.whatwg.org/multipage/syntax.html#raw-text-elements
+@SuppressWarnings("deprecation")
 public abstract class AnySCRIPT<
 	D  extends AnyDocument<D>,
 	PC extends AnyScriptSupportingContent<D, PC>,
@@ -63,15 +64,28 @@ public abstract class AnySCRIPT<
 	com.aoapps.html.any.attributes.Url.Src<E>,
 	// TODO: type
 	// TODO: xmlSpace
-	// Global Attributes: https://www.w3schools.com/tags/ref_standardattributes.asp
+	// Global Attributes overrides
 	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	// Not on <script>: AlmostGlobalAttributes<E>
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
 	com.aoapps.html.any.attributes.event.Onerror<E>,
-	com.aoapps.html.any.attributes.event.Onload<E>
+	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+	com.aoapps.html.any.attributes.event.Onload<E>,
+	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>
 {
 
 	/**
@@ -162,7 +176,6 @@ public abstract class AnySCRIPT<
 	 *
 	 * @see Doctype#scriptType(java.lang.Appendable)
 	 */
-	@SuppressWarnings("deprecation")
 	protected E type() throws IOException {
 		Writer out = document.getUnsafe(null);
 		// TODO: Check didBody here and other attributes, perhaps in some central attribute registry that detects duplicate attributes, too
@@ -206,7 +219,6 @@ public abstract class AnySCRIPT<
 		return MediaEncoder.getInstance(document.encodingContext, mediaType, MediaType.XHTML);
 	}
 
-	@SuppressWarnings("deprecation")
 	protected boolean doCdata() {
 		return
 			document.serialization == Serialization.XML

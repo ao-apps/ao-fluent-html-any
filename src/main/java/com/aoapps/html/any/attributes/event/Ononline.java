@@ -36,12 +36,16 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Ononline<E extends Element<?, ?, E> & Ononline<E>> {
 
 	/**
 	 * See <a href="https://www.w3schools.com/tags/ev_ononline.asp">HTML ononline Event Attribute</a>.
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E ononline(Object ononline) throws IOException {
@@ -62,6 +66,8 @@ public interface Ononline<E extends Element<?, ?, E> & Ononline<E>> {
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #ononline(java.lang.Object)
 	 */
 	default <Ex extends Throwable> E ononline(IOSupplierE<?, Ex> ononline) throws IOException, Ex {
@@ -72,6 +78,8 @@ public interface Ononline<E extends Element<?, ?, E> & Ononline<E>> {
 	 * See <a href="https://www.w3schools.com/tags/ev_ononline.asp">HTML ononline Event Attribute</a>.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #ononline(java.lang.Object)
 	 */

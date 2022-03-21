@@ -58,9 +58,7 @@ public abstract class AnyTABLE<
 	// TODO: frame (deprecated)
 	// TODO: rules (deprecated)
 	// TODO: summary (deprecated)
-	com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
+	com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
 {
 
 	protected AnyTABLE(D document, PC pc) {

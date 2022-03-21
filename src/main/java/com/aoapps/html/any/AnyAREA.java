@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -58,10 +58,8 @@ public abstract class AnyAREA<
 	com.aoapps.html.any.attributes.Enum.Shape<E, AnyAREA.Shape>,
 	com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
 	// TODO: type (deprecated since definition is in conflict and doesn't do anything?)
-	// Global Attributes: https://www.w3schools.com/tags/ref_standardattributes.asp
-	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
+	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
 {
 
 	protected AnyAREA(D document, PC pc) {

@@ -44,10 +44,7 @@ public abstract class AnyDT<
 	__ extends AnyDT__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyDT_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
-{
+> extends NormalText<D, PC, E, __, _c> {
 
 	protected AnyDT(D document, PC pc) {
 		super(document, pc);

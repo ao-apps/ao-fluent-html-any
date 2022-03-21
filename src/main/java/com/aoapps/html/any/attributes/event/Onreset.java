@@ -22,59 +22,84 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onreset.asp">HTML onreset Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
-public interface Onreset<E extends Element<?, ?, E> & Onreset<E>> {
+// Matches OnresetUnexpected
+@SuppressWarnings("deprecation")
+public interface Onreset<E extends Element<?, ?, E> & Onreset<E>> extends OnresetUnexpected<E> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onreset.asp">HTML onreset Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
+	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
+	@Override
 	@Attributes.Funnel
 	default E onreset(Object onreset) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"onreset"
-			);
-		}
-		return Attributes.Event.attribute(element, "onreset", onreset);
+		return OnresetUnexpected.super.onreset(onreset);
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onreset.asp">HTML onreset Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #onreset(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onreset(IOSupplierE<?, Ex> onreset) throws IOException, Ex {
 		return onreset((onreset == null) ? null : onreset.get());
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onreset.asp">HTML onreset Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #onreset(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onreset(MediaWritable<Ex> onreset) throws IOException, Ex {
 		return onreset((Object)onreset);
 	}

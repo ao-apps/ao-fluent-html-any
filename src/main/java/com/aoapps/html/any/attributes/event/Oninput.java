@@ -22,62 +22,88 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
  * <ul>
- * <li>See <a href="https://www.w3schools.com/tags/ev_oninput.asp">HTML oninput Event Attribute</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
  * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
  * </ul>
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
-public interface Oninput<E extends Element<?, ?, E> & Oninput<E>> {
+// Matches OninputUnexpected
+@SuppressWarnings("deprecation")
+public interface Oninput<E extends Element<?, ?, E> & Oninput<E>> extends OninputUnexpected<E> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_oninput.asp">HTML oninput Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
+	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
+	@Override
 	@Attributes.Funnel
 	default E oninput(Object oninput) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"oninput"
-			);
-		}
-		return Attributes.Event.attribute(element, "oninput", oninput);
+		return OninputUnexpected.super.oninput(oninput);
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_oninput.asp">HTML oninput Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #oninput(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E oninput(IOSupplierE<?, Ex> oninput) throws IOException, Ex {
 		return oninput((oninput == null) ? null : oninput.get());
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_oninput.asp">HTML oninput Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #oninput(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E oninput(MediaWritable<Ex> oninput) throws IOException, Ex {
 		return oninput((Object)oninput);
 	}

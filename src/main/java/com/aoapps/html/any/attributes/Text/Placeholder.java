@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -38,12 +38,16 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
 
 	/**
 	 * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E placeholder(Object placeholder) throws IOException {
@@ -64,6 +68,8 @@ public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #placeholder(java.lang.Object)
 	 */
 	default <Ex extends Throwable> E placeholder(IOSupplierE<?, Ex> placeholder) throws IOException, Ex {
@@ -74,6 +80,8 @@ public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
 	 * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #placeholder(java.lang.Object)
 	 */

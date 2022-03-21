@@ -41,10 +41,8 @@ public abstract class AnyINS<
 	E  extends AnyINS<D, PC, E, _c>,
 	_c extends AnyINS_c<D, PC, _c>
 > extends TransparentText<D, PC, E, _c> implements
-	com.aoapps.html.any.attributes.Url.Cite<E>,
+	com.aoapps.html.any.attributes.Url.Cite<E>
 	// TODO: datetime
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
 {
 
 	protected AnyINS(D document, PC pc) {

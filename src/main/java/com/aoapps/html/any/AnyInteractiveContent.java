@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -65,11 +65,13 @@ public interface AnyInteractiveContent<
 	 * See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element">4.11.1 The details element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement details
 	 */
 	@Deprecated
 	@Factory("details")
-	default void details() throws IOException {
+	default AnyDETAILS details() throws IOException {
 		throw new AssertionError("TODO: Implement details");
 	}
 	// </editor-fold>

@@ -43,10 +43,8 @@ public abstract class AnyLI<
 	__ extends AnyLI__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyLI_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
+> extends NormalText<D, PC, E, __, _c>
 	// TODO: value (If the element is not a child of an ul or menu element)
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
 {
 
 	protected AnyLI(D document, PC pc) {

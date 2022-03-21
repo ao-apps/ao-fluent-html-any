@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -51,11 +51,13 @@ public interface AnyUnion_COLGROUP_ScriptSupporting<
 	 * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element">4.12.3 The template element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement template
 	 */
 	@Deprecated
 	@Factory("template")
-	default void template() throws IOException {
+	default AnyTEMPLATE template() throws IOException {
 		throw new AssertionError("TODO: Implement template");
 	}
 	// </editor-fold>

@@ -72,10 +72,9 @@ public abstract class AnyINPUT<
 	// TODO: pattern
 	com.aoapps.html.any.attributes.Boolean.Required<E>,
 	// TODO: step
-	// Global Attributes: https://www.w3schools.com/tags/ref_standardattributes.asp
+	// Global Attributes overrides
 	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>,
+	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.Oninvalid<E>
 {
 
@@ -104,6 +103,8 @@ public abstract class AnyINPUT<
 	 * <p>
 	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	public enum Autocomplete implements Function<AnyDocument<?>, String> {
 		OFF("off"),
@@ -231,13 +232,14 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Type<E, Dynamic.Type>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		com.aoapps.html.any.attributes.Integer.WidthHtml5Only<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.Onabort<E>,
-		com.aoapps.html.any.attributes.event.Onerror<E>,
-		com.aoapps.html.any.attributes.event.Onload<E>,
-		com.aoapps.html.any.attributes.event.Onchange<E>,
-		com.aoapps.html.any.attributes.event.Oninput<E>,
+		// Event Attributes
 		com.aoapps.html.any.attributes.event.Onsearch<E>,
+		// Global Event Attributes overrides
+		com.aoapps.html.any.attributes.event.Onabort<E>,
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Onerror<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Onload<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
 
@@ -535,8 +537,9 @@ public abstract class AnyINPUT<
 	> extends AnyINPUT<D, PC, E> implements
 		com.aoapps.html.any.attributes.Boolean.Checked<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.Onchange<E>
+		// Global Event Attributes overrides
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected Checkbox(D document, PC pc) {
@@ -556,6 +559,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Color<
 		D  extends AnyDocument<D>,
@@ -566,7 +571,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
@@ -590,6 +595,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -637,6 +644,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Date<
 		D  extends AnyDocument<D>,
@@ -647,7 +656,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
@@ -671,6 +680,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -720,6 +731,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class DatetimeLocal<
 		D  extends AnyDocument<D>,
@@ -730,7 +743,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
@@ -754,6 +767,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -802,6 +817,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Email<
 		D  extends AnyDocument<D>,
@@ -817,7 +834,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
@@ -842,6 +859,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -905,8 +924,9 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Capture<E, File.Capture>,
 		com.aoapps.html.any.attributes.Boolean.Multiple<E>,
 		// Does not support value per https://www.w3schools.com/tags/att_input_value.asp: com.aoapps.html.any.attributes.Text.Value<File>
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
 
@@ -916,6 +936,8 @@ public abstract class AnyINPUT<
 
 		/**
 		 * See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.
+		 *
+		 * @since HTML 5
 		 */
 		public enum Capture implements Function<AnyDocument<?>, String> {
 
@@ -1017,7 +1039,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Url.Src<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		com.aoapps.html.any.attributes.Integer.WidthHtml5Only<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onabort<E>,
 		com.aoapps.html.any.attributes.event.Onerror<E>,
 		com.aoapps.html.any.attributes.event.Onload<E>
@@ -1090,6 +1112,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Month<
 		D  extends AnyDocument<D>,
@@ -1100,7 +1124,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
@@ -1124,6 +1148,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -1174,6 +1200,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Number<
 		D  extends AnyDocument<D>,
@@ -1184,7 +1212,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>, // TODO: Review types (this and others), perhaps Attributes.Number or similar?
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
@@ -1208,6 +1236,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -1287,7 +1317,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E>
@@ -1304,6 +1334,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -1367,8 +1399,9 @@ public abstract class AnyINPUT<
 	> extends AnyINPUT<D, PC, E> implements
 		com.aoapps.html.any.attributes.Boolean.Checked<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-		com.aoapps.html.any.attributes.event.Onchange<E>
+		// Global Event Attributes overrides
+		com.aoapps.html.any.attributes.event.Onchange<E>,
+		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
 
 		protected Radio(D document, PC pc) {
@@ -1388,6 +1421,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Range<
 		D  extends AnyDocument<D>,
@@ -1397,7 +1432,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, Range.Autocomplete>,
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
@@ -1421,6 +1456,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -1514,6 +1551,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Search<
 		D  extends AnyDocument<D>,
@@ -1528,10 +1567,11 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Event Attributes
+		com.aoapps.html.any.attributes.event.Onsearch<E>,
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
-		com.aoapps.html.any.attributes.event.Onsearch<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
 	{
 
@@ -1554,6 +1594,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -1701,6 +1743,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Tel<
 		D  extends AnyDocument<D>,
@@ -1715,7 +1759,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
@@ -1740,6 +1784,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -1809,7 +1855,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E>
@@ -1832,6 +1878,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Time<
 		D  extends AnyDocument<D>,
@@ -1842,7 +1890,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
@@ -1866,6 +1914,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -1913,6 +1963,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Url<
 		D  extends AnyDocument<D>,
@@ -1927,7 +1979,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
@@ -1952,6 +2004,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */
@@ -2006,6 +2060,8 @@ public abstract class AnyINPUT<
 	 * @param  <D>   This document type
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
+	 *
+	 * @since HTML 5
 	 */
 	public abstract static class Week<
 		D  extends AnyDocument<D>,
@@ -2016,7 +2072,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
 		com.aoapps.html.any.attributes.Text.Value<E>,
-		// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
+		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>
 	{
@@ -2040,6 +2096,8 @@ public abstract class AnyINPUT<
 		 * This is to give a nice short list in code assist.
 		 * TODO: Find somewhere this relationship is defined (if there is any).
 		 * </p>
+		 *
+		 * @since HTML 5
 		 *
 		 * @see AnyINPUT.Autocomplete
 		 */

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,7 +28,13 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML Global tabindex Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+ * </ul>
  * <blockquote>
  * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
  * </blockquote>
@@ -37,10 +43,17 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
+// Matches Tabindex
 public interface TabindexHtml4<E extends Element<?, ?, E> & TabindexHtml4<E>> extends Tabindex<E> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML Global tabindex Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+	 * </ul>
 	 * <blockquote>
 	 * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
 	 * </blockquote>
@@ -53,7 +66,13 @@ public interface TabindexHtml4<E extends Element<?, ?, E> & TabindexHtml4<E>> ex
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML Global tabindex Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+	 * </ul>
 	 * <blockquote>
 	 * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
 	 * </blockquote>
@@ -66,7 +85,13 @@ public interface TabindexHtml4<E extends Element<?, ?, E> & TabindexHtml4<E>> ex
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML Global tabindex Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+	 * </ul>
 	 * <blockquote>
 	 * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
 	 * </blockquote>

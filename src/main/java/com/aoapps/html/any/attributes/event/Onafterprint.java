@@ -36,12 +36,16 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
 
 	/**
 	 * See <a href="https://www.w3schools.com/tags/ev_onafterprint.asp">HTML onafterprint Event Attribute</a>.
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E onafterprint(Object onafterprint) throws IOException {
@@ -62,6 +66,8 @@ public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #onafterprint(java.lang.Object)
 	 */
 	default <Ex extends Throwable> E onafterprint(IOSupplierE<?, Ex> onafterprint) throws IOException, Ex {
@@ -72,6 +78,8 @@ public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
 	 * See <a href="https://www.w3schools.com/tags/ev_onafterprint.asp">HTML onafterprint Event Attribute</a>.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #onafterprint(java.lang.Object)
 	 */

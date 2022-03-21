@@ -43,10 +43,7 @@ public abstract class AnyTBODY<
 	__ extends AnyTBODY__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyTBODY_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c> implements
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
-{
+> extends Normal<D, PC, E, __, _c> {
 
 	protected AnyTBODY(D document, PC pc) {
 		super(document, pc);

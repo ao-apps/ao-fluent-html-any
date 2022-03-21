@@ -43,12 +43,10 @@ public abstract class AnyOL<
 	__ extends AnyOL__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyOL_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c> implements
+> extends Normal<D, PC, E, __, _c>
 	// TOOD: reversed
 	// TODO: start
 	// TODO: type
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
 {
 
 	protected AnyOL(D document, PC pc) {

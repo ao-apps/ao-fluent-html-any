@@ -29,16 +29,29 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onkeyup.asp">HTML onkeyup Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
+// Matches OnkeyupUnexpected
 public interface Onkeyup<E extends Element<?, ?, E> & Onkeyup<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onkeyup.asp">HTML onkeyup Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E onkeyup(Object onkeyup) throws IOException {
@@ -47,7 +60,13 @@ public interface Onkeyup<E extends Element<?, ?, E> & Onkeyup<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onkeyup.asp">HTML onkeyup Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -58,7 +77,13 @@ public interface Onkeyup<E extends Element<?, ?, E> & Onkeyup<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onkeyup.asp">HTML onkeyup Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

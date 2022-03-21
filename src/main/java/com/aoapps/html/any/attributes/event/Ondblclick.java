@@ -29,16 +29,29 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_ondblclick.asp">HTML ondblclick Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondblclick">3.2.6 Global attributes / ondblclick</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondblclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondblclick</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondblclick">8.1.7.2.1 IDL definitions / ondblclick</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick">GlobalEventHandlers.ondblclick</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_ondblclick.asp">ondblclick Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
+// Matches OndblclickUnexpected
 public interface Ondblclick<E extends Element<?, ?, E> & Ondblclick<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ondblclick.asp">HTML ondblclick Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondblclick">3.2.6 Global attributes / ondblclick</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondblclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondblclick</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondblclick">8.1.7.2.1 IDL definitions / ondblclick</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick">GlobalEventHandlers.ondblclick</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondblclick.asp">ondblclick Event</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E ondblclick(Object ondblclick) throws IOException {
@@ -47,7 +60,13 @@ public interface Ondblclick<E extends Element<?, ?, E> & Ondblclick<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ondblclick.asp">HTML ondblclick Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondblclick">3.2.6 Global attributes / ondblclick</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondblclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondblclick</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondblclick">8.1.7.2.1 IDL definitions / ondblclick</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick">GlobalEventHandlers.ondblclick</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondblclick.asp">ondblclick Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -58,7 +77,13 @@ public interface Ondblclick<E extends Element<?, ?, E> & Ondblclick<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ondblclick.asp">HTML ondblclick Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondblclick">3.2.6 Global attributes / ondblclick</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondblclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondblclick</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondblclick">8.1.7.2.1 IDL definitions / ondblclick</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondblclick">GlobalEventHandlers.ondblclick</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondblclick.asp">ondblclick Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

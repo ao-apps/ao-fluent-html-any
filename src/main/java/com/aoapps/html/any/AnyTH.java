@@ -46,12 +46,10 @@ public abstract class AnyTH<
 	_c extends AnyTH_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
 	com.aoapps.html.any.attributes.Integer.Colspan<E>,
-	com.aoapps.html.any.attributes.Integer.Rowspan<E>,
+	com.aoapps.html.any.attributes.Integer.Rowspan<E>
 	// TODO: headers
 	// TODO: scope
 	// TODO: abbr
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
 {
 
 	protected AnyTH(D document, PC pc) {

@@ -40,7 +40,7 @@ import java.util.Locale;
  *
  * @author  AO Industries, Inc.
  */
-@SuppressWarnings("deprecation") // TODO: Why here?  Review if needed everywhere is used
+@SuppressWarnings("deprecation")
 public abstract class AnyHTML<
 	D  extends AnyDocument<D>,
 	PC extends Content<D, PC>,
@@ -48,9 +48,27 @@ public abstract class AnyHTML<
 	__ extends AnyHTML__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyHTML_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c>
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	// Not on <html>: AlmostGlobalAttributes<E>
+> extends Normal<D, PC, E, __, _c> implements
+	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
+	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
+	com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>
 {
 
 	protected AnyHTML(D document, PC pc) {

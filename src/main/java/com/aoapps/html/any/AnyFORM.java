@@ -48,7 +48,6 @@ public abstract class AnyFORM<
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyFORM_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	// TODO: accept (MDN only, HTML-4 only)
 	// TODO: accept-charset
 	com.aoapps.html.any.attributes.Url.Action<E>,
@@ -59,7 +58,9 @@ public abstract class AnyFORM<
 	com.aoapps.html.any.attributes.Boolean.Novalidate<E>,
 	com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
 	// TODO: rel
-	AlmostGlobalAttributes<E>
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.Onreset<E>,
+	com.aoapps.html.any.attributes.event.Onsubmit<E>
 {
 
 	protected AnyFORM(D document, PC pc) {

@@ -50,10 +50,10 @@ public abstract class AnyOBJECT<
 	com.aoapps.html.any.attributes.Text.Form<E>,
 	com.aoapps.html.any.attributes.Integer.Width<E>,
 	com.aoapps.html.any.attributes.Integer.Height<E>,
-	// Global Attributes: https://www.w3schools.com/tags/ref_standardattributes.asp
+	// Global Attributes overrides
 	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.Onload<E>
 {
 
 	protected AnyOBJECT(D document, PC pc) {

@@ -36,12 +36,16 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
 
 	/**
 	 * See <a href="https://www.w3schools.com/tags/ev_onmessage.asp">HTML onmessage Event Attribute</a>.
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E onmessage(Object onmessage) throws IOException {
@@ -62,6 +66,8 @@ public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #onmessage(java.lang.Object)
 	 */
 	default <Ex extends Throwable> E onmessage(IOSupplierE<?, Ex> onmessage) throws IOException, Ex {
@@ -72,6 +78,8 @@ public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
 	 * See <a href="https://www.w3schools.com/tags/ev_onmessage.asp">HTML onmessage Event Attribute</a>.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #onmessage(java.lang.Object)
 	 */

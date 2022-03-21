@@ -44,10 +44,8 @@ public abstract class AnyOPTGROUP<
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyOPTGROUP_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-	com.aoapps.html.any.attributes.Text.Label<E>,
-	AlmostGlobalAttributes<E>
+	com.aoapps.html.any.attributes.Text.Label<E>
 {
 
 	protected AnyOPTGROUP(D document, PC pc) {

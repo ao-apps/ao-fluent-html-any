@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,8 +35,11 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
+// Matches Height
 public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>> extends Height<E> {
 
 	/**
@@ -44,6 +47,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
 	 * <p>
 	 * The height attribute is new in HTML5.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Override
 	@Attributes.Funnel
@@ -65,6 +70,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
 	 * <p>
 	 * The height attribute is new in HTML5.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Override
 	@Attributes.Funnel
@@ -88,6 +95,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
 	 * </p>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #height(java.lang.Integer)
 	 */

@@ -29,16 +29,29 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onmousemove.asp">HTML onmousemove Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
+// Matches OnmousemoveUnexpected
 public interface Onmousemove<E extends Element<?, ?, E> & Onmousemove<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmousemove.asp">HTML onmousemove Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E onmousemove(Object onmousemove) throws IOException {
@@ -47,7 +60,13 @@ public interface Onmousemove<E extends Element<?, ?, E> & Onmousemove<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmousemove.asp">HTML onmousemove Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -58,7 +77,13 @@ public interface Onmousemove<E extends Element<?, ?, E> & Onmousemove<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmousemove.asp">HTML onmousemove Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

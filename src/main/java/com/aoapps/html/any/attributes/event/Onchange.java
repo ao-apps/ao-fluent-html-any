@@ -30,7 +30,11 @@ import java.io.IOException;
 
 /**
  * <ul>
- * <li>See <a href="https://www.w3schools.com/tags/ev_onchange.asp">HTML onchange Event Attribute</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onchange">3.2.6 Global attributes / onchange</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onchange</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onchange">8.1.7.2.1 IDL definitions / onchange</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange">GlobalEventHandlers.onchange</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event">HTMLElement: change event</a>.</li>
  * <li>See <a href="https://www.w3schools.com/jsref/event_onchange.asp">onchange Event</a>.</li>
  * </ul>
  *
@@ -38,12 +42,21 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
-// TODO: onchange should be a global attribute?  Review along with other events
-public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> {
+// Matches OnchangeUnexpected
+@SuppressWarnings("deprecation")
+public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> extends OnchangeUnexpected<E> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onchange.asp">HTML onchange Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onchange">3.2.6 Global attributes / onchange</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onchange</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onchange">8.1.7.2.1 IDL definitions / onchange</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange">GlobalEventHandlers.onchange</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event">HTMLElement: change event</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onchange.asp">onchange Event</a>.</li>
+	 * </ul>
 	 */
+	@Override
 	@Attributes.Funnel
 	default E onchange(Object onchange) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -51,23 +64,39 @@ public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onchange.asp">HTML onchange Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onchange">3.2.6 Global attributes / onchange</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onchange</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onchange">8.1.7.2.1 IDL definitions / onchange</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange">GlobalEventHandlers.onchange</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event">HTMLElement: change event</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onchange.asp">onchange Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onchange(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onchange(IOSupplierE<?, Ex> onchange) throws IOException, Ex {
 		return onchange((onchange == null) ? null : onchange.get());
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onchange.asp">HTML onchange Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onchange">3.2.6 Global attributes / onchange</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onchange</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onchange">8.1.7.2.1 IDL definitions / onchange</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange">GlobalEventHandlers.onchange</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event">HTMLElement: change event</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onchange.asp">onchange Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onchange(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onchange(MediaWritable<Ex> onchange) throws IOException, Ex {
 		return onchange((Object)onchange);
 	}

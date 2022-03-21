@@ -29,17 +29,32 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onload.asp">HTML onload Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
-public interface Onload<E extends Element<?, ?, E> & Onload<E>> {
+// Matches OnloadUnexpected
+@SuppressWarnings("deprecation")
+public interface Onload<E extends Element<?, ?, E> & Onload<E>> extends OnloadUnexpected<E> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onload.asp">HTML onload Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
+	 * </ul>
 	 */
+	@Override
 	@Attributes.Funnel
 	default E onload(Object onload) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -47,23 +62,37 @@ public interface Onload<E extends Element<?, ?, E> & Onload<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onload.asp">HTML onload Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onload(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onload(IOSupplierE<?, Ex> onload) throws IOException, Ex {
 		return onload((onload == null) ? null : onload.get());
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onload.asp">HTML onload Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onload(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onload(MediaWritable<Ex> onload) throws IOException, Ex {
 		return onload((Object)onload);
 	}

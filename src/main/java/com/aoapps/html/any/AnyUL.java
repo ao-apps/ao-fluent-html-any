@@ -43,10 +43,7 @@ public abstract class AnyUL<
 	__ extends AnyUL__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyUL_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c> implements
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
-{
+> extends Normal<D, PC, E, __, _c> {
 
 	protected AnyUL(D document, PC pc) {
 		super(document, pc);

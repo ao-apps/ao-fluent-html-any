@@ -54,10 +54,8 @@ public abstract class AnyA<
 	com.aoapps.html.any.attributes.String.Hreflang<E>,
 	// TODO: type
 	// TODO: referrerpolicy
-	// Global Attributes: https://www.w3schools.com/tags/ref_standardattributes.asp
-	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
+	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
 {
 
 	private static final com.aoapps.lang.i18n.Resources RESOURCES =

@@ -29,7 +29,13 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_oncut.asp">HTML oncut Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncut">3.2.6 Global attributes / oncut</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncut">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncut</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncut">8.1.7.2.1 IDL definitions / oncut</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncut">HTMLElement.oncut</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_oncut.asp">oncut Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
@@ -38,7 +44,13 @@ import java.io.IOException;
 public interface Oncut<E extends Element<?, ?, E> & Oncut<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_oncut.asp">HTML oncut Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncut">3.2.6 Global attributes / oncut</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncut">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncut</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncut">8.1.7.2.1 IDL definitions / oncut</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncut">HTMLElement.oncut</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncut.asp">oncut Event</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E oncut(Object oncut) throws IOException {
@@ -47,7 +59,13 @@ public interface Oncut<E extends Element<?, ?, E> & Oncut<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_oncut.asp">HTML oncut Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncut">3.2.6 Global attributes / oncut</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncut">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncut</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncut">8.1.7.2.1 IDL definitions / oncut</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncut">HTMLElement.oncut</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncut.asp">oncut Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -58,7 +76,13 @@ public interface Oncut<E extends Element<?, ?, E> & Oncut<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_oncut.asp">HTML oncut Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncut">3.2.6 Global attributes / oncut</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncut">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncut</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncut">8.1.7.2.1 IDL definitions / oncut</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncut">HTMLElement.oncut</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncut.asp">oncut Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

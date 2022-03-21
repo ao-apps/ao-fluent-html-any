@@ -36,6 +36,7 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
+@SuppressWarnings("deprecation")
 public abstract class AnyHEAD<
 	D  extends AnyDocument<D>,
 	PC extends AnyHTML_content<D, PC>,
@@ -43,9 +44,27 @@ public abstract class AnyHEAD<
 	__ extends AnyHEAD__<D, PC, __>,
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyHEAD_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c>
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	// Not on <head>: AlmostGlobalAttributes<E>
+> extends Normal<D, PC, E, __, _c> implements
+	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
+	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
+	com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>
 {
 
 	protected AnyHEAD(D document, PC pc) {

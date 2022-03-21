@@ -36,12 +36,16 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Onoffline<E extends Element<?, ?, E> & Onoffline<E>> {
 
 	/**
 	 * See <a href="https://www.w3schools.com/tags/ev_onoffline.asp">HTML onoffline Event Attribute</a>.
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E onoffline(Object onoffline) throws IOException {
@@ -62,6 +66,8 @@ public interface Onoffline<E extends Element<?, ?, E> & Onoffline<E>> {
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #onoffline(java.lang.Object)
 	 */
 	default <Ex extends Throwable> E onoffline(IOSupplierE<?, Ex> onoffline) throws IOException, Ex {
@@ -72,6 +78,8 @@ public interface Onoffline<E extends Element<?, ?, E> & Onoffline<E>> {
 	 * See <a href="https://www.w3schools.com/tags/ev_onoffline.asp">HTML onoffline Event Attribute</a>.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #onoffline(java.lang.Object)
 	 */

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -228,6 +228,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("bdi")
 	AnyBDI<D, __, ?, ?, ?> bdi() throws IOException;
@@ -241,6 +243,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("bdi")
 	default <Ex extends Throwable> __ bdi__(IORunnableE<Ex> bdi) throws IOException, Ex {
@@ -256,6 +260,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("bdi")
 	default <Ex extends Throwable> __ bdi__any(IOConsumerE<? super AnyBDI__<D, __, ? extends AnyBDI__<D, __, ?>>, Ex> bdi) throws IOException, Ex {
@@ -269,6 +275,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("bdi")
 	default __ bdi__(Object text) throws IOException {
@@ -282,6 +290,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("bdi")
 	default __ bdi__() throws IOException {
@@ -297,6 +307,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @since HTML 5
 	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
@@ -613,6 +625,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element">4.5.13 The data element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("data")
 	AnyDATA<D, __, ?, ?, ?> data() throws IOException;
@@ -622,6 +636,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element">4.5.13 The data element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("data")
 	AnyDATA<D, __, ?, ?, ?> data(Object value) throws IOException;
@@ -633,6 +649,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("data")
 	<Ex extends Throwable> AnyDATA<D, __, ?, ?, ?> data(IOSupplierE<?, Ex> value) throws IOException, Ex;
@@ -646,6 +664,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("data")
 	default <Ex extends Throwable> __ data__(Object value, IORunnableE<Ex> data) throws IOException, Ex {
@@ -661,6 +681,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("data")
 	default <Ex extends Throwable> __ data__any(Object value, IOConsumerE<? super AnyDATA__<D, __, ? extends AnyDATA__<D, __, ?>>, Ex> data) throws IOException, Ex {
@@ -674,6 +696,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("data")
 	default __ data__(Object value, Object text) throws IOException {
@@ -687,6 +711,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("data")
 	default __ data__(Object value) throws IOException {
@@ -702,6 +728,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @since HTML 5
 	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
@@ -1256,6 +1284,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element">4.5.23 The mark element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("mark")
 	AnyMARK<D, __, ?, ?, ?> mark() throws IOException;
@@ -1269,6 +1299,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("mark")
 	default <Ex extends Throwable> __ mark__(IORunnableE<Ex> mark) throws IOException, Ex {
@@ -1284,6 +1316,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("mark")
 	default <Ex extends Throwable> __ mark__any(IOConsumerE<? super AnyMARK__<D, __, ? extends AnyMARK__<D, __, ?>>, Ex> mark) throws IOException, Ex {
@@ -1297,6 +1331,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("mark")
 	default __ mark__(Object text) throws IOException {
@@ -1310,6 +1346,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("mark")
 	default __ mark__() throws IOException {
@@ -1326,6 +1364,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
 	 *
+	 * @since HTML 5
+	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
 	 */
@@ -1339,6 +1379,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-meter-element">4.10.14 The meter element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("meter")
 	AnyMETER<D, __, ?, ?, ?> meter() throws IOException;
@@ -1354,6 +1396,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("meter")
 	default <Ex extends Throwable> __ meter__(IORunnableE<Ex> meter) throws IOException, Ex {
@@ -1369,6 +1413,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("meter")
 	default <Ex extends Throwable> __ meter__any(IOConsumerE<? super AnyMETER__<D, __, ? extends AnyMETER__<D, __, ?>>, Ex> meter) throws IOException, Ex {
@@ -1382,6 +1428,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("meter")
 	default __ meter__(Object text) throws IOException {
@@ -1395,6 +1443,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("meter")
 	default __ meter__() throws IOException {
@@ -1411,6 +1461,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
 	 *
+	 * @since HTML 5
+	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
 	 */
@@ -1424,6 +1476,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element">4.10.12 The output element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("output")
 	AnyOUTPUT<D, __, ?, ?, ?> output() throws IOException;
@@ -1437,6 +1491,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("output")
 	default <Ex extends Throwable> __ output__(IORunnableE<Ex> output) throws IOException, Ex {
@@ -1452,6 +1508,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("output")
 	default <Ex extends Throwable> __ output__any(IOConsumerE<? super AnyOUTPUT__<D, __, ? extends AnyOUTPUT__<D, __, ?>>, Ex> output) throws IOException, Ex {
@@ -1465,6 +1523,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("output")
 	default __ output__(Object text) throws IOException {
@@ -1478,6 +1538,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("output")
 	default __ output__() throws IOException {
@@ -1494,6 +1556,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
 	 *
+	 * @since HTML 5
+	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
 	 */
@@ -1506,6 +1570,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element">4.10.13 The progress element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("progress")
 	AnyPROGRESS<D, __, ?, ?, ?> progress() throws IOException;
@@ -1519,6 +1585,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("progress")
 	default <Ex extends Throwable> __ progress__(IORunnableE<Ex> progress) throws IOException, Ex {
@@ -1534,6 +1602,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("progress")
 	default <Ex extends Throwable> __ progress__any(IOConsumerE<? super AnyPROGRESS__<D, __, ? extends AnyPROGRESS__<D, __, ?>>, Ex> progress) throws IOException, Ex {
@@ -1547,6 +1617,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("progress")
 	default __ progress__(Object text) throws IOException {
@@ -1560,6 +1632,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("progress")
 	default __ progress__() throws IOException {
@@ -1575,6 +1649,8 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @since HTML 5
 	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
@@ -1677,11 +1753,13 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element">4.5.10 The ruby element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement ruby
 	 */
 	@Deprecated
 	@Factory("ruby")
-	default void ruby() throws IOException {
+	default AnyRUBY ruby() throws IOException {
 		throw new AssertionError("TODO: Implement ruby");
 	}
 	// </editor-fold>
@@ -2269,11 +2347,13 @@ public interface AnyUnion_Palpable_Phrasing<
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element">4.5.14 The time element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement time
 	 */
 	@Deprecated
 	@Factory("time")
-	default void time() throws IOException {
+	default AnyTIME time() throws IOException {
 		throw new AssertionError("TODO: Implement time");
 	}
 	// </editor-fold>

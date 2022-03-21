@@ -22,6 +22,9 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.encoding.Doctype;
+import static com.aoapps.html.any.Elements.RESOURCES;
+import com.aoapps.lang.LocalizedIllegalArgumentException;
 import java.io.IOException;
 import java.io.Writer;
 
@@ -33,6 +36,8 @@ import java.io.Writer;
  * @param  <E>   This element type
  * @param  <__>  This content model, which will be the parent content model of child elements
  * @param  <_c>  This content model as {@link Closeable}, which will be the parent content model of child elements
+ *
+ * @since HTML 5
  *
  * @author  AO Industries, Inc.
  */
@@ -46,13 +51,19 @@ public abstract class AnyOUTPUT<
 > extends NormalText<D, PC, E, __, _c> implements
 	// TODO: for, like AnyLABEL.for, but attribute named "ForArray", with support for multiple values like the Class attribute.
 	com.aoapps.html.any.attributes.Text.Form<E>,
-	com.aoapps.html.any.attributes.Text.Name<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
+	com.aoapps.html.any.attributes.Text.Name<E>
 {
 
 	protected AnyOUTPUT(D document, PC pc) {
 		super(document, pc);
+		if(document.doctype != Doctype.HTML5) {
+			throw new LocalizedIllegalArgumentException(
+				RESOURCES,
+				"onlySupportedInHtml5",
+				document.doctype,
+				"<output>"
+			);
+		}
 	}
 
 	@Override

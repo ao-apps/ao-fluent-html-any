@@ -29,17 +29,30 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/jsref/event_onabort.asp">onabort Event</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onabort">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onabort</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onabort">8.1.7.2.1 IDL definitions / onabort</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort">GlobalEventHandlers.onabort</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onabort_media.asp">onabort Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
-public interface Onabort<E extends Element<?, ?, E> & Onabort<E>> {
+// Matches OnabortUnexpected
+@SuppressWarnings("deprecation")
+public interface Onabort<E extends Element<?, ?, E> & Onabort<E>> extends OnabortUnexpected<E> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/jsref/event_onabort.asp">onabort Event</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onabort">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onabort</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onabort">8.1.7.2.1 IDL definitions / onabort</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort">GlobalEventHandlers.onabort</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onabort_media.asp">onabort Event</a>.</li>
+	 * </ul>
 	 */
+	@Override
 	@Attributes.Funnel
 	default E onabort(Object onabort) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -47,23 +60,35 @@ public interface Onabort<E extends Element<?, ?, E> & Onabort<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/jsref/event_onabort.asp">onabort Event</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onabort">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onabort</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onabort">8.1.7.2.1 IDL definitions / onabort</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort">GlobalEventHandlers.onabort</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onabort_media.asp">onabort Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onabort(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onabort(IOSupplierE<?, Ex> onabort) throws IOException, Ex {
 		return onabort((onabort == null) ? null : onabort.get());
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/jsref/event_onabort.asp">onabort Event</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onabort">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onabort</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onabort">8.1.7.2.1 IDL definitions / onabort</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onabort">GlobalEventHandlers.onabort</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onabort_media.asp">onabort Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onabort(java.lang.Object)
 	 */
+	@Override
 	default <Ex extends Throwable> E onabort(MediaWritable<Ex> onabort) throws IOException, Ex {
 		return onabort((Object)onabort);
 	}

@@ -29,16 +29,29 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onmouseout.asp">HTML onmouseout Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseout">3.2.6 Global attributes / onmouseout</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseout">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseout</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseout">8.1.7.2.1 IDL definitions / onmouseout</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout">GlobalEventHandlers.onmouseout</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseout.asp">onmouseout Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
+// Matches OnmouseoutUnexpected
 public interface Onmouseout<E extends Element<?, ?, E> & Onmouseout<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmouseout.asp">HTML onmouseout Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseout">3.2.6 Global attributes / onmouseout</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseout">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseout</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseout">8.1.7.2.1 IDL definitions / onmouseout</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout">GlobalEventHandlers.onmouseout</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseout.asp">onmouseout Event</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E onmouseout(Object onmouseout) throws IOException {
@@ -47,7 +60,13 @@ public interface Onmouseout<E extends Element<?, ?, E> & Onmouseout<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmouseout.asp">HTML onmouseout Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseout">3.2.6 Global attributes / onmouseout</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseout">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseout</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseout">8.1.7.2.1 IDL definitions / onmouseout</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout">GlobalEventHandlers.onmouseout</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseout.asp">onmouseout Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -58,7 +77,13 @@ public interface Onmouseout<E extends Element<?, ?, E> & Onmouseout<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmouseout.asp">HTML onmouseout Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseout">3.2.6 Global attributes / onmouseout</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseout">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseout</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseout">8.1.7.2.1 IDL definitions / onmouseout</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseout">GlobalEventHandlers.onmouseout</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseout.asp">onmouseout Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

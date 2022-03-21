@@ -187,11 +187,9 @@ public interface AnyUnion_Interactive_Phrasing<
 	 *
 	 * @deprecated  TODO: Implement button
 	 */
-	// TODO: Global Attributes: https://www.w3schools.com/tags/ref_standardattributes.asp
-	// TODO: com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
 	@Deprecated
 	@Factory("button")
-	default void button() throws IOException {
+	default AnyBUTTON button() throws IOException {
 		throw new AssertionError("TODO: Implement button");
 	}
 	// </editor-fold>

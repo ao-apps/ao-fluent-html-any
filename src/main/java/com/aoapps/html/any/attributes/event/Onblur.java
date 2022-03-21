@@ -29,16 +29,29 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onblur.asp">HTML onblur Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
+// Matches OnblurUnexpected
 public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onblur.asp">HTML onblur Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E onblur(Object onblur) throws IOException {
@@ -47,7 +60,13 @@ public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onblur.asp">HTML onblur Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -58,7 +77,13 @@ public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onblur.asp">HTML onblur Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

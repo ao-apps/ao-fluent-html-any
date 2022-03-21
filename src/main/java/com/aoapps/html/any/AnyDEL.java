@@ -41,10 +41,8 @@ public abstract class AnyDEL<
 	E  extends AnyDEL<D, PC, E, _c>,
 	_c extends AnyDEL_c<D, PC, _c>
 > extends Transparent<D, PC, E, _c> implements
-	com.aoapps.html.any.attributes.Url.Cite<E>,
+	com.aoapps.html.any.attributes.Url.Cite<E>
 	// TODO: datetime
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
 {
 
 	protected AnyDEL(D document, PC pc) {

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,11 +22,14 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
+import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
+import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -38,6 +41,8 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Form<E extends Element<?, ?, E> & Form<E>> {
@@ -47,10 +52,20 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E form(Object form) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
+		if(element.getDocument().doctype != Doctype.HTML5) {
+			throw new LocalizedIllegalArgumentException(
+				RESOURCES,
+				"onlySupportedInHtml5",
+				element.getDocument().doctype,
+				"form"
+			);
+		}
 		return Attributes.Text.attribute(element, "form", MarkupType.NONE, form, true, true, textInXhtmlAttributeEncoder);
 	}
 
@@ -61,6 +76,8 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #form(java.lang.Object)
 	 */
@@ -75,6 +92,8 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #form(java.lang.Object)
 	 */

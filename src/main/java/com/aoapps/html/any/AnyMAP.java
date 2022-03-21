@@ -41,9 +41,7 @@ public abstract class AnyMAP<
 	E  extends AnyMAP<D, PC, E, _c>,
 	_c extends AnyMAP_c<D, PC, _c>
 > extends TransparentText<D, PC, E, _c> implements
-	com.aoapps.html.any.attributes.Text.Name<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
+	com.aoapps.html.any.attributes.Text.Name<E>
 {
 
 	protected AnyMAP(D document, PC pc) {

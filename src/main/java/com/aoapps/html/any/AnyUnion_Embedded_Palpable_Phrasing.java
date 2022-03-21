@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -52,11 +52,13 @@ public interface AnyUnion_Embedded_Palpable_Phrasing<
 	 * See <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">4.12.5 The canvas element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement canvas
 	 */
 	@Deprecated
 	@Factory("canvas")
-	default void canvas() throws IOException {
+	default AnyCANVAS canvas() throws IOException {
 		throw new AssertionError("TODO: Implement canvas");
 	}
 	// </editor-fold>

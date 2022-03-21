@@ -32,16 +32,32 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_ondragstart.asp">HTML ondragstart Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragstart">3.2.6 Global attributes / ondragstart</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragstart">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragstart</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragstart">8.1.7.2.1 IDL definitions / ondragstart</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragstart">GlobalEventHandlers.ondragstart</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_ondragstart.asp">ondragstart Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
+ *
+ * @since HTML 5
  *
  * @author  AO Industries, Inc.
  */
 public interface Ondragstart<E extends Element<?, ?, E> & Ondragstart<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ondragstart.asp">HTML ondragstart Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragstart">3.2.6 Global attributes / ondragstart</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragstart">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragstart</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragstart">8.1.7.2.1 IDL definitions / ondragstart</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragstart">GlobalEventHandlers.ondragstart</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragstart.asp">ondragstart Event</a>.</li>
+	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E ondragstart(Object ondragstart) throws IOException {
@@ -58,9 +74,17 @@ public interface Ondragstart<E extends Element<?, ?, E> & Ondragstart<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ondragstart.asp">HTML ondragstart Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragstart">3.2.6 Global attributes / ondragstart</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragstart">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragstart</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragstart">8.1.7.2.1 IDL definitions / ondragstart</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragstart">GlobalEventHandlers.ondragstart</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragstart.asp">ondragstart Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #ondragstart(java.lang.Object)
 	 */
@@ -69,9 +93,17 @@ public interface Ondragstart<E extends Element<?, ?, E> & Ondragstart<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ondragstart.asp">HTML ondragstart Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragstart">3.2.6 Global attributes / ondragstart</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragstart">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragstart</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragstart">8.1.7.2.1 IDL definitions / ondragstart</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragstart">GlobalEventHandlers.ondragstart</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragstart.asp">ondragstart Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #ondragstart(java.lang.Object)
 	 */

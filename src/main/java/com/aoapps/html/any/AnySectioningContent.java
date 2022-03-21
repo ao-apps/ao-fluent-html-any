@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,6 +35,8 @@ import java.io.IOException;
  * @param  <D>   This document type
  * @param  <__>  This content model, which will be the parent content model of child elements
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface AnySectioningContent<
@@ -55,6 +57,8 @@ public interface AnySectioningContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("article")
 	AnyARTICLE<D, __, ?, ?, ?> article() throws IOException;
@@ -68,6 +72,8 @@ public interface AnySectioningContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("article")
 	default <Ex extends Throwable> __ article__(IORunnableE<Ex> article) throws IOException, Ex {
@@ -83,6 +89,8 @@ public interface AnySectioningContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("article")
 	default <Ex extends Throwable> __ article__any(IOConsumerE<? super AnyARTICLE__<D, __, ? extends AnyARTICLE__<D, __, ?>>, Ex> article) throws IOException, Ex {
@@ -96,6 +104,8 @@ public interface AnySectioningContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("article")
 	default __ article__(Object text) throws IOException {
@@ -109,6 +119,8 @@ public interface AnySectioningContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("article")
 	default __ article__() throws IOException {
@@ -125,6 +137,8 @@ public interface AnySectioningContent<
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
 	 *
+	 * @since HTML 5
+	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
 	 */
@@ -137,6 +151,8 @@ public interface AnySectioningContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("aside")
 	AnyASIDE<D, __, ?, ?, ?> aside() throws IOException;
@@ -150,6 +166,8 @@ public interface AnySectioningContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("aside")
 	default <Ex extends Throwable> __ aside__(IORunnableE<Ex> aside) throws IOException, Ex {
@@ -165,6 +183,8 @@ public interface AnySectioningContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("aside")
 	default <Ex extends Throwable> __ aside__any(IOConsumerE<? super AnyASIDE__<D, __, ? extends AnyASIDE__<D, __, ?>>, Ex> aside) throws IOException, Ex {
@@ -178,6 +198,8 @@ public interface AnySectioningContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("aside")
 	default __ aside__(Object text) throws IOException {
@@ -191,6 +213,8 @@ public interface AnySectioningContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("aside")
 	default __ aside__() throws IOException {
@@ -207,6 +231,8 @@ public interface AnySectioningContent<
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
 	 *
+	 * @since HTML 5
+	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
 	 */
@@ -219,6 +245,8 @@ public interface AnySectioningContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("nav")
 	AnyNAV<D, __, ?, ?, ?> nav() throws IOException;
@@ -232,6 +260,8 @@ public interface AnySectioningContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("nav")
 	default <Ex extends Throwable> __ nav__(IORunnableE<Ex> nav) throws IOException, Ex {
@@ -247,6 +277,8 @@ public interface AnySectioningContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("nav")
 	default <Ex extends Throwable> __ nav__any(IOConsumerE<? super AnyNAV__<D, __, ? extends AnyNAV__<D, __, ?>>, Ex> nav) throws IOException, Ex {
@@ -260,6 +292,8 @@ public interface AnySectioningContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("nav")
 	default __ nav__(Object text) throws IOException {
@@ -273,6 +307,8 @@ public interface AnySectioningContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("nav")
 	default __ nav__() throws IOException {
@@ -289,6 +325,8 @@ public interface AnySectioningContent<
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
 	 *
+	 * @since HTML 5
+	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
 	 */
@@ -301,6 +339,8 @@ public interface AnySectioningContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("section")
 	AnySECTION<D, __, ?, ?, ?> section() throws IOException;
@@ -314,6 +354,8 @@ public interface AnySectioningContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("section")
 	default <Ex extends Throwable> __ section__(IORunnableE<Ex> section) throws IOException, Ex {
@@ -329,6 +371,8 @@ public interface AnySectioningContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("section")
 	default <Ex extends Throwable> __ section__any(IOConsumerE<? super AnySECTION__<D, __, ? extends AnySECTION__<D, __, ?>>, Ex> section) throws IOException, Ex {
@@ -342,6 +386,8 @@ public interface AnySectioningContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("section")
 	default __ section__(Object text) throws IOException {
@@ -355,6 +401,8 @@ public interface AnySectioningContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("section")
 	default __ section__() throws IOException {
@@ -370,6 +418,8 @@ public interface AnySectioningContent<
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @since HTML 5
 	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()

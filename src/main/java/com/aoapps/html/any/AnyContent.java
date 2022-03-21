@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -199,14 +199,15 @@ public interface AnyContent<
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element">4.4.13 The figcaption element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement figcaption
 	 */
 	@Deprecated
 	@Factory("figcaption")
-	default void figcaption() throws IOException {
+	default AnyFIGCAPTION figcaption() throws IOException {
 		throw new AssertionError("TODO: Implement figcaption");
 	}
-	// TODO: __ extends AnyFigcaptionContent<D, __> (where AnyFigcaptionContent extends AnyFlowContent + AnyFigcaption)
 	// </editor-fold>
 	// Inherited: MAIN
 	// Inherited: DIV
@@ -227,14 +228,15 @@ public interface AnyContent<
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element">4.5.11 The rt element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement rt
 	 */
 	@Deprecated
 	@Factory("rt")
-	default void rt() throws IOException {
+	default AnyRT rt() throws IOException {
 		throw new AssertionError("TODO: Implement rt");
 	}
-	// TODO: __ extends RUBY_content<D, __>
 	// </editor-fold>
 	// <editor-fold defaultstate="collapsed" desc="RP">
 	/**
@@ -243,14 +245,15 @@ public interface AnyContent<
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">4.5.12 The rp element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement rp
 	 */
 	@Deprecated
 	@Factory("rp")
-	default void rp() throws IOException {
+	default AnyRP rp() throws IOException {
 		throw new AssertionError("TODO: Implement rp");
 	}
-	// TODO: __ extends RUBY_content<D, __>
 	// </editor-fold>
 	// Inherited: DATA
 	// Inherited: TIME
@@ -279,14 +282,15 @@ public interface AnyContent<
 	 * See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element">4.8.2 The source element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement source
 	 */
 	@Deprecated
 	@Factory("source")
-	default void source() throws IOException {
+	default AnySOURCE source() throws IOException {
 		throw new AssertionError("TODO: Implement source");
 	}
-	// TODO: __ extends TODO<D, __>
 	// </editor-fold>
 	// Inherited: IMG
 	// Inherited: IFRAME
@@ -302,14 +306,15 @@ public interface AnyContent<
 	 * See <a href="https://html.spec.whatwg.org/multipage/media.html#the-track-element">4.8.11 The track element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement track
 	 */
 	@Deprecated
 	@Factory("track")
-	default void track() throws IOException {
+	default AnyTRACK track() throws IOException {
 		throw new AssertionError("TODO: Implement track");
 	}
-	// TODO: __ extends MediaContent<D, __>
 	// </editor-fold>
 	// Inherited: MAP
 	// Inherited: AREA
@@ -349,10 +354,9 @@ public interface AnyContent<
 	 */
 	@Deprecated
 	@Factory("legend")
-	default void legend() throws IOException {
+	default AnyLEGEND legend() throws IOException {
 		throw new AssertionError("TODO: Implement legend");
 	}
-	// TODO: __ extends FIELDSET_content<D, __>
 	// </editor-fold>
 	// Inherited: DETAILS
 	// <editor-fold defaultstate="collapsed" desc="SUMMARY">
@@ -362,14 +366,15 @@ public interface AnyContent<
 	 * See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element">4.11.2 The summary element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement summary
 	 */
 	@Deprecated
 	@Factory("summary")
-	default void summary() throws IOException {
+	default AnySUMMARY summary() throws IOException {
 		throw new AssertionError("TODO: Implement summary");
 	}
-	// TODO: __ extends DETAILS_content<D, __>
 	// </editor-fold>
 	// Inherited: DIALOG
 	// Inherited: SCRIPT

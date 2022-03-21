@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -331,7 +331,7 @@ public interface AnyPalpableContent<
 	 */
 	@Deprecated
 	@Factory("fieldset")
-	default void fieldset() throws IOException {
+	default AnyFIELDSET fieldset() throws IOException {
 		throw new AssertionError("TODO: Implement fieldset");
 	}
 	// </editor-fold>
@@ -342,11 +342,13 @@ public interface AnyPalpableContent<
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">4.4.12 The figure element</a>.
 	 * </p>
 	 *
+	 * @since HTML 5
+	 *
 	 * @deprecated  TODO: Implement figure
 	 */
 	@Deprecated
 	@Factory("figure")
-	default void figure() throws IOException {
+	default AnyFIGURE figure() throws IOException {
 		throw new AssertionError("TODO: Implement figure");
 	}
 	// </editor-fold>
@@ -356,6 +358,8 @@ public interface AnyPalpableContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element">4.3.9 The footer element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("footer")
 	AnyFOOTER<D, __, ?, ?, ?> footer() throws IOException;
@@ -369,6 +373,8 @@ public interface AnyPalpableContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("footer")
 	default <Ex extends Throwable> __ footer__(IORunnableE<Ex> footer) throws IOException, Ex {
@@ -384,6 +390,8 @@ public interface AnyPalpableContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("footer")
 	default <Ex extends Throwable> __ footer__any(IOConsumerE<? super AnyFOOTER__<D, __, ? extends AnyFOOTER__<D, __, ?>>, Ex> footer) throws IOException, Ex {
@@ -397,6 +405,8 @@ public interface AnyPalpableContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("footer")
 	default __ footer__(Object text) throws IOException {
@@ -410,6 +420,8 @@ public interface AnyPalpableContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("footer")
 	default __ footer__() throws IOException {
@@ -425,6 +437,8 @@ public interface AnyPalpableContent<
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @since HTML 5
 	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
@@ -554,6 +568,8 @@ public interface AnyPalpableContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element">4.3.8 The header element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("header")
 	AnyHEADER<D, __, ?, ?, ?> header() throws IOException;
@@ -567,6 +583,8 @@ public interface AnyPalpableContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("header")
 	default <Ex extends Throwable> __ header__(IORunnableE<Ex> header) throws IOException, Ex {
@@ -582,6 +600,8 @@ public interface AnyPalpableContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("header")
 	default <Ex extends Throwable> __ header__any(IOConsumerE<? super AnyHEADER__<D, __, ? extends AnyHEADER__<D, __, ?>>, Ex> header) throws IOException, Ex {
@@ -595,6 +615,8 @@ public interface AnyPalpableContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("header")
 	default __ header__(Object text) throws IOException {
@@ -608,6 +630,8 @@ public interface AnyPalpableContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("header")
 	default __ header__() throws IOException {
@@ -623,6 +647,8 @@ public interface AnyPalpableContent<
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @since HTML 5
 	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()
@@ -644,6 +670,8 @@ public interface AnyPalpableContent<
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element">4.4.14 The main element</a>.
 	 * </p>
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("main")
 	AnyMAIN<D, __, ?, ?, ?> main() throws IOException;
@@ -657,6 +685,8 @@ public interface AnyPalpableContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("main")
 	default <Ex extends Throwable> __ main__(IORunnableE<Ex> main) throws IOException, Ex {
@@ -672,6 +702,8 @@ public interface AnyPalpableContent<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("main")
 	default <Ex extends Throwable> __ main__any(IOConsumerE<? super AnyMAIN__<D, __, ? extends AnyMAIN__<D, __, ?>>, Ex> main) throws IOException, Ex {
@@ -685,6 +717,8 @@ public interface AnyPalpableContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("main")
 	default __ main__(Object text) throws IOException {
@@ -698,6 +732,8 @@ public interface AnyPalpableContent<
 	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
 	 */
 	@Factory("main")
 	default __ main__() throws IOException {
@@ -713,6 +749,8 @@ public interface AnyPalpableContent<
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
 	 *          the tag.  This is well suited for use in a try-with-resources block.
+	 *
+	 * @since HTML 5
 	 *
 	 * @see  Closeable#__()
 	 * @see  Closeable#close()

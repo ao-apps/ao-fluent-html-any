@@ -29,11 +29,14 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
- * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel onwheel} attribute instead.
+ * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel onwheel} attribute in HTML5.
  *
  * @author  AO Industries, Inc.
  */
@@ -41,9 +44,12 @@ import java.io.IOException;
 public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
+	 * </ul>
 	 *
-	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute instead.
+	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute in HTML5.
 	 */
 	@Deprecated
 	@Attributes.Funnel
@@ -53,13 +59,16 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onmousewheel(java.lang.Object)
 	 *
-	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.lang.io.function.IOSupplierE) onwheel} attribute instead.
+	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.lang.io.function.IOSupplierE) onwheel} attribute in HTML5.
 	 */
 	@Deprecated
 	default <Ex extends Throwable> E onmousewheel(IOSupplierE<?, Ex> onmousewheel) throws IOException, Ex {
@@ -67,13 +76,16 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onmousewheel(java.lang.Object)
 	 *
-	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.encoding.MediaWritable) onwheel} attribute instead.
+	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.encoding.MediaWritable) onwheel} attribute in HTML5.
 	 */
 	@Deprecated
 	default <Ex extends Throwable> E onmousewheel(MediaWritable<Ex> onmousewheel) throws IOException, Ex {

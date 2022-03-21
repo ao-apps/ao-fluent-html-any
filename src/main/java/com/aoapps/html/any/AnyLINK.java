@@ -68,8 +68,7 @@ public abstract class AnyLINK<
 	// TODO: sizes
 	// TODO: target (not standardized per MDN)
 	// TODO: type
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>,
+	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.Onerror<E>,
 	com.aoapps.html.any.attributes.event.Onload<E>
 {
@@ -90,6 +89,8 @@ public abstract class AnyLINK<
 
 	/**
 	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+	 *
+	 * @since HTML 5
 	 */
 	public enum Crossorigin implements Function<AnyDocument<?>, String> {
 		ANONYMOUS(

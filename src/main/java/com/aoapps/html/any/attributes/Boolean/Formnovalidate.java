@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,8 +22,11 @@
  */
 package com.aoapps.html.any.attributes.Boolean;
 
+import com.aoapps.encoding.Doctype;
 import com.aoapps.html.any.Attributes;
+import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -37,6 +40,8 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Formnovalidate<E extends Element<?, ?, E> & Formnovalidate<E>> {
@@ -48,10 +53,20 @@ public interface Formnovalidate<E extends Element<?, ?, E> & Formnovalidate<E>> 
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formnovalidate">&lt;input type="submit"&gt;</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image#formnovalidate">&lt;input type="image"&gt;</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E formnovalidate(boolean formnovalidate) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
+		if(element.getDocument().doctype != Doctype.HTML5) {
+			throw new LocalizedIllegalArgumentException(
+				RESOURCES,
+				"onlySupportedInHtml5",
+				element.getDocument().doctype,
+				"formnovalidate"
+			);
+		}
 		return Attributes.Boolean.attribute(element, "formnovalidate", formnovalidate);
 	}
 
@@ -62,6 +77,8 @@ public interface Formnovalidate<E extends Element<?, ?, E> & Formnovalidate<E>> 
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formnovalidate">&lt;input type="submit"&gt;</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image#formnovalidate">&lt;input type="image"&gt;</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #formnovalidate(boolean)
 	 */
@@ -78,6 +95,8 @@ public interface Formnovalidate<E extends Element<?, ?, E> & Formnovalidate<E>> 
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #formnovalidate(java.lang.Boolean)
 	 */

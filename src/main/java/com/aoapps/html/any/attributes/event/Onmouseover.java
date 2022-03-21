@@ -29,16 +29,29 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/ev_onmouseover.asp">HTML onmouseover Event Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseover">3.2.6 Global attributes / onmouseover</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseover">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseover</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseover">8.1.7.2.1 IDL definitions / onmouseover</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover">GlobalEventHandlers.onmouseover</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseover.asp">onmouseover Event</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
  * @author  AO Industries, Inc.
  */
+// Matches OnmouseoverUnexpected
 public interface Onmouseover<E extends Element<?, ?, E> & Onmouseover<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmouseover.asp">HTML onmouseover Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseover">3.2.6 Global attributes / onmouseover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseover">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseover">8.1.7.2.1 IDL definitions / onmouseover</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover">GlobalEventHandlers.onmouseover</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseover.asp">onmouseover Event</a>.</li>
+	 * </ul>
 	 */
 	@Attributes.Funnel
 	default E onmouseover(Object onmouseover) throws IOException {
@@ -47,7 +60,13 @@ public interface Onmouseover<E extends Element<?, ?, E> & Onmouseover<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmouseover.asp">HTML onmouseover Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseover">3.2.6 Global attributes / onmouseover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseover">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseover">8.1.7.2.1 IDL definitions / onmouseover</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover">GlobalEventHandlers.onmouseover</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseover.asp">onmouseover Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -58,7 +77,13 @@ public interface Onmouseover<E extends Element<?, ?, E> & Onmouseover<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmouseover.asp">HTML onmouseover Event Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseover">3.2.6 Global attributes / onmouseover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseover">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseover</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseover">8.1.7.2.1 IDL definitions / onmouseover</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseover">GlobalEventHandlers.onmouseover</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseover.asp">onmouseover Event</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

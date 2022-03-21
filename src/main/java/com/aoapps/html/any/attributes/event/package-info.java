@@ -23,6 +23,9 @@
 
 /**
  * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#event-handlers-on-elements,-document-objects,-and-window-objects">8.1.7.2 Event handlers on elements, Document objects, and Window objects</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers">GlobalEventHandlers</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/jsref/dom_obj_event.asp">HTML DOM Event Object</a>.</li>
  * <li>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">Clipboard Events</a>.</li>
  * <li>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">Drag Events</a>.</li>
  * <li>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">Form Events</a>.</li>
@@ -44,41 +47,3 @@
  * @see  com.aoapps.html.any.Attributes.Event
  */
 package com.aoapps.html.any.attributes.event;
-
-// ondragexit (Gecko specific - don't use or have a deprecated)
-// TODO: onshow: https://www.w3schools.com/tags/ev_onshow.asp
-//               https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
-//               (removed from HTML 5?)
-// TODO: oncanplay
-// TODO: oncanplaythrough
-// TODO: oncuechange
-// TODO: ondurationchange
-// TODO: onemptied
-// TODO: onended
-// TODO: onerror (move from Window here, duplicate?)
-// TODO: onloadeddata
-// TODO: onloadedmetadata
-// TODO: onloadstart
-// TODO: onpause
-// TODO: onplay
-// TODO: onplaying
-// TODO: onprogress
-// TODO: onratechange
-// TODO: onseeked
-// TODO: onseeking
-// TODO: onstalled
-// TODO: onsuspend
-// TODO: ontimeupdate
-// TODO: onvolumechange
-// TODO: onwaiting
-// TODO: ontoggle
-// TODO: onmouseenter: https://www.w3schools.com/jsref/event_onmouseenter.asp
-// TODO: onmouseleave: https://www.w3schools.com/jsref/event_onmouseleave.asp
-// TODO: oncancel
-//       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
-//       https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncancel
-//       https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog
-// TODO: onclose
-//       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes
-//       https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclose
-//       https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog

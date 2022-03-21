@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,8 +22,11 @@
  */
 package com.aoapps.html.any.attributes.Boolean;
 
+import com.aoapps.encoding.Doctype;
 import com.aoapps.html.any.Attributes;
+import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -36,6 +39,8 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
@@ -46,10 +51,20 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_novalidate.asp">HTML novalidate Attribute</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E novalidate(boolean novalidate) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
+		if(element.getDocument().doctype != Doctype.HTML5) {
+			throw new LocalizedIllegalArgumentException(
+				RESOURCES,
+				"onlySupportedInHtml5",
+				element.getDocument().doctype,
+				"novalidate"
+			);
+		}
 		return Attributes.Boolean.attribute(element, "novalidate", novalidate);
 	}
 
@@ -59,6 +74,8 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_novalidate.asp">HTML novalidate Attribute</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #novalidate(boolean)
 	 */
@@ -74,6 +91,8 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #novalidate(java.lang.Boolean)
 	 */

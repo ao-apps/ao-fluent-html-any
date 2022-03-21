@@ -40,12 +40,16 @@ import java.io.IOException;
 
 /**
  * <ul>
- * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML Global data-* Attributes</a>.</li>
- * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">HTMLElement.dataset</a>.</li>
  * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML data-* Attributes</a>.</li>
  * </ul>
  *
  * @param  <E>   This element type
+ *
+ * @since HTML 5
  *
  * @author  AO Industries, Inc.
  */
@@ -56,10 +60,14 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * Utility class for working with {@link Data} as data-* HTML attributes.
 	 * </p>
 	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML Global data-* Attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">HTMLElement.dataset</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML data-* Attributes</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	public static final class data {
 
@@ -76,7 +84,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 		 * Validates a data-* HTML attribute name.
 		 * </p>
 		 * <ul>
-		 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+		 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
 		 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset">HTMLOrForeignElement.dataset - Web APIs | MDN</a>.</li>
 		 * <li>See <a href="https://www.w3.org/TR/REC-xml/#NT-Name">Name - Extensible Markup Language (XML) 1.0</a>.</li>
 		 * </ul>
@@ -191,10 +199,14 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * conform to the rules defined in HTML.
 	 * </p>
 	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML Global data-* Attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">HTMLElement.dataset</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML data-* Attributes</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E data(String attrName, Object value) throws IOException {
@@ -225,12 +237,16 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * conform to the rules defined in HTML.
 	 * </p>
 	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML Global data-* Attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">HTMLElement.dataset</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML data-* Attributes</a>.</li>
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 */
 	default <Ex extends Throwable> E data(String attrName, IOSupplierE<?, Ex> value) throws IOException, Ex {
 		return data(attrName, (value == null) ? null : value.get());
@@ -242,12 +258,16 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * conform to the rules defined in HTML.
 	 * </p>
 	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML Global data-* Attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">HTMLElement.dataset</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML data-* Attributes</a>.</li>
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 */
 	default <Ex extends Throwable> E data(String attrName, MediaWritable<Ex> value) throws IOException, Ex {
 		return data(attrName, (Object)value);
@@ -258,10 +278,14 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * Utility class for working with {@link Data} as JavaScript dataset property.
 	 * </p>
 	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML Global data-* Attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">HTMLElement.dataset</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML data-* Attributes</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	public static final class dataset {
 
@@ -363,10 +387,14 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * Data provided by JavaScript dataset property name.
 	 * </p>
 	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML Global data-* Attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">HTMLElement.dataset</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML data-* Attributes</a>.</li>
 	 * </ul>
+	 *
+	 * @since HTML 5
 	 */
 	default E dataset(String jsName, Object value) throws IOException {
 		return data(
@@ -382,12 +410,16 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * Data provided by JavaScript dataset property name.
 	 * </p>
 	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML Global data-* Attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">HTMLElement.dataset</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML data-* Attributes</a>.</li>
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 */
 	default <Ex extends Throwable> E dataset(String jsName, IOSupplierE<?, Ex> value) throws IOException, Ex {
 		return dataset(jsName, (value == null) ? null : value.get());
@@ -398,12 +430,16 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 * Data provided by JavaScript dataset property name.
 	 * </p>
 	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML Global data-* Attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*">data-* - HTML: Hypertext Markup Language | MDN</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset">HTMLElement.dataset</a>.</li>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes">Using data attributes - Learn web development | MDN</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_data.asp">HTML data-* Attributes</a>.</li>
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 */
 	default <Ex extends Throwable> E dataset(String jsName, MediaWritable<Ex> value) throws IOException, Ex {
 		return dataset(jsName, (Object)value);

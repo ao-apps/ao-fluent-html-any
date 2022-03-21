@@ -36,12 +36,16 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @since HTML 5
+ *
  * @author  AO Industries, Inc.
  */
 public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
 
 	/**
 	 * See <a href="https://www.w3schools.com/tags/ev_onhashchange.asp">HTML onhashchange Event Attribute</a>.
+	 *
+	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E onhashchange(Object onhashchange) throws IOException {
@@ -62,6 +66,8 @@ public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @since HTML 5
+	 *
 	 * @see #onhashchange(java.lang.Object)
 	 */
 	default <Ex extends Throwable> E onhashchange(IOSupplierE<?, Ex> onhashchange) throws IOException, Ex {
@@ -72,6 +78,8 @@ public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
 	 * See <a href="https://www.w3schools.com/tags/ev_onhashchange.asp">HTML onhashchange Event Attribute</a>.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
 	 *
 	 * @see #onhashchange(java.lang.Object)
 	 */

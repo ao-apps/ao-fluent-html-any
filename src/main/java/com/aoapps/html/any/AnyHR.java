@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -47,9 +47,7 @@ public abstract class AnyHR<
 	com.aoapps.html.any.attributes.Enum.Align<E, AnyHR.Align>,
 	com.aoapps.html.any.attributes.Boolean.Noshade<E>,
 	com.aoapps.html.any.attributes.Integer.SizeHtml4Only<E>,
-	com.aoapps.html.any.attributes.Dimension.Width<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
+	com.aoapps.html.any.attributes.Dimension.Width<E>
 {
 
 	protected AnyHR(D document, PC pc) {

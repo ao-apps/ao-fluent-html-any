@@ -52,9 +52,7 @@ public abstract class AnyOPTION<
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
 	com.aoapps.html.any.attributes.Text.Label<E>,
 	com.aoapps.html.any.attributes.Boolean.Selected<E>,
-	com.aoapps.html.any.attributes.Text.Value<E>,
-	// Global Event Attributes: https://www.w3schools.com/tags/ref_eventattributes.asp
-	AlmostGlobalAttributes<E>
+	com.aoapps.html.any.attributes.Text.Value<E>
 {
 
 	private boolean oldAutonli;
