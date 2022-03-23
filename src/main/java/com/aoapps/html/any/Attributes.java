@@ -135,7 +135,7 @@ public final class Attributes {
 		private Boolean() {throw new AssertionError();}
 
 		/**
-		 * @param  <E>   This element type
+		 * @param  <E>  This element type
 		 */
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, boolean value) throws IOException {
 			if(value) {
@@ -174,21 +174,21 @@ public final class Attributes {
 		private Dimension() {throw new AssertionError();}
 
 		/**
-		 * @param  <E>   This element type
+		 * @param  <E>  This element type
 		 */
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, int pixels) throws IOException {
 			return Integer.attribute(element, name, pixels);
 		}
 
 		/**
-		 * @param  <E>   This element type
+		 * @param  <E>  This element type
 		 */
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, java.lang.Integer pixels) throws IOException {
 			return Integer.attribute(element, name, pixels);
 		}
 
 		/**
-		 * @param  <E>   This element type
+		 * @param  <E>  This element type
 		 *
 		 * @deprecated  In HTML 4.01, the value could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
 		 */
@@ -209,13 +209,11 @@ public final class Attributes {
 		private Event() {throw new AssertionError();}
 
 		/**
-		 * @param  <E>   This element type
-		 * @param  <Ex>  An arbitrary exception type that may be thrown
+		 * @param  <E>  This element type
 		 */
 		public static <
-			E  extends Element<?, ?, E>,
-			Ex extends Throwable // TODO: Required?
-		> E attribute(E element, java.lang.String name, Object script) throws IOException, Ex {
+			E extends Element<?, ?, E>
+		> E attribute(E element, java.lang.String name, Object script) throws IOException {
 			return Attributes.Text.attribute(element, name, MarkupType.JAVASCRIPT, script, true, true, javaScriptInXhtmlAttributeEncoder);
 		}
 	}
@@ -231,7 +229,7 @@ public final class Attributes {
 		private Integer() {throw new AssertionError();}
 
 		/**
-		 * @param  <E>   This element type
+		 * @param  <E>  This element type
 		 */
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, int value) throws IOException {
 			AnyDocument<?> document = element.document;
@@ -250,7 +248,7 @@ public final class Attributes {
 		}
 
 		/**
-		 * @param  <E>   This element type
+		 * @param  <E>  This element type
 		 */
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, java.lang.Integer value) throws IOException {
 			if(value != null) {
@@ -270,8 +268,8 @@ public final class Attributes {
 		private String() {throw new AssertionError();}
 
 		/**
-		 * @param  <E>   This element type
-		 * @param value  If is {@link #NO_VALUE} (by identity), will write empty attribute.
+		 * @param  <E>    This element type
+		 * @param  value  If is {@link #NO_VALUE} (by identity), will write empty attribute.
 		 */
 		// TODO: Remove trim and nullIfEmpty once all attributes have normalize methods
 		@SuppressWarnings("StringEquality")
@@ -326,22 +324,20 @@ public final class Attributes {
 		private Text() {throw new AssertionError();}
 
 		/**
-		 * @param  <E>   This element type
-		 * @param  <Ex>  An arbitrary exception type that may be thrown
-		 * @param value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
+		 * @param  <E>    This element type
+		 * @param  value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
 		 */
 		public static <
-			E  extends Element<?, ?, E>,
-			Ex extends Throwable // TODO: Required?
-		> E attribute(E element, java.lang.String name, MarkupType markupType, Object value, boolean trim, boolean nullIfEmpty, MediaEncoder encoder) throws IOException, Ex {
+			E extends Element<?, ?, E>
+		> E attribute(E element, java.lang.String name, MarkupType markupType, Object value, boolean trim, boolean nullIfEmpty, MediaEncoder encoder) throws IOException {
 			// TODO: Assert is valid attribute name by doctype
 			while(value instanceof IOSupplierE<?, ?>) {
-				@SuppressWarnings("unchecked") IOSupplierE<?, Ex> supplier = (IOSupplierE<?, Ex>)value;
+				@SuppressWarnings("unchecked") IOSupplierE<?, ? extends RuntimeException> supplier = (IOSupplierE<?, ? extends RuntimeException>)value;
 				value = supplier.get();
 			}
 			if(value != null) {
 				if(value instanceof MediaWritable<?>) {
-					@SuppressWarnings("unchecked") MediaWritable<Ex> writer = (MediaWritable<Ex>)value;
+					@SuppressWarnings("unchecked") MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>)value;
 					AnyDocument<?> document = element.document;
 					Writer out = document.getUnsafe(null);
 					if(document.getAtnl()) {
@@ -404,17 +400,15 @@ public final class Attributes {
 		}
 
 		/**
-		 * @param  <E>   This element type
-		 * @param  <Ex>  An arbitrary exception type that may be thrown
-		 * @param values  The attribute values, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
-		 * @param separator  The separator to use between non-null values.  Written directly (not through the encoder).
-		 *                   Not written when a value is {@link Attributes#NO_VALUE}.
+		 * @param  <E>        This element type
+		 * @param  values     The attribute values, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
+		 * @param  separator  The separator to use between non-null values.  Written directly (not through the encoder).
+		 *                    Not written when a value is {@link Attributes#NO_VALUE}.
 		 */
 		@SuppressWarnings("AssignmentToForLoopParameter")
 		public static <
-			E  extends Element<?, ?, E>,
-			Ex extends Throwable // TODO: Required?
-		> E attribute(E element, java.lang.String name, MarkupType markupType, Object[] values, java.lang.String separator, boolean trim, boolean nullIfEmpty, MediaEncoder encoder) throws IOException, Ex {
+			E extends Element<?, ?, E>
+		> E attribute(E element, java.lang.String name, MarkupType markupType, Object[] values, java.lang.String separator, boolean trim, boolean nullIfEmpty, MediaEncoder encoder) throws IOException {
 			if(values != null) {
 				AnyDocument<?> document = element.document;
 				Writer out = document.getUnsafe(null);
@@ -423,12 +417,12 @@ public final class Attributes {
 				for(Object value : values) {
 					// TODO: Assert is valid attribute name by doctype
 					while(value instanceof IOSupplierE<?, ?>) {
-						@SuppressWarnings("unchecked") IOSupplierE<?, Ex> supplier = (IOSupplierE<?, Ex>)value;
+						@SuppressWarnings("unchecked") IOSupplierE<?, ? extends RuntimeException> supplier = (IOSupplierE<?, ? extends RuntimeException>)value;
 						value = supplier.get();
 					}
 					if(value != null) {
 						if(value instanceof MediaWritable<?>) {
-							@SuppressWarnings("unchecked") MediaWritable<Ex> writer = (MediaWritable<Ex>)value;
+							@SuppressWarnings("unchecked") MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>)value;
 							if(val) {
 								assert attr;
 								if(separator != null) out.write(separator);
@@ -522,7 +516,7 @@ public final class Attributes {
 		private Url() {throw new AssertionError();}
 
 		/**
-		 * @param  <E>   This element type
+		 * @param  <E>  This element type
 		 */
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, java.lang.String url) throws IOException {
 			if(url != null) {
