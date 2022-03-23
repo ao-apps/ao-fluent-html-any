@@ -22,11 +22,55 @@
  */
 package com.aoapps.html.any;
 
+import java.io.IOException;
+import java.io.Writer;
+
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element">4.5.28 The wbr element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr">&lt;wbr&gt;: The Line Break Opportunity element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_wbr.asp">HTML wbr tag</a>.</li>
+ * </ul>
+ *
+ * @param  <D>   This document type
+ * @param  <PC>  The parent content model this element is within
+ * @param  <E>   This element type
+ *
+ * @since HTML 5
  *
  * @author  AO Industries, Inc.
  */
-public abstract class AnyWBR {
-	// TODO
+@SuppressWarnings("deprecation")
+public abstract class AnyWBR<
+	D  extends AnyDocument<D>,
+	PC extends AnyPhrasingContent<D, PC>,
+	E  extends AnyWBR<D, PC, E>
+> extends Void<D, PC, E> implements
+	// Global Event Attributes overrides
+	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>
+{
+
+	protected AnyWBR(D document, PC pc) {
+		super(document, pc);
+	}
+
+	@Override
+	protected E writeOpen(Writer out) throws IOException {
+		document.autoIndent(out).unsafe(out, "<wbr", false);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
 }

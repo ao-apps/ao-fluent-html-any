@@ -441,16 +441,32 @@ public interface AnyPhrasingContent<
 	// <editor-fold defaultstate="collapsed" desc="WBR">
 	/**
 	 * Opens a new wbr element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element">4.5.28 The wbr element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element">4.5.28 The wbr element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr">&lt;wbr&gt;: The Line Break Opportunity element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_wbr.asp">HTML wbr tag</a>.</li>
+	 * </ul>
 	 *
-	 * @deprecated  TODO: Implement wbr
+	 * @since HTML 5
 	 */
-	@Deprecated
 	@Factory("wbr")
-	default AnyWBR wbr() throws IOException {
-		throw new AssertionError("TODO: Implement wbr");
+	AnyWBR<D, __, ?> wbr() throws IOException;
+
+	/**
+	 * Creates a wbr element with no attributes.
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element">4.5.28 The wbr element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr">&lt;wbr&gt;: The Line Break Opportunity element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_wbr.asp">HTML wbr tag</a>.</li>
+	 * </ul>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 *
+	 * @since HTML 5
+	 */
+	@Factory("wbr")
+	default __ wbr__() throws IOException {
+		return wbr().__();
 	}
 	// </editor-fold>
 	// Inherited: autonomous custom elements

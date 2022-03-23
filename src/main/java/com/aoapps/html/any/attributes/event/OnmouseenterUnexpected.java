@@ -34,6 +34,7 @@ import com.aoapps.html.any.AnyPARAM;
 import com.aoapps.html.any.AnySCRIPT;
 import com.aoapps.html.any.AnySTYLE;
 import com.aoapps.html.any.AnyTITLE;
+import com.aoapps.html.any.AnyWBR;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -56,7 +57,7 @@ import java.io.IOException;
  *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
  *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
  *              {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;}, {@linkplain AnySCRIPT &lt;script&gt;},
- *              {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyTITLE &lt;title&gt;}.
+ *              {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
  *              <p>
  *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
  *              </p>
@@ -82,7 +83,7 @@ public interface OnmouseenterUnexpected<E extends Element<?, ?, E> & Onmouseente
 	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
 	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
 	 *              {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;}, {@linkplain AnySCRIPT &lt;script&gt;},
-	 *              {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyTITLE &lt;title&gt;}.
+	 *              {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
 	 *              <p>
 	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
 	 *              </p>
@@ -113,7 +114,7 @@ public interface OnmouseenterUnexpected<E extends Element<?, ?, E> & Onmouseente
 	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
 	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
 	 *              {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;}, {@linkplain AnySCRIPT &lt;script&gt;},
-	 *              {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyTITLE &lt;title&gt;}.
+	 *              {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
 	 *              <p>
 	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
 	 *              </p>
@@ -143,7 +144,7 @@ public interface OnmouseenterUnexpected<E extends Element<?, ?, E> & Onmouseente
 	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
 	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
 	 *              {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;}, {@linkplain AnySCRIPT &lt;script&gt;},
-	 *              {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyTITLE &lt;title&gt;}.
+	 *              {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
 	 *              <p>
 	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
 	 *              </p>
