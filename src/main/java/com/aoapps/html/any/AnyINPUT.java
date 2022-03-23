@@ -203,7 +203,6 @@ public abstract class AnyINPUT<
 	 * @param  <E>   This element type
 	 */
 	@SuppressWarnings("deprecation")
-	// TODO: Rename "AnyDynamic" (and others)?  Would then be able to get rid of "AnyINPUT."/"INPUT." prefix in references
 	public abstract static class Dynamic<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
