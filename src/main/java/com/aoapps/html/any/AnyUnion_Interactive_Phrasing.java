@@ -206,7 +206,6 @@ public interface AnyUnion_Interactive_Phrasing<
 	 * @param  <D>   This document type
 	 * @param  <__>  This content model, which will be the parent content model of child elements
 	 */
-	// TODO: Should this become an interface?
 	public abstract static class InputFactory<
 		D  extends AnyDocument<D>,
 		__ extends AnyUnion_Interactive_Phrasing<D, __>
