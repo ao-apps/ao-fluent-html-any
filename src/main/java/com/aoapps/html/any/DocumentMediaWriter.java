@@ -219,7 +219,11 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 		return this;
 	}
 
-	// TODO: codePoint?
+	@Override
+	public DocumentMediaWriter<D> text(int codePoint) throws IOException {
+		super.text(codePoint);
+		return this;
+	}
 
 	@Override
 	public DocumentMediaWriter<D> text(char[] cbuf) throws IOException {

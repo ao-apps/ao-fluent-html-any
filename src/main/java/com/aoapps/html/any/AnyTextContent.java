@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -90,7 +90,21 @@ public interface AnyTextContent<
 		return c;
 	}
 
-	// TODO: codePoint?
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Does not perform any translation markups.
+	 * </p>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ text(int codePoint) throws IOException {
+		getDocument().text(codePoint);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
 
 	/**
 	 * {@inheritDoc}

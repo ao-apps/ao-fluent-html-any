@@ -813,6 +813,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getUnsafe(null), ch);
 	}
 
+	@Override
+	public D text(int codePoint) throws IOException {
+		return text(getUnsafe(null), codePoint);
+	}
+
 	D text(Writer out, char ch) throws IOException {
 		if(ch == NL) {
 			out.write(NL);
@@ -826,7 +831,25 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// TODO: codePoint?
+	D text(Writer out, int codePoint) throws IOException {
+		if(codePoint == NL) {
+			out.write(NL);
+			setAtnl();
+		} else {
+			autoIndent(out);
+			if(Character.isBmpCodePoint(codePoint)) {
+				encodeTextInXhtml((char)codePoint, out);
+			} else if(Character.isValidCodePoint(codePoint)) {
+				encodeTextInXhtml(Character.lowSurrogate(codePoint), out);
+				encodeTextInXhtml(Character.highSurrogate(codePoint), out);
+			} else {
+				throw new IllegalArgumentException(String.format("Invalid code point: 0x%X", codePoint));
+			}
+			clearAtnl();
+		}
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
 
 	@Override
 	public D text(char[] cbuf) throws IOException {
