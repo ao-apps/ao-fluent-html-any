@@ -61,7 +61,6 @@ public abstract class AnyINPUT<
 	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 	E  extends AnyINPUT<D, PC, E>
 > extends Void<D, PC, E> implements
-	// TODO: dirname
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
 	com.aoapps.html.any.attributes.Text.Form<E>,
 	// TODO: inputmode here or global?
@@ -214,6 +213,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyINPUT.Autocomplete>,
 		com.aoapps.html.any.attributes.Enum.Capture<E, File.Capture>,
 		com.aoapps.html.any.attributes.Boolean.Checked<E>,
+		com.aoapps.html.any.attributes.Text.Dirname<E>,
 		com.aoapps.html.any.attributes.Url.Formaction<E>,
 		com.aoapps.html.any.attributes.Enum.Formenctype<E, com.aoapps.html.any.attributes.Enum.Enctype.Value>,
 		com.aoapps.html.any.attributes.Enum.Formmethod<E, com.aoapps.html.any.attributes.Enum.Method.Value>,
@@ -1559,6 +1559,7 @@ public abstract class AnyINPUT<
 		E  extends Search<D, PC, E>
 	> extends AnyINPUT<D, PC, E> implements
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, Search.Autocomplete>,
+		com.aoapps.html.any.attributes.Text.Dirname<E>,
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Integer.Maxlength<E>,
 		com.aoapps.html.any.attributes.Integer.Minlength<E>,
@@ -1847,6 +1848,7 @@ public abstract class AnyINPUT<
 		E  extends Text<D, PC, E>
 	> extends AnyINPUT<D, PC, E> implements
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyINPUT.Autocomplete>,
+		com.aoapps.html.any.attributes.Text.Dirname<E>,
 		com.aoapps.html.any.attributes.Integer.Maxlength<E>,
 		com.aoapps.html.any.attributes.Integer.Minlength<E>,
 		com.aoapps.html.any.attributes.Text.List<E>,

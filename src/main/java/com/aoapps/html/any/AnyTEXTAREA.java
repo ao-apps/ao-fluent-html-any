@@ -51,7 +51,7 @@ public abstract class AnyTEXTAREA<
 > extends NormalText<D, PC, E, __, _c> implements
 	com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyTEXTAREA.Autocomplete>,
 	com.aoapps.html.any.attributes.Integer.Cols<E>,
-	// TODO: dirname
+	com.aoapps.html.any.attributes.Text.Dirname<E>,
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
 	com.aoapps.html.any.attributes.Text.Form<E>,
 	com.aoapps.html.any.attributes.Integer.Maxlength<E>,

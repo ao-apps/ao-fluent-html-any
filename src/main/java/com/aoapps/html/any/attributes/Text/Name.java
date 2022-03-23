@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -45,7 +45,9 @@ public interface Name<E extends Element<?, ?, E> & Name<E>> {
 	@Attributes.Funnel
 	default E name(Object name) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		// TODO: Review if trim-to-null is the best default.  Maybe default to "false" and override where should be true instead.
+		// TODO: Review if trim-to-null is the best default.
+		//       Maybe default to "false" and override where should be true instead.
+		//       Any change to textarea/input name attribute would also need to be reflected in dirname attribute
 		return Attributes.Text.attribute(element, "name", MarkupType.NONE, name, false, true, textInXhtmlAttributeEncoder);
 	}
 
