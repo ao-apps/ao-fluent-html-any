@@ -48,7 +48,7 @@ public abstract class AnyAREA<
 	com.aoapps.html.any.attributes.Dimension.Coords<E>,
 	// TODO: download
 	com.aoapps.html.any.attributes.Url.Href<E>,
-	com.aoapps.html.any.attributes.String.Hreflang<E>,
+	com.aoapps.html.any.attributes.Text.Hreflang<E>,
 	com.aoapps.html.any.attributes.Text.Media<E>,
 	// TODO: name? (MDN only)
 	// TODO: nohref

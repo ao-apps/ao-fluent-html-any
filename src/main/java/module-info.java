@@ -26,7 +26,6 @@ module com.aoapps.html.any {
 	exports com.aoapps.html.any.attributes.Dimension;
 	exports com.aoapps.html.any.attributes.Enum;
 	exports com.aoapps.html.any.attributes.Integer;
-	exports com.aoapps.html.any.attributes.String;
 	exports com.aoapps.html.any.attributes.Text;
 	exports com.aoapps.html.any.attributes.Url;
 	exports com.aoapps.html.any.attributes.event;

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -20,7 +20,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.aoapps.html.any.attributes.String;
+package com.aoapps.html.any.attributes.Text;
 
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
@@ -48,7 +48,6 @@ public interface Usemap<E extends Element<?, ?, E> & Usemap<E>> {
 	@Attributes.Funnel
 	default E usemap(String usemap) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		// TODO: Why is this trimmed while name (above) is not?
 		usemap = Strings.trimNullIfEmpty(usemap);
 		if(usemap != null) {
 			if(!usemap.startsWith("#")) usemap = '#' + usemap;

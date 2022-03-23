@@ -84,7 +84,7 @@ public final class Attributes {
 	 * or checking preconditions, only the funnel methods need to be overridden.
 	 * </p>
 	 */
-	// TODO: Move to com.aoapps.html and use for Factory methods, too?
+	// TODO: Move to com.aoapps.html.any and use for Factory methods, too?
 	@Retention(RetentionPolicy.SOURCE)
 	@Target(ElementType.METHOD)
 	public static @interface Funnel {
@@ -264,8 +264,6 @@ public final class Attributes {
 
 	/**
 	 * Non-streamable text attributes (expected to be short, relatively fixed values)
-	 *
-	 * @see  com.aoapps.html.any.attributes.String
 	 */
 	public static final class String {
 

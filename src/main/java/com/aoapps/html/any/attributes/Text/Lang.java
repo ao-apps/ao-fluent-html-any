@@ -20,8 +20,10 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
  */
-package com.aoapps.html.any.attributes.String;
+package com.aoapps.html.any.attributes.Text;
 
+import com.aoapps.encoding.MediaWritable;
+import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -55,9 +57,9 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 	 * </ul>
 	 */
 	@Attributes.Funnel
-	default E lang(String lang) throws IOException {
+	default E lang(Object lang) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "lang", MarkupType.NONE, lang, true, true);
+		return Attributes.Text.attribute(element, "lang", MarkupType.NONE, lang, true, true, textInXhtmlAttributeEncoder);
 	}
 
 	/**
@@ -70,10 +72,10 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
-	 * @see #lang(java.lang.String)
+	 * @see #lang(java.lang.Object)
 	 */
 	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E lang(IOSupplierE<? extends String, Ex> lang) throws IOException, Ex {
+	default <Ex extends Throwable> E lang(IOSupplierE<?, Ex> lang) throws IOException, Ex {
 		return lang((lang == null) ? null : lang.get());
 	}
 
@@ -85,7 +87,7 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
 	 * </ul>
 	 *
-	 * @see #lang(java.lang.String)
+	 * @see #lang(java.lang.Object)
 	 */
 	default E lang(Locale lang) throws IOException {
 		return lang((lang == null) ? null : lang.toLanguageTag());
@@ -106,5 +108,21 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E lang(Suppliers.Locale<Ex> lang) throws IOException, Ex {
 		return lang((lang == null) ? null : lang.get());
+	}
+
+	/**
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
+	 * </ul>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @see #lang(java.lang.Object)
+	 */
+	default <Ex extends Throwable> E lang(MediaWritable<Ex> lang) throws IOException, Ex {
+		return lang((Object)lang);
 	}
 }

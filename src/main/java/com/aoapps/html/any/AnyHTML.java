@@ -23,6 +23,7 @@
 package com.aoapps.html.any;
 
 import com.aoapps.encoding.Serialization;
+import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -126,13 +127,13 @@ public abstract class AnyHTML<
 	 * {@inheritDoc}
 	 */
 	@Override
-	public E lang(String lang) throws IOException {
+	public E lang(Object lang) throws IOException {
 		// Write default lang="…"
 		super.lang(lang);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		if(document.serialization == Serialization.XML) {
 			// Add xml:lang="…"
-			Attributes.String.attribute(element, "xml:lang", MarkupType.NONE, lang, true, true);
+			Attributes.Text.attribute(element, "xml:lang", MarkupType.NONE, lang, true, true, textInXhtmlAttributeEncoder);
 		}
 		return element;
 	}
@@ -151,10 +152,10 @@ public abstract class AnyHTML<
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
-	 * @see #lang(java.lang.String)
+	 * @see #lang(java.lang.Object)
 	 */
 	@Override
-	public <Ex extends Throwable> E lang(IOSupplierE<? extends String, Ex> lang) throws IOException, Ex {
+	public <Ex extends Throwable> E lang(IOSupplierE<?, Ex> lang) throws IOException, Ex {
 		return super.lang(lang);
 	}
 
@@ -170,7 +171,7 @@ public abstract class AnyHTML<
 	 * <hr>
 	 * {@inheritDoc}
 	 *
-	 * @see #lang(java.lang.String)
+	 * @see #lang(java.lang.Object)
 	 */
 	@Override
 	public E lang(Locale lang) throws IOException {

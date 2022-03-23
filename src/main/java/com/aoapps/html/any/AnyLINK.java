@@ -61,7 +61,7 @@ public abstract class AnyLINK<
 	// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-disabled
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
 	com.aoapps.html.any.attributes.Url.Href<E>,
-	com.aoapps.html.any.attributes.String.Hreflang<E>,
+	com.aoapps.html.any.attributes.Text.Hreflang<E>,
 	com.aoapps.html.any.attributes.Text.Media<E>,
 	com.aoapps.html.any.attributes.Enum.Rel<E, AnyLINK.Rel>,
 	// TODO: rev

@@ -44,7 +44,6 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
-// TODO: Move to String?
 // Matches IdNoHtml4
 public interface Id<E extends Element<?, ?, E> & Id<E>> {
 

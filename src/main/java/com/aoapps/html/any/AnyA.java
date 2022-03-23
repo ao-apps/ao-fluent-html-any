@@ -51,7 +51,7 @@ public abstract class AnyA<
 	// TODO: download
 	// TODO: ping
 	com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
-	com.aoapps.html.any.attributes.String.Hreflang<E>,
+	com.aoapps.html.any.attributes.Text.Hreflang<E>,
 	// TODO: type
 	// TODO: referrerpolicy
 	// Global Attributes overrides

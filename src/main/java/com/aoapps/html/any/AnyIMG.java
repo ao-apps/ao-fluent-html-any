@@ -55,7 +55,7 @@ public abstract class AnyIMG<
 	// TODO: sizes
 	com.aoapps.html.any.attributes.Url.Src<E>,
 	// TODO: srcset
-	com.aoapps.html.any.attributes.String.Usemap<E>,
+	com.aoapps.html.any.attributes.Text.Usemap<E>,
 	// TODO: vspace
 	com.aoapps.html.any.attributes.Integer.Width<E>,
 	// TODO: More events

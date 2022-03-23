@@ -107,7 +107,7 @@ public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<
 	//       https://html.spec.whatwg.org/multipage/microdata.html#attr-itemtype
 	//       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemtype
 	//       https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/itemType
-	com.aoapps.html.any.attributes.String.Lang<E>,
+	com.aoapps.html.any.attributes.Text.Lang<E>,
 	// TODO: nonce
 	//       https://html.spec.whatwg.org/multipage/urls-and-fetching.html#attr-nonce
 	//       https://fetch.spec.whatwg.org/#concept-request-nonce-metadata
