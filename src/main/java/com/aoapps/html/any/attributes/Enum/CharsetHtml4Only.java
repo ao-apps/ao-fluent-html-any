@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,14 +22,11 @@
  */
 package com.aoapps.html.any.attributes.Enum;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -44,16 +41,16 @@ import java.util.function.Function;
  * @param  <E>   This element type
  * @param  <V>   This enum type to use for this attribute
  *
- * @since HTML 5
+ * @deprecated  Not supported in HTML5.
  *
  * @author  AO Industries, Inc.
  */
-// TODO: Support java Charset, too
-// Matches CharsetHtml4Only
-public interface Charset<
-	E extends Element<?, ?, E> & Charset<E, V>,
+// Matches Charset
+@Deprecated
+public interface CharsetHtml4Only<
+	E extends Element<?, ?, E> & CharsetHtml4Only<E, V>,
 	V extends Enum<V> & Function<AnyDocument<?>, String>
-> {
+> extends Charset<E, V> {
 
 	/**
 	 * <ul>
@@ -62,19 +59,13 @@ public interface Charset<
 	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
 	 * </ul>
 	 *
-	 * @since HTML 5
+	 * @deprecated  Not supported in HTML5.
 	 */
+	@Deprecated
+	@Override
 	@Attributes.Funnel
 	default E charset(String charset) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"charset"
-			);
-		}
 		return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, true, true);
 	}
 
@@ -87,8 +78,10 @@ public interface Charset<
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
-	 * @since HTML 5
+	 * @deprecated  Not supported in HTML5.
 	 */
+	@Deprecated
+	@Override
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
 		return charset((charset == null) ? null : charset.get());
@@ -101,8 +94,10 @@ public interface Charset<
 	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
 	 * </ul>
 	 *
-	 * @since HTML 5
+	 * @deprecated  Not supported in HTML5.
 	 */
+	@Deprecated
+	@Override
 	default E charset(V charset) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return charset((charset == null) ? null : charset.apply(element.getDocument()));
@@ -117,44 +112,12 @@ public interface Charset<
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
-	 * @since HTML 5
+	 * @deprecated  Not supported in HTML5.
 	 */
+	@Deprecated
+	@Override
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {
 		return charset((charset == null) ? null : charset.get());
-	}
-
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * <li>See <a href="https://www.iana.org/assignments/character-sets/character-sets.xhtml">Character Sets</a>.</li>
-	 * </ul>
-	 */
-	public enum Value implements Function<AnyDocument<?>, String> {
-		// TODO: Add other charsets here?
-		US_ASCII("US-ASCII"),
-		ISO_8859_1("ISO-8859-1"),
-		UTF_8("UTF-8"),
-		WINDOWS_1252("windows-1252");
-
-		private final String value;
-
-		private Value(String value) {
-			this.value = value;
-		}
-
-		@Override
-		public String toString() {
-			return value;
-		}
-
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-
-		public String getValue() {
-			return value;
-		}
 	}
 }

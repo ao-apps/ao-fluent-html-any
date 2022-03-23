@@ -56,7 +56,7 @@ public abstract class AnyLINK<
 	E  extends AnyLINK<D, PC, E>
 > extends Void<D, PC, E> implements
 	// TODO: as
-	// TODO: charset
+	com.aoapps.html.any.attributes.Enum.CharsetHtml4Only<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
 	com.aoapps.html.any.attributes.Enum.Crossorigin<E, AnyLINK.Crossorigin>,
 	// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-disabled
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
