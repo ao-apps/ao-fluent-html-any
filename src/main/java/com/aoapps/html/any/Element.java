@@ -22,7 +22,8 @@
  */
 package com.aoapps.html.any;
 
-import com.aoapps.encoding.WhitespaceWriter;
+import com.aoapps.lang.io.Writable;
+import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.Writer;
 
@@ -42,7 +43,7 @@ public abstract class Element<
 	PC extends Content<D, PC>,
 	E  extends Element<D, PC, E>
 > implements
-	WhitespaceWriter<E>,
+	DocumentWriter<E>,
 	// Allow any arbitrary attributes
 	com.aoapps.html.any.attributes.Text.Attribute<E>,
 	// Global Attributes
@@ -61,16 +62,20 @@ public abstract class Element<
 		return document;
 	}
 
+	// <editor-fold desc="WhitespaceWriter">
 	/**
 	 * {@inheritDoc}
 	 * <p>
 	 * Delegates to {@link AnyDocument#nl()}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E nl() throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.nl();
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -82,8 +87,8 @@ public abstract class Element<
 	 */
 	@Override
 	public E nli() throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.nli();
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -92,11 +97,14 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#nli(int)}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E nli(int depthOffset) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.nli(depthOffset);
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -105,11 +113,14 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#indent()}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E indent() throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.indent();
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -118,11 +129,14 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#indent(int)}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E indent(int depthOffset) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.indent(depthOffset);
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -131,7 +145,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#getIndent()}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public boolean getIndent() {
 		return document.getIndent();
@@ -142,11 +159,14 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#setIndent(boolean)}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E setIndent(boolean indent) {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.setIndent(indent);
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -155,7 +175,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#getDepth()}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public int getDepth() {
 		return document.getDepth();
@@ -166,11 +189,14 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#setDepth(int)}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E setDepth(int depth) {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.setDepth(depth);
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -179,11 +205,14 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#incDepth()}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E incDepth() {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.incDepth();
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -192,11 +221,14 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#decDepth()}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E decDepth() {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.decDepth();
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -205,11 +237,14 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#sp()}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E sp() throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		document.sp();
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
@@ -218,13 +253,341 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#sp(int)}.
 	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
+	@Deprecated
 	@Override
 	public E sp(int count) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
+		this.
 		document.sp(count);
+		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
+	// </editor-fold>
+
+	// <editor-fold desc="DocumentWriter / Unsafe">
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getUnsafe(java.lang.Boolean)}.
+	 * </p>
+	 */
+	@Override
+	public Writer getUnsafe(Boolean endsNewline) throws IllegalStateException {
+		return document.getUnsafe(endsNewline);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getUnsafe()}.
+	 * </p>
+	 */
+	@Override
+	public Writer getUnsafe() throws IllegalStateException {
+		return document.getUnsafe();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(char)}.
+	 * </p>
+	 */
+	@Override
+	public E unsafe(char ch) throws IOException {
+		document.unsafe(ch);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(int)}.
+	 * </p>
+	 */
+	@Override
+	public E unsafe(int codePoint) throws IOException {
+		document.unsafe(codePoint);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(char[])}.
+	 * </p>
+	 */
+	@Override
+	public E unsafe(char[] cbuf) throws IOException {
+		document.unsafe(cbuf);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(char[], int, int)}.
+	 * </p>
+	 */
+	@Override
+	public E unsafe(char[] cbuf, int offset, int len) throws IOException {
+		document.unsafe(cbuf, offset, len);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence)}.
+	 * </p>
+	 */
+	@Override
+	public E unsafe(CharSequence csq) throws IOException {
+		document.unsafe(csq);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence, int, int)}.
+	 * </p>
+	 */
+	@Override
+	public E unsafe(CharSequence csq, int start, int end) throws IOException {
+		document.unsafe(csq, start, end);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(java.lang.Object)}.
+	 * </p>
+	 */
+	@Override
+	public E unsafe(Object unsafe) throws IOException {
+		document.unsafe(unsafe);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.function.IOSupplierE)}.
+	 * </p>
+	 */
+	@Override
+	public <Ex extends Throwable> E unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
+		document.unsafe(unsafe);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.Writable)}.
+	 * </p>
+	 */
+	@Override
+	public E unsafe(Writable unsafe) throws IOException {
+		document.unsafe(unsafe);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe()}.
+	 * </p>
+	 */
+	@Override
+	public Writer unsafe() throws IOException {
+		return document.unsafe();
+	}
+	// </editor-fold>
+
+	// <editor-fold desc="DocumentWriter / Automatic Newline and Indentation">
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getAutonli()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public boolean getAutonli() {
+		return document.getAutonli();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#setAutonli(boolean)}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public E setAutonli(boolean autonli) {
+		document.setAutonli(autonli);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getAtnl()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public boolean getAtnl() {
+		return document.getAtnl();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#setAtnl()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public E setAtnl() {
+		document.setAtnl();
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#setAtnl(boolean)}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public E setAtnl(boolean atnl) {
+		document.setAtnl(atnl);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#clearAtnl()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public E clearAtnl() {
+		document.clearAtnl();
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoNl()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public E autoNl() throws IOException {
+		document.autoNl();
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoNli()}.
+	 * </p>
+	 */
+	@Override
+	public E autoNli() throws IOException {
+		document.autoNli();
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoNli(int)}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public E autoNli(int depthOffset) throws IOException {
+		document.autoNli(depthOffset);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoIndent()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public E autoIndent() throws IOException {
+		document.autoIndent();
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoIndent(int)}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	public E autoIndent(int depthOffset) throws IOException {
+		document.autoIndent(depthOffset);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
+	}
+	// </editor-fold>
 
 	/**
 	 * Writes the beginning of the opening tag.

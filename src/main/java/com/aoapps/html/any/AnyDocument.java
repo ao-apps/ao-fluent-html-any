@@ -88,6 +88,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @see  #unsafe(java.lang.Object)
 	 * @see  #unsafe(com.aoapps.lang.io.Writable)
 	 * @see  #unsafe(char)
+	 * @see  #unsafe(int)
 	 * @see  #unsafe(char[])
 	 * @see  #unsafe(java.lang.CharSequence, int, int)
 	 * @see  #unsafe(char[], int, int)
@@ -143,7 +144,186 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		this.out = out;
 	}
 
-	// <editor-fold desc="Unsafe">
+	@Override
+	public D getDocument() {
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	// <editor-fold desc="WhitespaceWriter">
+	/**
+	 * Is indenting enabled?
+	 */
+	// Matches MediaWriter.indent
+	private boolean indent;
+
+	/**
+	 * Current indentation level.
+	 */
+	// Matches MediaWriter.depth
+	private int depth;
+
+	// Matches MediaWriter.nl()
+	@Override
+	@SuppressWarnings("deprecation")
+	public D nl() throws IOException {
+		return nl(getUnsafe(null));
+	}
+
+	D nl(Writer out) throws IOException {
+		out.append(NL);
+		setAtnl();
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	// Matches MediaWriter.nli()
+	@Override
+	public D nli() throws IOException {
+		return nli(getUnsafe(null), 0);
+	}
+
+	D nli(Writer out) throws IOException {
+		return nli(out, 0);
+	}
+
+	// Matches MediaWriter.nli(int)
+	@Override
+	@SuppressWarnings("deprecation")
+	public D nli(int depthOffset) throws IOException {
+		return nli(getUnsafe(null), depthOffset);
+	}
+
+	D nli(Writer out, int depthOffset) throws IOException {
+		int depth_;
+		if(getIndent() && (depth_ = getDepth() + depthOffset) > 0) {
+			WriterUtil.nli(out, depth_);
+			clearAtnl();
+		} else {
+			out.append(NL);
+			setAtnl();
+		}
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	// Matches MediaWriter.indent()
+	@Override
+	@SuppressWarnings("deprecation")
+	public D indent() throws IOException {
+		return indent(getUnsafe(null), 0);
+	}
+
+	D indent(Writer out) throws IOException {
+		return indent(out, 0);
+	}
+
+	// Matches MediaWriter.indent(int)
+	@Override
+	@SuppressWarnings("deprecation")
+	public D indent(int depthOffset) throws IOException {
+		return indent(getUnsafe(null), depthOffset);
+	}
+
+	D indent(Writer out, int depthOffset) throws IOException {
+		int depth_;
+		if(getIndent() && (depth_ = getDepth() + depthOffset) > 0) {
+			WriterUtil.indent(out, depth_);
+			clearAtnl();
+		}
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	// Matches MediaWriter.getIndent()
+	@Override
+	@SuppressWarnings("deprecation")
+	public boolean getIndent() {
+		return indent;
+	}
+
+	// Matches MediaWriter.setIndent(int)
+	@Override
+	@SuppressWarnings("deprecation")
+	public D setIndent(boolean indent) {
+		this.indent = indent;
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	// Matches MediaWriter.getDepth()
+	@Override
+	@SuppressWarnings("deprecation")
+	public int getDepth() {
+		return depth;
+	}
+
+	// Matches MediaWriter.setDepth(int)
+	@Override
+	@SuppressWarnings("deprecation")
+	public D setDepth(int depth) {
+		if(depth < 0) throw new IllegalArgumentException("depth < 0: " + depth);
+		this.depth = depth;
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	// Matches MediaWriter.incDepth()
+	@Override
+	@SuppressWarnings("deprecation")
+	public D incDepth() {
+		if(getIndent()) {
+			int d = ++depth;
+			if(d < 0) depth = Integer.MAX_VALUE;
+		}
+		assert depth >= 0;
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	// Matches MediaWriter.decDepth()
+	@Override
+	@SuppressWarnings("deprecation")
+	public D decDepth() {
+		if(getIndent()) {
+			int d = --depth;
+			if(d < 0) depth = 0;
+		}
+		assert depth >= 0;
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	// Matches MediaWriter.sp()
+	@Override
+	public D sp() throws IOException {
+		return sp(getUnsafe(null));
+	}
+
+	D sp(Writer out) throws IOException {
+		out.append(SPACE);
+		clearAtnl();
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	// Matches MediaWriter.sp(int)
+	@Override
+	public D sp(int count) throws IOException {
+		return sp(getUnsafe(null), count);
+	}
+
+	D sp(Writer out, int count) throws IOException {
+		if(count > 0) {
+			WriterUtil.sp(out, count);
+			clearAtnl();
+		}
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+	// </editor-fold>
+
+	// <editor-fold desc="DocumentWriter / Unsafe">
 	@Override
 	public Writer getUnsafe(Boolean endsNewline) throws IllegalStateException {
 		Writer unsafe = out;
@@ -158,6 +338,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
@@ -171,6 +353,30 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	public D unsafe(int codePoint) throws IOException {
+		return unsafe(getUnsafe(null), codePoint);
+	}
+
+	D unsafe(Writer out, int codePoint) throws IOException {
+		if(Character.isBmpCodePoint(codePoint)) {
+			out.append((char)codePoint);
+		} else if(Character.isValidCodePoint(codePoint)) {
+			out.append(Character.lowSurrogate(codePoint));
+			out.append(Character.highSurrogate(codePoint));
+		} else {
+			throw new IllegalArgumentException(String.format("Invalid code point: 0x%X", codePoint));
+		}
+		return setAtnl(codePoint == NL);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
@@ -206,6 +412,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
@@ -240,6 +448,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
@@ -275,6 +485,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
@@ -309,6 +521,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
@@ -372,6 +586,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  {@code this} document
@@ -386,6 +602,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
@@ -424,64 +642,27 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		clearAtnl(); // Unknown, safe to assume not at newline
 		return new NoCloseWriter(out);
 	}
-
-	// TODO: Include a new interface similar to AnyTextContent called "Unsafe" that Content would also extend?
 	// </editor-fold>
 
-	/**
-	 * @see Doctype#xmlDeclaration(com.aoapps.encoding.Serialization, java.lang.String, java.lang.Appendable)
-	 */
-	public D xmlDeclaration(String documentEncoding) throws IOException {
-		if(doctype.xmlDeclaration(serialization, documentEncoding, getUnsafe(null))) {
-			setAtnl();
-		}
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	/**
-	 * @see Doctype#xmlDeclaration(com.aoapps.encoding.Serialization, java.nio.charset.Charset, java.lang.Appendable)
-	 */
-	public D xmlDeclaration(Charset documentEncoding) throws IOException {
-		if(doctype.xmlDeclaration(serialization, documentEncoding, getUnsafe(null))) {
-			setAtnl();
-		}
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	/**
-	 * @see Doctype#doctype(com.aoapps.encoding.Serialization, java.lang.Appendable)
-	 */
-	public D doctype() throws IOException {
-		if(doctype.doctype(serialization, getUnsafe(null))) {
-			setAtnl();
-		}
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	@Override
-	public D getDocument() {
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	// <editor-fold desc="Automatic Newline and Indentation">
+	// <editor-fold desc="DocumentWriter / Automatic Newline and Indentation">
 	/**
 	 * Is automatic newline and indenting enabled?
 	 */
 	private boolean autonli;
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public boolean getAutonli() {
 		return autonli;
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
+	@SuppressWarnings("deprecation")
 	public D setAutonli(boolean autonli) {
 		this.autonli = autonli;
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -494,14 +675,18 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	private boolean atnl;
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public boolean getAtnl() {
 		return atnl;
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
+	@SuppressWarnings("deprecation")
 	public D setAtnl() {
 		this.atnl = true;
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -509,9 +694,12 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
+	@SuppressWarnings("deprecation")
 	public D setAtnl(boolean atnl) {
 		this.atnl = atnl;
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -519,9 +707,12 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
+	@SuppressWarnings("deprecation")
 	public D clearAtnl() {
 		this.atnl = false;
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -529,9 +720,12 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
+	@SuppressWarnings("deprecation")
 	public D autoNl() throws IOException {
 		return autoNl(getUnsafe(null));
 	}
@@ -546,6 +740,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
@@ -558,9 +754,12 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
+	@SuppressWarnings("deprecation")
 	public D autoNli(int depthOffset) throws IOException {
 		return autoNli(getUnsafe(null), depthOffset);
 	}
@@ -591,9 +790,12 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
+	@SuppressWarnings("deprecation")
 	public D autoIndent() throws IOException {
 		return autoIndent(getUnsafe(null), 0);
 	}
@@ -603,9 +805,12 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @return  {@code this} document
 	 */
 	@Override
+	@SuppressWarnings("deprecation")
 	public D autoIndent(int depthOffset) throws IOException {
 		return autoIndent(getUnsafe(null), depthOffset);
 	}
@@ -621,167 +826,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 	// </editor-fold>
 
-	/**
-	 * Is indenting enabled?
-	 */
-	// Matches MediaWriter.indent
-	private boolean indent;
-
-	/**
-	 * Current indentation level.
-	 */
-	// Matches MediaWriter.depth
-	private int depth;
-
-	// Matches MediaWriter.nl()
-	@Override
-	public D nl() throws IOException {
-		return nl(getUnsafe(null));
-	}
-
-	D nl(Writer out) throws IOException {
-		out.append(NL);
-		setAtnl();
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	// Matches MediaWriter.nli()
-	@Override
-	public D nli() throws IOException {
-		return nli(getUnsafe(null), 0);
-	}
-
-	D nli(Writer out) throws IOException {
-		return nli(out, 0);
-	}
-
-	// Matches MediaWriter.nli(int)
-	@Override
-	public D nli(int depthOffset) throws IOException {
-		return nli(getUnsafe(null), depthOffset);
-	}
-
-	D nli(Writer out, int depthOffset) throws IOException {
-		int depth_;
-		if(getIndent() && (depth_ = getDepth() + depthOffset) > 0) {
-			WriterUtil.nli(out, depth_);
-			clearAtnl();
-		} else {
-			out.append(NL);
-			setAtnl();
-		}
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	// Matches MediaWriter.indent()
-	@Override
-	public D indent() throws IOException {
-		return indent(getUnsafe(null), 0);
-	}
-
-	D indent(Writer out) throws IOException {
-		return indent(out, 0);
-	}
-
-	// Matches MediaWriter.indent(int)
-	@Override
-	public D indent(int depthOffset) throws IOException {
-		return indent(getUnsafe(null), depthOffset);
-	}
-
-	D indent(Writer out, int depthOffset) throws IOException {
-		int depth_;
-		if(getIndent() && (depth_ = getDepth() + depthOffset) > 0) {
-			WriterUtil.indent(out, depth_);
-			clearAtnl();
-		}
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	// Matches MediaWriter.getIndent()
-	@Override
-	public boolean getIndent() {
-		return indent;
-	}
-
-	// Matches MediaWriter.setIndent(int)
-	@Override
-	public D setIndent(boolean indent) {
-		this.indent = indent;
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	// Matches MediaWriter.getDepth()
-	@Override
-	public int getDepth() {
-		return depth;
-	}
-
-	// Matches MediaWriter.setDepth(int)
-	@Override
-	public D setDepth(int depth) {
-		if(depth < 0) throw new IllegalArgumentException("depth < 0: " + depth);
-		this.depth = depth;
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	// Matches MediaWriter.incDepth()
-	@Override
-	public D incDepth() {
-		if(getIndent()) {
-			int d = ++depth;
-			if(d < 0) depth = Integer.MAX_VALUE;
-		}
-		assert depth >= 0;
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	// Matches MediaWriter.decDepth()
-	@Override
-	public D decDepth() {
-		if(getIndent()) {
-			int d = --depth;
-			if(d < 0) depth = 0;
-		}
-		assert depth >= 0;
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	// Matches MediaWriter.sp()
-	@Override
-	public D sp() throws IOException {
-		return sp(getUnsafe(null));
-	}
-
-	D sp(Writer out) throws IOException {
-		out.append(SPACE);
-		clearAtnl();
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	// Matches MediaWriter.sp(int)
-	@Override
-	public D sp(int count) throws IOException {
-		return sp(getUnsafe(null), count);
-	}
-
-	D sp(Writer out, int count) throws IOException {
-		if(count > 0) {
-			WriterUtil.sp(out, count);
-			clearAtnl();
-		}
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
+	// <editor-fold desc="TextWriter">
 	@Override
 	public D nbsp() throws IOException {
 		return nbsp(getUnsafe(null));
@@ -1008,6 +1053,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  {@code this} document
@@ -1022,6 +1069,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * {@inheritDoc}
+	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  {@code this} document
@@ -1056,10 +1105,44 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 			new NoCloseWriter(out)
 		);
 	}
+	// </editor-fold>
 
 	// TODO: A set of per-type methods, like xml(), script(), style(), ...
 
 	// TODO: A set of out()/unsafe() methods that take MediaType and value
 
 	// TODO: comments
+
+	/**
+	 * @see Doctype#xmlDeclaration(com.aoapps.encoding.Serialization, java.lang.String, java.lang.Appendable)
+	 */
+	public D xmlDeclaration(String documentEncoding) throws IOException {
+		if(doctype.xmlDeclaration(serialization, documentEncoding, getUnsafe(null))) {
+			setAtnl();
+		}
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	/**
+	 * @see Doctype#xmlDeclaration(com.aoapps.encoding.Serialization, java.nio.charset.Charset, java.lang.Appendable)
+	 */
+	public D xmlDeclaration(Charset documentEncoding) throws IOException {
+		if(doctype.xmlDeclaration(serialization, documentEncoding, getUnsafe(null))) {
+			setAtnl();
+		}
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	/**
+	 * @see Doctype#doctype(com.aoapps.encoding.Serialization, java.lang.Appendable)
+	 */
+	public D doctype() throws IOException {
+		if(doctype.doctype(serialization, getUnsafe(null))) {
+			setAtnl();
+		}
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
 }

@@ -42,6 +42,7 @@ public interface AnyTextContent<
 > extends TextWriter<__>,
 	Content<D, __> {
 
+	// <editor-fold desc="TextWriter">
 	/**
 	 * {@inheritDoc}
 	 * <p>
@@ -246,4 +247,5 @@ public interface AnyTextContent<
 	default DocumentMediaWriter<D> text() throws IOException {
 		return getDocument().text();
 	}
+	// </editor-fold>
 }

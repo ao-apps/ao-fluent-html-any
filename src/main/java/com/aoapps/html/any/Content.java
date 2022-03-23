@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,7 +22,6 @@
  */
 package com.aoapps.html.any;
 
-import com.aoapps.encoding.WhitespaceWriter;
 import com.aoapps.lang.io.Writable;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -43,7 +42,7 @@ import java.io.Writer;
 public interface Content<
 	D  extends AnyDocument<D>,
 	__ extends Content<D, __>
-> extends WhitespaceWriter<__> {
+> extends DocumentWriter<__> {
 
 	/**
 	 * Gets the document for the current content model.  The document can be used to
@@ -51,173 +50,17 @@ public interface Content<
 	 */
 	D getDocument();
 
-	// <editor-fold desc="Unsafe">
+	// <editor-fold desc="WhitespaceWriter">
 	/**
-	 * Gets the current writer this document is writing to, which may be used for raw output.
+	 * {@inheritDoc}
 	 * <p>
-	 * Please prefer {@link #unsafe()}, which is compatible with try-with-resources blocks.
-	 * The writer returned here is the real, underlying writer.
+	 * Delegates to {@link AnyDocument#nl()}.
 	 * </p>
 	 *
-	 * @param  endsNewline  Indicates whether the data that will be written will end in a {@link #NL}.
-	 *                      When non-null, will call {@link #setAtnl(boolean)} with the given value.
-	 *
-	 * @throws  IllegalStateException  when output has been set to {@code null}.
-	 *
-	 * @see  #getUnsafe()
-	 * @see  AnyDocument#setOut(java.io.Writer)
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default Writer getUnsafe(Boolean endsNewline) throws IllegalStateException {
-		return getDocument().getUnsafe(endsNewline);
-	}
-
-	/**
-	 * Gets the current writer this document is writing to, which may be used for raw output.
-	 * <p>
-	 * Please prefer {@link #unsafe()}, which is compatible with try-with-resources blocks.
-	 * The writer returned here is the real, underlying writer.
-	 * </p>
-	 * <p>
-	 * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-	 * </p>
-	 *
-	 * @throws  IllegalStateException  when output has been set to {@code null}.
-	 *
-	 * @see  #getUnsafe(java.lang.Boolean)
-	 * @see  AnyDocument#setOut(java.io.Writer)
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default Writer getUnsafe() throws IllegalStateException {
-		return getDocument().getUnsafe();
-	}
-
-	/**
-	 * Performs raw output of a single character, automatically determining {@link #setAtnl(boolean)}.
-	 *
-	 * @return  {@code this} content model
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default __ unsafe(char ch) throws IOException {
-		getDocument().unsafe(ch);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
-	 *
-	 * @return  {@code this} content model
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default __ unsafe(char[] cbuf) throws IOException {
-		getDocument().unsafe(cbuf);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
-	 *
-	 * @return  {@code this} content model
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default __ unsafe(char[] cbuf, int offset, int len) throws IOException {
-		getDocument().unsafe(cbuf, offset, len);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
-	 *
-	 * @return  {@code this} content model
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default __ unsafe(CharSequence csq) throws IOException {
-		getDocument().unsafe(csq);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
-	 *
-	 * @return  {@code this} content model
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default __ unsafe(CharSequence csq, int start, int end) throws IOException {
-		getDocument().unsafe(csq, start, end);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
-	 * <p>
-	 * When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-	 * </p>
-	 *
-	 * @return  {@code this} content model
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default __ unsafe(Object unsafe) throws IOException {
-		getDocument().unsafe(unsafe);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
-	 * <p>
-	 * When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-	 * </p>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  {@code this} content model
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default <Ex extends Throwable> __ unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
-		getDocument().unsafe(unsafe);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * Performs raw output.
-	 * <p>
-	 * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-	 * </p>
-	 *
-	 * @return  {@code this} content model
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default __ unsafe(Writable unsafe) throws IOException {
-		getDocument().unsafe(unsafe);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * Performs raw output.
-	 * This is well suited for use in a try-with-resources block.
-	 * <p>
-	 * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-	 * </p>
-	 *
-	 * @return  a writer for direct output, which will ignore any calls to {@link Writer#close()}
-	 *          to be safely used in a try-with-resources block.
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	default Writer unsafe() throws IOException {
-		return getDocument().unsafe();
-	}
-
-	// TODO: Include a new interface similar to AnyTextContent called "Unsafe" that Content would also extend?
-	// </editor-fold>
-
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ nl() throws IOException {
 		getDocument().nl();
@@ -225,6 +68,12 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#nli()}.
+	 * </p>
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	@Override
 	default __ nli() throws IOException {
@@ -233,7 +82,16 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#nli(int)}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ nli(int depthOffset) throws IOException {
 		getDocument().nli(depthOffset);
@@ -241,7 +99,16 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#indent()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ indent() throws IOException {
 		getDocument().indent();
@@ -249,7 +116,16 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#indent(int)}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ indent(int depthOffset) throws IOException {
 		getDocument().indent(depthOffset);
@@ -257,13 +133,31 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getIndent()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default boolean getIndent() {
 		return getDocument().getIndent();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#setIndent(boolean)}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ setIndent(boolean indent) {
 		getDocument().setIndent(indent);
@@ -271,13 +165,31 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getDepth()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default int getDepth() {
 		return getDocument().getDepth();
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#setDepth(int)}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ setDepth(int depth) {
 		getDocument().setDepth(depth);
@@ -285,7 +197,16 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#incDepth()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ incDepth() {
 		getDocument().incDepth();
@@ -293,7 +214,16 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#decDepth()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ decDepth() {
 		getDocument().decDepth();
@@ -301,6 +231,12 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#sp()}.
+	 * </p>
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	@Override
 	default __ sp() throws IOException {
@@ -309,6 +245,12 @@ public interface Content<
 		return c;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#sp(int)}.
+	 * </p>
+	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	@Override
 	default __ sp(int count) throws IOException {
@@ -316,23 +258,199 @@ public interface Content<
 		@SuppressWarnings("unchecked") __ c = (__)this;
 		return c;
 	}
+	// </editor-fold>
 
-	// <editor-fold desc="Automatic Newline and Indentation">
+	// <editor-fold desc="DocumentWriter / Unsafe">
 	/**
-	 * Gets if automatic newline (and indentation when {@linkplain #getIndent() enabled}) is currently enabled,
-	 * off by default.
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getUnsafe(java.lang.Boolean)}.
+	 * </p>
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default Writer getUnsafe(Boolean endsNewline) throws IllegalStateException {
+		return getDocument().getUnsafe(endsNewline);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getUnsafe()}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default Writer getUnsafe() throws IllegalStateException {
+		return getDocument().getUnsafe();
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(char)}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ unsafe(char ch) throws IOException {
+		getDocument().unsafe(ch);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(int)}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ unsafe(int codePoint) throws IOException {
+		getDocument().unsafe(codePoint);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(char[])}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ unsafe(char[] cbuf) throws IOException {
+		getDocument().unsafe(cbuf);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(char[], int, int)}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ unsafe(char[] cbuf, int offset, int len) throws IOException {
+		getDocument().unsafe(cbuf, offset, len);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence)}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ unsafe(CharSequence csq) throws IOException {
+		getDocument().unsafe(csq);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence, int, int)}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ unsafe(CharSequence csq, int start, int end) throws IOException {
+		getDocument().unsafe(csq, start, end);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(java.lang.Object)}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ unsafe(Object unsafe) throws IOException {
+		getDocument().unsafe(unsafe);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.function.IOSupplierE)}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default <Ex extends Throwable> __ unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
+		getDocument().unsafe(unsafe);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.Writable)}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ unsafe(Writable unsafe) throws IOException {
+		getDocument().unsafe(unsafe);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#unsafe()}.
+	 * </p>
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default Writer unsafe() throws IOException {
+		return getDocument().unsafe();
+	}
+	// </editor-fold>
+
+	// <editor-fold desc="DocumentWriter / Automatic Newline and Indentation">
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getAutonli()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default boolean getAutonli() {
 		return getDocument().getAutonli();
 	}
 
 	/**
-	 * Enables or disabled automatic newline (and indentation when {@linkplain #getIndent() enabled}).
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#setAutonli(boolean)}.
+	 * </p>
 	 *
-	 * @return  {@code this} content model
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default __ setAutonli(boolean autonli) {
 		getDocument().setAutonli(autonli);
 		@SuppressWarnings("unchecked") __ c = (__)this;
@@ -340,19 +458,31 @@ public interface Content<
 	}
 
 	/**
-	 * Gets the at newline flag.
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#getAtnl()}.
+	 * </p>
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default boolean getAtnl() {
 		return getDocument().getAtnl();
 	}
 
 	/**
-	 * Flags is at a newline.
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#setAtnl()}.
+	 * </p>
 	 *
-	 * @return  {@code this} content model
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default __ setAtnl() {
 		getDocument().setAtnl();
 		@SuppressWarnings("unchecked") __ c = (__)this;
@@ -360,11 +490,16 @@ public interface Content<
 	}
 
 	/**
-	 * Sets the at newline flag.
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#setAtnl(boolean)}.
+	 * </p>
 	 *
-	 * @return  {@code this} content model
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default __ setAtnl(boolean atnl) {
 		getDocument().setAtnl(atnl);
 		@SuppressWarnings("unchecked") __ c = (__)this;
@@ -372,11 +507,16 @@ public interface Content<
 	}
 
 	/**
-	 * Clears the at newline flag.
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#clearAtnl()}.
+	 * </p>
 	 *
-	 * @return  {@code this} content model
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default __ clearAtnl() {
 		getDocument().clearAtnl();
 		@SuppressWarnings("unchecked") __ c = (__)this;
@@ -384,12 +524,16 @@ public interface Content<
 	}
 
 	/**
-	 * Performs automatic newline when
-	 * {@link #getAutonli()} and not {@link #getAtnl()}.
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoNl()}.
+	 * </p>
 	 *
-	 * @return  {@code this} content model
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default __ autoNl() throws IOException {
 		getDocument().autoNl();
 		@SuppressWarnings("unchecked") __ c = (__)this;
@@ -397,12 +541,13 @@ public interface Content<
 	}
 
 	/**
-	 * Performs automatic newline when {@link #getAutonli()} and not {@link #getAtnl()},
-	 * followed by automatic indentation when {@linkplain #getIndent() enabled})
-	 *
-	 * @return  {@code this} content model
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoNli()}.
+	 * </p>
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
 	default __ autoNli() throws IOException {
 		getDocument().autoNli();
 		@SuppressWarnings("unchecked") __ c = (__)this;
@@ -410,15 +555,16 @@ public interface Content<
 	}
 
 	/**
-	 * Performs automatic newline when {@link #getAutonli()} and not {@link #getAtnl()},
-	 * followed by automatic indentation with a depth offset when {@linkplain #getIndent() enabled})
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoNli(int)}.
+	 * </p>
 	 *
-	 * @param  depthOffset  A value added to the current indentation depth.
-	 *                      For example, pass {@code -1} when performing a newline before a closing tag or ending curly brace.
-	 *
-	 * @return  {@code this} content model
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default __ autoNli(int depthOffset) throws IOException {
 		getDocument().autoNli(depthOffset);
 		@SuppressWarnings("unchecked") __ c = (__)this;
@@ -426,12 +572,16 @@ public interface Content<
 	}
 
 	/**
-	 * Performs automatic indentation when
-	 * {@link #getAutonli()}, {@link #getIndent()}, and {@link #getAtnl()}.
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoIndent()}.
+	 * </p>
 	 *
-	 * @return  {@code this} content model
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default __ autoIndent() throws IOException {
 		getDocument().autoIndent();
 		@SuppressWarnings("unchecked") __ c = (__)this;
@@ -439,15 +589,16 @@ public interface Content<
 	}
 
 	/**
-	 * Performs automatic indentation with a depth offset when
-	 * {@link #getAutonli()}, {@link #getIndent()}, and {@link #getAtnl()}.
+	 * {@inheritDoc}
+	 * <p>
+	 * Delegates to {@link AnyDocument#autoIndent(int)}.
+	 * </p>
 	 *
-	 * @param  depthOffset  A value added to the current indentation depth.
-	 *                      For example, pass {@code -1} when performing a newline before a closing tag or ending curly brace.
-	 *
-	 * @return  {@code this} content model
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
+	@Override
 	default __ autoIndent(int depthOffset) throws IOException {
 		getDocument().autoIndent(depthOffset);
 		@SuppressWarnings("unchecked") __ c = (__)this;

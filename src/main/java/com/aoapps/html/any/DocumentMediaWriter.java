@@ -82,6 +82,7 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 		return this;
 	}
 
+	// <editor-fold desc="WhitespaceWriter">
 	// Not delegating to AnyDocument.nl(), because the newlines themselves may need to be encoded.
 	@Override
 	public DocumentMediaWriter<D> nl() throws IOException {
@@ -200,7 +201,9 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 		super.sp(count);
 		return this;
 	}
+	// </editor-fold>
 
+	// <editor-fold desc="TextWriter">
 	@Override
 	public DocumentMediaWriter<D> nbsp() throws IOException {
 		super.nbsp();
@@ -293,6 +296,7 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 			}
 		};
 	}
+	// </editor-fold>
 
 	// TODO: A set of per-type methods, like xml(), script(), style(), ...
 
