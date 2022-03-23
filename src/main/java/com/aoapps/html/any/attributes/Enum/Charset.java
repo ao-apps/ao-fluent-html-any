@@ -48,7 +48,6 @@ import java.util.function.Function;
  *
  * @author  AO Industries, Inc.
  */
-// TODO: Support java Charset, too
 // Matches CharsetHtml4Only
 public interface Charset<
 	E extends Element<?, ?, E> & Charset<E, V>,
@@ -91,6 +90,35 @@ public interface Charset<
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
+		return charset((charset == null) ? null : charset.get());
+	}
+
+	/**
+	 * <ul>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+	 * </ul>
+	 *
+	 * @since HTML 5
+	 */
+	default E charset(java.nio.charset.Charset charset) throws IOException {
+		return charset((charset == null) ? null : charset.name());
+	}
+
+	/**
+	 * <ul>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+	 * </ul>
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
+	 */
+	@SuppressWarnings("overloads")
+	default <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
 		return charset((charset == null) ? null : charset.get());
 	}
 

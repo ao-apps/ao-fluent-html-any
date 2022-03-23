@@ -50,6 +50,7 @@ import java.util.function.Function;
  *
  * @author  AO Industries, Inc.
  */
+@SuppressWarnings("deprecation")
 public abstract class AnyLINK<
 	D  extends AnyDocument<D>,
 	PC extends AnyUnion_Metadata_Phrasing<D, PC>,

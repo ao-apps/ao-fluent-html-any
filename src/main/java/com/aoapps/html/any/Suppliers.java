@@ -40,6 +40,21 @@ public final class Suppliers {
 	private Suppliers() {throw new AssertionError();}
 
 	/**
+	 * Variant bounded by {@link java.nio.charset.Charset}, since can't have multiple methods with different bounds due to erasure.
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 */
+	@FunctionalInterface
+	public interface Charset<Ex extends Throwable> extends IOSupplierE<java.nio.charset.Charset, Ex> {
+
+		/**
+		 * @return  The attribute value or {@code null} for no attribute.
+		 */
+		@Override
+		java.nio.charset.Charset get() throws IOException, Ex;
+	}
+
+	/**
 	 * Variant bounded by {@link com.aoapps.html.any.Circle}, since can't have multiple methods with different bounds due to erasure.
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown

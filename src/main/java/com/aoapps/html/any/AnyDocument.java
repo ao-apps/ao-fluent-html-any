@@ -440,6 +440,17 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	/**
+	 * @see Doctype#xmlDeclaration(com.aoapps.encoding.Serialization, java.nio.charset.Charset, java.lang.Appendable)
+	 */
+	public D xmlDeclaration(Charset documentEncoding) throws IOException {
+		if(doctype.xmlDeclaration(serialization, documentEncoding, getUnsafe(null))) {
+			setAtnl();
+		}
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	/**
 	 * @see Doctype#doctype(com.aoapps.encoding.Serialization, java.lang.Appendable)
 	 */
 	public D doctype() throws IOException {
