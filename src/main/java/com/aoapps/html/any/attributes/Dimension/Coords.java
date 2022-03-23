@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -248,7 +248,6 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
 	 * </ul>
 	 */
 	default E coords(Point ... poly) throws IOException {
-		// TODO: This could be done via a streaming attribute at the cost of not going through the current single funnel
 		StringBuilder sb = new StringBuilder();
 		if(poly != null) {
 			for(Point p : poly) {
@@ -271,7 +270,6 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
 		if(poly == null || poly.npoints == 0) {
 			return coords((String)null);
 		} else {
-			// TODO: This could be done via a streaming attribute at the cost of not going through the current single funnel
 			StringBuilder sb = new StringBuilder();
 			for(int i = 0; i < poly.npoints; i++) {
 				if(sb.length() > 0) sb.append(',');
