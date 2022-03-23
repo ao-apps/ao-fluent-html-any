@@ -327,7 +327,50 @@ public interface AnyContent<
 	// Inherited: TBODY
 	// Inherited: THEAD
 	// Inherited: TFOOT
-	// Inherited: TR
+	// <editor-fold defaultstate="collapsed" desc="Inherited: TR (removed deprecated since context is unknown)">
+	// TODO: Create a test to ensure all methods of TBODY_THEAD_TFOOT have been overridden and deprecated, based on a new @OverrideFactory annotation?
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	@SuppressWarnings("deprecation")
+	//@Factory("tr")
+	AnyTR<D, __, ?, ?, ?> tr() throws IOException;
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 */
+	@Override
+	@SuppressWarnings("deprecation")
+	//@Factory("tr")
+	default <Ex extends Throwable> __ tr__(IORunnableE<Ex> tr) throws IOException, Ex {
+		return AnyTABLE_content.super.tr__(tr);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 */
+	@Override
+	@SuppressWarnings("deprecation")
+	//@Factory("tr")
+	default <Ex extends Throwable> __ tr__any(IOConsumerE<? super AnyTR__<D, __, ? extends AnyTR__<D, __, ?>>, Ex> tr) throws IOException, Ex {
+		return AnyTABLE_content.super.tr__any(tr);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 */
+	@Override
+	@SuppressWarnings("deprecation")
+	//@Factory("tr")
+	default __ tr__() throws IOException {
+		return AnyTABLE_content.super.tr__();
+	}
+	// </editor-fold>
 	// Inherited: TD
 	// Inherited: TH
 	// Inherited: FORM
