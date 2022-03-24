@@ -50,6 +50,7 @@ import java.util.function.Function;
  *
  * @author  AO Industries, Inc.
  */
+// TODO: Have multiple implementations, along with "Dynamic", similar to AnyINPUT?
 @SuppressWarnings("deprecation")
 public abstract class AnyLINK<
 	D  extends AnyDocument<D>,
