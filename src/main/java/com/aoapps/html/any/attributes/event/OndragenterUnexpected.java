@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,12 +22,22 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
+import com.aoapps.html.any.AnyBASE;
+import com.aoapps.html.any.AnyBDO;
+import com.aoapps.html.any.AnyBR;
+import com.aoapps.html.any.AnyHEAD;
+import com.aoapps.html.any.AnyHTML;
+import com.aoapps.html.any.AnyIFRAME;
+import com.aoapps.html.any.AnyINPUT;
+import com.aoapps.html.any.AnyMETA;
+import com.aoapps.html.any.AnyPARAM;
+import com.aoapps.html.any.AnySCRIPT;
+import com.aoapps.html.any.AnySTYLE;
+import com.aoapps.html.any.AnyTITLE;
+import com.aoapps.html.any.AnyWBR;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -44,10 +54,21 @@ import java.io.IOException;
  *
  * @since HTML 5
  *
+ * @deprecated  Although the ondragenter attribute is global, it is not expected on
+ *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+ *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+ *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+ *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+ *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+ *              <p>
+ *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+ *              </p>
+ *
  * @author  AO Industries, Inc.
  */
-// Matches OndragenterUnexpected
-public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
+// Matches Ondragenter
+@Deprecated
+public interface OndragenterUnexpected<E extends Element<?, ?, E> & OndragenterUnexpected<E>> extends Ondragenter<E> {
 
 	/**
 	 * <ul>
@@ -59,19 +80,22 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @deprecated  Although the ondragenter attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	@Attributes.Funnel
 	default E ondragenter(Object ondragenter) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"ondragenter"
-			);
-		}
-		return Attributes.Event.attribute(element, "ondragenter", ondragenter);
+		return Ondragenter.super.ondragenter(ondragenter);
 	}
 
 	/**
@@ -88,9 +112,21 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
 	 * @since HTML 5
 	 *
 	 * @see #ondragenter(java.lang.Object)
+	 *
+	 * @deprecated  Although the ondragenter attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	default <Ex extends Throwable> E ondragenter(IOSupplierE<?, Ex> ondragenter) throws IOException, Ex {
-		return ondragenter((ondragenter == null) ? null : ondragenter.get());
+		return Ondragenter.super.ondragenter(ondragenter);
 	}
 
 	/**
@@ -107,8 +143,20 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
 	 * @since HTML 5
 	 *
 	 * @see #ondragenter(java.lang.Object)
+	 *
+	 * @deprecated  Although the ondragenter attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	default <Ex extends Throwable> E ondragenter(MediaWritable<Ex> ondragenter) throws IOException, Ex {
-		return ondragenter((Object)ondragenter);
+		return Ondragenter.super.ondragenter(ondragenter);
 	}
 }

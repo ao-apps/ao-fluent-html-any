@@ -73,6 +73,13 @@ public abstract class AnySTYLE<
 	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
 	com.aoapps.html.any.attributes.event.Onerror<E>, // Only listed at https://www.w3schools.com/tags/ref_attributes.asp
 	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
 	com.aoapps.html.any.attributes.event.Onload<E>,

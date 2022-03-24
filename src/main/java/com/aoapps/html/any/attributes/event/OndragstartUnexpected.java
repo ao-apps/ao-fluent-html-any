@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,12 +22,22 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
+import com.aoapps.html.any.AnyBASE;
+import com.aoapps.html.any.AnyBDO;
+import com.aoapps.html.any.AnyBR;
+import com.aoapps.html.any.AnyHEAD;
+import com.aoapps.html.any.AnyHTML;
+import com.aoapps.html.any.AnyIFRAME;
+import com.aoapps.html.any.AnyINPUT;
+import com.aoapps.html.any.AnyMETA;
+import com.aoapps.html.any.AnyPARAM;
+import com.aoapps.html.any.AnySCRIPT;
+import com.aoapps.html.any.AnySTYLE;
+import com.aoapps.html.any.AnyTITLE;
+import com.aoapps.html.any.AnyWBR;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -44,10 +54,21 @@ import java.io.IOException;
  *
  * @since HTML 5
  *
+ * @deprecated  Although the ondragstart attribute is global, it is not expected on
+ *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+ *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+ *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+ *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+ *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+ *              <p>
+ *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+ *              </p>
+ *
  * @author  AO Industries, Inc.
  */
-// Matches OndragstartUnexpected
-public interface Ondragstart<E extends Element<?, ?, E> & Ondragstart<E>> {
+// Matches Ondragstart
+@Deprecated
+public interface OndragstartUnexpected<E extends Element<?, ?, E> & OndragstartUnexpected<E>> extends Ondragstart<E> {
 
 	/**
 	 * <ul>
@@ -59,19 +80,22 @@ public interface Ondragstart<E extends Element<?, ?, E> & Ondragstart<E>> {
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @deprecated  Although the ondragstart attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	@Attributes.Funnel
 	default E ondragstart(Object ondragstart) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"ondragstart"
-			);
-		}
-		return Attributes.Event.attribute(element, "ondragstart", ondragstart);
+		return Ondragstart.super.ondragstart(ondragstart);
 	}
 
 	/**
@@ -88,9 +112,21 @@ public interface Ondragstart<E extends Element<?, ?, E> & Ondragstart<E>> {
 	 * @since HTML 5
 	 *
 	 * @see #ondragstart(java.lang.Object)
+	 *
+	 * @deprecated  Although the ondragstart attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	default <Ex extends Throwable> E ondragstart(IOSupplierE<?, Ex> ondragstart) throws IOException, Ex {
-		return ondragstart((ondragstart == null) ? null : ondragstart.get());
+		return Ondragstart.super.ondragstart(ondragstart);
 	}
 
 	/**
@@ -107,8 +143,20 @@ public interface Ondragstart<E extends Element<?, ?, E> & Ondragstart<E>> {
 	 * @since HTML 5
 	 *
 	 * @see #ondragstart(java.lang.Object)
+	 *
+	 * @deprecated  Although the ondragstart attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	default <Ex extends Throwable> E ondragstart(MediaWritable<Ex> ondragstart) throws IOException, Ex {
-		return ondragstart((Object)ondragstart);
+		return Ondragstart.super.ondragstart(ondragstart);
 	}
 }
