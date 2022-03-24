@@ -43,6 +43,7 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
+// Matches AutofocusUnexpected
 public interface Autofocus<E extends Element<?, ?, E> & Autofocus<E>> {
 
 	/**

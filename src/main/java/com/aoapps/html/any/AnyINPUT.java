@@ -1013,6 +1013,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Attributes overrides
 		com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+		com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
 		com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
