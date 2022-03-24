@@ -48,6 +48,7 @@ public abstract class AnyHEAD<
 	// Global Attributes overrides
 	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
 	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+	com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
 	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,

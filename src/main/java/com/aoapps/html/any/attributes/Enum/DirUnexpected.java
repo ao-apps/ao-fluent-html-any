@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,21 +22,24 @@
  */
 package com.aoapps.html.any.attributes.Enum;
 
-import com.aoapps.hodgepodge.i18n.MarkupType;
-import com.aoapps.html.any.AnyDocument;
+import com.aoapps.html.any.AnyBASE;
+import com.aoapps.html.any.AnyBDO;
+import com.aoapps.html.any.AnyBR;
+import com.aoapps.html.any.AnyHEAD;
+import com.aoapps.html.any.AnyHTML;
+import com.aoapps.html.any.AnyIFRAME;
+import com.aoapps.html.any.AnyMETA;
+import com.aoapps.html.any.AnyPARAM;
+import com.aoapps.html.any.AnySCRIPT;
+import com.aoapps.html.any.AnySTYLE;
+import com.aoapps.html.any.AnyTITLE;
+import com.aoapps.html.any.AnyWBR;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.GlobalAttributes;
 import com.aoapps.html.any.Suppliers;
-import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
-import com.aoapps.lang.validation.InvalidResult;
-import com.aoapps.lang.validation.ValidResult;
-import com.aoapps.lang.validation.ValidationResult;
 import java.io.IOException;
-import java.util.Locale;
-import java.util.function.Function;
 
 /**
  * <ul>
@@ -51,62 +54,20 @@ import java.util.function.Function;
  *
  * @param  <E>   This element type
  *
+ * @deprecated  Although the dir attribute is global, it is not expected on
+ *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+ *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+ *              {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;}, {@linkplain AnySCRIPT &lt;script&gt;},
+ *              {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
+ *              <p>
+ *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+ *              </p>
+ *
  * @author  AO Industries, Inc.
  */
-// Matches DirUnexpected
-public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
-
-	/**
-	 * <p>
-	 * Utility class for working with {@link Dir}.
-	 * </p>
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 */
-	public static final class dir {
-
-		/** Make no instances. */
-		private dir() {throw new AssertionError();}
-
-		/**
-		 * Normalizes a dir attribute.
-		 *
-		 * @see  Strings#trimNullIfEmpty(java.lang.String)
-		 * @see  java.lang.String#toLowerCase(java.util.Locale)
-		 * @see  Locale#ROOT
-		 */
-		// TODO: Normalize other attributes the same way
-		public static String normalize(String dir) {
-			dir = Strings.trimNullIfEmpty(dir);
-			if(dir != null) dir = dir.toLowerCase(Locale.ROOT);
-			return dir;
-		}
-
-		/**
-		 * Validates a dir attribute.
-		 * The value should already be {@linkplain #normalize(java.lang.String) normalized}.
-		 *
-		 * @see #normalize(java.lang.String)
-		 */
-		public static ValidationResult validate(String dir) {
-			if(
-				dir != null
-				&& Dir.Value.getByValue(dir) == null
-			) {
-				return new InvalidResult(
-					RESOURCES,
-					"Enum.Dir.invalid",
-					dir
-				);
-			} else {
-				return ValidResult.getInstance();
-			}
-		}
-	}
+// Matches Dir
+@Deprecated
+public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> extends Dir<E> {
 
 	/**
 	 * <ul>
@@ -115,21 +76,21 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
 	 * </ul>
+	 *
+	 * @deprecated  Although the dir attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;}, {@linkplain AnySCRIPT &lt;script&gt;},
+	 *              {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	@Attributes.Funnel
 	default E dir(String dir) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(
-			element,
-			"dir",
-			MarkupType.NONE,
-			Attributes.validate(
-				Dir.dir.normalize(dir),
-				Dir.dir::validate
-			),
-			false,
-			false
-		);
+		return Dir.super.dir(dir);
 	}
 
 	/**
@@ -143,10 +104,21 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #dir(java.lang.String)
+	 *
+	 * @deprecated  Although the dir attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;}, {@linkplain AnySCRIPT &lt;script&gt;},
+	 *              {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
-		return dir((dir == null) ? null : dir.get());
+		return Dir.super.dir(dir);
 	}
 
 	/**
@@ -158,10 +130,20 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
 	 * </ul>
 	 *
 	 * @see #dir(java.lang.String)
+	 *
+	 * @deprecated  Although the dir attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;}, {@linkplain AnySCRIPT &lt;script&gt;},
+	 *              {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	default E dir(Value dir) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return dir((dir == null) ? null : dir.apply(element.getDocument()));
+		return Dir.super.dir(dir);
 	}
 
 	/**
@@ -175,59 +157,20 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #dir(com.aoapps.html.any.attributes.Enum.Dir.Value)
+	 *
+	 * @deprecated  Although the dir attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;}, {@linkplain AnySCRIPT &lt;script&gt;},
+	 *              {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
-		return dir((dir == null) ? null : dir.get());
-	}
-
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 */
-	public enum Value implements Function<AnyDocument<?>, String> {
-		LTR("ltr"),
-		RTL("rtl"),
-		AUTO("auto");
-
-		private final String value;
-
-		private Value(String value) {
-			this.value = value;
-		}
-
-		@Override
-		public String toString() {
-			return value;
-		}
-
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-
-		public String getValue() {
-			return value;
-		}
-
-		private static final Value[] values = values();
-
-		/**
-		 * Gets the enum by value, case-sensitive.
-		 *
-		 * @return  The enum or {@code null} when not found.
-		 */
-		public static Value getByValue(String dir) {
-			if(dir != null) {
-				for(Value value : values) {
-					if(value.value.equals(dir)) return value;
-				}
-			}
-			return null;
-		}
+		return Dir.super.dir(dir);
 	}
 }

@@ -107,7 +107,7 @@ public abstract class AnyBDI<
 	}
 
 	/**
-	 * The {@linkplain Dir#dir(java.lang.Enum) dir} global attribute defaults to <code>auto</code>
+	 * The {@linkplain Dir#dir(com.aoapps.html.any.attributes.Enum.Dir.Value) dir} global attribute defaults to <code>auto</code>
 	 * on this element (it never inherits from the parent element like with other elements).
 	 * <p>
 	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.

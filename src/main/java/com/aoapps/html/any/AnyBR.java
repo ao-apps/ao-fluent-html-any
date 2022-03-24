@@ -45,6 +45,7 @@ public abstract class AnyBR<
 > extends Void<D, PC, E> implements
 	// Global Attributes overrides
 	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+	com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
 	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,

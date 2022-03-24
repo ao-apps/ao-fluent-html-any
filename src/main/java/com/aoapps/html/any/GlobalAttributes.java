@@ -53,7 +53,7 @@ public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<
 	//       https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable
 	//       https://www.w3schools.com/tags/att_global_contenteditable.asp
 	com.aoapps.html.any.attributes.Text.Data<E>,
-	com.aoapps.html.any.attributes.Enum.Dir<E, com.aoapps.html.any.attributes.Enum.Dir.Value>,
+	com.aoapps.html.any.attributes.Enum.Dir<E>,
 	// TODO: draggable
 	//       https://html.spec.whatwg.org/multipage/dnd.html#attr-draggable
 	//       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable
