@@ -70,7 +70,8 @@ public abstract class AnyBODY<
 	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.Onerror<E>,
 	com.aoapps.html.any.attributes.event.Onload<E>,
-	com.aoapps.html.any.attributes.event.Onresize<E>
+	com.aoapps.html.any.attributes.event.Onresize<E>,
+	com.aoapps.html.any.attributes.event.Onsecuritypolicyviolation<E>
 {
 
 	protected AnyBODY(D document, PC pc) {

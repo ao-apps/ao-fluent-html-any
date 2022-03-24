@@ -85,6 +85,7 @@ public abstract class AnyHTML<
 	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+	com.aoapps.html.any.attributes.event.Onsecuritypolicyviolation<E>,
 	com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 

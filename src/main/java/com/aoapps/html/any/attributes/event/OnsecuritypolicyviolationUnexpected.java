@@ -22,9 +22,14 @@
  */
 package com.aoapps.html.any.attributes.event;
 
+import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
+import com.aoapps.html.any.AnyBODY;
+import com.aoapps.html.any.AnyHTML;
 import com.aoapps.html.any.Attributes;
+import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -40,11 +45,14 @@ import java.io.IOException;
  *
  * @since HTML 5
  *
+ * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
+ *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
+ *
  * @author  AO Industries, Inc.
  */
-// Matches OnsecuritypolicyviolationUnexpected
-@SuppressWarnings("deprecation")
-public interface Onsecuritypolicyviolation<E extends Element<?, ?, E> & Onsecuritypolicyviolation<E>> extends OnsecuritypolicyviolationUnexpected<E> {
+// Matches Onsecuritypolicyviolation
+@Deprecated
+public interface OnsecuritypolicyviolationUnexpected<E extends Element<?, ?, E> & OnsecuritypolicyviolationUnexpected<E>> {
 
 	/**
 	 * <ul>
@@ -55,11 +63,23 @@ public interface Onsecuritypolicyviolation<E extends Element<?, ?, E> & Onsecuri
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
+	 *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
 	 */
-	@Override
+	@Deprecated
 	@Attributes.Funnel
 	default E onsecuritypolicyviolation(Object onsecuritypolicyviolation) throws IOException {
-		return OnsecuritypolicyviolationUnexpected.super.onsecuritypolicyviolation(onsecuritypolicyviolation);
+		@SuppressWarnings("unchecked") E element = (E)this;
+		if(element.getDocument().doctype != Doctype.HTML5) {
+			throw new LocalizedIllegalArgumentException(
+				RESOURCES,
+				"onlySupportedInHtml5",
+				element.getDocument().doctype,
+				"onsecuritypolicyviolation"
+			);
+		}
+		return Attributes.Event.attribute(element, "onsecuritypolicyviolation", onsecuritypolicyviolation);
 	}
 
 	/**
@@ -75,10 +95,13 @@ public interface Onsecuritypolicyviolation<E extends Element<?, ?, E> & Onsecuri
 	 * @since HTML 5
 	 *
 	 * @see #onsecuritypolicyviolation(java.lang.Object)
+	 *
+	 * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
+	 *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
 	 */
-	@Override
+	@Deprecated
 	default <Ex extends Throwable> E onsecuritypolicyviolation(IOSupplierE<?, Ex> onsecuritypolicyviolation) throws IOException, Ex {
-		return OnsecuritypolicyviolationUnexpected.super.onsecuritypolicyviolation(onsecuritypolicyviolation);
+		return onsecuritypolicyviolation((onsecuritypolicyviolation == null) ? null : onsecuritypolicyviolation.get());
 	}
 
 	/**
@@ -94,9 +117,12 @@ public interface Onsecuritypolicyviolation<E extends Element<?, ?, E> & Onsecuri
 	 * @since HTML 5
 	 *
 	 * @see #onsecuritypolicyviolation(java.lang.Object)
+	 *
+	 * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
+	 *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
 	 */
-	@Override
+	@Deprecated
 	default <Ex extends Throwable> E onsecuritypolicyviolation(MediaWritable<Ex> onsecuritypolicyviolation) throws IOException, Ex {
-		return OnsecuritypolicyviolationUnexpected.super.onsecuritypolicyviolation(onsecuritypolicyviolation);
+		return onsecuritypolicyviolation((Object)onsecuritypolicyviolation);
 	}
 }

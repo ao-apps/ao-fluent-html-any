@@ -255,7 +255,7 @@ public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<
 	com.aoapps.html.any.attributes.event.OnresetUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnresizeUnexpected<E>,
 	com.aoapps.html.any.attributes.event.Onscroll<E>,
-	com.aoapps.html.any.attributes.event.Onsecuritypolicyviolation<E>,
+	com.aoapps.html.any.attributes.event.OnsecuritypolicyviolationUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnseekedUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnseekingUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnselectUnexpected<E>,
