@@ -70,6 +70,7 @@ public abstract class AnyBR<
 	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 
