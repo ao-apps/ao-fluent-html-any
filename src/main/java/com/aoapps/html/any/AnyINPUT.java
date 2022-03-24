@@ -1001,7 +1001,6 @@ public abstract class AnyINPUT<
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Hidden<D, PC, E>
 	> extends AnyINPUT<D, PC, E> implements
-		com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyINPUT.Autocomplete>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Attributes overrides
 		com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,

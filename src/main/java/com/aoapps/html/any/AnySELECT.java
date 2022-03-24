@@ -24,6 +24,7 @@ package com.aoapps.html.any;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.function.Function;
 
 /**
  * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.
@@ -46,7 +47,7 @@ public abstract class AnySELECT<
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnySELECT_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-	// TODO: autocomplete
+	com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnySELECT.Autocomplete>,
 	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
 	com.aoapps.html.any.attributes.Text.Form<E>,
 	com.aoapps.html.any.attributes.Boolean.Multiple<E>,
@@ -63,6 +64,44 @@ public abstract class AnySELECT<
 
 	protected AnySELECT(D document, PC pc) {
 		super(document, pc);
+	}
+
+	/**
+	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select#attr-autocomplete">&lt;select&gt;: The HTML Select element / autocomplete</a>.
+	 *
+	 * @since HTML 5
+	 *
+	 * @see AnyINPUT.Autocomplete
+	 */
+	public enum Autocomplete implements Function<AnyDocument<?>, String> {
+		OFF(AnyINPUT.Autocomplete.OFF),
+		ON(AnyINPUT.Autocomplete.ON);
+
+		private final AnyINPUT.Autocomplete value;
+
+		private Autocomplete(AnyINPUT.Autocomplete value) {
+			this.value = value;
+		}
+
+		@Override
+		public String toString() {
+			return value.toString();
+		}
+
+		@Override
+		public String apply(AnyDocument<?> document) {
+			return value.apply(document);
+		}
+
+		public AnyINPUT.Autocomplete getValue() {
+			return value;
+		}
+
+		static {
+			for(Autocomplete value : values()) {
+				if(!value.name().equals(value.value.name())) throw new AssertionError("Enum name mismatch");
+			}
+		}
 	}
 
 	@Override

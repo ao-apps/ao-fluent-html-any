@@ -24,6 +24,7 @@ package com.aoapps.html.any;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.function.Function;
 
 /**
  * <ul>
@@ -51,7 +52,7 @@ public abstract class AnyFORM<
 	// TODO: accept (MDN only, HTML-4 only)
 	// TODO: accept-charset
 	com.aoapps.html.any.attributes.Url.Action<E>,
-	// TODO: autocomplete
+	com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyFORM.Autocomplete>,
 	com.aoapps.html.any.attributes.Enum.Enctype<E, com.aoapps.html.any.attributes.Enum.Enctype.Value>,
 	com.aoapps.html.any.attributes.Enum.Method<E, com.aoapps.html.any.attributes.Enum.Method.Value>,
 	// TODO: name (only support Id, and do name like <ao:iframe>?)  Deprecated as of html 4
@@ -65,6 +66,44 @@ public abstract class AnyFORM<
 
 	protected AnyFORM(D document, PC pc) {
 		super(document, pc);
+	}
+
+	/**
+	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-autocomplete">&lt;select&gt;: The Form element / autocomplete</a>.
+	 *
+	 * @since HTML 5
+	 *
+	 * @see AnyINPUT.Autocomplete
+	 */
+	public enum Autocomplete implements Function<AnyDocument<?>, String> {
+		OFF(AnyINPUT.Autocomplete.OFF),
+		ON(AnyINPUT.Autocomplete.ON);
+
+		private final AnyINPUT.Autocomplete value;
+
+		private Autocomplete(AnyINPUT.Autocomplete value) {
+			this.value = value;
+		}
+
+		@Override
+		public String toString() {
+			return value.toString();
+		}
+
+		@Override
+		public String apply(AnyDocument<?> document) {
+			return value.apply(document);
+		}
+
+		public AnyINPUT.Autocomplete getValue() {
+			return value;
+		}
+
+		static {
+			for(Autocomplete value : values()) {
+				if(!value.name().equals(value.value.name())) throw new AssertionError("Enum name mismatch");
+			}
+		}
 	}
 
 	@Override
