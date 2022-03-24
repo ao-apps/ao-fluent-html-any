@@ -31,7 +31,10 @@ import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
 /**
- * See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.
+ * <ul>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
+ * </ul>
  *
  * @param  <E>   This element type
  *
@@ -42,7 +45,10 @@ import java.io.IOException;
 public interface Required<E extends Element<?, ?, E> & Required<E>> {
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
+	 * </ul>
 	 *
 	 * @since HTML 5
 	 */
@@ -61,7 +67,10 @@ public interface Required<E extends Element<?, ?, E> & Required<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
+	 * </ul>
 	 *
 	 * @since HTML 5
 	 *
@@ -72,7 +81,10 @@ public interface Required<E extends Element<?, ?, E> & Required<E>> {
 	}
 
 	/**
-	 * See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.
+	 * <ul>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

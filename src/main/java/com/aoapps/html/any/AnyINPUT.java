@@ -69,12 +69,9 @@ public abstract class AnyINPUT<
 	// TODO: min
 	com.aoapps.html.any.attributes.Text.Name<E>,
 	// TODO: pattern
-	com.aoapps.html.any.attributes.Boolean.Required<E>,
 	// TODO: step
 	// Global Attributes overrides
-	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
-	// Global Event Attributes overrides
-	com.aoapps.html.any.attributes.event.Oninvalid<E>
+	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
 {
 
 	private static final com.aoapps.lang.i18n.Resources RESOURCES =
@@ -226,6 +223,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Multiple<E>,
 		com.aoapps.html.any.attributes.Text.Placeholder<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Url.Src<E>,
 		com.aoapps.html.any.attributes.Enum.Type<E, Dynamic.Type>,
@@ -240,6 +238,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Onerror<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>,
 		com.aoapps.html.any.attributes.event.Onload<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
@@ -539,10 +538,12 @@ public abstract class AnyINPUT<
 		E  extends Checkbox<D, PC, E>
 	> extends AnyINPUT<D, PC, E> implements
 		com.aoapps.html.any.attributes.Boolean.Checked<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
-		com.aoapps.html.any.attributes.event.Oninput<E>
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>
 	{
 
 		protected Checkbox(D document, PC pc) {
@@ -658,10 +659,12 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, Date.Autocomplete>,
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
-		com.aoapps.html.any.attributes.event.Oninput<E>
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>
 	{
 
 		protected Date(D document, PC pc) {
@@ -745,10 +748,12 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, DatetimeLocal.Autocomplete>,
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
-		com.aoapps.html.any.attributes.event.Oninput<E>
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>
 	{
 
 		protected DatetimeLocal(D document, PC pc) {
@@ -835,11 +840,13 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Multiple<E>,
 		com.aoapps.html.any.attributes.Text.Placeholder<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
 	{
 
@@ -926,10 +933,12 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.Accept<E>,
 		com.aoapps.html.any.attributes.Enum.Capture<E, File.Capture>,
 		com.aoapps.html.any.attributes.Boolean.Multiple<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		// Does not support value per https://www.w3schools.com/tags/att_input_value.asp: com.aoapps.html.any.attributes.Text.Value<File>
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
 
@@ -1145,10 +1154,12 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, Month.Autocomplete>,
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
-		com.aoapps.html.any.attributes.event.Oninput<E>
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>
 	{
 
 		protected Month(D document, PC pc) {
@@ -1233,10 +1244,12 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, Number.Autocomplete>,
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>, // TODO: Review types (this and others), perhaps Attributes.Number or similar?
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
-		com.aoapps.html.any.attributes.event.Oninput<E>
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>
 	{
 
 		protected Number(D document, PC pc) {
@@ -1337,11 +1350,13 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Minlength<E>,
 		com.aoapps.html.any.attributes.Text.Placeholder<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
 
@@ -1420,10 +1435,12 @@ public abstract class AnyINPUT<
 		E  extends Radio<D, PC, E>
 	> extends AnyINPUT<D, PC, E> implements
 		com.aoapps.html.any.attributes.Boolean.Checked<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
-		com.aoapps.html.any.attributes.event.Oninput<E>
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>
 	{
 
 		protected Radio(D document, PC pc) {
@@ -1588,6 +1605,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Minlength<E>,
 		com.aoapps.html.any.attributes.Text.Placeholder<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Event Attributes
@@ -1597,6 +1615,7 @@ public abstract class AnyINPUT<
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
 	{
 
@@ -1782,11 +1801,13 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Minlength<E>,
 		com.aoapps.html.any.attributes.Text.Placeholder<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
 	{
 
@@ -1879,6 +1900,7 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Text.Placeholder<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Attributes overrides
@@ -1886,6 +1908,7 @@ public abstract class AnyINPUT<
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E>
 	{
 
@@ -1917,10 +1940,12 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, Time.Autocomplete>,
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
-		com.aoapps.html.any.attributes.event.Oninput<E>
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>
 	{
 
 		protected Time(D document, PC pc) {
@@ -2005,11 +2030,13 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.Minlength<E>,
 		com.aoapps.html.any.attributes.Text.Placeholder<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>,
 		com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
 	{
 
@@ -2099,10 +2126,12 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, Week.Autocomplete>,
 		com.aoapps.html.any.attributes.Text.List<E>,
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
+		com.aoapps.html.any.attributes.Boolean.Required<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
-		com.aoapps.html.any.attributes.event.Oninput<E>
+		com.aoapps.html.any.attributes.event.Oninput<E>,
+		com.aoapps.html.any.attributes.event.Oninvalid<E>
 	{
 
 		protected Week(D document, PC pc) {
