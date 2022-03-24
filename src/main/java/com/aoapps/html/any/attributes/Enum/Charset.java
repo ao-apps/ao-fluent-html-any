@@ -51,7 +51,7 @@ import java.util.function.Function;
 // Matches CharsetHtml4Only
 public interface Charset<
 	E extends Element<?, ?, E> & Charset<E, V>,
-	V extends Enum<V> & Function<AnyDocument<?>, String>
+	V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
 	/**

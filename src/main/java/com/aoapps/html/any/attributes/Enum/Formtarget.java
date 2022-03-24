@@ -49,7 +49,7 @@ import java.util.function.Function;
  */
 public interface Formtarget<
 	E extends Element<?, ?, E> & Formtarget<E, V>,
-	V extends Enum<V> & Function<AnyDocument<?>, String>
+	V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
 	/**

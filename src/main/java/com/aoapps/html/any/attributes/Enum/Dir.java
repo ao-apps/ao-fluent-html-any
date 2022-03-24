@@ -52,7 +52,7 @@ import java.util.function.Function;
  */
 public interface Dir<
 	E extends Element<?, ?, E>, // TODO: How to use from Global?  Remove others? Add here?  & Dir<E, V>,
-	V extends Enum<V> & Function<AnyDocument<?>, String>
+	V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
 	/**

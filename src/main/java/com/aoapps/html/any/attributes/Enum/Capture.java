@@ -51,7 +51,7 @@ import java.util.function.Function;
  */
 public interface Capture<
 	E extends Element<?, ?, E> & Capture<E, V>,
-	V extends Enum<V> & Function<AnyDocument<?>, String>
+	V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
 	/**

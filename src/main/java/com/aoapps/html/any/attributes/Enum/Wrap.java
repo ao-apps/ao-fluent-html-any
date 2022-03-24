@@ -47,7 +47,7 @@ import java.util.function.Function;
  */
 public interface Wrap<
 	E extends Element<?, ?, E> & Wrap<E, V>,
-	V extends Enum<V> & Function<AnyDocument<?>, String>
+	V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
 	/**

@@ -46,7 +46,7 @@ import java.util.function.Function;
  */
 public interface Crossorigin<
 	E extends Element<?, ?, E> & Crossorigin<E, V>,
-	V extends Enum<V> & Function<AnyDocument<?>, String>
+	V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
 	/**

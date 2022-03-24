@@ -49,7 +49,7 @@ import java.util.function.Function;
 @Deprecated
 public interface CharsetHtml4Only<
 	E extends Element<?, ?, E> & CharsetHtml4Only<E, V>,
-	V extends Enum<V> & Function<AnyDocument<?>, String>
+	V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > extends Charset<E, V> {
 
 	/**
