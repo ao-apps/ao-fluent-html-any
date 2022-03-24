@@ -46,6 +46,7 @@ public abstract class AnyTITLE<
 	_c extends AnyTITLE_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
 	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
 	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,

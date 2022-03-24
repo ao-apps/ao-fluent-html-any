@@ -61,6 +61,7 @@ public abstract class AnySTYLE<
 > extends Element<D, PC, E> implements
 	com.aoapps.html.any.attributes.Text.Media<E>,
 	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
 	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,

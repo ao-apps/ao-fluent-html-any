@@ -43,6 +43,8 @@ public abstract class AnyBR<
 	PC extends AnyPhrasingContent<D, PC>,
 	E  extends AnyBR<D, PC, E>
 > extends Void<D, PC, E> implements
+	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
 	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,

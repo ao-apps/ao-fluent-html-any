@@ -46,6 +46,8 @@ public abstract class AnyBDO<
 	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
 	_c extends AnyBDO_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
+	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
 	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,

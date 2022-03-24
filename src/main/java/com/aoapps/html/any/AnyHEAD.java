@@ -46,6 +46,7 @@ public abstract class AnyHEAD<
 	_c extends AnyHEAD_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
 	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
 	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
 	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,

@@ -43,11 +43,7 @@ package com.aoapps.html.any;
 @SuppressWarnings("deprecation")
 public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<E>> extends
 	// Global Attributes
-	// TODO: accesskey
-	//       https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute
-	//       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey
-	//       https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey
-	//       https://www.w3schools.com/tags/att_global_accesskey.asp
+	com.aoapps.html.any.attributes.Text.Accesskey<E>,
 	// TODO: autocapitalize
 	//       https://html.spec.whatwg.org/multipage/interaction.html#attr-autocapitalize
 	//       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-autocapitalize
