@@ -60,6 +60,7 @@ public abstract class AnyHTML<
 	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,

@@ -70,6 +70,7 @@ public abstract class AnySTYLE<
 	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
 	com.aoapps.html.any.attributes.event.Onerror<E>, // Only listed at https://www.w3schools.com/tags/ref_attributes.asp
 	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
