@@ -62,6 +62,8 @@ public abstract class AnyPARAM<
 	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
@@ -81,6 +83,7 @@ public abstract class AnyPARAM<
 	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+	com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
 	com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {

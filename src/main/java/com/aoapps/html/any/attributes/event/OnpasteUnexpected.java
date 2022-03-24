@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,6 +23,19 @@
 package com.aoapps.html.any.attributes.event;
 
 import com.aoapps.encoding.MediaWritable;
+import com.aoapps.html.any.AnyBASE;
+import com.aoapps.html.any.AnyBDO;
+import com.aoapps.html.any.AnyBR;
+import com.aoapps.html.any.AnyHEAD;
+import com.aoapps.html.any.AnyHTML;
+import com.aoapps.html.any.AnyIFRAME;
+import com.aoapps.html.any.AnyINPUT;
+import com.aoapps.html.any.AnyMETA;
+import com.aoapps.html.any.AnyPARAM;
+import com.aoapps.html.any.AnySCRIPT;
+import com.aoapps.html.any.AnySTYLE;
+import com.aoapps.html.any.AnyTITLE;
+import com.aoapps.html.any.AnyWBR;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -39,10 +52,21 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
+ * @deprecated  Although the onpaste attribute is global, it is not expected on
+ *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+ *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+ *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+ *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+ *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+ *              <p>
+ *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+ *              </p>
+ *
  * @author  AO Industries, Inc.
  */
-// Matches OnpasteUnexpected
-public interface Onpaste<E extends Element<?, ?, E> & Onpaste<E>> {
+// Matches Onpaste
+@Deprecated
+public interface OnpasteUnexpected<E extends Element<?, ?, E> & OnpasteUnexpected<E>> extends Onpaste<E> {
 
 	/**
 	 * <ul>
@@ -52,11 +76,22 @@ public interface Onpaste<E extends Element<?, ?, E> & Onpaste<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/onpaste">HTMLElement.onpaste</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/jsref/event_onpaste.asp">onpaste Event</a>.</li>
 	 * </ul>
+	 *
+	 * @deprecated  Although the onpaste attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	@Attributes.Funnel
 	default E onpaste(Object onpaste) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onpaste", onpaste);
+		return Onpaste.super.onpaste(onpaste);
 	}
 
 	/**
@@ -71,9 +106,21 @@ public interface Onpaste<E extends Element<?, ?, E> & Onpaste<E>> {
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onpaste(java.lang.Object)
+	 *
+	 * @deprecated  Although the onpaste attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	default <Ex extends Throwable> E onpaste(IOSupplierE<?, Ex> onpaste) throws IOException, Ex {
-		return onpaste((onpaste == null) ? null : onpaste.get());
+		return Onpaste.super.onpaste(onpaste);
 	}
 
 	/**
@@ -88,8 +135,20 @@ public interface Onpaste<E extends Element<?, ?, E> & Onpaste<E>> {
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @see #onpaste(java.lang.Object)
+	 *
+	 * @deprecated  Although the onpaste attribute is global, it is not expected on
+	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+	 *              <p>
+	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+	 *              </p>
 	 */
+	@Deprecated
+	@Override
 	default <Ex extends Throwable> E onpaste(MediaWritable<Ex> onpaste) throws IOException, Ex {
-		return onpaste((Object)onpaste);
+		return Onpaste.super.onpaste(onpaste);
 	}
 }
