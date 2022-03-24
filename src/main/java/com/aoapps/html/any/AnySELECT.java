@@ -54,6 +54,7 @@ public abstract class AnySELECT<
 	com.aoapps.html.any.attributes.Boolean.Required<E>,
 	com.aoapps.html.any.attributes.Integer.Size<E>,
 	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
 	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
 	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.Onchange<E>,

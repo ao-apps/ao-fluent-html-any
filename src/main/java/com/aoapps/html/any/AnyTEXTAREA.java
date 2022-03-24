@@ -63,6 +63,7 @@ public abstract class AnyTEXTAREA<
 	com.aoapps.html.any.attributes.Integer.Rows<E>,
 	com.aoapps.html.any.attributes.Enum.Wrap<E, com.aoapps.html.any.attributes.Enum.Wrap.Value>,
 	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
 	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
 	// Global Event Attributes overrides
 	com.aoapps.html.any.attributes.event.Onchange<E>,

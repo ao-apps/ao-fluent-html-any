@@ -233,6 +233,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Integer.WidthHtml5Only<E>,
 		// Event Attributes
 		com.aoapps.html.any.attributes.event.Onsearch<E>,
+		// Global Attributes overrides
+		com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onabort<E>,
 		com.aoapps.html.any.attributes.event.Onchange<E>,
@@ -488,7 +490,9 @@ public abstract class AnyINPUT<
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Button<D, PC, E>
 	> extends AnyINPUT<D, PC, E> implements
-		com.aoapps.html.any.attributes.Text.Value<E>
+		com.aoapps.html.any.attributes.Text.Value<E>,
+		// Global Attributes overrides
+		com.aoapps.html.any.attributes.Enum.Autocapitalize<E> // Is allowed on <button>, so guessing here, too
 	{
 
 		protected Button(D document, PC pc) {
@@ -1569,6 +1573,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Text.Value<E>,
 		// Event Attributes
 		com.aoapps.html.any.attributes.event.Onsearch<E>,
+		// Global Attributes overrides
+		com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,
@@ -1856,6 +1862,8 @@ public abstract class AnyINPUT<
 		com.aoapps.html.any.attributes.Boolean.Readonly<E>,
 		com.aoapps.html.any.attributes.Integer.Size<E>,
 		com.aoapps.html.any.attributes.Text.Value<E>,
+		// Global Attributes overrides
+		com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
 		// Global Event Attributes overrides
 		com.aoapps.html.any.attributes.event.Onchange<E>,
 		com.aoapps.html.any.attributes.event.Oninput<E>,

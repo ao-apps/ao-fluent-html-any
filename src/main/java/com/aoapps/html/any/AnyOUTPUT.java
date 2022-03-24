@@ -51,7 +51,9 @@ public abstract class AnyOUTPUT<
 > extends NormalText<D, PC, E, __, _c> implements
 	// TODO: for, like AnyLABEL.for, but attribute named "ForArray", with support for multiple values like the Class attribute.
 	com.aoapps.html.any.attributes.Text.Form<E>,
-	com.aoapps.html.any.attributes.Text.Name<E>
+	com.aoapps.html.any.attributes.Text.Name<E>,
+	// Global Attributes overrides
+	com.aoapps.html.any.attributes.Enum.Autocapitalize<E>
 {
 
 	protected AnyOUTPUT(D document, PC pc) {

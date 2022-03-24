@@ -44,9 +44,7 @@ package com.aoapps.html.any;
 public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<E>> extends
 	// Global Attributes
 	com.aoapps.html.any.attributes.Text.Accesskey<E>,
-	// TODO: autocapitalize
-	//       https://html.spec.whatwg.org/multipage/interaction.html#attr-autocapitalize
-	//       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-autocapitalize
+	com.aoapps.html.any.attributes.Enum.AutocapitalizeUnexpected<E>,
 	com.aoapps.html.any.attributes.Boolean.Autofocus<E>,
 	com.aoapps.html.any.attributes.Text.Class<E>,
 	// TODO: contenteditable

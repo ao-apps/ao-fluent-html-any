@@ -27,6 +27,7 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
+// TODO: implements com.aoapps.html.any.attributes.Enum.Autocapitalize
 public abstract class AnyFIELDSET {
 	// TODO
 }
