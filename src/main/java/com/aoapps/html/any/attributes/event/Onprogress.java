@@ -81,7 +81,7 @@ public interface Onprogress<E extends Element<?, ?, E> & Onprogress<E>> extends 
 	 */
 	@Override
 	default <Ex extends Throwable> E onprogress(IOSupplierE<?, Ex> onprogress) throws IOException, Ex {
-		return onprogress((onprogress == null) ? null : onprogress.get());
+		return OnprogressUnexpected.super.onprogress(onprogress);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onprogress<E extends Element<?, ?, E> & Onprogress<E>> extends 
 	 */
 	@Override
 	default <Ex extends Throwable> E onprogress(MediaWritable<Ex> onprogress) throws IOException, Ex {
-		return onprogress((Object)onprogress);
+		return OnprogressUnexpected.super.onprogress(onprogress);
 	}
 }

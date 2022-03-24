@@ -122,7 +122,7 @@ public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & Onmouseleav
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onmouseleave(IOSupplierE<?, Ex> onmouseleave) throws IOException, Ex {
-		return onmouseleave((onmouseleave == null) ? null : onmouseleave.get());
+		return Onmouseleave.super.onmouseleave(onmouseleave);
 	}
 
 	/**
@@ -152,6 +152,6 @@ public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & Onmouseleav
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onmouseleave(MediaWritable<Ex> onmouseleave) throws IOException, Ex {
-		return onmouseleave((Object)onmouseleave);
+		return Onmouseleave.super.onmouseleave(onmouseleave);
 	}
 }

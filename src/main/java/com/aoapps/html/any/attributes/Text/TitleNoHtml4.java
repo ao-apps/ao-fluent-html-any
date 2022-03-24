@@ -92,15 +92,6 @@ public interface TitleNoHtml4<E extends Element<?, ?, E> & TitleNoHtml4<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"invalidGlobalAttributeForDoctype",
-				element.getDocument().doctype,
-				"title"
-			);
-		}
 		return Title.super.title(title);
 	}
 
@@ -121,15 +112,6 @@ public interface TitleNoHtml4<E extends Element<?, ?, E> & TitleNoHtml4<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E title(MediaWritable<Ex> title) throws IOException, Ex {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"invalidGlobalAttributeForDoctype",
-				element.getDocument().doctype,
-				"title"
-			);
-		}
 		return Title.super.title(title);
 	}
 }

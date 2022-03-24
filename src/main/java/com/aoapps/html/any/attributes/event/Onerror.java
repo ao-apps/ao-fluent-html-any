@@ -81,7 +81,7 @@ public interface Onerror<E extends Element<?, ?, E> & Onerror<E>> extends Onerro
 	 */
 	@Override
 	default <Ex extends Throwable> E onerror(IOSupplierE<?, Ex> onerror) throws IOException, Ex {
-		return onerror((onerror == null) ? null : onerror.get());
+		return OnerrorUnexpected.super.onerror(onerror);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onerror<E extends Element<?, ?, E> & Onerror<E>> extends Onerro
 	 */
 	@Override
 	default <Ex extends Throwable> E onerror(MediaWritable<Ex> onerror) throws IOException, Ex {
-		return onerror((Object)onerror);
+		return OnerrorUnexpected.super.onerror(onerror);
 	}
 }

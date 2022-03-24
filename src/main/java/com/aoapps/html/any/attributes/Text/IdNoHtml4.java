@@ -90,15 +90,6 @@ public interface IdNoHtml4<E extends Element<?, ?, E> & IdNoHtml4<E>> extends Id
 	 */
 	@Override
 	default <Ex extends Throwable> E id(IOSupplierE<?, Ex> id) throws IOException, Ex {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"invalidGlobalAttributeForDoctype",
-				element.getDocument().doctype,
-				"id"
-			);
-		}
 		return Id.super.id(id);
 	}
 
@@ -118,15 +109,6 @@ public interface IdNoHtml4<E extends Element<?, ?, E> & IdNoHtml4<E>> extends Id
 	 */
 	@Override
 	default <Ex extends Throwable> E id(MediaWritable<Ex> id) throws IOException, Ex {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"invalidGlobalAttributeForDoctype",
-				element.getDocument().doctype,
-				"id"
-			);
-		}
 		return Id.super.id(id);
 	}
 }

@@ -81,7 +81,7 @@ public interface Oncanplaythrough<E extends Element<?, ?, E> & Oncanplaythrough<
 	 */
 	@Override
 	default <Ex extends Throwable> E oncanplaythrough(IOSupplierE<?, Ex> oncanplaythrough) throws IOException, Ex {
-		return oncanplaythrough((oncanplaythrough == null) ? null : oncanplaythrough.get());
+		return OncanplaythroughUnexpected.super.oncanplaythrough(oncanplaythrough);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Oncanplaythrough<E extends Element<?, ?, E> & Oncanplaythrough<
 	 */
 	@Override
 	default <Ex extends Throwable> E oncanplaythrough(MediaWritable<Ex> oncanplaythrough) throws IOException, Ex {
-		return oncanplaythrough((Object)oncanplaythrough);
+		return OncanplaythroughUnexpected.super.oncanplaythrough(oncanplaythrough);
 	}
 }

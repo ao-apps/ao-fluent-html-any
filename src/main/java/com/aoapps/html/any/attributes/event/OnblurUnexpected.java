@@ -116,7 +116,7 @@ public interface OnblurUnexpected<E extends Element<?, ?, E> & OnblurUnexpected<
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onblur(IOSupplierE<?, Ex> onblur) throws IOException, Ex {
-		return onblur((onblur == null) ? null : onblur.get());
+		return Onblur.super.onblur(onblur);
 	}
 
 	/**
@@ -144,6 +144,6 @@ public interface OnblurUnexpected<E extends Element<?, ?, E> & OnblurUnexpected<
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onblur(MediaWritable<Ex> onblur) throws IOException, Ex {
-		return onblur((Object)onblur);
+		return Onblur.super.onblur(onblur);
 	}
 }

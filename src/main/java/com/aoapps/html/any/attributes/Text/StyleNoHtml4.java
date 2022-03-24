@@ -118,15 +118,6 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E style(IOSupplierE<?, Ex> style) throws IOException, Ex {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"invalidGlobalAttributeForDoctype",
-				element.getDocument().doctype,
-				"style"
-			);
-		}
 		return Style.super.style(style);
 	}
 
@@ -147,15 +138,6 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E style(MediaWritable<Ex> style) throws IOException, Ex {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"invalidGlobalAttributeForDoctype",
-				element.getDocument().doctype,
-				"style"
-			);
-		}
 		return Style.super.style(style);
 	}
 }

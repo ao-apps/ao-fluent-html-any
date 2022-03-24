@@ -81,7 +81,7 @@ public interface Onended<E extends Element<?, ?, E> & Onended<E>> extends Onende
 	 */
 	@Override
 	default <Ex extends Throwable> E onended(IOSupplierE<?, Ex> onended) throws IOException, Ex {
-		return onended((onended == null) ? null : onended.get());
+		return OnendedUnexpected.super.onended(onended);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onended<E extends Element<?, ?, E> & Onended<E>> extends Onende
 	 */
 	@Override
 	default <Ex extends Throwable> E onended(MediaWritable<Ex> onended) throws IOException, Ex {
-		return onended((Object)onended);
+		return OnendedUnexpected.super.onended(onended);
 	}
 }

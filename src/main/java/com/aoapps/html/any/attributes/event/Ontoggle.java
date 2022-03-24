@@ -78,7 +78,7 @@ public interface Ontoggle<E extends Element<?, ?, E> & Ontoggle<E>> extends Onto
 	 */
 	@Override
 	default <Ex extends Throwable> E ontoggle(IOSupplierE<?, Ex> ontoggle) throws IOException, Ex {
-		return ontoggle((ontoggle == null) ? null : ontoggle.get());
+		return OntoggleUnexpected.super.ontoggle(ontoggle);
 	}
 
 	/**
@@ -97,6 +97,6 @@ public interface Ontoggle<E extends Element<?, ?, E> & Ontoggle<E>> extends Onto
 	 */
 	@Override
 	default <Ex extends Throwable> E ontoggle(MediaWritable<Ex> ontoggle) throws IOException, Ex {
-		return ontoggle((Object)ontoggle);
+		return OntoggleUnexpected.super.ontoggle(ontoggle);
 	}
 }

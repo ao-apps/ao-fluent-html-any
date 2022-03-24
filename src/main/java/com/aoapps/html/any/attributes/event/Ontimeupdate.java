@@ -81,7 +81,7 @@ public interface Ontimeupdate<E extends Element<?, ?, E> & Ontimeupdate<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E ontimeupdate(IOSupplierE<?, Ex> ontimeupdate) throws IOException, Ex {
-		return ontimeupdate((ontimeupdate == null) ? null : ontimeupdate.get());
+		return OntimeupdateUnexpected.super.ontimeupdate(ontimeupdate);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Ontimeupdate<E extends Element<?, ?, E> & Ontimeupdate<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E ontimeupdate(MediaWritable<Ex> ontimeupdate) throws IOException, Ex {
-		return ontimeupdate((Object)ontimeupdate);
+		return OntimeupdateUnexpected.super.ontimeupdate(ontimeupdate);
 	}
 }

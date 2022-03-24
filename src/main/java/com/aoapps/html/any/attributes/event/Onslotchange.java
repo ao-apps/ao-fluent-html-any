@@ -78,7 +78,7 @@ public interface Onslotchange<E extends Element<?, ?, E> & Onslotchange<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E onslotchange(IOSupplierE<?, Ex> onslotchange) throws IOException, Ex {
-		return onslotchange((onslotchange == null) ? null : onslotchange.get());
+		return OnslotchangeUnexpected.super.onslotchange(onslotchange);
 	}
 
 	/**
@@ -97,6 +97,6 @@ public interface Onslotchange<E extends Element<?, ?, E> & Onslotchange<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E onslotchange(MediaWritable<Ex> onslotchange) throws IOException, Ex {
-		return onslotchange((Object)onslotchange);
+		return OnslotchangeUnexpected.super.onslotchange(onslotchange);
 	}
 }

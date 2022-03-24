@@ -81,7 +81,7 @@ public interface Onresize<E extends Element<?, ?, E> & Onresize<E>> extends Onre
 	 */
 	@Override
 	default <Ex extends Throwable> E onresize(IOSupplierE<?, Ex> onresize) throws IOException, Ex {
-		return onresize((onresize == null) ? null : onresize.get());
+		return OnresizeUnexpected.super.onresize(onresize);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onresize<E extends Element<?, ?, E> & Onresize<E>> extends Onre
 	 */
 	@Override
 	default <Ex extends Throwable> E onresize(MediaWritable<Ex> onresize) throws IOException, Ex {
-		return onresize((Object)onresize);
+		return OnresizeUnexpected.super.onresize(onresize);
 	}
 }

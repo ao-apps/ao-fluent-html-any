@@ -116,7 +116,7 @@ public interface OnfocusUnexpected<E extends Element<?, ?, E> & OnfocusUnexpecte
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onfocus(IOSupplierE<?, Ex> onfocus) throws IOException, Ex {
-		return onfocus((onfocus == null) ? null : onfocus.get());
+		return Onfocus.super.onfocus(onfocus);
 	}
 
 	/**
@@ -144,6 +144,6 @@ public interface OnfocusUnexpected<E extends Element<?, ?, E> & OnfocusUnexpecte
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onfocus(MediaWritable<Ex> onfocus) throws IOException, Ex {
-		return onfocus((Object)onfocus);
+		return Onfocus.super.onfocus(onfocus);
 	}
 }

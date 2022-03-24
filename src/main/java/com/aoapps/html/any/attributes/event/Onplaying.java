@@ -81,7 +81,7 @@ public interface Onplaying<E extends Element<?, ?, E> & Onplaying<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onplaying(IOSupplierE<?, Ex> onplaying) throws IOException, Ex {
-		return onplaying((onplaying == null) ? null : onplaying.get());
+		return OnplayingUnexpected.super.onplaying(onplaying);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onplaying<E extends Element<?, ?, E> & Onplaying<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onplaying(MediaWritable<Ex> onplaying) throws IOException, Ex {
-		return onplaying((Object)onplaying);
+		return OnplayingUnexpected.super.onplaying(onplaying);
 	}
 }

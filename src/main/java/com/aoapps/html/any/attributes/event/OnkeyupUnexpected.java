@@ -116,7 +116,7 @@ public interface OnkeyupUnexpected<E extends Element<?, ?, E> & OnkeyupUnexpecte
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onkeyup(IOSupplierE<?, Ex> onkeyup) throws IOException, Ex {
-		return onkeyup((onkeyup == null) ? null : onkeyup.get());
+		return Onkeyup.super.onkeyup(onkeyup);
 	}
 
 	/**
@@ -144,6 +144,6 @@ public interface OnkeyupUnexpected<E extends Element<?, ?, E> & OnkeyupUnexpecte
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onkeyup(MediaWritable<Ex> onkeyup) throws IOException, Ex {
-		return onkeyup((Object)onkeyup);
+		return Onkeyup.super.onkeyup(onkeyup);
 	}
 }

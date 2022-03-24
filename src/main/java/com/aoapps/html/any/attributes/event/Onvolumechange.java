@@ -81,7 +81,7 @@ public interface Onvolumechange<E extends Element<?, ?, E> & Onvolumechange<E>> 
 	 */
 	@Override
 	default <Ex extends Throwable> E onvolumechange(IOSupplierE<?, Ex> onvolumechange) throws IOException, Ex {
-		return onvolumechange((onvolumechange == null) ? null : onvolumechange.get());
+		return OnvolumechangeUnexpected.super.onvolumechange(onvolumechange);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onvolumechange<E extends Element<?, ?, E> & Onvolumechange<E>> 
 	 */
 	@Override
 	default <Ex extends Throwable> E onvolumechange(MediaWritable<Ex> onvolumechange) throws IOException, Ex {
-		return onvolumechange((Object)onvolumechange);
+		return OnvolumechangeUnexpected.super.onvolumechange(onvolumechange);
 	}
 }

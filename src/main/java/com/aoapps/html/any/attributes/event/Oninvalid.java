@@ -84,7 +84,7 @@ public interface Oninvalid<E extends Element<?, ?, E> & Oninvalid<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E oninvalid(IOSupplierE<?, Ex> oninvalid) throws IOException, Ex {
-		return oninvalid((oninvalid == null) ? null : oninvalid.get());
+		return OninvalidUnexpected.super.oninvalid(oninvalid);
 	}
 
 	/**
@@ -105,6 +105,6 @@ public interface Oninvalid<E extends Element<?, ?, E> & Oninvalid<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E oninvalid(MediaWritable<Ex> oninvalid) throws IOException, Ex {
-		return oninvalid((Object)oninvalid);
+		return OninvalidUnexpected.super.oninvalid(oninvalid);
 	}
 }

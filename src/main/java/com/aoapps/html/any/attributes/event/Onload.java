@@ -57,6 +57,7 @@ public interface Onload<E extends Element<?, ?, E> & Onload<E>> extends OnloadUn
 	@Override
 	@Attributes.Funnel
 	default E onload(Object onload) throws IOException {
+		// Not calling super: overridden to support HTML 4
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return Attributes.Event.attribute(element, "onload", onload);
 	}
@@ -76,7 +77,7 @@ public interface Onload<E extends Element<?, ?, E> & Onload<E>> extends OnloadUn
 	 */
 	@Override
 	default <Ex extends Throwable> E onload(IOSupplierE<?, Ex> onload) throws IOException, Ex {
-		return onload((onload == null) ? null : onload.get());
+		return OnloadUnexpected.super.onload(onload);
 	}
 
 	/**
@@ -94,6 +95,6 @@ public interface Onload<E extends Element<?, ?, E> & Onload<E>> extends OnloadUn
 	 */
 	@Override
 	default <Ex extends Throwable> E onload(MediaWritable<Ex> onload) throws IOException, Ex {
-		return onload((Object)onload);
+		return OnloadUnexpected.super.onload(onload);
 	}
 }

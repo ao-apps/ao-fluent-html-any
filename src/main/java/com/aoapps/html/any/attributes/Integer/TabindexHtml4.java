@@ -61,6 +61,7 @@ public interface TabindexHtml4<E extends Element<?, ?, E> & TabindexHtml4<E>> ex
 	@Override
 	@Attributes.Funnel
 	default E tabindex(int tabindex) throws IOException {
+		// Not calling super: overridden to support HTML 4
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return Attributes.Integer.attribute(element, "tabindex", tabindex);
 	}
@@ -80,8 +81,7 @@ public interface TabindexHtml4<E extends Element<?, ?, E> & TabindexHtml4<E>> ex
 	@Override
 	@Attributes.Funnel
 	default E tabindex(Integer tabindex) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "tabindex", tabindex);
+		return Tabindex.super.tabindex(tabindex);
 	}
 
 	/**
@@ -102,6 +102,6 @@ public interface TabindexHtml4<E extends Element<?, ?, E> & TabindexHtml4<E>> ex
 	 */
 	@Override
 	default <Ex extends Throwable> E tabindex(IOSupplierE<? extends Integer, Ex> tabindex) throws IOException, Ex {
-		return tabindex((tabindex == null) ? null : tabindex.get());
+		return Tabindex.super.tabindex(tabindex);
 	}
 }

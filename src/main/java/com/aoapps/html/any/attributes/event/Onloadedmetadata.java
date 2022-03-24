@@ -81,7 +81,7 @@ public interface Onloadedmetadata<E extends Element<?, ?, E> & Onloadedmetadata<
 	 */
 	@Override
 	default <Ex extends Throwable> E onloadedmetadata(IOSupplierE<?, Ex> onloadedmetadata) throws IOException, Ex {
-		return onloadedmetadata((onloadedmetadata == null) ? null : onloadedmetadata.get());
+		return OnloadedmetadataUnexpected.super.onloadedmetadata(onloadedmetadata);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onloadedmetadata<E extends Element<?, ?, E> & Onloadedmetadata<
 	 */
 	@Override
 	default <Ex extends Throwable> E onloadedmetadata(MediaWritable<Ex> onloadedmetadata) throws IOException, Ex {
-		return onloadedmetadata((Object)onloadedmetadata);
+		return OnloadedmetadataUnexpected.super.onloadedmetadata(onloadedmetadata);
 	}
 }

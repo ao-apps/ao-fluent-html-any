@@ -81,7 +81,7 @@ public interface Onpause<E extends Element<?, ?, E> & Onpause<E>> extends Onpaus
 	 */
 	@Override
 	default <Ex extends Throwable> E onpause(IOSupplierE<?, Ex> onpause) throws IOException, Ex {
-		return onpause((onpause == null) ? null : onpause.get());
+		return OnpauseUnexpected.super.onpause(onpause);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onpause<E extends Element<?, ?, E> & Onpause<E>> extends Onpaus
 	 */
 	@Override
 	default <Ex extends Throwable> E onpause(MediaWritable<Ex> onpause) throws IOException, Ex {
-		return onpause((Object)onpause);
+		return OnpauseUnexpected.super.onpause(onpause);
 	}
 }

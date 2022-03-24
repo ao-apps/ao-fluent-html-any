@@ -50,7 +50,6 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
 	@Override
 	@Attributes.Funnel
 	default E width(int pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		return Width.super.width(pixels);
 	}
 
@@ -63,7 +62,6 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
 	@Override
 	@Attributes.Funnel
 	default E width(Integer pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		return Width.super.width(pixels);
 	}
 
@@ -78,7 +76,6 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
 	@Override
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		return Width.super.width(pixels);
 	}
 
@@ -91,7 +88,6 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
 	@Override
 	@Attributes.Funnel
 	default E width(String pixelsOrPercent) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		return Width.super.width(pixelsOrPercent);
 	}
 
@@ -108,7 +104,6 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
 	@Override
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E width(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {
-		@SuppressWarnings("unchecked") E element = (E)this;
 		return Width.super.width(pixelsOrPercent);
 	}
 }

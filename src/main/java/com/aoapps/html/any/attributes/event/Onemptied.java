@@ -78,7 +78,7 @@ public interface Onemptied<E extends Element<?, ?, E> & Onemptied<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onemptied(IOSupplierE<?, Ex> onemptied) throws IOException, Ex {
-		return onemptied((onemptied == null) ? null : onemptied.get());
+		return OnemptiedUnexpected.super.onemptied(onemptied);
 	}
 
 	/**
@@ -97,6 +97,6 @@ public interface Onemptied<E extends Element<?, ?, E> & Onemptied<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onemptied(MediaWritable<Ex> onemptied) throws IOException, Ex {
-		return onemptied((Object)onemptied);
+		return OnemptiedUnexpected.super.onemptied(onemptied);
 	}
 }

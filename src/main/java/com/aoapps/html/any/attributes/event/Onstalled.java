@@ -81,7 +81,7 @@ public interface Onstalled<E extends Element<?, ?, E> & Onstalled<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onstalled(IOSupplierE<?, Ex> onstalled) throws IOException, Ex {
-		return onstalled((onstalled == null) ? null : onstalled.get());
+		return OnstalledUnexpected.super.onstalled(onstalled);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onstalled<E extends Element<?, ?, E> & Onstalled<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onstalled(MediaWritable<Ex> onstalled) throws IOException, Ex {
-		return onstalled((Object)onstalled);
+		return OnstalledUnexpected.super.onstalled(onstalled);
 	}
 }

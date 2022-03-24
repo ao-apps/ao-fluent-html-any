@@ -116,7 +116,7 @@ public interface OnclickUnexpected<E extends Element<?, ?, E> & OnclickUnexpecte
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onclick(IOSupplierE<?, Ex> onclick) throws IOException, Ex {
-		return onclick((onclick == null) ? null : onclick.get());
+		return Onclick.super.onclick(onclick);
 	}
 
 	/**
@@ -144,6 +144,6 @@ public interface OnclickUnexpected<E extends Element<?, ?, E> & OnclickUnexpecte
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onclick(MediaWritable<Ex> onclick) throws IOException, Ex {
-		return onclick((Object)onclick);
+		return Onclick.super.onclick(onclick);
 	}
 }

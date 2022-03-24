@@ -116,7 +116,7 @@ public interface OndblclickUnexpected<E extends Element<?, ?, E> & OndblclickUne
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E ondblclick(IOSupplierE<?, Ex> ondblclick) throws IOException, Ex {
-		return ondblclick((ondblclick == null) ? null : ondblclick.get());
+		return Ondblclick.super.ondblclick(ondblclick);
 	}
 
 	/**
@@ -144,6 +144,6 @@ public interface OndblclickUnexpected<E extends Element<?, ?, E> & OndblclickUne
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E ondblclick(MediaWritable<Ex> ondblclick) throws IOException, Ex {
-		return ondblclick((Object)ondblclick);
+		return Ondblclick.super.ondblclick(ondblclick);
 	}
 }

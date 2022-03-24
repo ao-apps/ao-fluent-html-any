@@ -81,7 +81,7 @@ public interface Onwaiting<E extends Element<?, ?, E> & Onwaiting<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onwaiting(IOSupplierE<?, Ex> onwaiting) throws IOException, Ex {
-		return onwaiting((onwaiting == null) ? null : onwaiting.get());
+		return OnwaitingUnexpected.super.onwaiting(onwaiting);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onwaiting<E extends Element<?, ?, E> & Onwaiting<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onwaiting(MediaWritable<Ex> onwaiting) throws IOException, Ex {
-		return onwaiting((Object)onwaiting);
+		return OnwaitingUnexpected.super.onwaiting(onwaiting);
 	}
 }

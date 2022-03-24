@@ -81,7 +81,7 @@ public interface Onseeking<E extends Element<?, ?, E> & Onseeking<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onseeking(IOSupplierE<?, Ex> onseeking) throws IOException, Ex {
-		return onseeking((onseeking == null) ? null : onseeking.get());
+		return OnseekingUnexpected.super.onseeking(onseeking);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onseeking<E extends Element<?, ?, E> & Onseeking<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onseeking(MediaWritable<Ex> onseeking) throws IOException, Ex {
-		return onseeking((Object)onseeking);
+		return OnseekingUnexpected.super.onseeking(onseeking);
 	}
 }

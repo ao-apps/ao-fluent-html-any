@@ -81,7 +81,7 @@ public interface Ondurationchange<E extends Element<?, ?, E> & Ondurationchange<
 	 */
 	@Override
 	default <Ex extends Throwable> E ondurationchange(IOSupplierE<?, Ex> ondurationchange) throws IOException, Ex {
-		return ondurationchange((ondurationchange == null) ? null : ondurationchange.get());
+		return OndurationchangeUnexpected.super.ondurationchange(ondurationchange);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Ondurationchange<E extends Element<?, ?, E> & Ondurationchange<
 	 */
 	@Override
 	default <Ex extends Throwable> E ondurationchange(MediaWritable<Ex> ondurationchange) throws IOException, Ex {
-		return ondurationchange((Object)ondurationchange);
+		return OndurationchangeUnexpected.super.ondurationchange(ondurationchange);
 	}
 }

@@ -119,7 +119,7 @@ public interface AccesskeyUnexpected<E extends Element<?, ?, E> & AccesskeyUnexp
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E accesskey(IOSupplierE<?, Ex> accesskey) throws IOException, Ex {
-		return accesskey((accesskey == null) ? null : accesskey.get());
+		return Accesskey.super.accesskey(accesskey);
 	}
 
 	/**
@@ -173,6 +173,6 @@ public interface AccesskeyUnexpected<E extends Element<?, ?, E> & AccesskeyUnexp
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E accesskey(MediaWritable<Ex> accesskey) throws IOException, Ex {
-		return accesskey((Object)accesskey);
+		return Accesskey.super.accesskey(accesskey);
 	}
 }

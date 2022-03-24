@@ -81,7 +81,7 @@ public interface Onratechange<E extends Element<?, ?, E> & Onratechange<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E onratechange(IOSupplierE<?, Ex> onratechange) throws IOException, Ex {
-		return onratechange((onratechange == null) ? null : onratechange.get());
+		return OnratechangeUnexpected.super.onratechange(onratechange);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onratechange<E extends Element<?, ?, E> & Onratechange<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E onratechange(MediaWritable<Ex> onratechange) throws IOException, Ex {
-		return onratechange((Object)onratechange);
+		return OnratechangeUnexpected.super.onratechange(onratechange);
 	}
 }

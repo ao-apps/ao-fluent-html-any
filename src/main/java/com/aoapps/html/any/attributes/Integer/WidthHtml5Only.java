@@ -105,15 +105,6 @@ public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> 
 	 */
 	@Override
 	default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"width"
-			);
-		}
 		return Width.super.width(pixels);
 	}
 }

@@ -81,7 +81,7 @@ public interface Onloadeddata<E extends Element<?, ?, E> & Onloadeddata<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E onloadeddata(IOSupplierE<?, Ex> onloadeddata) throws IOException, Ex {
-		return onloadeddata((onloadeddata == null) ? null : onloadeddata.get());
+		return OnloadeddataUnexpected.super.onloadeddata(onloadeddata);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onloadeddata<E extends Element<?, ?, E> & Onloadeddata<E>> exte
 	 */
 	@Override
 	default <Ex extends Throwable> E onloadeddata(MediaWritable<Ex> onloadeddata) throws IOException, Ex {
-		return onloadeddata((Object)onloadeddata);
+		return OnloadeddataUnexpected.super.onloadeddata(onloadeddata);
 	}
 }

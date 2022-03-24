@@ -57,6 +57,7 @@ public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends Onse
 	@Override
 	@Attributes.Funnel
 	default E onselect(Object onselect) throws IOException {
+		// Not calling super: overridden to support HTML 4
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return Attributes.Event.attribute(element, "onselect", onselect);
 	}
@@ -76,7 +77,7 @@ public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends Onse
 	 */
 	@Override
 	default <Ex extends Throwable> E onselect(IOSupplierE<?, Ex> onselect) throws IOException, Ex {
-		return onselect((onselect == null) ? null : onselect.get());
+		return OnselectUnexpected.super.onselect(onselect);
 	}
 
 	/**
@@ -94,6 +95,6 @@ public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends Onse
 	 */
 	@Override
 	default <Ex extends Throwable> E onselect(MediaWritable<Ex> onselect) throws IOException, Ex {
-		return onselect((Object)onselect);
+		return OnselectUnexpected.super.onselect(onselect);
 	}
 }

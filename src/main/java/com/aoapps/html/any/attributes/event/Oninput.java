@@ -84,7 +84,7 @@ public interface Oninput<E extends Element<?, ?, E> & Oninput<E>> extends Oninpu
 	 */
 	@Override
 	default <Ex extends Throwable> E oninput(IOSupplierE<?, Ex> oninput) throws IOException, Ex {
-		return oninput((oninput == null) ? null : oninput.get());
+		return OninputUnexpected.super.oninput(oninput);
 	}
 
 	/**
@@ -105,6 +105,6 @@ public interface Oninput<E extends Element<?, ?, E> & Oninput<E>> extends Oninpu
 	 */
 	@Override
 	default <Ex extends Throwable> E oninput(MediaWritable<Ex> oninput) throws IOException, Ex {
-		return oninput((Object)oninput);
+		return OninputUnexpected.super.oninput(oninput);
 	}
 }

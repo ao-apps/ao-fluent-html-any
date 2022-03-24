@@ -81,7 +81,7 @@ public interface Onsuspend<E extends Element<?, ?, E> & Onsuspend<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onsuspend(IOSupplierE<?, Ex> onsuspend) throws IOException, Ex {
-		return onsuspend((onsuspend == null) ? null : onsuspend.get());
+		return OnsuspendUnexpected.super.onsuspend(onsuspend);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onsuspend<E extends Element<?, ?, E> & Onsuspend<E>> extends On
 	 */
 	@Override
 	default <Ex extends Throwable> E onsuspend(MediaWritable<Ex> onsuspend) throws IOException, Ex {
-		return onsuspend((Object)onsuspend);
+		return OnsuspendUnexpected.super.onsuspend(onsuspend);
 	}
 }

@@ -116,7 +116,7 @@ public interface OnmouseoverUnexpected<E extends Element<?, ?, E> & OnmouseoverU
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onmouseover(IOSupplierE<?, Ex> onmouseover) throws IOException, Ex {
-		return onmouseover((onmouseover == null) ? null : onmouseover.get());
+		return Onmouseover.super.onmouseover(onmouseover);
 	}
 
 	/**
@@ -144,6 +144,6 @@ public interface OnmouseoverUnexpected<E extends Element<?, ?, E> & OnmouseoverU
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onmouseover(MediaWritable<Ex> onmouseover) throws IOException, Ex {
-		return onmouseover((Object)onmouseover);
+		return Onmouseover.super.onmouseover(onmouseover);
 	}
 }

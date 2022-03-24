@@ -65,6 +65,7 @@ public interface CharsetHtml4Only<
 	@Override
 	@Attributes.Funnel
 	default E charset(String charset) throws IOException {
+		// Not calling super: overridden to support HTML 4
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, true, true);
 	}
@@ -84,7 +85,7 @@ public interface CharsetHtml4Only<
 	@Override
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
-		return charset((charset == null) ? null : charset.get());
+		return Charset.super.charset(charset);
 	}
 
 	/**
@@ -99,7 +100,7 @@ public interface CharsetHtml4Only<
 	@Deprecated
 	@Override
 	default E charset(java.nio.charset.Charset charset) throws IOException {
-		return charset((charset == null) ? null : charset.name());
+		return Charset.super.charset(charset);
 	}
 
 	/**
@@ -117,7 +118,7 @@ public interface CharsetHtml4Only<
 	@Override
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
-		return charset((charset == null) ? null : charset.get());
+		return Charset.super.charset(charset);
 	}
 
 	/**
@@ -132,8 +133,7 @@ public interface CharsetHtml4Only<
 	@Deprecated
 	@Override
 	default E charset(V charset) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return charset((charset == null) ? null : charset.apply(element.getDocument()));
+		return Charset.super.charset(charset);
 	}
 
 	/**
@@ -151,6 +151,6 @@ public interface CharsetHtml4Only<
 	@Override
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {
-		return charset((charset == null) ? null : charset.get());
+		return Charset.super.charset(charset);
 	}
 }

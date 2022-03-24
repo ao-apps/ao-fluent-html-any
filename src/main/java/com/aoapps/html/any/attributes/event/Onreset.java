@@ -81,7 +81,7 @@ public interface Onreset<E extends Element<?, ?, E> & Onreset<E>> extends Onrese
 	 */
 	@Override
 	default <Ex extends Throwable> E onreset(IOSupplierE<?, Ex> onreset) throws IOException, Ex {
-		return onreset((onreset == null) ? null : onreset.get());
+		return OnresetUnexpected.super.onreset(onreset);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onreset<E extends Element<?, ?, E> & Onreset<E>> extends Onrese
 	 */
 	@Override
 	default <Ex extends Throwable> E onreset(MediaWritable<Ex> onreset) throws IOException, Ex {
-		return onreset((Object)onreset);
+		return OnresetUnexpected.super.onreset(onreset);
 	}
 }

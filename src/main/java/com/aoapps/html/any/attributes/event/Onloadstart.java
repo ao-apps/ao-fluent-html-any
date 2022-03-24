@@ -81,7 +81,7 @@ public interface Onloadstart<E extends Element<?, ?, E> & Onloadstart<E>> extend
 	 */
 	@Override
 	default <Ex extends Throwable> E onloadstart(IOSupplierE<?, Ex> onloadstart) throws IOException, Ex {
-		return onloadstart((onloadstart == null) ? null : onloadstart.get());
+		return OnloadstartUnexpected.super.onloadstart(onloadstart);
 	}
 
 	/**
@@ -101,6 +101,6 @@ public interface Onloadstart<E extends Element<?, ?, E> & Onloadstart<E>> extend
 	 */
 	@Override
 	default <Ex extends Throwable> E onloadstart(MediaWritable<Ex> onloadstart) throws IOException, Ex {
-		return onloadstart((Object)onloadstart);
+		return OnloadstartUnexpected.super.onloadstart(onloadstart);
 	}
 }

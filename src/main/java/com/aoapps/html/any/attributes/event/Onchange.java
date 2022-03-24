@@ -59,6 +59,7 @@ public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> extends Onch
 	@Override
 	@Attributes.Funnel
 	default E onchange(Object onchange) throws IOException {
+		// Not calling super: overridden to support HTML 4
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return Attributes.Event.attribute(element, "onchange", onchange);
 	}
@@ -79,7 +80,7 @@ public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> extends Onch
 	 */
 	@Override
 	default <Ex extends Throwable> E onchange(IOSupplierE<?, Ex> onchange) throws IOException, Ex {
-		return onchange((onchange == null) ? null : onchange.get());
+		return OnchangeUnexpected.super.onchange(onchange);
 	}
 
 	/**
@@ -98,6 +99,6 @@ public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> extends Onch
 	 */
 	@Override
 	default <Ex extends Throwable> E onchange(MediaWritable<Ex> onchange) throws IOException, Ex {
-		return onchange((Object)onchange);
+		return OnchangeUnexpected.super.onchange(onchange);
 	}
 }

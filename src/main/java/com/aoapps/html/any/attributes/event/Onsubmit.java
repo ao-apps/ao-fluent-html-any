@@ -57,6 +57,7 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends Onsu
 	@Override
 	@Attributes.Funnel
 	default E onsubmit(Object onsubmit) throws IOException {
+		// Not calling super: overridden to support HTML 4
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return Attributes.Event.attribute(element, "onsubmit", onsubmit);
 	}
@@ -76,7 +77,7 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends Onsu
 	 */
 	@Override
 	default <Ex extends Throwable> E onsubmit(IOSupplierE<?, Ex> onsubmit) throws IOException, Ex {
-		return onsubmit((onsubmit == null) ? null : onsubmit.get());
+		return OnsubmitUnexpected.super.onsubmit(onsubmit);
 	}
 
 	/**
@@ -94,6 +95,6 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends Onsu
 	 */
 	@Override
 	default <Ex extends Throwable> E onsubmit(MediaWritable<Ex> onsubmit) throws IOException, Ex {
-		return onsubmit((Object)onsubmit);
+		return OnsubmitUnexpected.super.onsubmit(onsubmit);
 	}
 }

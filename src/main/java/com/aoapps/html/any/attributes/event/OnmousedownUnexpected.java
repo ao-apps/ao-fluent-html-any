@@ -116,7 +116,7 @@ public interface OnmousedownUnexpected<E extends Element<?, ?, E> & OnmousedownU
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onmousedown(IOSupplierE<?, Ex> onmousedown) throws IOException, Ex {
-		return onmousedown((onmousedown == null) ? null : onmousedown.get());
+		return Onmousedown.super.onmousedown(onmousedown);
 	}
 
 	/**
@@ -144,6 +144,6 @@ public interface OnmousedownUnexpected<E extends Element<?, ?, E> & OnmousedownU
 	@Deprecated
 	@Override
 	default <Ex extends Throwable> E onmousedown(MediaWritable<Ex> onmousedown) throws IOException, Ex {
-		return onmousedown((Object)onmousedown);
+		return Onmousedown.super.onmousedown(onmousedown);
 	}
 }
