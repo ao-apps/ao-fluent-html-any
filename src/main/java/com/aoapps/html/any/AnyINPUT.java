@@ -995,13 +995,33 @@ public abstract class AnyINPUT<
 	 * @param  <PC>  The parent content model this element is within
 	 * @param  <E>   This element type
 	 */
+	@SuppressWarnings("deprecation")
 	public abstract static class Hidden<
 		D  extends AnyDocument<D>,
 		PC extends AnyUnion_Interactive_Phrasing<D, PC>,
 		E  extends Hidden<D, PC, E>
 	> extends AnyINPUT<D, PC, E> implements
 		com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyINPUT.Autocomplete>,
-		com.aoapps.html.any.attributes.Text.Value<E>
+		com.aoapps.html.any.attributes.Text.Value<E>,
+		// Global Attributes overrides
+		com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+		com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+		// Global Event Attributes overrides
+		com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+		com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>
 	{
 
 		protected Hidden(D document, PC pc) {
