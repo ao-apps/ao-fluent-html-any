@@ -22,12 +22,9 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -42,8 +39,6 @@ import java.io.IOException;
  *
  * @param  <E>   This element type
  *
- * @since HTML 5
- *
  * @author  AO Industries, Inc.
  */
 public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
@@ -56,20 +51,10 @@ public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
 	 * </ul>
-	 *
-	 * @since HTML 5
 	 */
 	@Attributes.Funnel
 	default E onscroll(Object onscroll) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"onscroll"
-			);
-		}
 		return Attributes.Event.attribute(element, "onscroll", onscroll);
 	}
 
@@ -83,8 +68,6 @@ public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
 	 *
 	 * @see #onscroll(java.lang.Object)
 	 */
@@ -102,8 +85,6 @@ public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
 	 *
 	 * @see #onscroll(java.lang.Object)
 	 */
