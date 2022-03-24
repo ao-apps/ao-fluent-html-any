@@ -89,6 +89,8 @@ public interface Autocomplete<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #autocomplete(java.lang.String)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E autocomplete(Suppliers.String<Ex> autocomplete) throws IOException, Ex {
@@ -103,6 +105,8 @@ public interface Autocomplete<
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #autocomplete(java.lang.String)
 	 */
 	default E autocomplete(V autocomplete) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -119,6 +123,8 @@ public interface Autocomplete<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #autocomplete(java.lang.Enum)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E autocomplete(IOSupplierE<? extends V, Ex> autocomplete) throws IOException, Ex {

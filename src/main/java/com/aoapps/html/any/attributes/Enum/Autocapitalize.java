@@ -76,6 +76,8 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #autocapitalize(java.lang.String)
 	 */
 	@Override
 	@SuppressWarnings("overloads")
@@ -91,6 +93,8 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #autocapitalize(java.lang.String)
 	 */
 	@Override
 	default E autocapitalize(Value autocapitalize) throws IOException {
@@ -107,6 +111,8 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #autocapitalize(com.aoapps.html.any.attributes.Enum.Autocapitalize.Value)
 	 */
 	@Override
 	@SuppressWarnings("overloads")

@@ -83,6 +83,8 @@ public interface Formtarget<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #formtarget(java.lang.String)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E formtarget(Suppliers.String<Ex> formtarget) throws IOException, Ex {
@@ -96,6 +98,8 @@ public interface Formtarget<
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #formtarget(java.lang.String)
 	 */
 	default E formtarget(V formtarget) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -111,6 +115,8 @@ public interface Formtarget<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #formtarget(java.lang.Enum)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E formtarget(IOSupplierE<? extends V, Ex> formtarget) throws IOException, Ex {

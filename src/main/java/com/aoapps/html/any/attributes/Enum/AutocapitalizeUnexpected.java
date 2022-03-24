@@ -112,6 +112,8 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
 	 *
 	 * @since HTML 5
 	 *
+	 * @see #autocapitalize(java.lang.String)
+	 *
 	 * @deprecated  Although the autocapitalize attribute is global, it is only expected on
 	 *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
 	 *              {@linkplain AnyOUTPUT &lt;output&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
@@ -134,6 +136,8 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #autocapitalize(java.lang.String)
 	 *
 	 * @deprecated  Although the autocapitalize attribute is global, it is only expected on
 	 *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
@@ -159,6 +163,8 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #autocapitalize(com.aoapps.html.any.attributes.Enum.Autocapitalize.Value)
 	 *
 	 * @deprecated  Although the autocapitalize attribute is global, it is only expected on
 	 *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},

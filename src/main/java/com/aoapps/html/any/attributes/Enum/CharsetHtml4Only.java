@@ -79,6 +79,8 @@ public interface CharsetHtml4Only<
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @see #charset(java.lang.String)
+	 *
 	 * @deprecated  Not supported in HTML5.
 	 */
 	@Deprecated
@@ -94,6 +96,8 @@ public interface CharsetHtml4Only<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
 	 * </ul>
+	 *
+	 * @see #charset(java.lang.String)
 	 *
 	 * @deprecated  Not supported in HTML5.
 	 */
@@ -112,6 +116,8 @@ public interface CharsetHtml4Only<
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
+	 * @see #charset(java.nio.charset.Charset)
+	 *
 	 * @deprecated  Not supported in HTML5.
 	 */
 	@Deprecated
@@ -127,6 +133,8 @@ public interface CharsetHtml4Only<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
 	 * </ul>
+	 *
+	 * @see #charset(java.lang.String)
 	 *
 	 * @deprecated  Not supported in HTML5.
 	 */
@@ -144,6 +152,8 @@ public interface CharsetHtml4Only<
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @see #charset(java.lang.Enum)
 	 *
 	 * @deprecated  Not supported in HTML5.
 	 */

@@ -87,6 +87,8 @@ public interface Charset<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #charset(java.lang.String)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
@@ -101,6 +103,8 @@ public interface Charset<
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #charset(java.lang.String)
 	 */
 	default E charset(java.nio.charset.Charset charset) throws IOException {
 		return charset((charset == null) ? null : charset.name());
@@ -116,6 +120,8 @@ public interface Charset<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #charset(java.nio.charset.Charset)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
@@ -130,6 +136,8 @@ public interface Charset<
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #charset(java.lang.String)
 	 */
 	default E charset(V charset) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -146,6 +154,8 @@ public interface Charset<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #charset(java.lang.Enum)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {

@@ -83,6 +83,8 @@ public interface Formenctype<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #formenctype(java.lang.String)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E formenctype(Suppliers.String<Ex> formenctype) throws IOException, Ex {
@@ -96,6 +98,8 @@ public interface Formenctype<
 	 * </ul>
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #formenctype(java.lang.String)
 	 */
 	default E formenctype(V formenctype) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -111,6 +115,8 @@ public interface Formenctype<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @since HTML 5
+	 *
+	 * @see #formenctype(java.lang.Enum)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E formenctype(IOSupplierE<? extends V, Ex> formenctype) throws IOException, Ex {

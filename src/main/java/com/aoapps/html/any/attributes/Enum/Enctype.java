@@ -70,6 +70,8 @@ public interface Enctype<
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @see #enctype(java.lang.String)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E enctype(Suppliers.String<Ex> enctype) throws IOException, Ex {
@@ -82,6 +84,8 @@ public interface Enctype<
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
 	 * </ul>
+	 *
+	 * @see #enctype(java.lang.String)
 	 */
 	default E enctype(V enctype) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -96,6 +100,8 @@ public interface Enctype<
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @see #enctype(java.lang.Enum)
 	 */
 	@SuppressWarnings("overloads")
 	default <Ex extends Throwable> E enctype(IOSupplierE<? extends V, Ex> enctype) throws IOException, Ex {
