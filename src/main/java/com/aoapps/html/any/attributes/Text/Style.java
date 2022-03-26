@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
+import static com.aoapps.encoding.CssInXhtmlAttributeEncoder.cssInXhtmlAttributeEncoder;
 import com.aoapps.encoding.MediaWritable;
-import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -45,7 +45,6 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
-// TODO: cssInXmlAttributeEncoder
 // Matches StyleNoHtml4
 public interface Style<E extends Element<?, ?, E> & Style<E>> {
 
@@ -63,7 +62,7 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
 	@Attributes.Funnel
 	default E style(Object style) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, true, true, textInXhtmlAttributeEncoder);
+		return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, true, true, cssInXhtmlAttributeEncoder);
 	}
 
 	/**
@@ -82,7 +81,7 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
 	@Attributes.Funnel
 	default E style(Object ... style) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, ";", true, true, textInXhtmlAttributeEncoder);
+		return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, ";", true, true, cssInXhtmlAttributeEncoder);
 	}
 
 	/**

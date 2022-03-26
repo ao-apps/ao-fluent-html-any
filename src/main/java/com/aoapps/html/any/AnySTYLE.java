@@ -27,9 +27,7 @@ import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaType;
 import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
-import static com.aoapps.encoding.TextInXhtmlEncoder.textInXhtmlEncoder;
 import com.aoapps.hodgepodge.i18n.MarkupCoercion;
-import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.Strings;
 import com.aoapps.lang.Throwables;
@@ -37,6 +35,7 @@ import com.aoapps.lang.io.ContentType;
 import com.aoapps.lang.io.NoCloseWriter;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.io.Writer;
 import java.util.Locale;
 
@@ -60,6 +59,7 @@ public abstract class AnySTYLE<
 	E  extends AnySTYLE<D, PC, E>
 > extends Element<D, PC, E> implements
 	com.aoapps.html.any.attributes.Text.Media<E>,
+	// TODO: type as enum, deprecated?  See type implementation in AnyScript
 	// Global Attributes overrides
 	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
 	com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
@@ -157,7 +157,10 @@ public abstract class AnySTYLE<
 	@Override
 	protected E writeOpen(Writer out) throws IOException {
 		document.autoNli(out).unsafe(out, "<style", false);
-		return type();
+		E s = type();
+		assert s == this;
+		@SuppressWarnings("unchecked") E element = (E)this;
+		return element;
 	}
 
 	/**
@@ -198,14 +201,12 @@ public abstract class AnySTYLE<
 		return element;
 	}
 
-	protected MediaType getMediaType() throws IOException {
-		return MediaType.TEXT; // TODO: Version for CSS (with automatic URL rewriting?)
+	protected MediaType getMediaType() throws UnsupportedEncodingException {
+		return type == null ? MediaType.CSS : MediaType.getMediaTypeForContentType(type);
 	}
 
-	protected MediaEncoder getMediaEncoder(MediaType mediaType) throws IOException {
-		// TODO: This is in a CDATA context, is this the correct way?  Probably not, but how to protect close CDATA ]]>?
-		// TODO: Make CSS a fully-supported MediaType, then so this similar to AnySCRIPT.java
-		return textInXhtmlEncoder;
+	protected MediaEncoder getMediaEncoder(MediaType mediaType) throws UnsupportedEncodingException {
+		return MediaEncoder.getInstance(document.encodingContext, mediaType, MediaType.XHTML);
 	}
 
 	protected boolean doCdata() {
@@ -224,6 +225,9 @@ public abstract class AnySTYLE<
 		}
 	}
 
+	// TODO: Return a "Body" / "StyleBody" that only allows additional out or closing the tag.
+	// TODO:     Setting attributes after startBody() would create invalid HTML.
+	// TODO:     Similar for "text", too.
 	// TODO: Out parameter with MediaType, that automatically picks the encoder
 	// TODO: Separate "Write" for direct writing (no encoding)?
 	@SuppressWarnings("UseSpecificCatch")
@@ -252,8 +256,7 @@ public abstract class AnySTYLE<
 			MediaType mediaType = getMediaType();
 			MarkupCoercion.write(
 				style,
-				// TODO: Find and fix other uses of MarkupType.JAVASCRIPT that should be CSS
-				MarkupType.CSS, // TODO: Once CSS is a full-on media type: mediaType.getMarkupType(),
+				mediaType.getMarkupType(),
 				true,
 				getMediaEncoder(mediaType),
 				false,
@@ -278,6 +281,7 @@ public abstract class AnySTYLE<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
 	// TODO: Consolidate with AttributeWriter?
+	// TODO: Writer support for identifier() and url() in addition to text()
 	@FunctionalInterface
 	public static interface StyleWriter<
 		D  extends AnyDocument<D>,
