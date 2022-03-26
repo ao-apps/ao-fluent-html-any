@@ -22,9 +22,6 @@
  */
 package com.aoapps.html.any;
 
-import com.aoapps.encoding.Doctype;
-import static com.aoapps.html.any.Elements.RESOURCES;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import java.io.IOException;
 import java.io.Writer;
 
@@ -52,14 +49,7 @@ public abstract class AnyNAV<
 
 	protected AnyNAV(D document, PC pc) {
 		super(document, pc);
-		if(document.doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				document.doctype,
-				"<nav>"
-			);
-		}
+		Elements.onlySupportedInHtml5(document, "<nav>");
 	}
 
 	@Override

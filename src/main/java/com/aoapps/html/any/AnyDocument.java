@@ -25,7 +25,6 @@ package com.aoapps.html.any;
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.EncodingContext;
 import com.aoapps.encoding.MediaWritable;
-import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
 import static com.aoapps.encoding.TextInXhtmlEncoder.textInXhtmlEncoder;
 import com.aoapps.encoding.WriterUtil;
@@ -68,10 +67,6 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyDocument.class);
 
 	public final EncodingContext encodingContext;
-	// TODO: Remove this and just use encodingContext?
-	public final Serialization serialization;
-	// TODO: Remove this and just use encodingContext?
-	public final Doctype doctype;
 
 	/**
 	 * Writer for raw output.
@@ -109,26 +104,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 *
 	 * @see  #setOut(java.io.Writer)
 	 */
-	protected AnyDocument(EncodingContext encodingContext, Serialization serialization, Doctype doctype, Writer out) {
-		this.encodingContext = encodingContext;
-		this.serialization = serialization;
-		this.doctype = doctype;
-		this.out = out;
-	}
-
-	/**
-	 * @param  out  May be {@code null}, but must be set to a non-null value again before any additional writes.
-	 *              Not doing so may result in {@link IllegalStateException}.
-	 *
-	 * @see  #setOut(java.io.Writer)
-	 */
 	protected AnyDocument(EncodingContext encodingContext, Writer out) {
-		this(
-			encodingContext,
-			encodingContext.getSerialization(),
-			encodingContext.getDoctype(),
-			out
-		);
+		this.encodingContext = encodingContext;
+		this.out = out;
 	}
 
 	/**
@@ -1114,21 +1092,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// TODO: comments
 
 	/**
-	 * @see Doctype#xmlDeclaration(com.aoapps.encoding.Serialization, java.lang.String, java.lang.Appendable)
+	 * Writes the XML declaration, if needed, using the character encoding of the encoding context.
+	 *
+	 * @see  #encodingContext
+	 * @see  EncodingContext#getCharacterEncoding()
+	 * @see  Doctype#xmlDeclaration(com.aoapps.encoding.Serialization, java.nio.charset.Charset, java.lang.Appendable)
 	 */
-	public D xmlDeclaration(String documentEncoding) throws IOException {
-		if(doctype.xmlDeclaration(serialization, documentEncoding, getUnsafe(null))) {
-			setAtnl();
-		}
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
-	}
-
-	/**
-	 * @see Doctype#xmlDeclaration(com.aoapps.encoding.Serialization, java.nio.charset.Charset, java.lang.Appendable)
-	 */
-	public D xmlDeclaration(Charset documentEncoding) throws IOException {
-		if(doctype.xmlDeclaration(serialization, documentEncoding, getUnsafe(null))) {
+	public D xmlDeclaration() throws IOException {
+		Charset documentEncoding = encodingContext.getCharacterEncoding();
+		if(encodingContext.getDoctype().xmlDeclaration(encodingContext.getSerialization(), documentEncoding, getUnsafe(null))) {
 			setAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -1139,7 +1111,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @see Doctype#doctype(com.aoapps.encoding.Serialization, java.lang.Appendable)
 	 */
 	public D doctype() throws IOException {
-		if(doctype.doctype(serialization, getUnsafe(null))) {
+		if(encodingContext.getDoctype().doctype(encodingContext.getSerialization(), getUnsafe(null))) {
 			setAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;

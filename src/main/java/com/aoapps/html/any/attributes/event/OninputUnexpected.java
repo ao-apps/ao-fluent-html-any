@@ -22,15 +22,12 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.html.any.AnyINPUT;
 import com.aoapps.html.any.AnySELECT;
 import com.aoapps.html.any.AnyTEXTAREA;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -76,14 +73,7 @@ public interface OninputUnexpected<E extends Element<?, ?, E> & OninputUnexpecte
 	@Attributes.Funnel
 	default E oninput(Object oninput) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"oninput"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "oninput");
 		return Attributes.Event.attribute(element, "oninput", oninput);
 	}
 

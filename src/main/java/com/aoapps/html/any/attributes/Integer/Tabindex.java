@@ -22,11 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Integer;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -68,14 +65,7 @@ public interface Tabindex<E extends Element<?, ?, E> & Tabindex<E>> {
 	@Attributes.Funnel
 	default E tabindex(int tabindex) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"tabindex"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "tabindex");
 		return Attributes.Integer.attribute(element, "tabindex", tabindex);
 	}
 
@@ -96,14 +86,7 @@ public interface Tabindex<E extends Element<?, ?, E> & Tabindex<E>> {
 	@Attributes.Funnel
 	default E tabindex(Integer tabindex) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"tabindex"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "tabindex");
 		return Attributes.Integer.attribute(element, "tabindex", tabindex);
 	}
 

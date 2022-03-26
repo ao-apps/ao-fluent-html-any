@@ -22,8 +22,11 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.encoding.EncodingContext;
+import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.Writer;
+import java.nio.charset.Charset;
 import java.util.function.Function;
 
 /**
@@ -103,6 +106,123 @@ public abstract class AnyMETA<
 	protected void doAfterElement(Writer out) throws IOException {
 		document.autoNl(out);
 	}
+
+	// <editor-fold defaultstate="collapsed" desc="charset">
+	/**
+	 * Writes the charset for the document's {@linkplain EncodingContext#getCharacterEncoding() character encoding}.
+	 * <ul>
+	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+	 * </ul>
+	 *
+	 * @since HTML 5
+	 *
+	 * @see  AnyDocument#encodingContext
+	 * @see  EncodingContext#getCharacterEncoding()
+	 * @see  #charset(java.nio.charset.Charset)
+	 */
+	public E charset() throws IOException {
+		return charset(document.encodingContext.getCharacterEncoding());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @since HTML 5
+	 *
+	 * @deprecated  Please use {@link #charset()} for automatic charset.
+	 */
+	@Deprecated
+	@Override
+	public E charset(String charset) throws IOException {
+		return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
+	 *
+	 * @see #charset(java.lang.String)
+	 *
+	 * @deprecated  Please use {@link #charset()} for automatic charset.
+	 */
+	@Deprecated
+	@SuppressWarnings("overloads")
+	@Override
+	public <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
+		return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @since HTML 5
+	 *
+	 * @see #charset(java.lang.String)
+	 *
+	 * @deprecated  Please use {@link #charset()} for automatic charset.
+	 */
+	@Deprecated
+	@Override
+	public E charset(Charset charset) throws IOException {
+		return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
+	 *
+	 * @see #charset(java.nio.charset.Charset)
+	 *
+	 * @deprecated  Please use {@link #charset()} for automatic charset.
+	 */
+	@Deprecated
+	@SuppressWarnings("overloads")
+	@Override
+	public <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
+		return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @since HTML 5
+	 *
+	 * @see #charset(java.lang.String)
+	 *
+	 * @deprecated  Please use {@link #charset()} for automatic charset.
+	 */
+	@Deprecated
+	@Override
+	public E charset(com.aoapps.html.any.attributes.Enum.Charset.Value charset) throws IOException {
+		return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @param  <Ex>  An arbitrary exception type that may be thrown
+	 *
+	 * @since HTML 5
+	 *
+	 * @see #charset(java.lang.Enum)
+	 *
+	 * @deprecated  Please use {@link #charset()} for automatic charset.
+	 */
+	@Deprecated
+	@SuppressWarnings("overloads")
+	@Override
+	public <Ex extends Throwable> E charset(IOSupplierE<? extends com.aoapps.html.any.attributes.Enum.Charset.Value, Ex> charset) throws IOException, Ex {
+		return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+	}
+	// </editor-fold>
 
 	/**
 	 * <ul>

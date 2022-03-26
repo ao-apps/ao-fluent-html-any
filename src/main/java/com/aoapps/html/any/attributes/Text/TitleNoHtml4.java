@@ -25,9 +25,7 @@ package com.aoapps.html.any.attributes.Text;
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -64,14 +62,7 @@ public interface TitleNoHtml4<E extends Element<?, ?, E> & TitleNoHtml4<E>> exte
 	@Attributes.Funnel
 	default E title(Object title) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"invalidGlobalAttributeForDoctype",
-				element.getDocument().doctype,
-				"title"
-			);
-		}
+		Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "title");
 		return Title.super.title(title);
 	}
 

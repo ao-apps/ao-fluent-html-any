@@ -22,6 +22,7 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.encoding.EncodingContext;
 import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import com.aoapps.hodgepodge.i18n.MarkupType;
@@ -107,7 +108,7 @@ public abstract class AnyHTML<
 	protected E writeOpen(Writer out) throws IOException {
 		document.autoNli(out).unsafe(
 			out,
-			(document.serialization == Serialization.XML)
+			(document.encodingContext.getSerialization() == Serialization.XML)
 				? "<html xmlns=\"http://www.w3.org/1999/xhtml\""
 				: "<html",
 			false
@@ -134,7 +135,7 @@ public abstract class AnyHTML<
 	/**
 	 * <p>
 	 * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
-	 * {@link AnyDocument#serialization} is {@link Serialization#XML}.
+	 * {@link EncodingContext#getSerialization() } is {@link Serialization#XML}.
 	 * </p>
 	 * <ul>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
@@ -142,13 +143,15 @@ public abstract class AnyHTML<
 	 * </ul>
 	 * <hr>
 	 * {@inheritDoc}
+	 *
+	 * @see  AnyDocument#encodingContext
 	 */
 	@Override
 	public E lang(Object lang) throws IOException {
 		// Write default lang="…"
 		super.lang(lang);
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(document.serialization == Serialization.XML) {
+		if(document.encodingContext.getSerialization() == Serialization.XML) {
 			// Add xml:lang="…"
 			Attributes.Text.attribute(element, "xml:lang", MarkupType.NONE, lang, true, true, textInXhtmlAttributeEncoder);
 		}
@@ -158,7 +161,7 @@ public abstract class AnyHTML<
 	/**
 	 * <p>
 	 * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
-	 * {@link AnyDocument#serialization} is {@link Serialization#XML}.
+	 * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
 	 * </p>
 	 * <ul>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
@@ -169,7 +172,8 @@ public abstract class AnyHTML<
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
-	 * @see #lang(java.lang.Object)
+	 * @see  #lang(java.lang.Object)
+	 * @see  AnyDocument#encodingContext
 	 */
 	@Override
 	public <Ex extends Throwable> E lang(IOSupplierE<?, Ex> lang) throws IOException, Ex {
@@ -179,7 +183,7 @@ public abstract class AnyHTML<
 	/**
 	 * <p>
 	 * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
-	 * {@link AnyDocument#serialization} is {@link Serialization#XML}.
+	 * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
 	 * </p>
 	 * <ul>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
@@ -188,7 +192,8 @@ public abstract class AnyHTML<
 	 * <hr>
 	 * {@inheritDoc}
 	 *
-	 * @see #lang(java.lang.Object)
+	 * @see  #lang(java.lang.Object)
+	 * @see  AnyDocument#encodingContext
 	 */
 	@Override
 	public E lang(Locale lang) throws IOException {
@@ -198,7 +203,7 @@ public abstract class AnyHTML<
 	/**
 	 * <p>
 	 * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
-	 * {@link AnyDocument#serialization} is {@link Serialization#XML}.
+	 * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
 	 * </p>
 	 * <ul>
 	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
@@ -209,7 +214,8 @@ public abstract class AnyHTML<
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
-	 * @see #lang(java.util.Locale)
+	 * @see  #lang(java.util.Locale)
+	 * @see  AnyDocument#encodingContext
 	 */
 	@Override
 	public <Ex extends Throwable> E lang(Suppliers.Locale<Ex> lang) throws IOException, Ex {

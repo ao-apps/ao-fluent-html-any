@@ -23,7 +23,6 @@
 package com.aoapps.html.any;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 
 /**
  * Elements that are common to both {@link AnyMetadataContent} and {@link AnyPhrasingContent}.
@@ -91,62 +90,8 @@ public interface AnyUnion_Metadata_Phrasing<
 	@Factory("meta")
 	AnyMETA<D, __, ?> meta() throws IOException;
 
-	/**
-	 * Opens a new meta element with the given name attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">4.2.5 The meta element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_meta.asp">HTML meta tag</a>.</li>
-	 * </ul>
-	 *
-	 * @see #meta()
-	 * @see AnyMETA#name(java.lang.Enum)
-	 */
-	@Factory("meta")
-	AnyMETA<D, __, ?> meta(AnyMETA.Name name) throws IOException;
-
-	/**
-	 * Opens a new meta element with the given name http-equiv.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">4.2.5 The meta element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_meta.asp">HTML meta tag</a>.</li>
-	 * </ul>
-	 *
-	 * @see #meta()
-	 * @see AnyMETA#httpEquiv(java.lang.Enum)
-	 */
-	@Factory("meta")
-	AnyMETA<D, __, ?> meta(AnyMETA.HttpEquiv httpEquiv) throws IOException;
-
-	/**
-	 * Opens a new meta element with the given charset attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">4.2.5 The meta element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_meta.asp">HTML meta tag</a>.</li>
-	 * </ul>
-	 *
-	 * @see #meta()
-	 * @see AnyMETA#charset(java.nio.charset.Charset)
-	 */
-	@Factory("meta")
-	AnyMETA<D, __, ?> meta(Charset charset) throws IOException;
-
-	/**
-	 * Opens a new meta element with the given charset attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">4.2.5 The meta element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_meta.asp">HTML meta tag</a>.</li>
-	 * </ul>
-	 *
-	 * @see #meta()
-	 * @see AnyMETA#charset(java.lang.Enum)
-	 */
-	@Factory("meta")
-	AnyMETA<D, __, ?> meta(com.aoapps.html.any.attributes.Enum.Charset.Value charset) throws IOException;
-	// No meta__(), since either name, http-equiv, or itemprop is required (TODO: confirm itemprop-only metas?)
+	// No meta__(), since either name, http-equiv, or itemprop is required
+	// TODO: confirm itemprop-only metas?
 	// </editor-fold>
 	// <editor-fold defaultstate="collapsed" desc="NOSCRIPT">
 	/**

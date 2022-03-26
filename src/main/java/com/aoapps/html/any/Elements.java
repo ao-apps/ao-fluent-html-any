@@ -22,6 +22,8 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.encoding.Doctype;
+import com.aoapps.lang.LocalizedUnsupportedOperationException;
 import com.aoapps.lang.i18n.Resources;
 import java.util.ResourceBundle;
 
@@ -30,10 +32,28 @@ import java.util.ResourceBundle;
  *
  * @author  AO Industries, Inc.
  */
+// TODO: Move to a private impl package?
 final class Elements {
 
 	/** Make no instances. */
 	private Elements() {throw new AssertionError();}
 
-	static final Resources RESOURCES = Resources.getResources(ResourceBundle::getBundle, Elements.class);
+	private static final Resources RESOURCES = Resources.getResources(ResourceBundle::getBundle, Elements.class);
+
+	/**
+	 * Enforces that the document type is HTML 5 for the given attribute.
+	 *
+	 * @throws  UnsupportedOperationException when {@link EncodingContext#getDoctype()} is not {@link Doctype#HTML5}.
+	 */
+	static void onlySupportedInHtml5(AnyDocument<?> document, String element) throws UnsupportedOperationException {
+		Doctype doctype = document.encodingContext.getDoctype();
+		if(doctype != Doctype.HTML5) {
+			throw new LocalizedUnsupportedOperationException(
+				RESOURCES,
+				"onlySupportedInHtml5",
+				doctype,
+				element
+			);
+		}
+	}
 }

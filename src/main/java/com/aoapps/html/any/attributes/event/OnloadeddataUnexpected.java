@@ -22,14 +22,11 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.html.any.AnyAUDIO;
 import com.aoapps.html.any.AnyVIDEO;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -73,14 +70,7 @@ public interface OnloadeddataUnexpected<E extends Element<?, ?, E> & Onloadeddat
 	@Attributes.Funnel
 	default E onloadeddata(Object onloadeddata) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"onloadeddata"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "onloadeddata");
 		return Attributes.Event.attribute(element, "onloadeddata", onloadeddata);
 	}
 

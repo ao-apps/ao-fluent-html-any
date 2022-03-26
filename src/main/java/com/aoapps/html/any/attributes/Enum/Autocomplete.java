@@ -22,15 +22,12 @@
  */
 package com.aoapps.html.any.attributes.Enum;
 
-import com.aoapps.encoding.Doctype;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -68,14 +65,7 @@ public interface Autocomplete<
 	@Attributes.Funnel
 	default E autocomplete(String autocomplete) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"autocomplete"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "autocomplete");
 		return Attributes.String.attribute(element, "autocomplete", MarkupType.NONE, autocomplete, true, true);
 	}
 
@@ -144,14 +134,7 @@ public interface Autocomplete<
 	default E autocomplete(String ... autocomplete) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
 		AnyDocument<?> document = element.getDocument();
-		if(document.doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				document.doctype,
-				"autocomplete"
-			);
-		}
+		Attributes.onlySupportedInHtml5(document, "autocomplete");
 		if(autocomplete != null) {
 			Writer out = document.getUnsafe(null);
 			boolean didOne = false;
@@ -195,14 +178,7 @@ public interface Autocomplete<
 	default E autocomplete(V ... autocomplete) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
 		AnyDocument<?> document = element.getDocument();
-		if(document.doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				document.doctype,
-				"autocomplete"
-			);
-		}
+		Attributes.onlySupportedInHtml5(document, "autocomplete");
 		if(autocomplete != null) {
 			Writer out = document.getUnsafe(null);
 			boolean didOne = false;

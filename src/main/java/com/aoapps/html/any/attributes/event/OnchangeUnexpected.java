@@ -22,16 +22,13 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.html.any.AnyINPUT;
 import com.aoapps.html.any.AnySELECT;
 import com.aoapps.html.any.AnyTEXTAREA;
 import com.aoapps.html.any.AnyTRACK;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -79,14 +76,7 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
 	@Attributes.Funnel
 	default E onchange(Object onchange) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"onchange"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "onchange");
 		return Attributes.Event.attribute(element, "onchange", onchange);
 	}
 

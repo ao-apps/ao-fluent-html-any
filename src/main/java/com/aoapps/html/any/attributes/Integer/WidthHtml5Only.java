@@ -22,11 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Integer;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -57,14 +54,7 @@ public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> 
 	@Attributes.Funnel
 	default E width(int pixels) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"width"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "width");
 		return Width.super.width(pixels);
 	}
 
@@ -80,14 +70,7 @@ public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> 
 	@Attributes.Funnel
 	default E width(Integer pixels) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"width"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "width");
 		return Width.super.width(pixels);
 	}
 

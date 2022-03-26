@@ -22,10 +22,7 @@
  */
 package com.aoapps.html.any;
 
-import com.aoapps.encoding.Doctype;
-import static com.aoapps.html.any.Elements.RESOURCES;
 import com.aoapps.html.any.attributes.Enum.Dir;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.Writer;
@@ -54,14 +51,7 @@ public abstract class AnyBDI<
 
 	protected AnyBDI(D document, PC pc) {
 		super(document, pc);
-		if(document.doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				document.doctype,
-				"<bdi>"
-			);
-		}
+		Elements.onlySupportedInHtml5(document, "<bdi>");
 	}
 
 	@Override

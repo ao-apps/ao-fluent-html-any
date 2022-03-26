@@ -22,7 +22,6 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import com.aoapps.hodgepodge.i18n.MarkupType;
@@ -212,14 +211,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	default E data(String attrName, Object value) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
 		validate(attrName, data::validate);
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				attrName
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, attrName);
 		return Attributes.Text.attribute(
 			element,
 			attrName,

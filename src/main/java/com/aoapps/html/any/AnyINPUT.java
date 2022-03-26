@@ -27,9 +27,10 @@ import com.aoapps.encoding.Doctype;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import com.aoapps.hodgepodge.i18n.MarkupType;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.LocalizedIllegalStateException;
+import com.aoapps.lang.LocalizedUnsupportedOperationException;
 import com.aoapps.lang.Strings;
+import com.aoapps.lang.io.LocalizedUnsupportedEncodingException;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.Locale;
@@ -76,6 +77,19 @@ public abstract class AnyINPUT<
 
 	private static final com.aoapps.lang.i18n.Resources RESOURCES =
 		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyINPUT.class);
+
+	private static void typeOnlySupportedInHtml5(AnyDocument<?> document, Dynamic.Type type) throws UnsupportedOperationException {
+		assert type.getRequiredDoctype() == Doctype.HTML5;
+		Doctype doctype = document.encodingContext.getDoctype();
+		if(doctype != Doctype.HTML5) {
+			throw new LocalizedUnsupportedOperationException(
+				RESOURCES,
+				"typeOnlySupportedInHtml5",
+				doctype,
+				type.getValue()
+			);
+		}
+	}
 
 	protected AnyINPUT(D document, PC pc) {
 		super(document, pc);
@@ -430,13 +444,14 @@ public abstract class AnyINPUT<
 				}
 				// Perform doctype checks for recognized types
 				Doctype requiredDoctype = type.getRequiredDoctype();
-				if(requiredDoctype != null && document.doctype != requiredDoctype) {
-					throw new LocalizedIllegalArgumentException(
+				Doctype doctype = document.encodingContext.getDoctype();
+				if(requiredDoctype != null && doctype != requiredDoctype) {
+					throw new LocalizedUnsupportedEncodingException(
 						RESOURCES,
 						"typeRequiresDoctype",
 						type.value,
 						requiredDoctype,
-						document.doctype
+						doctype
 					);
 				}
 				this.type = type.value;
@@ -582,14 +597,7 @@ public abstract class AnyINPUT<
 
 		protected Color(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"color"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.COLOR);
 		}
 
 		/**
@@ -669,14 +677,7 @@ public abstract class AnyINPUT<
 
 		protected Date(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"date"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.DATE);
 		}
 
 		/**
@@ -758,14 +759,7 @@ public abstract class AnyINPUT<
 
 		protected DatetimeLocal(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"datetime-local"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.DATETIME_LOCAL);
 		}
 
 		/**
@@ -852,14 +846,7 @@ public abstract class AnyINPUT<
 
 		protected Email(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"email"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.EMAIL);
 		}
 
 		/**
@@ -1177,14 +1164,7 @@ public abstract class AnyINPUT<
 
 		protected Month(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"month"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.MONTH);
 		}
 
 		/**
@@ -1267,14 +1247,7 @@ public abstract class AnyINPUT<
 
 		protected Number(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"number"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.NUMBER);
 		}
 
 		/**
@@ -1491,14 +1464,7 @@ public abstract class AnyINPUT<
 
 		protected Range(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"range"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.RANGE);
 		}
 
 		/**
@@ -1634,14 +1600,7 @@ public abstract class AnyINPUT<
 
 		protected Search(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"search"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.SEARCH);
 		}
 
 		/**
@@ -1826,14 +1785,7 @@ public abstract class AnyINPUT<
 
 		protected Tel(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"tel"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.TEL);
 		}
 
 		/**
@@ -1963,14 +1915,7 @@ public abstract class AnyINPUT<
 
 		protected Time(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"time"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.TIME);
 		}
 
 		/**
@@ -2055,14 +2000,7 @@ public abstract class AnyINPUT<
 
 		protected Url(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"url"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.URL);
 		}
 
 		/**
@@ -2149,14 +2087,7 @@ public abstract class AnyINPUT<
 
 		protected Week(D document, PC pc) {
 			super(document, pc);
-			if(document.doctype != Doctype.HTML5) {
-				throw new LocalizedIllegalArgumentException(
-					RESOURCES,
-					"typeOnlySupportedInHtml5",
-					document.doctype,
-					"week"
-				);
-			}
+			typeOnlySupportedInHtml5(document, Dynamic.Type.WEEK);
 		}
 
 		/**

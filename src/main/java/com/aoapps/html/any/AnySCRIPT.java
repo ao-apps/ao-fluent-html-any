@@ -200,7 +200,7 @@ public abstract class AnySCRIPT<
 			|| type.equals(ContentType.JAVASCRIPT)
 			|| type.equals(ContentType.JAVASCRIPT_OLD)
 		) {
-			String typeAttr = document.doctype.getScriptType();
+			String typeAttr = document.encodingContext.getDoctype().getScriptType();
 			int len = typeAttr.length();
 			if(len > 0) {
 				if(document.getAtnl()) {
@@ -237,7 +237,7 @@ public abstract class AnySCRIPT<
 
 	protected boolean doCdata() {
 		return
-			document.serialization == Serialization.XML
+			document.encodingContext.getSerialization() == Serialization.XML
 			&& (
 				type == null
 				|| type.equals(ContentType.JAVASCRIPT)

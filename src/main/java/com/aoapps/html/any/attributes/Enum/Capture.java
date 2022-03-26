@@ -22,14 +22,11 @@
  */
 package com.aoapps.html.any.attributes.Enum;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -67,14 +64,7 @@ public interface Capture<
 	@Attributes.Funnel
 	default E capture(String capture) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"capture"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "capture");
 		return Attributes.String.attribute(element, "capture", MarkupType.NONE, capture, true, true);
 	}
 

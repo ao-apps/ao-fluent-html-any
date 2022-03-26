@@ -22,6 +22,8 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.encoding.Doctype;
+import com.aoapps.encoding.EncodingContext;
 import static com.aoapps.encoding.JavaScriptInXhtmlAttributeEncoder.javaScriptInXhtmlAttributeEncoder;
 import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaWritable;
@@ -33,6 +35,7 @@ import com.aoapps.hodgepodge.i18n.MarkupCoercion;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.LocalizedIllegalArgumentException;
+import com.aoapps.lang.LocalizedUnsupportedOperationException;
 import com.aoapps.lang.i18n.Resources;
 import com.aoapps.lang.io.NoCloseWriter;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -53,6 +56,7 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 // TODO: Review which attributes should be trimmed and/or nullIfEmpty
+// TODO: Move to a private impl package?
 public final class Attributes {
 
 	/** Make no instances. */
@@ -125,6 +129,50 @@ public final class Attributes {
 	}
 
 	/**
+	 * Enforces that the document type is HTML 5 for the given attribute.
+	 *
+	 * @throws  UnsupportedOperationException when {@link EncodingContext#getDoctype()} is not {@link Doctype#HTML5}.
+	 */
+	public static void onlySupportedInHtml5(AnyDocument<?> document, java.lang.String attrName) throws UnsupportedOperationException {
+		Doctype doctype = document.encodingContext.getDoctype();
+		if(doctype != Doctype.HTML5) {
+			throw new LocalizedUnsupportedOperationException(
+				RESOURCES,
+				"onlySupportedInHtml5",
+				doctype,
+				attrName
+			);
+		}
+	}
+
+	/**
+	 * Enforces that the document type is HTML 5 for the given attribute.
+	 *
+	 * @throws  UnsupportedOperationException when {@link EncodingContext#getDoctype()} is not {@link Doctype#HTML5}.
+	 */
+	public static void onlySupportedInHtml5(Element<?, ?, ?> element, java.lang.String attrName) throws UnsupportedOperationException {
+		onlySupportedInHtml5(element.getDocument(), attrName);
+	}
+
+	/**
+	 * Enforces that the document type is correct for the given global attribute.
+	 *
+	 * @throws  UnsupportedOperationException when {@link EncodingContext#getDoctype()} is not {@link Doctype#HTML5}.
+	 */
+	public static void invalidGlobalAttributeForDoctype(Element<?, ?, ?> element, Doctype requiredDoctype, java.lang.String attrName) throws UnsupportedOperationException {
+		Doctype doctype = element.getDocument().encodingContext.getDoctype();
+		if(doctype != requiredDoctype) {
+			throw new LocalizedUnsupportedOperationException(
+				RESOURCES,
+				"invalidGlobalAttributeForDoctype",
+				doctype,
+				requiredDoctype,
+				attrName
+			);
+		}
+	}
+
+	/**
 	 * See <a href="https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes">2.4.2 Boolean attributes</a>.
 	 *
 	 * @see  com.aoapps.html.any.attributes.Boolean
@@ -148,12 +196,13 @@ public final class Attributes {
 					out.append(' ');
 				}
 				out.write(name);
-				if(document.serialization == Serialization.XML) {
+				Serialization serialization = document.encodingContext.getSerialization();
+				if(serialization == Serialization.XML) {
 					out.write("=\"");
 					out.write(name);
 					out.append('"');
 				} else {
-					assert document.serialization == Serialization.SGML;
+					assert serialization == Serialization.SGML;
 				}
 			}
 			return element;

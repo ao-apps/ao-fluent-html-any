@@ -119,10 +119,11 @@ public abstract class AnyLINK<
 
 		@Override
 		public String apply(AnyDocument<?> document) {
-			if(document.serialization == Serialization.SGML) {
+			Serialization serialization = document.encodingContext.getSerialization();
+			if(serialization == Serialization.SGML) {
 				return sgml;
 			} else {
-				assert document.serialization == Serialization.XML;
+				assert serialization == Serialization.XML;
 				return xml;
 			}
 		}
@@ -373,7 +374,7 @@ public abstract class AnyLINK<
 		if(
 			type != null
 			&& !(
-				document.doctype == Doctype.HTML5
+				document.encodingContext.getDoctype() == Doctype.HTML5
 				&& rel != null
 				&& rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
 				&& ContentType.CSS.equalsIgnoreCase(type)
@@ -414,7 +415,7 @@ public abstract class AnyLINK<
 	public PC __() throws IOException {
 		if(
 			type == null
-			&& document.doctype != Doctype.HTML5
+			&& document.encodingContext.getDoctype() != Doctype.HTML5
 			&& rel != null
 			&& rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
 		) {

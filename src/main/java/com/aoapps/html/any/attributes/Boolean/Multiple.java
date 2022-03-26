@@ -22,11 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Boolean;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -49,14 +46,7 @@ public interface Multiple<E extends Element<?, ?, E> & Multiple<E>> {
 	@Attributes.Funnel
 	default E multiple(boolean multiple) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"multiple"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "multiple");
 		return Attributes.Boolean.attribute(element, "multiple", multiple);
 	}
 

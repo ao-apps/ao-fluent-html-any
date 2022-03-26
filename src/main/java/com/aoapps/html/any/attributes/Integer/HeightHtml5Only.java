@@ -22,11 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Integer;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -54,14 +51,7 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
 	@Attributes.Funnel
 	default E height(int pixels) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"height"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "height");
 		return Height.super.height(pixels);
 	}
 
@@ -77,14 +67,7 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
 	@Attributes.Funnel
 	default E height(Integer pixels) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"height"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "height");
 		return Height.super.height(pixels);
 	}
 

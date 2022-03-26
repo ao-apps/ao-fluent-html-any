@@ -22,12 +22,9 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -50,14 +47,7 @@ public interface Onpageshow<E extends Element<?, ?, E> & Onpageshow<E>> {
 	@Attributes.Funnel
 	default E onpageshow(Object onpageshow) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"onpageshow"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "onpageshow");
 		return Attributes.Event.attribute(element, "onpageshow", onpageshow);
 	}
 

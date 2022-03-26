@@ -22,7 +22,6 @@
  */
 package com.aoapps.html.any.attributes.Enum;
 
-import com.aoapps.encoding.Doctype;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.AnyBUTTON;
 import com.aoapps.html.any.AnyFIELDSET;
@@ -31,11 +30,9 @@ import com.aoapps.html.any.AnyOUTPUT;
 import com.aoapps.html.any.AnySELECT;
 import com.aoapps.html.any.AnyTEXTAREA;
 import com.aoapps.html.any.Attributes;
-import static com.aoapps.html.any.Attributes.RESOURCES;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.GlobalAttributes;
 import com.aoapps.html.any.Suppliers;
-import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -88,16 +85,7 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
 	@Attributes.Funnel
 	default E autocapitalize(String autocapitalize) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		// TODO: Make a "Rules" package-private utility class, with "onlySupportedInHtml5" method, and similar.
-		//       These should really be one-liners.
-		if(element.getDocument().doctype != Doctype.HTML5) {
-			throw new LocalizedIllegalArgumentException(
-				RESOURCES,
-				"onlySupportedInHtml5",
-				element.getDocument().doctype,
-				"autocapitalize"
-			);
-		}
+		Attributes.onlySupportedInHtml5(element, "autocapitalize");
 		return Attributes.String.attribute(element, "autocapitalize", MarkupType.NONE, autocapitalize, true, true);
 	}
 

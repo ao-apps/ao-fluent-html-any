@@ -174,7 +174,7 @@ public abstract class AnySTYLE<
 			type == null
 			|| type.equals(ContentType.CSS)
 		) {
-			String typeAttr = document.doctype.getStyleType();
+			String typeAttr = document.encodingContext.getDoctype().getStyleType();
 			int len = typeAttr.length();
 			if(len > 0) {
 				if(document.getAtnl()) {
@@ -210,7 +210,7 @@ public abstract class AnySTYLE<
 	}
 
 	protected boolean doCdata() {
-		return document.serialization == Serialization.XML;
+		return document.encodingContext.getSerialization() == Serialization.XML;
 	}
 
 	private boolean didBody;
