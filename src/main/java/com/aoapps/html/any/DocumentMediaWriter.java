@@ -292,7 +292,7 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 		) {
 			@Override
 			public void close() throws IOException {
-				if(tw != DocumentMediaWriter.this) tw.getEncoder().writeSuffixTo(DocumentMediaWriter.this);
+				if(tw != DocumentMediaWriter.this) tw.getEncoder().writeSuffixTo(DocumentMediaWriter.this, false);
 			}
 		};
 	}
