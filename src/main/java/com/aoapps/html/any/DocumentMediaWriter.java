@@ -26,6 +26,7 @@ import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaType;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.encoding.MediaWriter;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -41,25 +42,47 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 
 	private final D document;
 
-	public DocumentMediaWriter(D document, MediaEncoder encoder, Writer out) {
+	/**
+	 * @param  out  Conditionally passed through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+	 * @param  outOptimized  Is {@code out} already known to have been passed through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}?
+	 */
+	public DocumentMediaWriter(D document, MediaEncoder encoder, Writer out, boolean outOptimized) {
 		super(document.encodingContext, encoder, out);
 		this.document = document;
 	}
 
+	/**
+	 * @param  out  Passed through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+	 */
+	public DocumentMediaWriter(D document, MediaEncoder encoder, Writer out) {
+		this(document, encoder, out, false);
+	}
+
 	public DocumentMediaWriter(D document, MediaEncoder encoder) {
-		this(document, encoder, document.getUnsafe(null));
+		this(document, encoder, document.getUnsafe(null), false);
 	}
 
 	public D getDocument() {
 		return document;
 	}
 
+	/**
+	 * @return  The writer for text, must not be {@linkplain DocumentMediaWriter#close() closed}.
+	 */
 	@Override
 	@SuppressWarnings("unchecked")
 	protected DocumentMediaWriter<D> getTextWriter() throws UnsupportedEncodingException {
 		if(textWriter == null) {
 			MediaEncoder textEncoder = MediaEncoder.getInstance(document.encodingContext, MediaType.TEXT, getEncoder().getValidMediaInputType());
-			textWriter = (textEncoder == null) ? this : new DocumentMediaWriter<>(document, textEncoder, this);
+			assert this == Coercion.optimize(this, textEncoder) : "There are no CoercionOptimizer registered for DocumentMediaWriter";
+			textWriter = (textEncoder == null)
+				? this
+				: new DocumentMediaWriter<>(
+					document,
+					textEncoder,
+					this,
+					true // There are no CoercionOptimizer registered for DocumentMediaWriter
+				);
 		}
 		return (DocumentMediaWriter<D>)textWriter;
 	}

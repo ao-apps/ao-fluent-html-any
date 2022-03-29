@@ -25,6 +25,7 @@ package com.aoapps.html.any;
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.EncodingContext;
 import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.NoCloseMediaValidator;
 import static com.aoapps.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
 import static com.aoapps.encoding.TextInXhtmlEncoder.textInXhtmlEncoder;
 import com.aoapps.encoding.WriterUtil;
@@ -33,7 +34,6 @@ import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.LocalizedIllegalStateException;
 import com.aoapps.lang.Throwables;
-import com.aoapps.lang.io.NoCloseWriter;
 import com.aoapps.lang.io.Writable;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -92,7 +92,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @see  #setOut(java.io.Writer)
 	 */
 	// TODO: Wrap this writer in XhtmlValidator if is not already validating XHTML?
-	//       If wrapping, consider uses of this losing access to this wrapping, such as NoCloseWriter
+	//       If wrapping, consider uses of this losing access to this wrapping, such as NoCloseMediaValidator
 	// TODO: Make this be a ChainWriter?  This might be incorrect as it would encourage using html.out instead of elements and attributes
 	@Deprecated
 	@SuppressWarnings("PublicField") // TODO: Should this be final again?  Will we always need setOut, such as opening and closing tag separate processing in legacy taglibs?
@@ -618,7 +618,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 
 	Writer unsafe(Writer out) throws IOException {
 		clearAtnl(); // Unknown, safe to assume not at newline
-		return new NoCloseWriter(out);
+		return NoCloseMediaValidator.wrap(out);
 	}
 	// </editor-fold>
 
@@ -1080,7 +1080,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return new DocumentMediaWriter<>(
 			d,
 			textInXhtmlEncoder,
-			new NoCloseWriter(out)
+			NoCloseMediaValidator.wrap(out)
 		);
 	}
 	// </editor-fold>

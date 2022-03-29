@@ -28,6 +28,7 @@ import static com.aoapps.encoding.JavaScriptInXhtmlAttributeEncoder.javaScriptIn
 import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.encoding.MediaWriter;
+import com.aoapps.encoding.NoCloseMediaValidator;
 import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
@@ -37,7 +38,6 @@ import com.aoapps.lang.Coercion;
 import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.LocalizedUnsupportedOperationException;
 import com.aoapps.lang.i18n.Resources;
-import com.aoapps.lang.io.NoCloseWriter;
 import com.aoapps.lang.io.function.IOSupplierE;
 import com.aoapps.lang.validation.InvalidResult;
 import com.aoapps.lang.validation.ValidationResult;
@@ -402,7 +402,11 @@ public final class Attributes {
 						// 1) Newlines and tabs should be encoded within the attribute, not written directly out
 						// 2) The attribute content should have its own indentation scope and settings
 						// 3) Attribute value indentation should be off by default always
-						new MediaWriter(document.encodingContext, encoder, new NoCloseWriter(out))
+						new MediaWriter(
+							document.encodingContext,
+							encoder,
+							NoCloseMediaValidator.wrap(out)
+						)
 					);
 					out.append('"');
 				} else {
@@ -494,7 +498,11 @@ public final class Attributes {
 								// 1) Newlines and tabs should be encoded within the attribute, not written directly out
 								// 2) The attribute content should have its own indentation scope and settings
 								// 3) Attribute value indentation should be off by default always
-								new MediaWriter(document.encodingContext, encoder, new NoCloseWriter(out))
+								new MediaWriter(
+									document.encodingContext,
+									encoder,
+									NoCloseMediaValidator.wrap(out)
+								)
 							);
 						} else {
 							if(value == NO_VALUE) { // Identity comparison for marker value

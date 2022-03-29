@@ -25,6 +25,7 @@ package com.aoapps.html.any;
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaType;
+import com.aoapps.encoding.NoCloseMediaValidator;
 import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import com.aoapps.hodgepodge.i18n.MarkupCoercion;
@@ -32,7 +33,6 @@ import com.aoapps.lang.Coercion;
 import com.aoapps.lang.Strings;
 import com.aoapps.lang.Throwables;
 import com.aoapps.lang.io.ContentType;
-import com.aoapps.lang.io.NoCloseWriter;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -303,7 +303,7 @@ public abstract class AnySTYLE<
 				new DocumentMediaWriter<>(
 					document,
 					encoder,
-					new NoCloseWriter(out)
+					NoCloseMediaValidator.wrap(out)
 				)
 			);
 			document.clearAtnl(); // Unknown, safe to assume not at newline
