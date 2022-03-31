@@ -302,20 +302,6 @@ public interface Content<
 	/**
 	 * {@inheritDoc}
 	 * <p>
-	 * Delegates to {@link AnyDocument#unsafe(int)}.
-	 * </p>
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	@Override
-	default __ unsafe(int codePoint) throws IOException {
-		getDocument().unsafe(codePoint);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(char[])}.
 	 * </p>
 	 */

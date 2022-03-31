@@ -80,13 +80,6 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	C unsafe(char ch) throws IOException;
 
 	/**
-	 * Performs raw output of a single code point, automatically determining {@link #setAtnl(boolean)}.
-	 *
-	 * @return  {@code this} writer
-	 */
-	C unsafe(int codePoint) throws IOException;
-
-	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer

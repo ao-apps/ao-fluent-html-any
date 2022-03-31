@@ -101,22 +101,6 @@ public interface AnyTextContent<
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	@Override
-	default __ text(int codePoint) throws IOException {
-		getDocument().text(codePoint);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	@Override
 	default __ text(char[] cbuf) throws IOException {
 		getDocument().text(cbuf);
 		@SuppressWarnings("unchecked") __ c = (__)this;

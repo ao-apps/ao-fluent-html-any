@@ -305,19 +305,6 @@ public abstract class Element<
 	/**
 	 * {@inheritDoc}
 	 * <p>
-	 * Delegates to {@link AnyDocument#unsafe(int)}.
-	 * </p>
-	 */
-	@Override
-	public E unsafe(int codePoint) throws IOException {
-		document.unsafe(codePoint);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
-
-	/**
-	 * {@inheritDoc}
-	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(char[])}.
 	 * </p>
 	 */
