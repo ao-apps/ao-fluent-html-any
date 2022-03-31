@@ -84,8 +84,8 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
 				if(Character.isBmpCodePoint(codePoint)) {
 					accesskey.append((char)codePoint);
 				} else if(Character.isValidCodePoint(codePoint)) {
-					accesskey.append(Character.lowSurrogate(codePoint));
 					accesskey.append(Character.highSurrogate(codePoint));
+					accesskey.append(Character.lowSurrogate(codePoint));
 				} else {
 					throw new IllegalArgumentException(String.format("Invalid code point: 0x%X", codePoint));
 				}
