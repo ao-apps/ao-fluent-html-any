@@ -305,7 +305,8 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 		return new DocumentMediaWriter<D>(
 			document,
 			tw.getEncoder(),
-			tw.out
+			tw.out,
+			true
 		) {
 			@Override
 			public void close() throws IOException {
