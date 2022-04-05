@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import static com.aoapps.encoding.CssInXhtmlAttributeEncoder.cssInXhtmlAttributeEncoder;
+import static com.aoapps.encoding.StyleInXhtmlAttributeEncoder.styleInXhtmlAttributeEncoder;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
@@ -62,7 +62,7 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
 	@Attributes.Funnel
 	default E style(Object style) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, true, true, cssInXhtmlAttributeEncoder);
+		return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, true, true, styleInXhtmlAttributeEncoder);
 	}
 
 	/**
@@ -81,7 +81,7 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
 	@Attributes.Funnel
 	default E style(Object ... style) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, ";", true, true, cssInXhtmlAttributeEncoder);
+		return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, ";", true, true, styleInXhtmlAttributeEncoder);
 	}
 
 	/**
