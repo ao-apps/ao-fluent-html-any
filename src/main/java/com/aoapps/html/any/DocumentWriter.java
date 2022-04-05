@@ -31,13 +31,58 @@ import java.io.Writer;
 /**
  * Allows writing raw document output.
  *
- * @param  <C>  The current type of writer.
- *
  * @author  AO Industries, Inc.
  */
-public interface DocumentWriter<C> extends WhitespaceWriter<C> {
+public interface DocumentWriter extends WhitespaceWriter {
 
-	// <editor-fold desc="Unsafe">
+	// <editor-fold desc="WhitespaceWriter - manual self-type" defaultstate="collapsed">
+	@Override
+	DocumentWriter nl() throws IOException;
+
+	@Override
+	default DocumentWriter nli() throws IOException {
+		WhitespaceWriter.super.nli();
+		return this;
+	}
+
+	@Override
+	default DocumentWriter nli(int depthOffset) throws IOException {
+		WhitespaceWriter.super.nli(depthOffset);
+		return this;
+	}
+
+	@Override
+	default DocumentWriter indent() throws IOException {
+		WhitespaceWriter.super.indent();
+		return this;
+	}
+
+	@Override
+	DocumentWriter indent(int depthOffset) throws IOException;
+
+	@Override
+	DocumentWriter setIndent(boolean indent);
+
+	@Override
+	DocumentWriter setDepth(int depth);
+
+	@Override
+	DocumentWriter incDepth();
+
+	@Override
+	DocumentWriter decDepth();
+
+	@Override
+	default DocumentWriter sp() throws IOException {
+		WhitespaceWriter.super.sp();
+		return this;
+	}
+
+	@Override
+	DocumentWriter sp(int count) throws IOException;
+	// </editor-fold>
+
+	// <editor-fold desc="Unsafe - definition" defaultstate="collapsed">
 	/**
 	 * Gets the current writer this document is writing to, which may be used for raw output.
 	 * <p>
@@ -77,35 +122,35 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C unsafe(char ch) throws IOException;
+	DocumentWriter unsafe(char ch) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer
 	 */
-	C unsafe(char[] cbuf) throws IOException;
+	DocumentWriter unsafe(char[] cbuf) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer
 	 */
-	C unsafe(char[] cbuf, int offset, int len) throws IOException;
+	DocumentWriter unsafe(char[] cbuf, int offset, int len) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer
 	 */
-	C unsafe(CharSequence csq) throws IOException;
+	DocumentWriter unsafe(CharSequence csq) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer
 	 */
-	C unsafe(CharSequence csq, int start, int end) throws IOException;
+	DocumentWriter unsafe(CharSequence csq, int start, int end) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
@@ -115,7 +160,7 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C unsafe(Object unsafe) throws IOException;
+	DocumentWriter unsafe(Object unsafe) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
@@ -127,7 +172,7 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	<Ex extends Throwable> C unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex;
+	<Ex extends Throwable> DocumentWriter unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex;
 
 	/**
 	 * Performs raw output.
@@ -137,7 +182,7 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C unsafe(Writable unsafe) throws IOException;
+	DocumentWriter unsafe(Writable unsafe) throws IOException;
 
 	/**
 	 * Performs raw output.
@@ -152,7 +197,7 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	Writer unsafe() throws IOException;
 	// </editor-fold>
 
-	// <editor-fold desc="Automatic Newline and Indentation">
+	// <editor-fold desc="Automatic Newline and Indentation - definition" defaultstate="collapsed">
 	/**
 	 * Gets if automatic newline (and indentation when {@linkplain #getIndent() enabled}) is currently enabled,
 	 * off by default.
@@ -164,7 +209,7 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C setAutonli(boolean autonli);
+	DocumentWriter setAutonli(boolean autonli);
 
 	/**
 	 * Gets the at newline flag.
@@ -176,21 +221,21 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C setAtnl();
+	DocumentWriter setAtnl();
 
 	/**
 	 * Sets the at newline flag.
 	 *
 	 * @return  {@code this} writer
 	 */
-	C setAtnl(boolean atnl);
+	DocumentWriter setAtnl(boolean atnl);
 
 	/**
 	 * Clears the at newline flag.
 	 *
 	 * @return  {@code this} writer
 	 */
-	C clearAtnl();
+	DocumentWriter clearAtnl();
 
 	/**
 	 * Performs automatic newline when
@@ -198,7 +243,7 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C autoNl() throws IOException;
+	DocumentWriter autoNl() throws IOException;
 
 	/**
 	 * Performs automatic newline when {@link #getAutonli()} and not {@link #getAtnl()},
@@ -206,7 +251,7 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C autoNli() throws IOException;
+	DocumentWriter autoNli() throws IOException;
 
 	/**
 	 * Performs automatic newline when {@link #getAutonli()} and not {@link #getAtnl()},
@@ -217,7 +262,7 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C autoNli(int depthOffset) throws IOException;
+	DocumentWriter autoNli(int depthOffset) throws IOException;
 
 	/**
 	 * Performs automatic indentation when
@@ -225,7 +270,7 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C autoIndent() throws IOException;
+	DocumentWriter autoIndent() throws IOException;
 
 	/**
 	 * Performs automatic indentation with a depth offset when
@@ -236,6 +281,6 @@ public interface DocumentWriter<C> extends WhitespaceWriter<C> {
 	 *
 	 * @return  {@code this} writer
 	 */
-	C autoIndent(int depthOffset) throws IOException;
+	DocumentWriter autoIndent(int depthOffset) throws IOException;
 	// </editor-fold>
 }

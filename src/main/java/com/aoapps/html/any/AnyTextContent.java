@@ -39,10 +39,137 @@ import java.io.IOException;
 public interface AnyTextContent<
 	D  extends AnyDocument<D>,
 	__ extends AnyTextContent<D, __>
-> extends TextWriter<__>,
+> extends TextWriter,
 	Content<D, __> {
 
-	// <editor-fold desc="TextWriter">
+	// <editor-fold desc="WhitespaceWriter - manual self-type" defaultstate="collapsed">
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	default __ nl() throws IOException {
+		Content.super.nl();
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	@Override
+	default __ nli() throws IOException {
+		Content.super.nli();
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	default __ nli(int depthOffset) throws IOException {
+		Content.super.nli(depthOffset);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	default __ indent() throws IOException {
+		Content.super.indent();
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	default __ indent(int depthOffset) throws IOException {
+		Content.super.indent(depthOffset);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	default __ setIndent(boolean indent) {
+		Content.super.setIndent(indent);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	default __ setDepth(int depth) {
+		Content.super.setDepth(depth);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	default __ incDepth() {
+		Content.super.incDepth();
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
+	 */
+	@Deprecated
+	@Override
+	default __ decDepth() {
+		Content.super.decDepth();
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	@Override
+	default __ sp() throws IOException {
+		Content.super.sp();
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	@Override
+	default __ sp(int count) throws IOException {
+		Content.super.sp(count);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+	// </editor-fold>
+
+	// <editor-fold desc="TextWriter - delegate to Document" defaultstate="collapsed">
 	/**
 	 * {@inheritDoc}
 	 * <p>

@@ -42,7 +42,7 @@ import java.io.Writer;
 public interface Content<
 	D  extends AnyDocument<D>,
 	__ extends Content<D, __>
-> extends DocumentWriter<__> {
+> extends DocumentWriter {
 
 	/**
 	 * Gets the document for the current content model.  The document can be used to
@@ -50,7 +50,7 @@ public interface Content<
 	 */
 	D getDocument();
 
-	// <editor-fold desc="WhitespaceWriter">
+	// <editor-fold desc="WhitespaceWriter - delegate to Document" defaultstate="collapsed">
 	/**
 	 * {@inheritDoc}
 	 * <p>
@@ -260,7 +260,7 @@ public interface Content<
 	}
 	// </editor-fold>
 
-	// <editor-fold desc="DocumentWriter / Unsafe">
+	// <editor-fold desc="DocumentWriter / Unsafe - delegate to Document" defaultstate="collapsed">
 	/**
 	 * {@inheritDoc}
 	 * <p>
@@ -410,7 +410,7 @@ public interface Content<
 	}
 	// </editor-fold>
 
-	// <editor-fold desc="DocumentWriter / Automatic Newline and Indentation">
+	// <editor-fold desc="DocumentWriter / Automatic Newline and Indentation - delegate to Document" defaultstate="collapsed">
 	/**
 	 * {@inheritDoc}
 	 * <p>

@@ -105,7 +105,7 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 		return this;
 	}
 
-	// <editor-fold desc="WhitespaceWriter">
+	// <editor-fold desc="WhitespaceWriter - manual self-type" defaultstate="collapsed">
 	// Not delegating to AnyDocument.nl(), because the newlines themselves may need to be encoded.
 	@Override
 	public DocumentMediaWriter<D> nl() throws IOException {
@@ -226,7 +226,7 @@ public class DocumentMediaWriter<D extends AnyDocument<D>> extends MediaWriter {
 	}
 	// </editor-fold>
 
-	// <editor-fold desc="TextWriter">
+	// <editor-fold desc="TextWriter - manual self-type" defaultstate="collapsed">
 	@Override
 	public DocumentMediaWriter<D> nbsp() throws IOException {
 		super.nbsp();

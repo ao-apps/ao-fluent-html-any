@@ -127,7 +127,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// <editor-fold desc="WhitespaceWriter">
+	// <editor-fold desc="WhitespaceWriter - implementation" defaultstate="collapsed">
 	/**
 	 * Is indenting enabled?
 	 */
@@ -300,7 +300,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 	// </editor-fold>
 
-	// <editor-fold desc="DocumentWriter / Unsafe">
+	// <editor-fold desc="DocumentWriter / Unsafe - implementation" defaultstate="collapsed">
 	@Override
 	public Writer getUnsafe(Boolean endsNewline) throws IllegalStateException {
 		Writer unsafe = out;
@@ -599,7 +599,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 	// </editor-fold>
 
-	// <editor-fold desc="DocumentWriter / Automatic Newline and Indentation">
+	// <editor-fold desc="DocumentWriter / Automatic Newline and Indentation - implementation" defaultstate="collapsed">
 	/**
 	 * Is automatic newline and indenting enabled?
 	 */
@@ -781,7 +781,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 	// </editor-fold>
 
-	// <editor-fold desc="TextWriter">
+	// <editor-fold desc="TextWriter - implementation" defaultstate="collapsed">
 	@Override
 	public D nbsp() throws IOException {
 		return nbsp(getUnsafe(null));
