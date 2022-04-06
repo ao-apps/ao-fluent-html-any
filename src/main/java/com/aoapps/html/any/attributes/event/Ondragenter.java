@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -98,7 +98,7 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
 	 *
 	 * @see #ondragenter(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E ondragenter(MediaWritable<Ex> ondragenter) throws IOException, Ex {
+	default <Ex extends Throwable> E ondragenter(JavaScriptWritable<Ex> ondragenter) throws IOException, Ex {
 		return ondragenter((Object)ondragenter);
 	}
 }

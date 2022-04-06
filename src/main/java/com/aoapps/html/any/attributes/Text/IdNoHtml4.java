@@ -23,7 +23,7 @@
 package com.aoapps.html.any.attributes.Text;
 
 import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -99,7 +99,7 @@ public interface IdNoHtml4<E extends Element<?, ?, E> & IdNoHtml4<E>> extends Id
 	 * @see #id(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E id(MediaWritable<Ex> id) throws IOException, Ex {
+	default <Ex extends Throwable> E id(TextWritable<Ex> id) throws IOException, Ex {
 		return Id.super.id(id);
 	}
 }

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyINPUT;
 import com.aoapps.html.any.AnySELECT;
 import com.aoapps.html.any.AnyTEXTAREA;
@@ -121,7 +121,7 @@ public interface OninputUnexpected<E extends Element<?, ?, E> & OninputUnexpecte
 	 *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E oninput(MediaWritable<Ex> oninput) throws IOException, Ex {
+	default <Ex extends Throwable> E oninput(JavaScriptWritable<Ex> oninput) throws IOException, Ex {
 		return oninput((Object)oninput);
 	}
 }

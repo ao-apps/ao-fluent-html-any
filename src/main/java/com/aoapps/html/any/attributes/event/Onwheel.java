@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -98,7 +98,7 @@ public interface Onwheel<E extends Element<?, ?, E> & Onwheel<E>> {
 	 *
 	 * @see #onwheel(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onwheel(MediaWritable<Ex> onwheel) throws IOException, Ex {
+	default <Ex extends Throwable> E onwheel(JavaScriptWritable<Ex> onwheel) throws IOException, Ex {
 		return onwheel((Object)onwheel);
 	}
 }

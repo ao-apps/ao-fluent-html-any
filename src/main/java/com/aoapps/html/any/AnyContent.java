@@ -85,7 +85,7 @@ public interface AnyContent<
 	//
 	// Others:
 	//
-	// Inherited: WhitespaceWriter
+	// Inherited: Whitespace
 {
 	//
 	// Factories:

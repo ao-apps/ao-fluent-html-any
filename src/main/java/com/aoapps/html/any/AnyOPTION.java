@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.Writer;
@@ -142,7 +142,7 @@ public abstract class AnyOPTION<
 	 */
 	@Deprecated
 	@Override
-	public <Ex extends Throwable> E label(MediaWritable<Ex> label) throws IOException, Ex {
+	public <Ex extends Throwable> E label(TextWritable<Ex> label) throws IOException, Ex {
 		return com.aoapps.html.any.attributes.Text.Label.super.label(label);
 	}
 

@@ -22,7 +22,11 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.encoding.MediaType;
 import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.MediaWriter;
+import com.aoapps.encoding.Text;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.encoding.TextWriter;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -39,16 +43,10 @@ import java.io.IOException;
 public interface AnyTextContent<
 	D  extends AnyDocument<D>,
 	__ extends AnyTextContent<D, __>
-> extends TextWriter,
+> extends Text,
 	Content<D, __> {
 
-	// <editor-fold desc="WhitespaceWriter - manual self-type" defaultstate="collapsed">
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
-	 */
-	@Deprecated
+	// <editor-fold desc="Whitespace - manual self-type" defaultstate="collapsed">
 	@Override
 	default __ nl() throws IOException {
 		Content.super.nl();
@@ -63,12 +61,6 @@ public interface AnyTextContent<
 		return c;
 	}
 
-	/**
-	 * {@inheritDoc}
-	 *
-	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
-	 */
-	@Deprecated
 	@Override
 	default __ nli(int depthOffset) throws IOException {
 		Content.super.nli(depthOffset);
@@ -169,12 +161,119 @@ public interface AnyTextContent<
 	}
 	// </editor-fold>
 
-	// <editor-fold desc="TextWriter - delegate to Document" defaultstate="collapsed">
+	// <editor-fold desc="Encode - manual self-type and delegate to Document" defaultstate="collapsed">
 	/**
 	 * {@inheritDoc}
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Override
+	default __ encode(MediaType contentType, char ch) throws IOException {
+		Text.super.encode(contentType, ch);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Override
+	default __ encode(MediaType contentType, char[] cbuf) throws IOException {
+		Text.super.encode(contentType, cbuf);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Override
+	default __ encode(MediaType contentType, char[] cbuf, int offset, int len) throws IOException {
+		Text.super.encode(contentType, cbuf, offset, len);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Override
+	default __ encode(MediaType contentType, CharSequence csq) throws IOException {
+		Text.super.encode(contentType, csq);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Override
+	default __ encode(MediaType contentType, CharSequence csq, int start, int end) throws IOException {
+		Text.super.encode(contentType, csq, start, end);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default __ encode(MediaType contentType, Object content) throws IOException {
+		getDocument().encode(contentType, content);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Override
+	default <Ex extends Throwable> __ encode(MediaType contentType, IOSupplierE<?, Ex> content) throws IOException, Ex {
+		Text.super.encode(contentType, content);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	@Override
+	default <Ex extends Throwable> __ encode(MediaType contentType, MediaWritable<Ex> content) throws IOException, Ex {
+		Text.super.encode(contentType, content);
+		@SuppressWarnings("unchecked") __ c = (__)this;
+		return c;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  This content model, which will be the parent content model of child elements
+	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Override
+	default MediaWriter encode(MediaType contentType) throws IOException {
+		return getDocument().encode(contentType);
+	}
+	// </editor-fold>
+
+	// <editor-fold desc="Text - delegate to Document" defaultstate="collapsed">
+	/**
+	 * {@inheritDoc}
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -188,9 +287,6 @@ public interface AnyTextContent<
 
 	/**
 	 * {@inheritDoc}
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -204,9 +300,6 @@ public interface AnyTextContent<
 
 	/**
 	 * {@inheritDoc}
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -220,9 +313,6 @@ public interface AnyTextContent<
 
 	/**
 	 * {@inheritDoc}
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -236,9 +326,6 @@ public interface AnyTextContent<
 
 	/**
 	 * {@inheritDoc}
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -252,9 +339,6 @@ public interface AnyTextContent<
 
 	/**
 	 * {@inheritDoc}
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -268,9 +352,6 @@ public interface AnyTextContent<
 
 	/**
 	 * {@inheritDoc}
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -327,9 +408,6 @@ public interface AnyTextContent<
 	 * <p>
 	 * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
 	 * </p>
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -337,7 +415,7 @@ public interface AnyTextContent<
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	@Override
-	default <Ex extends Throwable> __ text(MediaWritable<Ex> text) throws IOException, Ex {
+	default <Ex extends Throwable> __ text(TextWritable<Ex> text) throws IOException, Ex {
 		getDocument().text(text);
 		@SuppressWarnings("unchecked") __ c = (__)this;
 		return c;
@@ -348,14 +426,11 @@ public interface AnyTextContent<
 	 * <p>
 	 * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
 	 * </p>
-	 * <p>
-	 * Does not perform any translation markups.
-	 * </p>
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	// TODO: __() method to end text?  Call it "ContentWriter"?
 	@Override
-	default DocumentMediaWriter<D> text() throws IOException {
+	default TextWriter text() throws IOException {
 		return getDocument().text();
 	}
 	// </editor-fold>

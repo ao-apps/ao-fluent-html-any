@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Onwaiting<E extends Element<?, ?, E> & Onwaiting<E>> extends On
 	 * @see #onwaiting(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onwaiting(MediaWritable<Ex> onwaiting) throws IOException, Ex {
+	default <Ex extends Throwable> E onwaiting(JavaScriptWritable<Ex> onwaiting) throws IOException, Ex {
 		return OnwaitingUnexpected.super.onwaiting(onwaiting);
 	}
 }

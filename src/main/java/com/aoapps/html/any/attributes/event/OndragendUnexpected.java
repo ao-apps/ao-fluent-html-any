@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -156,7 +156,7 @@ public interface OndragendUnexpected<E extends Element<?, ?, E> & OndragendUnexp
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E ondragend(MediaWritable<Ex> ondragend) throws IOException, Ex {
+	default <Ex extends Throwable> E ondragend(JavaScriptWritable<Ex> ondragend) throws IOException, Ex {
 		return Ondragend.super.ondragend(ondragend);
 	}
 }

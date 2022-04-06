@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.XhtmlAttributeWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -79,7 +79,8 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
 	 * @deprecated  Please implement specific attributes as-needed
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E attribute(String name, MediaWritable<Ex> value) throws IOException, Ex {
+	// TODO: Just MediaWritable here?  How does this interact with the various types of MediaWriters?
+	default <Ex extends Throwable> E attribute(String name, XhtmlAttributeWritable<Ex> value) throws IOException, Ex {
 		return attribute(name, (Object)value);
 	}
 }

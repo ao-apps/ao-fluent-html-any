@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -148,7 +148,7 @@ public interface OnmousedownUnexpected<E extends Element<?, ?, E> & OnmousedownU
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E onmousedown(MediaWritable<Ex> onmousedown) throws IOException, Ex {
+	default <Ex extends Throwable> E onmousedown(JavaScriptWritable<Ex> onmousedown) throws IOException, Ex {
 		return Onmousedown.super.onmousedown(onmousedown);
 	}
 }

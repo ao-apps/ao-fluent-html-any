@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBODY;
 import com.aoapps.html.any.AnyFRAMESET;
 import com.aoapps.html.any.AnyVIDEO;
@@ -117,7 +117,7 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
 	 *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onresize(MediaWritable<Ex> onresize) throws IOException, Ex {
+	default <Ex extends Throwable> E onresize(JavaScriptWritable<Ex> onresize) throws IOException, Ex {
 		return onresize((Object)onresize);
 	}
 }

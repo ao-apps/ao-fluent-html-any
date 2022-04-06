@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Onpause<E extends Element<?, ?, E> & Onpause<E>> extends Onpaus
 	 * @see #onpause(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onpause(MediaWritable<Ex> onpause) throws IOException, Ex {
+	default <Ex extends Throwable> E onpause(JavaScriptWritable<Ex> onpause) throws IOException, Ex {
 		return OnpauseUnexpected.super.onpause(onpause);
 	}
 }

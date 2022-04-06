@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -156,7 +156,7 @@ public interface OncontextmenuUnexpected<E extends Element<?, ?, E> & Oncontextm
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E oncontextmenu(MediaWritable<Ex> oncontextmenu) throws IOException, Ex {
+	default <Ex extends Throwable> E oncontextmenu(JavaScriptWritable<Ex> oncontextmenu) throws IOException, Ex {
 		return Oncontextmenu.super.oncontextmenu(oncontextmenu);
 	}
 }

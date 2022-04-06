@@ -23,7 +23,7 @@
 package com.aoapps.html.any.attributes.Text;
 
 import static com.aoapps.encoding.StyleInXhtmlAttributeEncoder.styleInXhtmlAttributeEncoder;
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.StyleWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -118,7 +118,7 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
 	 *
 	 * @see #style(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E style(MediaWritable<Ex> style) throws IOException, Ex {
+	default <Ex extends Throwable> E style(StyleWritable<Ex> style) throws IOException, Ex {
 		return style((Object)style);
 	}
 }

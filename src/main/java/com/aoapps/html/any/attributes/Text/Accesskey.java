@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -129,7 +129,7 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
 	 *
 	 * @see #accesskey(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E accesskey(MediaWritable<Ex> accesskey) throws IOException, Ex {
+	default <Ex extends Throwable> E accesskey(TextWritable<Ex> accesskey) throws IOException, Ex {
 		return accesskey((Object)accesskey);
 	}
 }

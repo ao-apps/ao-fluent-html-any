@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -89,7 +89,7 @@ public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
 	 *
 	 * @see #onblur(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onblur(MediaWritable<Ex> onblur) throws IOException, Ex {
+	default <Ex extends Throwable> E onblur(JavaScriptWritable<Ex> onblur) throws IOException, Ex {
 		return onblur((Object)onblur);
 	}
 }

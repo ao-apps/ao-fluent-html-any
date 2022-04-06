@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -89,7 +89,7 @@ public interface Onkeyup<E extends Element<?, ?, E> & Onkeyup<E>> {
 	 *
 	 * @see #onkeyup(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onkeyup(MediaWritable<Ex> onkeyup) throws IOException, Ex {
+	default <Ex extends Throwable> E onkeyup(JavaScriptWritable<Ex> onkeyup) throws IOException, Ex {
 		return onkeyup((Object)onkeyup);
 	}
 }

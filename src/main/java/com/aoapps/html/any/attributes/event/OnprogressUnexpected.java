@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyAUDIO;
 import com.aoapps.html.any.AnyVIDEO;
 import com.aoapps.html.any.Attributes;
@@ -116,7 +116,7 @@ public interface OnprogressUnexpected<E extends Element<?, ?, E> & OnprogressUne
 	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onprogress(MediaWritable<Ex> onprogress) throws IOException, Ex {
+	default <Ex extends Throwable> E onprogress(JavaScriptWritable<Ex> onprogress) throws IOException, Ex {
 		return onprogress((Object)onprogress);
 	}
 }

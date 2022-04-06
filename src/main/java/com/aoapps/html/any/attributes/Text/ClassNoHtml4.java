@@ -23,7 +23,7 @@
 package com.aoapps.html.any.attributes.Text;
 
 import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -116,7 +116,7 @@ public interface ClassNoHtml4<E extends Element<?, ?, E> & ClassNoHtml4<E>> exte
 	 * @see #clazz(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E clazz(MediaWritable<Ex> clazz) throws IOException, Ex {
+	default <Ex extends Throwable> E clazz(TextWritable<Ex> clazz) throws IOException, Ex {
 		return Class.super.clazz(clazz);
 	}
 }

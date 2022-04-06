@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -148,7 +148,7 @@ public interface OnmouseoverUnexpected<E extends Element<?, ?, E> & OnmouseoverU
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E onmouseover(MediaWritable<Ex> onmouseover) throws IOException, Ex {
+	default <Ex extends Throwable> E onmouseover(JavaScriptWritable<Ex> onmouseover) throws IOException, Ex {
 		return Onmouseover.super.onmouseover(onmouseover);
 	}
 }

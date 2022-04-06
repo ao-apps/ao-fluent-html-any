@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -156,7 +156,7 @@ public interface OndragoverUnexpected<E extends Element<?, ?, E> & OndragoverUne
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E ondragover(MediaWritable<Ex> ondragover) throws IOException, Ex {
+	default <Ex extends Throwable> E ondragover(JavaScriptWritable<Ex> ondragover) throws IOException, Ex {
 		return Ondragover.super.ondragover(ondragover);
 	}
 }

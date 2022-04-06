@@ -50,17 +50,14 @@ public interface Content<
 	 */
 	D getDocument();
 
-	// <editor-fold desc="WhitespaceWriter - delegate to Document" defaultstate="collapsed">
+	// <editor-fold desc="Whitespace - delegate to Document" defaultstate="collapsed">
 	/**
 	 * {@inheritDoc}
 	 * <p>
 	 * Delegates to {@link AnyDocument#nl()}.
 	 * </p>
-	 *
-	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	@Deprecated
 	@Override
 	default __ nl() throws IOException {
 		getDocument().nl();
@@ -87,11 +84,8 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#nli(int)}.
 	 * </p>
-	 *
-	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	@Deprecated
 	@Override
 	default __ nli(int depthOffset) throws IOException {
 		getDocument().nli(depthOffset);
@@ -514,11 +508,8 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#autoNl()}.
 	 * </p>
-	 *
-	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	@Deprecated
 	@Override
 	default __ autoNl() throws IOException {
 		getDocument().autoNl();
@@ -545,11 +536,8 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#autoNli(int)}.
 	 * </p>
-	 *
-	 * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
-	@Deprecated
 	@Override
 	default __ autoNli(int depthOffset) throws IOException {
 		getDocument().autoNli(depthOffset);

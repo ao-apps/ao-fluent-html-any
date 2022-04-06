@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -90,7 +90,7 @@ public interface Onabort<E extends Element<?, ?, E> & Onabort<E>> extends Onabor
 	 * @see #onabort(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onabort(MediaWritable<Ex> onabort) throws IOException, Ex {
+	default <Ex extends Throwable> E onabort(JavaScriptWritable<Ex> onabort) throws IOException, Ex {
 		return OnabortUnexpected.super.onabort(onabort);
 	}
 }

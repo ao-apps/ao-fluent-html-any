@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -96,7 +96,7 @@ public interface Onslotchange<E extends Element<?, ?, E> & Onslotchange<E>> exte
 	 * @see #onslotchange(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onslotchange(MediaWritable<Ex> onslotchange) throws IOException, Ex {
+	default <Ex extends Throwable> E onslotchange(JavaScriptWritable<Ex> onslotchange) throws IOException, Ex {
 		return OnslotchangeUnexpected.super.onslotchange(onslotchange);
 	}
 }

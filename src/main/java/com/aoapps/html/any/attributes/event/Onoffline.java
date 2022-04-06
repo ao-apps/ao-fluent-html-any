@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -73,7 +73,7 @@ public interface Onoffline<E extends Element<?, ?, E> & Onoffline<E>> {
 	 *
 	 * @see #onoffline(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onoffline(MediaWritable<Ex> onoffline) throws IOException, Ex {
+	default <Ex extends Throwable> E onoffline(JavaScriptWritable<Ex> onoffline) throws IOException, Ex {
 		return onoffline((Object)onoffline);
 	}
 }

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -89,7 +89,7 @@ public interface Oncut<E extends Element<?, ?, E> & Oncut<E>> {
 	 *
 	 * @see #oncut(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E oncut(MediaWritable<Ex> oncut) throws IOException, Ex {
+	default <Ex extends Throwable> E oncut(JavaScriptWritable<Ex> oncut) throws IOException, Ex {
 		return oncut((Object)oncut);
 	}
 }

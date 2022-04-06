@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBODY;
 import com.aoapps.html.any.AnyEMBED;
 import com.aoapps.html.any.AnyFRAME;
@@ -138,7 +138,7 @@ public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<
 	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onload(MediaWritable<Ex> onload) throws IOException, Ex {
+	default <Ex extends Throwable> E onload(JavaScriptWritable<Ex> onload) throws IOException, Ex {
 		return onload((Object)onload);
 	}
 }

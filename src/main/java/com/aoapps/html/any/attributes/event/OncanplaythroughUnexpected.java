@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyAUDIO;
 import com.aoapps.html.any.AnyVIDEO;
 import com.aoapps.html.any.Attributes;
@@ -116,7 +116,7 @@ public interface OncanplaythroughUnexpected<E extends Element<?, ?, E> & Oncanpl
 	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E oncanplaythrough(MediaWritable<Ex> oncanplaythrough) throws IOException, Ex {
+	default <Ex extends Throwable> E oncanplaythrough(JavaScriptWritable<Ex> oncanplaythrough) throws IOException, Ex {
 		return oncanplaythrough((Object)oncanplaythrough);
 	}
 }

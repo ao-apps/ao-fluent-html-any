@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Ondurationchange<E extends Element<?, ?, E> & Ondurationchange<
 	 * @see #ondurationchange(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E ondurationchange(MediaWritable<Ex> ondurationchange) throws IOException, Ex {
+	default <Ex extends Throwable> E ondurationchange(JavaScriptWritable<Ex> ondurationchange) throws IOException, Ex {
 		return OndurationchangeUnexpected.super.ondurationchange(ondurationchange);
 	}
 }

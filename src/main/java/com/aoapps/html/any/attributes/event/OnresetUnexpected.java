@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyFORM;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -115,7 +115,7 @@ public interface OnresetUnexpected<E extends Element<?, ?, E> & OnresetUnexpecte
 	 *              {@linkplain AnyFORM &lt;form&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onreset(MediaWritable<Ex> onreset) throws IOException, Ex {
+	default <Ex extends Throwable> E onreset(JavaScriptWritable<Ex> onreset) throws IOException, Ex {
 		return onreset((Object)onreset);
 	}
 }

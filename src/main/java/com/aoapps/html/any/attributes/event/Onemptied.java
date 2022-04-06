@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -96,7 +96,7 @@ public interface Onemptied<E extends Element<?, ?, E> & Onemptied<E>> extends On
 	 * @see #onemptied(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onemptied(MediaWritable<Ex> onemptied) throws IOException, Ex {
+	default <Ex extends Throwable> E onemptied(JavaScriptWritable<Ex> onemptied) throws IOException, Ex {
 		return OnemptiedUnexpected.super.onemptied(onemptied);
 	}
 }

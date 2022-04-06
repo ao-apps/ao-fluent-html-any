@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -148,7 +148,7 @@ public interface OnfocusUnexpected<E extends Element<?, ?, E> & OnfocusUnexpecte
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E onfocus(MediaWritable<Ex> onfocus) throws IOException, Ex {
+	default <Ex extends Throwable> E onfocus(JavaScriptWritable<Ex> onfocus) throws IOException, Ex {
 		return Onfocus.super.onfocus(onfocus);
 	}
 }

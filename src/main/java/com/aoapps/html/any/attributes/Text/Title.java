@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -99,7 +99,7 @@ public interface Title<E extends Element<?, ?, E> & Title<E>> {
 	 *
 	 * @see #title(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E title(MediaWritable<Ex> title) throws IOException, Ex {
+	default <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
 		return title((Object)title);
 	}
 }

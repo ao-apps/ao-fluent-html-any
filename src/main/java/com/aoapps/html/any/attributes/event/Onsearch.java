@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -76,7 +76,7 @@ public interface Onsearch<E extends Element<?, ?, E> & Onsearch<E>> {
 	 *
 	 * @see #onsearch(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onsearch(MediaWritable<Ex> onsearch) throws IOException, Ex {
+	default <Ex extends Throwable> E onsearch(JavaScriptWritable<Ex> onsearch) throws IOException, Ex {
 		return onsearch((Object)onsearch);
 	}
 }

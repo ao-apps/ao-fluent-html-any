@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBODY;
 import com.aoapps.html.any.AnyHTML;
 import com.aoapps.html.any.Attributes;
@@ -112,7 +112,7 @@ public interface OnsecuritypolicyviolationUnexpected<E extends Element<?, ?, E> 
 	 *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onsecuritypolicyviolation(MediaWritable<Ex> onsecuritypolicyviolation) throws IOException, Ex {
+	default <Ex extends Throwable> E onsecuritypolicyviolation(JavaScriptWritable<Ex> onsecuritypolicyviolation) throws IOException, Ex {
 		return onsecuritypolicyviolation((Object)onsecuritypolicyviolation);
 	}
 }

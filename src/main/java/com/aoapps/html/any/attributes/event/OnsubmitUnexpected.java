@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyFORM;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -115,7 +115,7 @@ public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpec
 	 *              {@linkplain AnyFORM &lt;form&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onsubmit(MediaWritable<Ex> onsubmit) throws IOException, Ex {
+	default <Ex extends Throwable> E onsubmit(JavaScriptWritable<Ex> onsubmit) throws IOException, Ex {
 		return onsubmit((Object)onsubmit);
 	}
 }

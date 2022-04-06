@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Onvolumechange<E extends Element<?, ?, E> & Onvolumechange<E>> 
 	 * @see #onvolumechange(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onvolumechange(MediaWritable<Ex> onvolumechange) throws IOException, Ex {
+	default <Ex extends Throwable> E onvolumechange(JavaScriptWritable<Ex> onvolumechange) throws IOException, Ex {
 		return OnvolumechangeUnexpected.super.onvolumechange(onvolumechange);
 	}
 }

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -73,7 +73,7 @@ public interface Onbeforeunload<E extends Element<?, ?, E> & Onbeforeunload<E>> 
 	 *
 	 * @see #onbeforeunload(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onbeforeunload(MediaWritable<Ex> onbeforeunload) throws IOException, Ex {
+	default <Ex extends Throwable> E onbeforeunload(JavaScriptWritable<Ex> onbeforeunload) throws IOException, Ex {
 		return onbeforeunload((Object)onbeforeunload);
 	}
 }

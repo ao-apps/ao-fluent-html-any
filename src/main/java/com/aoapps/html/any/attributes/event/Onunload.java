@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -64,7 +64,7 @@ public interface Onunload<E extends Element<?, ?, E> & Onunload<E>> {
 	 *
 	 * @see #onunload(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onunload(MediaWritable<Ex> onunload) throws IOException, Ex {
+	default <Ex extends Throwable> E onunload(JavaScriptWritable<Ex> onunload) throws IOException, Ex {
 		return onunload((Object)onunload);
 	}
 }

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -96,7 +96,7 @@ public interface Ontoggle<E extends Element<?, ?, E> & Ontoggle<E>> extends Onto
 	 * @see #ontoggle(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E ontoggle(MediaWritable<Ex> ontoggle) throws IOException, Ex {
+	default <Ex extends Throwable> E ontoggle(JavaScriptWritable<Ex> ontoggle) throws IOException, Ex {
 		return OntoggleUnexpected.super.ontoggle(ontoggle);
 	}
 }

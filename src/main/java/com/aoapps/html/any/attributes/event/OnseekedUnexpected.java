@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyAUDIO;
 import com.aoapps.html.any.AnyVIDEO;
 import com.aoapps.html.any.Attributes;
@@ -116,7 +116,7 @@ public interface OnseekedUnexpected<E extends Element<?, ?, E> & OnseekedUnexpec
 	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onseeked(MediaWritable<Ex> onseeked) throws IOException, Ex {
+	default <Ex extends Throwable> E onseeked(JavaScriptWritable<Ex> onseeked) throws IOException, Ex {
 		return onseeked((Object)onseeked);
 	}
 }

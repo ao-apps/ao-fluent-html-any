@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -90,7 +90,7 @@ public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
 	 *
 	 * @see #hreflang(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E hreflang(MediaWritable<Ex> hreflang) throws IOException, Ex {
+	default <Ex extends Throwable> E hreflang(TextWritable<Ex> hreflang) throws IOException, Ex {
 		return hreflang((Object)hreflang);
 	}
 }

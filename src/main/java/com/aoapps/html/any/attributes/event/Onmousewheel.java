@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -85,10 +85,10 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
 	 *
 	 * @see #onmousewheel(java.lang.Object)
 	 *
-	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.encoding.MediaWritable) onwheel} attribute in HTML5.
+	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.encoding.JavaScriptWritable) onwheel} attribute in HTML5.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onmousewheel(MediaWritable<Ex> onmousewheel) throws IOException, Ex {
+	default <Ex extends Throwable> E onmousewheel(JavaScriptWritable<Ex> onmousewheel) throws IOException, Ex {
 		return onmousewheel((Object)onmousewheel);
 	}
 }

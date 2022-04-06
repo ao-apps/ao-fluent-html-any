@@ -27,8 +27,6 @@ import com.aoapps.encoding.EncodingContext;
 import static com.aoapps.encoding.JavaScriptInXhtmlAttributeEncoder.javaScriptInXhtmlAttributeEncoder;
 import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaWritable;
-import com.aoapps.encoding.MediaWriter;
-import com.aoapps.encoding.NoCloseMediaValidator;
 import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
@@ -398,14 +396,14 @@ public final class Attributes {
 					out.write(name);
 					out.write("=\"");
 					writer.writeTo(
-						// Not using DocumentMediaWriter for three reasons:
-						// 1) Newlines and tabs should be encoded within the attribute, not written directly out
-						// 2) The attribute content should have its own indentation scope and settings
-						// 3) Attribute value indentation should be off by default always
-						new MediaWriter(
+						encoder.getValidMediaInputType().newMediaWriter(
 							document.encodingContext,
+							encoder.getValidMediaInputType(),
 							encoder,
-							NoCloseMediaValidator.wrap(out)
+							out,
+							false,
+							null, // Attributes get own indentation scope and settings
+							null // Ignore close
 						)
 					);
 					out.append('"');
@@ -494,14 +492,14 @@ public final class Attributes {
 								val = true;
 							}
 							writer.writeTo(
-								// Not using DocumentMediaWriter for three reasons:
-								// 1) Newlines and tabs should be encoded within the attribute, not written directly out
-								// 2) The attribute content should have its own indentation scope and settings
-								// 3) Attribute value indentation should be off by default always
-								new MediaWriter(
+								encoder.getValidMediaInputType().newMediaWriter(
 									document.encodingContext,
+									encoder.getValidMediaInputType(),
 									encoder,
-									NoCloseMediaValidator.wrap(out)
+									out,
+									false,
+									null, // Attributes get own indentation scope and settings
+									null // Ignore close
 								)
 							);
 						} else {

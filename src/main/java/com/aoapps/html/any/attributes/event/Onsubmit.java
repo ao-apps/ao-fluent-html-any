@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -94,7 +94,7 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends Onsu
 	 * @see #onsubmit(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onsubmit(MediaWritable<Ex> onsubmit) throws IOException, Ex {
+	default <Ex extends Throwable> E onsubmit(JavaScriptWritable<Ex> onsubmit) throws IOException, Ex {
 		return OnsubmitUnexpected.super.onsubmit(onsubmit);
 	}
 }

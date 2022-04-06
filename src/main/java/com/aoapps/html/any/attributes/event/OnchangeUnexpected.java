@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyINPUT;
 import com.aoapps.html.any.AnySELECT;
 import com.aoapps.html.any.AnyTEXTAREA;
@@ -126,7 +126,7 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
 	 *              {@linkplain AnyTEXTAREA &lt;textarea&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onchange(MediaWritable<Ex> onchange) throws IOException, Ex {
+	default <Ex extends Throwable> E onchange(JavaScriptWritable<Ex> onchange) throws IOException, Ex {
 		return onchange((Object)onchange);
 	}
 }

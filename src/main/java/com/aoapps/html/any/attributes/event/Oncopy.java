@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -89,7 +89,7 @@ public interface Oncopy<E extends Element<?, ?, E> & Oncopy<E>> {
 	 *
 	 * @see #oncopy(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E oncopy(MediaWritable<Ex> oncopy) throws IOException, Ex {
+	default <Ex extends Throwable> E oncopy(JavaScriptWritable<Ex> oncopy) throws IOException, Ex {
 		return oncopy((Object)oncopy);
 	}
 }

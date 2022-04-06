@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Ontimeupdate<E extends Element<?, ?, E> & Ontimeupdate<E>> exte
 	 * @see #ontimeupdate(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E ontimeupdate(MediaWritable<Ex> ontimeupdate) throws IOException, Ex {
+	default <Ex extends Throwable> E ontimeupdate(JavaScriptWritable<Ex> ontimeupdate) throws IOException, Ex {
 		return OntimeupdateUnexpected.super.ontimeupdate(ontimeupdate);
 	}
 }

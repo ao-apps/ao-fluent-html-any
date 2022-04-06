@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -89,7 +89,7 @@ public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
 	 *
 	 * @see #onscroll(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onscroll(MediaWritable<Ex> onscroll) throws IOException, Ex {
+	default <Ex extends Throwable> E onscroll(JavaScriptWritable<Ex> onscroll) throws IOException, Ex {
 		return onscroll((Object)onscroll);
 	}
 }

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -73,7 +73,7 @@ public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
 	 *
 	 * @see #onmessage(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onmessage(MediaWritable<Ex> onmessage) throws IOException, Ex {
+	default <Ex extends Throwable> E onmessage(JavaScriptWritable<Ex> onmessage) throws IOException, Ex {
 		return onmessage((Object)onmessage);
 	}
 }

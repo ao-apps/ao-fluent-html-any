@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -69,7 +69,7 @@ public interface For<E extends Element<?, ?, E> & For<E>> {
 	 * @see #forAttr(java.lang.Object)
 	 */
 	// "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
-	default <Ex extends Throwable> E forAttr(MediaWritable<Ex> forAttr) throws IOException, Ex {
+	default <Ex extends Throwable> E forAttr(TextWritable<Ex> forAttr) throws IOException, Ex {
 		return forAttr((Object)forAttr);
 	}
 }

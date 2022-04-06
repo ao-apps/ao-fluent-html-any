@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -148,7 +148,7 @@ public interface OncutUnexpected<E extends Element<?, ?, E> & OncutUnexpected<E>
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E oncut(MediaWritable<Ex> oncut) throws IOException, Ex {
+	default <Ex extends Throwable> E oncut(JavaScriptWritable<Ex> oncut) throws IOException, Ex {
 		return Oncut.super.oncut(oncut);
 	}
 }

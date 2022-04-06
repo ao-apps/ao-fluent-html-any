@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyDETAILS;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -111,7 +111,7 @@ public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpec
 	 *              {@linkplain AnyDETAILS &lt;details&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E ontoggle(MediaWritable<Ex> ontoggle) throws IOException, Ex {
+	default <Ex extends Throwable> E ontoggle(JavaScriptWritable<Ex> ontoggle) throws IOException, Ex {
 		return ontoggle((Object)ontoggle);
 	}
 }

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -73,7 +73,7 @@ public interface Onpagehide<E extends Element<?, ?, E> & Onpagehide<E>> {
 	 *
 	 * @see #onpagehide(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onpagehide(MediaWritable<Ex> onpagehide) throws IOException, Ex {
+	default <Ex extends Throwable> E onpagehide(JavaScriptWritable<Ex> onpagehide) throws IOException, Ex {
 		return onpagehide((Object)onpagehide);
 	}
 }

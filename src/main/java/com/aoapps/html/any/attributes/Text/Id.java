@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -96,7 +96,7 @@ public interface Id<E extends Element<?, ?, E> & Id<E>> {
 	 *
 	 * @see #id(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E id(MediaWritable<Ex> id) throws IOException, Ex {
+	default <Ex extends Throwable> E id(TextWritable<Ex> id) throws IOException, Ex {
 		return id((Object)id);
 	}
 }

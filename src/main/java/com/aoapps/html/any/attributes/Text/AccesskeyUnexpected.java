@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -178,7 +178,7 @@ public interface AccesskeyUnexpected<E extends Element<?, ?, E> & AccesskeyUnexp
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E accesskey(MediaWritable<Ex> accesskey) throws IOException, Ex {
+	default <Ex extends Throwable> E accesskey(TextWritable<Ex> accesskey) throws IOException, Ex {
 		return Accesskey.super.accesskey(accesskey);
 	}
 }

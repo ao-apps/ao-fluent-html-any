@@ -22,18 +22,27 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.encoding.BufferedValidator;
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.EncodingContext;
+import com.aoapps.encoding.MediaEncoder;
+import com.aoapps.encoding.MediaType;
+import com.aoapps.encoding.MediaValidator;
 import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.MediaWriter;
 import com.aoapps.encoding.NoCloseMediaValidator;
 import static com.aoapps.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
 import static com.aoapps.encoding.TextInXhtmlEncoder.textInXhtmlEncoder;
+import com.aoapps.encoding.TextWritable;
+import com.aoapps.encoding.TextWriter;
+import com.aoapps.encoding.ValidateOnlyEncoder;
 import com.aoapps.encoding.WriterUtil;
 import com.aoapps.hodgepodge.i18n.MarkupCoercion;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.LocalizedIllegalStateException;
 import com.aoapps.lang.Throwables;
+import com.aoapps.lang.io.NullWriter;
 import com.aoapps.lang.io.Writable;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -91,7 +100,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @see  #setOut(java.io.Writer)
 	 */
 	// TODO: Wrap this writer in XhtmlValidator if is not already validating XHTML?
-	//       If wrapping, consider uses of this losing access to this wrapping, such as NoCloseMediaValidator
+	//       If wrapping, consider uses of this losing access to this wrapping, such as optimizations done by MediaValidator
 	// TODO: Make this be a ChainWriter?  This might be incorrect as it would encourage using html.out instead of elements and attributes
 	@Deprecated
 	@SuppressWarnings("PublicField") // TODO: Should this be final again?  Will we always need setOut, such as opening and closing tag separate processing in legacy taglibs?
@@ -127,22 +136,21 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// <editor-fold desc="WhitespaceWriter - implementation" defaultstate="collapsed">
+	// <editor-fold desc="Whitespace - implementation" defaultstate="collapsed">
 	/**
 	 * Is indenting enabled?
 	 */
-	// Matches MediaWriter.indent
+	// Matches WhitespaceWriter.indent
 	private boolean indent;
 
 	/**
 	 * Current indentation level.
 	 */
-	// Matches MediaWriter.depth
+	// Matches WhitespaceWriter.depth
 	private int depth;
 
-	// Matches MediaWriter.nl()
+	// Matches WhitespaceWriter.nl()
 	@Override
-	@SuppressWarnings("deprecation")
 	public D nl() throws IOException {
 		return nl(getUnsafe(null));
 	}
@@ -154,7 +162,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// Matches MediaWriter.nli()
+	// Matches WhitespaceWriter.nli()
 	@Override
 	public D nli() throws IOException {
 		return nli(getUnsafe(null), 0);
@@ -164,9 +172,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return nli(out, 0);
 	}
 
-	// Matches MediaWriter.nli(int)
+	// Matches WhitespaceWriter.nli(int)
 	@Override
-	@SuppressWarnings("deprecation")
 	public D nli(int depthOffset) throws IOException {
 		return nli(getUnsafe(null), depthOffset);
 	}
@@ -184,7 +191,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// Matches MediaWriter.indent()
+	// Matches WhitespaceWriter.indent()
 	@Override
 	@SuppressWarnings("deprecation")
 	public D indent() throws IOException {
@@ -195,7 +202,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return indent(out, 0);
 	}
 
-	// Matches MediaWriter.indent(int)
+	// Matches WhitespaceWriter.indent(int)
 	@Override
 	@SuppressWarnings("deprecation")
 	public D indent(int depthOffset) throws IOException {
@@ -212,14 +219,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// Matches MediaWriter.getIndent()
+	// Matches WhitespaceWriter.getIndent()
+	// TODO: Document these, since "Delegates to" in description is misleading
 	@Override
 	@SuppressWarnings("deprecation")
 	public boolean getIndent() {
 		return indent;
 	}
 
-	// Matches MediaWriter.setIndent(int)
+	// Matches WhitespaceWriter.setIndent(int)
 	@Override
 	@SuppressWarnings("deprecation")
 	public D setIndent(boolean indent) {
@@ -228,14 +236,14 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// Matches MediaWriter.getDepth()
+	// Matches WhitespaceWriter.getDepth()
 	@Override
 	@SuppressWarnings("deprecation")
 	public int getDepth() {
 		return depth;
 	}
 
-	// Matches MediaWriter.setDepth(int)
+	// Matches WhitespaceWriter.setDepth(int)
 	@Override
 	@SuppressWarnings("deprecation")
 	public D setDepth(int depth) {
@@ -245,7 +253,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// Matches MediaWriter.incDepth()
+	// Matches WhitespaceWriter.incDepth()
 	@Override
 	@SuppressWarnings("deprecation")
 	public D incDepth() {
@@ -258,7 +266,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// Matches MediaWriter.decDepth()
+	// Matches WhitespaceWriter.decDepth()
 	@Override
 	@SuppressWarnings("deprecation")
 	public D decDepth() {
@@ -271,7 +279,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// Matches MediaWriter.sp()
+	// Matches WhitespaceWriter.sp()
 	@Override
 	public D sp() throws IOException {
 		return sp(getUnsafe(null));
@@ -284,7 +292,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
-	// Matches MediaWriter.sp(int)
+	// Matches WhitespaceWriter.sp(int)
 	@Override
 	public D sp(int count) throws IOException {
 		return sp(getUnsafe(null), count);
@@ -680,7 +688,6 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @return  {@code this} document
 	 */
 	@Override
-	@SuppressWarnings("deprecation")
 	public D autoNl() throws IOException {
 		return autoNl(getUnsafe(null));
 	}
@@ -714,7 +721,6 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @return  {@code this} document
 	 */
 	@Override
-	@SuppressWarnings("deprecation")
 	public D autoNli(int depthOffset) throws IOException {
 		return autoNli(getUnsafe(null), depthOffset);
 	}
@@ -781,7 +787,170 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 	// </editor-fold>
 
-	// <editor-fold desc="TextWriter - implementation" defaultstate="collapsed">
+	// <editor-fold desc="Encode - manual self-type and implementation" defaultstate="collapsed">
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	public D encode(MediaType contentType, char ch) throws IOException {
+		return AnyContent.super.encode(contentType, ch);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	public D encode(MediaType contentType, char[] cbuf) throws IOException {
+		return AnyContent.super.encode(contentType, cbuf);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	public D encode(MediaType contentType, char[] cbuf, int offset, int len) throws IOException {
+		return AnyContent.super.encode(contentType, cbuf, offset, len);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	public D encode(MediaType contentType, CharSequence csq) throws IOException {
+		return AnyContent.super.encode(contentType, csq);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	public D encode(MediaType contentType, CharSequence csq, int start, int end) throws IOException {
+		return AnyContent.super.encode(contentType, csq, start, end);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	@SuppressWarnings("UseSpecificCatch")
+	public D encode(MediaType contentType, Object content) throws IOException {
+		// Support Optional
+		while(content instanceof Optional) {
+			content = ((Optional<?>)content).orElse(null);
+		}
+		while(content instanceof IOSupplierE<?, ?>) {
+			try {
+				content = ((IOSupplierE<?, ?>)content).get();
+			} catch(Throwable t) {
+				throw Throwables.wrap(t, IOException.class, IOException::new);
+			}
+		}
+		if(content instanceof char[]) {
+			return encode(contentType, (char[])content);
+		}
+		if(content instanceof CharSequence) {
+			return encode(contentType, (CharSequence)content);
+		}
+		if(content instanceof Writable) {
+			Writable writable = (Writable)content;
+			if(writable.isFastToString()) {
+				return encode(contentType, writable.toString());
+			}
+		}
+		if(content instanceof MediaWritable) {
+			try {
+				return encode(contentType, (MediaWritable<?>)content);
+			} catch(Throwable t) {
+				throw Throwables.wrap(t, IOException.class, IOException::new);
+			}
+		}
+		// Allow text markup from translations
+		autoIndent(out);
+		// TODO: Way to temp-disable markups from within OPTION (without value set) and TEXTAREA, or to make HTML comment mark-up only.  All places from AnyTextContent
+		MarkupCoercion.write(
+			content,
+			MarkupType.XHTML,
+			false,
+			MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML),
+			false,
+			out
+		);
+		clearAtnl(); // Unknown, safe to assume not at newline
+		@SuppressWarnings("unchecked") D d = (D)this;
+		return d;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	public <Ex extends Throwable> D encode(MediaType contentType, IOSupplierE<?, Ex> content) throws IOException, Ex {
+		return AnyContent.super.encode(contentType, content);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	public <Ex extends Throwable> D encode(MediaType contentType, MediaWritable<Ex> content) throws IOException, Ex {
+		return AnyContent.super.encode(contentType, content);
+	}
+
+	private static final MediaValidator xhtmlValidator = MediaValidator.getMediaValidator(MediaType.XHTML, NullWriter.getInstance());
+	static {
+		assert !(xhtmlValidator instanceof BufferedValidator) : "If were " + BufferedValidator.class.getName() + " could not share singleton";
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
+	@Override
+	public MediaWriter encode(MediaType contentType) throws IOException {
+		MediaEncoder encoder; {
+			MediaEncoder encoder_ = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
+			if(encoder_ == null) {
+				encoder_ = new ValidateOnlyEncoder(xhtmlValidator);
+			}
+			encoder = encoder_;
+		}
+		Writer optimized = Coercion.optimize(out, encoder);
+		encoder.writePrefixTo(optimized);
+		return contentType.newMediaWriter(
+			encodingContext,
+			MediaType.XHTML,
+			encoder,
+			optimized,
+			true,
+			this,
+			closing -> encoder.writeSuffixTo(optimized, false)
+		);
+	}
+	// </editor-fold>
+
+	// <editor-fold desc="Text - implementation" defaultstate="collapsed">
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
 	@Override
 	public D nbsp() throws IOException {
 		return nbsp(getUnsafe(null));
@@ -794,6 +963,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
 	@Override
 	public D nbsp(int count) throws IOException {
 		return nbsp(getUnsafe(null), count);
@@ -808,6 +982,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
 	@Override
 	public D text(char ch) throws IOException {
 		return text(getUnsafe(null), ch);
@@ -826,6 +1005,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
 	@Override
 	public D text(char[] cbuf) throws IOException {
 		return text(getUnsafe(null), cbuf);
@@ -854,6 +1038,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
 	@Override
 	public D text(char[] cbuf, int offset, int len) throws IOException {
 		return text(getUnsafe(null), cbuf, offset, len);
@@ -879,6 +1068,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
 	@Override
 	public D text(CharSequence csq) throws IOException {
 		return text(getUnsafe(null), csq);
@@ -908,11 +1102,17 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
 	@Override
 	public D text(CharSequence csq, int start, int end) throws IOException {
 		return text(getUnsafe(null), csq, start, end);
 	}
 
+	// TODO: Supports translation markup
 	D text(Writer out, CharSequence csq, int start, int end) throws IOException {
 		if(csq != null && end > start) {
 			int last = end - 1;
@@ -934,6 +1134,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return  {@code this} document
+	 */
 	@Override
 	public D text(Object text) throws IOException {
 		return text(getUnsafe(null), text);
@@ -965,9 +1170,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 					return text(out, writable.toString());
 				}
 			}
-			if(text instanceof MediaWritable) {
+			if(text instanceof TextWritable) {
 				try {
-					return text(out, (MediaWritable<?>)text);
+					return text(out, (TextWritable<?>)text);
 				} catch(Throwable t) {
 					throw Throwables.wrap(t, IOException.class, IOException::new);
 				}
@@ -1006,13 +1211,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @return  {@code this} document
 	 */
 	@Override
-	public <Ex extends Throwable> D text(MediaWritable<Ex> text) throws IOException, Ex {
+	public <Ex extends Throwable> D text(TextWritable<Ex> text) throws IOException, Ex {
 		return text(getUnsafe(null), text);
 	}
 
-	<Ex extends Throwable> D text(Writer out, MediaWritable<Ex> text) throws IOException, Ex {
+	<Ex extends Throwable> D text(Writer out, TextWritable<Ex> text) throws IOException, Ex {
 		if(text != null) {
-			try (DocumentMediaWriter<D> _out = text(out)) {
+			try (TextWriter _out = text(out)) {
 				text.writeTo(_out);
 			}
 		}
@@ -1021,25 +1226,25 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	@Override
-	public DocumentMediaWriter<D> text() throws IOException {
+	public TextWriter text() throws IOException {
 		return text(getUnsafe(null));
 	}
 
-	DocumentMediaWriter<D> text(Writer out) throws IOException {
+	TextWriter text(Writer out) throws IOException {
 		autoIndent(out);
 		clearAtnl(); // Unknown, safe to assume not at newline
 		@SuppressWarnings("unchecked") D d = (D)this;
-		return new DocumentMediaWriter<>(
-			d,
+		return new TextWriter(
+			d.encodingContext,
+			MediaType.TEXT,
 			textInXhtmlEncoder,
-			NoCloseMediaValidator.wrap(out)
+			out,
+			false,
+			d,
+			null // Ignore close
 		);
 	}
 	// </editor-fold>
-
-	// TODO: A set of per-type methods, like xml(), script(), style(), ...
-
-	// TODO: A set of out()/unsafe() methods that take MediaType and value
 
 	// TODO: comments
 

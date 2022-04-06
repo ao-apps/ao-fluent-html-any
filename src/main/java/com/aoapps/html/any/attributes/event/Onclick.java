@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -89,7 +89,7 @@ public interface Onclick<E extends Element<?, ?, E> & Onclick<E>> {
 	 *
 	 * @see #onclick(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onclick(MediaWritable<Ex> onclick) throws IOException, Ex {
+	default <Ex extends Throwable> E onclick(JavaScriptWritable<Ex> onclick) throws IOException, Ex {
 		return onclick((Object)onclick);
 	}
 }

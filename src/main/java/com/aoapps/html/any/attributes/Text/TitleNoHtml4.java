@@ -23,7 +23,7 @@
 package com.aoapps.html.any.attributes.Text;
 
 import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -102,7 +102,7 @@ public interface TitleNoHtml4<E extends Element<?, ?, E> & TitleNoHtml4<E>> exte
 	 * @see #title(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E title(MediaWritable<Ex> title) throws IOException, Ex {
+	default <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
 		return Title.super.title(title);
 	}
 }

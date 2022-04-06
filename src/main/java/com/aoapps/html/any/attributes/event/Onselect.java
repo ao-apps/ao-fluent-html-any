@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -94,7 +94,7 @@ public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends Onse
 	 * @see #onselect(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onselect(MediaWritable<Ex> onselect) throws IOException, Ex {
+	default <Ex extends Throwable> E onselect(JavaScriptWritable<Ex> onselect) throws IOException, Ex {
 		return OnselectUnexpected.super.onselect(onselect);
 	}
 }

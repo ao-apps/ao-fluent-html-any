@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import static com.aoapps.html.any.Attributes.RESOURCES;
@@ -261,7 +261,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 *
 	 * @since HTML 5
 	 */
-	default <Ex extends Throwable> E data(String attrName, MediaWritable<Ex> value) throws IOException, Ex {
+	default <Ex extends Throwable> E data(String attrName, TextWritable<Ex> value) throws IOException, Ex {
 		return data(attrName, (Object)value);
 	}
 
@@ -433,7 +433,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
 	 *
 	 * @since HTML 5
 	 */
-	default <Ex extends Throwable> E dataset(String jsName, MediaWritable<Ex> value) throws IOException, Ex {
+	default <Ex extends Throwable> E dataset(String jsName, TextWritable<Ex> value) throws IOException, Ex {
 		return dataset(jsName, (Object)value);
 	}
 }

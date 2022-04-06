@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Onreset<E extends Element<?, ?, E> & Onreset<E>> extends Onrese
 	 * @see #onreset(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onreset(MediaWritable<Ex> onreset) throws IOException, Ex {
+	default <Ex extends Throwable> E onreset(JavaScriptWritable<Ex> onreset) throws IOException, Ex {
 		return OnresetUnexpected.super.onreset(onreset);
 	}
 }

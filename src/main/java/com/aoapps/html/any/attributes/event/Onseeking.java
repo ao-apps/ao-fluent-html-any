@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Onseeking<E extends Element<?, ?, E> & Onseeking<E>> extends On
 	 * @see #onseeking(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onseeking(MediaWritable<Ex> onseeking) throws IOException, Ex {
+	default <Ex extends Throwable> E onseeking(JavaScriptWritable<Ex> onseeking) throws IOException, Ex {
 		return OnseekingUnexpected.super.onseeking(onseeking);
 	}
 }

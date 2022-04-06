@@ -23,7 +23,7 @@
 package com.aoapps.html.any.attributes.Text;
 
 import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.StyleWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -121,7 +121,7 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
 	 * @see #style(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E style(MediaWritable<Ex> style) throws IOException, Ex {
+	default <Ex extends Throwable> E style(StyleWritable<Ex> style) throws IOException, Ex {
 		return Style.super.style(style);
 	}
 }

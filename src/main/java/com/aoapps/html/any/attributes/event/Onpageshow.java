@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -73,7 +73,7 @@ public interface Onpageshow<E extends Element<?, ?, E> & Onpageshow<E>> {
 	 *
 	 * @see #onpageshow(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onpageshow(MediaWritable<Ex> onpageshow) throws IOException, Ex {
+	default <Ex extends Throwable> E onpageshow(JavaScriptWritable<Ex> onpageshow) throws IOException, Ex {
 		return onpageshow((Object)onpageshow);
 	}
 }

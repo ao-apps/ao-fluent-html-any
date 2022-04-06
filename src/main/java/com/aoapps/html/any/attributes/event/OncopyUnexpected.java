@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -148,7 +148,7 @@ public interface OncopyUnexpected<E extends Element<?, ?, E> & OncopyUnexpected<
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E oncopy(MediaWritable<Ex> oncopy) throws IOException, Ex {
+	default <Ex extends Throwable> E oncopy(JavaScriptWritable<Ex> oncopy) throws IOException, Ex {
 		return Oncopy.super.oncopy(oncopy);
 	}
 }

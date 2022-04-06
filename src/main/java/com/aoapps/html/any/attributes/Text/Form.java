@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -87,7 +87,7 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
 	 *
 	 * @see #form(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E form(MediaWritable<Ex> form) throws IOException, Ex {
+	default <Ex extends Throwable> E form(TextWritable<Ex> form) throws IOException, Ex {
 		return form((Object)form);
 	}
 }

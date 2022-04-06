@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -148,7 +148,7 @@ public interface OndblclickUnexpected<E extends Element<?, ?, E> & OndblclickUne
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E ondblclick(MediaWritable<Ex> ondblclick) throws IOException, Ex {
+	default <Ex extends Throwable> E ondblclick(JavaScriptWritable<Ex> ondblclick) throws IOException, Ex {
 		return Ondblclick.super.ondblclick(ondblclick);
 	}
 }

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Oncanplaythrough<E extends Element<?, ?, E> & Oncanplaythrough<
 	 * @see #oncanplaythrough(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E oncanplaythrough(MediaWritable<Ex> oncanplaythrough) throws IOException, Ex {
+	default <Ex extends Throwable> E oncanplaythrough(JavaScriptWritable<Ex> oncanplaythrough) throws IOException, Ex {
 		return OncanplaythroughUnexpected.super.oncanplaythrough(oncanplaythrough);
 	}
 }

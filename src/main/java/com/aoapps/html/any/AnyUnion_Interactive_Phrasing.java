@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.lang.io.function.IOConsumerE;
 import com.aoapps.lang.io.function.IORunnableE;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -493,7 +493,7 @@ public interface AnyUnion_Interactive_Phrasing<
 		 *
 		 * @return  This content model, which will be the parent content model of child elements
 		 */
-		public <Ex extends Throwable> __ submit__(MediaWritable<Ex> value) throws IOException, Ex {
+		public <Ex extends Throwable> __ submit__(TextWritable<Ex> value) throws IOException, Ex {
 			return submit().value(value).__();
 		}
 

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -89,7 +89,7 @@ public interface Onmouseup<E extends Element<?, ?, E> & Onmouseup<E>> {
 	 *
 	 * @see #onmouseup(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onmouseup(MediaWritable<Ex> onmouseup) throws IOException, Ex {
+	default <Ex extends Throwable> E onmouseup(JavaScriptWritable<Ex> onmouseup) throws IOException, Ex {
 		return onmouseup((Object)onmouseup);
 	}
 }

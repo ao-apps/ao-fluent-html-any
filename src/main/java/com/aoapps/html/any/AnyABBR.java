@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.html.any.attributes.Text.Title;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -93,7 +93,7 @@ public abstract class AnyABBR<
 	}
 
 	/**
-	 * The {@linkplain Title#title(com.aoapps.encoding.MediaWritable) title} attribute
+	 * The {@linkplain Title#title(com.aoapps.encoding.TextWritable) title} attribute
 	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
 	 * on this element: Full term or expansion of abbreviation.
 	 * <p>
@@ -103,7 +103,7 @@ public abstract class AnyABBR<
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
 	@Override
-	public <Ex extends Throwable> E title(MediaWritable<Ex> title) throws IOException, Ex {
+	public <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
 		return super.title(title);
 	}
 }

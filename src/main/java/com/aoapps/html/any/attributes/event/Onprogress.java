@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Onprogress<E extends Element<?, ?, E> & Onprogress<E>> extends 
 	 * @see #onprogress(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onprogress(MediaWritable<Ex> onprogress) throws IOException, Ex {
+	default <Ex extends Throwable> E onprogress(JavaScriptWritable<Ex> onprogress) throws IOException, Ex {
 		return OnprogressUnexpected.super.onprogress(onprogress);
 	}
 }

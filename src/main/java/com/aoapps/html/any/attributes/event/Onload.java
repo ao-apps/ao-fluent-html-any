@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -94,7 +94,7 @@ public interface Onload<E extends Element<?, ?, E> & Onload<E>> extends OnloadUn
 	 * @see #onload(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onload(MediaWritable<Ex> onload) throws IOException, Ex {
+	default <Ex extends Throwable> E onload(JavaScriptWritable<Ex> onload) throws IOException, Ex {
 		return OnloadUnexpected.super.onload(onload);
 	}
 }

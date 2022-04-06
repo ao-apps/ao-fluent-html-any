@@ -25,8 +25,9 @@ package com.aoapps.html.any;
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaType;
-import com.aoapps.encoding.NoCloseMediaValidator;
 import com.aoapps.encoding.Serialization;
+import com.aoapps.encoding.StyleWritable;
+import com.aoapps.encoding.StyleWriter;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import com.aoapps.hodgepodge.i18n.MarkupCoercion;
 import com.aoapps.lang.Coercion;
@@ -240,10 +241,10 @@ public abstract class AnySTYLE<
 				throw Throwables.wrap(t, IOException.class, IOException::new);
 			}
 		}
-		if(style instanceof StyleWriter) {
+		if(style instanceof StyleWritable) {
 			try {
-				@SuppressWarnings("unchecked") StyleWriter<D, ?> writer = (StyleWriter<D, ?>)style;
-				return out(writer);
+				@SuppressWarnings("unchecked") StyleWritable<?> writable = (StyleWritable<?>)style;
+				return out(writable);
 			} catch(Throwable t) {
 				throw Throwables.wrap(t, IOException.class, IOException::new);
 			}
@@ -277,33 +278,24 @@ public abstract class AnySTYLE<
 	}
 
 	/**
-	 * @param  <D>   This document type
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	// TODO: Consolidate with AttributeWriter?
-	// TODO: Writer support for identifier() and url() in addition to text()
-	@FunctionalInterface
-	public static interface StyleWriter<
-		D  extends AnyDocument<D>,
-		Ex extends Throwable
-	> {
-		void writeStyle(DocumentMediaWriter<D> style) throws IOException, Ex;
-	}
-
-	/**
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
 	// TODO: No "out", just closing "__"?
-	public <Ex extends Throwable> E out(StyleWriter<D, Ex> style) throws IOException, Ex {
+	public <Ex extends Throwable> E out(StyleWritable<Ex> style) throws IOException, Ex {
 		if(style != null) {
-			MediaEncoder encoder = getMediaEncoder(getMediaType());
+			MediaType newOutputType = getMediaType();
+			MediaEncoder encoder = getMediaEncoder(newOutputType);
 			Writer out = document.getUnsafe(null);
 			startBody(out);
-			style.writeStyle(
-				new DocumentMediaWriter<>(
-					document,
+			style.writeTo(
+				new StyleWriter(
+					document.encodingContext,
+					newOutputType,
 					encoder,
-					NoCloseMediaValidator.wrap(out)
+					document.getUnsafe(null),
+					false,
+					document,
+					null // Ignore close
 				)
 			);
 			document.clearAtnl(); // Unknown, safe to assume not at newline
@@ -314,21 +306,24 @@ public abstract class AnySTYLE<
 
 	/**
 	 * Writes the style, automatically closing the style via
-	 * {@link #__()} on {@link DocumentMediaWriter#close()}.
+	 * {@link #__()} on {@link StyleWriter#close()}.
 	 * This is well suited for use in a try-with-resources block.
 	 */
 	// TODO: __() method to end text?  Call it "ContentWriter"?
-	public DocumentMediaWriter<D> _c() throws IOException {
-		MediaEncoder encoder = getMediaEncoder(getMediaType());
+	public StyleWriter _c() throws IOException {
+		MediaType newOutputType = getMediaType();
+		MediaEncoder encoder = getMediaEncoder(newOutputType);
 		Writer out = document.getUnsafe(null);
 		startBody(out);
-		// Java 9: new DocumentMediaWriter<>
-		return new DocumentMediaWriter<D>(document, encoder, out) {
-			@Override
-			public void close() throws IOException {
-				__();
-			}
-		};
+		return new StyleWriter(
+			document.encodingContext,
+			newOutputType,
+			encoder,
+			out,
+			false,
+			document,
+			closing -> __()
+		);
 	}
 
 	/**

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -98,7 +98,7 @@ public interface Onmouseleave<E extends Element<?, ?, E> & Onmouseleave<E>> {
 	 *
 	 * @see #onmouseleave(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onmouseleave(MediaWritable<Ex> onmouseleave) throws IOException, Ex {
+	default <Ex extends Throwable> E onmouseleave(JavaScriptWritable<Ex> onmouseleave) throws IOException, Ex {
 		return onmouseleave((Object)onmouseleave);
 	}
 }

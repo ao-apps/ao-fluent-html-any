@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -73,7 +73,7 @@ public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
 	 *
 	 * @see #onstorage(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onstorage(MediaWritable<Ex> onstorage) throws IOException, Ex {
+	default <Ex extends Throwable> E onstorage(JavaScriptWritable<Ex> onstorage) throws IOException, Ex {
 		return onstorage((Object)onstorage);
 	}
 }

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -96,7 +96,7 @@ public interface Onsecuritypolicyviolation<E extends Element<?, ?, E> & Onsecuri
 	 * @see #onsecuritypolicyviolation(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onsecuritypolicyviolation(MediaWritable<Ex> onsecuritypolicyviolation) throws IOException, Ex {
+	default <Ex extends Throwable> E onsecuritypolicyviolation(JavaScriptWritable<Ex> onsecuritypolicyviolation) throws IOException, Ex {
 		return OnsecuritypolicyviolationUnexpected.super.onsecuritypolicyviolation(onsecuritypolicyviolation);
 	}
 }

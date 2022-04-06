@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -98,7 +98,7 @@ public interface Ondragend<E extends Element<?, ?, E> & Ondragend<E>> {
 	 *
 	 * @see #ondragend(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E ondragend(MediaWritable<Ex> ondragend) throws IOException, Ex {
+	default <Ex extends Throwable> E ondragend(JavaScriptWritable<Ex> ondragend) throws IOException, Ex {
 		return ondragend((Object)ondragend);
 	}
 }

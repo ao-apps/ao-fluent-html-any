@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Onloadeddata<E extends Element<?, ?, E> & Onloadeddata<E>> exte
 	 * @see #onloadeddata(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onloadeddata(MediaWritable<Ex> onloadeddata) throws IOException, Ex {
+	default <Ex extends Throwable> E onloadeddata(JavaScriptWritable<Ex> onloadeddata) throws IOException, Ex {
 		return OnloadeddataUnexpected.super.onloadeddata(onloadeddata);
 	}
 }

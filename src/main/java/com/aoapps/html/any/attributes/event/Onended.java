@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Onended<E extends Element<?, ?, E> & Onended<E>> extends Onende
 	 * @see #onended(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onended(MediaWritable<Ex> onended) throws IOException, Ex {
+	default <Ex extends Throwable> E onended(JavaScriptWritable<Ex> onended) throws IOException, Ex {
 		return OnendedUnexpected.super.onended(onended);
 	}
 }

@@ -62,7 +62,7 @@ public abstract class Element<
 		return document;
 	}
 
-	// <editor-fold desc="WhitespaceWriter - delegate to Document" defaultstate="collapsed">
+	// <editor-fold desc="Whitespace - delegate to Document" defaultstate="collapsed">
 	/**
 	 * {@inheritDoc}
 	 * <p>

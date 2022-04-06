@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -73,7 +73,7 @@ public interface Onbeforeprint<E extends Element<?, ?, E> & Onbeforeprint<E>> {
 	 *
 	 * @see #onbeforeprint(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onbeforeprint(MediaWritable<Ex> onbeforeprint) throws IOException, Ex {
+	default <Ex extends Throwable> E onbeforeprint(JavaScriptWritable<Ex> onbeforeprint) throws IOException, Ex {
 		return onbeforeprint((Object)onbeforeprint);
 	}
 }

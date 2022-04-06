@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -75,7 +75,7 @@ public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
 	 *
 	 * @see #placeholder(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E placeholder(MediaWritable<Ex> placeholder) throws IOException, Ex {
+	default <Ex extends Throwable> E placeholder(TextWritable<Ex> placeholder) throws IOException, Ex {
 		return placeholder((Object)placeholder);
 	}
 }

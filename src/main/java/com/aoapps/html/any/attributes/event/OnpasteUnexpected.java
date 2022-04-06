@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -148,7 +148,7 @@ public interface OnpasteUnexpected<E extends Element<?, ?, E> & OnpasteUnexpecte
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E onpaste(MediaWritable<Ex> onpaste) throws IOException, Ex {
+	default <Ex extends Throwable> E onpaste(JavaScriptWritable<Ex> onpaste) throws IOException, Ex {
 		return Onpaste.super.onpaste(onpaste);
 	}
 }

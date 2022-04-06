@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -148,7 +148,7 @@ public interface OnkeydownUnexpected<E extends Element<?, ?, E> & OnkeydownUnexp
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E onkeydown(MediaWritable<Ex> onkeydown) throws IOException, Ex {
+	default <Ex extends Throwable> E onkeydown(JavaScriptWritable<Ex> onkeydown) throws IOException, Ex {
 		return Onkeydown.super.onkeydown(onkeydown);
 	}
 }

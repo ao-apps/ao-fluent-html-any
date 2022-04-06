@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyAUDIO;
 import com.aoapps.html.any.AnyIMG;
 import com.aoapps.html.any.AnyINPUT;
@@ -118,7 +118,7 @@ public interface OnabortUnexpected<E extends Element<?, ?, E> & OnabortUnexpecte
 	 *              {@linkplain AnyINPUT &lt;input&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onabort(MediaWritable<Ex> onabort) throws IOException, Ex {
+	default <Ex extends Throwable> E onabort(JavaScriptWritable<Ex> onabort) throws IOException, Ex {
 		return onabort((Object)onabort);
 	}
 }

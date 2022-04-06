@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -104,7 +104,7 @@ public interface Oninvalid<E extends Element<?, ?, E> & Oninvalid<E>> extends On
 	 * @see #oninvalid(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E oninvalid(MediaWritable<Ex> oninvalid) throws IOException, Ex {
+	default <Ex extends Throwable> E oninvalid(JavaScriptWritable<Ex> oninvalid) throws IOException, Ex {
 		return OninvalidUnexpected.super.oninvalid(oninvalid);
 	}
 }

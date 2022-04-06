@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -148,7 +148,7 @@ public interface OnscrollUnexpected<E extends Element<?, ?, E> & OnscrollUnexpec
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E onscroll(MediaWritable<Ex> onscroll) throws IOException, Ex {
+	default <Ex extends Throwable> E onscroll(JavaScriptWritable<Ex> onscroll) throws IOException, Ex {
 		return Onscroll.super.onscroll(onscroll);
 	}
 }

@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -89,7 +89,7 @@ public interface Ondblclick<E extends Element<?, ?, E> & Ondblclick<E>> {
 	 *
 	 * @see #ondblclick(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E ondblclick(MediaWritable<Ex> ondblclick) throws IOException, Ex {
+	default <Ex extends Throwable> E ondblclick(JavaScriptWritable<Ex> ondblclick) throws IOException, Ex {
 		return ondblclick((Object)ondblclick);
 	}
 }

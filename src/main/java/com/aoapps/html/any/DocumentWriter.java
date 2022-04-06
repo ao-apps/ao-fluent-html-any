@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any;
 
-import com.aoapps.encoding.WhitespaceWriter;
+import com.aoapps.encoding.Whitespace;
 import com.aoapps.lang.io.Writable;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -33,27 +33,27 @@ import java.io.Writer;
  *
  * @author  AO Industries, Inc.
  */
-public interface DocumentWriter extends WhitespaceWriter {
+public interface DocumentWriter extends Whitespace {
 
-	// <editor-fold desc="WhitespaceWriter - manual self-type" defaultstate="collapsed">
+	// <editor-fold desc="Whitespace - manual self-type" defaultstate="collapsed">
 	@Override
 	DocumentWriter nl() throws IOException;
 
 	@Override
 	default DocumentWriter nli() throws IOException {
-		WhitespaceWriter.super.nli();
+		Whitespace.super.nli();
 		return this;
 	}
 
 	@Override
 	default DocumentWriter nli(int depthOffset) throws IOException {
-		WhitespaceWriter.super.nli(depthOffset);
+		Whitespace.super.nli(depthOffset);
 		return this;
 	}
 
 	@Override
 	default DocumentWriter indent() throws IOException {
-		WhitespaceWriter.super.indent();
+		Whitespace.super.indent();
 		return this;
 	}
 
@@ -74,7 +74,7 @@ public interface DocumentWriter extends WhitespaceWriter {
 
 	@Override
 	default DocumentWriter sp() throws IOException {
-		WhitespaceWriter.super.sp();
+		Whitespace.super.sp();
 		return this;
 	}
 

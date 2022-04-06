@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnySLOT;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -111,7 +111,7 @@ public interface OnslotchangeUnexpected<E extends Element<?, ?, E> & Onslotchang
 	 *              {@linkplain AnySLOT &lt;slot&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onslotchange(MediaWritable<Ex> onslotchange) throws IOException, Ex {
+	default <Ex extends Throwable> E onslotchange(JavaScriptWritable<Ex> onslotchange) throws IOException, Ex {
 		return onslotchange((Object)onslotchange);
 	}
 }

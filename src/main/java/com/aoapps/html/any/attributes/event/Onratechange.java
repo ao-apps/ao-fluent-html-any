@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -100,7 +100,7 @@ public interface Onratechange<E extends Element<?, ?, E> & Onratechange<E>> exte
 	 * @see #onratechange(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E onratechange(MediaWritable<Ex> onratechange) throws IOException, Ex {
+	default <Ex extends Throwable> E onratechange(JavaScriptWritable<Ex> onratechange) throws IOException, Ex {
 		return OnratechangeUnexpected.super.onratechange(onratechange);
 	}
 }

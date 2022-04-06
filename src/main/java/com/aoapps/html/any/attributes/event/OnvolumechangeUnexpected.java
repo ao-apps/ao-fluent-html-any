@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyAUDIO;
 import com.aoapps.html.any.AnyVIDEO;
 import com.aoapps.html.any.Attributes;
@@ -116,7 +116,7 @@ public interface OnvolumechangeUnexpected<E extends Element<?, ?, E> & Onvolumec
 	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E onvolumechange(MediaWritable<Ex> onvolumechange) throws IOException, Ex {
+	default <Ex extends Throwable> E onvolumechange(JavaScriptWritable<Ex> onvolumechange) throws IOException, Ex {
 		return onvolumechange((Object)onvolumechange);
 	}
 }

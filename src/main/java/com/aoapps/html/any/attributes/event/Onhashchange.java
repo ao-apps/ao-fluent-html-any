@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -73,7 +73,7 @@ public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
 	 *
 	 * @see #onhashchange(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onhashchange(MediaWritable<Ex> onhashchange) throws IOException, Ex {
+	default <Ex extends Throwable> E onhashchange(JavaScriptWritable<Ex> onhashchange) throws IOException, Ex {
 		return onhashchange((Object)onhashchange);
 	}
 }

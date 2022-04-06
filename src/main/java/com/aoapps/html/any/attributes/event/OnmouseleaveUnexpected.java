@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBASE;
 import com.aoapps.html.any.AnyBDO;
 import com.aoapps.html.any.AnyBR;
@@ -156,7 +156,7 @@ public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & Onmouseleav
 	 */
 	@Deprecated
 	@Override
-	default <Ex extends Throwable> E onmouseleave(MediaWritable<Ex> onmouseleave) throws IOException, Ex {
+	default <Ex extends Throwable> E onmouseleave(JavaScriptWritable<Ex> onmouseleave) throws IOException, Ex {
 		return Onmouseleave.super.onmouseleave(onmouseleave);
 	}
 }

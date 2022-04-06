@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyINPUT;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -119,7 +119,7 @@ public interface OninvalidUnexpected<E extends Element<?, ?, E> & OninvalidUnexp
 	 *              {@linkplain AnyINPUT &lt;input&gt;}.
 	 */
 	@Deprecated
-	default <Ex extends Throwable> E oninvalid(MediaWritable<Ex> oninvalid) throws IOException, Ex {
+	default <Ex extends Throwable> E oninvalid(JavaScriptWritable<Ex> oninvalid) throws IOException, Ex {
 		return oninvalid((Object)oninvalid);
 	}
 }

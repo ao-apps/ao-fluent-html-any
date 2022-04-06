@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -104,7 +104,7 @@ public interface Oninput<E extends Element<?, ?, E> & Oninput<E>> extends Oninpu
 	 * @see #oninput(java.lang.Object)
 	 */
 	@Override
-	default <Ex extends Throwable> E oninput(MediaWritable<Ex> oninput) throws IOException, Ex {
+	default <Ex extends Throwable> E oninput(JavaScriptWritable<Ex> oninput) throws IOException, Ex {
 		return OninputUnexpected.super.oninput(oninput);
 	}
 }

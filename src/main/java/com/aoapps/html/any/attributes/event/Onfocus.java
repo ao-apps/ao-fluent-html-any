@@ -22,7 +22,7 @@
  */
 package com.aoapps.html.any.attributes.event;
 
-import com.aoapps.encoding.MediaWritable;
+import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -89,7 +89,7 @@ public interface Onfocus<E extends Element<?, ?, E> & Onfocus<E>> {
 	 *
 	 * @see #onfocus(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E onfocus(MediaWritable<Ex> onfocus) throws IOException, Ex {
+	default <Ex extends Throwable> E onfocus(JavaScriptWritable<Ex> onfocus) throws IOException, Ex {
 		return onfocus((Object)onfocus);
 	}
 }

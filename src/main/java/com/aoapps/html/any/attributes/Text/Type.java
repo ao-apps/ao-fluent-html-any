@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,8 +22,8 @@
  */
 package com.aoapps.html.any.attributes.Text;
 
-import com.aoapps.encoding.MediaWritable;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -66,7 +66,7 @@ public interface Type<E extends Element<?, ?, E> & Type<E>> {
 	 *
 	 * @see #type(java.lang.Object)
 	 */
-	default <Ex extends Throwable> E type(MediaWritable<Ex> type) throws IOException, Ex {
+	default <Ex extends Throwable> E type(TextWritable<Ex> type) throws IOException, Ex {
 		return type((Object)type);
 	}
 }
