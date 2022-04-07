@@ -24,7 +24,7 @@ package com.aoapps.html.any;
 
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.EncodingContext;
-import static com.aoapps.encoding.JavaScriptInXhtmlAttributeEncoder.javaScriptInXhtmlAttributeEncoder;
+import static com.aoapps.encoding.JavaScriptInXhtmlAttributeEncoder.javascriptInXhtmlAttributeEncoder;
 import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.encoding.Serialization;
@@ -261,7 +261,7 @@ public final class Attributes {
 		public static <
 			E extends Element<?, ?, E>
 		> E attribute(E element, java.lang.String name, Object script) throws IOException {
-			return Attributes.Text.attribute(element, name, MarkupType.JAVASCRIPT, script, true, true, javaScriptInXhtmlAttributeEncoder);
+			return Attributes.Text.attribute(element, name, MarkupType.JAVASCRIPT, script, true, true, javascriptInXhtmlAttributeEncoder);
 		}
 	}
 
