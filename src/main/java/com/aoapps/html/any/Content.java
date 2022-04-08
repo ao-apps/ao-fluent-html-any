@@ -22,6 +22,7 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.lang.io.NoClose;
 import com.aoapps.lang.io.Writable;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -399,7 +400,7 @@ public interface Content<
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	@Override
-	default Writer unsafe() throws IOException {
+	default <W extends Writer & NoClose> W unsafe() throws IOException {
 		return getDocument().unsafe();
 	}
 	// </editor-fold>

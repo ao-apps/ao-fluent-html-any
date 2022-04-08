@@ -42,6 +42,7 @@ import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.LocalizedIllegalStateException;
 import com.aoapps.lang.Throwables;
+import com.aoapps.lang.io.NoClose;
 import com.aoapps.lang.io.NullWriter;
 import com.aoapps.lang.io.Writable;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -597,11 +598,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	@Override
-	public Writer unsafe() throws IOException {
+	public <W extends Writer & NoClose> W unsafe() throws IOException {
 		return unsafe(getUnsafe(null));
 	}
 
-	Writer unsafe(Writer out) throws IOException {
+	/**
+	 * Calls {@link #clearAtnl()} then wraps the given writer via {@link NoCloseMediaValidator#wrap(java.io.Writer)}
+	 * to ignore against calls to {@link Writer#close()}.
+	 */
+	<W extends Writer & NoClose> W unsafe(Writer out) throws IOException {
 		clearAtnl(); // Unknown, safe to assume not at newline
 		return NoCloseMediaValidator.wrap(out);
 	}

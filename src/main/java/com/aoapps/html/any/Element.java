@@ -22,6 +22,7 @@
  */
 package com.aoapps.html.any;
 
+import com.aoapps.lang.io.NoClose;
 import com.aoapps.lang.io.Writable;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -400,7 +401,7 @@ public abstract class Element<
 	 * </p>
 	 */
 	@Override
-	public Writer unsafe() throws IOException {
+	public <W extends Writer & NoClose> W unsafe() throws IOException {
 		return document.unsafe();
 	}
 	// </editor-fold>

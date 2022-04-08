@@ -23,6 +23,7 @@
 package com.aoapps.html.any;
 
 import com.aoapps.encoding.Whitespace;
+import com.aoapps.lang.io.NoClose;
 import com.aoapps.lang.io.Writable;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -194,7 +195,7 @@ public interface DocumentWriter extends Whitespace {
 	 * @return  a writer for direct output, which will ignore any calls to {@link Writer#close()}
 	 *          to be safely used in a try-with-resources block.
 	 */
-	Writer unsafe() throws IOException;
+	<W extends Writer & NoClose> W unsafe() throws IOException;
 	// </editor-fold>
 
 	// <editor-fold desc="Automatic Newline and Indentation - definition" defaultstate="collapsed">
