@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,6 +23,7 @@
 package com.aoapps.html.any;
 
 import java.io.IOException;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 /**
  * See <a href="https://html.spec.whatwg.org/multipage/syntax.html#normal-elements">13.1.2 Elements / Normal elements</a>.
@@ -42,6 +43,7 @@ public abstract class Normal_c<
 	implements Content<D, _c>, Closeable<D, PC> {
 
 	protected final Normal<D, PC, ?, ?, _c> element;
+	protected final AtomicBoolean closed = new AtomicBoolean();
 
 	protected Normal_c(Normal<D, PC, ?, ?, _c> element) {
 		this.element = element;
@@ -50,6 +52,13 @@ public abstract class Normal_c<
 	@Override
 	public D getDocument() {
 		return element.document;
+	}
+
+	@Override
+	public void close() throws IOException {
+		if(!closed.getAndSet(true)) {
+			__();
+		}
 	}
 
 	@Override
