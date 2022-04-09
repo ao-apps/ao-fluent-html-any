@@ -169,9 +169,13 @@ public interface AnyTextContent<
 	 */
 	@Override
 	default __ encode(MediaType contentType, char ch) throws IOException {
-		Text.super.encode(contentType, ch);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
+		if(contentType == MediaType.TEXT) {
+			return text(ch);
+		} else {
+			Text.super.encode(contentType, ch);
+			@SuppressWarnings("unchecked") __ c = (__)this;
+			return c;
+		}
 	}
 
 	/**
@@ -181,9 +185,13 @@ public interface AnyTextContent<
 	 */
 	@Override
 	default __ encode(MediaType contentType, char[] cbuf) throws IOException {
-		Text.super.encode(contentType, cbuf);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
+		if(contentType == MediaType.TEXT) {
+			return text(cbuf);
+		} else {
+			Text.super.encode(contentType, cbuf);
+			@SuppressWarnings("unchecked") __ c = (__)this;
+			return c;
+		}
 	}
 
 	/**
@@ -193,9 +201,13 @@ public interface AnyTextContent<
 	 */
 	@Override
 	default __ encode(MediaType contentType, char[] cbuf, int offset, int len) throws IOException {
-		Text.super.encode(contentType, cbuf, offset, len);
-		@SuppressWarnings("unchecked") __ c = (__)this;
-		return c;
+		if(contentType == MediaType.TEXT) {
+			return text(cbuf, offset, len);
+		} else {
+			Text.super.encode(contentType, cbuf, offset, len);
+			@SuppressWarnings("unchecked") __ c = (__)this;
+			return c;
+		}
 	}
 
 	/**
@@ -203,9 +215,10 @@ public interface AnyTextContent<
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	@Override
 	default __ encode(MediaType contentType, CharSequence csq) throws IOException {
-		Text.super.encode(contentType, csq);
+		getDocument().encode(contentType, csq);
 		@SuppressWarnings("unchecked") __ c = (__)this;
 		return c;
 	}
@@ -215,9 +228,10 @@ public interface AnyTextContent<
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
+	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	@Override
 	default __ encode(MediaType contentType, CharSequence csq, int start, int end) throws IOException {
-		Text.super.encode(contentType, csq, start, end);
+		getDocument().encode(contentType, csq, start, end);
 		@SuppressWarnings("unchecked") __ c = (__)this;
 		return c;
 	}
@@ -261,8 +275,6 @@ public interface AnyTextContent<
 
 	/**
 	 * {@inheritDoc}
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
 	@Override

@@ -37,6 +37,8 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.encoding.TextWriter;
 import com.aoapps.encoding.ValidateOnlyEncoder;
 import com.aoapps.encoding.WriterUtil;
+import com.aoapps.hodgepodge.i18n.BundleLookupMarkup;
+import com.aoapps.hodgepodge.i18n.BundleLookupThreadContext;
 import com.aoapps.hodgepodge.i18n.MarkupCoercion;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.Coercion;
@@ -105,6 +107,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// TODO: Make this be a ChainWriter?  This might be incorrect as it would encourage using html.out instead of elements and attributes
 	@Deprecated
 	@SuppressWarnings("PublicField") // TODO: Should this be final again?  Will we always need setOut, such as opening and closing tag separate processing in legacy taglibs?
+	// TODO: Does this need to be thread-safe, such as DocumentEE inside concurrent sub-requests?
+	//       Perhaps need to review thread safety of the API overall?
+	//       Maybe elements and attributes need not be thread-safe, but document and contexts should be?
 	public Writer out;
 
 	/**
@@ -800,7 +805,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D encode(MediaType contentType, char ch) throws IOException {
-		return AnyContent.super.encode(contentType, ch);
+		if(contentType == MediaType.TEXT) {
+			return text(ch);
+		} else {
+			return AnyContent.super.encode(contentType, ch);
+		}
 	}
 
 	/**
@@ -810,7 +819,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D encode(MediaType contentType, char[] cbuf) throws IOException {
-		return AnyContent.super.encode(contentType, cbuf);
+		if(contentType == MediaType.TEXT) {
+			return text(cbuf);
+		} else {
+			return AnyContent.super.encode(contentType, cbuf);
+		}
 	}
 
 	/**
@@ -820,7 +833,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D encode(MediaType contentType, char[] cbuf, int offset, int len) throws IOException {
-		return AnyContent.super.encode(contentType, cbuf, offset, len);
+		if(contentType == MediaType.TEXT) {
+			return text(cbuf, offset, len);
+		} else {
+			return AnyContent.super.encode(contentType, cbuf, offset, len);
+		}
 	}
 
 	/**
@@ -830,7 +847,143 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D encode(MediaType contentType, CharSequence csq) throws IOException {
-		return AnyContent.super.encode(contentType, csq);
+		if(contentType == MediaType.TEXT) {
+			return text(csq);
+		} else {
+			// Allow text markup from translations
+			if(contentType == MediaType.XHTML) {
+				// Already in the requested media type, no prefix/suffix required
+				BundleLookupThreadContext threadContext;
+				if(
+					csq == null
+					|| (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+					// Other types that will not be converted to String for bundle lookups
+					|| !(csq instanceof String)
+				) {
+					int len;
+					if(csq != null && (len = csq.length()) > 0) {
+						if(csq.charAt(len - 1) == NL) {
+							if(len == 1) {
+								out.write(NL);
+							} else {
+								autoIndent(out);
+								out.append(csq);
+							}
+							setAtnl();
+						} else {
+							autoIndent(out);
+							out.append(csq);
+							clearAtnl();
+						}
+					}
+				} else {
+					String str = (String)csq;
+					BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(str);
+					if(lookupMarkup != null) {
+						autoIndent(out);
+						lookupMarkup.appendPrefixTo(MarkupType.XHTML, out);
+						out.write(str);
+						lookupMarkup.appendSuffixTo(MarkupType.XHTML, out);
+						clearAtnl(); // Unknown, safe to assume not at newline
+					} else {
+						int len = str.length();
+						if(len > 0) {
+							if(str.charAt(len - 1) == NL) {
+								if(len == 1) {
+									out.write(NL);
+								} else {
+									autoIndent(out);
+									out.write(str);
+								}
+								setAtnl();
+							} else {
+								autoIndent(out);
+								out.write(str);
+								clearAtnl();
+							}
+						}
+					}
+				}
+			} else {
+				autoIndent(out);
+				// In different media type, need prefix/suffix
+				MediaEncoder encoder = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
+				if(encoder == null) {
+					// Already in a compatible context that does not strictly require character encoding, but still need prefix/suffix
+					encoder = new ValidateOnlyEncoder(contentType);
+				}
+				Writer optimized = Coercion.optimize(out, encoder);
+				if(encoder.isBuffered()) {
+					// Do not bypass buffered encoder for markup
+					encoder.writePrefixTo(optimized);
+					if(csq != null) {
+						MarkupType markupType = contentType.getMarkupType();
+						BundleLookupThreadContext threadContext;
+						if(
+							markupType == MarkupType.NONE
+							|| (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+							// Other types that will not be converted to String for bundle lookups
+							|| !(csq instanceof String)
+						) {
+							encoder.append(csq, optimized);
+						} else {
+							String str = (String)csq;
+							BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(str);
+							if(lookupMarkup != null) lookupMarkup.appendPrefixTo(markupType, encoder, optimized);
+							encoder.write(str, optimized);
+							if(lookupMarkup != null) lookupMarkup.appendSuffixTo(markupType, encoder, optimized);
+						}
+					}
+					encoder.writeSuffixTo(optimized, false);
+				} else {
+					// Bypass encoder for markup
+					BundleLookupThreadContext threadContext;
+					if(
+						csq == null
+						|| (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+						// Other types that will not be converted to String for bundle lookups
+						|| !(csq instanceof String)
+					) {
+						encoder.writePrefixTo(optimized);
+						if(csq != null) encoder.append(csq, optimized);
+						encoder.writeSuffixTo(optimized, false);
+					} else {
+						String str = (String)csq;
+						BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(str);
+						if(lookupMarkup != null) lookupMarkup.appendPrefixTo(MarkupType.XHTML, optimized);
+						encoder.writePrefixTo(optimized);
+						encoder.write(str, optimized);
+						encoder.writeSuffixTo(optimized, false);
+						if(lookupMarkup != null) lookupMarkup.appendSuffixTo(MarkupType.XHTML, optimized);
+					}
+				}
+				clearAtnl(); // Unknown, safe to assume not at newline
+			}
+			@SuppressWarnings("unchecked") D d = (D)this;
+			return d;
+		}
+	}
+
+	/**
+	 * Appends a character sequence while doing auto-indent and tracking end-of-line.
+	 */
+	private void appendCharSequence(Writer out, CharSequence csq, int start, int end) throws IOException {
+		if(end > start) {
+			int last = end - 1;
+			if(csq.charAt(last) == NL) {
+				if(start == last) {
+					out.write(NL);
+				} else {
+					autoIndent(out);
+					out.append(csq, start, end);
+				}
+				setAtnl();
+			} else {
+				autoIndent(out);
+				out.append(csq, start, end);
+				clearAtnl();
+			}
+		}
 	}
 
 	/**
@@ -840,7 +993,88 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D encode(MediaType contentType, CharSequence csq, int start, int end) throws IOException {
-		return AnyContent.super.encode(contentType, csq, start, end);
+		if(contentType == MediaType.TEXT) {
+			return text(csq, start, end);
+		} else {
+			// Allow text markup from translations
+			if(contentType == MediaType.XHTML) {
+				// Already in the requested media type, no prefix/suffix required
+				BundleLookupThreadContext threadContext;
+				if(
+					csq == null
+					|| (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+					// Other types that will not be converted to String for bundle lookups
+					|| !(csq instanceof String)
+				) {
+					if(csq != null) appendCharSequence(out, csq, start, end);
+				} else {
+					BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+					if(lookupMarkup != null) {
+						autoIndent(out);
+						lookupMarkup.appendPrefixTo(MarkupType.XHTML, out);
+						out.append(csq, start, end);
+						lookupMarkup.appendSuffixTo(MarkupType.XHTML, out);
+						clearAtnl(); // Unknown, safe to assume not at newline
+					} else {
+						appendCharSequence(out, csq, start, end);
+					}
+				}
+			} else {
+				autoIndent(out);
+				// In different media type, need prefix/suffix
+				MediaEncoder encoder = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
+				if(encoder == null) {
+					// Already in a compatible context that does not strictly require character encoding, but still need prefix/suffix
+					encoder = new ValidateOnlyEncoder(contentType);
+				}
+				Writer optimized = Coercion.optimize(out, encoder);
+				if(encoder.isBuffered()) {
+					// Do not bypass buffered encoder for markup
+					encoder.writePrefixTo(optimized);
+					if(csq != null) {
+						MarkupType markupType = contentType.getMarkupType();
+						BundleLookupThreadContext threadContext;
+						if(
+							markupType == MarkupType.NONE
+							|| (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+							// Other types that will not be converted to String for bundle lookups
+							|| !(csq instanceof String)
+						) {
+							encoder.append(csq, start, end, optimized);
+						} else {
+							BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+							if(lookupMarkup != null) lookupMarkup.appendPrefixTo(markupType, encoder, optimized);
+							encoder.append(csq, start, end, optimized);
+							if(lookupMarkup != null) lookupMarkup.appendSuffixTo(markupType, encoder, optimized);
+						}
+					}
+					encoder.writeSuffixTo(optimized, false);
+				} else {
+					// Bypass encoder for markup
+					BundleLookupThreadContext threadContext;
+					if(
+						csq == null
+						|| (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+						// Other types that will not be converted to String for bundle lookups
+						|| !(csq instanceof String)
+					) {
+						encoder.writePrefixTo(optimized);
+						if(csq != null) encoder.append(csq, start, end, optimized);
+						encoder.writeSuffixTo(optimized, false);
+					} else {
+						BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+						if(lookupMarkup != null) lookupMarkup.appendPrefixTo(MarkupType.XHTML, optimized);
+						encoder.writePrefixTo(optimized);
+						encoder.append(csq, start, end, optimized);
+						encoder.writeSuffixTo(optimized, false);
+						if(lookupMarkup != null) lookupMarkup.appendSuffixTo(MarkupType.XHTML, optimized);
+					}
+				}
+				clearAtnl(); // Unknown, safe to assume not at newline
+			}
+			@SuppressWarnings("unchecked") D d = (D)this;
+			return d;
+		}
 	}
 
 	/**
@@ -851,50 +1085,82 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	@Override
 	@SuppressWarnings("UseSpecificCatch")
 	public D encode(MediaType contentType, Object content) throws IOException {
-		// Support Optional
-		while(content instanceof Optional) {
-			content = ((Optional<?>)content).orElse(null);
-		}
-		while(content instanceof IOSupplierE<?, ?>) {
-			try {
-				content = ((IOSupplierE<?, ?>)content).get();
-			} catch(Throwable t) {
-				throw Throwables.wrap(t, IOException.class, IOException::new);
+		if(contentType == MediaType.TEXT) {
+			return text(content);
+		} else {
+			// Support Optional
+			while(content instanceof Optional) {
+				content = ((Optional<?>)content).orElse(null);
 			}
-		}
-		if(content instanceof char[]) {
-			return encode(contentType, (char[])content);
-		}
-		if(content instanceof CharSequence) {
-			return encode(contentType, (CharSequence)content);
-		}
-		if(content instanceof Writable) {
-			Writable writable = (Writable)content;
-			if(writable.isFastToString()) {
-				return encode(contentType, writable.toString());
+			while(content instanceof IOSupplierE<?, ?>) {
+				try {
+					content = ((IOSupplierE<?, ?>)content).get();
+				} catch(Throwable t) {
+					throw Throwables.wrap(t, IOException.class, IOException::new);
+				}
 			}
-		}
-		if(content instanceof MediaWritable) {
-			try {
-				return encode(contentType, (MediaWritable<?>)content);
-			} catch(Throwable t) {
-				throw Throwables.wrap(t, IOException.class, IOException::new);
+			if(content instanceof char[]) {
+				return encode(contentType, (char[])content);
 			}
+			if(content instanceof CharSequence) {
+				return encode(contentType, (CharSequence)content);
+			}
+			if(content instanceof Writable) {
+				Writable writable = (Writable)content;
+				if(writable.isFastToString()) {
+					return encode(contentType, writable.toString());
+				}
+			}
+			if(content instanceof MediaWritable) {
+				try {
+					return encode(contentType, (MediaWritable<?>)content);
+				} catch(Throwable t) {
+					throw Throwables.wrap(t, IOException.class, IOException::new);
+				}
+			}
+			// Allow text markup from translations
+			autoIndent(out);
+			// TODO: Way to temp-disable markups from within OPTION (without value set) and TEXTAREA, or to make HTML comment mark-up only.  All places from AnyTextContent
+			if(contentType == MediaType.XHTML) {
+				// Already in the requested media type, no prefix/suffix required
+				MarkupCoercion.write(
+					content,
+					MarkupType.XHTML,
+					out
+				);
+			} else {
+				// In different media type, need prefix/suffix
+				MediaEncoder encoder = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
+				if(encoder == null) {
+					// Already in a compatible context that does not strictly require character encoding, but still need prefix/suffix
+					encoder = new ValidateOnlyEncoder(contentType);
+				}
+				if(encoder.isBuffered()) {
+					// Do not bypass buffered encoder for markup
+					MarkupCoercion.write(
+						content,
+						contentType.getMarkupType(),
+						true,
+						encoder,
+						true,
+						out
+					);
+				} else {
+					// Bypass encoder for markup
+					MarkupCoercion.write(
+						content,
+						MarkupType.XHTML,
+						false,
+						encoder,
+						true,
+						out
+					);
+				}
+			}
+			clearAtnl(); // Unknown, safe to assume not at newline
+			@SuppressWarnings("unchecked") D d = (D)this;
+			return d;
 		}
-		// Allow text markup from translations
-		autoIndent(out);
-		// TODO: Way to temp-disable markups from within OPTION (without value set) and TEXTAREA, or to make HTML comment mark-up only.  All places from AnyTextContent
-		MarkupCoercion.write(
-			content,
-			MarkupType.XHTML,
-			false,
-			MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML),
-			false,
-			out
-		);
-		clearAtnl(); // Unknown, safe to assume not at newline
-		@SuppressWarnings("unchecked") D d = (D)this;
-		return d;
 	}
 
 	/**
@@ -940,11 +1206,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		encoder.writePrefixTo(optimized);
 		return contentType.newMediaWriter(
 			encodingContext,
-			MediaType.XHTML,
 			encoder,
 			optimized,
 			true,
 			this,
+			mediaWriter -> false, // !isNoClose
 			closing -> encoder.writeSuffixTo(optimized, false)
 		);
 	}
@@ -1083,23 +1349,49 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getUnsafe(null), csq);
 	}
 
-	// TODO: Supports translation markup
-	D text(Writer out, CharSequence csq) throws IOException {
-		if(csq != null) {
-			int len = csq.length();
-			if(len > 0) {
-				if(csq.charAt(len - 1) == NL) {
-					if(len == 1) {
-						out.write(NL);
-					} else {
-						autoIndent(out);
-						encodeTextInXhtml(csq, out);
-					}
-					setAtnl();
+	/**
+	 * Encodes a character sequence while doing auto-indent and tracking end-of-line.
+	 */
+	private void encodeCharSequence(Writer out, CharSequence csq) throws IOException {
+		int len = csq.length();
+		if(len > 0) {
+			if(csq.charAt(len - 1) == NL) {
+				if(len == 1) {
+					out.write(NL);
 				} else {
 					autoIndent(out);
 					encodeTextInXhtml(csq, out);
-					clearAtnl();
+				}
+				setAtnl();
+			} else {
+				autoIndent(out);
+				encodeTextInXhtml(csq, out);
+				clearAtnl();
+			}
+		}
+	}
+
+	D text(Writer out, CharSequence csq) throws IOException {
+		// Allow text markup from translations
+		if(csq != null) {
+			// Bypass encoder for markup
+			BundleLookupThreadContext threadContext;
+			if(
+				(threadContext = BundleLookupThreadContext.getThreadContext()) == null
+				// Other types that will not be converted to String for bundle lookups
+				|| !(csq instanceof String)
+			) {
+				encodeCharSequence(out, csq);
+			} else {
+				BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+				if(lookupMarkup != null) {
+					autoIndent(out);
+					lookupMarkup.appendPrefixTo(MarkupType.XHTML, out);
+				}
+				encodeCharSequence(out, csq);
+				if(lookupMarkup != null) {
+					lookupMarkup.appendSuffixTo(MarkupType.XHTML, out);
+					clearAtnl(); // Unknown, safe to assume not at newline
 				}
 			}
 		}
@@ -1117,9 +1409,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getUnsafe(null), csq, start, end);
 	}
 
-	// TODO: Supports translation markup
-	D text(Writer out, CharSequence csq, int start, int end) throws IOException {
-		if(csq != null && end > start) {
+	/**
+	 * Encodes a character sequence while doing auto-indent and tracking end-of-line.
+	 */
+	private void encodeCharSequence(Writer out, CharSequence csq, int start, int end) throws IOException {
+		if(end > start) {
 			int last = end - 1;
 			if(csq.charAt(last) == NL) {
 				if(start == last) {
@@ -1133,6 +1427,32 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 				autoIndent(out);
 				encodeTextInXhtml(csq, start, end, out);
 				clearAtnl();
+			}
+		}
+	}
+
+	D text(Writer out, CharSequence csq, int start, int end) throws IOException {
+		// Allow text markup from translations
+		if(csq != null) {
+			// Bypass encoder for markup
+			BundleLookupThreadContext threadContext;
+			if(
+				(threadContext = BundleLookupThreadContext.getThreadContext()) == null
+				// Other types that will not be converted to String for bundle lookups
+				|| !(csq instanceof String)
+			) {
+				encodeCharSequence(out, csq, start, end);
+			} else {
+				BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+				if(lookupMarkup != null) {
+					autoIndent(out);
+					lookupMarkup.appendPrefixTo(MarkupType.XHTML, out);
+				}
+				encodeCharSequence(out, csq, start, end);
+				if(lookupMarkup != null) {
+					lookupMarkup.appendSuffixTo(MarkupType.XHTML, out);
+					clearAtnl(); // Unknown, safe to assume not at newline
+				}
 			}
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -1185,7 +1505,16 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 			// Allow text markup from translations
 			autoIndent(out);
 			// TODO: Way to temp-disable markups from within OPTION (without value set) and TEXTAREA, or to make HTML comment mark-up only.  All places from AnyTextContent
-			MarkupCoercion.write(text, MarkupType.XHTML, false, textInXhtmlEncoder, false, out);
+			MediaEncoder encoder = textInXhtmlEncoder;
+			assert !encoder.isBuffered() : "Is OK to bypass encoder for markup";
+			MarkupCoercion.write(
+				text,
+				MarkupType.XHTML,
+				false,
+				encoder,
+				true,
+				out
+			);
 			clearAtnl(); // Unknown, safe to assume not at newline
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -1241,11 +1570,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		@SuppressWarnings("unchecked") D d = (D)this;
 		return new TextWriter(
 			d.encodingContext,
-			MediaType.TEXT,
 			textInXhtmlEncoder,
 			out,
 			false,
 			d,
+			mediaWriter -> true, // isNoClose
 			null // Ignore close
 		);
 	}

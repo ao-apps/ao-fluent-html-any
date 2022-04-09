@@ -321,13 +321,13 @@ public abstract class AnySCRIPT<
 			Writer out = document.getUnsafe(null);
 			startBody(out);
 			script.writeTo(
-				new JavaScriptWriter(
+				newOutputType.newMediaWriter(
 					document.encodingContext,
-					newOutputType,
 					encoder,
 					document.getUnsafe(null),
 					false,
 					document,
+					mediaWriter -> true, // isNoClose
 					null // Ignore close
 				)
 			);
@@ -348,13 +348,14 @@ public abstract class AnySCRIPT<
 		MediaEncoder encoder = getMediaEncoder(newOutputType);
 		Writer out = document.getUnsafe(null);
 		startBody(out);
-		return new JavaScriptWriter(
+		// Invoking via newMediaWriter to support subclasses of JavaScriptWriter
+		return (JavaScriptWriter)newOutputType.newMediaWriter(
 			document.encodingContext,
-			newOutputType,
 			encoder,
 			out,
 			false,
 			document,
+			mediaWriter -> false, // !isNoClose
 			closing -> __()
 		);
 	}

@@ -288,13 +288,13 @@ public abstract class AnySTYLE<
 			Writer out = document.getUnsafe(null);
 			startBody(out);
 			style.writeTo(
-				new StyleWriter(
+				newOutputType.newMediaWriter(
 					document.encodingContext,
-					newOutputType,
 					encoder,
 					document.getUnsafe(null),
 					false,
 					document,
+					mediaWriter -> true, // isNoClose
 					null // Ignore close
 				)
 			);
@@ -315,13 +315,14 @@ public abstract class AnySTYLE<
 		MediaEncoder encoder = getMediaEncoder(newOutputType);
 		Writer out = document.getUnsafe(null);
 		startBody(out);
-		return new StyleWriter(
+		// Invoking via newMediaWriter to support subclasses of StyleWriter
+		return (StyleWriter)newOutputType.newMediaWriter(
 			document.encodingContext,
-			newOutputType,
 			encoder,
 			out,
 			false,
 			document,
+			mediaWriter -> false, // !isNoClose
 			closing -> __()
 		);
 	}

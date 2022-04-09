@@ -30,6 +30,8 @@ import com.aoapps.encoding.MediaWritable;
 import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+import com.aoapps.hodgepodge.i18n.BundleLookupMarkup;
+import com.aoapps.hodgepodge.i18n.BundleLookupThreadContext;
 import com.aoapps.hodgepodge.i18n.MarkupCoercion;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.Coercion;
@@ -346,11 +348,20 @@ public final class Attributes {
 						}
 						out.write(name);
 						out.write("=\"");
-						if(markupType == null || markupType == MarkupType.NONE) {
+						BundleLookupThreadContext threadContext;
+						if(
+							markupType == null
+							|| markupType == MarkupType.NONE
+							|| (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+						) {
 							// Short-cut additional type checks done by Coercion, since we already have a String
 							encodeTextInXhtmlAttribute(value, out);
 						} else {
-							MarkupCoercion.write(value, markupType, true, textInXhtmlAttributeEncoder, false, out);
+							Writer optimized = Coercion.optimize(out, textInXhtmlAttributeEncoder);
+							BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(value);
+							if(lookupMarkup != null) lookupMarkup.appendPrefixTo(markupType, textInXhtmlAttributeEncoder, optimized);
+							encodeTextInXhtmlAttribute(value, optimized);
+							if(lookupMarkup != null) lookupMarkup.appendSuffixTo(markupType, textInXhtmlAttributeEncoder, optimized);
 						}
 						out.append('"');
 					}
@@ -398,11 +409,11 @@ public final class Attributes {
 					writer.writeTo(
 						encoder.getValidMediaInputType().newMediaWriter(
 							document.encodingContext,
-							encoder.getValidMediaInputType(),
 							encoder,
 							out,
 							false,
 							null, // Attributes get own indentation scope and settings
+							mediaWriter -> true, // isNoClose
 							null // Ignore close
 						)
 					);
@@ -441,7 +452,14 @@ public final class Attributes {
 							}
 							out.write(name);
 							out.write("=\"");
-							MarkupCoercion.write(value, markupType, true, encoder, false, out);
+							MarkupCoercion.write(
+								value,
+								markupType,
+								true,
+								encoder,
+								false,
+								out
+							);
 							out.append('"');
 						}
 					}
@@ -494,11 +512,11 @@ public final class Attributes {
 							writer.writeTo(
 								encoder.getValidMediaInputType().newMediaWriter(
 									document.encodingContext,
-									encoder.getValidMediaInputType(),
 									encoder,
 									out,
 									false,
 									null, // Attributes get own indentation scope and settings
+									mediaWriter -> true, // isNoClose
 									null // Ignore close
 								)
 							);
@@ -544,7 +562,14 @@ public final class Attributes {
 										out.write("=\"");
 										val = true;
 									}
-									MarkupCoercion.write(value, markupType, true, encoder, false, out);
+									MarkupCoercion.write(
+										value,
+										markupType,
+										true,
+										encoder,
+										false,
+										out
+									);
 								}
 							}
 						}
