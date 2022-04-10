@@ -411,7 +411,7 @@ public abstract class AnyINPUT<
 					);
 				}
 				this.type = type;
-				Writer out = document.getUnsafe(null);
+				Writer out = document.getRawUnsafe(null);
 				if(document.getAtnl()) {
 					document.autoIndent(out, 1);
 					out.write("type=\"");
@@ -455,7 +455,7 @@ public abstract class AnyINPUT<
 					);
 				}
 				this.type = type.value;
-				Writer out = document.getUnsafe(null);
+				Writer out = document.getRawUnsafe(null);
 				if(document.getAtnl()) {
 					document.autoIndent(out, 1);
 					out.write("type=\"");

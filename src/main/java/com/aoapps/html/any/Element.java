@@ -271,23 +271,29 @@ public abstract class Element<
 	/**
 	 * {@inheritDoc}
 	 * <p>
-	 * Delegates to {@link AnyDocument#getUnsafe(java.lang.Boolean)}.
+	 * Delegates to {@link AnyDocument#getRawUnsafe(java.lang.Boolean)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
-	public Writer getUnsafe(Boolean endsNewline) throws IllegalStateException {
-		return document.getUnsafe(endsNewline);
+	public Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException {
+		return document.getRawUnsafe(endsNewline);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * <p>
-	 * Delegates to {@link AnyDocument#getUnsafe()}.
+	 * Delegates to {@link AnyDocument#getRawUnsafe()}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
-	public Writer getUnsafe() throws IllegalStateException {
-		return document.getUnsafe();
+	public Writer getRawUnsafe() throws IllegalStateException {
+		return document.getRawUnsafe();
 	}
 
 	/**
@@ -295,7 +301,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(char)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public E unsafe(char ch) throws IOException {
 		document.unsafe(ch);
@@ -308,7 +317,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(char[])}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public E unsafe(char[] cbuf) throws IOException {
 		document.unsafe(cbuf);
@@ -321,7 +333,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(char[], int, int)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public E unsafe(char[] cbuf, int offset, int len) throws IOException {
 		document.unsafe(cbuf, offset, len);
@@ -334,7 +349,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public E unsafe(CharSequence csq) throws IOException {
 		document.unsafe(csq);
@@ -347,7 +365,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence, int, int)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public E unsafe(CharSequence csq, int start, int end) throws IOException {
 		document.unsafe(csq, start, end);
@@ -360,7 +381,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(java.lang.Object)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public E unsafe(Object unsafe) throws IOException {
 		document.unsafe(unsafe);
@@ -373,7 +397,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.function.IOSupplierE)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public <Ex extends Throwable> E unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
 		document.unsafe(unsafe);
@@ -386,7 +413,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.Writable)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public E unsafe(Writable unsafe) throws IOException {
 		document.unsafe(unsafe);
@@ -399,7 +429,10 @@ public abstract class Element<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe()}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public <W extends Writer & NoClose> W unsafe() throws IOException {
 		return document.unsafe();

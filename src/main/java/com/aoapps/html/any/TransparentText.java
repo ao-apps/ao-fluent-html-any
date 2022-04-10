@@ -61,7 +61,8 @@ public abstract class TransparentText<
 	// Matches NormalText.__(Object)
 	// TODO: More overrides, such as IOSupplier and such?
 	public PC __(Object text) throws IOException {
-		Writer out = document.getUnsafe(null);
+		@SuppressWarnings("deprecation")
+		Writer out = document.getRawUnsafe(null);
 		if(text != null) {
 			document.autoIndent(out).unsafe(out, '>').incDepth();
 			doBeforeBody(out);

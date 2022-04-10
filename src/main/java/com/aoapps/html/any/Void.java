@@ -52,7 +52,7 @@ public abstract class Void<
 	 */
 	@SuppressWarnings("deprecation")
 	public PC __() throws IOException {
-		Writer out = document.getUnsafe(null);
+		Writer out = document.getRawUnsafe(null);
 		Serialization serialization = document.encodingContext.getSerialization();
 		if(document.getAtnl()) {
 			document.autoIndent(out);

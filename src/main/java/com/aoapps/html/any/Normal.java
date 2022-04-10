@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -88,7 +88,8 @@ public abstract class Normal<
 	 * @return  The parent content model this element is within
 	 */
 	public <Ex extends Throwable> PC __(IORunnableE<Ex> body) throws IOException, Ex {
-		Writer out = document.getUnsafe(null);
+		@SuppressWarnings("deprecation")
+		Writer out = document.getRawUnsafe(null);
 		if(body != null) {
 			document.autoIndent(out).unsafe(out, '>');
 			boolean contentIndented = isContentIndented();
@@ -113,7 +114,8 @@ public abstract class Normal<
 	 * @see  #new__()
 	 */
 	public <Ex extends Throwable> PC __(IOConsumerE<? super __, Ex> body) throws IOException, Ex {
-		Writer out = document.getUnsafe(null);
+		@SuppressWarnings("deprecation")
+		Writer out = document.getRawUnsafe(null);
 		if(body != null) {
 			document.autoIndent(out).unsafe(out, '>');
 			boolean contentIndented = isContentIndented();
@@ -133,8 +135,9 @@ public abstract class Normal<
 	 *
 	 * @return  The parent content model this element is within
 	 */
+	@SuppressWarnings("deprecation")
 	public PC __() throws IOException {
-		writeClose(document.getUnsafe(null), true);
+		writeClose(document.getRawUnsafe(null), true);
 		return pc;
 	}
 
@@ -150,7 +153,8 @@ public abstract class Normal<
 	 * @see  #new_c()
 	 */
 	public _c _c() throws IOException {
-		Writer out = document.getUnsafe(null);
+		@SuppressWarnings("deprecation")
+		Writer out = document.getRawUnsafe(null);
 		document.autoIndent(out).unsafe(out, '>');
 		if(isContentIndented()) document.incDepth();
 		doBeforeBody(out);

@@ -188,7 +188,8 @@ public final class Attributes {
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, boolean value) throws IOException {
 			if(value) {
 				AnyDocument<?> document = element.document;
-				Writer out = document.getUnsafe(null);
+				@SuppressWarnings("deprecation")
+				Writer out = document.getRawUnsafe(null);
 				if(document.getAtnl()) {
 					document.autoIndent(out, 1);
 					document.clearAtnl();
@@ -282,7 +283,8 @@ public final class Attributes {
 		 */
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, int value) throws IOException {
 			AnyDocument<?> document = element.document;
-			Writer out = document.getUnsafe(null);
+			@SuppressWarnings("deprecation")
+			Writer out = document.getRawUnsafe(null);
 			if(document.getAtnl()) {
 				document.autoIndent(out, 1);
 				document.clearAtnl();
@@ -327,7 +329,8 @@ public final class Attributes {
 				if(value == NO_VALUE) { // Identity comparison for marker value
 					// Empty attribute
 					AnyDocument<?> document = element.document;
-					Writer out = document.getUnsafe(null);
+					@SuppressWarnings("deprecation")
+					Writer out = document.getRawUnsafe(null);
 					if(document.getAtnl()) {
 						document.autoIndent(out, 1);
 						document.clearAtnl();
@@ -339,7 +342,8 @@ public final class Attributes {
 					if(trim) value = value.trim(); // TODO: These trims should all be from Strings?
 					if(!nullIfEmpty || !value.isEmpty()) {
 						AnyDocument<?> document = element.document;
-						Writer out = document.getUnsafe(null);
+						@SuppressWarnings("deprecation")
+						Writer out = document.getRawUnsafe(null);
 						if(document.getAtnl()) {
 							document.autoIndent(out, 1);
 							document.clearAtnl();
@@ -397,7 +401,8 @@ public final class Attributes {
 				if(value instanceof MediaWritable<?>) {
 					@SuppressWarnings("unchecked") MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>)value;
 					AnyDocument<?> document = element.document;
-					Writer out = document.getUnsafe(null);
+					@SuppressWarnings("deprecation")
+					Writer out = document.getRawUnsafe(null);
 					if(document.getAtnl()) {
 						document.autoIndent(out, 1);
 						document.clearAtnl();
@@ -422,7 +427,8 @@ public final class Attributes {
 					if(value == NO_VALUE) { // Identity comparison for marker value
 						// Empty attribute
 						AnyDocument<?> document = element.document;
-						Writer out = document.getUnsafe(null);
+						@SuppressWarnings("deprecation")
+						Writer out = document.getRawUnsafe(null);
 						if(document.getAtnl()) {
 							document.autoIndent(out, 1);
 							document.clearAtnl();
@@ -443,7 +449,8 @@ public final class Attributes {
 						}
 						if(value != null) {
 							AnyDocument<?> document = element.document;
-							Writer out = document.getUnsafe(null);
+							@SuppressWarnings("deprecation")
+							Writer out = document.getRawUnsafe(null);
 							if(document.getAtnl()) {
 								document.autoIndent(out, 1);
 								document.clearAtnl();
@@ -480,7 +487,8 @@ public final class Attributes {
 		> E attribute(E element, java.lang.String name, MarkupType markupType, Object[] values, java.lang.String separator, boolean trim, boolean nullIfEmpty, MediaEncoder encoder) throws IOException {
 			if(values != null) {
 				AnyDocument<?> document = element.document;
-				Writer out = document.getUnsafe(null);
+				@SuppressWarnings("deprecation")
+				Writer out = document.getRawUnsafe(null);
 				boolean attr = false;
 				boolean val = false;
 				for(Object value : values) {
@@ -601,7 +609,8 @@ public final class Attributes {
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, java.lang.String url) throws IOException {
 			if(url != null) {
 				AnyDocument<?> document = element.document;
-				Writer out = document.getUnsafe(null);
+				@SuppressWarnings("deprecation")
+				Writer out = document.getRawUnsafe(null);
 				if(document.getAtnl()) {
 					document.autoIndent(out, 1);
 					document.clearAtnl();

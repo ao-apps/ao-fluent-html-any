@@ -170,7 +170,7 @@ public abstract class AnySTYLE<
 	 * @see Doctype#styleType(java.lang.Appendable)
 	 */
 	protected E type() throws IOException {
-		Writer out = document.getUnsafe(null);
+		Writer out = document.getRawUnsafe(null);
 		if(
 			type == null
 			|| type.equals(ContentType.CSS)
@@ -251,7 +251,7 @@ public abstract class AnySTYLE<
 		}
 		style = Coercion.nullIfEmpty(style);
 		if(style != null) {
-			Writer out = document.getUnsafe(null);
+			Writer out = document.getRawUnsafe(null);
 			startBody(out);
 			// Allow text markup from translations
 			MediaType mediaType = getMediaType();
@@ -285,13 +285,13 @@ public abstract class AnySTYLE<
 		if(style != null) {
 			MediaType newOutputType = getMediaType();
 			MediaEncoder encoder = getMediaEncoder(newOutputType);
-			Writer out = document.getUnsafe(null);
+			Writer out = document.getRawUnsafe(null);
 			startBody(out);
 			style.writeTo(
 				newOutputType.newMediaWriter(
 					document.encodingContext,
 					encoder,
-					document.getUnsafe(null),
+					document.getRawUnsafe(null),
 					false,
 					document,
 					mediaWriter -> true, // isNoClose
@@ -313,7 +313,7 @@ public abstract class AnySTYLE<
 	public StyleWriter _c() throws IOException {
 		MediaType newOutputType = getMediaType();
 		MediaEncoder encoder = getMediaEncoder(newOutputType);
-		Writer out = document.getUnsafe(null);
+		Writer out = document.getRawUnsafe(null);
 		startBody(out);
 		// Invoking via newMediaWriter to support subclasses of StyleWriter
 		return (StyleWriter)newOutputType.newMediaWriter(
@@ -333,7 +333,7 @@ public abstract class AnySTYLE<
 	 * @return  The parent content model this element is within
 	 */
 	public PC __() throws IOException {
-		Writer out = document.getUnsafe(null);
+		Writer out = document.getRawUnsafe(null);
 		if(!didBody) {
 			document.autoIndent(out).unsafe(out, "></style>", false);
 		} else {

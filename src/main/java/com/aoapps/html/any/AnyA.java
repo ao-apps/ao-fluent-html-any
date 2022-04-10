@@ -93,7 +93,8 @@ public abstract class AnyA<
 	 * @throws  IllegalStateException when {@code text != null} and current content model does not allow text
 	 */
 	public PC __(Object text) throws IOException, IllegalStateException {
-		Writer out = document.getUnsafe(null);
+		@SuppressWarnings("deprecation")
+		Writer out = document.getRawUnsafe(null);
 		if(text != null) {
 			if(!(pc instanceof AnyTextContent)) throw new LocalizedIllegalStateException(RESOURCES, "contentModelNotAllowText", (pc == null) ? "null" : pc.getClass().getName());
 			document.autoIndent(out).unsafe(out, '>').incDepth().text(out, text).decDepth();

@@ -83,34 +83,22 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	/**
 	 * Writer for raw output.
 	 * <p>
-	 * TODO: This field will possibly become "protected" once the full set of HTML tags have been implemented.
+	 * Direct use of this output may throw-off the automatic newlines and indentation.  Please use any of the
+	 * {@code unsafe(…)} methods.
 	 * </p>
 	 *
-	 * @deprecated  Direct use of this output may throw-off the automatic newlines and indentation.  Please use any of the
-	 *              {@code unsafe(…)} methods.
-	 *
 	 * @see  #unsafe()
-	 * @see  #unsafe(java.lang.CharSequence)
-	 * @see  #unsafe(com.aoapps.lang.io.function.IOSupplierE)
-	 * @see  #unsafe(java.lang.Object)
-	 * @see  #unsafe(com.aoapps.lang.io.Writable)
-	 * @see  #unsafe(char)
-	 * @see  #unsafe(char[])
-	 * @see  #unsafe(java.lang.CharSequence, int, int)
-	 * @see  #unsafe(char[], int, int)
-	 * @see  #getUnsafe()
-	 * @see  #getUnsafe(java.lang.Boolean)
+	 * @see  #getRawUnsafe()
+	 * @see  #getRawUnsafe(java.lang.Boolean)
 	 * @see  #setOut(java.io.Writer)
 	 */
 	// TODO: Wrap this writer in XhtmlValidator if is not already validating XHTML?
 	//       If wrapping, consider uses of this losing access to this wrapping, such as optimizations done by MediaValidator
-	// TODO: Make this be a ChainWriter?  This might be incorrect as it would encourage using html.out instead of elements and attributes
-	@Deprecated
-	@SuppressWarnings("PublicField") // TODO: Should this be final again?  Will we always need setOut, such as opening and closing tag separate processing in legacy taglibs?
 	// TODO: Does this need to be thread-safe, such as DocumentEE inside concurrent sub-requests?
 	//       Perhaps need to review thread safety of the API overall?
 	//       Maybe elements and attributes need not be thread-safe, but document and contexts should be?
-	public Writer out;
+	// TODO: Should this always be optimized via Coercion.optimize(out, null)?
+	private Writer out;
 
 	/**
 	 * @param  out  May be {@code null}, but must be set to a non-null value again before any additional writes.
@@ -129,8 +117,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @param  out  May be {@code null}, but must be set to a non-null value again before any additional writes.
 	 *              Not doing so may result in {@link IllegalStateException}.
 	 *
-	 * @see  #getUnsafe()
-	 * @see  #getUnsafe(java.lang.Boolean)
+	 * @see  #getRawUnsafe()
+	 * @see  #getRawUnsafe(java.lang.Boolean)
 	 */
 	public void setOut(Writer out) {
 		this.out = out;
@@ -158,7 +146,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// Matches WhitespaceWriter.nl()
 	@Override
 	public D nl() throws IOException {
-		return nl(getUnsafe(null));
+		return nl(getRawUnsafe(null));
 	}
 
 	D nl(Writer out) throws IOException {
@@ -171,7 +159,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// Matches WhitespaceWriter.nli()
 	@Override
 	public D nli() throws IOException {
-		return nli(getUnsafe(null), 0);
+		return nli(getRawUnsafe(null), 0);
 	}
 
 	D nli(Writer out) throws IOException {
@@ -181,7 +169,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// Matches WhitespaceWriter.nli(int)
 	@Override
 	public D nli(int depthOffset) throws IOException {
-		return nli(getUnsafe(null), depthOffset);
+		return nli(getRawUnsafe(null), depthOffset);
 	}
 
 	D nli(Writer out, int depthOffset) throws IOException {
@@ -201,7 +189,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	@Override
 	@SuppressWarnings("deprecation")
 	public D indent() throws IOException {
-		return indent(getUnsafe(null), 0);
+		return indent(getRawUnsafe(null), 0);
 	}
 
 	D indent(Writer out) throws IOException {
@@ -212,7 +200,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	@Override
 	@SuppressWarnings("deprecation")
 	public D indent(int depthOffset) throws IOException {
-		return indent(getUnsafe(null), depthOffset);
+		return indent(getRawUnsafe(null), depthOffset);
 	}
 
 	D indent(Writer out, int depthOffset) throws IOException {
@@ -288,7 +276,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// Matches WhitespaceWriter.sp()
 	@Override
 	public D sp() throws IOException {
-		return sp(getUnsafe(null));
+		return sp(getRawUnsafe(null));
 	}
 
 	D sp(Writer out) throws IOException {
@@ -301,7 +289,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// Matches WhitespaceWriter.sp(int)
 	@Override
 	public D sp(int count) throws IOException {
-		return sp(getUnsafe(null), count);
+		return sp(getRawUnsafe(null), count);
 	}
 
 	D sp(Writer out, int count) throws IOException {
@@ -315,27 +303,42 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// </editor-fold>
 
 	// <editor-fold desc="DocumentWriter / Unsafe - implementation" defaultstate="collapsed">
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
+	 */
+	@Deprecated
 	@Override
-	public Writer getUnsafe(Boolean endsNewline) throws IllegalStateException {
+	public Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException {
 		Writer unsafe = out;
-		if(unsafe == null) throw new LocalizedIllegalStateException(RESOURCES, "getUnsafe.noOut");
+		if(unsafe == null) throw new LocalizedIllegalStateException(RESOURCES, "getRawUnsafe.noOut");
 		if(endsNewline != null) setAtnl(endsNewline);
 		return unsafe;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
+	 */
+	@Deprecated
 	@Override
-	public Writer getUnsafe() throws IllegalStateException {
-		return getUnsafe(false);
+	public Writer getRawUnsafe() throws IllegalStateException {
+		return getRawUnsafe(false);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * @return  {@code this} document
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public D unsafe(char ch) throws IOException {
-		return unsafe(getUnsafe(null), ch);
+		return unsafe(getRawUnsafe(null), ch);
 	}
 
 	D unsafe(Writer out, char ch) throws IOException {
@@ -347,14 +350,17 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * {@inheritDoc}
 	 *
 	 * @return  {@code this} document
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public D unsafe(char[] cbuf) throws IOException {
 		if(cbuf != null) {
 			int len = cbuf.length;
 			if(len > 0) {
 				unsafe(
-					getUnsafe(null),
+					getRawUnsafe(null),
 					cbuf,
 					cbuf[len - 1] == NL
 				);
@@ -384,12 +390,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * {@inheritDoc}
 	 *
 	 * @return  {@code this} document
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public D unsafe(char[] cbuf, int offset, int len) throws IOException {
 		if(cbuf != null && len > 0) {
 			unsafe(
-				getUnsafe(null),
+				getRawUnsafe(null),
 				cbuf,
 				offset,
 				len,
@@ -420,14 +429,17 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * {@inheritDoc}
 	 *
 	 * @return  {@code this} document
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public D unsafe(CharSequence csq) throws IOException {
 		if(csq != null) {
 			int len = csq.length();
 			if(len > 0) {
 				unsafe(
-					getUnsafe(null),
+					getRawUnsafe(null),
 					csq,
 					csq.charAt(len - 1) == NL
 				);
@@ -457,12 +469,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * {@inheritDoc}
 	 *
 	 * @return  {@code this} document
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public D unsafe(CharSequence csq, int start, int end) throws IOException {
 		if(csq != null && end > start) {
 			unsafe(
-				getUnsafe(null),
+				getRawUnsafe(null),
 				csq,
 				start,
 				end,
@@ -493,10 +508,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * {@inheritDoc}
 	 *
 	 * @return  {@code this} document
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public D unsafe(Object unsafe) throws IOException {
-		return unsafe(getUnsafe(null), unsafe);
+		return unsafe(getRawUnsafe(null), unsafe);
 	}
 
 	@SuppressWarnings("UseSpecificCatch")
@@ -560,10 +578,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  {@code this} document
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public <Ex extends Throwable> D unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
-		return unsafe(getUnsafe(null), unsafe);
+		return unsafe(getRawUnsafe(null), unsafe);
 	}
 
 	<Ex extends Throwable> D unsafe(Writer out, IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
@@ -574,10 +595,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * {@inheritDoc}
 	 *
 	 * @return  {@code this} document
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	@Override
 	public D unsafe(Writable unsafe) throws IOException {
-		return unsafe(getUnsafe(null), unsafe);
+		return unsafe(getRawUnsafe(null), unsafe);
 	}
 
 	D unsafe(Writer out, Writable unsafe) throws IOException {
@@ -602,9 +626,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return d;
 	}
 
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
+	 */
+	@Deprecated
 	@Override
 	public <W extends Writer & NoClose> W unsafe() throws IOException {
-		return unsafe(getUnsafe(null));
+		return unsafe(getRawUnsafe(null));
 	}
 
 	/**
@@ -699,7 +729,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D autoNl() throws IOException {
-		return autoNl(getUnsafe(null));
+		return autoNl(getRawUnsafe(null));
 	}
 
 	D autoNl(Writer out) throws IOException {
@@ -718,7 +748,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D autoNli() throws IOException {
-		return autoNli(getUnsafe(null), 0);
+		return autoNli(getRawUnsafe(null), 0);
 	}
 
 	D autoNli(Writer out) throws IOException {
@@ -732,7 +762,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D autoNli(int depthOffset) throws IOException {
-		return autoNli(getUnsafe(null), depthOffset);
+		return autoNli(getRawUnsafe(null), depthOffset);
 	}
 
 	D autoNli(Writer out, int depthOffset) throws IOException {
@@ -768,7 +798,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	@Override
 	@SuppressWarnings("deprecation")
 	public D autoIndent() throws IOException {
-		return autoIndent(getUnsafe(null), 0);
+		return autoIndent(getRawUnsafe(null), 0);
 	}
 
 	D autoIndent(Writer out) throws IOException {
@@ -783,7 +813,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	@Override
 	@SuppressWarnings("deprecation")
 	public D autoIndent(int depthOffset) throws IOException {
-		return autoIndent(getUnsafe(null), depthOffset);
+		return autoIndent(getRawUnsafe(null), depthOffset);
 	}
 
 	D autoIndent(Writer out, int depthOffset) throws IOException {
@@ -1224,7 +1254,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D nbsp() throws IOException {
-		return nbsp(getUnsafe(null));
+		return nbsp(getRawUnsafe(null));
 	}
 
 	D nbsp(Writer out) throws IOException {
@@ -1241,7 +1271,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D nbsp(int count) throws IOException {
-		return nbsp(getUnsafe(null), count);
+		return nbsp(getRawUnsafe(null), count);
 	}
 
 	D nbsp(Writer out, int count) throws IOException {
@@ -1260,7 +1290,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D text(char ch) throws IOException {
-		return text(getUnsafe(null), ch);
+		return text(getRawUnsafe(null), ch);
 	}
 
 	D text(Writer out, char ch) throws IOException {
@@ -1283,7 +1313,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D text(char[] cbuf) throws IOException {
-		return text(getUnsafe(null), cbuf);
+		return text(getRawUnsafe(null), cbuf);
 	}
 
 	D text(Writer out, char[] cbuf) throws IOException {
@@ -1316,7 +1346,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D text(char[] cbuf, int offset, int len) throws IOException {
-		return text(getUnsafe(null), cbuf, offset, len);
+		return text(getRawUnsafe(null), cbuf, offset, len);
 	}
 
 	D text(Writer out, char[] cbuf, int offset, int len) throws IOException {
@@ -1346,7 +1376,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D text(CharSequence csq) throws IOException {
-		return text(getUnsafe(null), csq);
+		return text(getRawUnsafe(null), csq);
 	}
 
 	/**
@@ -1406,7 +1436,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D text(CharSequence csq, int start, int end) throws IOException {
-		return text(getUnsafe(null), csq, start, end);
+		return text(getRawUnsafe(null), csq, start, end);
 	}
 
 	/**
@@ -1466,7 +1496,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public D text(Object text) throws IOException {
-		return text(getUnsafe(null), text);
+		return text(getRawUnsafe(null), text);
 	}
 // TODO: Compare to text() implemented by AnyTextContent, to see how it handles markuptype=text within TextContent, and how to have <option> only do markup when value attribute is set.
 	@SuppressWarnings("UseSpecificCatch")
@@ -1530,7 +1560,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public <Ex extends Throwable> D text(IOSupplierE<?, Ex> text) throws IOException, Ex {
-		return text(getUnsafe(null), text);
+		return text(getRawUnsafe(null), text);
 	}
 
 	<Ex extends Throwable> D text(Writer out, IOSupplierE<?, Ex> text) throws IOException, Ex {
@@ -1546,7 +1576,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	@Override
 	public <Ex extends Throwable> D text(TextWritable<Ex> text) throws IOException, Ex {
-		return text(getUnsafe(null), text);
+		return text(getRawUnsafe(null), text);
 	}
 
 	<Ex extends Throwable> D text(Writer out, TextWritable<Ex> text) throws IOException, Ex {
@@ -1561,7 +1591,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 
 	@Override
 	public TextWriter text() throws IOException {
-		return text(getUnsafe(null));
+		return text(getRawUnsafe(null));
 	}
 
 	TextWriter text(Writer out) throws IOException {
@@ -1591,7 +1621,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	public D xmlDeclaration() throws IOException {
 		Charset documentEncoding = encodingContext.getCharacterEncoding();
-		if(encodingContext.getDoctype().xmlDeclaration(encodingContext.getSerialization(), documentEncoding, getUnsafe(null))) {
+		if(encodingContext.getDoctype().xmlDeclaration(encodingContext.getSerialization(), documentEncoding, getRawUnsafe(null))) {
 			setAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -1602,7 +1632,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @see Doctype#doctype(com.aoapps.encoding.Serialization, java.lang.Appendable)
 	 */
 	public D doctype() throws IOException {
-		if(encodingContext.getDoctype().doctype(encodingContext.getSerialization(), getUnsafe(null))) {
+		if(encodingContext.getDoctype().doctype(encodingContext.getSerialization(), getRawUnsafe(null))) {
 			setAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;

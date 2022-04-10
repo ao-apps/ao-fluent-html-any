@@ -62,10 +62,11 @@ public abstract class Normal_c<
 	}
 
 	@Override
+	@SuppressWarnings("deprecation")
 	public PC __() throws IOException {
 		D document = element.document;
 		if(element.isContentIndented()) document.decDepth();
-		element.writeClose(document.getUnsafe(null), false);
+		element.writeClose(document.getRawUnsafe(null), false);
 		return element.pc;
 	}
 }

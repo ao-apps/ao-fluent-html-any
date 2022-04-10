@@ -194,7 +194,7 @@ public abstract class AnySCRIPT<
 	 * @see Doctype#scriptType(java.lang.Appendable)
 	 */
 	protected E type() throws IOException {
-		Writer out = document.getUnsafe(null);
+		Writer out = document.getRawUnsafe(null);
 		// TODO: Check didBody here and other attributes, perhaps in some central attribute registry that detects duplicate attributes, too
 		if(
 			type == null
@@ -284,7 +284,7 @@ public abstract class AnySCRIPT<
 		}
 		script = Coercion.nullIfEmpty(script);
 		if(script != null) {
-			Writer out = document.getUnsafe(null);
+			Writer out = document.getRawUnsafe(null);
 			startBody(out);
 			// Allow text markup from translations
 			MediaType mediaType = getMediaType();
@@ -318,13 +318,13 @@ public abstract class AnySCRIPT<
 		if(script != null) {
 			MediaType newOutputType = getMediaType();
 			MediaEncoder encoder = getMediaEncoder(newOutputType);
-			Writer out = document.getUnsafe(null);
+			Writer out = document.getRawUnsafe(null);
 			startBody(out);
 			script.writeTo(
 				newOutputType.newMediaWriter(
 					document.encodingContext,
 					encoder,
-					document.getUnsafe(null),
+					document.getRawUnsafe(null),
 					false,
 					document,
 					mediaWriter -> true, // isNoClose
@@ -346,7 +346,7 @@ public abstract class AnySCRIPT<
 	public JavaScriptWriter _c() throws IOException {
 		MediaType newOutputType = getMediaType();
 		MediaEncoder encoder = getMediaEncoder(newOutputType);
-		Writer out = document.getUnsafe(null);
+		Writer out = document.getRawUnsafe(null);
 		startBody(out);
 		// Invoking via newMediaWriter to support subclasses of JavaScriptWriter
 		return (JavaScriptWriter)newOutputType.newMediaWriter(
@@ -366,7 +366,7 @@ public abstract class AnySCRIPT<
 	 * @return  The parent content model this element is within
 	 */
 	public PC __() throws IOException {
-		Writer out = document.getUnsafe(null);
+		Writer out = document.getRawUnsafe(null);
 		if(!didBody) {
 			document.autoIndent(out).unsafe(out, "></script>", false);
 		} else {

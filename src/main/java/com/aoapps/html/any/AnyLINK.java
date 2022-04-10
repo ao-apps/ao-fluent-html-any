@@ -156,7 +156,7 @@ public abstract class AnyLINK<
 			if(this.rel != null) {
 				throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
 			}
-			Writer out = document.getUnsafe(null);
+			Writer out = document.getRawUnsafe(null);
 			if(document.getAtnl()) {
 				document.autoIndent(out, 1);
 				out.write("itemprop=\"");
@@ -380,7 +380,7 @@ public abstract class AnyLINK<
 				&& ContentType.CSS.equalsIgnoreCase(type)
 			)
 		) {
-			Writer out = document.getUnsafe(null);
+			Writer out = document.getRawUnsafe(null);
 			if(document.getAtnl()) {
 				document.autoIndent(out, 1);
 				out.write("type=\"");
@@ -419,7 +419,7 @@ public abstract class AnyLINK<
 			&& rel != null
 			&& rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
 		) {
-			Writer out = document.getUnsafe(null);
+			Writer out = document.getRawUnsafe(null);
 			if(document.getAtnl()) {
 				document.autoIndent(out, 1);
 				out.write("type=\"" + ContentType.CSS + '"');

@@ -136,7 +136,8 @@ public interface Autocomplete<
 		AnyDocument<?> document = element.getDocument();
 		Attributes.onlySupportedInHtml5(document, "autocomplete");
 		if(autocomplete != null) {
-			Writer out = document.getUnsafe(null);
+			@SuppressWarnings("deprecation")
+			Writer out = document.getRawUnsafe(null);
 			boolean didOne = false;
 			for(String value : autocomplete) {
 				String trimmed = Strings.trimNullIfEmpty(value);
@@ -174,13 +175,13 @@ public interface Autocomplete<
 	 * @since HTML 5
 	 */
 	@Attributes.Funnel
-	@SuppressWarnings("unchecked") // generic varargs
+	@SuppressWarnings({"unchecked", "deprecation"}) // generic varargs
 	default E autocomplete(V ... autocomplete) throws IOException {
 		@SuppressWarnings("unchecked") E element = (E)this;
 		AnyDocument<?> document = element.getDocument();
 		Attributes.onlySupportedInHtml5(document, "autocomplete");
 		if(autocomplete != null) {
-			Writer out = document.getUnsafe(null);
+			Writer out = document.getRawUnsafe(null);
 			boolean didOne = false;
 			for(V value : autocomplete) {
 				if(value != null) {

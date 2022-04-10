@@ -259,25 +259,31 @@ public interface Content<
 	/**
 	 * {@inheritDoc}
 	 * <p>
-	 * Delegates to {@link AnyDocument#getUnsafe(java.lang.Boolean)}.
+	 * Delegates to {@link AnyDocument#getRawUnsafe(java.lang.Boolean)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
-	default Writer getUnsafe(Boolean endsNewline) throws IllegalStateException {
-		return getDocument().getUnsafe(endsNewline);
+	default Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException {
+		return getDocument().getRawUnsafe(endsNewline);
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * <p>
-	 * Delegates to {@link AnyDocument#getUnsafe()}.
+	 * Delegates to {@link AnyDocument#getRawUnsafe()}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
-	default Writer getUnsafe() throws IllegalStateException {
-		return getDocument().getUnsafe();
+	default Writer getRawUnsafe() throws IllegalStateException {
+		return getDocument().getRawUnsafe();
 	}
 
 	/**
@@ -285,8 +291,11 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(char)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ unsafe(char ch) throws IOException {
 		getDocument().unsafe(ch);
@@ -299,8 +308,11 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(char[])}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ unsafe(char[] cbuf) throws IOException {
 		getDocument().unsafe(cbuf);
@@ -313,8 +325,11 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(char[], int, int)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ unsafe(char[] cbuf, int offset, int len) throws IOException {
 		getDocument().unsafe(cbuf, offset, len);
@@ -327,8 +342,11 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ unsafe(CharSequence csq) throws IOException {
 		getDocument().unsafe(csq);
@@ -341,8 +359,11 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence, int, int)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ unsafe(CharSequence csq, int start, int end) throws IOException {
 		getDocument().unsafe(csq, start, end);
@@ -355,8 +376,11 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(java.lang.Object)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ unsafe(Object unsafe) throws IOException {
 		getDocument().unsafe(unsafe);
@@ -369,8 +393,11 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.function.IOSupplierE)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default <Ex extends Throwable> __ unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
 		getDocument().unsafe(unsafe);
@@ -383,8 +410,11 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.Writable)}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default __ unsafe(Writable unsafe) throws IOException {
 		getDocument().unsafe(unsafe);
@@ -397,8 +427,11 @@ public interface Content<
 	 * <p>
 	 * Delegates to {@link AnyDocument#unsafe()}.
 	 * </p>
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
 	// Note: Must be implemented in AnyDocument to avoid infinite recursion
+	@Deprecated
 	@Override
 	default <W extends Writer & NoClose> W unsafe() throws IOException {
 		return getDocument().unsafe();

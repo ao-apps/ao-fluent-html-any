@@ -96,10 +96,13 @@ public interface DocumentWriter extends Whitespace {
 	 *
 	 * @throws  IllegalStateException  when output has been set to {@code null}.
 	 *
-	 * @see  #getUnsafe()
+	 * @see  #getRawUnsafe()
 	 * @see  AnyDocument#setOut(java.io.Writer)
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
-	Writer getUnsafe(Boolean endsNewline) throws IllegalStateException;
+	@Deprecated
+	Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException;
 
 	/**
 	 * Gets the current writer this document is writing to, which may be used for raw output.
@@ -113,44 +116,62 @@ public interface DocumentWriter extends Whitespace {
 	 *
 	 * @throws  IllegalStateException  when output has been set to {@code null}.
 	 *
-	 * @see  #getUnsafe(java.lang.Boolean)
+	 * @see  #getRawUnsafe(java.lang.Boolean)
 	 * @see  AnyDocument#setOut(java.io.Writer)
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
-	Writer getUnsafe() throws IllegalStateException;
+	@Deprecated
+	Writer getRawUnsafe() throws IllegalStateException;
 
 	/**
 	 * Performs raw output of a single character, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	DocumentWriter unsafe(char ch) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	DocumentWriter unsafe(char[] cbuf) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	DocumentWriter unsafe(char[] cbuf, int offset, int len) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	DocumentWriter unsafe(CharSequence csq) throws IOException;
 
 	/**
 	 * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
 	 *
 	 * @return  {@code this} writer
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	DocumentWriter unsafe(CharSequence csq, int start, int end) throws IOException;
 
 	/**
@@ -160,7 +181,10 @@ public interface DocumentWriter extends Whitespace {
 	 * </p>
 	 *
 	 * @return  {@code this} writer
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	DocumentWriter unsafe(Object unsafe) throws IOException;
 
 	/**
@@ -172,7 +196,10 @@ public interface DocumentWriter extends Whitespace {
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
 	 * @return  {@code this} writer
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	<Ex extends Throwable> DocumentWriter unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex;
 
 	/**
@@ -182,7 +209,10 @@ public interface DocumentWriter extends Whitespace {
 	 * </p>
 	 *
 	 * @return  {@code this} writer
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	DocumentWriter unsafe(Writable unsafe) throws IOException;
 
 	/**
@@ -194,7 +224,10 @@ public interface DocumentWriter extends Whitespace {
 	 *
 	 * @return  a writer for direct output, which will ignore any calls to {@link Writer#close()}
 	 *          to be safely used in a try-with-resources block.
+	 *
+	 * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
 	 */
+	@Deprecated
 	<W extends Writer & NoClose> W unsafe() throws IOException;
 	// </editor-fold>
 
