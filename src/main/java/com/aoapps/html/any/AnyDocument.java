@@ -101,7 +101,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// TODO: Does this need to be thread-safe, such as DocumentEE inside concurrent sub-requests?
 	//       Perhaps need to review thread safety of the API overall?
 	//       Maybe elements and attributes need not be thread-safe, but document and contexts should be?
-	private Writer out;
+	private Writer optimized;
 
 	/**
 	 * @param  out  May be {@code null}, but must be set to a non-null value again before any additional writes.
@@ -115,7 +115,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 */
 	protected AnyDocument(EncodingContext encodingContext, Writer out) {
 		this.encodingContext = encodingContext;
-		this.out = (out == null) ? null : Coercion.optimize(out, null);
+		this.optimized = (out == null) ? null : Coercion.optimize(out, null);
 	}
 
 	/**
@@ -132,7 +132,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * @see  #getRawUnsafe(java.lang.Boolean)
 	 */
 	public void setOut(Writer out) {
-		this.out = (out == null) ? null : Coercion.optimize(out, null);
+		this.optimized = (out == null) ? null : Coercion.optimize(out, null);
 	}
 
 	@Override
@@ -160,8 +160,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return nl(getRawUnsafe(null));
 	}
 
-	D nl(Writer out) throws IOException {
-		out.append(NL);
+	D nl(Writer unsafe) throws IOException {
+		unsafe.append(NL);
 		setAtnl();
 		@SuppressWarnings("unchecked") D d = (D)this;
 		return d;
@@ -173,8 +173,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return nli(getRawUnsafe(null), 0);
 	}
 
-	D nli(Writer out) throws IOException {
-		return nli(out, 0);
+	D nli(Writer unsafe) throws IOException {
+		return nli(unsafe, 0);
 	}
 
 	// Matches WhitespaceWriter.nli(int)
@@ -183,13 +183,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return nli(getRawUnsafe(null), depthOffset);
 	}
 
-	D nli(Writer out, int depthOffset) throws IOException {
+	D nli(Writer unsafe, int depthOffset) throws IOException {
 		int depth_;
 		if(getIndent() && (depth_ = getDepth() + depthOffset) > 0) {
-			WriterUtil.nli(out, depth_);
+			WriterUtil.nli(unsafe, depth_);
 			clearAtnl();
 		} else {
-			out.append(NL);
+			unsafe.append(NL);
 			setAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -203,8 +203,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return indent(getRawUnsafe(null), 0);
 	}
 
-	D indent(Writer out) throws IOException {
-		return indent(out, 0);
+	D indent(Writer unsafe) throws IOException {
+		return indent(unsafe, 0);
 	}
 
 	// Matches WhitespaceWriter.indent(int)
@@ -214,10 +214,10 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return indent(getRawUnsafe(null), depthOffset);
 	}
 
-	D indent(Writer out, int depthOffset) throws IOException {
+	D indent(Writer unsafe, int depthOffset) throws IOException {
 		int depth_;
 		if(getIndent() && (depth_ = getDepth() + depthOffset) > 0) {
-			WriterUtil.indent(out, depth_);
+			WriterUtil.indent(unsafe, depth_);
 			clearAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -290,8 +290,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return sp(getRawUnsafe(null));
 	}
 
-	D sp(Writer out) throws IOException {
-		out.append(SPACE);
+	D sp(Writer unsafe) throws IOException {
+		unsafe.append(SPACE);
 		clearAtnl();
 		@SuppressWarnings("unchecked") D d = (D)this;
 		return d;
@@ -303,9 +303,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return sp(getRawUnsafe(null), count);
 	}
 
-	D sp(Writer out, int count) throws IOException {
+	D sp(Writer unsafe, int count) throws IOException {
 		if(count > 0) {
-			WriterUtil.sp(out, count);
+			WriterUtil.sp(unsafe, count);
 			clearAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -322,7 +322,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	@Deprecated
 	@Override
 	public Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException {
-		Writer unsafe = out;
+		Writer unsafe = optimized;
 		if(unsafe == null) throw new LocalizedIllegalStateException(RESOURCES, "getRawUnsafe.noOut");
 		assert unsafe == Coercion.optimize(unsafe, null);
 		if(endsNewline != null) setAtnl(endsNewline);
@@ -353,8 +353,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return unsafe(getRawUnsafe(null), ch);
 	}
 
-	D unsafe(Writer out, char ch) throws IOException {
-		out.append(ch);
+	D unsafe(Writer unsafe, char ch) throws IOException {
+		unsafe.append(ch);
 		return setAtnl(ch == NL);
 	}
 
@@ -391,9 +391,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 *
 	 * @return  {@code this} document
 	 */
-	D unsafe(Writer out, char[] cbuf, boolean endsNewline) throws IOException {
+	D unsafe(Writer unsafe, char[] cbuf, boolean endsNewline) throws IOException {
 		assert cbuf.length > 0;
-		out.write(cbuf);
+		unsafe.write(cbuf);
 		assert endsNewline == (cbuf[cbuf.length - 1] == NL);
 		return setAtnl(endsNewline);
 	}
@@ -430,9 +430,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 *
 	 * @return  {@code this} document
 	 */
-	D unsafe(Writer out, char[] cbuf, int offset, int len, boolean endsNewline) throws IOException {
+	D unsafe(Writer unsafe, char[] cbuf, int offset, int len, boolean endsNewline) throws IOException {
 		assert len > 0;
-		out.write(cbuf, offset, len);
+		unsafe.write(cbuf, offset, len);
 		assert endsNewline == (cbuf[offset + len - 1] == NL);
 		return setAtnl(endsNewline);
 	}
@@ -470,9 +470,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 *
 	 * @return  {@code this} document
 	 */
-	D unsafe(Writer out, CharSequence csq, boolean endsNewline) throws IOException {
+	D unsafe(Writer unsafe, CharSequence csq, boolean endsNewline) throws IOException {
 		assert csq.length() > 0;
-		out.append(csq);
+		unsafe.append(csq);
 		assert endsNewline == (csq.charAt(csq.length() - 1) == NL);
 		return setAtnl(endsNewline);
 	}
@@ -509,9 +509,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 *
 	 * @return  {@code this} document
 	 */
-	D unsafe(Writer out, CharSequence csq, int start, int end, boolean endsNewline) throws IOException {
+	D unsafe(Writer unsafe, CharSequence csq, int start, int end, boolean endsNewline) throws IOException {
 		assert end > start;
-		out.append(csq, start, end);
+		unsafe.append(csq, start, end);
 		assert endsNewline == (csq.charAt(end - 1) == NL);
 		return setAtnl(endsNewline);
 	}
@@ -530,25 +530,25 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 
 	@SuppressWarnings("UseSpecificCatch")
-	D unsafe(Writer out, Object unsafe) throws IOException {
+	D unsafe(Writer unsafe, Object value) throws IOException {
 		// Support Optional
-		while(unsafe instanceof Optional) {
-			unsafe = ((Optional<?>)unsafe).orElse(null);
+		while(value instanceof Optional) {
+			value = ((Optional<?>)value).orElse(null);
 		}
-		while(unsafe instanceof IOSupplierE<?, ?>) {
+		while(value instanceof IOSupplierE<?, ?>) {
 			try {
-				unsafe = ((IOSupplierE<?, ?>)unsafe).get();
+				value = ((IOSupplierE<?, ?>)value).get();
 			} catch(Throwable t) {
 				throw Throwables.wrap(t, IOException.class, IOException::new);
 			}
 		}
-		if(unsafe != null) {
-			if(unsafe instanceof char[]) {
-				char[] cbuf = (char[])unsafe;
+		if(value != null) {
+			if(value instanceof char[]) {
+				char[] cbuf = (char[])value;
 				int len = cbuf.length;
 				if(len > 0) {
 					return unsafe(
-						out,
+						unsafe,
 						cbuf,
 						cbuf[len - 1] == NL
 					);
@@ -558,12 +558,12 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 					return d;
 				}
 			}
-			if(unsafe instanceof CharSequence) {
-				CharSequence csq = (CharSequence)unsafe;
+			if(value instanceof CharSequence) {
+				CharSequence csq = (CharSequence)value;
 				int len = csq.length();
 				if(len > 0) {
 					return unsafe(
-						out,
+						unsafe,
 						csq,
 						csq.charAt(len - 1) == NL
 					);
@@ -573,11 +573,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 					return d;
 				}
 			}
-			if(unsafe instanceof Writable) {
-				return unsafe(out, (Writable)unsafe);
+			if(value instanceof Writable) {
+				return unsafe(unsafe, (Writable)value);
 			}
 			// Allow no markup from translations
-			Coercion.write(unsafe, out);
+			Coercion.write(value, unsafe);
 			clearAtnl(); // Unknown, safe to assume not at newline
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -599,8 +599,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return unsafe(getRawUnsafe(null), unsafe);
 	}
 
-	<Ex extends Throwable> D unsafe(Writer out, IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
-		return unsafe(out, (unsafe == null) ? null : unsafe.get());
+	<Ex extends Throwable> D unsafe(Writer unsafe, IOSupplierE<?, Ex> value) throws IOException, Ex {
+		return unsafe(unsafe, (value == null) ? null : value.get());
 	}
 
 	/**
@@ -616,21 +616,21 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return unsafe(getRawUnsafe(null), unsafe);
 	}
 
-	D unsafe(Writer out, Writable unsafe) throws IOException {
-		if(unsafe != null) {
-			if(unsafe.isFastToString()) {
-				String str = unsafe.toString();
+	D unsafe(Writer unsafe, Writable value) throws IOException {
+		if(value != null) {
+			if(value.isFastToString()) {
+				String str = value.toString();
 				int len = str.length();
 				if(len > 0) {
 					unsafe(
-						out,
+						unsafe,
 						str,
 						str.charAt(len - 1) == NL
 					);
 				}
 			} else {
-				try (Writer _out = unsafe(out)) {
-					unsafe.writeTo(_out);
+				try (Writer _out = unsafe(unsafe)) {
+					value.writeTo(_out);
 				}
 			}
 		}
@@ -653,9 +653,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * Calls {@link #clearAtnl()} then wraps the given writer via {@link NoCloseMediaValidator#wrap(java.io.Writer)}
 	 * to ignore against calls to {@link Writer#close()}.
 	 */
-	<W extends Writer & NoClose> W unsafe(Writer out) throws IOException {
+	<W extends Writer & NoClose> W unsafe(Writer unsafe) throws IOException {
 		clearAtnl(); // Unknown, safe to assume not at newline
-		return NoCloseMediaValidator.wrap(out);
+		return NoCloseMediaValidator.wrap(unsafe);
 	}
 	// </editor-fold>
 
@@ -744,9 +744,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return autoNl(getRawUnsafe(null));
 	}
 
-	D autoNl(Writer out) throws IOException {
+	D autoNl(Writer unsafe) throws IOException {
 		if(getAutonli() && !getAtnl()) {
-			out.append(NL);
+			unsafe.append(NL);
 			setAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -763,8 +763,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return autoNli(getRawUnsafe(null), 0);
 	}
 
-	D autoNli(Writer out) throws IOException {
-		return autoNli(out, 0);
+	D autoNli(Writer unsafe) throws IOException {
+		return autoNli(unsafe, 0);
 	}
 
 	/**
@@ -777,23 +777,23 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return autoNli(getRawUnsafe(null), depthOffset);
 	}
 
-	D autoNli(Writer out, int depthOffset) throws IOException {
+	D autoNli(Writer unsafe, int depthOffset) throws IOException {
 		if(getAutonli()) {
 			if(getAtnl()) {
 				// Already at newline, indentation only
 				int d;
 				if(getIndent() && (d = getDepth() + depthOffset) > 0) {
-					WriterUtil.indent(out, d);
+					WriterUtil.indent(unsafe, d);
 					clearAtnl();
 				}
 			} else {
 				// Combined newline and indentation
 				int d;
 				if(getIndent() && (d = getDepth() + depthOffset) > 0) {
-					WriterUtil.nli(out, d);
+					WriterUtil.nli(unsafe, d);
 					// Already not at newline: clearAtnl();
 				} else {
-					out.append(NL);
+					unsafe.append(NL);
 					setAtnl();
 				}
 			}
@@ -813,8 +813,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return autoIndent(getRawUnsafe(null), 0);
 	}
 
-	D autoIndent(Writer out) throws IOException {
-		return autoIndent(out, 0);
+	D autoIndent(Writer unsafe) throws IOException {
+		return autoIndent(unsafe, 0);
 	}
 
 	/**
@@ -828,10 +828,10 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return autoIndent(getRawUnsafe(null), depthOffset);
 	}
 
-	D autoIndent(Writer out, int depthOffset) throws IOException {
+	D autoIndent(Writer unsafe, int depthOffset) throws IOException {
 		int depth_;
 		if(getAutonli() && getIndent() && getAtnl() && (depth_ = getDepth() + depthOffset) > 0) {
-			WriterUtil.indent(out, depth_);
+			WriterUtil.indent(unsafe, depth_);
 			clearAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -1010,20 +1010,20 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	/**
 	 * Appends a character sequence while doing auto-indent and tracking end-of-line.
 	 */
-	private void appendCharSequence(Writer out, CharSequence csq, int start, int end) throws IOException {
+	private void appendCharSequence(Writer unsafe, CharSequence csq, int start, int end) throws IOException {
 		if(end > start) {
 			int last = end - 1;
 			if(csq.charAt(last) == NL) {
 				if(start == last) {
-					out.write(NL);
+					unsafe.write(NL);
 				} else {
-					autoIndent(out);
-					out.append(csq, start, end);
+					autoIndent(unsafe);
+					unsafe.append(csq, start, end);
 				}
 				setAtnl();
 			} else {
-				autoIndent(out);
-				out.append(csq, start, end);
+				autoIndent(unsafe);
+				unsafe.append(csq, start, end);
 				clearAtnl();
 			}
 		}
@@ -1272,8 +1272,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return nbsp(getRawUnsafe(null));
 	}
 
-	D nbsp(Writer out) throws IOException {
-		out.append(NBSP);
+	D nbsp(Writer unsafe) throws IOException {
+		unsafe.append(NBSP);
 		clearAtnl();
 		@SuppressWarnings("unchecked") D d = (D)this;
 		return d;
@@ -1289,9 +1289,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return nbsp(getRawUnsafe(null), count);
 	}
 
-	D nbsp(Writer out, int count) throws IOException {
+	D nbsp(Writer unsafe, int count) throws IOException {
 		if(count > 0) {
-			WriterUtil.nbsp(out, count);
+			WriterUtil.nbsp(unsafe, count);
 			clearAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -1308,13 +1308,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getRawUnsafe(null), ch);
 	}
 
-	D text(Writer out, char ch) throws IOException {
+	D text(Writer unsafe, char ch) throws IOException {
 		if(ch == NL) {
-			out.write(NL);
+			unsafe.write(NL);
 			setAtnl();
 		} else {
-			autoIndent(out);
-			encodeTextInXhtml(ch, out);
+			autoIndent(unsafe);
+			encodeTextInXhtml(ch, unsafe);
 			clearAtnl();
 		}
 		@SuppressWarnings("unchecked") D d = (D)this;
@@ -1331,21 +1331,21 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getRawUnsafe(null), cbuf);
 	}
 
-	D text(Writer out, char[] cbuf) throws IOException {
+	D text(Writer unsafe, char[] cbuf) throws IOException {
 		if(cbuf != null) {
 			int len = cbuf.length;
 			if(len > 0) {
 				if(cbuf[len - 1] == NL) {
 					if(len == 1) {
-						out.write(NL);
+						unsafe.write(NL);
 					} else {
-						autoIndent(out);
-						encodeTextInXhtml(cbuf, out);
+						autoIndent(unsafe);
+						encodeTextInXhtml(cbuf, unsafe);
 					}
 					setAtnl();
 				} else {
-					autoIndent(out);
-					encodeTextInXhtml(cbuf, out);
+					autoIndent(unsafe);
+					encodeTextInXhtml(cbuf, unsafe);
 					clearAtnl();
 				}
 			}
@@ -1364,19 +1364,19 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getRawUnsafe(null), cbuf, offset, len);
 	}
 
-	D text(Writer out, char[] cbuf, int offset, int len) throws IOException {
+	D text(Writer unsafe, char[] cbuf, int offset, int len) throws IOException {
 		if(cbuf != null && len > 0) {
 			if(cbuf[offset + len - 1] == NL) {
 				if(len == 1) {
-					out.write(NL);
+					unsafe.write(NL);
 				} else {
-					autoIndent(out);
-					encodeTextInXhtml(cbuf, offset, len, out);
+					autoIndent(unsafe);
+					encodeTextInXhtml(cbuf, offset, len, unsafe);
 				}
 				setAtnl();
 			} else {
-				autoIndent(out);
-				encodeTextInXhtml(cbuf, offset, len, out);
+				autoIndent(unsafe);
+				encodeTextInXhtml(cbuf, offset, len, unsafe);
 				clearAtnl();
 			}
 		}
@@ -1397,26 +1397,26 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	/**
 	 * Encodes a character sequence while doing auto-indent and tracking end-of-line.
 	 */
-	private void encodeCharSequence(Writer out, CharSequence csq) throws IOException {
+	private void encodeCharSequence(Writer unsafe, CharSequence csq) throws IOException {
 		int len = csq.length();
 		if(len > 0) {
 			if(csq.charAt(len - 1) == NL) {
 				if(len == 1) {
-					out.write(NL);
+					unsafe.write(NL);
 				} else {
-					autoIndent(out);
-					encodeTextInXhtml(csq, out);
+					autoIndent(unsafe);
+					encodeTextInXhtml(csq, unsafe);
 				}
 				setAtnl();
 			} else {
-				autoIndent(out);
-				encodeTextInXhtml(csq, out);
+				autoIndent(unsafe);
+				encodeTextInXhtml(csq, unsafe);
 				clearAtnl();
 			}
 		}
 	}
 
-	D text(Writer out, CharSequence csq) throws IOException {
+	D text(Writer unsafe, CharSequence csq) throws IOException {
 		// Allow text markup from translations
 		if(csq != null) {
 			// Bypass encoder for markup
@@ -1426,16 +1426,16 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 				// Other types that will not be converted to String for bundle lookups
 				|| !(csq instanceof String)
 			) {
-				encodeCharSequence(out, csq);
+				encodeCharSequence(unsafe, csq);
 			} else {
 				BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
 				if(lookupMarkup != null) {
-					autoIndent(out);
-					lookupMarkup.appendPrefixTo(MarkupType.XHTML, out);
+					autoIndent(unsafe);
+					lookupMarkup.appendPrefixTo(MarkupType.XHTML, unsafe);
 				}
-				encodeCharSequence(out, csq);
+				encodeCharSequence(unsafe, csq);
 				if(lookupMarkup != null) {
-					lookupMarkup.appendSuffixTo(MarkupType.XHTML, out);
+					lookupMarkup.appendSuffixTo(MarkupType.XHTML, unsafe);
 					clearAtnl(); // Unknown, safe to assume not at newline
 				}
 			}
@@ -1457,26 +1457,26 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	/**
 	 * Encodes a character sequence while doing auto-indent and tracking end-of-line.
 	 */
-	private void encodeCharSequence(Writer out, CharSequence csq, int start, int end) throws IOException {
+	private void encodeCharSequence(Writer unsafe, CharSequence csq, int start, int end) throws IOException {
 		if(end > start) {
 			int last = end - 1;
 			if(csq.charAt(last) == NL) {
 				if(start == last) {
-					out.write(NL);
+					unsafe.write(NL);
 				} else {
-					autoIndent(out);
-					encodeTextInXhtml(csq, start, end, out);
+					autoIndent(unsafe);
+					encodeTextInXhtml(csq, start, end, unsafe);
 				}
 				setAtnl();
 			} else {
-				autoIndent(out);
-				encodeTextInXhtml(csq, start, end, out);
+				autoIndent(unsafe);
+				encodeTextInXhtml(csq, start, end, unsafe);
 				clearAtnl();
 			}
 		}
 	}
 
-	D text(Writer out, CharSequence csq, int start, int end) throws IOException {
+	D text(Writer unsafe, CharSequence csq, int start, int end) throws IOException {
 		// Allow text markup from translations
 		if(csq != null) {
 			// Bypass encoder for markup
@@ -1486,16 +1486,16 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 				// Other types that will not be converted to String for bundle lookups
 				|| !(csq instanceof String)
 			) {
-				encodeCharSequence(out, csq, start, end);
+				encodeCharSequence(unsafe, csq, start, end);
 			} else {
 				BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
 				if(lookupMarkup != null) {
-					autoIndent(out);
-					lookupMarkup.appendPrefixTo(MarkupType.XHTML, out);
+					autoIndent(unsafe);
+					lookupMarkup.appendPrefixTo(MarkupType.XHTML, unsafe);
 				}
-				encodeCharSequence(out, csq, start, end);
+				encodeCharSequence(unsafe, csq, start, end);
 				if(lookupMarkup != null) {
-					lookupMarkup.appendSuffixTo(MarkupType.XHTML, out);
+					lookupMarkup.appendSuffixTo(MarkupType.XHTML, unsafe);
 					clearAtnl(); // Unknown, safe to assume not at newline
 				}
 			}
@@ -1515,7 +1515,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	}
 // TODO: Compare to text() implemented by AnyTextContent, to see how it handles markuptype=text within TextContent, and how to have <option> only do markup when value attribute is set.
 	@SuppressWarnings("UseSpecificCatch")
-	D text(Writer out, Object text) throws IOException {
+	D text(Writer unsafe, Object text) throws IOException {
 		// Support Optional
 		while(text instanceof Optional) {
 			text = ((Optional<?>)text).orElse(null);
@@ -1529,26 +1529,26 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		}
 		if(text != null) {
 			if(text instanceof char[]) {
-				return text(out, (char[])text);
+				return text(unsafe, (char[])text);
 			}
 			if(text instanceof CharSequence) {
-				return text(out, (CharSequence)text);
+				return text(unsafe, (CharSequence)text);
 			}
 			if(text instanceof Writable) {
 				Writable writable = (Writable)text;
 				if(writable.isFastToString()) {
-					return text(out, writable.toString());
+					return text(unsafe, writable.toString());
 				}
 			}
 			if(text instanceof TextWritable) {
 				try {
-					return text(out, (TextWritable<?>)text);
+					return text(unsafe, (TextWritable<?>)text);
 				} catch(Throwable t) {
 					throw Throwables.wrap(t, IOException.class, IOException::new);
 				}
 			}
 			// Allow text markup from translations
-			autoIndent(out);
+			autoIndent(unsafe);
 			// TODO: Way to temp-disable markups from within OPTION (without value set) and TEXTAREA, or to make HTML comment mark-up only.  All places from AnyTextContent
 			MediaEncoder encoder = textInXhtmlEncoder;
 			assert !encoder.isBuffered() : "Is OK to bypass encoder for markup";
@@ -1558,7 +1558,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 				false,
 				encoder,
 				true,
-				out
+				unsafe
 			);
 			clearAtnl(); // Unknown, safe to assume not at newline
 		}
@@ -1578,8 +1578,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getRawUnsafe(null), text);
 	}
 
-	<Ex extends Throwable> D text(Writer out, IOSupplierE<?, Ex> text) throws IOException, Ex {
-		return text(out, (text == null) ? null : text.get());
+	<Ex extends Throwable> D text(Writer unsafe, IOSupplierE<?, Ex> text) throws IOException, Ex {
+		return text(unsafe, (text == null) ? null : text.get());
 	}
 
 	/**
@@ -1594,9 +1594,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getRawUnsafe(null), text);
 	}
 
-	<Ex extends Throwable> D text(Writer out, TextWritable<Ex> text) throws IOException, Ex {
+	<Ex extends Throwable> D text(Writer unsafe, TextWritable<Ex> text) throws IOException, Ex {
 		if(text != null) {
-			try (TextWriter _out = text(out)) {
+			try (TextWriter _out = text(unsafe)) {
 				text.writeTo(_out);
 			}
 		}
@@ -1609,14 +1609,14 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 		return text(getRawUnsafe(null));
 	}
 
-	TextWriter text(Writer out) throws IOException {
-		autoIndent(out);
+	TextWriter text(Writer unsafe) throws IOException {
+		autoIndent(unsafe);
 		clearAtnl(); // Unknown, safe to assume not at newline
 		@SuppressWarnings("unchecked") D d = (D)this;
 		return new TextWriter(
 			d.encodingContext,
 			textInXhtmlEncoder,
-			out,
+			unsafe,
 			false,
 			d,
 			mediaWriter -> true, // isNoClose

@@ -74,14 +74,14 @@ public abstract class AnyOPTION<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<option", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<option", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void doBeforeBody(Writer out) throws IOException {
+	protected void doBeforeBody(Writer unsafe) throws IOException {
 		oldAutonli = document.getAutonli();
 		if(oldAutonli) document.setAutonli(false);
 		oldIndent = document.getIndent();
@@ -160,16 +160,16 @@ public abstract class AnyOPTION<
 
 	// TODO: How to ensure markup type NONE when no value set or TEXT when set?
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
 		document
 			.setDepth(oldDepth)
 			.setIndent(oldIndent)
 			.setAutonli(oldAutonli);
 		if(closeAttributes) {
-			document.autoIndent(out).unsafe(out, "></option>", false);
+			document.autoIndent(unsafe).unsafe(unsafe, "></option>", false);
 		} else {
-			document.unsafe(out, "</option>", false);
+			document.unsafe(unsafe, "</option>", false);
 		}
-		document.autoNl(out);
+		document.autoNl(unsafe);
 	}
 }

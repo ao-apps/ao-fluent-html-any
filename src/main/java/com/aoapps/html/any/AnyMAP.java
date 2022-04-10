@@ -49,14 +49,14 @@ public abstract class AnyMAP<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<map", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, "<map", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
-		document.autoIndent(out).unsafe(out, closeAttributes ? "></map>" : "</map>", false);
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></map>" : "</map>", false);
 	}
 }

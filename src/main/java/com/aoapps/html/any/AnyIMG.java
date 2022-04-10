@@ -70,8 +70,8 @@ public abstract class AnyIMG<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<img", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, "<img", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}

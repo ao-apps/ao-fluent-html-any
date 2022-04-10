@@ -180,8 +180,8 @@ public abstract class AnySCRIPT<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<script", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<script", false);
 		E s = type();
 		assert s == this;
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -194,7 +194,7 @@ public abstract class AnySCRIPT<
 	 * @see Doctype#scriptType(java.lang.Appendable)
 	 */
 	protected E type() throws IOException {
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		// TODO: Check didBody here and other attributes, perhaps in some central attribute registry that detects duplicate attributes, too
 		if(
 			type == null
@@ -206,23 +206,23 @@ public abstract class AnySCRIPT<
 			if(len > 0) {
 				if(document.getAtnl()) {
 					assert typeAttr.charAt(0) == ' ';
-					document.autoIndent(out, 1);
-					out.write(typeAttr, 1, len - 1);
+					document.autoIndent(unsafe, 1);
+					unsafe.write(typeAttr, 1, len - 1);
 					document.clearAtnl();
 				} else {
-					out.write(typeAttr);
+					unsafe.write(typeAttr);
 				}
 			}
 		} else {
 			if(document.getAtnl()) {
-				document.autoIndent(out, 1);
-				out.write("type=\"");
+				document.autoIndent(unsafe, 1);
+				unsafe.write("type=\"");
 				document.clearAtnl();
 			} else {
-				out.write(" type=\"");
+				unsafe.write(" type=\"");
 			}
-			encodeTextInXhtmlAttribute(type, out);
-			out.append('"');
+			encodeTextInXhtmlAttribute(type, unsafe);
+			unsafe.append('"');
 		}
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
@@ -250,11 +250,11 @@ public abstract class AnySCRIPT<
 
 	private boolean didBody;
 
-	protected void startBody(Writer out) throws IOException {
+	protected void startBody(Writer unsafe) throws IOException {
 		if(!didBody) {
 			document
-				.autoIndent(out)
-				.unsafe(out, doCdata() ? (">//<![CDATA[" + NL) : (">" + NL), true)
+				.autoIndent(unsafe)
+				.unsafe(unsafe, doCdata() ? (">//<![CDATA[" + NL) : (">" + NL), true)
 				.incDepth();
 			didBody = true;
 		}
@@ -284,8 +284,8 @@ public abstract class AnySCRIPT<
 		}
 		script = Coercion.nullIfEmpty(script);
 		if(script != null) {
-			Writer out = document.getRawUnsafe(null);
-			startBody(out);
+			Writer unsafe = document.getRawUnsafe(null);
+			startBody(unsafe);
 			// Allow text markup from translations
 			MediaType mediaType = getMediaType();
 			MarkupCoercion.write(
@@ -294,7 +294,7 @@ public abstract class AnySCRIPT<
 				true,
 				getMediaEncoder(mediaType),
 				false,
-				out
+				unsafe
 			);
 			document.clearAtnl(); // Unknown, safe to assume not at newline
 		}
@@ -318,8 +318,8 @@ public abstract class AnySCRIPT<
 		if(script != null) {
 			MediaType newOutputType = getMediaType();
 			MediaEncoder encoder = getMediaEncoder(newOutputType);
-			Writer out = document.getRawUnsafe(null);
-			startBody(out);
+			Writer unsafe = document.getRawUnsafe(null);
+			startBody(unsafe);
 			script.writeTo(
 				newOutputType.newMediaWriter(
 					document.encodingContext,
@@ -346,13 +346,13 @@ public abstract class AnySCRIPT<
 	public JavaScriptWriter _c() throws IOException {
 		MediaType newOutputType = getMediaType();
 		MediaEncoder encoder = getMediaEncoder(newOutputType);
-		Writer out = document.getRawUnsafe(null);
-		startBody(out);
+		Writer unsafe = document.getRawUnsafe(null);
+		startBody(unsafe);
 		// Invoking via newMediaWriter to support subclasses of JavaScriptWriter
 		return (JavaScriptWriter)newOutputType.newMediaWriter(
 			document.encodingContext,
 			encoder,
-			out,
+			unsafe,
 			false,
 			document,
 			mediaWriter -> false, // !isNoClose
@@ -366,13 +366,13 @@ public abstract class AnySCRIPT<
 	 * @return  The parent content model this element is within
 	 */
 	public PC __() throws IOException {
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		if(!didBody) {
-			document.autoIndent(out).unsafe(out, "></script>", false);
+			document.autoIndent(unsafe).unsafe(unsafe, "></script>", false);
 		} else {
-			document.decDepth().nli(out).unsafe(out, doCdata() ? "//]]></script>" : "</script>", false);
+			document.decDepth().nli(unsafe).unsafe(unsafe, doCdata() ? "//]]></script>" : "</script>", false);
 		}
-		document.autoNl(out);
+		document.autoNl(unsafe);
 		return pc;
 	}
 }

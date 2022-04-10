@@ -53,15 +53,15 @@ public abstract class AnyABBR<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<abbr", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, "<abbr", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
-		document.autoIndent(out).unsafe(out, closeAttributes ? "></abbr>" : "</abbr>", false);
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></abbr>" : "</abbr>", false);
 	}
 
 	/**

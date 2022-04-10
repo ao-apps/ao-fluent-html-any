@@ -53,14 +53,14 @@ public abstract class AnyMARK<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<mark", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, "<mark", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
-		document.autoIndent(out).unsafe(out, closeAttributes ? "></mark>" : "</mark>", false);
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></mark>" : "</mark>", false);
 	}
 }

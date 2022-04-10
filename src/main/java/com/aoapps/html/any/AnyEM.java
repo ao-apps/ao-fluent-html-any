@@ -50,14 +50,14 @@ public abstract class AnyEM<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<em", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, "<em", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
-		document.autoIndent(out).unsafe(out, closeAttributes ? "></em>" : "</em>", false);
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></em>" : "</em>", false);
 	}
 }

@@ -50,14 +50,14 @@ public abstract class AnyI<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<i", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, "<i", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
-		document.autoIndent(out).unsafe(out, closeAttributes ? "></i>" : "</i>", false);
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></i>" : "</i>", false);
 	}
 }

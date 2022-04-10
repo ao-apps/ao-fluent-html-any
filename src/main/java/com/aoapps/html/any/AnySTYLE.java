@@ -156,8 +156,8 @@ public abstract class AnySTYLE<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<style", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<style", false);
 		E s = type();
 		assert s == this;
 		@SuppressWarnings("unchecked") E element = (E)this;
@@ -170,7 +170,7 @@ public abstract class AnySTYLE<
 	 * @see Doctype#styleType(java.lang.Appendable)
 	 */
 	protected E type() throws IOException {
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		if(
 			type == null
 			|| type.equals(ContentType.CSS)
@@ -180,23 +180,23 @@ public abstract class AnySTYLE<
 			if(len > 0) {
 				if(document.getAtnl()) {
 					assert typeAttr.charAt(0) == ' ';
-					document.autoIndent(out, 1);
-					out.write(typeAttr, 1, len - 1);
+					document.autoIndent(unsafe, 1);
+					unsafe.write(typeAttr, 1, len - 1);
 					document.clearAtnl();
 				} else {
-					out.write(typeAttr);
+					unsafe.write(typeAttr);
 				}
 			}
 		} else {
 			if(document.getAtnl()) {
-				document.autoIndent(out, 1);
-				out.write("type=\"");
+				document.autoIndent(unsafe, 1);
+				unsafe.write("type=\"");
 				document.clearAtnl();
 			} else {
-				out.write(" type=\"");
+				unsafe.write(" type=\"");
 			}
-			encodeTextInXhtmlAttribute(type, out);
-			out.append('"');
+			encodeTextInXhtmlAttribute(type, unsafe);
+			unsafe.append('"');
 		}
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
@@ -216,11 +216,11 @@ public abstract class AnySTYLE<
 
 	private boolean didBody;
 
-	protected void startBody(Writer out) throws IOException {
+	protected void startBody(Writer unsafe) throws IOException {
 		if(!didBody) {
 			document
-				.autoIndent(out)
-				.unsafe(out, doCdata() ? (">/*<![CDATA[*/" + NL) : (">" + NL), true)
+				.autoIndent(unsafe)
+				.unsafe(unsafe, doCdata() ? (">/*<![CDATA[*/" + NL) : (">" + NL), true)
 				.incDepth();
 			didBody = true;
 		}
@@ -251,8 +251,8 @@ public abstract class AnySTYLE<
 		}
 		style = Coercion.nullIfEmpty(style);
 		if(style != null) {
-			Writer out = document.getRawUnsafe(null);
-			startBody(out);
+			Writer unsafe = document.getRawUnsafe(null);
+			startBody(unsafe);
 			// Allow text markup from translations
 			MediaType mediaType = getMediaType();
 			MarkupCoercion.write(
@@ -261,7 +261,7 @@ public abstract class AnySTYLE<
 				true,
 				getMediaEncoder(mediaType),
 				false,
-				out
+				unsafe
 			);
 			document.clearAtnl(); // Unknown, safe to assume not at newline
 		}
@@ -285,8 +285,8 @@ public abstract class AnySTYLE<
 		if(style != null) {
 			MediaType newOutputType = getMediaType();
 			MediaEncoder encoder = getMediaEncoder(newOutputType);
-			Writer out = document.getRawUnsafe(null);
-			startBody(out);
+			Writer unsafe = document.getRawUnsafe(null);
+			startBody(unsafe);
 			style.writeTo(
 				newOutputType.newMediaWriter(
 					document.encodingContext,
@@ -313,13 +313,13 @@ public abstract class AnySTYLE<
 	public StyleWriter _c() throws IOException {
 		MediaType newOutputType = getMediaType();
 		MediaEncoder encoder = getMediaEncoder(newOutputType);
-		Writer out = document.getRawUnsafe(null);
-		startBody(out);
+		Writer unsafe = document.getRawUnsafe(null);
+		startBody(unsafe);
 		// Invoking via newMediaWriter to support subclasses of StyleWriter
 		return (StyleWriter)newOutputType.newMediaWriter(
 			document.encodingContext,
 			encoder,
-			out,
+			unsafe,
 			false,
 			document,
 			mediaWriter -> false, // !isNoClose
@@ -333,13 +333,13 @@ public abstract class AnySTYLE<
 	 * @return  The parent content model this element is within
 	 */
 	public PC __() throws IOException {
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		if(!didBody) {
-			document.autoIndent(out).unsafe(out, "></style>", false);
+			document.autoIndent(unsafe).unsafe(unsafe, "></style>", false);
 		} else {
-			document.decDepth().nli(out).unsafe(out, doCdata() ? "/*]]>*/</style>" : "</style>", false);
+			document.decDepth().nli(unsafe).unsafe(unsafe, doCdata() ? "/*]]>*/</style>" : "</style>", false);
 		}
-		document.autoNl(out);
+		document.autoNl(unsafe);
 		return pc;
 	}
 }

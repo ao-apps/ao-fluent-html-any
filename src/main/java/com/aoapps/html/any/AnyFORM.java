@@ -107,24 +107,24 @@ public abstract class AnyFORM<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<form", false); // TODO: Is whitespace around <form> ok? autoIndent() instead like AnySELECT?
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<form", false); // TODO: Is whitespace around <form> ok? autoIndent() instead like AnySELECT?
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void doBeforeBody(Writer out) throws IOException {
-		document.autoNl(out);
+	protected void doBeforeBody(Writer unsafe) throws IOException {
+		document.autoNl(unsafe);
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
 		if(closeAttributes) {
-			document.autoIndent(out).unsafe(out, "></form>", false);
+			document.autoIndent(unsafe).unsafe(unsafe, "></form>", false);
 		} else {
-			document.autoNli(out).unsafe(out, "</form>", false);
+			document.autoNli(unsafe).unsafe(unsafe, "</form>", false);
 		}
-		document.autoNl(out); // TODO: Is whitespace around <form> ok? No final autoNl() like AnySELECT?
+		document.autoNl(unsafe); // TODO: Is whitespace around <form> ok? No final autoNl() like AnySELECT?
 	}
 }

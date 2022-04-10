@@ -101,14 +101,14 @@ public abstract class AnyTITLE<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<title", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<title", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void doBeforeBody(Writer out) throws IOException {
+	protected void doBeforeBody(Writer unsafe) throws IOException {
 		oldAutonli = document.getAutonli();
 		if(oldAutonli) document.setAutonli(false);
 		oldIndent = document.getIndent();
@@ -118,16 +118,16 @@ public abstract class AnyTITLE<
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
 		document
 			.setDepth(oldDepth)
 			.setIndent(oldIndent)
 			.setAutonli(oldAutonli);
 		if(closeAttributes) {
-			document.autoIndent(out).unsafe(out, "></title>", false);
+			document.autoIndent(unsafe).unsafe(unsafe, "></title>", false);
 		} else {
-			document.unsafe(out, "</title>", false);
+			document.unsafe(unsafe, "</title>", false);
 		}
-		document.autoNl(out);
+		document.autoNl(unsafe);
 	}
 }

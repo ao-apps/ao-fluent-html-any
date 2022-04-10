@@ -55,15 +55,15 @@ public abstract class AnyHR<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<hr", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<hr", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void doAfterElement(Writer out) throws IOException {
-		document.autoNl(out);
+	protected void doAfterElement(Writer unsafe) throws IOException {
+		document.autoNl(unsafe);
 	}
 
 	/**

@@ -51,14 +51,14 @@ public abstract class AnyDT<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<dt", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<dt", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
-		document.unsafe(out, closeAttributes ? "></dt>" : "</dt>", false).autoNl(out);
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+		document.unsafe(unsafe, closeAttributes ? "></dt>" : "</dt>", false).autoNl(unsafe);
 	}
 }

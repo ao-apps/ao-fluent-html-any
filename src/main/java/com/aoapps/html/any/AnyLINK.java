@@ -83,8 +83,8 @@ public abstract class AnyLINK<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<link", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<link", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
@@ -156,16 +156,16 @@ public abstract class AnyLINK<
 			if(this.rel != null) {
 				throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
 			}
-			Writer out = document.getRawUnsafe(null);
+			Writer unsafe = document.getRawUnsafe(null);
 			if(document.getAtnl()) {
-				document.autoIndent(out, 1);
-				out.write("itemprop=\"");
+				document.autoIndent(unsafe, 1);
+				unsafe.write("itemprop=\"");
 				document.clearAtnl();
 			} else {
-				out.write(" itemprop=\"");
+				unsafe.write(" itemprop=\"");
 			}
-			Coercion.write(itemprop, textInXhtmlAttributeEncoder, out);
-			out.append('"');
+			Coercion.write(itemprop, textInXhtmlAttributeEncoder, unsafe);
+			unsafe.append('"');
 		}
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
@@ -380,16 +380,16 @@ public abstract class AnyLINK<
 				&& ContentType.CSS.equalsIgnoreCase(type)
 			)
 		) {
-			Writer out = document.getRawUnsafe(null);
+			Writer unsafe = document.getRawUnsafe(null);
 			if(document.getAtnl()) {
-				document.autoIndent(out, 1);
-				out.write("type=\"");
+				document.autoIndent(unsafe, 1);
+				unsafe.write("type=\"");
 				document.clearAtnl();
 			} else {
-				out.write(" type=\"");
+				unsafe.write(" type=\"");
 			}
-			encodeTextInXhtmlAttribute(type, out);
-			out.append('"');
+			encodeTextInXhtmlAttribute(type, unsafe);
+			unsafe.append('"');
 		}
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
@@ -419,21 +419,21 @@ public abstract class AnyLINK<
 			&& rel != null
 			&& rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
 		) {
-			Writer out = document.getRawUnsafe(null);
+			Writer unsafe = document.getRawUnsafe(null);
 			if(document.getAtnl()) {
-				document.autoIndent(out, 1);
-				out.write("type=\"" + ContentType.CSS + '"');
+				document.autoIndent(unsafe, 1);
+				unsafe.write("type=\"" + ContentType.CSS + '"');
 				document.clearAtnl();
 			} else {
-				out.write(" type=\"" + ContentType.CSS + '"');
+				unsafe.write(" type=\"" + ContentType.CSS + '"');
 			}
 		}
 		return super.__();
 	}
 
 	@Override
-	protected void doAfterElement(Writer out) throws IOException {
-		document.autoNl(out);
+	protected void doAfterElement(Writer unsafe) throws IOException {
+		document.autoNl(unsafe);
 		if(rel == null && itemprop == null) {
 			throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
 		}

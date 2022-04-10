@@ -189,19 +189,19 @@ public final class Attributes {
 			if(value) {
 				AnyDocument<?> document = element.document;
 				@SuppressWarnings("deprecation")
-				Writer out = document.getRawUnsafe(null);
+				Writer unsafe = document.getRawUnsafe(null);
 				if(document.getAtnl()) {
-					document.autoIndent(out, 1);
+					document.autoIndent(unsafe, 1);
 					document.clearAtnl();
 				} else {
-					out.append(' ');
+					unsafe.append(' ');
 				}
-				out.write(name);
+				unsafe.write(name);
 				Serialization serialization = document.encodingContext.getSerialization();
 				if(serialization == Serialization.XML) {
-					out.write("=\"");
-					out.write(name);
-					out.append('"');
+					unsafe.write("=\"");
+					unsafe.write(name);
+					unsafe.append('"');
 				} else {
 					assert serialization == Serialization.SGML;
 				}
@@ -284,17 +284,17 @@ public final class Attributes {
 		public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, int value) throws IOException {
 			AnyDocument<?> document = element.document;
 			@SuppressWarnings("deprecation")
-			Writer out = document.getRawUnsafe(null);
+			Writer unsafe = document.getRawUnsafe(null);
 			if(document.getAtnl()) {
-				document.autoIndent(out, 1);
+				document.autoIndent(unsafe, 1);
 				document.clearAtnl();
 			} else {
-				out.append(' ');
+				unsafe.append(' ');
 			}
-			out.write(name);
-			out.write("=\"");
-			out.write(java.lang.Integer.toString(value));
-			out.append('"');
+			unsafe.write(name);
+			unsafe.write("=\"");
+			unsafe.write(java.lang.Integer.toString(value));
+			unsafe.append('"');
 			return element;
 		}
 
@@ -330,28 +330,28 @@ public final class Attributes {
 					// Empty attribute
 					AnyDocument<?> document = element.document;
 					@SuppressWarnings("deprecation")
-					Writer out = document.getRawUnsafe(null);
+					Writer unsafe = document.getRawUnsafe(null);
 					if(document.getAtnl()) {
-						document.autoIndent(out, 1);
+						document.autoIndent(unsafe, 1);
 						document.clearAtnl();
 					} else {
-						out.append(' ');
+						unsafe.append(' ');
 					}
-					out.write(name);
+					unsafe.write(name);
 				} else {
 					if(trim) value = value.trim(); // TODO: These trims should all be from Strings?
 					if(!nullIfEmpty || !value.isEmpty()) {
 						AnyDocument<?> document = element.document;
 						@SuppressWarnings("deprecation")
-						Writer out = document.getRawUnsafe(null);
+						Writer unsafe = document.getRawUnsafe(null);
 						if(document.getAtnl()) {
-							document.autoIndent(out, 1);
+							document.autoIndent(unsafe, 1);
 							document.clearAtnl();
 						} else {
-							out.append(' ');
+							unsafe.append(' ');
 						}
-						out.write(name);
-						out.write("=\"");
+						unsafe.write(name);
+						unsafe.write("=\"");
 						BundleLookupThreadContext threadContext;
 						if(
 							markupType == null
@@ -359,15 +359,15 @@ public final class Attributes {
 							|| (threadContext = BundleLookupThreadContext.getThreadContext()) == null
 						) {
 							// Short-cut additional type checks done by Coercion, since we already have a String
-							encodeTextInXhtmlAttribute(value, out);
+							encodeTextInXhtmlAttribute(value, unsafe);
 						} else {
-							Writer optimized = Coercion.optimize(out, textInXhtmlAttributeEncoder);
+							Writer optimized = Coercion.optimize(unsafe, textInXhtmlAttributeEncoder);
 							BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(value);
 							if(lookupMarkup != null) lookupMarkup.appendPrefixTo(markupType, textInXhtmlAttributeEncoder, optimized);
 							encodeTextInXhtmlAttribute(value, optimized);
 							if(lookupMarkup != null) lookupMarkup.appendSuffixTo(markupType, textInXhtmlAttributeEncoder, optimized);
 						}
-						out.append('"');
+						unsafe.append('"');
 					}
 				}
 			}
@@ -402,40 +402,40 @@ public final class Attributes {
 					@SuppressWarnings("unchecked") MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>)value;
 					AnyDocument<?> document = element.document;
 					@SuppressWarnings("deprecation")
-					Writer out = document.getRawUnsafe(null);
+					Writer unsafe = document.getRawUnsafe(null);
 					if(document.getAtnl()) {
-						document.autoIndent(out, 1);
+						document.autoIndent(unsafe, 1);
 						document.clearAtnl();
 					} else {
-						out.append(' ');
+						unsafe.append(' ');
 					}
-					out.write(name);
-					out.write("=\"");
+					unsafe.write(name);
+					unsafe.write("=\"");
 					writer.writeTo(
 						encoder.getValidMediaInputType().newMediaWriter(
 							document.encodingContext,
 							encoder,
-							out,
+							unsafe,
 							false,
 							null, // Attributes get own indentation scope and settings
 							mediaWriter -> true, // isNoClose
 							null // Ignore close
 						)
 					);
-					out.append('"');
+					unsafe.append('"');
 				} else {
 					if(value == NO_VALUE) { // Identity comparison for marker value
 						// Empty attribute
 						AnyDocument<?> document = element.document;
 						@SuppressWarnings("deprecation")
-						Writer out = document.getRawUnsafe(null);
+						Writer unsafe = document.getRawUnsafe(null);
 						if(document.getAtnl()) {
-							document.autoIndent(out, 1);
+							document.autoIndent(unsafe, 1);
 							document.clearAtnl();
 						} else {
-							out.append(' ');
+							unsafe.append(' ');
 						}
-						out.write(name);
+						unsafe.write(name);
 						// TODO: When serialization is XML, set equal to attribute name or empty?
 					} else {
 						if(trim) {
@@ -450,24 +450,24 @@ public final class Attributes {
 						if(value != null) {
 							AnyDocument<?> document = element.document;
 							@SuppressWarnings("deprecation")
-							Writer out = document.getRawUnsafe(null);
+							Writer unsafe = document.getRawUnsafe(null);
 							if(document.getAtnl()) {
-								document.autoIndent(out, 1);
+								document.autoIndent(unsafe, 1);
 								document.clearAtnl();
 							} else {
-								out.append(' ');
+								unsafe.append(' ');
 							}
-							out.write(name);
-							out.write("=\"");
+							unsafe.write(name);
+							unsafe.write("=\"");
 							MarkupCoercion.write(
 								value,
 								markupType,
 								true,
 								encoder,
 								false,
-								out
+								unsafe
 							);
-							out.append('"');
+							unsafe.append('"');
 						}
 					}
 				}
@@ -488,7 +488,7 @@ public final class Attributes {
 			if(values != null) {
 				AnyDocument<?> document = element.document;
 				@SuppressWarnings("deprecation")
-				Writer out = document.getRawUnsafe(null);
+				Writer unsafe = document.getRawUnsafe(null);
 				boolean attr = false;
 				boolean val = false;
 				for(Object value : values) {
@@ -502,26 +502,26 @@ public final class Attributes {
 							@SuppressWarnings("unchecked") MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>)value;
 							if(val) {
 								assert attr;
-								if(separator != null) out.write(separator);
+								if(separator != null) unsafe.write(separator);
 							} else {
 								if(!attr) {
 									if(document.getAtnl()) {
-										document.autoIndent(out, 1);
+										document.autoIndent(unsafe, 1);
 										document.clearAtnl();
 									} else {
-										out.append(' ');
+										unsafe.append(' ');
 									}
-									out.write(name);
+									unsafe.write(name);
 									attr = true;
 								}
-								out.write("=\"");
+								unsafe.write("=\"");
 								val = true;
 							}
 							writer.writeTo(
 								encoder.getValidMediaInputType().newMediaWriter(
 									document.encodingContext,
 									encoder,
-									out,
+									unsafe,
 									false,
 									null, // Attributes get own indentation scope and settings
 									mediaWriter -> true, // isNoClose
@@ -533,12 +533,12 @@ public final class Attributes {
 								// Empty attribute
 								if(!attr) {
 									if(document.getAtnl()) {
-										document.autoIndent(out, 1);
+										document.autoIndent(unsafe, 1);
 										document.clearAtnl();
 									} else {
-										out.append(' ');
+										unsafe.append(' ');
 									}
-									out.write(name);
+									unsafe.write(name);
 									attr = true;
 								}
 								// TODO: When serialization is XML, set equal to attribute name or empty?
@@ -555,19 +555,19 @@ public final class Attributes {
 								if(value != null) {
 									if(val) {
 										assert attr;
-										if(separator != null) out.write(separator);
+										if(separator != null) unsafe.write(separator);
 									} else {
 										if(!attr) {
 											if(document.getAtnl()) {
-												document.autoIndent(out, 1);
+												document.autoIndent(unsafe, 1);
 												document.clearAtnl();
 											} else {
-												out.append(' ');
+												unsafe.append(' ');
 											}
-											out.write(name);
+											unsafe.write(name);
 											attr = true;
 										}
-										out.write("=\"");
+										unsafe.write("=\"");
 										val = true;
 									}
 									MarkupCoercion.write(
@@ -576,7 +576,7 @@ public final class Attributes {
 										true,
 										encoder,
 										false,
-										out
+										unsafe
 									);
 								}
 							}
@@ -585,7 +585,7 @@ public final class Attributes {
 				}
 				if(val) {
 					assert attr;
-					out.append('"');
+					unsafe.append('"');
 				}
 			}
 			return element;
@@ -610,18 +610,18 @@ public final class Attributes {
 			if(url != null) {
 				AnyDocument<?> document = element.document;
 				@SuppressWarnings("deprecation")
-				Writer out = document.getRawUnsafe(null);
+				Writer unsafe = document.getRawUnsafe(null);
 				if(document.getAtnl()) {
-					document.autoIndent(out, 1);
+					document.autoIndent(unsafe, 1);
 					document.clearAtnl();
 				} else {
-					out.append(' ');
+					unsafe.append(' ');
 				}
-				out.write(name);
-				out.write("=\"");
+				unsafe.write(name);
+				unsafe.write("=\"");
 				// TODO: UrlInXhtmlAttributeEncoder once RFC 3987 supported
-				textInXhtmlAttributeEncoder.write(url, out);
-				out.append('"');
+				textInXhtmlAttributeEncoder.write(url, unsafe);
+				unsafe.append('"');
 			}
 			return element;
 		}

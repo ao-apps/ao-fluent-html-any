@@ -616,5 +616,5 @@ public abstract class Element<
 	 * @return  The element instance to use.
 	 *          This may substitute the element with a different instance, when appropriate.
 	 */
-	protected abstract E writeOpen(Writer out) throws IOException;
+	protected abstract E writeOpen(Writer unsafe) throws IOException;
 }

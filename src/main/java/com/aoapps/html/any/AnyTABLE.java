@@ -66,25 +66,25 @@ public abstract class AnyTABLE<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<table", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<table", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void doBeforeBody(Writer out) throws IOException {
-		document.autoNl(out);
+	protected void doBeforeBody(Writer unsafe) throws IOException {
+		document.autoNl(unsafe);
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
 		if(closeAttributes) {
-			document.autoIndent(out).unsafe(out, "></table>", false);
+			document.autoIndent(unsafe).unsafe(unsafe, "></table>", false);
 		} else {
-			document.autoNli(out).unsafe(out, "</table>", false);
+			document.autoNli(unsafe).unsafe(unsafe, "</table>", false);
 		}
-		document.autoNl(out);
+		document.autoNl(unsafe);
 	}
 
 	/**

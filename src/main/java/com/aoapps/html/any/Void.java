@@ -52,22 +52,22 @@ public abstract class Void<
 	 */
 	@SuppressWarnings("deprecation")
 	public PC __() throws IOException {
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		Serialization serialization = document.encodingContext.getSerialization();
 		if(document.getAtnl()) {
-			document.autoIndent(out);
+			document.autoIndent(unsafe);
 			if(serialization == Serialization.SGML) {
-				out.append('>');
+				unsafe.append('>');
 			} else {
 				assert serialization == Serialization.XML;
-				out.write("/>");
+				unsafe.write("/>");
 			}
 			document.clearAtnl();
 		} else {
-			serialization.selfClose(out);
+			serialization.selfClose(unsafe);
 		}
 		assert !document.getAtnl();
-		doAfterElement(out);
+		doAfterElement(unsafe);
 		return pc;
 	}
 
@@ -78,7 +78,7 @@ public abstract class Void<
 	 * </p>
 	 */
 	@SuppressWarnings("NoopMethodInAbstractClass")
-	protected void doAfterElement(Writer out) throws IOException {
+	protected void doAfterElement(Writer unsafe) throws IOException {
 		// Do nothing
 	}
 }

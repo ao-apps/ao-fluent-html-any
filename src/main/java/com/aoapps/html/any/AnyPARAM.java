@@ -93,15 +93,15 @@ public abstract class AnyPARAM<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<param", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<param", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void doAfterElement(Writer out) throws IOException {
-		document.autoNl(out);
+	protected void doAfterElement(Writer unsafe) throws IOException {
+		document.autoNl(unsafe);
 	}
 
 	/**

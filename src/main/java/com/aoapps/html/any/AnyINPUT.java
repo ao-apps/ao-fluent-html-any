@@ -96,14 +96,14 @@ public abstract class AnyINPUT<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<input", false);
-		openWriteType(out);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, "<input", false);
+		openWriteType(unsafe);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
-	protected abstract void openWriteType(Writer out) throws IOException;
+	protected abstract void openWriteType(Writer unsafe) throws IOException;
 
 	/**
 	 * <p>
@@ -275,7 +275,7 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
 			// Write the type now, if already set
 			String t = this.type;
@@ -411,16 +411,16 @@ public abstract class AnyINPUT<
 					);
 				}
 				this.type = type;
-				Writer out = document.getRawUnsafe(null);
+				Writer unsafe = document.getRawUnsafe(null);
 				if(document.getAtnl()) {
-					document.autoIndent(out, 1);
-					out.write("type=\"");
+					document.autoIndent(unsafe, 1);
+					unsafe.write("type=\"");
 					document.clearAtnl();
 				} else {
-					out.write(" type=\"");
+					unsafe.write(" type=\"");
 				}
-				encodeTextInXhtmlAttribute(type, out);
-				out.append('"');
+				encodeTextInXhtmlAttribute(type, unsafe);
+				unsafe.append('"');
 			}
 			@SuppressWarnings("unchecked") E element = (E)this;
 			return element;
@@ -455,16 +455,16 @@ public abstract class AnyINPUT<
 					);
 				}
 				this.type = type.value;
-				Writer out = document.getRawUnsafe(null);
+				Writer unsafe = document.getRawUnsafe(null);
 				if(document.getAtnl()) {
-					document.autoIndent(out, 1);
-					out.write("type=\"");
+					document.autoIndent(unsafe, 1);
+					unsafe.write("type=\"");
 					document.clearAtnl();
 				} else {
-					out.write(" type=\"");
+					unsafe.write(" type=\"");
 				}
-				out.write(type.value); // No encoding, is a known safe value.  TODO: Assert this above in static initializer?
-				out.append('"');
+				unsafe.write(type.value); // No encoding, is a known safe value.  TODO: Assert this above in static initializer?
+				unsafe.append('"');
 			}
 			@SuppressWarnings("unchecked") E element = (E)this;
 			return element;
@@ -514,9 +514,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"button\"");
+			unsafe.write(" type=\"button\"");
 		}
 
 		/**
@@ -566,9 +566,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"checkbox\"");
+			unsafe.write(" type=\"checkbox\"");
 		}
 	}
 
@@ -644,9 +644,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"color\"");
+			unsafe.write(" type=\"color\"");
 		}
 	}
 
@@ -726,9 +726,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"date\"");
+			unsafe.write(" type=\"date\"");
 		}
 	}
 
@@ -807,9 +807,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"datetime-local\"");
+			unsafe.write(" type=\"datetime-local\"");
 		}
 	}
 
@@ -896,9 +896,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"email\"");
+			unsafe.write(" type=\"email\"");
 		}
 	}
 
@@ -978,9 +978,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"file\"");
+			unsafe.write(" type=\"file\"");
 		}
 	}
 
@@ -1037,9 +1037,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"hidden\"");
+			unsafe.write(" type=\"hidden\"");
 		}
 	}
 
@@ -1081,9 +1081,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"image\"");
+			unsafe.write(" type=\"image\"");
 		}
 
 		/**
@@ -1214,9 +1214,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"month\"");
+			unsafe.write(" type=\"month\"");
 		}
 	}
 
@@ -1313,9 +1313,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"number\"");
+			unsafe.write(" type=\"number\"");
 		}
 	}
 
@@ -1402,9 +1402,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"password\"");
+			unsafe.write(" type=\"password\"");
 		}
 	}
 
@@ -1434,9 +1434,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"radio\"");
+			unsafe.write(" type=\"radio\"");
 		}
 	}
 
@@ -1511,9 +1511,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"range\"");
+			unsafe.write(" type=\"range\"");
 		}
 	}
 
@@ -1537,9 +1537,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"reset\"");
+			unsafe.write(" type=\"reset\"");
 		}
 
 		/**
@@ -1693,9 +1693,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"search\"");
+			unsafe.write(" type=\"search\"");
 		}
 	}
 
@@ -1727,9 +1727,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"submit\"");
+			unsafe.write(" type=\"submit\"");
 		}
 
 		/**
@@ -1840,9 +1840,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"tel\"");
+			unsafe.write(" type=\"tel\"");
 		}
 	}
 
@@ -1882,9 +1882,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"text\"");
+			unsafe.write(" type=\"text\"");
 		}
 	}
 
@@ -1962,9 +1962,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"time\"");
+			unsafe.write(" type=\"time\"");
 		}
 	}
 
@@ -2054,9 +2054,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"url\"");
+			unsafe.write(" type=\"url\"");
 		}
 	}
 
@@ -2136,9 +2136,9 @@ public abstract class AnyINPUT<
 		}
 
 		@Override
-		protected void openWriteType(Writer out) throws IOException {
+		protected void openWriteType(Writer unsafe) throws IOException {
 			assert !document.getAtnl();
-			out.write(" type=\"week\"");
+			unsafe.write(" type=\"week\"");
 		}
 	}
 }

@@ -105,9 +105,9 @@ public abstract class AnyHTML<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(
-			out,
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(
+			unsafe,
 			(document.encodingContext.getSerialization() == Serialization.XML)
 				? "<html xmlns=\"http://www.w3.org/1999/xhtml\""
 				: "<html",
@@ -118,18 +118,18 @@ public abstract class AnyHTML<
 	}
 
 	@Override
-	protected void doBeforeBody(Writer out) throws IOException {
-		document.autoNl(out);
+	protected void doBeforeBody(Writer unsafe) throws IOException {
+		document.autoNl(unsafe);
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
 		if(closeAttributes) {
-			document.autoIndent(out).unsafe(out, "></html>", false);
+			document.autoIndent(unsafe).unsafe(unsafe, "></html>", false);
 		} else {
-			document.autoNli(out).unsafe(out, "</html>", false);
+			document.autoNli(unsafe).unsafe(unsafe, "</html>", false);
 		}
-		document.autoNl(out);
+		document.autoNl(unsafe);
 	}
 
 	/**

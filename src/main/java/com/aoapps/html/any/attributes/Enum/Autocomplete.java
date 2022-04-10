@@ -137,28 +137,28 @@ public interface Autocomplete<
 		Attributes.onlySupportedInHtml5(document, "autocomplete");
 		if(autocomplete != null) {
 			@SuppressWarnings("deprecation")
-			Writer out = document.getRawUnsafe(null);
+			Writer unsafe = document.getRawUnsafe(null);
 			boolean didOne = false;
 			for(String value : autocomplete) {
 				String trimmed = Strings.trimNullIfEmpty(value);
 				if(trimmed != null) {
 					if(!didOne) {
 						if(document.getAtnl()) {
-							// Can't access: document.autoIndent(out, 1);
+							// Can't access: document.autoIndent(unsafe, 1);
 							document.autoIndent(1);
-							out.write("autocomplete=\"");
+							unsafe.write("autocomplete=\"");
 							document.clearAtnl();
 						} else {
-							out.write(" autocomplete=\"");
+							unsafe.write(" autocomplete=\"");
 						}
 						didOne = true;
 					} else {
-						out.append(' ');
+						unsafe.append(' ');
 					}
-					encodeTextInXhtmlAttribute(trimmed, out);
+					encodeTextInXhtmlAttribute(trimmed, unsafe);
 				}
 			}
-			if(didOne) out.append('"');
+			if(didOne) unsafe.append('"');
 		}
 		return element;
 	}
@@ -181,27 +181,27 @@ public interface Autocomplete<
 		AnyDocument<?> document = element.getDocument();
 		Attributes.onlySupportedInHtml5(document, "autocomplete");
 		if(autocomplete != null) {
-			Writer out = document.getRawUnsafe(null);
+			Writer unsafe = document.getRawUnsafe(null);
 			boolean didOne = false;
 			for(V value : autocomplete) {
 				if(value != null) {
 					if(!didOne) {
 						if(document.getAtnl()) {
-							// Can't access: document.autoIndent(out, 1);
+							// Can't access: document.autoIndent(unsafe, 1);
 							document.autoIndent(1);
-							out.write("autocomplete=\"");
+							unsafe.write("autocomplete=\"");
 							document.clearAtnl();
 						} else {
-							out.write(" autocomplete=\"");
+							unsafe.write(" autocomplete=\"");
 						}
 						didOne = true;
 					} else {
-						out.append(' ');
+						unsafe.append(' ');
 					}
-					encodeTextInXhtmlAttribute(value.apply(document), out);
+					encodeTextInXhtmlAttribute(value.apply(document), unsafe);
 				}
 			}
-			if(didOne) out.append('"');
+			if(didOne) unsafe.append('"');
 		}
 		return element;
 	}

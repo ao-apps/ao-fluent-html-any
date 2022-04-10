@@ -53,24 +53,24 @@ public abstract class AnyARTICLE<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<article", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<article", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void doBeforeBody(Writer out) throws IOException {
-		document.autoNl(out);
+	protected void doBeforeBody(Writer unsafe) throws IOException {
+		document.autoNl(unsafe);
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
 		if(closeAttributes) {
-			document.autoIndent(out).unsafe(out, "></article>", false);
+			document.autoIndent(unsafe).unsafe(unsafe, "></article>", false);
 		} else {
-			document.autoNli(out).unsafe(out, "</article>", false);
+			document.autoNli(unsafe).unsafe(unsafe, "</article>", false);
 		}
-		document.autoNl(out);
+		document.autoNl(unsafe);
 	}
 }

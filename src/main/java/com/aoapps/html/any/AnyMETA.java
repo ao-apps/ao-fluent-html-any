@@ -96,15 +96,15 @@ public abstract class AnyMETA<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoNli(out).unsafe(out, "<meta", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoNli(unsafe).unsafe(unsafe, "<meta", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void doAfterElement(Writer out) throws IOException {
-		document.autoNl(out);
+	protected void doAfterElement(Writer unsafe) throws IOException {
+		document.autoNl(unsafe);
 	}
 
 	// <editor-fold defaultstate="collapsed" desc="charset">

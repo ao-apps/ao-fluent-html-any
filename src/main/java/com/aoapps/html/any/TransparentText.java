@@ -62,14 +62,14 @@ public abstract class TransparentText<
 	// TODO: More overrides, such as IOSupplier and such?
 	public PC __(Object text) throws IOException {
 		@SuppressWarnings("deprecation")
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		if(text != null) {
-			document.autoIndent(out).unsafe(out, '>').incDepth();
-			doBeforeBody(out);
-			document.text(out, text).decDepth();
-			writeClose(out, false);
+			document.autoIndent(unsafe).unsafe(unsafe, '>').incDepth();
+			doBeforeBody(unsafe);
+			document.text(unsafe, text).decDepth();
+			writeClose(unsafe, false);
 		} else {
-			writeClose(out, true);
+			writeClose(unsafe, true);
 		}
 		return pc;
 	}

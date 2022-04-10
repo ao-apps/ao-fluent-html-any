@@ -68,7 +68,7 @@ public abstract class Normal<
 	 * </p>
 	 */
 	@SuppressWarnings("NoopMethodInAbstractClass")
-	protected void doBeforeBody(Writer out) throws IOException {
+	protected void doBeforeBody(Writer unsafe) throws IOException {
 		// Do nothing by default
 	}
 
@@ -78,7 +78,7 @@ public abstract class Normal<
 	 * @param  closeAttributes  When {@code true}, must end attributes with {@code '>'} before writing the closing tag.
 	 *                          These are expected to be combined to a single write.
 	 */
-	protected abstract void writeClose(Writer out, boolean closeAttributes) throws IOException;
+	protected abstract void writeClose(Writer unsafe, boolean closeAttributes) throws IOException;
 
 	/**
 	 * Ends attributes, invokes the body, then closes this element.
@@ -89,17 +89,17 @@ public abstract class Normal<
 	 */
 	public <Ex extends Throwable> PC __(IORunnableE<Ex> body) throws IOException, Ex {
 		@SuppressWarnings("deprecation")
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		if(body != null) {
-			document.autoIndent(out).unsafe(out, '>');
+			document.autoIndent(unsafe).unsafe(unsafe, '>');
 			boolean contentIndented = isContentIndented();
 			if(contentIndented) document.incDepth();
-			doBeforeBody(out);
+			doBeforeBody(unsafe);
 			body.run();
 			if(contentIndented) document.decDepth();
-			writeClose(out, false);
+			writeClose(unsafe, false);
 		} else {
-			writeClose(out, true);
+			writeClose(unsafe, true);
 		}
 		return pc;
 	}
@@ -115,17 +115,17 @@ public abstract class Normal<
 	 */
 	public <Ex extends Throwable> PC __(IOConsumerE<? super __, Ex> body) throws IOException, Ex {
 		@SuppressWarnings("deprecation")
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		if(body != null) {
-			document.autoIndent(out).unsafe(out, '>');
+			document.autoIndent(unsafe).unsafe(unsafe, '>');
 			boolean contentIndented = isContentIndented();
 			if(contentIndented) document.incDepth();
-			doBeforeBody(out);
+			doBeforeBody(unsafe);
 			body.accept(new__());
 			if(contentIndented) document.decDepth();
-			writeClose(out, false);
+			writeClose(unsafe, false);
 		} else {
-			writeClose(out, true);
+			writeClose(unsafe, true);
 		}
 		return pc;
 	}
@@ -154,10 +154,10 @@ public abstract class Normal<
 	 */
 	public _c _c() throws IOException {
 		@SuppressWarnings("deprecation")
-		Writer out = document.getRawUnsafe(null);
-		document.autoIndent(out).unsafe(out, '>');
+		Writer unsafe = document.getRawUnsafe(null);
+		document.autoIndent(unsafe).unsafe(unsafe, '>');
 		if(isContentIndented()) document.incDepth();
-		doBeforeBody(out);
+		doBeforeBody(unsafe);
 		return new_c();
 	}
 

@@ -66,15 +66,15 @@ public abstract class AnyA<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<a", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, "<a", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
 
 	@Override
-	protected void writeClose(Writer out, boolean closeAttributes) throws IOException {
-		document.autoIndent(out).unsafe(out, closeAttributes ? "></a>" : "</a>", false);
+	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></a>" : "</a>", false);
 	}
 
 	/**
@@ -94,13 +94,13 @@ public abstract class AnyA<
 	 */
 	public PC __(Object text) throws IOException, IllegalStateException {
 		@SuppressWarnings("deprecation")
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		if(text != null) {
 			if(!(pc instanceof AnyTextContent)) throw new LocalizedIllegalStateException(RESOURCES, "contentModelNotAllowText", (pc == null) ? "null" : pc.getClass().getName());
-			document.autoIndent(out).unsafe(out, '>').incDepth().text(out, text).decDepth();
-			writeClose(out, false);
+			document.autoIndent(unsafe).unsafe(unsafe, '>').incDepth().text(unsafe, text).decDepth();
+			writeClose(unsafe, false);
 		} else {
-			writeClose(out, true);
+			writeClose(unsafe, true);
 		}
 		return pc;
 	}

@@ -63,17 +63,17 @@ public abstract class NormalText<
 	// TODO: More overrides, such as IOSupplier and such?
 	public PC __(Object text) throws IOException {
 		@SuppressWarnings("deprecation")
-		Writer out = document.getRawUnsafe(null);
+		Writer unsafe = document.getRawUnsafe(null);
 		if(text != null) {
-			document.autoIndent(out).unsafe(out, '>');
+			document.autoIndent(unsafe).unsafe(unsafe, '>');
 			boolean contentIndented = isContentIndented();
 			if(contentIndented) document.incDepth();
-			doBeforeBody(out);
-			document.text(out, text);
+			doBeforeBody(unsafe);
+			document.text(unsafe, text);
 			if(contentIndented) document.decDepth();
-			writeClose(out, false);
+			writeClose(unsafe, false);
 		} else {
-			writeClose(out, true);
+			writeClose(unsafe, true);
 		}
 		return pc;
 	}

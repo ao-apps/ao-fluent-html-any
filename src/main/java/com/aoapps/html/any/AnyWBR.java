@@ -85,8 +85,8 @@ public abstract class AnyWBR<
 	}
 
 	@Override
-	protected E writeOpen(Writer out) throws IOException {
-		document.autoIndent(out).unsafe(out, "<wbr", false);
+	protected E writeOpen(Writer unsafe) throws IOException {
+		document.autoIndent(unsafe).unsafe(unsafe, "<wbr", false);
 		@SuppressWarnings("unchecked") E element = (E)this;
 		return element;
 	}
