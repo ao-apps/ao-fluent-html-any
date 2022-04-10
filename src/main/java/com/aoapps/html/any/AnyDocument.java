@@ -86,6 +86,10 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * Direct use of this output may throw-off the automatic newlines and indentation.  Please use any of the
 	 * {@code unsafe(…)} methods.
 	 * </p>
+	 * <p>
+	 * Already optimized via {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+	 * with {@code encoder = null}.
+	 * </p>
 	 *
 	 * @see  #unsafe()
 	 * @see  #getRawUnsafe()
@@ -97,18 +101,21 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	// TODO: Does this need to be thread-safe, such as DocumentEE inside concurrent sub-requests?
 	//       Perhaps need to review thread safety of the API overall?
 	//       Maybe elements and attributes need not be thread-safe, but document and contexts should be?
-	// TODO: Should this always be optimized via Coercion.optimize(out, null)?
 	private Writer out;
 
 	/**
 	 * @param  out  May be {@code null}, but must be set to a non-null value again before any additional writes.
 	 *              Not doing so may result in {@link IllegalStateException}.
+	 *              <p>
+	 *              Will be through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+	 *              with {@code encoder = null}.
+	 *              </p>
 	 *
 	 * @see  #setOut(java.io.Writer)
 	 */
 	protected AnyDocument(EncodingContext encodingContext, Writer out) {
 		this.encodingContext = encodingContext;
-		this.out = out;
+		this.out = (out == null) ? null : Coercion.optimize(out, null);
 	}
 
 	/**
@@ -116,12 +123,16 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 *
 	 * @param  out  May be {@code null}, but must be set to a non-null value again before any additional writes.
 	 *              Not doing so may result in {@link IllegalStateException}.
+	 *              <p>
+	 *              Will be through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+	 *              with {@code encoder = null}.
+	 *              </p>
 	 *
 	 * @see  #getRawUnsafe()
 	 * @see  #getRawUnsafe(java.lang.Boolean)
 	 */
 	public void setOut(Writer out) {
-		this.out = out;
+		this.out = (out == null) ? null : Coercion.optimize(out, null);
 	}
 
 	@Override
@@ -313,6 +324,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	public Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException {
 		Writer unsafe = out;
 		if(unsafe == null) throw new LocalizedIllegalStateException(RESOURCES, "getRawUnsafe.noOut");
+		assert unsafe == Coercion.optimize(unsafe, null);
 		if(endsNewline != null) setAtnl(endsNewline);
 		return unsafe;
 	}
@@ -881,6 +893,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 			return text(csq);
 		} else {
 			// Allow text markup from translations
+			Writer unsafe = getRawUnsafe(null);
 			if(contentType == MediaType.XHTML) {
 				// Already in the requested media type, no prefix/suffix required
 				BundleLookupThreadContext threadContext;
@@ -894,15 +907,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 					if(csq != null && (len = csq.length()) > 0) {
 						if(csq.charAt(len - 1) == NL) {
 							if(len == 1) {
-								out.write(NL);
+								unsafe.write(NL);
 							} else {
-								autoIndent(out);
-								out.append(csq);
+								autoIndent(unsafe);
+								unsafe.append(csq);
 							}
 							setAtnl();
 						} else {
-							autoIndent(out);
-							out.append(csq);
+							autoIndent(unsafe);
+							unsafe.append(csq);
 							clearAtnl();
 						}
 					}
@@ -910,39 +923,39 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 					String str = (String)csq;
 					BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(str);
 					if(lookupMarkup != null) {
-						autoIndent(out);
-						lookupMarkup.appendPrefixTo(MarkupType.XHTML, out);
-						out.write(str);
-						lookupMarkup.appendSuffixTo(MarkupType.XHTML, out);
+						autoIndent(unsafe);
+						lookupMarkup.appendPrefixTo(MarkupType.XHTML, unsafe);
+						unsafe.write(str);
+						lookupMarkup.appendSuffixTo(MarkupType.XHTML, unsafe);
 						clearAtnl(); // Unknown, safe to assume not at newline
 					} else {
 						int len = str.length();
 						if(len > 0) {
 							if(str.charAt(len - 1) == NL) {
 								if(len == 1) {
-									out.write(NL);
+									unsafe.write(NL);
 								} else {
-									autoIndent(out);
-									out.write(str);
+									autoIndent(unsafe);
+									unsafe.write(str);
 								}
 								setAtnl();
 							} else {
-								autoIndent(out);
-								out.write(str);
+								autoIndent(unsafe);
+								unsafe.write(str);
 								clearAtnl();
 							}
 						}
 					}
 				}
 			} else {
-				autoIndent(out);
+				autoIndent(unsafe);
 				// In different media type, need prefix/suffix
 				MediaEncoder encoder = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
 				if(encoder == null) {
 					// Already in a compatible context that does not strictly require character encoding, but still need prefix/suffix
 					encoder = new ValidateOnlyEncoder(contentType);
 				}
-				Writer optimized = Coercion.optimize(out, encoder);
+				Writer optimized = Coercion.optimize(unsafe, encoder);
 				if(encoder.isBuffered()) {
 					// Do not bypass buffered encoder for markup
 					encoder.writePrefixTo(optimized);
@@ -1027,6 +1040,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 			return text(csq, start, end);
 		} else {
 			// Allow text markup from translations
+			Writer unsafe = getRawUnsafe(null);
 			if(contentType == MediaType.XHTML) {
 				// Already in the requested media type, no prefix/suffix required
 				BundleLookupThreadContext threadContext;
@@ -1036,28 +1050,28 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 					// Other types that will not be converted to String for bundle lookups
 					|| !(csq instanceof String)
 				) {
-					if(csq != null) appendCharSequence(out, csq, start, end);
+					if(csq != null) appendCharSequence(unsafe, csq, start, end);
 				} else {
 					BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
 					if(lookupMarkup != null) {
-						autoIndent(out);
-						lookupMarkup.appendPrefixTo(MarkupType.XHTML, out);
-						out.append(csq, start, end);
-						lookupMarkup.appendSuffixTo(MarkupType.XHTML, out);
+						autoIndent(unsafe);
+						lookupMarkup.appendPrefixTo(MarkupType.XHTML, unsafe);
+						unsafe.append(csq, start, end);
+						lookupMarkup.appendSuffixTo(MarkupType.XHTML, unsafe);
 						clearAtnl(); // Unknown, safe to assume not at newline
 					} else {
-						appendCharSequence(out, csq, start, end);
+						appendCharSequence(unsafe, csq, start, end);
 					}
 				}
 			} else {
-				autoIndent(out);
+				autoIndent(unsafe);
 				// In different media type, need prefix/suffix
 				MediaEncoder encoder = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
 				if(encoder == null) {
 					// Already in a compatible context that does not strictly require character encoding, but still need prefix/suffix
 					encoder = new ValidateOnlyEncoder(contentType);
 				}
-				Writer optimized = Coercion.optimize(out, encoder);
+				Writer optimized = Coercion.optimize(unsafe, encoder);
 				if(encoder.isBuffered()) {
 					// Do not bypass buffered encoder for markup
 					encoder.writePrefixTo(optimized);
@@ -1149,14 +1163,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 				}
 			}
 			// Allow text markup from translations
-			autoIndent(out);
+			Writer unsafe = getRawUnsafe(null);
+			autoIndent(unsafe);
 			// TODO: Way to temp-disable markups from within OPTION (without value set) and TEXTAREA, or to make HTML comment mark-up only.  All places from AnyTextContent
 			if(contentType == MediaType.XHTML) {
 				// Already in the requested media type, no prefix/suffix required
 				MarkupCoercion.write(
 					content,
 					MarkupType.XHTML,
-					out
+					unsafe
 				);
 			} else {
 				// In different media type, need prefix/suffix
@@ -1173,7 +1188,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 						true,
 						encoder,
 						true,
-						out
+						unsafe
 					);
 				} else {
 					// Bypass encoder for markup
@@ -1183,7 +1198,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 						false,
 						encoder,
 						true,
-						out
+						unsafe
 					);
 				}
 			}
@@ -1232,7 +1247,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 			}
 			encoder = encoder_;
 		}
-		Writer optimized = Coercion.optimize(out, encoder);
+		Writer optimized = Coercion.optimize(getRawUnsafe(null), encoder);
 		encoder.writePrefixTo(optimized);
 		return contentType.newMediaWriter(
 			encodingContext,

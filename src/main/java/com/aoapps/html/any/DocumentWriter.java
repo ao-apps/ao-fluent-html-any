@@ -23,6 +23,7 @@
 package com.aoapps.html.any;
 
 import com.aoapps.encoding.Whitespace;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.NoClose;
 import com.aoapps.lang.io.Writable;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -94,6 +95,9 @@ public interface DocumentWriter extends Whitespace {
 	 * @param  endsNewline  Indicates whether the data that will be written will end in a {@link #NL}.
 	 *                      When non-null, will call {@link #setAtnl(boolean)} with the given value.
 	 *
+	 * @return  The writer, already optimized via {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+	 *          with {@code encoder = null}.
+	 *
 	 * @throws  IllegalStateException  when output has been set to {@code null}.
 	 *
 	 * @see  #getRawUnsafe()
@@ -113,6 +117,9 @@ public interface DocumentWriter extends Whitespace {
 	 * <p>
 	 * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
 	 * </p>
+	 *
+	 * @return  The writer, already optimized via {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+	 *          with {@code encoder = null}.
 	 *
 	 * @throws  IllegalStateException  when output has been set to {@code null}.
 	 *
