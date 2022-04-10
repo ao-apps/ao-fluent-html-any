@@ -955,10 +955,10 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 					// Already in a compatible context that does not strictly require character encoding, but still need prefix/suffix
 					encoder = new ValidateOnlyEncoder(contentType);
 				}
-				Writer optimized = Coercion.optimize(unsafe, encoder);
+				Writer encoderOptimized = Coercion.optimize(unsafe, encoder);
 				if(encoder.isBuffered()) {
 					// Do not bypass buffered encoder for markup
-					encoder.writePrefixTo(optimized);
+					encoder.writePrefixTo(encoderOptimized);
 					if(csq != null) {
 						MarkupType markupType = contentType.getMarkupType();
 						BundleLookupThreadContext threadContext;
@@ -968,16 +968,16 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 							// Other types that will not be converted to String for bundle lookups
 							|| !(csq instanceof String)
 						) {
-							encoder.append(csq, optimized);
+							encoder.append(csq, encoderOptimized);
 						} else {
 							String str = (String)csq;
 							BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(str);
-							if(lookupMarkup != null) lookupMarkup.appendPrefixTo(markupType, encoder, optimized);
-							encoder.write(str, optimized);
-							if(lookupMarkup != null) lookupMarkup.appendSuffixTo(markupType, encoder, optimized);
+							if(lookupMarkup != null) lookupMarkup.appendPrefixTo(markupType, encoder, encoderOptimized);
+							encoder.write(str, encoderOptimized);
+							if(lookupMarkup != null) lookupMarkup.appendSuffixTo(markupType, encoder, encoderOptimized);
 						}
 					}
-					encoder.writeSuffixTo(optimized, false);
+					encoder.writeSuffixTo(encoderOptimized, false);
 				} else {
 					// Bypass encoder for markup
 					BundleLookupThreadContext threadContext;
@@ -987,17 +987,17 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 						// Other types that will not be converted to String for bundle lookups
 						|| !(csq instanceof String)
 					) {
-						encoder.writePrefixTo(optimized);
-						if(csq != null) encoder.append(csq, optimized);
-						encoder.writeSuffixTo(optimized, false);
+						encoder.writePrefixTo(encoderOptimized);
+						if(csq != null) encoder.append(csq, encoderOptimized);
+						encoder.writeSuffixTo(encoderOptimized, false);
 					} else {
 						String str = (String)csq;
 						BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(str);
-						if(lookupMarkup != null) lookupMarkup.appendPrefixTo(MarkupType.XHTML, optimized);
-						encoder.writePrefixTo(optimized);
-						encoder.write(str, optimized);
-						encoder.writeSuffixTo(optimized, false);
-						if(lookupMarkup != null) lookupMarkup.appendSuffixTo(MarkupType.XHTML, optimized);
+						if(lookupMarkup != null) lookupMarkup.appendPrefixTo(MarkupType.XHTML, encoderOptimized);
+						encoder.writePrefixTo(encoderOptimized);
+						encoder.write(str, encoderOptimized);
+						encoder.writeSuffixTo(encoderOptimized, false);
+						if(lookupMarkup != null) lookupMarkup.appendSuffixTo(MarkupType.XHTML, encoderOptimized);
 					}
 				}
 				clearAtnl(); // Unknown, safe to assume not at newline
@@ -1071,10 +1071,10 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 					// Already in a compatible context that does not strictly require character encoding, but still need prefix/suffix
 					encoder = new ValidateOnlyEncoder(contentType);
 				}
-				Writer optimized = Coercion.optimize(unsafe, encoder);
+				Writer encoderOptimized = Coercion.optimize(unsafe, encoder);
 				if(encoder.isBuffered()) {
 					// Do not bypass buffered encoder for markup
-					encoder.writePrefixTo(optimized);
+					encoder.writePrefixTo(encoderOptimized);
 					if(csq != null) {
 						MarkupType markupType = contentType.getMarkupType();
 						BundleLookupThreadContext threadContext;
@@ -1084,15 +1084,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 							// Other types that will not be converted to String for bundle lookups
 							|| !(csq instanceof String)
 						) {
-							encoder.append(csq, start, end, optimized);
+							encoder.append(csq, start, end, encoderOptimized);
 						} else {
 							BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
-							if(lookupMarkup != null) lookupMarkup.appendPrefixTo(markupType, encoder, optimized);
-							encoder.append(csq, start, end, optimized);
-							if(lookupMarkup != null) lookupMarkup.appendSuffixTo(markupType, encoder, optimized);
+							if(lookupMarkup != null) lookupMarkup.appendPrefixTo(markupType, encoder, encoderOptimized);
+							encoder.append(csq, start, end, encoderOptimized);
+							if(lookupMarkup != null) lookupMarkup.appendSuffixTo(markupType, encoder, encoderOptimized);
 						}
 					}
-					encoder.writeSuffixTo(optimized, false);
+					encoder.writeSuffixTo(encoderOptimized, false);
 				} else {
 					// Bypass encoder for markup
 					BundleLookupThreadContext threadContext;
@@ -1102,16 +1102,16 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 						// Other types that will not be converted to String for bundle lookups
 						|| !(csq instanceof String)
 					) {
-						encoder.writePrefixTo(optimized);
-						if(csq != null) encoder.append(csq, start, end, optimized);
-						encoder.writeSuffixTo(optimized, false);
+						encoder.writePrefixTo(encoderOptimized);
+						if(csq != null) encoder.append(csq, start, end, encoderOptimized);
+						encoder.writeSuffixTo(encoderOptimized, false);
 					} else {
 						BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
-						if(lookupMarkup != null) lookupMarkup.appendPrefixTo(MarkupType.XHTML, optimized);
-						encoder.writePrefixTo(optimized);
-						encoder.append(csq, start, end, optimized);
-						encoder.writeSuffixTo(optimized, false);
-						if(lookupMarkup != null) lookupMarkup.appendSuffixTo(MarkupType.XHTML, optimized);
+						if(lookupMarkup != null) lookupMarkup.appendPrefixTo(MarkupType.XHTML, encoderOptimized);
+						encoder.writePrefixTo(encoderOptimized);
+						encoder.append(csq, start, end, encoderOptimized);
+						encoder.writeSuffixTo(encoderOptimized, false);
+						if(lookupMarkup != null) lookupMarkup.appendSuffixTo(MarkupType.XHTML, encoderOptimized);
 					}
 				}
 				clearAtnl(); // Unknown, safe to assume not at newline
@@ -1247,16 +1247,16 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 			}
 			encoder = encoder_;
 		}
-		Writer optimized = Coercion.optimize(getRawUnsafe(null), encoder);
-		encoder.writePrefixTo(optimized);
+		Writer encoderOptimized = Coercion.optimize(getRawUnsafe(null), encoder);
+		encoder.writePrefixTo(encoderOptimized);
 		return contentType.newMediaWriter(
 			encodingContext,
 			encoder,
-			optimized,
+			encoderOptimized,
 			true,
 			this,
 			mediaWriter -> false, // !isNoClose
-			closing -> encoder.writeSuffixTo(optimized, false)
+			closing -> encoder.writeSuffixTo(encoderOptimized, false)
 		);
 	}
 	// </editor-fold>
