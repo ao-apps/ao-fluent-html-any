@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -24,10 +24,12 @@ package com.aoapps.html.any.i18n;
 
 import com.aoapps.hodgepodge.i18n.EditableResourceBundle;
 import java.util.Locale;
+import javax.annotation.concurrent.ThreadSafe;
 
 /**
  * @author  AO Industries, Inc.
  */
+@ThreadSafe
 public final class ApplicationResources_ja extends EditableResourceBundle {
 
 	public ApplicationResources_ja() {
