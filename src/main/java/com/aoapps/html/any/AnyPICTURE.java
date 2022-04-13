@@ -34,5 +34,6 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyPICTURE {
+	// TODO: Content: <source> (AnySOURCE), <img> (AnyIMG), script-supporting elements (AnyScriptSupportingContent)
 	// TODO
 }

@@ -35,5 +35,6 @@ package com.aoapps.html.any;
  */
 // TODO: implements Ontoggle<E>
 public abstract class AnyDETAILS {
+	// TODO: Content: One summary element (AnySUMMARY) followed by flow content (AnyFlowContent).
 	// TODO
 }

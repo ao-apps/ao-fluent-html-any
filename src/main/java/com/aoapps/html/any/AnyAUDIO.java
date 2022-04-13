@@ -56,5 +56,8 @@ package com.aoapps.html.any;
 // TODO: implements Onvolumechange<E>
 // TODO: implements Onwaiting<E>
 public abstract class AnyAUDIO {
+	// TODO: Content: <source> (AnySOURCE), <track> (AnyTRACK), "then transparent, but with no media element descendants."
+	//       How to add source and track, then be transparent?  Require getting parent context for "transparent"?
+	//       Which other elements do this already for comparison - Transparent_c?
 	// TODO
 }

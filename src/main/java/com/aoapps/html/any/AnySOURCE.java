@@ -36,5 +36,7 @@ package com.aoapps.html.any;
 // TODO: implements Onerror<E>
 public abstract class AnySOURCE {
 	// TODO: __ extends TODO<D, __>
+	// TODO: "the source element's src attribute has no meaning when the element is nested within a picture element"
+	//       Can we have a subclass of AnySOURCE that is used for AnyPICTURE_content, which would deprecate src attribute?
 	// TODO
 }
