@@ -653,7 +653,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 	 * Calls {@link #clearAtnl()} then wraps the given writer via {@link NoCloseMediaValidator#wrap(java.io.Writer)}
 	 * to ignore against calls to {@link Writer#close()}.
 	 */
-	<W extends Writer & NoClose> W unsafe(Writer unsafe) throws IOException {
+	<W extends Writer & NoClose> W unsafe(Writer unsafe) {
 		clearAtnl(); // Unknown, safe to assume not at newline
 		return NoCloseMediaValidator.wrap(unsafe);
 	}
