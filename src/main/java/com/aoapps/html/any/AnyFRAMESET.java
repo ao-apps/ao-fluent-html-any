@@ -29,6 +29,13 @@ package com.aoapps.html.any;
  * <li>See <a href="https://www.w3schools.com/tags/tag_frameset.asp">HTML frameset tag</a>.</li>
  * </ul>
  *
+ * @deprecated  Per <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/frameset">&lt;frameset&gt;</a>:
+ *              <blockquote>
+ *              This feature is no longer recommended. Though some browsers might still support it, it may have
+ *              already been removed from the relevant web standards, may be in the process of being dropped, or may
+ *              only be kept for compatibility purposes.
+ *              </blockquote>
+ *
  * @author  AO Industries, Inc.
  */
 // TODO: Implements other attributes similar to AnyBODY per https://html.spec.whatwg.org/multipage/obsolete.html#frameset :

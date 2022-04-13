@@ -29,6 +29,13 @@ package com.aoapps.html.any;
  * <li>See <a href="https://www.w3schools.com/tags/tag_frame.asp">HTML frame tag</a>.</li>
  * </ul>
  *
+ * @deprecated  Per <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/frame">&lt;frame&gt;</a>:
+ *              <blockquote>
+ *              This feature is no longer recommended. Though some browsers might still support it, it may have
+ *              already been removed from the relevant web standards, may be in the process of being dropped, or may
+ *              only be kept for compatibility purposes.
+ *              </blockquote>
+ *
  * @author  AO Industries, Inc.
  */
 // TODO: implements Onload<E>

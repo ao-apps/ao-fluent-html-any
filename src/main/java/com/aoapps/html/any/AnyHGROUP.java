@@ -31,8 +31,12 @@ package com.aoapps.html.any;
  *
  * @since HTML 5
  *
+ * @deprecated Per <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup#usage_notes">Usage notes</a>:
+ *             <blockquote>The &lt;hgroup&gt; element has been removed from the HTML5 (W3C) specification, but it still is in the WHATWG version of HTML.</blockquote>
+ *
  * @author  AO Industries, Inc.
  */
+@Deprecated
 public abstract class AnyHGROUP {
 	// TODO
 }
