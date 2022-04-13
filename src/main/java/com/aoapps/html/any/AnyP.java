@@ -26,7 +26,11 @@ import java.io.IOException;
 import java.io.Writer;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element">4.4.1 The p element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element">4.4.1 The p element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">&lt;p&gt;: The Paragraph element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_p.asp">HTML p tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within

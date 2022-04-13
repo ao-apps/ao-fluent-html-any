@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,11 @@ import com.aoapps.lang.io.function.IORunnableE;
 import java.io.IOException;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">&lt;li&gt;: The List Item element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_li.asp">HTML li tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <__>  This content model, which will be the parent content model of child elements
@@ -55,18 +59,22 @@ public interface AnyListContent<
 	// <editor-fold defaultstate="collapsed" desc="LI">
 	/**
 	 * Opens a new li element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">&lt;li&gt;: The List Item element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_li.asp">HTML li tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("li")
 	AnyLI<D, __, ?, ?, ?> li() throws IOException;
 
 	/**
 	 * Creates a li element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">&lt;li&gt;: The List Item element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_li.asp">HTML li tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -79,9 +87,11 @@ public interface AnyListContent<
 
 	/**
 	 * Creates a li element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">&lt;li&gt;: The List Item element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_li.asp">HTML li tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -94,9 +104,11 @@ public interface AnyListContent<
 
 	/**
 	 * Creates a li element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">&lt;li&gt;: The List Item element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_li.asp">HTML li tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -107,9 +119,11 @@ public interface AnyListContent<
 
 	/**
 	 * Creates an empty li element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">&lt;li&gt;: The List Item element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_li.asp">HTML li tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -120,9 +134,11 @@ public interface AnyListContent<
 
 	/**
 	 * Creates a li element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">&lt;li&gt;: The List Item element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_li.asp">HTML li tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end

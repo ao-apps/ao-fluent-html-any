@@ -35,7 +35,7 @@ import java.util.function.Function;
  * <ul>
  * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
  * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
- * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
  * </ul>
  *
  * @param  <E>   This element type
@@ -52,7 +52,7 @@ public interface HttpEquiv<
 	 * <ul>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
 	 * </ul>
 	 */
 	@Attributes.Funnel
@@ -65,7 +65,7 @@ public interface HttpEquiv<
 	 * <ul>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
@@ -79,7 +79,7 @@ public interface HttpEquiv<
 	 * <ul>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
 	 * </ul>
 	 *
 	 * @see #httpEquiv(java.lang.String)
@@ -93,7 +93,7 @@ public interface HttpEquiv<
 	 * <ul>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
 	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown

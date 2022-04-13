@@ -29,7 +29,11 @@ import java.util.ResourceBundle;
 import java.util.function.Function;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within

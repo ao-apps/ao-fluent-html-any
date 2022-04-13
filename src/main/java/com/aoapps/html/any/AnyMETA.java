@@ -32,7 +32,7 @@ import java.util.function.Function;
 /**
  * <ul>
  * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">4.2.5 The meta element</a>.</li>
- * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">&lt;meta&gt;: The metadata element</a>.</li>
  * <li>See <a href="https://www.w3schools.com/tags/tag_meta.asp">HTML meta tag</a>.</li>
  * </ul>
  *
@@ -112,7 +112,7 @@ public abstract class AnyMETA<
 	 * Writes the charset for the document's {@linkplain EncodingContext#getCharacterEncoding() character encoding}.
 	 * <ul>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
 	 * </ul>
 	 *
@@ -227,7 +227,7 @@ public abstract class AnyMETA<
 	/**
 	 * <ul>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
 	 * </ul>
 	 */
 	public enum HttpEquiv implements Function<AnyDocument<?>, String> {
@@ -353,7 +353,7 @@ public abstract class AnyMETA<
 	/**
 	 * <ul>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_name.asp">HTML meta name Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-name">&lt;meta&gt;: The Document-level Metadata element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-name">&lt;meta&gt;: The metadata element / name</a>.</li>
 	 * </ul>
 	 */
 	public enum Name implements Function<AnyDocument<?>, String> {

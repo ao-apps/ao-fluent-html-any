@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,7 +25,11 @@ package com.aoapps.html.any;
 import java.io.IOException;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">4.8.7 The object element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">4.8.7 The object element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object">&lt;object&gt;: The External Object element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_object.asp">HTML object tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <__>  This content model, which will be the parent content model of child elements
@@ -59,7 +63,7 @@ public interface AnyOBJECT_content<
 	 * Opens a new param element.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-param-element">4.8.8 The param element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param">&lt;param&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param">&lt;param&gt;: The Object Parameter element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_param.asp">HTML param tag</a>.</li>
 	 * </ul>
 	 */
@@ -70,7 +74,7 @@ public interface AnyOBJECT_content<
 	 * Creates a param element with the given name and value.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-param-element">4.8.8 The param element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param">&lt;param&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/param">&lt;param&gt;: The Object Parameter element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_param.asp">HTML param tag</a>.</li>
 	 * </ul>
 	 *

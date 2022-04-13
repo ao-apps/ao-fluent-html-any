@@ -56,18 +56,22 @@ public interface AnyUnion_Interactive_Phrasing<
 	// <editor-fold defaultstate="collapsed" desc="A">
 	/**
 	 * Opens a new a element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("a")
 	AnyA<D, __, ?, ?> a() throws IOException;
 
 	/**
 	 * Opens a new a element with the given href attribute.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("a")
 	default AnyA<D, __, ?, ?> a(String href) throws IOException {
@@ -76,9 +80,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Opens a new a element with the given href attribute.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
@@ -89,9 +95,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates an a element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -104,9 +112,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates an a element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -120,9 +130,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates an a element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
+	 * </ul>
 	 * <p>
 	 * Since {@link AnyTextContent} is not a part of {@link AnyUnion_Interactive_Phrasing},
 	 * strictly speaking text is not allowed in all possible content models that can apply to <code>&lt;a&gt;</code>.
@@ -140,9 +152,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates an empty a element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -153,9 +167,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates an a element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
@@ -564,9 +580,11 @@ public interface AnyUnion_Interactive_Phrasing<
 	// <editor-fold defaultstate="collapsed" desc="LABEL">
 	/**
 	 * Opens a new label element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">&lt;label&gt;: The Input Label element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_label.asp">HTML label tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("label")
 	AnyLABEL<D, __, ?, ?, ?> label() throws IOException;
@@ -575,9 +593,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates a label element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">&lt;label&gt;: The Input Label element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_label.asp">HTML label tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -590,9 +610,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates a label element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">&lt;label&gt;: The Input Label element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_label.asp">HTML label tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -605,9 +627,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates a label element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">&lt;label&gt;: The Input Label element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_label.asp">HTML label tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -618,9 +642,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates an empty label element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">&lt;label&gt;: The Input Label element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_label.asp">HTML label tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -631,9 +657,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates a label element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">&lt;label&gt;: The Input Label element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_label.asp">HTML label tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
@@ -649,18 +677,22 @@ public interface AnyUnion_Interactive_Phrasing<
 	// <editor-fold defaultstate="collapsed" desc="SELECT">
 	/**
 	 * Opens a new select element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">&lt;section&gt;: The HTML Select element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_select.asp">HTML select tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("select")
 	AnySELECT<D, __, ?, ?, ?> select() throws IOException;
 
 	/**
 	 * Creates a select element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">&lt;section&gt;: The HTML Select element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_select.asp">HTML select tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -673,9 +705,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates a select element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">&lt;section&gt;: The HTML Select element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_select.asp">HTML select tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -688,9 +722,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates an empty select element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">&lt;section&gt;: The HTML Select element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_select.asp">HTML select tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -701,9 +737,11 @@ public interface AnyUnion_Interactive_Phrasing<
 
 	/**
 	 * Creates a select element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">&lt;section&gt;: The HTML Select element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_select.asp">HTML select tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end

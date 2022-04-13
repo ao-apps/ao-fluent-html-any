@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,11 @@ import com.aoapps.lang.io.function.IORunnableE;
 import java.io.IOException;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <__>  This content model, which will be the parent content model of child elements
@@ -55,18 +59,22 @@ public interface AnyTR_content<
 	// <editor-fold defaultstate="collapsed" desc="TD">
 	/**
 	 * Opens a new td element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td">&lt;td&gt;: The Table Data Cell element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_td.asp">HTML td tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("td")
 	AnyTD<D, __, ?, ?, ?> td() throws IOException;
 
 	/**
 	 * Creates a td element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td">&lt;td&gt;: The Table Data Cell element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_td.asp">HTML td tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -79,9 +87,11 @@ public interface AnyTR_content<
 
 	/**
 	 * Creates a td element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td">&lt;td&gt;: The Table Data Cell element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_td.asp">HTML td tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -94,9 +104,11 @@ public interface AnyTR_content<
 
 	/**
 	 * Creates a td element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td">&lt;td&gt;: The Table Data Cell element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_td.asp">HTML td tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -107,9 +119,11 @@ public interface AnyTR_content<
 
 	/**
 	 * Creates an empty td element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td">&lt;td&gt;: The Table Data Cell element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_td.asp">HTML td tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -120,9 +134,11 @@ public interface AnyTR_content<
 
 	/**
 	 * Creates a td element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td">&lt;td&gt;: The Table Data Cell element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_td.asp">HTML td tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
@@ -137,18 +153,22 @@ public interface AnyTR_content<
 	// <editor-fold defaultstate="collapsed" desc="TH">
 	/**
 	 * Opens a new th element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th">&lt;th&gt;: The Table Header element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_th.asp">HTML th tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("th")
 	AnyTH<D, __, ?, ?, ?> th() throws IOException;
 
 	/**
 	 * Creates a th element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th">&lt;th&gt;: The Table Header element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_th.asp">HTML th tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -161,9 +181,11 @@ public interface AnyTR_content<
 
 	/**
 	 * Creates a th element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th">&lt;th&gt;: The Table Header element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_th.asp">HTML th tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -176,9 +198,11 @@ public interface AnyTR_content<
 
 	/**
 	 * Creates a th element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th">&lt;th&gt;: The Table Header element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_th.asp">HTML th tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -189,9 +213,11 @@ public interface AnyTR_content<
 
 	/**
 	 * Creates an empty th element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th">&lt;th&gt;: The Table Header element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_th.asp">HTML th tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -202,9 +228,11 @@ public interface AnyTR_content<
 
 	/**
 	 * Creates a th element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th">&lt;th&gt;: The Table Header element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_th.asp">HTML th tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end

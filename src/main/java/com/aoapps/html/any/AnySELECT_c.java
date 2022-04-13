@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">&lt;section&gt;: The HTML Select element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_select.asp">HTML select tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within

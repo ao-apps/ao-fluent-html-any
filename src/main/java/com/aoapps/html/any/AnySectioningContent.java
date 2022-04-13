@@ -54,9 +54,11 @@ public interface AnySectioningContent<
 	// <editor-fold defaultstate="collapsed" desc="ARTICLE">
 	/**
 	 * Opens a new article element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">&lt;article&gt;: The Article Contents element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_article.asp">HTML article Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @since HTML 5
 	 */
@@ -65,9 +67,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an article element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">&lt;article&gt;: The Article Contents element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_article.asp">HTML article Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -82,9 +86,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an article element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">&lt;article&gt;: The Article Contents element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_article.asp">HTML article Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -99,9 +105,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an article element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">&lt;article&gt;: The Article Contents element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_article.asp">HTML article Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -114,9 +122,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an empty article element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">&lt;article&gt;: The Article Contents element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_article.asp">HTML article Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -129,9 +139,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an article element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">&lt;article&gt;: The Article Contents element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_article.asp">HTML article Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
@@ -148,9 +160,11 @@ public interface AnySectioningContent<
 	// <editor-fold defaultstate="collapsed" desc="ASIDE">
 	/**
 	 * Opens a new aside element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">&lt;aside&gt;: The Aside element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_aside.asp">HTML aside Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @since HTML 5
 	 */
@@ -159,9 +173,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an aside element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">&lt;aside&gt;: The Aside element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_aside.asp">HTML aside Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -176,9 +192,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an aside element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">&lt;aside&gt;: The Aside element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_aside.asp">HTML aside Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -193,9 +211,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an aside element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">&lt;aside&gt;: The Aside element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_aside.asp">HTML aside Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -208,9 +228,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an empty aside element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">&lt;aside&gt;: The Aside element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_aside.asp">HTML aside Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -223,9 +245,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an aside element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">&lt;aside&gt;: The Aside element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_aside.asp">HTML aside Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
@@ -242,9 +266,11 @@ public interface AnySectioningContent<
 	// <editor-fold defaultstate="collapsed" desc="NAV">
 	/**
 	 * Opens a new nav element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">&lt;nav&gt;: The Navigation Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_nav.asp">HTML nav Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @since HTML 5
 	 */
@@ -253,9 +279,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates a nav element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">&lt;nav&gt;: The Navigation Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_nav.asp">HTML nav Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -270,9 +298,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates a nav element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">&lt;nav&gt;: The Navigation Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_nav.asp">HTML nav Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -287,9 +317,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates a nav element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">&lt;nav&gt;: The Navigation Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_nav.asp">HTML nav Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -302,9 +334,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an empty nav element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">&lt;nav&gt;: The Navigation Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_nav.asp">HTML nav Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -317,9 +351,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates a nav element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">&lt;nav&gt;: The Navigation Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_nav.asp">HTML nav Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
@@ -336,9 +372,11 @@ public interface AnySectioningContent<
 	// <editor-fold defaultstate="collapsed" desc="SECTION">
 	/**
 	 * Opens a new section element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">&lt;section&gt;: The Generic Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_section.asp">HTML section Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @since HTML 5
 	 */
@@ -347,9 +385,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates a section element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">&lt;section&gt;: The Generic Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_section.asp">HTML section Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -364,9 +404,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates a section element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">&lt;section&gt;: The Generic Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_section.asp">HTML section Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -381,9 +423,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates a section element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">&lt;section&gt;: The Generic Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_section.asp">HTML section Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -396,9 +440,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates an empty section element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">&lt;section&gt;: The Generic Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_section.asp">HTML section Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -411,9 +457,11 @@ public interface AnySectioningContent<
 
 	/**
 	 * Creates a section element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">&lt;section&gt;: The Generic Section element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_section.asp">HTML section Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end

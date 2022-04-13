@@ -29,7 +29,11 @@ import java.io.IOException;
 import java.io.Writer;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within
@@ -69,9 +73,11 @@ public abstract class AnyDFN<
 	 * The {@linkplain Title#title(java.lang.Object) title} attribute
 	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-dfn-title">has special semantics</a>
 	 * on this element: Full term or expansion of abbreviation.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
+	 * </ul>
 	 */
 	@Override
 	public E title(Object title) throws IOException {
@@ -82,9 +88,11 @@ public abstract class AnyDFN<
 	 * The {@linkplain Title#title(com.aoapps.lang.io.function.IOSupplierE) title} attribute
 	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-dfn-title">has special semantics</a>
 	 * on this element: Full term or expansion of abbreviation.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
@@ -97,9 +105,11 @@ public abstract class AnyDFN<
 	 * The {@linkplain Title#title(com.aoapps.encoding.TextWritable) title} attribute
 	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-dfn-title">has special semantics</a>
 	 * on this element: Full term or expansion of abbreviation.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */

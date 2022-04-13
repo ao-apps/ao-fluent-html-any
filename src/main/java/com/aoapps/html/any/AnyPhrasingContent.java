@@ -71,8 +71,8 @@ public interface AnyPhrasingContent<
 	/**
 	 * Opens a new area element.
 	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">HTML Standard</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
 	 * </ul>
 	 */
@@ -82,8 +82,8 @@ public interface AnyPhrasingContent<
 	/**
 	 * Opens a new area element with the given coords attribute.
 	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">HTML Standard</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
 	 * </ul>
 	 */
@@ -93,8 +93,8 @@ public interface AnyPhrasingContent<
 	/**
 	 * Opens a new area element with the given coords attribute.
 	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">HTML Standard</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
 	 * </ul>
 	 *
@@ -106,8 +106,8 @@ public interface AnyPhrasingContent<
 	/**
 	 * Opens a new area element with the given coords attribute.
 	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">HTML Standard</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
 	 * </ul>
 	 */
@@ -117,8 +117,8 @@ public interface AnyPhrasingContent<
 	/**
 	 * Opens a new area element with the given coords attribute.
 	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">HTML Standard</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
 	 * </ul>
 	 *
@@ -130,8 +130,8 @@ public interface AnyPhrasingContent<
 	/**
 	 * Opens a new area element with the given coords attribute.
 	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">HTML Standard</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
 	 * </ul>
 	 */
@@ -141,8 +141,8 @@ public interface AnyPhrasingContent<
 	/**
 	 * Opens a new area element with the given coords attribute.
 	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">HTML Standard</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
 	 * </ul>
 	 *
@@ -154,8 +154,8 @@ public interface AnyPhrasingContent<
 	/**
 	 * Opens a new area element with the given coords attribute.
 	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">HTML Standard</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
 	 * </ul>
 	 */
@@ -165,8 +165,8 @@ public interface AnyPhrasingContent<
 	/**
 	 * Opens a new area element with the given coords attribute.
 	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">HTML Standard</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
 	 * </ul>
 	 *
@@ -184,6 +184,7 @@ public interface AnyPhrasingContent<
 	 * Opens a new br element.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element">4.5.27 The br element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br">&lt;br&gt;: The Line Break element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_br.asp">HTML br tag</a>.</li>
 	 * </ul>
 	 */
@@ -194,6 +195,7 @@ public interface AnyPhrasingContent<
 	 * Creates a br element with no attributes.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element">4.5.27 The br element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br">&lt;br&gt;: The Line Break element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_br.asp">HTML br tag</a>.</li>
 	 * </ul>
 	 *
@@ -212,9 +214,11 @@ public interface AnyPhrasingContent<
 	// <editor-fold defaultstate="collapsed" desc="DATALIST">
 	/**
 	 * Opens a new datalist element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @since HTML 5
 	 */
@@ -223,9 +227,11 @@ public interface AnyPhrasingContent<
 
 	/**
 	 * Creates a datalist element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -240,9 +246,11 @@ public interface AnyPhrasingContent<
 
 	/**
 	 * Creates a datalist element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -257,9 +265,11 @@ public interface AnyPhrasingContent<
 
 	/**
 	 * Creates a datalist element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -272,9 +282,11 @@ public interface AnyPhrasingContent<
 
 	/**
 	 * Creates an empty datalist element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 *
@@ -287,9 +299,11 @@ public interface AnyPhrasingContent<
 
 	/**
 	 * Creates a datalist element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
@@ -306,18 +320,22 @@ public interface AnyPhrasingContent<
 	// <editor-fold defaultstate="collapsed" desc="DEL">
 	/**
 	 * Opens a new del element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("del")
 	AnyDEL<D, __, ?, ?> del() throws IOException;
 
 	/**
 	 * Creates a del element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -330,9 +348,11 @@ public interface AnyPhrasingContent<
 
 	/**
 	 * Creates a del element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -345,9 +365,11 @@ public interface AnyPhrasingContent<
 
 	/**
 	 * Creates an empty del element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -358,9 +380,11 @@ public interface AnyPhrasingContent<
 
 	/**
 	 * Creates a del element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end

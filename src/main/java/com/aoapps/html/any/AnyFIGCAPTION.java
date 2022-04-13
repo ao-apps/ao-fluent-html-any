@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element">4.4.13 The figcaption element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figcaption">&lt;figcaption&gt;: The Figure Caption element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_figcaption.asp">HTML figcaption Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

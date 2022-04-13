@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element">4.8.2 The source element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/source">&lt;source&gt;: The Media or Image Source element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_source.asp">HTML source Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

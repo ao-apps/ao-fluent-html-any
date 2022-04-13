@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within

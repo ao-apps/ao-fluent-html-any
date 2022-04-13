@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">4.8.9 The video element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video">&lt;video&gt;: The Video Embed element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_video.asp">HTML video Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

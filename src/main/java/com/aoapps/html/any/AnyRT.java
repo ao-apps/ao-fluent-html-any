@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element">4.5.11 The rt element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/rt">&lt;rt&gt;: The Ruby Text element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_rp.asp">HTML rp Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

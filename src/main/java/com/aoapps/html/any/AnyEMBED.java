@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-embed-element">4.8.6 The embed element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/embed">&lt;embed&gt;: The Embed External Content element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_embed.asp">HTML embed Tag</a>.</li>
+ * </ul>
  *
  * @author  AO Industries, Inc.
  */

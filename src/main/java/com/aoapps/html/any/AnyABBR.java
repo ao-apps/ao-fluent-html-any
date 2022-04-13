@@ -29,7 +29,11 @@ import java.io.IOException;
 import java.io.Writer;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within
@@ -68,9 +72,11 @@ public abstract class AnyABBR<
 	 * The {@linkplain Title#title(java.lang.Object) title} attribute
 	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
 	 * on this element: Full term or expansion of abbreviation.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
+	 * </ul>
 	 */
 	@Override
 	public E title(Object title) throws IOException {
@@ -81,9 +87,11 @@ public abstract class AnyABBR<
 	 * The {@linkplain Title#title(com.aoapps.lang.io.function.IOSupplierE) title} attribute
 	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
 	 * on this element: Full term or expansion of abbreviation.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */
@@ -96,9 +104,11 @@ public abstract class AnyABBR<
 	 * The {@linkplain Title#title(com.aoapps.encoding.TextWritable) title} attribute
 	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
 	 * on this element: Full term or expansion of abbreviation.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 */

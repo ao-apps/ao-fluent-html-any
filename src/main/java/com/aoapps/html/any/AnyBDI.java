@@ -28,7 +28,11 @@ import java.io.IOException;
 import java.io.Writer;
 
 /**
- * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
+ * </ul>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within
@@ -69,9 +73,11 @@ public abstract class AnyBDI<
 	/**
 	 * The {@linkplain Dir#dir(java.lang.String) dir} global attribute defaults to <code>auto</code>
 	 * on this element (it never inherits from the parent element like with other elements).
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @since HTML 5
 	 */
@@ -83,9 +89,11 @@ public abstract class AnyBDI<
 	/**
 	 * The {@linkplain Dir#dir(com.aoapps.html.Suppliers.String) dir} global attribute defaults to <code>auto</code>
 	 * on this element (it never inherits from the parent element like with other elements).
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -99,9 +107,11 @@ public abstract class AnyBDI<
 	/**
 	 * The {@linkplain Dir#dir(com.aoapps.html.any.attributes.Enum.Dir.Value) dir} global attribute defaults to <code>auto</code>
 	 * on this element (it never inherits from the parent element like with other elements).
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @since HTML 5
 	 */
@@ -113,9 +123,11 @@ public abstract class AnyBDI<
 	/**
 	 * The {@linkplain Dir#dir(com.aoapps.lang.io.function.IOSupplierE) dir} global attribute defaults to <code>auto</code>
 	 * on this element (it never inherits from the parent element like with other elements).
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *

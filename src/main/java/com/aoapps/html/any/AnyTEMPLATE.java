@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element">4.12.3 The template element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/template">&lt;template&gt;: The Content Template element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_template.asp">HTML template tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

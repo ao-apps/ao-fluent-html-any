@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element">4.11.1 The details element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">&lt;details&gt;: The Details disclosure element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_details.asp">HTML details Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element">4.12.2 The noscript element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/noscript">&lt;noscript&gt;: The Noscript element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_noscript.asp">HTML noscript tag</a>.</li>
+ * </ul>
  *
  * @author  AO Industries, Inc.
  */

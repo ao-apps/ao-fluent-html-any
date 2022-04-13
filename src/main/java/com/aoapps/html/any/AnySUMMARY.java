@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element">4.11.2 The summary element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/summary">&lt;summary&gt;: The Disclosure Summary element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_summary.asp">HTML summary Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/obsolete.html#frame">16.3.2 Frames / frame</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/frame">&lt;frame&gt;</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_frame.asp">HTML frame tag</a>.</li>
+ * </ul>
  *
  * @author  AO Industries, Inc.
  */

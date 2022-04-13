@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">4.12.5 The canvas element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas">&lt;canvas&gt;: The Graphics Canvas element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_canvas.asp">HTML canvas Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

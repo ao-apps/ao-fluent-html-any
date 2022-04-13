@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-ruby-element">4.5.10 The ruby element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ruby">&lt;ruby&gt;: The Ruby Annotation element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_ruby.asp">HTML ruby Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">4.4.12 The figure element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/figure">&lt;figure&gt;: The Figure with Optional Caption element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_figure.asp">HTML figure Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

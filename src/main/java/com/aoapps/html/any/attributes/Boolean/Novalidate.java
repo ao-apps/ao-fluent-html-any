@@ -30,7 +30,7 @@ import java.io.IOException;
 /**
  * <ul>
  * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-novalidate">4.10.18.6 Form submission attributes</a>.</li>
- * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;: The Form element / novalidate</a>.</li>
  * <li>See <a href="https://www.w3schools.com/tags/att_novalidate.asp">HTML novalidate Attribute</a>.</li>
  * </ul>
  *
@@ -45,7 +45,7 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
 	/**
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-novalidate">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;: The Form element / novalidate</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_novalidate.asp">HTML novalidate Attribute</a>.</li>
 	 * </ul>
 	 *
@@ -61,7 +61,7 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
 	/**
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-novalidate">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;: The Form element / novalidate</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_novalidate.asp">HTML novalidate Attribute</a>.</li>
 	 * </ul>
 	 *
@@ -76,7 +76,7 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
 	/**
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-novalidate">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-novalidate">&lt;form&gt;: The Form element / novalidate</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_novalidate.asp">HTML novalidate Attribute</a>.</li>
 	 * </ul>
 	 *

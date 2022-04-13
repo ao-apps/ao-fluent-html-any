@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-time-element">4.5.14 The time element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time">&lt;time&gt;: The (Date) Time element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_time.asp">HTML time Tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

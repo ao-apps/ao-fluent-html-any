@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">4.12.4 The slot element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/slot">&lt;slot&gt;: The Web Component Slot element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_slot.asp">HTML slot tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

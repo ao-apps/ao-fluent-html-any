@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">4.8.10 The audio element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio">&lt;audio&gt;: The Embed Audio element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_audio.asp">HTML audio tag</a>.</li>
+ * </ul>
  *
  * @since HTML 5
  *

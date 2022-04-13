@@ -23,7 +23,11 @@
 package com.aoapps.html.any;
 
 /**
- * TODO
+ * <ul>
+ * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element">4.10.16 The legend element</a>.</li>
+ * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend">&lt;legend&gt;: The Field Set Legend element</a>.</li>
+ * <li>See <a href="https://www.w3schools.com/tags/tag_legend.asp">HTML legend tag</a>.</li>
+ * </ul>
  *
  * @author  AO Industries, Inc.
  */

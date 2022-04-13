@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -56,6 +56,7 @@ public interface AnyScriptSupportingContent<
 	 * Opens a new script element.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
 	 * </ul>
 	 *
@@ -68,6 +69,7 @@ public interface AnyScriptSupportingContent<
 	 * Opens a new script element of the given type.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
 	 * </ul>
@@ -79,6 +81,7 @@ public interface AnyScriptSupportingContent<
 	 * Opens a new script element of the given type.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
 	 * </ul>
@@ -92,6 +95,7 @@ public interface AnyScriptSupportingContent<
 	 * Opens a new script element of the given type.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
 	 * </ul>
@@ -103,6 +107,7 @@ public interface AnyScriptSupportingContent<
 	 * Opens a new script element of the given type.
 	 * <ul>
 	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
 	 * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
 	 * </ul>

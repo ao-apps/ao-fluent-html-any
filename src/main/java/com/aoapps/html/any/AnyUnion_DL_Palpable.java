@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,18 +49,22 @@ public interface AnyUnion_DL_Palpable<
 	// <editor-fold defaultstate="collapsed" desc="DIV">
 	/**
 	 * Opens a new div element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+	 * </ul>
 	 */
 	@Factory("div")
 	AnyDIV<D, __, ?, ?, ?> div() throws IOException;
 
 	/**
 	 * Creates a div element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -73,9 +77,11 @@ public interface AnyUnion_DL_Palpable<
 
 	/**
 	 * Creates a div element with no attributes and the given body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+	 * </ul>
 	 *
 	 * @param  <Ex>  An arbitrary exception type that may be thrown
 	 *
@@ -88,9 +94,11 @@ public interface AnyUnion_DL_Palpable<
 
 	/**
 	 * Creates a div element with no attributes and a text body.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -101,9 +109,11 @@ public interface AnyUnion_DL_Palpable<
 
 	/**
 	 * Creates an empty div element with no attributes.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  This content model, which will be the parent content model of child elements
 	 */
@@ -114,9 +124,11 @@ public interface AnyUnion_DL_Palpable<
 
 	/**
 	 * Creates a div element with no attributes then begins element content
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.
-	 * </p>
+	 * <ul>
+	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+	 * </ul>
 	 *
 	 * @return  The content model of this element, which will be the parent content model of child elements.
 	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
