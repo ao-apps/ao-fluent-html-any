@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -34,6 +34,7 @@
  *
  * @see  com.aoapps.html.any.Attributes.Integer
  */
+
 package com.aoapps.html.any.attributes.Integer;
 
 // TODO: Implement "unsigned long" (and other types) where appropriate: https://heycam.github.io/webidl/#idl-unsigned-long
