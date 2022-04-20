@@ -40,40 +40,40 @@ import java.io.IOException;
 @Deprecated
 public interface Border<E extends Element<?, ?, E> & Border<E>> {
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-border">&lt;table&gt;: The Table element / border</a>.
-	 *
-	 * @deprecated  The border attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E border(int border) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Dimension.attribute(element, "border", border);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-border">&lt;table&gt;: The Table element / border</a>.
+   *
+   * @deprecated  The border attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E border(int border) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Dimension.attribute(element, "border", border);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-border">&lt;table&gt;: The Table element / border</a>.
-	 *
-	 * @deprecated  The border attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E border(Integer border) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Dimension.attribute(element, "border", border);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-border">&lt;table&gt;: The Table element / border</a>.
+   *
+   * @deprecated  The border attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E border(Integer border) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Dimension.attribute(element, "border", border);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-border">&lt;table&gt;: The Table element / border</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @deprecated  The border attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E border(IOSupplierE<? extends Integer, Ex> border) throws IOException, Ex {
-		return border((border == null) ? null : border.get());
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-border">&lt;table&gt;: The Table element / border</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @deprecated  The border attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E border(IOSupplierE<? extends Integer, Ex> border) throws IOException, Ex {
+    return border((border == null) ? null : border.get());
+  }
 }

@@ -47,60 +47,60 @@ import java.io.IOException;
 // Matches Id
 public interface IdNoHtml4<E extends Element<?, ?, E> & IdNoHtml4<E>> extends Id<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the id attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 */
-	@Override
-	@Attributes.Funnel
-	default E id(Object id) throws IOException {
-		// TODO: normalize, then only throw when non-empty/null.  Here and other attributes.
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "id");
-		return Id.super.id(id);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the id attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   */
+  @Override
+  @Attributes.Funnel
+  default E id(Object id) throws IOException {
+    // TODO: normalize, then only throw when non-empty/null.  Here and other attributes.
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "id");
+    return Id.super.id(id);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the id attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #id(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E id(IOSupplierE<?, Ex> id) throws IOException, Ex {
-		return Id.super.id(id);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the id attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #id(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E id(IOSupplierE<?, Ex> id) throws IOException, Ex {
+    return Id.super.id(id);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the id attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #id(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E id(TextWritable<Ex> id) throws IOException, Ex {
-		return Id.super.id(id);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the id attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #id(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E id(TextWritable<Ex> id) throws IOException, Ex {
+    return Id.super.id(id);
+  }
 }

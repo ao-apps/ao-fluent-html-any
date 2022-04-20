@@ -34,5 +34,5 @@ import java.lang.annotation.Target;
  */
 @Target(ElementType.METHOD)
 @interface Factory {
-	public String value();
+  public String value();
 }

@@ -40,34 +40,34 @@ import java.io.IOException;
  */
 public interface Value<E extends Element<?, ?, E> & Value<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_value.asp">HTML value Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E value(Object value) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "value", MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_value.asp">HTML value Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E value(Object value) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "value", MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_value.asp">HTML value Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #value(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E value(IOSupplierE<?, Ex> value) throws IOException, Ex {
-		return value((value == null) ? null : value.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_value.asp">HTML value Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #value(java.lang.Object)
+   */
+  default <Ex extends Throwable> E value(IOSupplierE<?, Ex> value) throws IOException, Ex {
+    return value((value == null) ? null : value.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_value.asp">HTML value Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #value(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E value(TextWritable<Ex> value) throws IOException, Ex {
-		return value((Object)value);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_value.asp">HTML value Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #value(java.lang.Object)
+   */
+  default <Ex extends Throwable> E value(TextWritable<Ex> value) throws IOException, Ex {
+    return value((Object)value);
+  }
 }

@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Onbeforeprint<E extends Element<?, ?, E> & Onbeforeprint<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onbeforeprint.asp">HTML onbeforeprint Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onbeforeprint(Object onbeforeprint) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onbeforeprint");
-		return Attributes.Event.attribute(element, "onbeforeprint", onbeforeprint);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onbeforeprint.asp">HTML onbeforeprint Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onbeforeprint(Object onbeforeprint) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onbeforeprint");
+    return Attributes.Event.attribute(element, "onbeforeprint", onbeforeprint);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onbeforeprint.asp">HTML onbeforeprint Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onbeforeprint(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onbeforeprint(IOSupplierE<?, Ex> onbeforeprint) throws IOException, Ex {
-		return onbeforeprint((onbeforeprint == null) ? null : onbeforeprint.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onbeforeprint.asp">HTML onbeforeprint Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onbeforeprint(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onbeforeprint(IOSupplierE<?, Ex> onbeforeprint) throws IOException, Ex {
+    return onbeforeprint((onbeforeprint == null) ? null : onbeforeprint.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onbeforeprint.asp">HTML onbeforeprint Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onbeforeprint(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onbeforeprint(JavaScriptWritable<Ex> onbeforeprint) throws IOException, Ex {
-		return onbeforeprint((Object)onbeforeprint);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onbeforeprint.asp">HTML onbeforeprint Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onbeforeprint(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onbeforeprint(JavaScriptWritable<Ex> onbeforeprint) throws IOException, Ex {
+    return onbeforeprint((Object)onbeforeprint);
+  }
 }

@@ -41,51 +41,51 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Name<
-	E extends Element<?, ?, E> & Name<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Name<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E name(String name) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		// TODO: Is nullIfEmpty correct?  Is an empty name ever valid?
-		return Attributes.String.attribute(element, "name", MarkupType.NONE, name, true, true);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E name(String name) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    // TODO: Is nullIfEmpty correct?  Is an empty name ever valid?
+    return Attributes.String.attribute(element, "name", MarkupType.NONE, name, true, true);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #name(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E name(Suppliers.String<Ex> name) throws IOException, Ex {
-		return name((name == null) ? null : name.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #name(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E name(Suppliers.String<Ex> name) throws IOException, Ex {
+    return name((name == null) ? null : name.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
-	 *
-	 * @see #name(java.lang.String)
-	 */
-	default E name(V name) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return name((name == null) ? null : name.apply(element.getDocument()));
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
+   *
+   * @see #name(java.lang.String)
+   */
+  default E name(V name) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return name((name == null) ? null : name.apply(element.getDocument()));
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #name(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E name(IOSupplierE<? extends V, Ex> name) throws IOException, Ex {
-		return name((name == null) ? null : name.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #name(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E name(IOSupplierE<? extends V, Ex> name) throws IOException, Ex {
+    return name((name == null) ? null : name.get());
+  }
 }

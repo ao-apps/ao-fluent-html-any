@@ -39,40 +39,42 @@ import java.io.IOException;
  */
 public interface Usemap<E extends Element<?, ?, E> & Usemap<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_usemap.asp">HTML usemap Attribute</a>.
-	 * <p>
-	 * Automatically prefixes '#' to any non-null and non-empty (after trimming)
-	 * value that does not already begin with '#'.
-	 * </p>
-	 */
-	@Attributes.Funnel
-	default E usemap(String usemap) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		usemap = Strings.trimNullIfEmpty(usemap);
-		if(usemap != null) {
-			if(!usemap.startsWith("#")) usemap = '#' + usemap;
-			return Attributes.String.attribute(
-				element,
-				"usemap",
-				MarkupType.NONE,
-				usemap,
-				false, // already trimmed
-				false  // already nullIfEmpty
-			);
-		} else {
-			return element;
-		}
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_usemap.asp">HTML usemap Attribute</a>.
+   * <p>
+   * Automatically prefixes '#' to any non-null and non-empty (after trimming)
+   * value that does not already begin with '#'.
+   * </p>
+   */
+  @Attributes.Funnel
+  default E usemap(String usemap) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    usemap = Strings.trimNullIfEmpty(usemap);
+    if (usemap != null) {
+      if (!usemap.startsWith("#")) {
+        usemap = '#' + usemap;
+      }
+      return Attributes.String.attribute(
+        element,
+        "usemap",
+        MarkupType.NONE,
+        usemap,
+        false, // already trimmed
+        false  // already nullIfEmpty
+      );
+    } else {
+      return element;
+    }
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_usemap.asp">HTML usemap Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #usemap(java.lang.String)
-	 */
-	default <Ex extends Throwable> E usemap(IOSupplierE<? extends String, Ex> usemap) throws IOException, Ex {
-		return usemap((usemap == null) ? null : usemap.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_usemap.asp">HTML usemap Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #usemap(java.lang.String)
+   */
+  default <Ex extends Throwable> E usemap(IOSupplierE<? extends String, Ex> usemap) throws IOException, Ex {
+    return usemap((usemap == null) ? null : usemap.get());
+  }
 }

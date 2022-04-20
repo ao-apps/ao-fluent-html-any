@@ -37,47 +37,47 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyEmbeddedContent<
-	D  extends AnyDocument<D>,
-	__ extends AnyEmbeddedContent<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyEmbeddedContent<D, __>
 > extends
-	//
-	// Unions:
-	//
-	AnyUnion_Embedded_Interactive<D, __>,
-	AnyUnion_Embedded_Palpable_Phrasing<D, __>
+  //
+  // Unions:
+  //
+  AnyUnion_Embedded_Interactive<D, __>,
+  AnyUnion_Embedded_Palpable_Phrasing<D, __>
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
 {
-	//
-	// Factories:
-	//
-	// Inherited: AUDIO
-	// Inherited: CANVAS
-	// Inherited: EMBED
-	// Inherited: IFRAME
-	// Inherited: IMG
-	// Inherited: MathML math
-	// Inherited: OBJECT
-	// <editor-fold defaultstate="collapsed" desc="PICTURE">
-	/**
-	 * Opens a new picture element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element">4.8.1 The picture element</a>.
-	 * </p>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  TODO: Implement picture
-	 */
-	@Deprecated
-	@Factory("picture")
-	default AnyPICTURE picture() throws IOException {
-		throw new AssertionError("TODO: Implement picture");
-	}
-	// </editor-fold>
-	// Inherited: SVG svg
-	// Inherited: VIDEO
+  //
+  // Factories:
+  //
+  // Inherited: AUDIO
+  // Inherited: CANVAS
+  // Inherited: EMBED
+  // Inherited: IFRAME
+  // Inherited: IMG
+  // Inherited: MathML math
+  // Inherited: OBJECT
+  // <editor-fold defaultstate="collapsed" desc="PICTURE">
+  /**
+   * Opens a new picture element.
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element">4.8.1 The picture element</a>.
+   * </p>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  TODO: Implement picture
+   */
+  @Deprecated
+  @Factory("picture")
+  default AnyPICTURE picture() throws IOException {
+    throw new AssertionError("TODO: Implement picture");
+  }
+  // </editor-fold>
+  // Inherited: SVG svg
+  // Inherited: VIDEO
 }

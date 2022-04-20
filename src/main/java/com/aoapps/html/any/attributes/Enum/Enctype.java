@@ -46,102 +46,102 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Enctype<
-	E extends Element<?, ?, E> & Enctype<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Enctype<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E enctype(String enctype) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "enctype", MarkupType.NONE, enctype, true, true);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E enctype(String enctype) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "enctype", MarkupType.NONE, enctype, true, true);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #enctype(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E enctype(Suppliers.String<Ex> enctype) throws IOException, Ex {
-		return enctype((enctype == null) ? null : enctype.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #enctype(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E enctype(Suppliers.String<Ex> enctype) throws IOException, Ex {
+    return enctype((enctype == null) ? null : enctype.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @see #enctype(java.lang.String)
-	 */
-	default E enctype(V enctype) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return enctype((enctype == null) ? null : enctype.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
+   * </ul>
+   *
+   * @see #enctype(java.lang.String)
+   */
+  default E enctype(V enctype) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return enctype((enctype == null) ? null : enctype.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #enctype(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E enctype(IOSupplierE<? extends V, Ex> enctype) throws IOException, Ex {
-		return enctype((enctype == null) ? null : enctype.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #enctype(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E enctype(IOSupplierE<? extends V, Ex> enctype) throws IOException, Ex {
+    return enctype((enctype == null) ? null : enctype.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
-	 * </ul>
-	 */
-	public enum Value implements Function<AnyDocument<?>, String> {
-		X_WWW_FORM_URLENCODED(ContentType.X_WWW_FORM_URLENCODED),
-		FORM_DATA(ContentType.FORM_DATA),
-		/**
-		 * See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#plain-text-form-data">4.10.21.8 Plain text form data</a>.
-		 */
-		TEXT(ContentType.TEXT);
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
+   * </ul>
+   */
+  public enum Value implements Function<AnyDocument<?>, String> {
+    X_WWW_FORM_URLENCODED(ContentType.X_WWW_FORM_URLENCODED),
+    FORM_DATA(ContentType.FORM_DATA),
+    /**
+     * See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#plain-text-form-data">4.10.21.8 Plain text form data</a>.
+     */
+    TEXT(ContentType.TEXT);
 
-		private final String value;
+    private final String value;
 
-		private Value(String value) {
-			this.value = value;
-		}
+    private Value(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
 
-		public String getValue() {
-			return value;
-		}
-	}
+    public String getValue() {
+      return value;
+    }
+  }
 }

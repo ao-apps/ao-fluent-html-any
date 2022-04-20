@@ -48,142 +48,142 @@ import java.util.function.Function;
  */
 // Matches CharsetHtml4Only
 public interface Charset<
-	E extends Element<?, ?, E> & Charset<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Charset<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E charset(String charset) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "charset");
-		return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, true, true);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E charset(String charset) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "charset");
+    return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, true, true);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #charset(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
-		return charset((charset == null) ? null : charset.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #charset(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
+    return charset((charset == null) ? null : charset.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #charset(java.lang.String)
-	 */
-	default E charset(java.nio.charset.Charset charset) throws IOException {
-		return charset((charset == null) ? null : charset.name());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @see #charset(java.lang.String)
+   */
+  default E charset(java.nio.charset.Charset charset) throws IOException {
+    return charset((charset == null) ? null : charset.name());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #charset(java.nio.charset.Charset)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
-		return charset((charset == null) ? null : charset.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #charset(java.nio.charset.Charset)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
+    return charset((charset == null) ? null : charset.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #charset(java.lang.String)
-	 */
-	default E charset(V charset) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return charset((charset == null) ? null : charset.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @see #charset(java.lang.String)
+   */
+  default E charset(V charset) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return charset((charset == null) ? null : charset.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #charset(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {
-		return charset((charset == null) ? null : charset.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #charset(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {
+    return charset((charset == null) ? null : charset.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * <li>See <a href="https://www.iana.org/assignments/character-sets/character-sets.xhtml">Character Sets</a>.</li>
-	 * </ul>
-	 */
-	public enum Value implements Function<AnyDocument<?>, String> {
-		// TODO: Add other charsets here?
-		US_ASCII("US-ASCII"),
-		ISO_8859_1("ISO-8859-1"),
-		UTF_8("UTF-8"),
-		WINDOWS_1252("windows-1252");
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * <li>See <a href="https://www.iana.org/assignments/character-sets/character-sets.xhtml">Character Sets</a>.</li>
+   * </ul>
+   */
+  public enum Value implements Function<AnyDocument<?>, String> {
+    // TODO: Add other charsets here?
+    US_ASCII("US-ASCII"),
+    ISO_8859_1("ISO-8859-1"),
+    UTF_8("UTF-8"),
+    WINDOWS_1252("windows-1252");
 
-		private final String value;
+    private final String value;
 
-		private Value(String value) {
-			this.value = value;
-		}
+    private Value(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
 
-		public String getValue() {
-			return value;
-		}
-	}
+    public String getValue() {
+      return value;
+    }
+  }
 }

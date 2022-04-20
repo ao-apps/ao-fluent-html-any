@@ -40,32 +40,32 @@ import java.io.IOException;
  */
 public interface Readonly<E extends Element<?, ?, E> & Readonly<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_readonly.asp">HTML readonly Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E readonly(boolean readonly) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Boolean.attribute(element, "readonly", readonly);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_readonly.asp">HTML readonly Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E readonly(boolean readonly) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Boolean.attribute(element, "readonly", readonly);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_readonly.asp">HTML readonly Attribute</a>.
-	 *
-	 * @see #readonly(boolean)
-	 */
-	default E readonly(Boolean readonly) throws IOException {
-		return readonly(readonly != null && readonly);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_readonly.asp">HTML readonly Attribute</a>.
+   *
+   * @see #readonly(boolean)
+   */
+  default E readonly(Boolean readonly) throws IOException {
+    return readonly(readonly != null && readonly);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_readonly.asp">HTML readonly Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #readonly(java.lang.Boolean)
-	 */
-	default <Ex extends Throwable> E readonly(IOSupplierE<? extends Boolean, Ex> readonly) throws IOException, Ex {
-		return readonly((readonly == null) ? null : readonly.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_readonly.asp">HTML readonly Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #readonly(java.lang.Boolean)
+   */
+  default <Ex extends Throwable> E readonly(IOSupplierE<? extends Boolean, Ex> readonly) throws IOException, Ex {
+    return readonly((readonly == null) ? null : readonly.get());
+  }
 }

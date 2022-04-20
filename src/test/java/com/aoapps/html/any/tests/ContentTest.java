@@ -37,70 +37,70 @@ import org.junit.Test;
 @SuppressWarnings("rawtypes")
 public class ContentTest {
 
-	private final Class<? extends Content> testingClass;
+  private final Class<? extends Content> testingClass;
 
-	protected ContentTest(Class<? extends Content> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected ContentTest(Class<? extends Content> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public ContentTest() {
-		this(Content.class);
-	}
+  public ContentTest() {
+    this(Content.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			Content.class
-			//
-			// Unions:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      Content.class
+      //
+      // Unions:
+      //
+      // None
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			Content.class
-			//
-			// Content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      Content.class
+      //
+      // Content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			Content.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      Content.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass
-			//
-			// Factories:
-			//
-			// None
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass
+      //
+      // Factories:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals(
-			"Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-			-1,
-			AoArrays.indexOf(ContentModelTest.getAllContentModels(), Content.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, Content.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals(
+      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+      -1,
+      AoArrays.indexOf(ContentModelTest.getAllContentModels(), Content.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, Content.class);
+  }
 }

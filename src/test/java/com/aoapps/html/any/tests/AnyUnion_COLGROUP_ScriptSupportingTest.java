@@ -38,69 +38,69 @@ import org.junit.Test;
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class AnyUnion_COLGROUP_ScriptSupportingTest {
 
-	private final Class<? extends AnyUnion_COLGROUP_ScriptSupporting> testingClass;
+  private final Class<? extends AnyUnion_COLGROUP_ScriptSupporting> testingClass;
 
-	protected AnyUnion_COLGROUP_ScriptSupportingTest(Class<? extends AnyUnion_COLGROUP_ScriptSupporting> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyUnion_COLGROUP_ScriptSupportingTest(Class<? extends AnyUnion_COLGROUP_ScriptSupporting> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyUnion_COLGROUP_ScriptSupportingTest() {
-		this(AnyUnion_COLGROUP_ScriptSupporting.class);
-	}
+  public AnyUnion_COLGROUP_ScriptSupportingTest() {
+    this(AnyUnion_COLGROUP_ScriptSupporting.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyUnion_COLGROUP_ScriptSupporting.class
-			//
-			// Unions:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyUnion_COLGROUP_ScriptSupporting.class
+      //
+      // Unions:
+      //
+      // None
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyUnion_COLGROUP_ScriptSupporting.class,
-			//
-			// Content models:
-			//
-			Content.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyUnion_COLGROUP_ScriptSupporting.class,
+      //
+      // Content models:
+      //
+      Content.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyUnion_COLGROUP_ScriptSupporting.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyUnion_COLGROUP_ScriptSupporting.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"template"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "template"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-			-1,
-			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_COLGROUP_ScriptSupporting.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_COLGROUP_ScriptSupporting.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
+      -1,
+      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_COLGROUP_ScriptSupporting.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_COLGROUP_ScriptSupporting.class);
+  }
 }

@@ -39,129 +39,129 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyInteractiveContent<
-	D  extends AnyDocument<D>,
-	__ extends AnyInteractiveContent<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyInteractiveContent<D, __>
 > extends
-	//
-	// Unions:
-	//
-	// Inherited: AnyUnion_Embedded_Interactive<D, __>
-	AnyUnion_Interactive_Phrasing<D, __>
+  //
+  // Unions:
+  //
+  // Inherited: AnyUnion_Embedded_Interactive<D, __>
+  AnyUnion_Interactive_Phrasing<D, __>
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
 {
-	//
-	// Factories:
-	//
-	// Inherited: A - if the href attribute is present
-	// Inherited: AUDIO - if the controls attribute is present
-	// Inherited: BUTTON
-	// <editor-fold defaultstate="collapsed" desc="DETAILS">
-	/**
-	 * Opens a new details element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element">4.11.1 The details element</a>.
-	 * </p>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  TODO: Implement details
-	 */
-	@Deprecated
-	@Factory("details")
-	default AnyDETAILS details() throws IOException {
-		throw new AssertionError("TODO: Implement details");
-	}
-	// </editor-fold>
-	// Inherited: EMBED
-	// Inherited: IFRAME
-	// Inherited: IMG - if the usemap attribute is present
-	// Inherited: INPUT - if type attribute is not in the hidden state
-	// Inherited: LABEL
-	// <editor-fold defaultstate="collapsed" desc="MENU - (MDN only) if the type attribute is in the toolbar state">
-	/**
-	 * Opens a new menu element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("menu")
-	AnyMENU<D, __, ?, ?, ?> menu() throws IOException;
+  //
+  // Factories:
+  //
+  // Inherited: A - if the href attribute is present
+  // Inherited: AUDIO - if the controls attribute is present
+  // Inherited: BUTTON
+  // <editor-fold defaultstate="collapsed" desc="DETAILS">
+  /**
+   * Opens a new details element.
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-details-element">4.11.1 The details element</a>.
+   * </p>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  TODO: Implement details
+   */
+  @Deprecated
+  @Factory("details")
+  default AnyDETAILS details() throws IOException {
+    throw new AssertionError("TODO: Implement details");
+  }
+  // </editor-fold>
+  // Inherited: EMBED
+  // Inherited: IFRAME
+  // Inherited: IMG - if the usemap attribute is present
+  // Inherited: INPUT - if type attribute is not in the hidden state
+  // Inherited: LABEL
+  // <editor-fold defaultstate="collapsed" desc="MENU - (MDN only) if the type attribute is in the toolbar state">
+  /**
+   * Opens a new menu element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
+   * </ul>
+   */
+  @Factory("menu")
+  AnyMENU<D, __, ?, ?, ?> menu() throws IOException;
 
-	/**
-	 * Creates a menu element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("menu")
-	default <Ex extends Throwable> __ menu__(IORunnableE<Ex> menu) throws IOException, Ex {
-		return menu().__(menu);
-	}
+  /**
+   * Creates a menu element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("menu")
+  default <Ex extends Throwable> __ menu__(IORunnableE<Ex> menu) throws IOException, Ex {
+    return menu().__(menu);
+  }
 
-	/**
-	 * Creates a menu element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("menu")
-	default <Ex extends Throwable> __ menu__any(IOConsumerE<? super AnyMENU__<D, __, ? extends AnyMENU__<D, __, ?>>, Ex> menu) throws IOException, Ex {
-		return menu().__(menu);
-	}
+  /**
+   * Creates a menu element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("menu")
+  default <Ex extends Throwable> __ menu__any(IOConsumerE<? super AnyMENU__<D, __, ? extends AnyMENU__<D, __, ?>>, Ex> menu) throws IOException, Ex {
+    return menu().__(menu);
+  }
 
-	/**
-	 * Creates an empty menu element with no attributes.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("menu")
-	default __ menu__() throws IOException {
-		return menu().__();
-	}
+  /**
+   * Creates an empty menu element with no attributes.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("menu")
+  default __ menu__() throws IOException {
+    return menu().__();
+  }
 
-	/**
-	 * Creates a menu element with no attributes then begins element content
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  The content model of this element, which will be the parent content model of child elements.
-	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
-	 *          the tag.  This is well suited for use in a try-with-resources block.
-	 *
-	 * @see  Closeable#__()
-	 * @see  Closeable#close()
-	 */
-	@Factory("menu")
-	AnyMENU_c<D, __, ?> menu_c() throws IOException;
-	// </editor-fold>
-	// Inherited: OBJECT - if the usemap attribute is present
-	// Inherited: SELECT
-	// Inherited: TEXTAREA
-	// Inherited: VIDEO - if the controls attribute is present
+  /**
+   * Creates a menu element with no attributes then begins element content
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_menu.asp">HTML menu Tag</a>.</li>
+   * </ul>
+   *
+   * @return  The content model of this element, which will be the parent content model of child elements.
+   *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+   *          the tag.  This is well suited for use in a try-with-resources block.
+   *
+   * @see  Closeable#__()
+   * @see  Closeable#close()
+   */
+  @Factory("menu")
+  AnyMENU_c<D, __, ?> menu_c() throws IOException;
+  // </editor-fold>
+  // Inherited: OBJECT - if the usemap attribute is present
+  // Inherited: SELECT
+  // Inherited: TEXTAREA
+  // Inherited: VIDEO - if the controls attribute is present
 }

@@ -37,32 +37,32 @@ import java.io.IOException;
  */
 public interface Checked<E extends Element<?, ?, E> & Checked<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_checked.asp">HTML checked Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E checked(boolean checked) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Boolean.attribute(element, "checked", checked);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_checked.asp">HTML checked Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E checked(boolean checked) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Boolean.attribute(element, "checked", checked);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_checked.asp">HTML checked Attribute</a>.
-	 *
-	 * @see #checked(boolean)
-	 */
-	default E checked(Boolean checked) throws IOException {
-		return checked(checked != null && checked);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_checked.asp">HTML checked Attribute</a>.
+   *
+   * @see #checked(boolean)
+   */
+  default E checked(Boolean checked) throws IOException {
+    return checked(checked != null && checked);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_checked.asp">HTML checked Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #checked(java.lang.Boolean)
-	 */
-	default <Ex extends Throwable> E checked(IOSupplierE<? extends Boolean, Ex> checked) throws IOException, Ex {
-		return checked((checked == null) ? null : checked.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_checked.asp">HTML checked Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #checked(java.lang.Boolean)
+   */
+  default <Ex extends Throwable> E checked(IOSupplierE<? extends Boolean, Ex> checked) throws IOException, Ex {
+    return checked((checked == null) ? null : checked.get());
+  }
 }

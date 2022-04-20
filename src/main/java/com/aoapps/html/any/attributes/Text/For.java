@@ -40,37 +40,37 @@ import java.io.IOException;
  */
 public interface For<E extends Element<?, ?, E> & For<E>> {
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.
-	 */
-	// "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
-	@Attributes.Funnel
-	default E forAttr(Object forAttr) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "for", MarkupType.NONE, forAttr, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.
+   */
+  // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
+  @Attributes.Funnel
+  default E forAttr(Object forAttr) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "for", MarkupType.NONE, forAttr, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #forAttr(java.lang.Object)
-	 */
-	// "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
-	default <Ex extends Throwable> E forAttr(IOSupplierE<?, Ex> forAttr) throws IOException, Ex {
-		return forAttr((forAttr == null) ? null : forAttr.get());
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #forAttr(java.lang.Object)
+   */
+  // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
+  default <Ex extends Throwable> E forAttr(IOSupplierE<?, Ex> forAttr) throws IOException, Ex {
+    return forAttr((forAttr == null) ? null : forAttr.get());
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #forAttr(java.lang.Object)
-	 */
-	// "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
-	default <Ex extends Throwable> E forAttr(TextWritable<Ex> forAttr) throws IOException, Ex {
-		return forAttr((Object)forAttr);
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #forAttr(java.lang.Object)
+   */
+  // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
+  default <Ex extends Throwable> E forAttr(TextWritable<Ex> forAttr) throws IOException, Ex {
+    return forAttr((Object)forAttr);
+  }
 }

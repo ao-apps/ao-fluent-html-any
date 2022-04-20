@@ -40,72 +40,72 @@ import org.junit.Test;
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class AnyUnion_TBODY_THEAD_TFOOTTest {
 
-	private final Class<? extends AnyUnion_TBODY_THEAD_TFOOT> testingClass;
+  private final Class<? extends AnyUnion_TBODY_THEAD_TFOOT> testingClass;
 
-	protected AnyUnion_TBODY_THEAD_TFOOTTest(Class<? extends AnyUnion_TBODY_THEAD_TFOOT> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyUnion_TBODY_THEAD_TFOOTTest(Class<? extends AnyUnion_TBODY_THEAD_TFOOT> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyUnion_TBODY_THEAD_TFOOTTest() {
-		this(AnyUnion_TBODY_THEAD_TFOOT.class);
-	}
+  public AnyUnion_TBODY_THEAD_TFOOTTest() {
+    this(AnyUnion_TBODY_THEAD_TFOOT.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyUnion_TBODY_THEAD_TFOOT.class,
-			//
-			// Unions:
-			//
-			AnyUnion_COLGROUP_ScriptSupporting.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyUnion_TBODY_THEAD_TFOOT.class,
+      //
+      // Unions:
+      //
+      AnyUnion_COLGROUP_ScriptSupporting.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyUnion_TBODY_THEAD_TFOOT.class,
-			//
-			// Content models:
-			//
-			Content.class,
-			AnyScriptSupportingContent.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyUnion_TBODY_THEAD_TFOOT.class,
+      //
+      // Content models:
+      //
+      Content.class,
+      AnyScriptSupportingContent.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyUnion_TBODY_THEAD_TFOOT.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyUnion_TBODY_THEAD_TFOOT.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"tr",
-			"script",
-			"template"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "tr",
+      "script",
+      "template"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-			-1,
-			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_TBODY_THEAD_TFOOT.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_TBODY_THEAD_TFOOT.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
+      -1,
+      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_TBODY_THEAD_TFOOT.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_TBODY_THEAD_TFOOT.class);
+  }
 }

@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyTBODY__<
-	D  extends AnyDocument<D>,
-	PC extends AnyTABLE_content<D, PC>,
-	__ extends AnyTBODY__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyTABLE_content<D, PC>,
+  __ extends AnyTBODY__<D, PC, __>
 >
-	extends Normal__<D, PC, __>
-	implements AnyUnion_TBODY_THEAD_TFOOT<D, __> {
+  extends Normal__<D, PC, __>
+  implements AnyUnion_TBODY_THEAD_TFOOT<D, __> {
 
-	protected AnyTBODY__(AnyTBODY<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyTBODY__(AnyTBODY<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

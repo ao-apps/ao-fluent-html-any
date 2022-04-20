@@ -48,89 +48,91 @@ import java.io.IOException;
 // Matches AccesskeyUnexpected
 public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey">HTMLElement.accessKey</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_accesskey.asp">HTML accesskey Attributes</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E accesskey(Object accesskey) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "accesskey");
-		return Attributes.Text.attribute(element, "accesskey", MarkupType.NONE, accesskey, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey">HTMLElement.accessKey</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_accesskey.asp">HTML accesskey Attributes</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E accesskey(Object accesskey) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "accesskey");
+    return Attributes.Text.attribute(element, "accesskey", MarkupType.NONE, accesskey, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey">HTMLElement.accessKey</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_accesskey.asp">HTML accesskey Attributes</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	default E accesskey(int ... codePoints) throws IOException {
-		if(codePoints != null && codePoints.length > 0) {
-			// Default size optimized for Unicode BMP
-			StringBuilder accesskey = new StringBuilder(codePoints.length * 2 - 1);
-			for(int i = 0; i < codePoints.length; i++) {
-				int codePoint = codePoints[i];
-				if(i > 0) accesskey.append(' ');
-				if(Character.isBmpCodePoint(codePoint)) {
-					accesskey.append((char)codePoint);
-				} else if(Character.isValidCodePoint(codePoint)) {
-					accesskey.append(Character.highSurrogate(codePoint));
-					accesskey.append(Character.lowSurrogate(codePoint));
-				} else {
-					throw new IllegalArgumentException(String.format("Invalid code point: 0x%X", codePoint));
-				}
-			}
-			return accesskey(accesskey);
-		} else {
-			@SuppressWarnings("unchecked") E element = (E)this;
-			return element;
-		}
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey">HTMLElement.accessKey</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_accesskey.asp">HTML accesskey Attributes</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  default E accesskey(int ... codePoints) throws IOException {
+    if (codePoints != null && codePoints.length > 0) {
+      // Default size optimized for Unicode BMP
+      StringBuilder accesskey = new StringBuilder(codePoints.length * 2 - 1);
+      for (int i = 0; i < codePoints.length; i++) {
+        int codePoint = codePoints[i];
+        if (i > 0) {
+          accesskey.append(' ');
+        }
+        if (Character.isBmpCodePoint(codePoint)) {
+          accesskey.append((char)codePoint);
+        } else if (Character.isValidCodePoint(codePoint)) {
+          accesskey.append(Character.highSurrogate(codePoint));
+          accesskey.append(Character.lowSurrogate(codePoint));
+        } else {
+          throw new IllegalArgumentException(String.format("Invalid code point: 0x%X", codePoint));
+        }
+      }
+      return accesskey(accesskey);
+    } else {
+      @SuppressWarnings("unchecked") E element = (E)this;
+      return element;
+    }
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey">HTMLElement.accessKey</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_accesskey.asp">HTML accesskey Attributes</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #accesskey(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E accesskey(IOSupplierE<?, Ex> accesskey) throws IOException, Ex {
-		return accesskey((accesskey == null) ? null : accesskey.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey">HTMLElement.accessKey</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_accesskey.asp">HTML accesskey Attributes</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #accesskey(java.lang.Object)
+   */
+  default <Ex extends Throwable> E accesskey(IOSupplierE<?, Ex> accesskey) throws IOException, Ex {
+    return accesskey((accesskey == null) ? null : accesskey.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey">HTMLElement.accessKey</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_accesskey.asp">HTML accesskey Attributes</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #accesskey(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E accesskey(TextWritable<Ex> accesskey) throws IOException, Ex {
-		return accesskey((Object)accesskey);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey">HTMLElement.accessKey</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_accesskey.asp">HTML accesskey Attributes</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #accesskey(java.lang.Object)
+   */
+  default <Ex extends Throwable> E accesskey(TextWritable<Ex> accesskey) throws IOException, Ex {
+    return accesskey((Object)accesskey);
+  }
 }

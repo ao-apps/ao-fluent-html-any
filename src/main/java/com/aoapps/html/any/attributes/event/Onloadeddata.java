@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onloadeddata<E extends Element<?, ?, E> & Onloadeddata<E>> extends OnloadeddataUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onloadeddata(Object onloadeddata) throws IOException {
-		return OnloadeddataUnexpected.super.onloadeddata(onloadeddata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onloadeddata(Object onloadeddata) throws IOException {
+    return OnloadeddataUnexpected.super.onloadeddata(onloadeddata);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onloadeddata(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onloadeddata(IOSupplierE<?, Ex> onloadeddata) throws IOException, Ex {
-		return OnloadeddataUnexpected.super.onloadeddata(onloadeddata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onloadeddata(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onloadeddata(IOSupplierE<?, Ex> onloadeddata) throws IOException, Ex {
+    return OnloadeddataUnexpected.super.onloadeddata(onloadeddata);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onloadeddata(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onloadeddata(JavaScriptWritable<Ex> onloadeddata) throws IOException, Ex {
-		return OnloadeddataUnexpected.super.onloadeddata(onloadeddata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onloadeddata(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onloadeddata(JavaScriptWritable<Ex> onloadeddata) throws IOException, Ex {
+    return OnloadeddataUnexpected.super.onloadeddata(onloadeddata);
+  }
 }

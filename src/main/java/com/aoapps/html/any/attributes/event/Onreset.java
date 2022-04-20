@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onreset<E extends Element<?, ?, E> & Onreset<E>> extends OnresetUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onreset(Object onreset) throws IOException {
-		return OnresetUnexpected.super.onreset(onreset);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onreset(Object onreset) throws IOException {
+    return OnresetUnexpected.super.onreset(onreset);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onreset(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onreset(IOSupplierE<?, Ex> onreset) throws IOException, Ex {
-		return OnresetUnexpected.super.onreset(onreset);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onreset(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onreset(IOSupplierE<?, Ex> onreset) throws IOException, Ex {
+    return OnresetUnexpected.super.onreset(onreset);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onreset(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onreset(JavaScriptWritable<Ex> onreset) throws IOException, Ex {
-		return OnresetUnexpected.super.onreset(onreset);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onreset">3.2.6 Global attributes / onreset</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onreset">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onreset</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onreset">8.1.7.2.1 IDL definitions / onreset</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onreset">GlobalEventHandlers.onreset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onreset.asp">onreset Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onreset(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onreset(JavaScriptWritable<Ex> onreset) throws IOException, Ex {
+    return OnresetUnexpected.super.onreset(onreset);
+  }
 }

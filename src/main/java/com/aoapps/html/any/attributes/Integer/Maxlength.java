@@ -40,32 +40,32 @@ import java.io.IOException;
  */
 public interface Maxlength<E extends Element<?, ?, E> & Maxlength<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_maxlength.asp">HTML maxlength Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E maxlength(int maxlength) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "maxlength", maxlength);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_maxlength.asp">HTML maxlength Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E maxlength(int maxlength) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "maxlength", maxlength);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_maxlength.asp">HTML maxlength Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E maxlength(Integer maxlength) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "maxlength", maxlength);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_maxlength.asp">HTML maxlength Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E maxlength(Integer maxlength) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "maxlength", maxlength);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_maxlength.asp">HTML maxlength Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #maxlength(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E maxlength(IOSupplierE<? extends Integer, Ex> maxlength) throws IOException, Ex {
-		return maxlength((maxlength == null) ? null : maxlength.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_maxlength.asp">HTML maxlength Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #maxlength(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E maxlength(IOSupplierE<? extends Integer, Ex> maxlength) throws IOException, Ex {
+    return maxlength((maxlength == null) ? null : maxlength.get());
+  }
 }

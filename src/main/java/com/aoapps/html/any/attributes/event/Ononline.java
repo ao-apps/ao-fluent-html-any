@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Ononline<E extends Element<?, ?, E> & Ononline<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ononline.asp">HTML ononline Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E ononline(Object ononline) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "ononline");
-		return Attributes.Event.attribute(element, "ononline", ononline);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_ononline.asp">HTML ononline Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E ononline(Object ononline) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "ononline");
+    return Attributes.Event.attribute(element, "ononline", ononline);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ononline.asp">HTML ononline Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ononline(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E ononline(IOSupplierE<?, Ex> ononline) throws IOException, Ex {
-		return ononline((ononline == null) ? null : ononline.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_ononline.asp">HTML ononline Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ononline(java.lang.Object)
+   */
+  default <Ex extends Throwable> E ononline(IOSupplierE<?, Ex> ononline) throws IOException, Ex {
+    return ononline((ononline == null) ? null : ononline.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_ononline.asp">HTML ononline Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ononline(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E ononline(JavaScriptWritable<Ex> ononline) throws IOException, Ex {
-		return ononline((Object)ononline);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_ononline.asp">HTML ononline Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ononline(java.lang.Object)
+   */
+  default <Ex extends Throwable> E ononline(JavaScriptWritable<Ex> ononline) throws IOException, Ex {
+    return ononline((Object)ononline);
+  }
 }

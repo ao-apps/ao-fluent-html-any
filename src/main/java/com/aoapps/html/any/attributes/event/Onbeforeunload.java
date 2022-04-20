@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Onbeforeunload<E extends Element<?, ?, E> & Onbeforeunload<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onbeforeunload.asp">HTML onbeforeunload Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onbeforeunload(Object onbeforeunload) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onbeforeunload");
-		return Attributes.Event.attribute(element, "onbeforeunload", onbeforeunload);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onbeforeunload.asp">HTML onbeforeunload Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onbeforeunload(Object onbeforeunload) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onbeforeunload");
+    return Attributes.Event.attribute(element, "onbeforeunload", onbeforeunload);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onbeforeunload.asp">HTML onbeforeunload Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onbeforeunload(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onbeforeunload(IOSupplierE<?, Ex> onbeforeunload) throws IOException, Ex {
-		return onbeforeunload((onbeforeunload == null) ? null : onbeforeunload.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onbeforeunload.asp">HTML onbeforeunload Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onbeforeunload(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onbeforeunload(IOSupplierE<?, Ex> onbeforeunload) throws IOException, Ex {
+    return onbeforeunload((onbeforeunload == null) ? null : onbeforeunload.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onbeforeunload.asp">HTML onbeforeunload Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onbeforeunload(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onbeforeunload(JavaScriptWritable<Ex> onbeforeunload) throws IOException, Ex {
-		return onbeforeunload((Object)onbeforeunload);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onbeforeunload.asp">HTML onbeforeunload Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onbeforeunload(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onbeforeunload(JavaScriptWritable<Ex> onbeforeunload) throws IOException, Ex {
+    return onbeforeunload((Object)onbeforeunload);
+  }
 }

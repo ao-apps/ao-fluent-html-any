@@ -40,34 +40,34 @@ import java.io.IOException;
  */
 public interface Type<E extends Element<?, ?, E> & Type<E>> {
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-type">4.8.7 The object element / type</a>.
-	 */
-	@Attributes.Funnel
-	default E type(Object type) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "type", MarkupType.NONE, type, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-type">4.8.7 The object element / type</a>.
+   */
+  @Attributes.Funnel
+  default E type(Object type) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "type", MarkupType.NONE, type, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-type">4.8.7 The object element / type</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #type(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E type(IOSupplierE<?, Ex> type) throws IOException, Ex {
-		return type((type == null) ? null : type.get());
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-type">4.8.7 The object element / type</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #type(java.lang.Object)
+   */
+  default <Ex extends Throwable> E type(IOSupplierE<?, Ex> type) throws IOException, Ex {
+    return type((type == null) ? null : type.get());
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-type">4.8.7 The object element / type</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #type(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E type(TextWritable<Ex> type) throws IOException, Ex {
-		return type((Object)type);
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-type">4.8.7 The object element / type</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #type(java.lang.Object)
+   */
+  default <Ex extends Throwable> E type(TextWritable<Ex> type) throws IOException, Ex {
+    return type((Object)type);
+  }
 }

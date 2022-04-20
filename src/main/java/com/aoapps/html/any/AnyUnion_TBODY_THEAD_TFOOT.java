@@ -47,102 +47,102 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_TBODY_THEAD_TFOOT<
-	D  extends AnyDocument<D>,
-	__ extends AnyUnion_TBODY_THEAD_TFOOT<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyUnion_TBODY_THEAD_TFOOT<D, __>
 > extends
-	//
-	// Unions:
-	//
-	// Inherited: AnyCOLGROUP_ScriptSupporting<D, __>
+  //
+  // Unions:
+  //
+  // Inherited: AnyCOLGROUP_ScriptSupporting<D, __>
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
-	AnyScriptSupportingContent<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+  AnyScriptSupportingContent<D, __>
 {
-	//
-	// Factories:
-	//
-	// <editor-fold defaultstate="collapsed" desc="TR">
-	/**
-	 * Opens a new tr element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("tr")
-	AnyTR<D, __, ?, ?, ?> tr() throws IOException;
+  //
+  // Factories:
+  //
+  // <editor-fold defaultstate="collapsed" desc="TR">
+  /**
+   * Opens a new tr element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
+   * </ul>
+   */
+  @Factory("tr")
+  AnyTR<D, __, ?, ?, ?> tr() throws IOException;
 
-	/**
-	 * Creates a tr element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("tr")
-	default <Ex extends Throwable> __ tr__(IORunnableE<Ex> tr) throws IOException, Ex {
-		return tr().__(tr);
-	}
+  /**
+   * Creates a tr element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("tr")
+  default <Ex extends Throwable> __ tr__(IORunnableE<Ex> tr) throws IOException, Ex {
+    return tr().__(tr);
+  }
 
-	/**
-	 * Creates a tr element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("tr")
-	default <Ex extends Throwable> __ tr__any(IOConsumerE<? super AnyTR__<D, __, ? extends AnyTR__<D, __, ?>>, Ex> tr) throws IOException, Ex {
-		return tr().__(tr);
-	}
+  /**
+   * Creates a tr element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("tr")
+  default <Ex extends Throwable> __ tr__any(IOConsumerE<? super AnyTR__<D, __, ? extends AnyTR__<D, __, ?>>, Ex> tr) throws IOException, Ex {
+    return tr().__(tr);
+  }
 
-	/**
-	 * Creates an empty tr element with no attributes.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("tr")
-	default __ tr__() throws IOException {
-		return tr().__();
-	}
+  /**
+   * Creates an empty tr element with no attributes.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("tr")
+  default __ tr__() throws IOException {
+    return tr().__();
+  }
 
-	/**
-	 * Creates a tr element with no attributes then begins element content
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  The content model of this element, which will be the parent content model of child elements.
-	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
-	 *          the tag.  This is well suited for use in a try-with-resources block.
-	 *
-	 * @see  Closeable#__()
-	 * @see  Closeable#close()
-	 */
-	@Factory("tr")
-	AnyTR_c<D, __, ?> tr_c() throws IOException;
-	// </editor-fold>
-	// Inherited: SCRIPT
-	// Inherited: TEMPLATE
+  /**
+   * Creates a tr element with no attributes then begins element content
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_tr.asp">HTML tr tag</a>.</li>
+   * </ul>
+   *
+   * @return  The content model of this element, which will be the parent content model of child elements.
+   *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+   *          the tag.  This is well suited for use in a try-with-resources block.
+   *
+   * @see  Closeable#__()
+   * @see  Closeable#close()
+   */
+  @Factory("tr")
+  AnyTR_c<D, __, ?> tr_c() throws IOException;
+  // </editor-fold>
+  // Inherited: SCRIPT
+  // Inherited: TEMPLATE
 }

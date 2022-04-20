@@ -40,52 +40,52 @@ import java.io.IOException;
 // Matches Height
 public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>> extends Height<E> {
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * The height attribute is new in HTML5.
-	 * </p>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E height(int pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "height");
-		return Height.super.height(pixels);
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * The height attribute is new in HTML5.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E height(int pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "height");
+    return Height.super.height(pixels);
+  }
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * The height attribute is new in HTML5.
-	 * </p>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E height(Integer pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "height");
-		return Height.super.height(pixels);
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * The height attribute is new in HTML5.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E height(Integer pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "height");
+    return Height.super.height(pixels);
+  }
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * The height attribute is new in HTML5.
-	 * </p>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #height(java.lang.Integer)
-	 */
-	@Override
-	default <Ex extends Throwable> E height(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
-		return Height.super.height(pixels);
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * The height attribute is new in HTML5.
+   * </p>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #height(java.lang.Integer)
+   */
+  @Override
+  default <Ex extends Throwable> E height(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+    return Height.super.height(pixels);
+  }
 }

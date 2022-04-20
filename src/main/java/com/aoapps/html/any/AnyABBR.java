@@ -45,76 +45,76 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyABBR<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-	E  extends AnyABBR<D, PC, E, __, _c>,
-	__ extends AnyABBR__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyABBR_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+  E  extends AnyABBR<D, PC, E, __, _c>,
+  __ extends AnyABBR__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyABBR_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
-	protected AnyABBR(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyABBR(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, "<abbr", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, "<abbr", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></abbr>" : "</abbr>", false);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></abbr>" : "</abbr>", false);
+  }
 
-	/**
-	 * The {@linkplain Title#title(java.lang.Object) title} attribute
-	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
-	 * on this element: Full term or expansion of abbreviation.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
-	 * </ul>
-	 */
-	@Override
-	public E title(Object title) throws IOException {
-		return super.title(title);
-	}
+  /**
+   * The {@linkplain Title#title(java.lang.Object) title} attribute
+   * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
+   * on this element: Full term or expansion of abbreviation.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
+   * </ul>
+   */
+  @Override
+  public E title(Object title) throws IOException {
+    return super.title(title);
+  }
 
-	/**
-	 * The {@linkplain Title#title(com.aoapps.lang.io.function.IOSupplierE) title} attribute
-	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
-	 * on this element: Full term or expansion of abbreviation.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Override
-	public <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
-		return super.title(title);
-	}
+  /**
+   * The {@linkplain Title#title(com.aoapps.lang.io.function.IOSupplierE) title} attribute
+   * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
+   * on this element: Full term or expansion of abbreviation.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Override
+  public <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
+    return super.title(title);
+  }
 
-	/**
-	 * The {@linkplain Title#title(com.aoapps.encoding.TextWritable) title} attribute
-	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
-	 * on this element: Full term or expansion of abbreviation.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Override
-	public <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
-		return super.title(title);
-	}
+  /**
+   * The {@linkplain Title#title(com.aoapps.encoding.TextWritable) title} attribute
+   * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-abbr-title">has special semantics</a>
+   * on this element: Full term or expansion of abbreviation.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_abbr.asp">HTML abbr tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Override
+  public <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
+    return super.title(title);
+  }
 }

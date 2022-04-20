@@ -41,50 +41,50 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Rel<
-	E extends Element<?, ?, E> & Rel<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Rel<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_rel.asp">HTML rel Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E rel(String rel) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "rel", MarkupType.NONE, rel, true, true);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_rel.asp">HTML rel Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E rel(String rel) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "rel", MarkupType.NONE, rel, true, true);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_rel.asp">HTML rel Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #rel(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E rel(Suppliers.String<Ex> rel) throws IOException, Ex {
-		return rel((rel == null) ? null : rel.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_rel.asp">HTML rel Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #rel(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E rel(Suppliers.String<Ex> rel) throws IOException, Ex {
+    return rel((rel == null) ? null : rel.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_rel.asp">HTML rel Attribute</a>.
-	 *
-	 * @see #rel(java.lang.String)
-	 */
-	default E rel(V rel) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return rel((rel == null) ? null : rel.apply(element.getDocument()));
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_rel.asp">HTML rel Attribute</a>.
+   *
+   * @see #rel(java.lang.String)
+   */
+  default E rel(V rel) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return rel((rel == null) ? null : rel.apply(element.getDocument()));
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_rel.asp">HTML rel Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #rel(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E rel(IOSupplierE<? extends V, Ex> rel) throws IOException, Ex {
-		return rel((rel == null) ? null : rel.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_rel.asp">HTML rel Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #rel(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E rel(IOSupplierE<? extends V, Ex> rel) throws IOException, Ex {
+    return rel((rel == null) ? null : rel.get());
+  }
 }

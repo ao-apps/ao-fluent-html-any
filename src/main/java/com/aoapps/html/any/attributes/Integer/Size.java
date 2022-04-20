@@ -38,32 +38,32 @@ import java.io.IOException;
 // Matches SizeHtml4Only
 public interface Size<E extends Element<?, ?, E> & Size<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_size.asp">HTML size Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E size(int size) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "size", size);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_size.asp">HTML size Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E size(int size) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "size", size);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_size.asp">HTML size Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E size(Integer size) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "size", size);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_size.asp">HTML size Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E size(Integer size) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "size", size);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_size.asp">HTML size Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #size(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E size(IOSupplierE<? extends Integer, Ex> size) throws IOException, Ex {
-		return size((size == null) ? null : size.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_size.asp">HTML size Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #size(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E size(IOSupplierE<? extends Integer, Ex> size) throws IOException, Ex {
+    return size((size == null) ? null : size.get());
+  }
 }

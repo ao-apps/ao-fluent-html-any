@@ -43,96 +43,102 @@ import java.io.Writer;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyTITLE<
-	D  extends AnyDocument<D>,
-	PC extends AnyMetadataContent<D, PC>,
-	E  extends AnyTITLE<D, PC, E, __, _c>,
-	__ extends AnyTITLE__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyTITLE_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyMetadataContent<D, PC>,
+  E  extends AnyTITLE<D, PC, E, __, _c>,
+  __ extends AnyTITLE__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyTITLE_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-	// Global Attributes overrides
-	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-	com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-	com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
-	// Global Event Attributes overrides
-	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
+  // Global Attributes overrides
+  com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+  com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
+  com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+  com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
+  com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
+  com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+  // Global Event Attributes overrides
+  com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 
-	private boolean oldAutonli;
-	private boolean oldIndent;
-	private int oldDepth;
+  private boolean oldAutonli;
+  private boolean oldIndent;
+  private int oldDepth;
 
-	protected AnyTITLE(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyTITLE(D document, PC pc) {
+    super(document, pc);
+  }
 
-	/**
-	 * Does not have indented content.
-	 *
-	 * @return {@code false} - does not indent
-	 */
-	@Override
-	protected boolean isContentIndented() {
-		return false;
-	}
+  /**
+   * Does not have indented content.
+   *
+   * @return {@code false} - does not indent
+   */
+  @Override
+  protected boolean isContentIndented() {
+    return false;
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<title", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<title", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		oldAutonli = document.getAutonli();
-		if(oldAutonli) document.setAutonli(false);
-		oldIndent = document.getIndent();
-		if(oldIndent) document.setIndent(false);
-		oldDepth = document.getDepth();
-		if(oldDepth != 0) document.setDepth(0);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    oldAutonli = document.getAutonli();
+    if (oldAutonli) {
+      document.setAutonli(false);
+    }
+    oldIndent = document.getIndent();
+    if (oldIndent) {
+      document.setIndent(false);
+    }
+    oldDepth = document.getDepth();
+    if (oldDepth != 0) {
+      document.setDepth(0);
+    }
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document
-			.setDepth(oldDepth)
-			.setIndent(oldIndent)
-			.setAutonli(oldAutonli);
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></title>", false);
-		} else {
-			document.unsafe(unsafe, "</title>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document
+      .setDepth(oldDepth)
+      .setIndent(oldIndent)
+      .setAutonli(oldAutonli);
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></title>", false);
+    } else {
+      document.unsafe(unsafe, "</title>", false);
+    }
+    document.autoNl(unsafe);
+  }
 }

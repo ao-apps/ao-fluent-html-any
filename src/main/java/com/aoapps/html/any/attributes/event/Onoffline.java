@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Onoffline<E extends Element<?, ?, E> & Onoffline<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onoffline.asp">HTML onoffline Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onoffline(Object onoffline) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onoffline");
-		return Attributes.Event.attribute(element, "onoffline", onoffline);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onoffline.asp">HTML onoffline Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onoffline(Object onoffline) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onoffline");
+    return Attributes.Event.attribute(element, "onoffline", onoffline);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onoffline.asp">HTML onoffline Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onoffline(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onoffline(IOSupplierE<?, Ex> onoffline) throws IOException, Ex {
-		return onoffline((onoffline == null) ? null : onoffline.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onoffline.asp">HTML onoffline Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onoffline(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onoffline(IOSupplierE<?, Ex> onoffline) throws IOException, Ex {
+    return onoffline((onoffline == null) ? null : onoffline.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onoffline.asp">HTML onoffline Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onoffline(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onoffline(JavaScriptWritable<Ex> onoffline) throws IOException, Ex {
-		return onoffline((Object)onoffline);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onoffline.asp">HTML onoffline Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onoffline(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onoffline(JavaScriptWritable<Ex> onoffline) throws IOException, Ex {
+    return onoffline((Object)onoffline);
+  }
 }

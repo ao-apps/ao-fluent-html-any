@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onloadedmetadata<E extends Element<?, ?, E> & Onloadedmetadata<E>> extends OnloadedmetadataUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onloadedmetadata(Object onloadedmetadata) throws IOException {
-		return OnloadedmetadataUnexpected.super.onloadedmetadata(onloadedmetadata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onloadedmetadata(Object onloadedmetadata) throws IOException {
+    return OnloadedmetadataUnexpected.super.onloadedmetadata(onloadedmetadata);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onloadedmetadata(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onloadedmetadata(IOSupplierE<?, Ex> onloadedmetadata) throws IOException, Ex {
-		return OnloadedmetadataUnexpected.super.onloadedmetadata(onloadedmetadata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onloadedmetadata(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onloadedmetadata(IOSupplierE<?, Ex> onloadedmetadata) throws IOException, Ex {
+    return OnloadedmetadataUnexpected.super.onloadedmetadata(onloadedmetadata);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onloadedmetadata(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onloadedmetadata(JavaScriptWritable<Ex> onloadedmetadata) throws IOException, Ex {
-		return OnloadedmetadataUnexpected.super.onloadedmetadata(onloadedmetadata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onloadedmetadata(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onloadedmetadata(JavaScriptWritable<Ex> onloadedmetadata) throws IOException, Ex {
+    return OnloadedmetadataUnexpected.super.onloadedmetadata(onloadedmetadata);
+  }
 }

@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnplayingUnexpected<E extends Element<?, ?, E> & OnplayingUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onplaying attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onplaying(Object onplaying) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onplaying");
-		return Attributes.Event.attribute(element, "onplaying", onplaying);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onplaying attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onplaying(Object onplaying) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onplaying");
+    return Attributes.Event.attribute(element, "onplaying", onplaying);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onplaying(java.lang.Object)
-	 *
-	 * @deprecated  Although the onplaying attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onplaying(IOSupplierE<?, Ex> onplaying) throws IOException, Ex {
-		return onplaying((onplaying == null) ? null : onplaying.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onplaying(java.lang.Object)
+   *
+   * @deprecated  Although the onplaying attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onplaying(IOSupplierE<?, Ex> onplaying) throws IOException, Ex {
+    return onplaying((onplaying == null) ? null : onplaying.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onplaying(java.lang.Object)
-	 *
-	 * @deprecated  Although the onplaying attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onplaying(JavaScriptWritable<Ex> onplaying) throws IOException, Ex {
-		return onplaying((Object)onplaying);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onplaying(java.lang.Object)
+   *
+   * @deprecated  Although the onplaying attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onplaying(JavaScriptWritable<Ex> onplaying) throws IOException, Ex {
+    return onplaying((Object)onplaying);
+  }
 }

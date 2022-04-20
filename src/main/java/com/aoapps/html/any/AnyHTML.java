@@ -49,181 +49,181 @@ import java.util.Locale;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyHTML<
-	D  extends AnyDocument<D>,
-	PC extends Content<D, PC>,
-	E  extends AnyHTML<D, PC, E, __, _c>,
-	__ extends AnyHTML__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyHTML_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends Content<D, PC>,
+  E  extends AnyHTML<D, PC, E, __, _c>,
+  __ extends AnyHTML__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyHTML_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-	// Global Attributes overrides
-	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-	com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-	com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-	com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
-	// Global Event Attributes overrides
-	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-	com.aoapps.html.any.attributes.event.Onsecuritypolicyviolation<E>,
-	com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
+  // Global Attributes overrides
+  com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+  com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
+  com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+  com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+  com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
+  com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
+  com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+  // Global Event Attributes overrides
+  com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+  com.aoapps.html.any.attributes.event.Onsecuritypolicyviolation<E>,
+  com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 
-	protected AnyHTML(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyHTML(D document, PC pc) {
+    super(document, pc);
+  }
 
-	/**
-	 * Does not have indented content.
-	 *
-	 * @return {@code false} - does not indent
-	 */
-	@Override
-	protected boolean isContentIndented() {
-		return false;
-	}
+  /**
+   * Does not have indented content.
+   *
+   * @return {@code false} - does not indent
+   */
+  @Override
+  protected boolean isContentIndented() {
+    return false;
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(
-			unsafe,
-			(document.encodingContext.getSerialization() == Serialization.XML)
-				? "<html xmlns=\"http://www.w3.org/1999/xhtml\""
-				: "<html",
-			false
-		);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(
+      unsafe,
+      (document.encodingContext.getSerialization() == Serialization.XML)
+        ? "<html xmlns=\"http://www.w3.org/1999/xhtml\""
+        : "<html",
+      false
+    );
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></html>", false);
-		} else {
-			document.autoNli(unsafe).unsafe(unsafe, "</html>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></html>", false);
+    } else {
+      document.autoNli(unsafe).unsafe(unsafe, "</html>", false);
+    }
+    document.autoNl(unsafe);
+  }
 
-	/**
-	 * <p>
-	 * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
-	 * {@link EncodingContext#getSerialization() } is {@link Serialization#XML}.
-	 * </p>
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
-	 * </ul>
-	 * <hr>
-	 * {@inheritDoc}
-	 *
-	 * @see  AnyDocument#encodingContext
-	 */
-	@Override
-	public E lang(Object lang) throws IOException {
-		// Write default lang="…"
-		super.lang(lang);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(document.encodingContext.getSerialization() == Serialization.XML) {
-			// Add xml:lang="…"
-			Attributes.Text.attribute(element, "xml:lang", MarkupType.NONE, lang, true, true, textInXhtmlAttributeEncoder);
-		}
-		return element;
-	}
+  /**
+   * <p>
+   * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
+   * {@link EncodingContext#getSerialization() } is {@link Serialization#XML}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
+   * </ul>
+   * <hr>
+   * {@inheritDoc}
+   *
+   * @see  AnyDocument#encodingContext
+   */
+  @Override
+  public E lang(Object lang) throws IOException {
+    // Write default lang="…"
+    super.lang(lang);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    if (document.encodingContext.getSerialization() == Serialization.XML) {
+      // Add xml:lang="…"
+      Attributes.Text.attribute(element, "xml:lang", MarkupType.NONE, lang, true, true, textInXhtmlAttributeEncoder);
+    }
+    return element;
+  }
 
-	/**
-	 * <p>
-	 * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
-	 * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
-	 * </p>
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
-	 * </ul>
-	 * <hr>
-	 * {@inheritDoc}
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see  #lang(java.lang.Object)
-	 * @see  AnyDocument#encodingContext
-	 */
-	@Override
-	public <Ex extends Throwable> E lang(IOSupplierE<?, Ex> lang) throws IOException, Ex {
-		return super.lang(lang);
-	}
+  /**
+   * <p>
+   * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
+   * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
+   * </ul>
+   * <hr>
+   * {@inheritDoc}
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see  #lang(java.lang.Object)
+   * @see  AnyDocument#encodingContext
+   */
+  @Override
+  public <Ex extends Throwable> E lang(IOSupplierE<?, Ex> lang) throws IOException, Ex {
+    return super.lang(lang);
+  }
 
-	/**
-	 * <p>
-	 * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
-	 * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
-	 * </p>
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
-	 * </ul>
-	 * <hr>
-	 * {@inheritDoc}
-	 *
-	 * @see  #lang(java.lang.Object)
-	 * @see  AnyDocument#encodingContext
-	 */
-	@Override
-	public E lang(Locale lang) throws IOException {
-		return super.lang(lang);
-	}
+  /**
+   * <p>
+   * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
+   * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
+   * </ul>
+   * <hr>
+   * {@inheritDoc}
+   *
+   * @see  #lang(java.lang.Object)
+   * @see  AnyDocument#encodingContext
+   */
+  @Override
+  public E lang(Locale lang) throws IOException {
+    return super.lang(lang);
+  }
 
-	/**
-	 * <p>
-	 * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
-	 * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
-	 * </p>
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
-	 * </ul>
-	 * <hr>
-	 * {@inheritDoc}
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see  #lang(java.util.Locale)
-	 * @see  AnyDocument#encodingContext
-	 */
-	@Override
-	public <Ex extends Throwable> E lang(Suppliers.Locale<Ex> lang) throws IOException, Ex {
-		return super.lang(lang);
-	}
+  /**
+   * <p>
+   * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
+   * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
+   * </ul>
+   * <hr>
+   * {@inheritDoc}
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see  #lang(java.util.Locale)
+   * @see  AnyDocument#encodingContext
+   */
+  @Override
+  public <Ex extends Throwable> E lang(Suppliers.Locale<Ex> lang) throws IOException, Ex {
+    return super.lang(lang);
+  }
 }

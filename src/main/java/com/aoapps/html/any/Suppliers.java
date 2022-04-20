@@ -37,111 +37,113 @@ import java.io.IOException;
 // TODO: Move to ao-lang, since it is very similar to the new Iterables utility class.
 public final class Suppliers {
 
-	/** Make no instances. */
-	private Suppliers() {throw new AssertionError();}
+  /** Make no instances. */
+  private Suppliers() {
+    throw new AssertionError();
+  }
 
-	/**
-	 * Variant bounded by {@link java.nio.charset.Charset}, since can't have multiple methods with different bounds due to erasure.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@FunctionalInterface
-	public interface Charset<Ex extends Throwable> extends IOSupplierE<java.nio.charset.Charset, Ex> {
+  /**
+   * Variant bounded by {@link java.nio.charset.Charset}, since can't have multiple methods with different bounds due to erasure.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @FunctionalInterface
+  public interface Charset<Ex extends Throwable> extends IOSupplierE<java.nio.charset.Charset, Ex> {
 
-		/**
-		 * @return  The attribute value or {@code null} for no attribute.
-		 */
-		@Override
-		java.nio.charset.Charset get() throws IOException, Ex;
-	}
+    /**
+     * @return  The attribute value or {@code null} for no attribute.
+     */
+    @Override
+    java.nio.charset.Charset get() throws IOException, Ex;
+  }
 
-	/**
-	 * Variant bounded by {@link com.aoapps.html.any.Circle}, since can't have multiple methods with different bounds due to erasure.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@FunctionalInterface
-	public interface Circle<Ex extends Throwable> extends IOSupplierE<com.aoapps.html.any.Circle, Ex> {
+  /**
+   * Variant bounded by {@link com.aoapps.html.any.Circle}, since can't have multiple methods with different bounds due to erasure.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @FunctionalInterface
+  public interface Circle<Ex extends Throwable> extends IOSupplierE<com.aoapps.html.any.Circle, Ex> {
 
-		/**
-		 * @return  The attribute value or {@code null} for no attribute.
-		 */
-		@Override
-		com.aoapps.html.any.Circle get() throws IOException, Ex;
-	}
+    /**
+     * @return  The attribute value or {@code null} for no attribute.
+     */
+    @Override
+    com.aoapps.html.any.Circle get() throws IOException, Ex;
+  }
 
-	/**
-	 * Variant bounded by {@link java.util.Locale}, since can't have multiple methods with different bounds due to erasure.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@FunctionalInterface
-	public interface Locale<Ex extends Throwable> extends IOSupplierE<java.util.Locale, Ex> {
+  /**
+   * Variant bounded by {@link java.util.Locale}, since can't have multiple methods with different bounds due to erasure.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @FunctionalInterface
+  public interface Locale<Ex extends Throwable> extends IOSupplierE<java.util.Locale, Ex> {
 
-		/**
-		 * @return  The attribute value or {@code null} for no attribute.
-		 */
-		@Override
-		java.util.Locale get() throws IOException, Ex;
-	}
+    /**
+     * @return  The attribute value or {@code null} for no attribute.
+     */
+    @Override
+    java.util.Locale get() throws IOException, Ex;
+  }
 
-	/**
-	 * Variant bounded by {@link java.awt.Polygon}, since can't have multiple methods with different bounds due to erasure.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@FunctionalInterface
-	public interface Polygon<Ex extends Throwable> extends IOSupplierE<java.awt.Polygon, Ex> {
+  /**
+   * Variant bounded by {@link java.awt.Polygon}, since can't have multiple methods with different bounds due to erasure.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @FunctionalInterface
+  public interface Polygon<Ex extends Throwable> extends IOSupplierE<java.awt.Polygon, Ex> {
 
-		/**
-		 * @return  The attribute value or {@code null} for no attribute.
-		 */
-		@Override
-		java.awt.Polygon get() throws IOException, Ex;
-	}
+    /**
+     * @return  The attribute value or {@code null} for no attribute.
+     */
+    @Override
+    java.awt.Polygon get() throws IOException, Ex;
+  }
 
-	/**
-	 * Variant bounded by {@link java.awt.Rectangle}, since can't have multiple methods with different bounds due to erasure.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@FunctionalInterface
-	public interface Rectangle<Ex extends Throwable> extends IOSupplierE<java.awt.Rectangle, Ex> {
+  /**
+   * Variant bounded by {@link java.awt.Rectangle}, since can't have multiple methods with different bounds due to erasure.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @FunctionalInterface
+  public interface Rectangle<Ex extends Throwable> extends IOSupplierE<java.awt.Rectangle, Ex> {
 
-		/**
-		 * @return  The attribute value or {@code null} for no attribute.
-		 */
-		@Override
-		java.awt.Rectangle get() throws IOException, Ex;
-	}
+    /**
+     * @return  The attribute value or {@code null} for no attribute.
+     */
+    @Override
+    java.awt.Rectangle get() throws IOException, Ex;
+  }
 
-	/**
-	 * Variant bounded by {@link java.awt.Shape}, since can't have multiple methods with different bounds due to erasure.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@FunctionalInterface
-	public interface Shape<Ex extends Throwable> extends IOSupplierE<java.awt.Shape, Ex> {
+  /**
+   * Variant bounded by {@link java.awt.Shape}, since can't have multiple methods with different bounds due to erasure.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @FunctionalInterface
+  public interface Shape<Ex extends Throwable> extends IOSupplierE<java.awt.Shape, Ex> {
 
-		/**
-		 * @return  The attribute value or {@code null} for no attribute.
-		 */
-		@Override
-		java.awt.Shape get() throws IOException, Ex;
-	}
+    /**
+     * @return  The attribute value or {@code null} for no attribute.
+     */
+    @Override
+    java.awt.Shape get() throws IOException, Ex;
+  }
 
-	/**
-	 * Variant bounded by {@link java.lang.String}, since can't have multiple methods with different bounds due to erasure.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@FunctionalInterface
-	public interface String<Ex extends Throwable> extends IOSupplierE<java.lang.String, Ex> {
+  /**
+   * Variant bounded by {@link java.lang.String}, since can't have multiple methods with different bounds due to erasure.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @FunctionalInterface
+  public interface String<Ex extends Throwable> extends IOSupplierE<java.lang.String, Ex> {
 
-		/**
-		 * @return  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
-		 */
-		@Override
-		java.lang.String get() throws IOException, Ex;
-	}
+    /**
+     * @return  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
+     */
+    @Override
+    java.lang.String get() throws IOException, Ex;
+  }
 }

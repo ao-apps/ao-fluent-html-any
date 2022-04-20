@@ -40,34 +40,34 @@ import java.io.IOException;
  */
 public interface Alt<E extends Element<?, ?, E> & Alt<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_alt.asp">HTML alt Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E alt(Object alt) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "alt", MarkupType.TEXT, alt, true, false, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_alt.asp">HTML alt Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E alt(Object alt) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "alt", MarkupType.TEXT, alt, true, false, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_alt.asp">HTML alt Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #alt(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E alt(IOSupplierE<?, Ex> alt) throws IOException, Ex {
-		return alt((alt == null) ? null : alt.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_alt.asp">HTML alt Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #alt(java.lang.Object)
+   */
+  default <Ex extends Throwable> E alt(IOSupplierE<?, Ex> alt) throws IOException, Ex {
+    return alt((alt == null) ? null : alt.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_alt.asp">HTML alt Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #alt(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E alt(TextWritable<Ex> alt) throws IOException, Ex {
-		return alt((Object)alt);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_alt.asp">HTML alt Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #alt(java.lang.Object)
+   */
+  default <Ex extends Throwable> E alt(TextWritable<Ex> alt) throws IOException, Ex {
+    return alt((Object)alt);
+  }
 }

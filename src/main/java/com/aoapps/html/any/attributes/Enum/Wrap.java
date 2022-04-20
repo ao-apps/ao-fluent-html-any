@@ -47,152 +47,158 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Wrap<
-	E extends Element<?, ?, E> & Wrap<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Wrap<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * <p>
-	 * Utility class for working with {@link Wrap}.
-	 * </p>
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
-	 * </p>
-	 */
-	public static final class wrap {
+  /**
+   * <p>
+   * Utility class for working with {@link Wrap}.
+   * </p>
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
+   * </p>
+   */
+  public static final class wrap {
 
-		/** Make no instances. */
-		private wrap() {throw new AssertionError();}
+    /** Make no instances. */
+    private wrap() {
+      throw new AssertionError();
+    }
 
-		/**
-		 * Normalizes a wrap attribute.
-		 *
-		 * @see  Strings#trimNullIfEmpty(java.lang.String)
-		 * @see  java.lang.String#toLowerCase(java.util.Locale)
-		 * @see  Locale#ROOT
-		 */
-		public static String normalize(String wrap) {
-			wrap = Strings.trimNullIfEmpty(wrap);
-			if(wrap != null) wrap = wrap.toLowerCase(Locale.ROOT);
-			return wrap;
-		}
+    /**
+     * Normalizes a wrap attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     * @see  java.lang.String#toLowerCase(java.util.Locale)
+     * @see  Locale#ROOT
+     */
+    public static String normalize(String wrap) {
+      wrap = Strings.trimNullIfEmpty(wrap);
+      if (wrap != null) {
+        wrap = wrap.toLowerCase(Locale.ROOT);
+      }
+      return wrap;
+    }
 
-		/**
-		 * Validates a wrap attribute.
-		 * The value should already be {@linkplain #normalize(java.lang.String) normalized}.
-		 *
-		 * @see #normalize(java.lang.String)
-		 */
-		public static ValidationResult validate(String wrap) {
-			if(
-				wrap != null
-				&& Wrap.Value.getByValue(wrap) == null
-			) {
-				return new InvalidResult(
-					RESOURCES,
-					"Enum.Wrap.invalid",
-					wrap
-				);
-			} else {
-				return ValidResult.getInstance();
-			}
-		}
-	}
+    /**
+     * Validates a wrap attribute.
+     * The value should already be {@linkplain #normalize(java.lang.String) normalized}.
+     *
+     * @see #normalize(java.lang.String)
+     */
+    public static ValidationResult validate(String wrap) {
+      if (
+        wrap != null
+        && Wrap.Value.getByValue(wrap) == null
+      ) {
+        return new InvalidResult(
+          RESOURCES,
+          "Enum.Wrap.invalid",
+          wrap
+        );
+      } else {
+        return ValidResult.getInstance();
+      }
+    }
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
-	 */
-	@Attributes.Funnel
-	default E wrap(String wrap) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(
-			element,
-			"wrap",
-			MarkupType.NONE,
-			Attributes.validate(
-				Wrap.wrap.normalize(wrap),
-				Wrap.wrap::validate
-			),
-			false,
-			false
-		);
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
+   */
+  @Attributes.Funnel
+  default E wrap(String wrap) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(
+      element,
+      "wrap",
+      MarkupType.NONE,
+      Attributes.validate(
+        Wrap.wrap.normalize(wrap),
+        Wrap.wrap::validate
+      ),
+      false,
+      false
+    );
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #wrap(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E wrap(Suppliers.String<Ex> wrap) throws IOException, Ex {
-		return wrap((wrap == null) ? null : wrap.get());
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #wrap(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E wrap(Suppliers.String<Ex> wrap) throws IOException, Ex {
+    return wrap((wrap == null) ? null : wrap.get());
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
-	 *
-	 * @see #wrap(java.lang.String)
-	 */
-	default E wrap(V wrap) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return wrap((wrap == null) ? null : wrap.apply(element.getDocument()));
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
+   *
+   * @see #wrap(java.lang.String)
+   */
+  default E wrap(V wrap) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return wrap((wrap == null) ? null : wrap.apply(element.getDocument()));
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #wrap(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E wrap(IOSupplierE<? extends V, Ex> wrap) throws IOException, Ex {
-		return wrap((wrap == null) ? null : wrap.get());
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #wrap(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E wrap(IOSupplierE<? extends V, Ex> wrap) throws IOException, Ex {
+    return wrap((wrap == null) ? null : wrap.get());
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
-	 */
-	public enum Value implements Function<AnyDocument<?>, String> {
-		SOFT("soft"),
-		HARD("hard");
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
+   */
+  public enum Value implements Function<AnyDocument<?>, String> {
+    SOFT("soft"),
+    HARD("hard");
 
-		private final String value;
+    private final String value;
 
-		private Value(String value) {
-			this.value = value;
-		}
+    private Value(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
 
-		public String getValue() {
-			return value;
-		}
+    public String getValue() {
+      return value;
+    }
 
-		private static final Value[] values = values();
+    private static final Value[] values = values();
 
-		/**
-		 * Gets the enum by value, case-sensitive.
-		 *
-		 * @return  The enum or {@code null} when not found.
-		 */
-		public static Value getByValue(String wrap) {
-			if(wrap != null) {
-				for(Value value : values) {
-					if(value.value.equals(wrap)) return value;
-				}
-			}
-			return null;
-		}
-	}
+    /**
+     * Gets the enum by value, case-sensitive.
+     *
+     * @return  The enum or {@code null} when not found.
+     */
+    public static Value getByValue(String wrap) {
+      if (wrap != null) {
+        for (Value value : values) {
+          if (value.value.equals(wrap)) {
+            return value;
+          }
+        }
+      }
+      return null;
+    }
+  }
 }

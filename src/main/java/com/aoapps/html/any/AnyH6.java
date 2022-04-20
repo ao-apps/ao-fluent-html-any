@@ -42,32 +42,32 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyH6<
-	D  extends AnyDocument<D>,
-	PC extends AnyHeadingContent<D, PC>,
-	E  extends AnyH6<D, PC, E, __, _c>,
-	__ extends AnyH6__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyH6_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyHeadingContent<D, PC>,
+  E  extends AnyH6<D, PC, E, __, _c>,
+  __ extends AnyH6__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyH6_c<D, PC, _c>
 > extends AnyH<D, PC, E, __, _c> {
 
-	protected AnyH6(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyH6(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<h6", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<h6", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></h6>" : "</h6>", false).autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></h6>" : "</h6>", false).autoNl(unsafe);
+  }
 
-	@Override
-	public final int getRank() {
-		return 6;
-	}
+  @Override
+  public final int getRank() {
+    return 6;
+  }
 }

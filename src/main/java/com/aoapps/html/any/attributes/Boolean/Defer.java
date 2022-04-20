@@ -37,32 +37,32 @@ import java.io.IOException;
  */
 public interface Defer<E extends Element<?, ?, E> & Defer<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_defer.asp">HTML defer Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E defer(boolean defer) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Boolean.attribute(element, "defer", defer);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_defer.asp">HTML defer Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E defer(boolean defer) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Boolean.attribute(element, "defer", defer);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_defer.asp">HTML defer Attribute</a>.
-	 *
-	 * @see #defer(boolean)
-	 */
-	default E defer(Boolean defer) throws IOException {
-		return defer(defer != null && defer);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_defer.asp">HTML defer Attribute</a>.
+   *
+   * @see #defer(boolean)
+   */
+  default E defer(Boolean defer) throws IOException {
+    return defer(defer != null && defer);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_defer.asp">HTML defer Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #defer(java.lang.Boolean)
-	 */
-	default <Ex extends Throwable> E defer(IOSupplierE<? extends Boolean, Ex> defer) throws IOException, Ex {
-		return defer((defer == null) ? null : defer.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_defer.asp">HTML defer Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #defer(java.lang.Boolean)
+   */
+  default <Ex extends Throwable> E defer(IOSupplierE<? extends Boolean, Ex> defer) throws IOException, Ex {
+    return defer((defer == null) ? null : defer.get());
+  }
 }

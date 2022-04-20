@@ -39,14 +39,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnySECTION__<
-	D  extends AnyDocument<D>,
-	PC extends AnySectioningContent<D, PC>,
-	__ extends AnySECTION__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnySectioningContent<D, PC>,
+  __ extends AnySECTION__<D, PC, __>
 >
-	extends NormalText__<D, PC, __>
-	implements AnyFlowContent<D, __> {
+  extends NormalText__<D, PC, __>
+  implements AnyFlowContent<D, __> {
 
-	protected AnySECTION__(AnySECTION<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnySECTION__(AnySECTION<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

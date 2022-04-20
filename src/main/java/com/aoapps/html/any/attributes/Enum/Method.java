@@ -45,99 +45,99 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Method<
-	E extends Element<?, ?, E> & Method<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Method<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E method(String method) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "method", MarkupType.NONE, method, true, true);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E method(String method) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "method", MarkupType.NONE, method, true, true);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #method(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E method(Suppliers.String<Ex> method) throws IOException, Ex {
-		return method((method == null) ? null : method.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #method(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E method(Suppliers.String<Ex> method) throws IOException, Ex {
+    return method((method == null) ? null : method.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @see #method(java.lang.String)
-	 */
-	default E method(V method) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return method((method == null) ? null : method.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
+   * </ul>
+   *
+   * @see #method(java.lang.String)
+   */
+  default E method(V method) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return method((method == null) ? null : method.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #method(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E method(IOSupplierE<? extends V, Ex> method) throws IOException, Ex {
-		return method((method == null) ? null : method.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #method(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E method(IOSupplierE<? extends V, Ex> method) throws IOException, Ex {
+    return method((method == null) ? null : method.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
-	 * </ul>
-	 */
-	public enum Value implements Function<AnyDocument<?>, String> {
-		GET("get"),
-		POST("post"),
-		DIALOG("dialog");
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
+   * </ul>
+   */
+  public enum Value implements Function<AnyDocument<?>, String> {
+    GET("get"),
+    POST("post"),
+    DIALOG("dialog");
 
-		private final String value;
+    private final String value;
 
-		private Value(String value) {
-			this.value = value;
-		}
+    private Value(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
 
-		public String getValue() {
-			return value;
-		}
-	}
+    public String getValue() {
+      return value;
+    }
+  }
 }

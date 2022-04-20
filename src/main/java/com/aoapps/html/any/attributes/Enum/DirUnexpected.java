@@ -70,108 +70,108 @@ import java.io.IOException;
 @Deprecated
 public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> extends Dir<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @deprecated  Although the dir attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E dir(String dir) throws IOException {
-		return Dir.super.dir(dir);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   *
+   * @deprecated  Although the dir attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E dir(String dir) throws IOException {
+    return Dir.super.dir(dir);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #dir(java.lang.String)
-	 *
-	 * @deprecated  Although the dir attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
-		return Dir.super.dir(dir);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #dir(java.lang.String)
+   *
+   * @deprecated  Although the dir attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
+    return Dir.super.dir(dir);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @see #dir(java.lang.String)
-	 *
-	 * @deprecated  Although the dir attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	default E dir(Value dir) throws IOException {
-		return Dir.super.dir(dir);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   *
+   * @see #dir(java.lang.String)
+   *
+   * @deprecated  Although the dir attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  default E dir(Value dir) throws IOException {
+    return Dir.super.dir(dir);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #dir(com.aoapps.html.any.attributes.Enum.Dir.Value)
-	 *
-	 * @deprecated  Although the dir attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
-		return Dir.super.dir(dir);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #dir(com.aoapps.html.any.attributes.Enum.Dir.Value)
+   *
+   * @deprecated  Although the dir attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
+    return Dir.super.dir(dir);
+  }
 }

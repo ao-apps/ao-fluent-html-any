@@ -38,32 +38,32 @@ import java.io.IOException;
 // Matches HeightHtml5Only
 public interface Height<E extends Element<?, ?, E> & Height<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_height.asp">HTML height Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E height(int pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "height", pixels);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_height.asp">HTML height Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E height(int pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "height", pixels);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_height.asp">HTML height Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E height(Integer pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "height", pixels);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_height.asp">HTML height Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E height(Integer pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "height", pixels);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_height.asp">HTML height Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #height(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E height(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
-		return height((pixels == null) ? null : pixels.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_height.asp">HTML height Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #height(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E height(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+    return height((pixels == null) ? null : pixels.get());
+  }
 }

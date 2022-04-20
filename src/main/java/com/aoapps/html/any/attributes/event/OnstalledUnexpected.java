@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnstalledUnexpected<E extends Element<?, ?, E> & OnstalledUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onstalled">3.2.6 Global attributes / onstalled</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onstalled">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onstalled</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onstalled">8.1.7.2.1 IDL definitions / onstalled</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onstalled">GlobalEventHandlers.onstalled</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onstalled.asp">onstalled Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onstalled attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onstalled(Object onstalled) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onstalled");
-		return Attributes.Event.attribute(element, "onstalled", onstalled);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onstalled">3.2.6 Global attributes / onstalled</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onstalled">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onstalled</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onstalled">8.1.7.2.1 IDL definitions / onstalled</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onstalled">GlobalEventHandlers.onstalled</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onstalled.asp">onstalled Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onstalled attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onstalled(Object onstalled) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onstalled");
+    return Attributes.Event.attribute(element, "onstalled", onstalled);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onstalled">3.2.6 Global attributes / onstalled</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onstalled">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onstalled</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onstalled">8.1.7.2.1 IDL definitions / onstalled</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onstalled">GlobalEventHandlers.onstalled</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onstalled.asp">onstalled Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onstalled(java.lang.Object)
-	 *
-	 * @deprecated  Although the onstalled attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onstalled(IOSupplierE<?, Ex> onstalled) throws IOException, Ex {
-		return onstalled((onstalled == null) ? null : onstalled.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onstalled">3.2.6 Global attributes / onstalled</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onstalled">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onstalled</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onstalled">8.1.7.2.1 IDL definitions / onstalled</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onstalled">GlobalEventHandlers.onstalled</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onstalled.asp">onstalled Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onstalled(java.lang.Object)
+   *
+   * @deprecated  Although the onstalled attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onstalled(IOSupplierE<?, Ex> onstalled) throws IOException, Ex {
+    return onstalled((onstalled == null) ? null : onstalled.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onstalled">3.2.6 Global attributes / onstalled</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onstalled">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onstalled</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onstalled">8.1.7.2.1 IDL definitions / onstalled</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onstalled">GlobalEventHandlers.onstalled</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onstalled.asp">onstalled Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onstalled(java.lang.Object)
-	 *
-	 * @deprecated  Although the onstalled attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onstalled(JavaScriptWritable<Ex> onstalled) throws IOException, Ex {
-		return onstalled((Object)onstalled);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onstalled">3.2.6 Global attributes / onstalled</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onstalled">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onstalled</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onstalled">8.1.7.2.1 IDL definitions / onstalled</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onstalled">GlobalEventHandlers.onstalled</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onstalled.asp">onstalled Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onstalled(java.lang.Object)
+   *
+   * @deprecated  Although the onstalled attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onstalled(JavaScriptWritable<Ex> onstalled) throws IOException, Ex {
+    return onstalled((Object)onstalled);
+  }
 }

@@ -41,70 +41,70 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyAREA<
-	D  extends AnyDocument<D>,
-	PC extends AnyPhrasingContent<D, PC>,
-	E  extends AnyAREA<D, PC, E>
+  D  extends AnyDocument<D>,
+  PC extends AnyPhrasingContent<D, PC>,
+  E  extends AnyAREA<D, PC, E>
 > extends Void<D, PC, E> implements
-	com.aoapps.html.any.attributes.Text.Alt<E>,
-	com.aoapps.html.any.attributes.Dimension.Coords<E>,
-	// TODO: download
-	com.aoapps.html.any.attributes.Url.Href<E>,
-	com.aoapps.html.any.attributes.Text.Hreflang<E>,
-	com.aoapps.html.any.attributes.Text.Media<E>,
-	// TODO: name? (MDN only)
-	// TODO: nohref
-	// TODO: ping
-	// TODO: referrerpolicy
-	com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
-	com.aoapps.html.any.attributes.Enum.Shape<E, AnyAREA.Shape>,
-	com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
-	// TODO: type (deprecated since definition is in conflict and doesn't do anything?)
-	// Global Attributes overrides
-	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
+  com.aoapps.html.any.attributes.Text.Alt<E>,
+  com.aoapps.html.any.attributes.Dimension.Coords<E>,
+  // TODO: download
+  com.aoapps.html.any.attributes.Url.Href<E>,
+  com.aoapps.html.any.attributes.Text.Hreflang<E>,
+  com.aoapps.html.any.attributes.Text.Media<E>,
+  // TODO: name? (MDN only)
+  // TODO: nohref
+  // TODO: ping
+  // TODO: referrerpolicy
+  com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
+  com.aoapps.html.any.attributes.Enum.Shape<E, AnyAREA.Shape>,
+  com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
+  // TODO: type (deprecated since definition is in conflict and doesn't do anything?)
+  // Global Attributes overrides
+  com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
 {
 
-	protected AnyAREA(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyAREA(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<area", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<area", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doAfterElement(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doAfterElement(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area#attr-shape">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_area_shape.asp">HTML area shape Attribute</a>.</li>
-	 * </ul>
-	 */
-	public enum Shape implements Function<AnyDocument<?>, String> {
-		DEFAULT("default"),
-		RECT("rect"),
-		CIRCLE("circle"),
-		POLY("poly");
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area#attr-shape">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_area_shape.asp">HTML area shape Attribute</a>.</li>
+   * </ul>
+   */
+  public enum Shape implements Function<AnyDocument<?>, String> {
+    DEFAULT("default"),
+    RECT("rect"),
+    CIRCLE("circle"),
+    POLY("poly");
 
-		private final String value;
+    private final String value;
 
-		private Shape(String value) {
-			this.value = value;
-		}
+    private Shape(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-	}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
+  }
 }

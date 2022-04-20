@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOPTION__<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_DATALIST_OPTGROUP<D, PC>,
-	__ extends AnyOPTION__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_DATALIST_OPTGROUP<D, PC>,
+  __ extends AnyOPTION__<D, PC, __>
 >
-	extends NormalText__<D, PC, __>
-	implements AnyTextContent<D, __> {
+  extends NormalText__<D, PC, __>
+  implements AnyTextContent<D, __> {
 
-	protected AnyOPTION__(AnyOPTION<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyOPTION__(AnyOPTION<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

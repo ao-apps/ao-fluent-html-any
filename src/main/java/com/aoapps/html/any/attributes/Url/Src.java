@@ -37,23 +37,23 @@ import java.io.IOException;
  */
 public interface Src<E extends Element<?, ?, E> & Src<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_src.asp">HTML src Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E src(String src) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Url.attribute(element, "src", src);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_src.asp">HTML src Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E src(String src) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Url.attribute(element, "src", src);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_src.asp">HTML src Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #src(java.lang.String)
-	 */
-	default <Ex extends Throwable> E src(IOSupplierE<? extends String, Ex> src) throws IOException, Ex {
-		return src((src == null) ? null : src.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_src.asp">HTML src Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #src(java.lang.String)
+   */
+  default <Ex extends Throwable> E src(IOSupplierE<? extends String, Ex> src) throws IOException, Ex {
+    return src((src == null) ? null : src.get());
+  }
 }

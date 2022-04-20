@@ -45,52 +45,52 @@ import java.io.IOException;
 // Matches OnclickUnexpected
 public interface Onclick<E extends Element<?, ?, E> & Onclick<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onclick">3.2.6 Global attributes / onclick</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onclick</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onclick">8.1.7.2.1 IDL definitions / onclick</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick">GlobalEventHandlers.onclick</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onclick.asp">onclick Event</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E onclick(Object onclick) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onclick", onclick);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onclick">3.2.6 Global attributes / onclick</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onclick</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onclick">8.1.7.2.1 IDL definitions / onclick</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick">GlobalEventHandlers.onclick</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onclick.asp">onclick Event</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E onclick(Object onclick) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onclick", onclick);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onclick">3.2.6 Global attributes / onclick</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onclick</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onclick">8.1.7.2.1 IDL definitions / onclick</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick">GlobalEventHandlers.onclick</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onclick.asp">onclick Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onclick(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onclick(IOSupplierE<?, Ex> onclick) throws IOException, Ex {
-		return onclick((onclick == null) ? null : onclick.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onclick">3.2.6 Global attributes / onclick</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onclick</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onclick">8.1.7.2.1 IDL definitions / onclick</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick">GlobalEventHandlers.onclick</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onclick.asp">onclick Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onclick(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onclick(IOSupplierE<?, Ex> onclick) throws IOException, Ex {
+    return onclick((onclick == null) ? null : onclick.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onclick">3.2.6 Global attributes / onclick</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onclick</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onclick">8.1.7.2.1 IDL definitions / onclick</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick">GlobalEventHandlers.onclick</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onclick.asp">onclick Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onclick(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onclick(JavaScriptWritable<Ex> onclick) throws IOException, Ex {
-		return onclick((Object)onclick);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onclick">3.2.6 Global attributes / onclick</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onclick</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onclick">8.1.7.2.1 IDL definitions / onclick</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick">GlobalEventHandlers.onclick</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onclick.asp">onclick Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onclick(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onclick(JavaScriptWritable<Ex> onclick) throws IOException, Ex {
+    return onclick((Object)onclick);
+  }
 }

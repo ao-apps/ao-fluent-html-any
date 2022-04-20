@@ -35,24 +35,24 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class Transparent<
-	D  extends AnyDocument<D>,
-	PC extends Content<D, PC>,
-	E  extends Transparent<D, PC, E, _c>,
-	// Would prefer "_c extends PC & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends Transparent_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends Content<D, PC>,
+  E  extends Transparent<D, PC, E, _c>,
+  // Would prefer "_c extends PC & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends Transparent_c<D, PC, _c>
 > extends Normal<D, PC, E, PC, _c> {
 
-	protected Transparent(D document, PC pc) {
-		super(document, pc);
-	}
+  protected Transparent(D document, PC pc) {
+    super(document, pc);
+  }
 
-	/**
-	 * Uses the parent context directly, instead of an element-specific uncloseable content model.
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	@Override
-	protected final PC new__() {
-		return pc;
-	}
+  /**
+   * Uses the parent context directly, instead of an element-specific uncloseable content model.
+   *
+   * @return  The parent content model this element is within
+   */
+  @Override
+  protected final PC new__() {
+    return pc;
+  }
 }

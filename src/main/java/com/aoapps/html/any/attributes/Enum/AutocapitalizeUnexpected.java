@@ -65,107 +65,107 @@ import java.io.IOException;
 @Deprecated
 public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & AutocapitalizeUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the autocapitalize attribute is global, it is only expected on
-	 *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
-	 *              {@linkplain AnyOUTPUT &lt;output&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 *              <ul>
-	 *              <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#category-autocapitalize">Autocapitalize-inheriting elements</a>.</li>
-	 *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 *              </ul>
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E autocapitalize(String autocapitalize) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "autocapitalize");
-		return Attributes.String.attribute(element, "autocapitalize", MarkupType.NONE, autocapitalize, true, true);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the autocapitalize attribute is global, it is only expected on
+   *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
+   *              {@linkplain AnyOUTPUT &lt;output&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   *              <ul>
+   *              <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#category-autocapitalize">Autocapitalize-inheriting elements</a>.</li>
+   *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   *              </ul>
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E autocapitalize(String autocapitalize) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "autocapitalize");
+    return Attributes.String.attribute(element, "autocapitalize", MarkupType.NONE, autocapitalize, true, true);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #autocapitalize(java.lang.String)
-	 *
-	 * @deprecated  Although the autocapitalize attribute is global, it is only expected on
-	 *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
-	 *              {@linkplain AnyOUTPUT &lt;output&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 *              <ul>
-	 *              <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#category-autocapitalize">Autocapitalize-inheriting elements</a>.</li>
-	 *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 *              </ul>
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E autocapitalize(Suppliers.String<Ex> autocapitalize) throws IOException, Ex {
-		return autocapitalize((autocapitalize == null) ? null : autocapitalize.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #autocapitalize(java.lang.String)
+   *
+   * @deprecated  Although the autocapitalize attribute is global, it is only expected on
+   *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
+   *              {@linkplain AnyOUTPUT &lt;output&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   *              <ul>
+   *              <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#category-autocapitalize">Autocapitalize-inheriting elements</a>.</li>
+   *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   *              </ul>
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E autocapitalize(Suppliers.String<Ex> autocapitalize) throws IOException, Ex {
+    return autocapitalize((autocapitalize == null) ? null : autocapitalize.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #autocapitalize(java.lang.String)
-	 *
-	 * @deprecated  Although the autocapitalize attribute is global, it is only expected on
-	 *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
-	 *              {@linkplain AnyOUTPUT &lt;output&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 *              <ul>
-	 *              <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#category-autocapitalize">Autocapitalize-inheriting elements</a>.</li>
-	 *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 *              </ul>
-	 */
-	@Deprecated
-	default E autocapitalize(Autocapitalize.Value autocapitalize) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return autocapitalize((autocapitalize == null) ? null : autocapitalize.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @see #autocapitalize(java.lang.String)
+   *
+   * @deprecated  Although the autocapitalize attribute is global, it is only expected on
+   *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
+   *              {@linkplain AnyOUTPUT &lt;output&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   *              <ul>
+   *              <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#category-autocapitalize">Autocapitalize-inheriting elements</a>.</li>
+   *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   *              </ul>
+   */
+  @Deprecated
+  default E autocapitalize(Autocapitalize.Value autocapitalize) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return autocapitalize((autocapitalize == null) ? null : autocapitalize.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #autocapitalize(com.aoapps.html.any.attributes.Enum.Autocapitalize.Value)
-	 *
-	 * @deprecated  Although the autocapitalize attribute is global, it is only expected on
-	 *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
-	 *              {@linkplain AnyOUTPUT &lt;output&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 *              <ul>
-	 *              <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#category-autocapitalize">Autocapitalize-inheriting elements</a>.</li>
-	 *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 *              </ul>
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E autocapitalize(IOSupplierE<? extends Autocapitalize.Value, Ex> autocapitalize) throws IOException, Ex {
-		return autocapitalize((autocapitalize == null) ? null : autocapitalize.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #autocapitalize(com.aoapps.html.any.attributes.Enum.Autocapitalize.Value)
+   *
+   * @deprecated  Although the autocapitalize attribute is global, it is only expected on
+   *              {@linkplain AnyBUTTON &lt;button&gt;}, {@linkplain AnyFIELDSET &lt;fieldset&gt;}, {@linkplain AnyINPUT &lt;input&gt;},
+   *              {@linkplain AnyOUTPUT &lt;output&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   *              <ul>
+   *              <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#category-autocapitalize">Autocapitalize-inheriting elements</a>.</li>
+   *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   *              </ul>
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E autocapitalize(IOSupplierE<? extends Autocapitalize.Value, Ex> autocapitalize) throws IOException, Ex {
+    return autocapitalize((autocapitalize == null) ? null : autocapitalize.get());
+  }
 }

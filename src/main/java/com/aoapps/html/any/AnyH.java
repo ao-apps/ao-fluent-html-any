@@ -39,16 +39,16 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyH<
-	D  extends AnyDocument<D>,
-	PC extends AnyHeadingContent<D, PC>,
-	E  extends AnyH<D, PC, E, __, _c>,
-	__ extends AnyH__<D, PC, __>,
-	_c extends AnyH_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyHeadingContent<D, PC>,
+  E  extends AnyH<D, PC, E, __, _c>,
+  __ extends AnyH__<D, PC, __>,
+  _c extends AnyH_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
-	protected AnyH(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyH(D document, PC pc) {
+    super(document, pc);
+  }
 
-	public abstract int getRank();
+  public abstract int getRank();
 }

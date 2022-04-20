@@ -42,56 +42,56 @@ import java.util.Locale;
  */
 public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E hreflang(Object hreflang) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "hreflang", MarkupType.NONE, hreflang, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E hreflang(Object hreflang) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "hreflang", MarkupType.NONE, hreflang, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #hreflang(java.lang.Object)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E hreflang(IOSupplierE<?, Ex> hreflang) throws IOException, Ex {
-		return hreflang((hreflang == null) ? null : hreflang.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #hreflang(java.lang.Object)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E hreflang(IOSupplierE<?, Ex> hreflang) throws IOException, Ex {
+    return hreflang((hreflang == null) ? null : hreflang.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
-	 *
-	 * @see #hreflang(java.lang.Object)
-	 */
-	default E hreflang(Locale hreflang) throws IOException {
-		return hreflang((hreflang == null) ? null : hreflang.toLanguageTag());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
+   *
+   * @see #hreflang(java.lang.Object)
+   */
+  default E hreflang(Locale hreflang) throws IOException {
+    return hreflang((hreflang == null) ? null : hreflang.toLanguageTag());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #hreflang(java.util.Locale)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E hreflang(Suppliers.Locale<Ex> hreflang) throws IOException, Ex {
-		return hreflang((hreflang == null) ? null : hreflang.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #hreflang(java.util.Locale)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E hreflang(Suppliers.Locale<Ex> hreflang) throws IOException, Ex {
+    return hreflang((hreflang == null) ? null : hreflang.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #hreflang(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E hreflang(TextWritable<Ex> hreflang) throws IOException, Ex {
-		return hreflang((Object)hreflang);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #hreflang(java.lang.Object)
+   */
+  default <Ex extends Throwable> E hreflang(TextWritable<Ex> hreflang) throws IOException, Ex {
+    return hreflang((Object)hreflang);
+  }
 }

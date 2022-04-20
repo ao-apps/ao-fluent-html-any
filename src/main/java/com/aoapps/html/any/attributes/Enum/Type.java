@@ -41,50 +41,50 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Type<
-	E extends Element<?, ?, E> & Type<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Type<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_type.asp">HTML type Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E type(String type) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "type", MarkupType.NONE, type, true, true);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_type.asp">HTML type Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E type(String type) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "type", MarkupType.NONE, type, true, true);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_type.asp">HTML type Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #type(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E type(Suppliers.String<Ex> type) throws IOException, Ex {
-		return type((type == null) ? null : type.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_type.asp">HTML type Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #type(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E type(Suppliers.String<Ex> type) throws IOException, Ex {
+    return type((type == null) ? null : type.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_type.asp">HTML type Attribute</a>.
-	 *
-	 * @see #type(java.lang.String)
-	 */
-	default E type(V type) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return type((type == null) ? null : type.apply(element.getDocument()));
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_type.asp">HTML type Attribute</a>.
+   *
+   * @see #type(java.lang.String)
+   */
+  default E type(V type) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return type((type == null) ? null : type.apply(element.getDocument()));
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_type.asp">HTML type Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #type(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E type(IOSupplierE<? extends V, Ex> type) throws IOException, Ex {
-		return type((type == null) ? null : type.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_type.asp">HTML type Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #type(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E type(IOSupplierE<? extends V, Ex> type) throws IOException, Ex {
+    return type((type == null) ? null : type.get());
+  }
 }

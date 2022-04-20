@@ -55,74 +55,74 @@ import java.io.IOException;
 @Deprecated
 public interface OninputUnexpected<E extends Element<?, ?, E> & OninputUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the oninput attribute is global, it is only expected on
-	 *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E oninput(Object oninput) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "oninput");
-		return Attributes.Event.attribute(element, "oninput", oninput);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the oninput attribute is global, it is only expected on
+   *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E oninput(Object oninput) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "oninput");
+    return Attributes.Event.attribute(element, "oninput", oninput);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oninput(java.lang.Object)
-	 *
-	 * @deprecated  Although the oninput attribute is global, it is only expected on
-	 *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E oninput(IOSupplierE<?, Ex> oninput) throws IOException, Ex {
-		return oninput((oninput == null) ? null : oninput.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oninput(java.lang.Object)
+   *
+   * @deprecated  Although the oninput attribute is global, it is only expected on
+   *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E oninput(IOSupplierE<?, Ex> oninput) throws IOException, Ex {
+    return oninput((oninput == null) ? null : oninput.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oninput(java.lang.Object)
-	 *
-	 * @deprecated  Although the oninput attribute is global, it is only expected on
-	 *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E oninput(JavaScriptWritable<Ex> oninput) throws IOException, Ex {
-		return oninput((Object)oninput);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oninput(java.lang.Object)
+   *
+   * @deprecated  Although the oninput attribute is global, it is only expected on
+   *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E oninput(JavaScriptWritable<Ex> oninput) throws IOException, Ex {
+    return oninput((Object)oninput);
+  }
 }

@@ -34,81 +34,81 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_Metadata_Phrasing<
-	D  extends AnyDocument<D>,
-	__ extends AnyUnion_Metadata_Phrasing<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyUnion_Metadata_Phrasing<D, __>
 > extends
-	//
-	// Unions:
-	//
-	// Inherited: AnyCOLGROUP_ScriptSupporting<D, __>
+  //
+  // Unions:
+  //
+  // Inherited: AnyCOLGROUP_ScriptSupporting<D, __>
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
-	AnyScriptSupportingContent<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+  AnyScriptSupportingContent<D, __>
 {
-	//
-	// Factories:
-	//
-	// <editor-fold defaultstate="collapsed" desc="LINK">
-	/**
-	 * Opens a new link element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">4.2.4 The link element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">&lt;link&gt;: The External Resource Link element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_link.asp">HTML link tag</a>.</li>
-	 * </ul>
-	 */
-	// TODO: Variants of Link by Rel, with per-implementation attributes like Input?
-	@Factory("link")
-	AnyLINK<D, __, ?> link() throws IOException;
+  //
+  // Factories:
+  //
+  // <editor-fold defaultstate="collapsed" desc="LINK">
+  /**
+   * Opens a new link element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">4.2.4 The link element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">&lt;link&gt;: The External Resource Link element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_link.asp">HTML link tag</a>.</li>
+   * </ul>
+   */
+  // TODO: Variants of Link by Rel, with per-implementation attributes like Input?
+  @Factory("link")
+  AnyLINK<D, __, ?> link() throws IOException;
 
-	/**
-	 * Opens a new link element with the given rel attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">4.2.4 The link element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">&lt;link&gt;: The External Resource Link element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_link.asp">HTML link tag</a>.</li>
-	 * </ul>
-	 *
-	 * @see #link()
-	 * @see AnyLINK#rel(java.lang.Enum)
-	 */
-	@Factory("link")
-	AnyLINK<D, __, ?> link(AnyLINK.Rel rel) throws IOException;
-	// No link__(), since either rel or itemprop is required
-	// </editor-fold>
-	// <editor-fold defaultstate="collapsed" desc="META">
-	/**
-	 * Opens a new meta element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">4.2.5 The meta element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">&lt;meta&gt;: The metadata element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_meta.asp">HTML meta tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("meta")
-	AnyMETA<D, __, ?> meta() throws IOException;
+  /**
+   * Opens a new link element with the given rel attribute.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">4.2.4 The link element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link">&lt;link&gt;: The External Resource Link element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_link.asp">HTML link tag</a>.</li>
+   * </ul>
+   *
+   * @see #link()
+   * @see AnyLINK#rel(java.lang.Enum)
+   */
+  @Factory("link")
+  AnyLINK<D, __, ?> link(AnyLINK.Rel rel) throws IOException;
+  // No link__(), since either rel or itemprop is required
+  // </editor-fold>
+  // <editor-fold defaultstate="collapsed" desc="META">
+  /**
+   * Opens a new meta element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-meta-element">4.2.5 The meta element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta">&lt;meta&gt;: The metadata element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_meta.asp">HTML meta tag</a>.</li>
+   * </ul>
+   */
+  @Factory("meta")
+  AnyMETA<D, __, ?> meta() throws IOException;
 
-	// No meta__(), since either name, http-equiv, or itemprop is required
-	// TODO: confirm itemprop-only metas?
-	// </editor-fold>
-	// <editor-fold defaultstate="collapsed" desc="NOSCRIPT">
-	/**
-	 * Opens a new noscript element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element">4.12.2 The noscript element</a>.
-	 * </p>
-	 *
-	 * @deprecated  TODO: Implement noscript
-	 */
-	@Deprecated
-	@Factory("noscript")
-	default AnyNOSCRIPT noscript() throws IOException {
-		throw new AssertionError("TODO: Implement noscript");
-	}
-	// </editor-fold>
-	// Inherited: SCRIPT
-	// Inherited: TEMPLATE
+  // No meta__(), since either name, http-equiv, or itemprop is required
+  // TODO: confirm itemprop-only metas?
+  // </editor-fold>
+  // <editor-fold defaultstate="collapsed" desc="NOSCRIPT">
+  /**
+   * Opens a new noscript element.
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-noscript-element">4.12.2 The noscript element</a>.
+   * </p>
+   *
+   * @deprecated  TODO: Implement noscript
+   */
+  @Deprecated
+  @Factory("noscript")
+  default AnyNOSCRIPT noscript() throws IOException {
+    throw new AssertionError("TODO: Implement noscript");
+  }
+  // </editor-fold>
+  // Inherited: SCRIPT
+  // Inherited: TEMPLATE
 }

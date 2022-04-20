@@ -45,52 +45,52 @@ import java.io.IOException;
 // Matches OnmousedownUnexpected
 public interface Onmousedown<E extends Element<?, ?, E> & Onmousedown<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousedown">3.2.6 Global attributes / onmousedown</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousedown">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousedown</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousedown">8.1.7.2.1 IDL definitions / onmousedown</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown">GlobalEventHandlers.onmousedown</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmousedown.asp">onmousedown Event</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E onmousedown(Object onmousedown) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onmousedown", onmousedown);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousedown">3.2.6 Global attributes / onmousedown</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousedown">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousedown</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousedown">8.1.7.2.1 IDL definitions / onmousedown</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown">GlobalEventHandlers.onmousedown</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmousedown.asp">onmousedown Event</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E onmousedown(Object onmousedown) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onmousedown", onmousedown);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousedown">3.2.6 Global attributes / onmousedown</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousedown">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousedown</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousedown">8.1.7.2.1 IDL definitions / onmousedown</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown">GlobalEventHandlers.onmousedown</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmousedown.asp">onmousedown Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onmousedown(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmousedown(IOSupplierE<?, Ex> onmousedown) throws IOException, Ex {
-		return onmousedown((onmousedown == null) ? null : onmousedown.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousedown">3.2.6 Global attributes / onmousedown</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousedown">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousedown</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousedown">8.1.7.2.1 IDL definitions / onmousedown</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown">GlobalEventHandlers.onmousedown</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmousedown.asp">onmousedown Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onmousedown(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmousedown(IOSupplierE<?, Ex> onmousedown) throws IOException, Ex {
+    return onmousedown((onmousedown == null) ? null : onmousedown.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousedown">3.2.6 Global attributes / onmousedown</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousedown">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousedown</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousedown">8.1.7.2.1 IDL definitions / onmousedown</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown">GlobalEventHandlers.onmousedown</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmousedown.asp">onmousedown Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onmousedown(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmousedown(JavaScriptWritable<Ex> onmousedown) throws IOException, Ex {
-		return onmousedown((Object)onmousedown);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousedown">3.2.6 Global attributes / onmousedown</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousedown">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousedown</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousedown">8.1.7.2.1 IDL definitions / onmousedown</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousedown">GlobalEventHandlers.onmousedown</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmousedown.asp">onmousedown Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onmousedown(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmousedown(JavaScriptWritable<Ex> onmousedown) throws IOException, Ex {
+    return onmousedown((Object)onmousedown);
+  }
 }

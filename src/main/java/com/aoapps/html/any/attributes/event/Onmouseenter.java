@@ -47,59 +47,59 @@ import java.io.IOException;
 // Matches OnmouseenterUnexpected
 public interface Onmouseenter<E extends Element<?, ?, E> & Onmouseenter<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseenter">3.2.6 Global attributes / onmouseenter</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseenter</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseenter">8.1.7.2.1 IDL definitions / onmouseenter</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter">GlobalEventHandlers.onmouseenter</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onmouseenter(Object onmouseenter) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onmouseenter");
-		return Attributes.Event.attribute(element, "onmouseenter", onmouseenter);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseenter">3.2.6 Global attributes / onmouseenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseenter">8.1.7.2.1 IDL definitions / onmouseenter</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter">GlobalEventHandlers.onmouseenter</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onmouseenter(Object onmouseenter) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onmouseenter");
+    return Attributes.Event.attribute(element, "onmouseenter", onmouseenter);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseenter">3.2.6 Global attributes / onmouseenter</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseenter</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseenter">8.1.7.2.1 IDL definitions / onmouseenter</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter">GlobalEventHandlers.onmouseenter</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onmouseenter(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmouseenter(IOSupplierE<?, Ex> onmouseenter) throws IOException, Ex {
-		return onmouseenter((onmouseenter == null) ? null : onmouseenter.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseenter">3.2.6 Global attributes / onmouseenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseenter">8.1.7.2.1 IDL definitions / onmouseenter</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter">GlobalEventHandlers.onmouseenter</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onmouseenter(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmouseenter(IOSupplierE<?, Ex> onmouseenter) throws IOException, Ex {
+    return onmouseenter((onmouseenter == null) ? null : onmouseenter.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseenter">3.2.6 Global attributes / onmouseenter</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseenter</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseenter">8.1.7.2.1 IDL definitions / onmouseenter</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter">GlobalEventHandlers.onmouseenter</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onmouseenter(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmouseenter(JavaScriptWritable<Ex> onmouseenter) throws IOException, Ex {
-		return onmouseenter((Object)onmouseenter);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseenter">3.2.6 Global attributes / onmouseenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseenter">8.1.7.2.1 IDL definitions / onmouseenter</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter">GlobalEventHandlers.onmouseenter</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onmouseenter(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmouseenter(JavaScriptWritable<Ex> onmouseenter) throws IOException, Ex {
+    return onmouseenter((Object)onmouseenter);
+  }
 }

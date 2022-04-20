@@ -46,139 +46,141 @@ import java.util.function.Function;
 // TODO: Transparent, but there must be no interactive content descendent, a element descendent, or descendent with
 //       the tabindex attribute specified.
 public abstract class AnyA<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-	E  extends AnyA<D, PC, E, _c>,
-	_c extends AnyA_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+  E  extends AnyA<D, PC, E, _c>,
+  _c extends AnyA_c<D, PC, _c>
 > extends Transparent<D, PC, E, _c> implements
-	com.aoapps.html.any.attributes.Url.Href<E>,
-	com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
-	// TODO: download
-	// TODO: ping
-	com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
-	com.aoapps.html.any.attributes.Text.Hreflang<E>,
-	// TODO: type
-	// TODO: referrerpolicy
-	// Global Attributes overrides
-	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
+  com.aoapps.html.any.attributes.Url.Href<E>,
+  com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
+  // TODO: download
+  // TODO: ping
+  com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
+  com.aoapps.html.any.attributes.Text.Hreflang<E>,
+  // TODO: type
+  // TODO: referrerpolicy
+  // Global Attributes overrides
+  com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
 {
 
-	private static final com.aoapps.lang.i18n.Resources RESOURCES =
-		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyA.class);
+  private static final com.aoapps.lang.i18n.Resources RESOURCES =
+    com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyA.class);
 
-	protected AnyA(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyA(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, "<a", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, "<a", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></a>" : "</a>", false);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></a>" : "</a>", false);
+  }
 
-	/**
-	 * Ends attributes, writes a text body, then closes this element.
-	 * <p>
-	 * Since {@link AnyTextContent} is not a part of {@link AnyUnion_Interactive_Phrasing},
-	 * strictly speaking text is not allowed in all possible content models that can apply to <code>&lt;a&gt;</code>.
-	 * However, since it is such a common operation, we've added it here.
-	 * </p>
-	 *
-	 * @return  The parent content model this element is within
-	 *
-	 * @see  AnyDocument#text(java.lang.Object)
-	 * @see  NormalText#__(java.lang.Object)
-	 *
-	 * @throws  IllegalStateException when {@code text != null} and current content model does not allow text
-	 */
-	public PC __(Object text) throws IOException, IllegalStateException {
-		@SuppressWarnings("deprecation")
-		Writer unsafe = document.getRawUnsafe(null);
-		if(text != null) {
-			if(!(pc instanceof AnyTextContent)) throw new LocalizedIllegalStateException(RESOURCES, "contentModelNotAllowText", (pc == null) ? "null" : pc.getClass().getName());
-			document.autoIndent(unsafe).unsafe(unsafe, '>').incDepth().text(unsafe, text).decDepth();
-			writeClose(unsafe, false);
-		} else {
-			writeClose(unsafe, true);
-		}
-		return pc;
-	}
+  /**
+   * Ends attributes, writes a text body, then closes this element.
+   * <p>
+   * Since {@link AnyTextContent} is not a part of {@link AnyUnion_Interactive_Phrasing},
+   * strictly speaking text is not allowed in all possible content models that can apply to <code>&lt;a&gt;</code>.
+   * However, since it is such a common operation, we've added it here.
+   * </p>
+   *
+   * @return  The parent content model this element is within
+   *
+   * @see  AnyDocument#text(java.lang.Object)
+   * @see  NormalText#__(java.lang.Object)
+   *
+   * @throws  IllegalStateException when {@code text != null} and current content model does not allow text
+   */
+  public PC __(Object text) throws IOException, IllegalStateException {
+    @SuppressWarnings("deprecation")
+    Writer unsafe = document.getRawUnsafe(null);
+    if (text != null) {
+      if (!(pc instanceof AnyTextContent)) {
+        throw new LocalizedIllegalStateException(RESOURCES, "contentModelNotAllowText", (pc == null) ? "null" : pc.getClass().getName());
+      }
+      document.autoIndent(unsafe).unsafe(unsafe, '>').incDepth().text(unsafe, text).decDepth();
+      writeClose(unsafe, false);
+    } else {
+      writeClose(unsafe, true);
+    }
+    return pc;
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">Link types - HTML: Hypertext Markup Language</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-rel">HTML Standard</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_a_rel.asp">HTML a rel Attribute</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_area_rel.asp">HTML area rel Attribute</a>.</li>
-	 * </ul>
-	 */
-	public enum Rel implements Function<AnyDocument<?>, String> {
-		ALTERNATE("alternate"),
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		ARCHIVES("archives"), // MDN only
-		AUTHOR("author"), // w3schools, MDN only
-		BOOKMARK("bookmark"),
-		EXTERNAL("external"),
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		FIRST("first"), // MDN only
-		HELP("help"), // w3schools, MDN only
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		INDEX("index"), // MDN only
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		LAST("last"), // MDN only
-		LICENSE("license"), // w3schools, MDN only
-		NEXT("next"),
-		NOFOLLOW("nofollow"),
-		NOOPENER("noopener"),
-		NOREFERRER("noreferrer"),
-		// TODO: opener?
-		PREV("prev"), // w3schools, MDN only
-		SEARCH("search"),
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		SIDEBAR("sidebar"), // MDN only
-		TAG("tag"),
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		UP("up"); // MDN only
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">Link types - HTML: Hypertext Markup Language</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/links.html#attr-hyperlink-rel">HTML Standard</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_a_rel.asp">HTML a rel Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_area_rel.asp">HTML area rel Attribute</a>.</li>
+   * </ul>
+   */
+  public enum Rel implements Function<AnyDocument<?>, String> {
+    ALTERNATE("alternate"),
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    ARCHIVES("archives"), // MDN only
+    AUTHOR("author"), // w3schools, MDN only
+    BOOKMARK("bookmark"),
+    EXTERNAL("external"),
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    FIRST("first"), // MDN only
+    HELP("help"), // w3schools, MDN only
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    INDEX("index"), // MDN only
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    LAST("last"), // MDN only
+    LICENSE("license"), // w3schools, MDN only
+    NEXT("next"),
+    NOFOLLOW("nofollow"),
+    NOOPENER("noopener"),
+    NOREFERRER("noreferrer"),
+    // TODO: opener?
+    PREV("prev"), // w3schools, MDN only
+    SEARCH("search"),
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    SIDEBAR("sidebar"), // MDN only
+    TAG("tag"),
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    UP("up"); // MDN only
 
-		private final String value;
-		// TODO: Verify values by doctype
+    private final String value;
+    // TODO: Verify values by doctype
 
-		private Rel(String value) {
-			this.value = value;
-		}
+    private Rel(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-	}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
+  }
 }

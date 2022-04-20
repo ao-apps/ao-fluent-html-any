@@ -46,71 +46,71 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Formtarget<
-	E extends Element<?, ?, E> & Formtarget<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Formtarget<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E formtarget(String formtarget) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "formtarget");
-		return Attributes.String.attribute(element, "formtarget", MarkupType.NONE, formtarget, true, true);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E formtarget(String formtarget) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "formtarget");
+    return Attributes.String.attribute(element, "formtarget", MarkupType.NONE, formtarget, true, true);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #formtarget(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E formtarget(Suppliers.String<Ex> formtarget) throws IOException, Ex {
-		return formtarget((formtarget == null) ? null : formtarget.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #formtarget(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E formtarget(Suppliers.String<Ex> formtarget) throws IOException, Ex {
+    return formtarget((formtarget == null) ? null : formtarget.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #formtarget(java.lang.String)
-	 */
-	default E formtarget(V formtarget) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return formtarget((formtarget == null) ? null : formtarget.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @see #formtarget(java.lang.String)
+   */
+  default E formtarget(V formtarget) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return formtarget((formtarget == null) ? null : formtarget.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #formtarget(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E formtarget(IOSupplierE<? extends V, Ex> formtarget) throws IOException, Ex {
-		return formtarget((formtarget == null) ? null : formtarget.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #formtarget(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E formtarget(IOSupplierE<? extends V, Ex> formtarget) throws IOException, Ex {
+    return formtarget((formtarget == null) ? null : formtarget.get());
+  }
 }

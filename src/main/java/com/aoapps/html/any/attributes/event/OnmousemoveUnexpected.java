@@ -69,87 +69,87 @@ import java.io.IOException;
 @Deprecated
 public interface OnmousemoveUnexpected<E extends Element<?, ?, E> & OnmousemoveUnexpected<E>> extends Onmousemove<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
-	 * </ul>
-	 *
-	 * @deprecated  Although the onmousemove attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E onmousemove(Object onmousemove) throws IOException {
-		return Onmousemove.super.onmousemove(onmousemove);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
+   * </ul>
+   *
+   * @deprecated  Although the onmousemove attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E onmousemove(Object onmousemove) throws IOException {
+    return Onmousemove.super.onmousemove(onmousemove);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onmousemove(java.lang.Object)
-	 *
-	 * @deprecated  Although the onmousemove attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	default <Ex extends Throwable> E onmousemove(IOSupplierE<?, Ex> onmousemove) throws IOException, Ex {
-		return Onmousemove.super.onmousemove(onmousemove);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onmousemove(java.lang.Object)
+   *
+   * @deprecated  Although the onmousemove attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  default <Ex extends Throwable> E onmousemove(IOSupplierE<?, Ex> onmousemove) throws IOException, Ex {
+    return Onmousemove.super.onmousemove(onmousemove);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onmousemove(java.lang.Object)
-	 *
-	 * @deprecated  Although the onmousemove attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	default <Ex extends Throwable> E onmousemove(JavaScriptWritable<Ex> onmousemove) throws IOException, Ex {
-		return Onmousemove.super.onmousemove(onmousemove);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onmousemove(java.lang.Object)
+   *
+   * @deprecated  Although the onmousemove attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  default <Ex extends Throwable> E onmousemove(JavaScriptWritable<Ex> onmousemove) throws IOException, Ex {
+    return Onmousemove.super.onmousemove(onmousemove);
+  }
 }

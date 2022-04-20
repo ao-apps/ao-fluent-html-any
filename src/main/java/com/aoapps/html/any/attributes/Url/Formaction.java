@@ -44,38 +44,38 @@ import java.io.IOException;
  */
 public interface Formaction<E extends Element<?, ?, E> & Formaction<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formaction">&lt;button&gt;: The Button element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formaction">&lt;input type="submit"&gt;</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image#formaction">&lt;input type="image"&gt;</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_formaction.asp">HTML formaction Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E formaction(String formaction) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "formaction");
-		return Attributes.Url.attribute(element, "formaction", formaction);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formaction">&lt;button&gt;: The Button element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formaction">&lt;input type="submit"&gt;</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image#formaction">&lt;input type="image"&gt;</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_formaction.asp">HTML formaction Attribute</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E formaction(String formaction) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "formaction");
+    return Attributes.Url.attribute(element, "formaction", formaction);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formaction">&lt;button&gt;: The Button element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formaction">&lt;input type="submit"&gt;</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image#formaction">&lt;input type="image"&gt;</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_formaction.asp">HTML formaction Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #formaction(java.lang.String)
-	 */
-	default <Ex extends Throwable> E formaction(IOSupplierE<? extends String, Ex> formaction) throws IOException, Ex {
-		return formaction((formaction == null) ? null : formaction.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formaction">&lt;button&gt;: The Button element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formaction">&lt;input type="submit"&gt;</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image#formaction">&lt;input type="image"&gt;</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_formaction.asp">HTML formaction Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #formaction(java.lang.String)
+   */
+  default <Ex extends Throwable> E formaction(IOSupplierE<? extends String, Ex> formaction) throws IOException, Ex {
+    return formaction((formaction == null) ? null : formaction.get());
+  }
 }

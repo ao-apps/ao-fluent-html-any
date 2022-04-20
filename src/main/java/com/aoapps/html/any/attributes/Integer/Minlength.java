@@ -39,40 +39,40 @@ import java.io.IOException;
  */
 public interface Minlength<E extends Element<?, ?, E> & Minlength<E>> {
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefminlength">&lt;input&gt;: The Input (Form Input) element</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E minlength(int minlength) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "minlength");
-		return Attributes.Integer.attribute(element, "minlength", minlength);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefminlength">&lt;input&gt;: The Input (Form Input) element</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E minlength(int minlength) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "minlength");
+    return Attributes.Integer.attribute(element, "minlength", minlength);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefminlength">&lt;input&gt;: The Input (Form Input) element</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E minlength(Integer minlength) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "minlength");
-		return Attributes.Integer.attribute(element, "minlength", minlength);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefminlength">&lt;input&gt;: The Input (Form Input) element</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E minlength(Integer minlength) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "minlength");
+    return Attributes.Integer.attribute(element, "minlength", minlength);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefminlength">&lt;input&gt;: The Input (Form Input) element</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #minlength(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E minlength(IOSupplierE<? extends Integer, Ex> minlength) throws IOException, Ex {
-		return minlength((minlength == null) ? null : minlength.get());
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefminlength">&lt;input&gt;: The Input (Form Input) element</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #minlength(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E minlength(IOSupplierE<? extends Integer, Ex> minlength) throws IOException, Ex {
+    return minlength((minlength == null) ? null : minlength.get());
+  }
 }

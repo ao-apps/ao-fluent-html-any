@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Oncanplay<E extends Element<?, ?, E> & Oncanplay<E>> extends OncanplayUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplay">3.2.6 Global attributes / oncanplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplay">8.1.7.2.1 IDL definitions / oncanplay</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplay">GlobalEventHandlers.oncanplay</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplay.asp">oncanplay Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E oncanplay(Object oncanplay) throws IOException {
-		return OncanplayUnexpected.super.oncanplay(oncanplay);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplay">3.2.6 Global attributes / oncanplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplay">8.1.7.2.1 IDL definitions / oncanplay</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplay">GlobalEventHandlers.oncanplay</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplay.asp">oncanplay Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E oncanplay(Object oncanplay) throws IOException {
+    return OncanplayUnexpected.super.oncanplay(oncanplay);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplay">3.2.6 Global attributes / oncanplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplay">8.1.7.2.1 IDL definitions / oncanplay</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplay">GlobalEventHandlers.oncanplay</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplay.asp">oncanplay Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncanplay(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E oncanplay(IOSupplierE<?, Ex> oncanplay) throws IOException, Ex {
-		return OncanplayUnexpected.super.oncanplay(oncanplay);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplay">3.2.6 Global attributes / oncanplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplay">8.1.7.2.1 IDL definitions / oncanplay</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplay">GlobalEventHandlers.oncanplay</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplay.asp">oncanplay Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncanplay(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E oncanplay(IOSupplierE<?, Ex> oncanplay) throws IOException, Ex {
+    return OncanplayUnexpected.super.oncanplay(oncanplay);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplay">3.2.6 Global attributes / oncanplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplay">8.1.7.2.1 IDL definitions / oncanplay</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplay">GlobalEventHandlers.oncanplay</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplay.asp">oncanplay Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncanplay(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E oncanplay(JavaScriptWritable<Ex> oncanplay) throws IOException, Ex {
-		return OncanplayUnexpected.super.oncanplay(oncanplay);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplay">3.2.6 Global attributes / oncanplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplay">8.1.7.2.1 IDL definitions / oncanplay</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplay">GlobalEventHandlers.oncanplay</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplay.asp">oncanplay Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncanplay(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E oncanplay(JavaScriptWritable<Ex> oncanplay) throws IOException, Ex {
+    return OncanplayUnexpected.super.oncanplay(oncanplay);
+  }
 }

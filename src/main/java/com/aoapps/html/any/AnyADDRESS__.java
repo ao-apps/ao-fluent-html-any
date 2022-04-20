@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyADDRESS__<
-	D  extends AnyDocument<D>,
-	PC extends AnyPalpableContent<D, PC>,
-	__ extends AnyADDRESS__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyPalpableContent<D, PC>,
+  __ extends AnyADDRESS__<D, PC, __>
 >
-	extends NormalText__<D, PC, __>
-	implements AnyFlowContent<D, __> {
+  extends NormalText__<D, PC, __>
+  implements AnyFlowContent<D, __> {
 
-	protected AnyADDRESS__(AnyADDRESS<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyADDRESS__(AnyADDRESS<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

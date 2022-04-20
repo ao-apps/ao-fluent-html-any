@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Ondurationchange<E extends Element<?, ?, E> & Ondurationchange<E>> extends OndurationchangeUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondurationchange">3.2.6 Global attributes / ondurationchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondurationchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondurationchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondurationchange">8.1.7.2.1 IDL definitions / ondurationchange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondurationchange">GlobalEventHandlers.ondurationchange</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondurationchange.asp">ondurationchange Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E ondurationchange(Object ondurationchange) throws IOException {
-		return OndurationchangeUnexpected.super.ondurationchange(ondurationchange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondurationchange">3.2.6 Global attributes / ondurationchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondurationchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondurationchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondurationchange">8.1.7.2.1 IDL definitions / ondurationchange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondurationchange">GlobalEventHandlers.ondurationchange</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondurationchange.asp">ondurationchange Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E ondurationchange(Object ondurationchange) throws IOException {
+    return OndurationchangeUnexpected.super.ondurationchange(ondurationchange);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondurationchange">3.2.6 Global attributes / ondurationchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondurationchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondurationchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondurationchange">8.1.7.2.1 IDL definitions / ondurationchange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondurationchange">GlobalEventHandlers.ondurationchange</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondurationchange.asp">ondurationchange Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ondurationchange(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E ondurationchange(IOSupplierE<?, Ex> ondurationchange) throws IOException, Ex {
-		return OndurationchangeUnexpected.super.ondurationchange(ondurationchange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondurationchange">3.2.6 Global attributes / ondurationchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondurationchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondurationchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondurationchange">8.1.7.2.1 IDL definitions / ondurationchange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondurationchange">GlobalEventHandlers.ondurationchange</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondurationchange.asp">ondurationchange Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ondurationchange(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E ondurationchange(IOSupplierE<?, Ex> ondurationchange) throws IOException, Ex {
+    return OndurationchangeUnexpected.super.ondurationchange(ondurationchange);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondurationchange">3.2.6 Global attributes / ondurationchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondurationchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondurationchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondurationchange">8.1.7.2.1 IDL definitions / ondurationchange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondurationchange">GlobalEventHandlers.ondurationchange</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondurationchange.asp">ondurationchange Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ondurationchange(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E ondurationchange(JavaScriptWritable<Ex> ondurationchange) throws IOException, Ex {
-		return OndurationchangeUnexpected.super.ondurationchange(ondurationchange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondurationchange">3.2.6 Global attributes / ondurationchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondurationchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondurationchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondurationchange">8.1.7.2.1 IDL definitions / ondurationchange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondurationchange">GlobalEventHandlers.ondurationchange</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondurationchange.asp">ondurationchange Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ondurationchange(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E ondurationchange(JavaScriptWritable<Ex> ondurationchange) throws IOException, Ex {
+    return OndurationchangeUnexpected.super.ondurationchange(ondurationchange);
+  }
 }

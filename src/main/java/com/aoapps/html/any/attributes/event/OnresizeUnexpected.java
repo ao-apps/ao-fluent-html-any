@@ -54,71 +54,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onresize">3.2.6 Global attributes / onresize</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onresize">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onresize</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onresize">8.1.7.2.1 IDL definitions / onresize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize">GlobalEventHandlers.onresize</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onresize.asp">onresize Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onresize attribute is global, it is only expected on
-	 *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onresize(Object onresize) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onresize");
-		return Attributes.Event.attribute(element, "onresize", onresize);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onresize">3.2.6 Global attributes / onresize</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onresize">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onresize</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onresize">8.1.7.2.1 IDL definitions / onresize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize">GlobalEventHandlers.onresize</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onresize.asp">onresize Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onresize attribute is global, it is only expected on
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onresize(Object onresize) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onresize");
+    return Attributes.Event.attribute(element, "onresize", onresize);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onresize">3.2.6 Global attributes / onresize</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onresize">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onresize</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onresize">8.1.7.2.1 IDL definitions / onresize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize">GlobalEventHandlers.onresize</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onresize.asp">onresize Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onresize(java.lang.Object)
-	 *
-	 * @deprecated  Although the onresize attribute is global, it is only expected on
-	 *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onresize(IOSupplierE<?, Ex> onresize) throws IOException, Ex {
-		return onresize((onresize == null) ? null : onresize.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onresize">3.2.6 Global attributes / onresize</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onresize">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onresize</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onresize">8.1.7.2.1 IDL definitions / onresize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize">GlobalEventHandlers.onresize</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onresize.asp">onresize Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onresize(java.lang.Object)
+   *
+   * @deprecated  Although the onresize attribute is global, it is only expected on
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onresize(IOSupplierE<?, Ex> onresize) throws IOException, Ex {
+    return onresize((onresize == null) ? null : onresize.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onresize">3.2.6 Global attributes / onresize</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onresize">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onresize</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onresize">8.1.7.2.1 IDL definitions / onresize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize">GlobalEventHandlers.onresize</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onresize.asp">onresize Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onresize(java.lang.Object)
-	 *
-	 * @deprecated  Although the onresize attribute is global, it is only expected on
-	 *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onresize(JavaScriptWritable<Ex> onresize) throws IOException, Ex {
-		return onresize((Object)onresize);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onresize">3.2.6 Global attributes / onresize</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onresize">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onresize</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onresize">8.1.7.2.1 IDL definitions / onresize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onresize">GlobalEventHandlers.onresize</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onresize.asp">onresize Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onresize(java.lang.Object)
+   *
+   * @deprecated  Although the onresize attribute is global, it is only expected on
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onresize(JavaScriptWritable<Ex> onresize) throws IOException, Ex {
+    return onresize((Object)onresize);
+  }
 }

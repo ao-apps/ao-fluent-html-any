@@ -43,37 +43,37 @@ import java.io.Writer;
  */
 // TODO: Flow content, but with no heading content descendants, no sectioning content descendants, and no header, footer, or address element descendants.
 public abstract class AnyADDRESS<
-	D  extends AnyDocument<D>,
-	PC extends AnyPalpableContent<D, PC>,
-	E  extends AnyADDRESS<D, PC, E, __, _c>,
-	__ extends AnyADDRESS__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyADDRESS_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyPalpableContent<D, PC>,
+  E  extends AnyADDRESS<D, PC, E, __, _c>,
+  __ extends AnyADDRESS__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyADDRESS_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
-	protected AnyADDRESS(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyADDRESS(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<address", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<address", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></address>", false);
-		} else {
-			document.autoNli(unsafe).unsafe(unsafe, "</address>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></address>", false);
+    } else {
+      document.autoNli(unsafe).unsafe(unsafe, "</address>", false);
+    }
+    document.autoNl(unsafe);
+  }
 }

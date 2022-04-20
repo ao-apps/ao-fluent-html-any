@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyDT__<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_DIV_DL<D, PC>,
-	__ extends AnyDT__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_DIV_DL<D, PC>,
+  __ extends AnyDT__<D, PC, __>
 >
-	extends NormalText__<D, PC, __>
-	implements AnyFlowContent<D, __> {
+  extends NormalText__<D, PC, __>
+  implements AnyFlowContent<D, __> {
 
-	protected AnyDT__(AnyDT<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyDT__(AnyDT<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

@@ -39,14 +39,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyDATA__<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-	__ extends AnyDATA__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+  __ extends AnyDATA__<D, PC, __>
 >
-	extends NormalText__<D, PC, __>
-	implements AnyPhrasingContent<D, __> {
+  extends NormalText__<D, PC, __>
+  implements AnyPhrasingContent<D, __> {
 
-	protected AnyDATA__(AnyDATA<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyDATA__(AnyDATA<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

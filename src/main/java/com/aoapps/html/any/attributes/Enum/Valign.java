@@ -44,62 +44,62 @@ import java.util.function.Function;
  */
 @Deprecated
 public interface Valign<
-	E extends Element<?, ?, E> & Valign<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Valign<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * See <a href="https://www.w3resource.com/html/attributes/html-valign-attribute.php">HTML valign attribute</a>.
-	 *
-	 * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E valign(String valign) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "valign", MarkupType.NONE, valign, true, true);
-	}
+  /**
+   * See <a href="https://www.w3resource.com/html/attributes/html-valign-attribute.php">HTML valign attribute</a>.
+   *
+   * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E valign(String valign) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "valign", MarkupType.NONE, valign, true, true);
+  }
 
-	/**
-	 * See <a href="https://www.w3resource.com/html/attributes/html-valign-attribute.php">HTML valign attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #valign(java.lang.String)
-	 *
-	 * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E valign(Suppliers.String<Ex> valign) throws IOException, Ex {
-		return valign((valign == null) ? null : valign.get());
-	}
+  /**
+   * See <a href="https://www.w3resource.com/html/attributes/html-valign-attribute.php">HTML valign attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #valign(java.lang.String)
+   *
+   * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E valign(Suppliers.String<Ex> valign) throws IOException, Ex {
+    return valign((valign == null) ? null : valign.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3resource.com/html/attributes/html-valign-attribute.php">HTML valign attribute</a>.
-	 *
-	 * @see #valign(java.lang.String)
-	 *
-	 * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	default E valign(V valign) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return valign((valign == null) ? null : valign.apply(element.getDocument()));
-	}
+  /**
+   * See <a href="https://www.w3resource.com/html/attributes/html-valign-attribute.php">HTML valign attribute</a>.
+   *
+   * @see #valign(java.lang.String)
+   *
+   * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  default E valign(V valign) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return valign((valign == null) ? null : valign.apply(element.getDocument()));
+  }
 
-	/**
-	 * See <a href="https://www.w3resource.com/html/attributes/html-valign-attribute.php">HTML valign attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #valign(java.lang.Enum)
-	 *
-	 * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E valign(IOSupplierE<? extends V, Ex> valign) throws IOException, Ex {
-		return valign((valign == null) ? null : valign.get());
-	}
+  /**
+   * See <a href="https://www.w3resource.com/html/attributes/html-valign-attribute.php">HTML valign attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #valign(java.lang.Enum)
+   *
+   * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E valign(IOSupplierE<? extends V, Ex> valign) throws IOException, Ex {
+    return valign((valign == null) ? null : valign.get());
+  }
 }

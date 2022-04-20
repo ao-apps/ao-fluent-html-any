@@ -42,39 +42,39 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyBLOCKQUOTE<
-	D  extends AnyDocument<D>,
-	PC extends AnyPalpableContent<D, PC>,
-	E  extends AnyBLOCKQUOTE<D, PC, E, __, _c>,
-	__ extends AnyBLOCKQUOTE__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyBLOCKQUOTE_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyPalpableContent<D, PC>,
+  E  extends AnyBLOCKQUOTE<D, PC, E, __, _c>,
+  __ extends AnyBLOCKQUOTE__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyBLOCKQUOTE_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-	com.aoapps.html.any.attributes.Url.Cite<E>
+  com.aoapps.html.any.attributes.Url.Cite<E>
 {
 
-	protected AnyBLOCKQUOTE(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyBLOCKQUOTE(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<blockquote", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<blockquote", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></blockquote>", false);
-		} else {
-			document.autoNli(unsafe).unsafe(unsafe, "</blockquote>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></blockquote>", false);
+    } else {
+      document.autoNli(unsafe).unsafe(unsafe, "</blockquote>", false);
+    }
+    document.autoNl(unsafe);
+  }
 }

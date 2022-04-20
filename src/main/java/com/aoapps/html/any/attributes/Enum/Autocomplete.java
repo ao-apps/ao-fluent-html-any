@@ -50,162 +50,166 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Autocomplete<
-	E extends Element<?, ?, E> & Autocomplete<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Autocomplete<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E autocomplete(String autocomplete) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "autocomplete");
-		return Attributes.String.attribute(element, "autocomplete", MarkupType.NONE, autocomplete, true, true);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E autocomplete(String autocomplete) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "autocomplete");
+    return Attributes.String.attribute(element, "autocomplete", MarkupType.NONE, autocomplete, true, true);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #autocomplete(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E autocomplete(Suppliers.String<Ex> autocomplete) throws IOException, Ex {
-		return autocomplete((autocomplete == null) ? null : autocomplete.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #autocomplete(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E autocomplete(Suppliers.String<Ex> autocomplete) throws IOException, Ex {
+    return autocomplete((autocomplete == null) ? null : autocomplete.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #autocomplete(java.lang.String)
-	 */
-	default E autocomplete(V autocomplete) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return autocomplete((autocomplete == null) ? null : autocomplete.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @see #autocomplete(java.lang.String)
+   */
+  default E autocomplete(V autocomplete) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return autocomplete((autocomplete == null) ? null : autocomplete.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #autocomplete(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E autocomplete(IOSupplierE<? extends V, Ex> autocomplete) throws IOException, Ex {
-		return autocomplete((autocomplete == null) ? null : autocomplete.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #autocomplete(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E autocomplete(IOSupplierE<? extends V, Ex> autocomplete) throws IOException, Ex {
+    return autocomplete((autocomplete == null) ? null : autocomplete.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E autocomplete(String ... autocomplete) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		AnyDocument<?> document = element.getDocument();
-		Attributes.onlySupportedInHtml5(document, "autocomplete");
-		if(autocomplete != null) {
-			@SuppressWarnings("deprecation")
-			Writer unsafe = document.getRawUnsafe(null);
-			boolean didOne = false;
-			for(String value : autocomplete) {
-				String trimmed = Strings.trimNullIfEmpty(value);
-				if(trimmed != null) {
-					if(!didOne) {
-						if(document.getAtnl()) {
-							// Can't access: document.autoIndent(unsafe, 1);
-							document.autoIndent(1);
-							unsafe.write("autocomplete=\"");
-							document.clearAtnl();
-						} else {
-							unsafe.write(" autocomplete=\"");
-						}
-						didOne = true;
-					} else {
-						unsafe.append(' ');
-					}
-					encodeTextInXhtmlAttribute(trimmed, unsafe);
-				}
-			}
-			if(didOne) unsafe.append('"');
-		}
-		return element;
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E autocomplete(String ... autocomplete) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    AnyDocument<?> document = element.getDocument();
+    Attributes.onlySupportedInHtml5(document, "autocomplete");
+    if (autocomplete != null) {
+      @SuppressWarnings("deprecation")
+      Writer unsafe = document.getRawUnsafe(null);
+      boolean didOne = false;
+      for (String value : autocomplete) {
+        String trimmed = Strings.trimNullIfEmpty(value);
+        if (trimmed != null) {
+          if (!didOne) {
+            if (document.getAtnl()) {
+              // Can't access: document.autoIndent(unsafe, 1);
+              document.autoIndent(1);
+              unsafe.write("autocomplete=\"");
+              document.clearAtnl();
+            } else {
+              unsafe.write(" autocomplete=\"");
+            }
+            didOne = true;
+          } else {
+            unsafe.append(' ');
+          }
+          encodeTextInXhtmlAttribute(trimmed, unsafe);
+        }
+      }
+      if (didOne) {
+        unsafe.append('"');
+      }
+    }
+    return element;
+  }
 
-	// TODO: More variants for suppliers of arrays, arrays of suppliers, iterables, ...?
+  // TODO: More variants for suppliers of arrays, arrays of suppliers, iterables, ...?
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	@SuppressWarnings({"unchecked", "deprecation"}) // generic varargs
-	default E autocomplete(V ... autocomplete) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		AnyDocument<?> document = element.getDocument();
-		Attributes.onlySupportedInHtml5(document, "autocomplete");
-		if(autocomplete != null) {
-			Writer unsafe = document.getRawUnsafe(null);
-			boolean didOne = false;
-			for(V value : autocomplete) {
-				if(value != null) {
-					if(!didOne) {
-						if(document.getAtnl()) {
-							// Can't access: document.autoIndent(unsafe, 1);
-							document.autoIndent(1);
-							unsafe.write("autocomplete=\"");
-							document.clearAtnl();
-						} else {
-							unsafe.write(" autocomplete=\"");
-						}
-						didOne = true;
-					} else {
-						unsafe.append(' ');
-					}
-					encodeTextInXhtmlAttribute(value.apply(document), unsafe);
-				}
-			}
-			if(didOne) unsafe.append('"');
-		}
-		return element;
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  @SuppressWarnings({"unchecked", "deprecation"}) // generic varargs
+  default E autocomplete(V ... autocomplete) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    AnyDocument<?> document = element.getDocument();
+    Attributes.onlySupportedInHtml5(document, "autocomplete");
+    if (autocomplete != null) {
+      Writer unsafe = document.getRawUnsafe(null);
+      boolean didOne = false;
+      for (V value : autocomplete) {
+        if (value != null) {
+          if (!didOne) {
+            if (document.getAtnl()) {
+              // Can't access: document.autoIndent(unsafe, 1);
+              document.autoIndent(1);
+              unsafe.write("autocomplete=\"");
+              document.clearAtnl();
+            } else {
+              unsafe.write(" autocomplete=\"");
+            }
+            didOne = true;
+          } else {
+            unsafe.append(' ');
+          }
+          encodeTextInXhtmlAttribute(value.apply(document), unsafe);
+        }
+      }
+      if (didOne) {
+        unsafe.append('"');
+      }
+    }
+    return element;
+  }
 
-	// TODO: More variants for suppliers of arrays, arrays of suppliers, iterables, ...?
+  // TODO: More variants for suppliers of arrays, arrays of suppliers, iterables, ...?
 }

@@ -41,36 +41,36 @@ import java.io.IOException;
 @Deprecated
 public interface SizeHtml4Only<E extends Element<?, ?, E> & SizeHtml4Only<E>> extends Size<E> {
 
-	/**
-	 * @deprecated  Not supported in HTML5.
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E size(int size) throws IOException {
-		return Size.super.size(size);
-	}
+  /**
+   * @deprecated  Not supported in HTML5.
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E size(int size) throws IOException {
+    return Size.super.size(size);
+  }
 
-	/**
-	 * @deprecated  Not supported in HTML5.
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E size(Integer size) throws IOException {
-		return Size.super.size(size);
-	}
+  /**
+   * @deprecated  Not supported in HTML5.
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E size(Integer size) throws IOException {
+    return Size.super.size(size);
+  }
 
-	/**
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #size(java.lang.Integer)
-	 *
-	 * @deprecated  Not supported in HTML5.
-	 */
-	@Deprecated
-	@Override
-	default <Ex extends Throwable> E size(IOSupplierE<? extends Integer, Ex> size) throws IOException, Ex {
-		return Size.super.size(size);
-	}
+  /**
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #size(java.lang.Integer)
+   *
+   * @deprecated  Not supported in HTML5.
+   */
+  @Deprecated
+  @Override
+  default <Ex extends Throwable> E size(IOSupplierE<? extends Integer, Ex> size) throws IOException, Ex {
+    return Size.super.size(size);
+  }
 }

@@ -49,81 +49,81 @@ import java.util.Locale;
 //       But this would begin to change the nature of this API.
 public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E lang(Object lang) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "lang", MarkupType.NONE, lang, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E lang(Object lang) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "lang", MarkupType.NONE, lang, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #lang(java.lang.Object)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E lang(IOSupplierE<?, Ex> lang) throws IOException, Ex {
-		return lang((lang == null) ? null : lang.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #lang(java.lang.Object)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E lang(IOSupplierE<?, Ex> lang) throws IOException, Ex {
+    return lang((lang == null) ? null : lang.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @see #lang(java.lang.Object)
-	 */
-	default E lang(Locale lang) throws IOException {
-		return lang((lang == null) ? null : lang.toLanguageTag());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
+   * </ul>
+   *
+   * @see #lang(java.lang.Object)
+   */
+  default E lang(Locale lang) throws IOException {
+    return lang((lang == null) ? null : lang.toLanguageTag());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #lang(java.util.Locale)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E lang(Suppliers.Locale<Ex> lang) throws IOException, Ex {
-		return lang((lang == null) ? null : lang.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #lang(java.util.Locale)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E lang(Suppliers.Locale<Ex> lang) throws IOException, Ex {
+    return lang((lang == null) ? null : lang.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #lang(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E lang(TextWritable<Ex> lang) throws IOException, Ex {
-		return lang((Object)lang);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #lang(java.lang.Object)
+   */
+  default <Ex extends Throwable> E lang(TextWritable<Ex> lang) throws IOException, Ex {
+    return lang((Object)lang);
+  }
 }

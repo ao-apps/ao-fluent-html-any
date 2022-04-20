@@ -42,220 +42,220 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyMetadataContent<
-	D  extends AnyDocument<D>,
-	__ extends AnyMetadataContent<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyMetadataContent<D, __>
 > extends
-	//
-	// Unions:
-	//
-	// Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-	AnyUnion_Metadata_Phrasing<D, __>
+  //
+  // Unions:
+  //
+  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+  AnyUnion_Metadata_Phrasing<D, __>
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
-	// Inherited: AnyScriptSupportingContent<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+  // Inherited: AnyScriptSupportingContent<D, __>
 {
-	//
-	// Factories:
-	//
-	// <editor-fold defaultstate="collapsed" desc="BASE">
-	/**
-	 * Opens a new base element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element">4.2.3 The base element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">&lt;base&gt;: The Document Base URL element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_base.asp">HTML base tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("base")
-	AnyBASE<D, __, ?> base() throws IOException;
+  //
+  // Factories:
+  //
+  // <editor-fold defaultstate="collapsed" desc="BASE">
+  /**
+   * Opens a new base element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element">4.2.3 The base element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">&lt;base&gt;: The Document Base URL element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_base.asp">HTML base tag</a>.</li>
+   * </ul>
+   */
+  @Factory("base")
+  AnyBASE<D, __, ?> base() throws IOException;
 
-	/**
-	 * Shortcut to create a base with href only.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element">4.2.3 The base element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">&lt;base&gt;: The Document Base URL element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_base.asp">HTML base tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("base")
-	default __ base__(String href) throws IOException {
-		return base().href(href).__();
-	}
-	// TODO: IOSupplierE version like A? (review others, too)
-	// </editor-fold>
-	// Inherited: LINK
-	// Inherited: META
-	// Inherited: NOSCRIPT
-	// Inherited: SCRIPT
-	// <editor-fold defaultstate="collapsed" desc="STYLE">
-	/**
-	 * Opens a new style element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
-	 * </ul>
-	 *
-	 * @see Doctype#styleType(java.lang.Appendable)
-	 */
-	@Factory("style")
-	AnySTYLE<D, __, ?> style() throws IOException;
+  /**
+   * Shortcut to create a base with href only.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-base-element">4.2.3 The base element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base">&lt;base&gt;: The Document Base URL element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_base.asp">HTML base tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("base")
+  default __ base__(String href) throws IOException {
+    return base().href(href).__();
+  }
+  // TODO: IOSupplierE version like A? (review others, too)
+  // </editor-fold>
+  // Inherited: LINK
+  // Inherited: META
+  // Inherited: NOSCRIPT
+  // Inherited: SCRIPT
+  // <editor-fold defaultstate="collapsed" desc="STYLE">
+  /**
+   * Opens a new style element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
+   * </ul>
+   *
+   * @see Doctype#styleType(java.lang.Appendable)
+   */
+  @Factory("style")
+  AnySTYLE<D, __, ?> style() throws IOException;
 
-	/**
-	 * Opens a new style element of the given type.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_style_type.asp">HTML style type Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Factory("style")
-	AnySTYLE<D, __, ?> style(String type) throws IOException;
+  /**
+   * Opens a new style element of the given type.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_style_type.asp">HTML style type Attribute</a>.</li>
+   * </ul>
+   */
+  @Factory("style")
+  AnySTYLE<D, __, ?> style(String type) throws IOException;
 
-	/**
-	 * Opens a new style element of the given type.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_style_type.asp">HTML style type Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Factory("style")
-	<Ex extends Throwable> AnySTYLE<D, __, ?> style(Suppliers.String<Ex> type) throws IOException, Ex;
+  /**
+   * Opens a new style element of the given type.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_style_type.asp">HTML style type Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Factory("style")
+  <Ex extends Throwable> AnySTYLE<D, __, ?> style(Suppliers.String<Ex> type) throws IOException, Ex;
 
-	/**
-	 * Opens a new style element of the given type.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_style_type.asp">HTML style type Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Factory("style")
-	AnySTYLE<D, __, ?> style(AnySTYLE.Type type) throws IOException;
+  /**
+   * Opens a new style element of the given type.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_style_type.asp">HTML style type Attribute</a>.</li>
+   * </ul>
+   */
+  @Factory("style")
+  AnySTYLE<D, __, ?> style(AnySTYLE.Type type) throws IOException;
 
-	/**
-	 * Opens a new style element of the given type.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_style_type.asp">HTML style type Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Factory("style")
-	<Ex extends Throwable> AnySTYLE<D, __, ?> style(IOSupplierE<? extends AnySTYLE.Type, Ex> type) throws IOException, Ex;
-	// TODO: style__() - go directly to out, since no attributes? Lambda versions, too
-	// TODO: A version called HtmlWriter that extends ChainWriter to avoid all this passing of appendables?
-	// TODO: html.input.style.type().print("...").__().  How far do we take this?
-	// </editor-fold>
-	// Inherited: TEMPLATE - WHATWG only
-	// <editor-fold defaultstate="collapsed" desc="TITLE">
-	/**
-	 * Opens a new title element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("title")
-	AnyTITLE<D, __, ?, ?, ?> title() throws IOException;
+  /**
+   * Opens a new style element of the given type.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-style-element">4.2.6 The style element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/style">&lt;style&gt;: The Style Information element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_style.asp">HTML style tag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_style_type.asp">HTML style type Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Factory("style")
+  <Ex extends Throwable> AnySTYLE<D, __, ?> style(IOSupplierE<? extends AnySTYLE.Type, Ex> type) throws IOException, Ex;
+  // TODO: style__() - go directly to out, since no attributes? Lambda versions, too
+  // TODO: A version called HtmlWriter that extends ChainWriter to avoid all this passing of appendables?
+  // TODO: html.input.style.type().print("...").__().  How far do we take this?
+  // </editor-fold>
+  // Inherited: TEMPLATE - WHATWG only
+  // <editor-fold defaultstate="collapsed" desc="TITLE">
+  /**
+   * Opens a new title element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
+   * </ul>
+   */
+  @Factory("title")
+  AnyTITLE<D, __, ?, ?, ?> title() throws IOException;
 
-	/**
-	 * Creates a title element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("title")
-	default <Ex extends Throwable> __ title__(IORunnableE<Ex> title) throws IOException, Ex {
-		return title().__(title);
-	}
+  /**
+   * Creates a title element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("title")
+  default <Ex extends Throwable> __ title__(IORunnableE<Ex> title) throws IOException, Ex {
+    return title().__(title);
+  }
 
-	/**
-	 * Creates a title element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("title")
-	default <Ex extends Throwable> __ title__any(IOConsumerE<? super AnyTITLE__<D, __, ? extends AnyTITLE__<D, __, ?>>, Ex> title) throws IOException, Ex {
-		return title().__(title);
-	}
+  /**
+   * Creates a title element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("title")
+  default <Ex extends Throwable> __ title__any(IOConsumerE<? super AnyTITLE__<D, __, ? extends AnyTITLE__<D, __, ?>>, Ex> title) throws IOException, Ex {
+    return title().__(title);
+  }
 
-	/**
-	 * Creates a title element with no attributes and a text body.
-	 * TODO: Supports translation markup type {@link MarkupType#TEXT}.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("title")
-	default __ title__(Object text) throws IOException {
-		return title().__(text);
-	}
+  /**
+   * Creates a title element with no attributes and a text body.
+   * TODO: Supports translation markup type {@link MarkupType#TEXT}.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("title")
+  default __ title__(Object text) throws IOException {
+    return title().__(text);
+  }
 
 // Empty element not expected.  Requires "Text that is not inter-element whitespace":
-//	/**
-//	 * Creates an empty title element with no attributes.
-//	 * <ul>
-//	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
-//	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
-//	 * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
-//	 * </ul>
-//	 *
-//	 * @return  This content model, which will be the parent content model of child elements
-//	 */
-//	@Factory("title")
-//	default __ title__() throws IOException {
-//		return title().__();
-//	}
+//  /**
+//   * Creates an empty title element with no attributes.
+//   * <ul>
+//   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
+//   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
+//   * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
+//   * </ul>
+//   *
+//   * @return  This content model, which will be the parent content model of child elements
+//   */
+//  @Factory("title")
+//  default __ title__() throws IOException {
+//    return title().__();
+//  }
 
-	/**
-	 * Creates a title element with no attributes then begins element content
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  The content model of this element, which will be the parent content model of child elements.
-	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
-	 *          the tag.  This is well suited for use in a try-with-resources block.
-	 *
-	 * @see  Closeable#__()
-	 * @see  Closeable#close()
-	 */
-	@Factory("title")
-	AnyTITLE_c<D, __, ?> title_c() throws IOException;
-	// </editor-fold>
+  /**
+   * Creates a title element with no attributes then begins element content
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
+   * </ul>
+   *
+   * @return  The content model of this element, which will be the parent content model of child elements.
+   *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+   *          the tag.  This is well suited for use in a try-with-resources block.
+   *
+   * @see  Closeable#__()
+   * @see  Closeable#close()
+   */
+  @Factory("title")
+  AnyTITLE_c<D, __, ?> title_c() throws IOException;
+  // </editor-fold>
 }

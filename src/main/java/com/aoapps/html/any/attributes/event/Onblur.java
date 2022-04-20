@@ -45,52 +45,52 @@ import java.io.IOException;
 // Matches OnblurUnexpected
 public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E onblur(Object onblur) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onblur", onblur);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E onblur(Object onblur) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onblur", onblur);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onblur(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onblur(IOSupplierE<?, Ex> onblur) throws IOException, Ex {
-		return onblur((onblur == null) ? null : onblur.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onblur(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onblur(IOSupplierE<?, Ex> onblur) throws IOException, Ex {
+    return onblur((onblur == null) ? null : onblur.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onblur(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onblur(JavaScriptWritable<Ex> onblur) throws IOException, Ex {
-		return onblur((Object)onblur);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onblur">3.2.6 Global attributes / onblur</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onblur">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onblur</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onblur">8.1.7.2.1 IDL definitions / onblur</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onblur">GlobalEventHandlers.onblur</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onblur.asp">onblur Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onblur(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onblur(JavaScriptWritable<Ex> onblur) throws IOException, Ex {
+    return onblur((Object)onblur);
+  }
 }

@@ -41,50 +41,50 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Shape<
-	E extends Element<?, ?, E> & Shape<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Shape<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E shape(String shape) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "shape", MarkupType.NONE, shape, true, true);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E shape(String shape) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "shape", MarkupType.NONE, shape, true, true);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #shape(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E shape(Suppliers.String<Ex> shape) throws IOException, Ex {
-		return shape((shape == null) ? null : shape.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #shape(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E shape(Suppliers.String<Ex> shape) throws IOException, Ex {
+    return shape((shape == null) ? null : shape.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
-	 *
-	 * @see #shape(java.lang.String)
-	 */
-	default E shape(V shape) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return shape((shape == null) ? null : shape.apply(element.getDocument()));
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
+   *
+   * @see #shape(java.lang.String)
+   */
+  default E shape(V shape) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return shape((shape == null) ? null : shape.apply(element.getDocument()));
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #shape(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E shape(IOSupplierE<? extends V, Ex> shape) throws IOException, Ex {
-		return shape((shape == null) ? null : shape.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #shape(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E shape(IOSupplierE<? extends V, Ex> shape) throws IOException, Ex {
+    return shape((shape == null) ? null : shape.get());
+  }
 }

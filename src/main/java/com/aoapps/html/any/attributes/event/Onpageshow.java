@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Onpageshow<E extends Element<?, ?, E> & Onpageshow<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onpageshow.asp">HTML onpageshow Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onpageshow(Object onpageshow) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onpageshow");
-		return Attributes.Event.attribute(element, "onpageshow", onpageshow);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onpageshow.asp">HTML onpageshow Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onpageshow(Object onpageshow) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onpageshow");
+    return Attributes.Event.attribute(element, "onpageshow", onpageshow);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onpageshow.asp">HTML onpageshow Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onpageshow(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onpageshow(IOSupplierE<?, Ex> onpageshow) throws IOException, Ex {
-		return onpageshow((onpageshow == null) ? null : onpageshow.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onpageshow.asp">HTML onpageshow Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onpageshow(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onpageshow(IOSupplierE<?, Ex> onpageshow) throws IOException, Ex {
+    return onpageshow((onpageshow == null) ? null : onpageshow.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onpageshow.asp">HTML onpageshow Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onpageshow(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onpageshow(JavaScriptWritable<Ex> onpageshow) throws IOException, Ex {
-		return onpageshow((Object)onpageshow);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onpageshow.asp">HTML onpageshow Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onpageshow(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onpageshow(JavaScriptWritable<Ex> onpageshow) throws IOException, Ex {
+    return onpageshow((Object)onpageshow);
+  }
 }

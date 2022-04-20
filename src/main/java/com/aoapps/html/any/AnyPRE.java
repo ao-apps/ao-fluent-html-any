@@ -42,60 +42,66 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyPRE<
-	D  extends AnyDocument<D>,
-	PC extends AnyPalpableContent<D, PC>,
-	E  extends AnyPRE<D, PC, E, __, _c>,
-	__ extends AnyPRE__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyPRE_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyPalpableContent<D, PC>,
+  E  extends AnyPRE<D, PC, E, __, _c>,
+  __ extends AnyPRE__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyPRE_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
-	private boolean oldAutonli;
-	private boolean oldIndent;
-	private int oldDepth;
+  private boolean oldAutonli;
+  private boolean oldIndent;
+  private int oldDepth;
 
-	protected AnyPRE(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyPRE(D document, PC pc) {
+    super(document, pc);
+  }
 
-	/**
-	 * Does not have indented content.
-	 *
-	 * @return {@code false} - does not indent
-	 */
-	@Override
-	protected boolean isContentIndented() {
-		return false;
-	}
+  /**
+   * Does not have indented content.
+   *
+   * @return {@code false} - does not indent
+   */
+  @Override
+  protected boolean isContentIndented() {
+    return false;
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<pre", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<pre", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		oldAutonli = document.getAutonli();
-		if(oldAutonli) document.setAutonli(false);
-		oldIndent = document.getIndent();
-		if(oldIndent) document.setIndent(false);
-		oldDepth = document.getDepth();
-		if(oldDepth != 0) document.setDepth(0);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    oldAutonli = document.getAutonli();
+    if (oldAutonli) {
+      document.setAutonli(false);
+    }
+    oldIndent = document.getIndent();
+    if (oldIndent) {
+      document.setIndent(false);
+    }
+    oldDepth = document.getDepth();
+    if (oldDepth != 0) {
+      document.setDepth(0);
+    }
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document
-			.setDepth(oldDepth)
-			.setIndent(oldIndent)
-			.setAutonli(oldAutonli);
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></pre>", false);
-		} else {
-			document.unsafe(unsafe, "</pre>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document
+      .setDepth(oldDepth)
+      .setIndent(oldIndent)
+      .setAutonli(oldAutonli);
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></pre>", false);
+    } else {
+      document.unsafe(unsafe, "</pre>", false);
+    }
+    document.autoNl(unsafe);
+  }
 }

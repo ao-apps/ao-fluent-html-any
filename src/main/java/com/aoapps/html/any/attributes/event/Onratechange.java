@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onratechange<E extends Element<?, ?, E> & Onratechange<E>> extends OnratechangeUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onratechange">3.2.6 Global attributes / onratechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onratechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onratechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onratechange">8.1.7.2.1 IDL definitions / onratechange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onratechange">GlobalEventHandlers.onratechange</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onratechange.asp">onratechange Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onratechange(Object onratechange) throws IOException {
-		return OnratechangeUnexpected.super.onratechange(onratechange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onratechange">3.2.6 Global attributes / onratechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onratechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onratechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onratechange">8.1.7.2.1 IDL definitions / onratechange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onratechange">GlobalEventHandlers.onratechange</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onratechange.asp">onratechange Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onratechange(Object onratechange) throws IOException {
+    return OnratechangeUnexpected.super.onratechange(onratechange);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onratechange">3.2.6 Global attributes / onratechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onratechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onratechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onratechange">8.1.7.2.1 IDL definitions / onratechange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onratechange">GlobalEventHandlers.onratechange</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onratechange.asp">onratechange Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onratechange(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onratechange(IOSupplierE<?, Ex> onratechange) throws IOException, Ex {
-		return OnratechangeUnexpected.super.onratechange(onratechange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onratechange">3.2.6 Global attributes / onratechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onratechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onratechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onratechange">8.1.7.2.1 IDL definitions / onratechange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onratechange">GlobalEventHandlers.onratechange</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onratechange.asp">onratechange Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onratechange(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onratechange(IOSupplierE<?, Ex> onratechange) throws IOException, Ex {
+    return OnratechangeUnexpected.super.onratechange(onratechange);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onratechange">3.2.6 Global attributes / onratechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onratechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onratechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onratechange">8.1.7.2.1 IDL definitions / onratechange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onratechange">GlobalEventHandlers.onratechange</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onratechange.asp">onratechange Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onratechange(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onratechange(JavaScriptWritable<Ex> onratechange) throws IOException, Ex {
-		return OnratechangeUnexpected.super.onratechange(onratechange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onratechange">3.2.6 Global attributes / onratechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onratechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onratechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onratechange">8.1.7.2.1 IDL definitions / onratechange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onratechange">GlobalEventHandlers.onratechange</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onratechange.asp">onratechange Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onratechange(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onratechange(JavaScriptWritable<Ex> onratechange) throws IOException, Ex {
+    return OnratechangeUnexpected.super.onratechange(onratechange);
+  }
 }

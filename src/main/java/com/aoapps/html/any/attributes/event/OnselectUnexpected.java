@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnselectUnexpected<E extends Element<?, ?, E> & OnselectUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onselect">3.2.6 Global attributes / onselect</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onselect">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onselect</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onselect">8.1.7.2.1 IDL definitions / onselect</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect">GlobalEventHandlers.onselect</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onselect.asp">onselect Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
-	 *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onselect(Object onselect) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onselect");
-		return Attributes.Event.attribute(element, "onselect", onselect);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onselect">3.2.6 Global attributes / onselect</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onselect">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onselect</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onselect">8.1.7.2.1 IDL definitions / onselect</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect">GlobalEventHandlers.onselect</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onselect.asp">onselect Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
+   *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onselect(Object onselect) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onselect");
+    return Attributes.Event.attribute(element, "onselect", onselect);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onselect">3.2.6 Global attributes / onselect</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onselect">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onselect</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onselect">8.1.7.2.1 IDL definitions / onselect</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect">GlobalEventHandlers.onselect</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onselect.asp">onselect Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onselect(java.lang.Object)
-	 *
-	 * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
-	 *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onselect(IOSupplierE<?, Ex> onselect) throws IOException, Ex {
-		return onselect((onselect == null) ? null : onselect.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onselect">3.2.6 Global attributes / onselect</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onselect">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onselect</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onselect">8.1.7.2.1 IDL definitions / onselect</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect">GlobalEventHandlers.onselect</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onselect.asp">onselect Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onselect(java.lang.Object)
+   *
+   * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
+   *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onselect(IOSupplierE<?, Ex> onselect) throws IOException, Ex {
+    return onselect((onselect == null) ? null : onselect.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onselect">3.2.6 Global attributes / onselect</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onselect">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onselect</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onselect">8.1.7.2.1 IDL definitions / onselect</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect">GlobalEventHandlers.onselect</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onselect.asp">onselect Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onselect(java.lang.Object)
-	 *
-	 * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
-	 *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onselect(JavaScriptWritable<Ex> onselect) throws IOException, Ex {
-		return onselect((Object)onselect);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onselect">3.2.6 Global attributes / onselect</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onselect">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onselect</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onselect">8.1.7.2.1 IDL definitions / onselect</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect">GlobalEventHandlers.onselect</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onselect.asp">onselect Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onselect(java.lang.Object)
+   *
+   * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
+   *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onselect(JavaScriptWritable<Ex> onselect) throws IOException, Ex {
+    return onselect((Object)onselect);
+  }
 }

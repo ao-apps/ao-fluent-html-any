@@ -47,59 +47,59 @@ import java.io.IOException;
 // Matches OndragendUnexpected
 public interface Ondragend<E extends Element<?, ?, E> & Ondragend<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragend">3.2.6 Global attributes / ondragend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragend">8.1.7.2.1 IDL definitions / ondragend</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragend">GlobalEventHandlers.ondragend</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragend.asp">ondragend Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E ondragend(Object ondragend) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "ondragend");
-		return Attributes.Event.attribute(element, "ondragend", ondragend);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragend">3.2.6 Global attributes / ondragend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragend">8.1.7.2.1 IDL definitions / ondragend</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragend">GlobalEventHandlers.ondragend</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondragend.asp">ondragend Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E ondragend(Object ondragend) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "ondragend");
+    return Attributes.Event.attribute(element, "ondragend", ondragend);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragend">3.2.6 Global attributes / ondragend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragend">8.1.7.2.1 IDL definitions / ondragend</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragend">GlobalEventHandlers.ondragend</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragend.asp">ondragend Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ondragend(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E ondragend(IOSupplierE<?, Ex> ondragend) throws IOException, Ex {
-		return ondragend((ondragend == null) ? null : ondragend.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragend">3.2.6 Global attributes / ondragend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragend">8.1.7.2.1 IDL definitions / ondragend</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragend">GlobalEventHandlers.ondragend</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondragend.asp">ondragend Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ondragend(java.lang.Object)
+   */
+  default <Ex extends Throwable> E ondragend(IOSupplierE<?, Ex> ondragend) throws IOException, Ex {
+    return ondragend((ondragend == null) ? null : ondragend.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragend">3.2.6 Global attributes / ondragend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragend">8.1.7.2.1 IDL definitions / ondragend</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragend">GlobalEventHandlers.ondragend</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragend.asp">ondragend Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ondragend(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E ondragend(JavaScriptWritable<Ex> ondragend) throws IOException, Ex {
-		return ondragend((Object)ondragend);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragend">3.2.6 Global attributes / ondragend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragend">8.1.7.2.1 IDL definitions / ondragend</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragend">GlobalEventHandlers.ondragend</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondragend.asp">ondragend Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ondragend(java.lang.Object)
+   */
+  default <Ex extends Throwable> E ondragend(JavaScriptWritable<Ex> ondragend) throws IOException, Ex {
+    return ondragend((Object)ondragend);
+  }
 }

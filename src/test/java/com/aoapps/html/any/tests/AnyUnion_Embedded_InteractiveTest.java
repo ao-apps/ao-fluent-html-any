@@ -38,74 +38,74 @@ import org.junit.Test;
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class AnyUnion_Embedded_InteractiveTest {
 
-	private final Class<? extends AnyUnion_Embedded_Interactive> testingClass;
+  private final Class<? extends AnyUnion_Embedded_Interactive> testingClass;
 
-	protected AnyUnion_Embedded_InteractiveTest(Class<? extends AnyUnion_Embedded_Interactive> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyUnion_Embedded_InteractiveTest(Class<? extends AnyUnion_Embedded_Interactive> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyUnion_Embedded_InteractiveTest() {
-		this(AnyUnion_Embedded_Interactive.class);
-	}
+  public AnyUnion_Embedded_InteractiveTest() {
+    this(AnyUnion_Embedded_Interactive.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyUnion_Embedded_Interactive.class
-			//
-			// Unions:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyUnion_Embedded_Interactive.class
+      //
+      // Unions:
+      //
+      // None
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyUnion_Embedded_Interactive.class,
-			//
-			// Content models:
-			//
-			Content.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyUnion_Embedded_Interactive.class,
+      //
+      // Content models:
+      //
+      Content.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyUnion_Embedded_Interactive.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyUnion_Embedded_Interactive.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"audio",
-			"embed",
-			"iframe",
-			"img",
-			"object",
-			"video"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "audio",
+      "embed",
+      "iframe",
+      "img",
+      "object",
+      "video"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-			-1,
-			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Embedded_Interactive.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_Embedded_Interactive.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
+      -1,
+      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Embedded_Interactive.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_Embedded_Interactive.class);
+  }
 }

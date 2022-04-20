@@ -57,324 +57,328 @@ import java.util.Locale;
 // TODO: Extend RawTextElement: https://html.spec.whatwg.org/multipage/syntax.html#raw-text-elements
 @SuppressWarnings("deprecation")
 public abstract class AnySCRIPT<
-	D  extends AnyDocument<D>,
-	PC extends AnyScriptSupportingContent<D, PC>,
-	E  extends AnySCRIPT<D, PC, E>
+  D  extends AnyDocument<D>,
+  PC extends AnyScriptSupportingContent<D, PC>,
+  E  extends AnySCRIPT<D, PC, E>
 > extends Element<D, PC, E> implements
-	com.aoapps.html.any.attributes.Boolean.Async<E>,
-	com.aoapps.html.any.attributes.Enum.Charset<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
-	com.aoapps.html.any.attributes.Boolean.Defer<E>,
-	com.aoapps.html.any.attributes.Url.Src<E>,
-	// TODO: type
-	// TODO: xmlSpace
-	// Global Attributes overrides
-	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-	com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-	com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-	com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-	com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-	com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-	com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
-	// Global Event Attributes overrides
-	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
-	com.aoapps.html.any.attributes.event.Onerror<E>,
-	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
-	com.aoapps.html.any.attributes.event.Onload<E>,
-	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
+  com.aoapps.html.any.attributes.Boolean.Async<E>,
+  com.aoapps.html.any.attributes.Enum.Charset<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
+  com.aoapps.html.any.attributes.Boolean.Defer<E>,
+  com.aoapps.html.any.attributes.Url.Src<E>,
+  // TODO: type
+  // TODO: xmlSpace
+  // Global Attributes overrides
+  com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+  com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
+  com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+  com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+  com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
+  com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
+  com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+  // Global Event Attributes overrides
+  com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
+  com.aoapps.html.any.attributes.event.Onerror<E>,
+  com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+  com.aoapps.html.any.attributes.event.Onload<E>,
+  com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.
-	 */
-	public enum Type {
-		/**
-		 * The default type for (X)HTML 5.
-		 */
-		APPLICATION_JAVASCRIPT(ContentType.JAVASCRIPT),
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.
+   */
+  public enum Type {
+    /**
+     * The default type for (X)HTML 5.
+     */
+    APPLICATION_JAVASCRIPT(ContentType.JAVASCRIPT),
 
-		/**
-		 * The default type for XHTML 1.0 / HTML 4.
-		 *
-		 * @deprecated  Use {@link #APPLICATION_JAVASCRIPT} in HTML 5.
-		 */
-		@Deprecated
-		TEXT_JAVASCRIPT(ContentType.JAVASCRIPT_OLD),
+    /**
+     * The default type for XHTML 1.0 / HTML 4.
+     *
+     * @deprecated  Use {@link #APPLICATION_JAVASCRIPT} in HTML 5.
+     */
+    @Deprecated
+    TEXT_JAVASCRIPT(ContentType.JAVASCRIPT_OLD),
 
-		/**
-		 * A JSON object graph.
-		 */
-		APPLICATION_JSON(ContentType.JSON),
+    /**
+     * A JSON object graph.
+     */
+    APPLICATION_JSON(ContentType.JSON),
 
-		/**
-		 * JSON linked data.
-		 */
-		APPLICATION_JD_JSON(ContentType.LD_JSON),
+    /**
+     * JSON linked data.
+     */
+    APPLICATION_JD_JSON(ContentType.LD_JSON),
 
-		APPLICATION_ECMASCRIPT(ContentType.ECMASCRIPT);
+    APPLICATION_ECMASCRIPT(ContentType.ECMASCRIPT);
 
-		private final String contentType;
+    private final String contentType;
 
-		private Type(String contentType) {
-			this.contentType = contentType;
-		}
+    private Type(String contentType) {
+      this.contentType = contentType;
+    }
 
-		@Override
-		public String toString() {
-			return contentType;
-		}
+    @Override
+    public String toString() {
+      return contentType;
+    }
 
-		public String getContentType() {
-			return contentType;
-		}
+    public String getContentType() {
+      return contentType;
+    }
 
-		private static boolean assertAllLowerCaseAndTrimmed() {
-			for(Type type : values()) {
-				if(!type.contentType.equals(type.contentType.toLowerCase(Locale.ROOT))) throw new AssertionError("Content types must be lowercase as looked-up later");
-				if(!type.contentType.equals(type.contentType.trim())) throw new AssertionError("Content types must be trimmed as looked-up later");
-			}
-			return true;
-		}
-		static {
-			assert assertAllLowerCaseAndTrimmed();
-		}
-	}
+    private static boolean assertAllLowerCaseAndTrimmed() {
+      for (Type type : values()) {
+        if (!type.contentType.equals(type.contentType.toLowerCase(Locale.ROOT))) {
+          throw new AssertionError("Content types must be lowercase as looked-up later");
+        }
+        if (!type.contentType.equals(type.contentType.trim())) {
+          throw new AssertionError("Content types must be trimmed as looked-up later");
+        }
+      }
+      return true;
+    }
+    static {
+      assert assertAllLowerCaseAndTrimmed();
+    }
+  }
 
-	private final String type;
+  private final String type;
 
-	protected AnySCRIPT(D document, PC pc) {
-		super(document, pc);
-		this.type = null;
-	}
+  protected AnySCRIPT(D document, PC pc) {
+    super(document, pc);
+    this.type = null;
+  }
 
-	protected AnySCRIPT(D document, PC pc, String type) {
-		super(document, pc);
-		type = Strings.trimNullIfEmpty(type);
-		this.type = (type == null) ? null : type.toLowerCase(Locale.ROOT);
-	}
+  protected AnySCRIPT(D document, PC pc, String type) {
+    super(document, pc);
+    type = Strings.trimNullIfEmpty(type);
+    this.type = (type == null) ? null : type.toLowerCase(Locale.ROOT);
+  }
 
-	protected AnySCRIPT(D document, PC pc, Type type) {
-		super(document, pc);
-		this.type = (type == null) ? null : type.getContentType();
-	}
+  protected AnySCRIPT(D document, PC pc, Type type) {
+    super(document, pc);
+    this.type = (type == null) ? null : type.getContentType();
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<script", false);
-		E s = type();
-		assert s == this;
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<script", false);
+    E s = type();
+    assert s == this;
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.
-	 *
-	 * @see Doctype#scriptType(java.lang.Appendable)
-	 */
-	protected E type() throws IOException {
-		Writer unsafe = document.getRawUnsafe(null);
-		// TODO: Check didBody here and other attributes, perhaps in some central attribute registry that detects duplicate attributes, too
-		if(
-			type == null
-			|| type.equals(ContentType.JAVASCRIPT)
-			|| type.equals(ContentType.JAVASCRIPT_OLD)
-		) {
-			String typeAttr = document.encodingContext.getDoctype().getScriptType();
-			int len = typeAttr.length();
-			if(len > 0) {
-				if(document.getAtnl()) {
-					assert typeAttr.charAt(0) == ' ';
-					document.autoIndent(unsafe, 1);
-					unsafe.write(typeAttr, 1, len - 1);
-					document.clearAtnl();
-				} else {
-					unsafe.write(typeAttr);
-				}
-			}
-		} else {
-			if(document.getAtnl()) {
-				document.autoIndent(unsafe, 1);
-				unsafe.write("type=\"");
-				document.clearAtnl();
-			} else {
-				unsafe.write(" type=\"");
-			}
-			encodeTextInXhtmlAttribute(type, unsafe);
-			unsafe.append('"');
-		}
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.
+   *
+   * @see Doctype#scriptType(java.lang.Appendable)
+   */
+  protected E type() throws IOException {
+    Writer unsafe = document.getRawUnsafe(null);
+    // TODO: Check didBody here and other attributes, perhaps in some central attribute registry that detects duplicate attributes, too
+    if (
+      type == null
+      || type.equals(ContentType.JAVASCRIPT)
+      || type.equals(ContentType.JAVASCRIPT_OLD)
+    ) {
+      String typeAttr = document.encodingContext.getDoctype().getScriptType();
+      int len = typeAttr.length();
+      if (len > 0) {
+        if (document.getAtnl()) {
+          assert typeAttr.charAt(0) == ' ';
+          document.autoIndent(unsafe, 1);
+          unsafe.write(typeAttr, 1, len - 1);
+          document.clearAtnl();
+        } else {
+          unsafe.write(typeAttr);
+        }
+      }
+    } else {
+      if (document.getAtnl()) {
+        document.autoIndent(unsafe, 1);
+        unsafe.write("type=\"");
+        document.clearAtnl();
+      } else {
+        unsafe.write(" type=\"");
+      }
+      encodeTextInXhtmlAttribute(type, unsafe);
+      unsafe.append('"');
+    }
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	protected MediaType getMediaType() throws UnsupportedEncodingException {
-		return type == null ? MediaType.JAVASCRIPT : MediaType.getMediaTypeForContentType(type);
-	}
+  protected MediaType getMediaType() throws UnsupportedEncodingException {
+    return type == null ? MediaType.JAVASCRIPT : MediaType.getMediaTypeForContentType(type);
+  }
 
-	protected MediaEncoder getMediaEncoder(MediaType mediaType) throws UnsupportedEncodingException {
-		return MediaEncoder.getInstance(document.encodingContext, mediaType, MediaType.XHTML);
-	}
+  protected MediaEncoder getMediaEncoder(MediaType mediaType) throws UnsupportedEncodingException {
+    return MediaEncoder.getInstance(document.encodingContext, mediaType, MediaType.XHTML);
+  }
 
-	protected boolean doCdata() {
-		return
-			document.encodingContext.getSerialization() == Serialization.XML
-			&& (
-				type == null
-				|| type.equals(ContentType.JAVASCRIPT)
-				|| type.equals(ContentType.JAVASCRIPT_OLD)
-				|| type.equals(ContentType.ECMASCRIPT)
-				|| type.equals(ContentType.ECMASCRIPT_OLD)
-			);
-	}
+  protected boolean doCdata() {
+    return
+      document.encodingContext.getSerialization() == Serialization.XML
+      && (
+        type == null
+        || type.equals(ContentType.JAVASCRIPT)
+        || type.equals(ContentType.JAVASCRIPT_OLD)
+        || type.equals(ContentType.ECMASCRIPT)
+        || type.equals(ContentType.ECMASCRIPT_OLD)
+      );
+  }
 
-	private boolean didBody;
+  private boolean didBody;
 
-	protected void startBody(Writer unsafe) throws IOException {
-		if(!didBody) {
-			document
-				.autoIndent(unsafe)
-				.unsafe(unsafe, doCdata() ? (">//<![CDATA[" + NL) : (">" + NL), true)
-				.incDepth();
-			didBody = true;
-		}
-	}
+  protected void startBody(Writer unsafe) throws IOException {
+    if (!didBody) {
+      document
+        .autoIndent(unsafe)
+        .unsafe(unsafe, doCdata() ? (">//<![CDATA[" + NL) : (">" + NL), true)
+        .incDepth();
+      didBody = true;
+    }
+  }
 
-	// TODO: Return a "Body" / "ScriptBody" that only allows additional out or closing the tag.
-	// TODO:     Setting attributes after startBody() would create invalid HTML.
-	// TODO:     Similar for "text", too.
-	// TODO: Interface for "out" with default methods? (Another for "text", too)
-	@SuppressWarnings("UseSpecificCatch")
-	// TODO: No "out", just closing "__"?
-	public E out(Object script) throws IOException {
-		while(script instanceof IOSupplierE<?, ?>) {
-			try {
-				script = ((IOSupplierE<?, ?>)script).get();
-			} catch(Throwable t) {
-				throw Throwables.wrap(t, IOException.class, IOException::new);
-			}
-		}
-		if(script instanceof JavaScriptWritable) {
-			try {
-				@SuppressWarnings("unchecked") JavaScriptWritable<?> writable = (JavaScriptWritable<?>)script;
-				return out(writable);
-			} catch(Throwable t) {
-				throw Throwables.wrap(t, IOException.class, IOException::new);
-			}
-		}
-		script = Coercion.nullIfEmpty(script);
-		if(script != null) {
-			Writer unsafe = document.getRawUnsafe(null);
-			startBody(unsafe);
-			// Allow text markup from translations
-			MediaType mediaType = getMediaType();
-			MarkupCoercion.write(
-				script,
-				mediaType.getMarkupType(),
-				true,
-				getMediaEncoder(mediaType),
-				false,
-				unsafe
-			);
-			document.clearAtnl(); // Unknown, safe to assume not at newline
-		}
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  // TODO: Return a "Body" / "ScriptBody" that only allows additional out or closing the tag.
+  // TODO:     Setting attributes after startBody() would create invalid HTML.
+  // TODO:     Similar for "text", too.
+  // TODO: Interface for "out" with default methods? (Another for "text", too)
+  @SuppressWarnings("UseSpecificCatch")
+  // TODO: No "out", just closing "__"?
+  public E out(Object script) throws IOException {
+    while (script instanceof IOSupplierE<?, ?>) {
+      try {
+        script = ((IOSupplierE<?, ?>)script).get();
+      } catch (Throwable t) {
+        throw Throwables.wrap(t, IOException.class, IOException::new);
+      }
+    }
+    if (script instanceof JavaScriptWritable) {
+      try {
+        @SuppressWarnings("unchecked") JavaScriptWritable<?> writable = (JavaScriptWritable<?>)script;
+        return out(writable);
+      } catch (Throwable t) {
+        throw Throwables.wrap(t, IOException.class, IOException::new);
+      }
+    }
+    script = Coercion.nullIfEmpty(script);
+    if (script != null) {
+      Writer unsafe = document.getRawUnsafe(null);
+      startBody(unsafe);
+      // Allow text markup from translations
+      MediaType mediaType = getMediaType();
+      MarkupCoercion.write(
+        script,
+        mediaType.getMarkupType(),
+        true,
+        getMediaEncoder(mediaType),
+        false,
+        unsafe
+      );
+      document.clearAtnl(); // Unknown, safe to assume not at newline
+    }
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	/**
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	// TODO: No "out", just closing "__"?
-	public <Ex extends Throwable> E out(IOSupplierE<?, Ex> script) throws IOException, Ex {
-		return out((script == null) ? null : script.get());
-	}
+  /**
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  // TODO: No "out", just closing "__"?
+  public <Ex extends Throwable> E out(IOSupplierE<?, Ex> script) throws IOException, Ex {
+    return out((script == null) ? null : script.get());
+  }
 
-	/**
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	// TODO: No "out", just closing "__"?
-	public <Ex extends Throwable> E out(JavaScriptWritable<Ex> script) throws IOException, Ex {
-		if(script != null) {
-			MediaType newOutputType = getMediaType();
-			MediaEncoder encoder = getMediaEncoder(newOutputType);
-			Writer unsafe = document.getRawUnsafe(null);
-			startBody(unsafe);
-			script.writeTo(
-				newOutputType.newMediaWriter(
-					document.encodingContext,
-					encoder,
-					document.getRawUnsafe(null),
-					false,
-					document,
-					mediaWriter -> true, // isNoClose
-					null // Ignore close
-				)
-			);
-			document.clearAtnl(); // Unknown, safe to assume not at newline
-		}
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  /**
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  // TODO: No "out", just closing "__"?
+  public <Ex extends Throwable> E out(JavaScriptWritable<Ex> script) throws IOException, Ex {
+    if (script != null) {
+      MediaType newOutputType = getMediaType();
+      MediaEncoder encoder = getMediaEncoder(newOutputType);
+      Writer unsafe = document.getRawUnsafe(null);
+      startBody(unsafe);
+      script.writeTo(
+        newOutputType.newMediaWriter(
+          document.encodingContext,
+          encoder,
+          document.getRawUnsafe(null),
+          false,
+          document,
+          mediaWriter -> true, // isNoClose
+          null // Ignore close
+        )
+      );
+      document.clearAtnl(); // Unknown, safe to assume not at newline
+    }
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	/**
-	 * Writes the script, automatically closing the script via
-	 * {@link #__()} on {@link JavaScriptWriter#close()}.
-	 * This is well suited for use in a try-with-resources block.
-	 */
-	// TODO: __() method to end text?  Call it "ContentWriter"?
-	public JavaScriptWriter _c() throws IOException {
-		MediaType newOutputType = getMediaType();
-		MediaEncoder encoder = getMediaEncoder(newOutputType);
-		Writer unsafe = document.getRawUnsafe(null);
-		startBody(unsafe);
-		// Invoking via newMediaWriter to support subclasses of JavaScriptWriter
-		return (JavaScriptWriter)newOutputType.newMediaWriter(
-			document.encodingContext,
-			encoder,
-			unsafe,
-			false,
-			document,
-			mediaWriter -> false, // !isNoClose
-			closing -> __()
-		);
-	}
+  /**
+   * Writes the script, automatically closing the script via
+   * {@link #__()} on {@link JavaScriptWriter#close()}.
+   * This is well suited for use in a try-with-resources block.
+   */
+  // TODO: __() method to end text?  Call it "ContentWriter"?
+  public JavaScriptWriter _c() throws IOException {
+    MediaType newOutputType = getMediaType();
+    MediaEncoder encoder = getMediaEncoder(newOutputType);
+    Writer unsafe = document.getRawUnsafe(null);
+    startBody(unsafe);
+    // Invoking via newMediaWriter to support subclasses of JavaScriptWriter
+    return (JavaScriptWriter)newOutputType.newMediaWriter(
+      document.encodingContext,
+      encoder,
+      unsafe,
+      false,
+      document,
+      mediaWriter -> false, // !isNoClose
+      closing -> __()
+    );
+  }
 
-	/**
-	 * Closes this element.
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	public PC __() throws IOException {
-		Writer unsafe = document.getRawUnsafe(null);
-		if(!didBody) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></script>", false);
-		} else {
-			document.decDepth().nli(unsafe).unsafe(unsafe, doCdata() ? "//]]></script>" : "</script>", false);
-		}
-		document.autoNl(unsafe);
-		return pc;
-	}
+  /**
+   * Closes this element.
+   *
+   * @return  The parent content model this element is within
+   */
+  public PC __() throws IOException {
+    Writer unsafe = document.getRawUnsafe(null);
+    if (!didBody) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></script>", false);
+    } else {
+      document.decDepth().nli(unsafe).unsafe(unsafe, doCdata() ? "//]]></script>" : "</script>", false);
+    }
+    document.autoNl(unsafe);
+    return pc;
+  }
 }

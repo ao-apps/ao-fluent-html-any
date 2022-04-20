@@ -44,134 +44,140 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOPTION<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_DATALIST_OPTGROUP<D, PC>,
-	E  extends AnyOPTION<D, PC, E, __, _c>,
-	__ extends AnyOPTION__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyOPTION_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_DATALIST_OPTGROUP<D, PC>,
+  E  extends AnyOPTION<D, PC, E, __, _c>,
+  __ extends AnyOPTION__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyOPTION_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-	com.aoapps.html.any.attributes.Text.Label<E>,
-	com.aoapps.html.any.attributes.Boolean.Selected<E>,
-	com.aoapps.html.any.attributes.Text.Value<E>
+  com.aoapps.html.any.attributes.Boolean.Disabled<E>,
+  com.aoapps.html.any.attributes.Text.Label<E>,
+  com.aoapps.html.any.attributes.Boolean.Selected<E>,
+  com.aoapps.html.any.attributes.Text.Value<E>
 {
 
-	private boolean oldAutonli;
-	private boolean oldIndent;
-	private int oldDepth;
+  private boolean oldAutonli;
+  private boolean oldIndent;
+  private int oldDepth;
 
-	protected AnyOPTION(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyOPTION(D document, PC pc) {
+    super(document, pc);
+  }
 
-	/**
-	 * Does not have indented content.
-	 *
-	 * @return {@code false} - does not indent
-	 */
-	@Override
-	protected boolean isContentIndented() {
-		return false;
-	}
+  /**
+   * Does not have indented content.
+   *
+   * @return {@code false} - does not indent
+   */
+  @Override
+  protected boolean isContentIndented() {
+    return false;
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<option", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<option", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		oldAutonli = document.getAutonli();
-		if(oldAutonli) document.setAutonli(false);
-		oldIndent = document.getIndent();
-		if(oldIndent) document.setIndent(false);
-		oldDepth = document.getDepth();
-		if(oldDepth != 0) document.setDepth(0);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    oldAutonli = document.getAutonli();
+    if (oldAutonli) {
+      document.setAutonli(false);
+    }
+    oldIndent = document.getIndent();
+    if (oldIndent) {
+      document.setIndent(false);
+    }
+    oldDepth = document.getDepth();
+    if (oldDepth != 0) {
+      document.setDepth(0);
+    }
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_option_label.asp">HTML option label Attribute</a>.
-	 *
-	 * @deprecated  Although still part of the HTML specification, there is a
-	 *              <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=40545">20-year old Firefox bug</a>
-	 *              that the label attribute is not supported.  We are deprecating
-	 *              this method to make it clear it should probably not be used, as the
-	 *              effect of label can be attained through the value attribute and
-	 *              tag body anyway.
-	 */
-	@Deprecated
-	@Override
-	public E label(Object label) throws IOException {
-		return com.aoapps.html.any.attributes.Text.Label.super.label(label);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_option_label.asp">HTML option label Attribute</a>.
+   *
+   * @deprecated  Although still part of the HTML specification, there is a
+   *              <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=40545">20-year old Firefox bug</a>
+   *              that the label attribute is not supported.  We are deprecating
+   *              this method to make it clear it should probably not be used, as the
+   *              effect of label can be attained through the value attribute and
+   *              tag body anyway.
+   */
+  @Deprecated
+  @Override
+  public E label(Object label) throws IOException {
+    return com.aoapps.html.any.attributes.Text.Label.super.label(label);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_option_label.asp">HTML option label Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #label(java.lang.Object)
-	 *
-	 * @deprecated  Although still part of the HTML specification, there is a
-	 *              <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=40545">20-year old Firefox bug</a>
-	 *              that the label attribute is not supported.  We are deprecating
-	 *              this method to make it clear it should probably not be used, as the
-	 *              effect of label can be attained through the value attribute and
-	 *              tag body anyway.
-	 */
-	@Deprecated
-	@Override
-	public <Ex extends Throwable> E label(IOSupplierE<?, Ex> label) throws IOException, Ex {
-		return com.aoapps.html.any.attributes.Text.Label.super.label(label);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_option_label.asp">HTML option label Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #label(java.lang.Object)
+   *
+   * @deprecated  Although still part of the HTML specification, there is a
+   *              <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=40545">20-year old Firefox bug</a>
+   *              that the label attribute is not supported.  We are deprecating
+   *              this method to make it clear it should probably not be used, as the
+   *              effect of label can be attained through the value attribute and
+   *              tag body anyway.
+   */
+  @Deprecated
+  @Override
+  public <Ex extends Throwable> E label(IOSupplierE<?, Ex> label) throws IOException, Ex {
+    return com.aoapps.html.any.attributes.Text.Label.super.label(label);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_option_label.asp">HTML option label Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #label(java.lang.Object)
-	 *
-	 * @deprecated  Although still part of the HTML specification, there is a
-	 *              <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=40545">20-year old Firefox bug</a>
-	 *              that the label attribute is not supported.  We are deprecating
-	 *              this method to make it clear it should probably not be used, as the
-	 *              effect of label can be attained through the value attribute and
-	 *              tag body anyway.
-	 */
-	@Deprecated
-	@Override
-	public <Ex extends Throwable> E label(TextWritable<Ex> label) throws IOException, Ex {
-		return com.aoapps.html.any.attributes.Text.Label.super.label(label);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_option_label.asp">HTML option label Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #label(java.lang.Object)
+   *
+   * @deprecated  Although still part of the HTML specification, there is a
+   *              <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=40545">20-year old Firefox bug</a>
+   *              that the label attribute is not supported.  We are deprecating
+   *              this method to make it clear it should probably not be used, as the
+   *              effect of label can be attained through the value attribute and
+   *              tag body anyway.
+   */
+  @Deprecated
+  @Override
+  public <Ex extends Throwable> E label(TextWritable<Ex> label) throws IOException, Ex {
+    return com.aoapps.html.any.attributes.Text.Label.super.label(label);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_option_value.asp">HTML option value Attribute</a>.
-	 * <p>
-	 * An empty value must still be specified for &lt;option&gt;, as it overrides the
-	 * default behavior of using the tag's text content as the value.
-	 * </p>
-	 */
-	@Override
-	public E value(Object value) throws IOException {
-		return com.aoapps.html.any.attributes.Text.Value.super.value(value);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_option_value.asp">HTML option value Attribute</a>.
+   * <p>
+   * An empty value must still be specified for &lt;option&gt;, as it overrides the
+   * default behavior of using the tag's text content as the value.
+   * </p>
+   */
+  @Override
+  public E value(Object value) throws IOException {
+    return com.aoapps.html.any.attributes.Text.Value.super.value(value);
+  }
 
-	// TODO: How to ensure markup type NONE when no value set or TEXT when set?
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document
-			.setDepth(oldDepth)
-			.setIndent(oldIndent)
-			.setAutonli(oldAutonli);
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></option>", false);
-		} else {
-			document.unsafe(unsafe, "</option>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  // TODO: How to ensure markup type NONE when no value set or TEXT when set?
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document
+      .setDepth(oldDepth)
+      .setIndent(oldIndent)
+      .setAutonli(oldAutonli);
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></option>", false);
+    } else {
+      document.unsafe(unsafe, "</option>", false);
+    }
+    document.autoNl(unsafe);
+  }
 }

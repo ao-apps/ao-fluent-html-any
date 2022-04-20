@@ -40,37 +40,37 @@ import java.io.IOException;
  */
 public interface Name<E extends Element<?, ?, E> & Name<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E name(Object name) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		// TODO: Review if trim-to-null is the best default.
-		//       Maybe default to "false" and override where should be true instead.
-		//       Any change to textarea/input name attribute would also need to be reflected in dirname attribute
-		return Attributes.Text.attribute(element, "name", MarkupType.NONE, name, false, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E name(Object name) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    // TODO: Review if trim-to-null is the best default.
+    //       Maybe default to "false" and override where should be true instead.
+    //       Any change to textarea/input name attribute would also need to be reflected in dirname attribute
+    return Attributes.Text.attribute(element, "name", MarkupType.NONE, name, false, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #name(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E name(IOSupplierE<?, Ex> name) throws IOException, Ex {
-		return name((name == null) ? null : name.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #name(java.lang.Object)
+   */
+  default <Ex extends Throwable> E name(IOSupplierE<?, Ex> name) throws IOException, Ex {
+    return name((name == null) ? null : name.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #name(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E name(TextWritable<Ex> name) throws IOException, Ex {
-		return name((Object)name);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #name(java.lang.Object)
+   */
+  default <Ex extends Throwable> E name(TextWritable<Ex> name) throws IOException, Ex {
+    return name((Object)name);
+  }
 }

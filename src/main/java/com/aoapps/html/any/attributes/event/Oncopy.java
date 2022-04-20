@@ -45,52 +45,52 @@ import java.io.IOException;
 // Matches OncopyUnexpected
 public interface Oncopy<E extends Element<?, ?, E> & Oncopy<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncopy">3.2.6 Global attributes / oncopy</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncopy">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncopy</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncopy">8.1.7.2.1 IDL definitions / oncopy</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy">HTMLElement.oncopy</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncopy.asp">oncopy Event</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E oncopy(Object oncopy) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "oncopy", oncopy);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncopy">3.2.6 Global attributes / oncopy</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncopy">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncopy</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncopy">8.1.7.2.1 IDL definitions / oncopy</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy">HTMLElement.oncopy</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncopy.asp">oncopy Event</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E oncopy(Object oncopy) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "oncopy", oncopy);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncopy">3.2.6 Global attributes / oncopy</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncopy">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncopy</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncopy">8.1.7.2.1 IDL definitions / oncopy</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy">HTMLElement.oncopy</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncopy.asp">oncopy Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #oncopy(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E oncopy(IOSupplierE<?, Ex> oncopy) throws IOException, Ex {
-		return oncopy((oncopy == null) ? null : oncopy.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncopy">3.2.6 Global attributes / oncopy</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncopy">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncopy</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncopy">8.1.7.2.1 IDL definitions / oncopy</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy">HTMLElement.oncopy</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncopy.asp">oncopy Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #oncopy(java.lang.Object)
+   */
+  default <Ex extends Throwable> E oncopy(IOSupplierE<?, Ex> oncopy) throws IOException, Ex {
+    return oncopy((oncopy == null) ? null : oncopy.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncopy">3.2.6 Global attributes / oncopy</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncopy">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncopy</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncopy">8.1.7.2.1 IDL definitions / oncopy</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy">HTMLElement.oncopy</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncopy.asp">oncopy Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #oncopy(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E oncopy(JavaScriptWritable<Ex> oncopy) throws IOException, Ex {
-		return oncopy((Object)oncopy);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncopy">3.2.6 Global attributes / oncopy</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncopy">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncopy</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncopy">8.1.7.2.1 IDL definitions / oncopy</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/oncopy">HTMLElement.oncopy</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncopy.asp">oncopy Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #oncopy(java.lang.Object)
+   */
+  default <Ex extends Throwable> E oncopy(JavaScriptWritable<Ex> oncopy) throws IOException, Ex {
+    return oncopy((Object)oncopy);
+  }
 }

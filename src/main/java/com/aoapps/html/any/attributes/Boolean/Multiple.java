@@ -39,39 +39,39 @@ import java.io.IOException;
  */
 public interface Multiple<E extends Element<?, ?, E> & Multiple<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_multiple.asp">HTML multiple Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E multiple(boolean multiple) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "multiple");
-		return Attributes.Boolean.attribute(element, "multiple", multiple);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_multiple.asp">HTML multiple Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E multiple(boolean multiple) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "multiple");
+    return Attributes.Boolean.attribute(element, "multiple", multiple);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_multiple.asp">HTML multiple Attribute</a>.
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #multiple(boolean)
-	 */
-	default E multiple(Boolean multiple) throws IOException {
-		return multiple(multiple != null && multiple);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_multiple.asp">HTML multiple Attribute</a>.
+   *
+   * @since HTML 5
+   *
+   * @see #multiple(boolean)
+   */
+  default E multiple(Boolean multiple) throws IOException {
+    return multiple(multiple != null && multiple);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_multiple.asp">HTML multiple Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #multiple(java.lang.Boolean)
-	 */
-	default <Ex extends Throwable> E multiple(IOSupplierE<? extends Boolean, Ex> multiple) throws IOException, Ex {
-		return multiple((multiple == null) ? null : multiple.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_multiple.asp">HTML multiple Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #multiple(java.lang.Boolean)
+   */
+  default <Ex extends Throwable> E multiple(IOSupplierE<? extends Boolean, Ex> multiple) throws IOException, Ex {
+    return multiple((multiple == null) ? null : multiple.get());
+  }
 }

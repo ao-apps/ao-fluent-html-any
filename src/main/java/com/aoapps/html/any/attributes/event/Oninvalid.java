@@ -49,63 +49,63 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Oninvalid<E extends Element<?, ?, E> & Oninvalid<E>> extends OninvalidUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninvalid">3.2.6 Global attributes / oninvalid</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninvalid">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninvalid</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninvalid">8.1.7.2.1 IDL definitions / oninvalid</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid">GlobalEventHandlers.oninvalid</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event">HTMLInputElement: invalid event</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oninvalid.asp">oninvalid Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E oninvalid(Object oninvalid) throws IOException {
-		return OninvalidUnexpected.super.oninvalid(oninvalid);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninvalid">3.2.6 Global attributes / oninvalid</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninvalid">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninvalid</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninvalid">8.1.7.2.1 IDL definitions / oninvalid</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid">GlobalEventHandlers.oninvalid</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event">HTMLInputElement: invalid event</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oninvalid.asp">oninvalid Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E oninvalid(Object oninvalid) throws IOException {
+    return OninvalidUnexpected.super.oninvalid(oninvalid);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninvalid">3.2.6 Global attributes / oninvalid</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninvalid">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninvalid</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninvalid">8.1.7.2.1 IDL definitions / oninvalid</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid">GlobalEventHandlers.oninvalid</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event">HTMLInputElement: invalid event</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oninvalid.asp">oninvalid Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oninvalid(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E oninvalid(IOSupplierE<?, Ex> oninvalid) throws IOException, Ex {
-		return OninvalidUnexpected.super.oninvalid(oninvalid);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninvalid">3.2.6 Global attributes / oninvalid</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninvalid">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninvalid</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninvalid">8.1.7.2.1 IDL definitions / oninvalid</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid">GlobalEventHandlers.oninvalid</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event">HTMLInputElement: invalid event</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oninvalid.asp">oninvalid Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oninvalid(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E oninvalid(IOSupplierE<?, Ex> oninvalid) throws IOException, Ex {
+    return OninvalidUnexpected.super.oninvalid(oninvalid);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninvalid">3.2.6 Global attributes / oninvalid</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninvalid">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninvalid</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninvalid">8.1.7.2.1 IDL definitions / oninvalid</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid">GlobalEventHandlers.oninvalid</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event">HTMLInputElement: invalid event</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oninvalid.asp">oninvalid Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oninvalid(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E oninvalid(JavaScriptWritable<Ex> oninvalid) throws IOException, Ex {
-		return OninvalidUnexpected.super.oninvalid(oninvalid);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninvalid">3.2.6 Global attributes / oninvalid</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninvalid">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninvalid</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninvalid">8.1.7.2.1 IDL definitions / oninvalid</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid">GlobalEventHandlers.oninvalid</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event">HTMLInputElement: invalid event</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oninvalid.asp">oninvalid Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oninvalid(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E oninvalid(JavaScriptWritable<Ex> oninvalid) throws IOException, Ex {
+    return OninvalidUnexpected.super.oninvalid(oninvalid);
+  }
 }

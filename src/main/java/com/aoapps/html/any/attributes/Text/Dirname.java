@@ -44,46 +44,46 @@ import java.io.IOException;
  */
 public interface Dirname<E extends Element<?, ?, E> & Dirname<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#submitting-element-directionality:-the-dirname-attribute">4.10.18.2 Submitting element directionality: the dirname attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-dirname">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_dirname.asp">HTML dirname Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E dirname(Object dirname) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "dirname", MarkupType.NONE, dirname, false, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#submitting-element-directionality:-the-dirname-attribute">4.10.18.2 Submitting element directionality: the dirname attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-dirname">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_dirname.asp">HTML dirname Attribute</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E dirname(Object dirname) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "dirname", MarkupType.NONE, dirname, false, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#submitting-element-directionality:-the-dirname-attribute">4.10.18.2 Submitting element directionality: the dirname attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-dirname">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_dirname.asp">HTML dirname Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #dirname(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E dirname(IOSupplierE<?, Ex> dirname) throws IOException, Ex {
-		return dirname((dirname == null) ? null : dirname.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#submitting-element-directionality:-the-dirname-attribute">4.10.18.2 Submitting element directionality: the dirname attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-dirname">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_dirname.asp">HTML dirname Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #dirname(java.lang.Object)
+   */
+  default <Ex extends Throwable> E dirname(IOSupplierE<?, Ex> dirname) throws IOException, Ex {
+    return dirname((dirname == null) ? null : dirname.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#submitting-element-directionality:-the-dirname-attribute">4.10.18.2 Submitting element directionality: the dirname attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-dirname">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_dirname.asp">HTML dirname Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #dirname(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E dirname(TextWritable<Ex> dirname) throws IOException, Ex {
-		return dirname((Object)dirname);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#submitting-element-directionality:-the-dirname-attribute">4.10.18.2 Submitting element directionality: the dirname attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#attr-dirname">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_dirname.asp">HTML dirname Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #dirname(java.lang.Object)
+   */
+  default <Ex extends Throwable> E dirname(TextWritable<Ex> dirname) throws IOException, Ex {
+    return dirname((Object)dirname);
+  }
 }

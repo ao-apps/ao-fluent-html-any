@@ -43,41 +43,41 @@ import java.io.IOException;
  */
 public interface Onsearch<E extends Element<?, ?, E> & Onsearch<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onsearch.asp">HTML onsearch Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onsearch(Object onsearch) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onscroll");
-		return Attributes.Event.attribute(element, "onsearch", onsearch);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onsearch.asp">HTML onsearch Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onsearch(Object onsearch) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onscroll");
+    return Attributes.Event.attribute(element, "onsearch", onsearch);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onsearch.asp">HTML onsearch Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onsearch(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onsearch(IOSupplierE<?, Ex> onsearch) throws IOException, Ex {
-		return onsearch((onsearch == null) ? null : onsearch.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onsearch.asp">HTML onsearch Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onsearch(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onsearch(IOSupplierE<?, Ex> onsearch) throws IOException, Ex {
+    return onsearch((onsearch == null) ? null : onsearch.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onsearch.asp">HTML onsearch Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onsearch(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onsearch(JavaScriptWritable<Ex> onsearch) throws IOException, Ex {
-		return onsearch((Object)onsearch);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onsearch.asp">HTML onsearch Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onsearch(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onsearch(JavaScriptWritable<Ex> onsearch) throws IOException, Ex {
+    return onsearch((Object)onsearch);
+  }
 }

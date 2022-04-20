@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Oncanplaythrough<E extends Element<?, ?, E> & Oncanplaythrough<E>> extends OncanplaythroughUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E oncanplaythrough(Object oncanplaythrough) throws IOException {
-		return OncanplaythroughUnexpected.super.oncanplaythrough(oncanplaythrough);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E oncanplaythrough(Object oncanplaythrough) throws IOException {
+    return OncanplaythroughUnexpected.super.oncanplaythrough(oncanplaythrough);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncanplaythrough(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E oncanplaythrough(IOSupplierE<?, Ex> oncanplaythrough) throws IOException, Ex {
-		return OncanplaythroughUnexpected.super.oncanplaythrough(oncanplaythrough);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncanplaythrough(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E oncanplaythrough(IOSupplierE<?, Ex> oncanplaythrough) throws IOException, Ex {
+    return OncanplaythroughUnexpected.super.oncanplaythrough(oncanplaythrough);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncanplaythrough(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E oncanplaythrough(JavaScriptWritable<Ex> oncanplaythrough) throws IOException, Ex {
-		return OncanplaythroughUnexpected.super.oncanplaythrough(oncanplaythrough);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncanplaythrough(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E oncanplaythrough(JavaScriptWritable<Ex> oncanplaythrough) throws IOException, Ex {
+    return OncanplaythroughUnexpected.super.oncanplaythrough(oncanplaythrough);
+  }
 }

@@ -69,87 +69,87 @@ import java.io.IOException;
 @Deprecated
 public interface OnscrollUnexpected<E extends Element<?, ?, E> & OnscrollUnexpected<E>> extends Onscroll<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
-	 * </ul>
-	 *
-	 * @deprecated  Although the onscroll attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E onscroll(Object onscroll) throws IOException {
-		return Onscroll.super.onscroll(onscroll);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
+   * </ul>
+   *
+   * @deprecated  Although the onscroll attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E onscroll(Object onscroll) throws IOException {
+    return Onscroll.super.onscroll(onscroll);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onscroll(java.lang.Object)
-	 *
-	 * @deprecated  Although the onscroll attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	default <Ex extends Throwable> E onscroll(IOSupplierE<?, Ex> onscroll) throws IOException, Ex {
-		return Onscroll.super.onscroll(onscroll);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onscroll(java.lang.Object)
+   *
+   * @deprecated  Although the onscroll attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  default <Ex extends Throwable> E onscroll(IOSupplierE<?, Ex> onscroll) throws IOException, Ex {
+    return Onscroll.super.onscroll(onscroll);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onscroll(java.lang.Object)
-	 *
-	 * @deprecated  Although the onscroll attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	default <Ex extends Throwable> E onscroll(JavaScriptWritable<Ex> onscroll) throws IOException, Ex {
-		return Onscroll.super.onscroll(onscroll);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onscroll(java.lang.Object)
+   *
+   * @deprecated  Although the onscroll attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  default <Ex extends Throwable> E onscroll(JavaScriptWritable<Ex> onscroll) throws IOException, Ex {
+    return Onscroll.super.onscroll(onscroll);
+  }
 }

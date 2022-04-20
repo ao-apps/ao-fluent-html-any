@@ -40,34 +40,34 @@ import java.io.IOException;
  */
 public interface Label<E extends Element<?, ?, E> & Label<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_label.asp">HTML label Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E label(Object label) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "label", MarkupType.TEXT, label, false, false, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_label.asp">HTML label Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E label(Object label) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "label", MarkupType.TEXT, label, false, false, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_label.asp">HTML label Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #label(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E label(IOSupplierE<?, Ex> label) throws IOException, Ex {
-		return label((label == null) ? null : label.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_label.asp">HTML label Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #label(java.lang.Object)
+   */
+  default <Ex extends Throwable> E label(IOSupplierE<?, Ex> label) throws IOException, Ex {
+    return label((label == null) ? null : label.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_label.asp">HTML label Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #label(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E label(TextWritable<Ex> label) throws IOException, Ex {
-		return label((Object)label);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_label.asp">HTML label Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #label(java.lang.Object)
+   */
+  default <Ex extends Throwable> E label(TextWritable<Ex> label) throws IOException, Ex {
+    return label((Object)label);
+  }
 }

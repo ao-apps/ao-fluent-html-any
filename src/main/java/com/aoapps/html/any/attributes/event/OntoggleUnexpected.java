@@ -51,68 +51,68 @@ import java.io.IOException;
 @Deprecated
 public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the ontoggle attribute is global, it is only expected on
-	 *              {@linkplain AnyDETAILS &lt;details&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E ontoggle(Object ontoggle) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "ontoggle");
-		return Attributes.Event.attribute(element, "ontoggle", ontoggle);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the ontoggle attribute is global, it is only expected on
+   *              {@linkplain AnyDETAILS &lt;details&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E ontoggle(Object ontoggle) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "ontoggle");
+    return Attributes.Event.attribute(element, "ontoggle", ontoggle);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ontoggle(java.lang.Object)
-	 *
-	 * @deprecated  Although the ontoggle attribute is global, it is only expected on
-	 *              {@linkplain AnyDETAILS &lt;details&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E ontoggle(IOSupplierE<?, Ex> ontoggle) throws IOException, Ex {
-		return ontoggle((ontoggle == null) ? null : ontoggle.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ontoggle(java.lang.Object)
+   *
+   * @deprecated  Although the ontoggle attribute is global, it is only expected on
+   *              {@linkplain AnyDETAILS &lt;details&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E ontoggle(IOSupplierE<?, Ex> ontoggle) throws IOException, Ex {
+    return ontoggle((ontoggle == null) ? null : ontoggle.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ontoggle(java.lang.Object)
-	 *
-	 * @deprecated  Although the ontoggle attribute is global, it is only expected on
-	 *              {@linkplain AnyDETAILS &lt;details&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E ontoggle(JavaScriptWritable<Ex> ontoggle) throws IOException, Ex {
-		return ontoggle((Object)ontoggle);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ontoggle(java.lang.Object)
+   *
+   * @deprecated  Although the ontoggle attribute is global, it is only expected on
+   *              {@linkplain AnyDETAILS &lt;details&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E ontoggle(JavaScriptWritable<Ex> ontoggle) throws IOException, Ex {
+    return ontoggle((Object)ontoggle);
+  }
 }

@@ -52,71 +52,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
-	 *              {@linkplain AnyFORM &lt;form&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onsubmit(Object onsubmit) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onsubmit");
-		return Attributes.Event.attribute(element, "onsubmit", onsubmit);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
+   *              {@linkplain AnyFORM &lt;form&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onsubmit(Object onsubmit) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onsubmit");
+    return Attributes.Event.attribute(element, "onsubmit", onsubmit);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onsubmit(java.lang.Object)
-	 *
-	 * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
-	 *              {@linkplain AnyFORM &lt;form&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onsubmit(IOSupplierE<?, Ex> onsubmit) throws IOException, Ex {
-		return onsubmit((onsubmit == null) ? null : onsubmit.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onsubmit(java.lang.Object)
+   *
+   * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
+   *              {@linkplain AnyFORM &lt;form&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onsubmit(IOSupplierE<?, Ex> onsubmit) throws IOException, Ex {
+    return onsubmit((onsubmit == null) ? null : onsubmit.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onsubmit(java.lang.Object)
-	 *
-	 * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
-	 *              {@linkplain AnyFORM &lt;form&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onsubmit(JavaScriptWritable<Ex> onsubmit) throws IOException, Ex {
-		return onsubmit((Object)onsubmit);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onsubmit(java.lang.Object)
+   *
+   * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
+   *              {@linkplain AnyFORM &lt;form&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onsubmit(JavaScriptWritable<Ex> onsubmit) throws IOException, Ex {
+    return onsubmit((Object)onsubmit);
+  }
 }

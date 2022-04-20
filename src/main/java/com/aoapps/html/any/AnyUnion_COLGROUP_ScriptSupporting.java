@@ -34,32 +34,32 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_COLGROUP_ScriptSupporting<
-	D  extends AnyDocument<D>,
-	__ extends AnyUnion_COLGROUP_ScriptSupporting<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyUnion_COLGROUP_ScriptSupporting<D, __>
 > extends
-	//
-	// Content models:
-	//
-	Content<D, __>
+  //
+  // Content models:
+  //
+  Content<D, __>
 {
-	//
-	// Factories:
-	//
-	// <editor-fold defaultstate="collapsed" desc="TEMPLATE">
-	/**
-	 * Opens a new template element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element">4.12.3 The template element</a>.
-	 * </p>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  TODO: Implement template
-	 */
-	@Deprecated
-	@Factory("template")
-	default AnyTEMPLATE template() throws IOException {
-		throw new AssertionError("TODO: Implement template");
-	}
-	// </editor-fold>
+  //
+  // Factories:
+  //
+  // <editor-fold defaultstate="collapsed" desc="TEMPLATE">
+  /**
+   * Opens a new template element.
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-template-element">4.12.3 The template element</a>.
+   * </p>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  TODO: Implement template
+   */
+  @Deprecated
+  @Factory("template")
+  default AnyTEMPLATE template() throws IOException {
+    throw new AssertionError("TODO: Implement template");
+  }
+  // </editor-fold>
 }

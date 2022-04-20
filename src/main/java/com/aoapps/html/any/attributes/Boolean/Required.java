@@ -42,48 +42,48 @@ import java.io.IOException;
  */
 public interface Required<E extends Element<?, ?, E> & Required<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E required(boolean required) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "required");
-		return Attributes.Boolean.attribute(element, "required", required);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E required(boolean required) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "required");
+    return Attributes.Boolean.attribute(element, "required", required);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #required(boolean)
-	 */
-	default E required(Boolean required) throws IOException {
-		return required(required != null && required);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @see #required(boolean)
+   */
+  default E required(Boolean required) throws IOException {
+    return required(required != null && required);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #required(java.lang.Boolean)
-	 */
-	default <Ex extends Throwable> E required(IOSupplierE<? extends Boolean, Ex> required) throws IOException, Ex {
-		return required((required == null) ? null : required.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/required">HTML attribute: required</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_required.asp">HTML required Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #required(java.lang.Boolean)
+   */
+  default <Ex extends Throwable> E required(IOSupplierE<? extends Boolean, Ex> required) throws IOException, Ex {
+    return required((required == null) ? null : required.get());
+  }
 }

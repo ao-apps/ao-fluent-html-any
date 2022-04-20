@@ -47,77 +47,77 @@ import java.io.IOException;
 // Matches Class
 public interface ClassNoHtml4<E extends Element<?, ?, E> & ClassNoHtml4<E>> extends Class<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the class attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 */
-	@Override
-	@Attributes.Funnel
-	default E clazz(Object clazz) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "class");
-		return Class.super.clazz(clazz);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the class attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   */
+  @Override
+  @Attributes.Funnel
+  default E clazz(Object clazz) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "class");
+    return Class.super.clazz(clazz);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the class attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 */
-	@Override
-	@Attributes.Funnel
-	default E clazz(Object ... clazz) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "class");
-		return Class.super.clazz(clazz);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the class attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   */
+  @Override
+  @Attributes.Funnel
+  default E clazz(Object ... clazz) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "class");
+    return Class.super.clazz(clazz);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the class attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #clazz(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E clazz(IOSupplierE<?, Ex> clazz) throws IOException, Ex {
-		return Class.super.clazz(clazz);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the class attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #clazz(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E clazz(IOSupplierE<?, Ex> clazz) throws IOException, Ex {
+    return Class.super.clazz(clazz);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the class attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #clazz(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E clazz(TextWritable<Ex> clazz) throws IOException, Ex {
-		return Class.super.clazz(clazz);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the class attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #clazz(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E clazz(TextWritable<Ex> clazz) throws IOException, Ex {
+    return Class.super.clazz(clazz);
+  }
 }

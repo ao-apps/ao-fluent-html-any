@@ -47,59 +47,59 @@ import java.io.IOException;
 // Matches OnmouseleaveUnexpected
 public interface Onmouseleave<E extends Element<?, ?, E> & Onmouseleave<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onmouseleave(Object onmouseleave) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onmouseleave");
-		return Attributes.Event.attribute(element, "onmouseleave", onmouseleave);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onmouseleave(Object onmouseleave) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onmouseleave");
+    return Attributes.Event.attribute(element, "onmouseleave", onmouseleave);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onmouseleave(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmouseleave(IOSupplierE<?, Ex> onmouseleave) throws IOException, Ex {
-		return onmouseleave((onmouseleave == null) ? null : onmouseleave.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onmouseleave(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmouseleave(IOSupplierE<?, Ex> onmouseleave) throws IOException, Ex {
+    return onmouseleave((onmouseleave == null) ? null : onmouseleave.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onmouseleave(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmouseleave(JavaScriptWritable<Ex> onmouseleave) throws IOException, Ex {
-		return onmouseleave((Object)onmouseleave);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onmouseleave(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmouseleave(JavaScriptWritable<Ex> onmouseleave) throws IOException, Ex {
+    return onmouseleave((Object)onmouseleave);
+  }
 }

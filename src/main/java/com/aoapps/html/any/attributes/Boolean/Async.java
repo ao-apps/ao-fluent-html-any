@@ -39,39 +39,39 @@ import java.io.IOException;
  */
 public interface Async<E extends Element<?, ?, E> & Async<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_async.asp">HTML async Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E async(boolean async) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "async");
-		return Attributes.Boolean.attribute(element, "async", async);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_async.asp">HTML async Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E async(boolean async) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "async");
+    return Attributes.Boolean.attribute(element, "async", async);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_async.asp">HTML async Attribute</a>.
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #async(boolean)
-	 */
-	default E async(Boolean async) throws IOException {
-		return async(async != null && async);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_async.asp">HTML async Attribute</a>.
+   *
+   * @since HTML 5
+   *
+   * @see #async(boolean)
+   */
+  default E async(Boolean async) throws IOException {
+    return async(async != null && async);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_async.asp">HTML async Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #async(java.lang.Boolean)
-	 */
-	default <Ex extends Throwable> E async(IOSupplierE<? extends Boolean, Ex> async) throws IOException, Ex {
-		return async((async == null) ? null : async.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_async.asp">HTML async Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #async(java.lang.Boolean)
+   */
+  default <Ex extends Throwable> E async(IOSupplierE<? extends Boolean, Ex> async) throws IOException, Ex {
+    return async((async == null) ? null : async.get());
+  }
 }

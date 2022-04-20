@@ -47,59 +47,59 @@ import java.io.IOException;
 // Matches OndragleaveUnexpected
 public interface Ondragleave<E extends Element<?, ?, E> & Ondragleave<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragleave">3.2.6 Global attributes / ondragleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragleave">8.1.7.2.1 IDL definitions / ondragleave</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragleave">GlobalEventHandlers.ondragleave</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragleave.asp">ondragleave Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E ondragleave(Object ondragleave) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "ondragleave");
-		return Attributes.Event.attribute(element, "ondragleave", ondragleave);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragleave">3.2.6 Global attributes / ondragleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragleave">8.1.7.2.1 IDL definitions / ondragleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragleave">GlobalEventHandlers.ondragleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondragleave.asp">ondragleave Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E ondragleave(Object ondragleave) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "ondragleave");
+    return Attributes.Event.attribute(element, "ondragleave", ondragleave);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragleave">3.2.6 Global attributes / ondragleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragleave">8.1.7.2.1 IDL definitions / ondragleave</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragleave">GlobalEventHandlers.ondragleave</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragleave.asp">ondragleave Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ondragleave(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E ondragleave(IOSupplierE<?, Ex> ondragleave) throws IOException, Ex {
-		return ondragleave((ondragleave == null) ? null : ondragleave.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragleave">3.2.6 Global attributes / ondragleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragleave">8.1.7.2.1 IDL definitions / ondragleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragleave">GlobalEventHandlers.ondragleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondragleave.asp">ondragleave Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ondragleave(java.lang.Object)
+   */
+  default <Ex extends Throwable> E ondragleave(IOSupplierE<?, Ex> ondragleave) throws IOException, Ex {
+    return ondragleave((ondragleave == null) ? null : ondragleave.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragleave">3.2.6 Global attributes / ondragleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragleave">8.1.7.2.1 IDL definitions / ondragleave</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragleave">GlobalEventHandlers.ondragleave</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondragleave.asp">ondragleave Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ondragleave(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E ondragleave(JavaScriptWritable<Ex> ondragleave) throws IOException, Ex {
-		return ondragleave((Object)ondragleave);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragleave">3.2.6 Global attributes / ondragleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragleave">8.1.7.2.1 IDL definitions / ondragleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragleave">GlobalEventHandlers.ondragleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondragleave.asp">ondragleave Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ondragleave(java.lang.Object)
+   */
+  default <Ex extends Throwable> E ondragleave(JavaScriptWritable<Ex> ondragleave) throws IOException, Ex {
+    return ondragleave((Object)ondragleave);
+  }
 }

@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyTH__<
-	D  extends AnyDocument<D>,
-	PC extends AnyTR_content<D, PC>,
-	__ extends AnyTH__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyTR_content<D, PC>,
+  __ extends AnyTH__<D, PC, __>
 >
-	extends NormalText__<D, PC, __>
-	implements AnyFlowContent<D, __> {
+  extends NormalText__<D, PC, __>
+  implements AnyFlowContent<D, __> {
 
-	protected AnyTH__(AnyTH<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyTH__(AnyTH<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

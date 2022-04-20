@@ -45,52 +45,52 @@ import java.io.IOException;
 // Matches OnfocusUnexpected
 public interface Onfocus<E extends Element<?, ?, E> & Onfocus<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onfocus">3.2.6 Global attributes / onfocus</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onfocus">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onfocus</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onfocus">8.1.7.2.1 IDL definitions / onfocus</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus">GlobalEventHandlers.onfocus</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onfocus.asp">onfocus Event</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E onfocus(Object onfocus) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onfocus", onfocus);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onfocus">3.2.6 Global attributes / onfocus</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onfocus">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onfocus</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onfocus">8.1.7.2.1 IDL definitions / onfocus</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus">GlobalEventHandlers.onfocus</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onfocus.asp">onfocus Event</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E onfocus(Object onfocus) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onfocus", onfocus);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onfocus">3.2.6 Global attributes / onfocus</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onfocus">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onfocus</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onfocus">8.1.7.2.1 IDL definitions / onfocus</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus">GlobalEventHandlers.onfocus</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onfocus.asp">onfocus Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onfocus(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onfocus(IOSupplierE<?, Ex> onfocus) throws IOException, Ex {
-		return onfocus((onfocus == null) ? null : onfocus.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onfocus">3.2.6 Global attributes / onfocus</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onfocus">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onfocus</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onfocus">8.1.7.2.1 IDL definitions / onfocus</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus">GlobalEventHandlers.onfocus</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onfocus.asp">onfocus Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onfocus(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onfocus(IOSupplierE<?, Ex> onfocus) throws IOException, Ex {
+    return onfocus((onfocus == null) ? null : onfocus.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onfocus">3.2.6 Global attributes / onfocus</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onfocus">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onfocus</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onfocus">8.1.7.2.1 IDL definitions / onfocus</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus">GlobalEventHandlers.onfocus</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onfocus.asp">onfocus Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onfocus(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onfocus(JavaScriptWritable<Ex> onfocus) throws IOException, Ex {
-		return onfocus((Object)onfocus);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onfocus">3.2.6 Global attributes / onfocus</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onfocus">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onfocus</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onfocus">8.1.7.2.1 IDL definitions / onfocus</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onfocus">GlobalEventHandlers.onfocus</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onfocus.asp">onfocus Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onfocus(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onfocus(JavaScriptWritable<Ex> onfocus) throws IOException, Ex {
+    return onfocus((Object)onfocus);
+  }
 }

@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyHEAD__<
-	D  extends AnyDocument<D>,
-	PC extends AnyHTML_content<D, PC>,
-	__ extends AnyHEAD__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyHTML_content<D, PC>,
+  __ extends AnyHEAD__<D, PC, __>
 >
-	extends Normal__<D, PC, __>
-	implements AnyMetadataContent<D, __> {
+  extends Normal__<D, PC, __>
+  implements AnyMetadataContent<D, __> {
 
-	protected AnyHEAD__(AnyHEAD<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyHEAD__(AnyHEAD<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

@@ -47,59 +47,59 @@ import java.io.IOException;
 // Matches OncontextmenuUnexpected
 public interface Oncontextmenu<E extends Element<?, ?, E> & Oncontextmenu<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E oncontextmenu(Object oncontextmenu) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "oncontextmenu");
-		return Attributes.Event.attribute(element, "oncontextmenu", oncontextmenu);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E oncontextmenu(Object oncontextmenu) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "oncontextmenu");
+    return Attributes.Event.attribute(element, "oncontextmenu", oncontextmenu);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncontextmenu(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E oncontextmenu(IOSupplierE<?, Ex> oncontextmenu) throws IOException, Ex {
-		return oncontextmenu((oncontextmenu == null) ? null : oncontextmenu.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncontextmenu(java.lang.Object)
+   */
+  default <Ex extends Throwable> E oncontextmenu(IOSupplierE<?, Ex> oncontextmenu) throws IOException, Ex {
+    return oncontextmenu((oncontextmenu == null) ? null : oncontextmenu.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncontextmenu(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E oncontextmenu(JavaScriptWritable<Ex> oncontextmenu) throws IOException, Ex {
-		return oncontextmenu((Object)oncontextmenu);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncontextmenu(java.lang.Object)
+   */
+  default <Ex extends Throwable> E oncontextmenu(JavaScriptWritable<Ex> oncontextmenu) throws IOException, Ex {
+    return oncontextmenu((Object)oncontextmenu);
+  }
 }

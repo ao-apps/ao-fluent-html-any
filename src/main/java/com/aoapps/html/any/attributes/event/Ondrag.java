@@ -47,59 +47,59 @@ import java.io.IOException;
 // Matches OndragUnexpected
 public interface Ondrag<E extends Element<?, ?, E> & Ondrag<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrag">3.2.6 Global attributes / ondrag</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrag">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrag</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondrag">8.1.7.2.1 IDL definitions / ondrag</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag">GlobalEventHandlers.ondrag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E ondrag(Object ondrag) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "ondrag");
-		return Attributes.Event.attribute(element, "ondrag", ondrag);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrag">3.2.6 Global attributes / ondrag</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrag">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrag</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondrag">8.1.7.2.1 IDL definitions / ondrag</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag">GlobalEventHandlers.ondrag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E ondrag(Object ondrag) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "ondrag");
+    return Attributes.Event.attribute(element, "ondrag", ondrag);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrag">3.2.6 Global attributes / ondrag</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrag">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrag</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondrag">8.1.7.2.1 IDL definitions / ondrag</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag">GlobalEventHandlers.ondrag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ondrag(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E ondrag(IOSupplierE<?, Ex> ondrag) throws IOException, Ex {
-		return ondrag((ondrag == null) ? null : ondrag.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrag">3.2.6 Global attributes / ondrag</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrag">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrag</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondrag">8.1.7.2.1 IDL definitions / ondrag</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag">GlobalEventHandlers.ondrag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ondrag(java.lang.Object)
+   */
+  default <Ex extends Throwable> E ondrag(IOSupplierE<?, Ex> ondrag) throws IOException, Ex {
+    return ondrag((ondrag == null) ? null : ondrag.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrag">3.2.6 Global attributes / ondrag</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrag">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrag</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondrag">8.1.7.2.1 IDL definitions / ondrag</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag">GlobalEventHandlers.ondrag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ondrag(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E ondrag(JavaScriptWritable<Ex> ondrag) throws IOException, Ex {
-		return ondrag((Object)ondrag);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrag">3.2.6 Global attributes / ondrag</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrag">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrag</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondrag">8.1.7.2.1 IDL definitions / ondrag</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag">GlobalEventHandlers.ondrag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ondrag(java.lang.Object)
+   */
+  default <Ex extends Throwable> E ondrag(JavaScriptWritable<Ex> ondrag) throws IOException, Ex {
+    return ondrag((Object)ondrag);
+  }
 }

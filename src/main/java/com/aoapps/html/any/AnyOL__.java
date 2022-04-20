@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOL__<
-	D  extends AnyDocument<D>,
-	PC extends AnyPalpableContent<D, PC>,
-	__ extends AnyOL__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyPalpableContent<D, PC>,
+  __ extends AnyOL__<D, PC, __>
 >
-	extends Normal__<D, PC, __>
-	implements AnyListContent<D, __> {
+  extends Normal__<D, PC, __>
+  implements AnyListContent<D, __> {
 
-	protected AnyOL__(AnyOL<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyOL__(AnyOL<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

@@ -36,109 +36,109 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_DL_Palpable<
-	D  extends AnyDocument<D>,
-	__ extends AnyUnion_DL_Palpable<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyUnion_DL_Palpable<D, __>
 > extends
-	//
-	// Content models:
-	//
-	Content<D, __>
+  //
+  // Content models:
+  //
+  Content<D, __>
 {
-	//
-	// Factories:
-	//
-	// <editor-fold defaultstate="collapsed" desc="DIV">
-	/**
-	 * Opens a new div element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("div")
-	AnyDIV<D, __, ?, ?, ?> div() throws IOException;
+  //
+  // Factories:
+  //
+  // <editor-fold defaultstate="collapsed" desc="DIV">
+  /**
+   * Opens a new div element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+   * </ul>
+   */
+  @Factory("div")
+  AnyDIV<D, __, ?, ?, ?> div() throws IOException;
 
-	/**
-	 * Creates a div element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("div")
-	default <Ex extends Throwable> __ div__(IORunnableE<Ex> div) throws IOException, Ex {
-		return div().__(div);
-	}
+  /**
+   * Creates a div element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("div")
+  default <Ex extends Throwable> __ div__(IORunnableE<Ex> div) throws IOException, Ex {
+    return div().__(div);
+  }
 
-	/**
-	 * Creates a div element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("div")
-	default <Ex extends Throwable> __ div__any(IOConsumerE<? super AnyDIV__<D, __, ? extends AnyDIV__<D, __, ?>>, Ex> div) throws IOException, Ex {
-		return div().__(div);
-	}
+  /**
+   * Creates a div element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("div")
+  default <Ex extends Throwable> __ div__any(IOConsumerE<? super AnyDIV__<D, __, ? extends AnyDIV__<D, __, ?>>, Ex> div) throws IOException, Ex {
+    return div().__(div);
+  }
 
-	/**
-	 * Creates a div element with no attributes and a text body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("div")
-	default __ div__(Object text) throws IOException {
-		return div().__(text);
-	}
+  /**
+   * Creates a div element with no attributes and a text body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("div")
+  default __ div__(Object text) throws IOException {
+    return div().__(text);
+  }
 
-	/**
-	 * Creates an empty div element with no attributes.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("div")
-	default __ div__() throws IOException {
-		return div().__();
-	}
+  /**
+   * Creates an empty div element with no attributes.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("div")
+  default __ div__() throws IOException {
+    return div().__();
+  }
 
-	/**
-	 * Creates a div element with no attributes then begins element content
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  The content model of this element, which will be the parent content model of child elements.
-	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
-	 *          the tag.  This is well suited for use in a try-with-resources block.
-	 *
-	 * @see  Closeable#__()
-	 * @see  Closeable#close()
-	 */
-	@Factory("div")
-	AnyDIV_c<D, __, ?> div_c() throws IOException;
-	// </editor-fold>
+  /**
+   * Creates a div element with no attributes then begins element content
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_div.asp">HTML div tag</a>.</li>
+   * </ul>
+   *
+   * @return  The content model of this element, which will be the parent content model of child elements.
+   *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+   *          the tag.  This is well suited for use in a try-with-resources block.
+   *
+   * @see  Closeable#__()
+   * @see  Closeable#close()
+   */
+  @Factory("div")
+  AnyDIV_c<D, __, ?> div_c() throws IOException;
+  // </editor-fold>
 }

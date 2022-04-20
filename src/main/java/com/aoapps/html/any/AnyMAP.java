@@ -41,27 +41,27 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyMAP<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-	E  extends AnyMAP<D, PC, E, _c>,
-	_c extends AnyMAP_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+  E  extends AnyMAP<D, PC, E, _c>,
+  _c extends AnyMAP_c<D, PC, _c>
 > extends TransparentText<D, PC, E, _c> implements
-	com.aoapps.html.any.attributes.Text.Name<E>
+  com.aoapps.html.any.attributes.Text.Name<E>
 {
 
-	protected AnyMAP(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyMAP(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, "<map", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, "<map", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></map>" : "</map>", false);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></map>" : "</map>", false);
+  }
 }

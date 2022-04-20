@@ -48,79 +48,79 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Capture<
-	E extends Element<?, ?, E> & Capture<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Capture<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
-	 * <li>See <a href="https://www.w3.org/TR/html-media-capture/#the-capture-attribute">5. The capture attribute</a>.</li>
-	 * <li>See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E capture(String capture) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "capture");
-		return Attributes.String.attribute(element, "capture", MarkupType.NONE, capture, true, true);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/html-media-capture/#the-capture-attribute">5. The capture attribute</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E capture(String capture) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "capture");
+    return Attributes.String.attribute(element, "capture", MarkupType.NONE, capture, true, true);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
-	 * <li>See <a href="https://www.w3.org/TR/html-media-capture/#the-capture-attribute">5. The capture attribute</a>.</li>
-	 * <li>See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #capture(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E capture(Suppliers.String<Ex> capture) throws IOException, Ex {
-		return capture((capture == null) ? null : capture.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/html-media-capture/#the-capture-attribute">5. The capture attribute</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #capture(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E capture(Suppliers.String<Ex> capture) throws IOException, Ex {
+    return capture((capture == null) ? null : capture.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
-	 * <li>See <a href="https://www.w3.org/TR/html-media-capture/#the-capture-attribute">5. The capture attribute</a>.</li>
-	 * <li>See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #capture(java.lang.String)
-	 */
-	default E capture(V capture) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return capture((capture == null) ? null : capture.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/html-media-capture/#the-capture-attribute">5. The capture attribute</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @see #capture(java.lang.String)
+   */
+  default E capture(V capture) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return capture((capture == null) ? null : capture.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
-	 * <li>See <a href="https://www.w3.org/TR/html-media-capture/#the-capture-attribute">5. The capture attribute</a>.</li>
-	 * <li>See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #capture(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E capture(IOSupplierE<? extends V, Ex> capture) throws IOException, Ex {
-		return capture((capture == null) ? null : capture.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/html-media-capture/#the-capture-attribute">5. The capture attribute</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #capture(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E capture(IOSupplierE<? extends V, Ex> capture) throws IOException, Ex {
+    return capture((capture == null) ? null : capture.get());
+  }
 }

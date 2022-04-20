@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onplay<E extends Element<?, ?, E> & Onplay<E>> extends OnplayUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplay">3.2.6 Global attributes / onplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplay">8.1.7.2.1 IDL definitions / onplay</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplay">GlobalEventHandlers.onplay</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onplay.asp">onplay Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onplay(Object onplay) throws IOException {
-		return OnplayUnexpected.super.onplay(onplay);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplay">3.2.6 Global attributes / onplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplay">8.1.7.2.1 IDL definitions / onplay</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplay">GlobalEventHandlers.onplay</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onplay.asp">onplay Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onplay(Object onplay) throws IOException {
+    return OnplayUnexpected.super.onplay(onplay);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplay">3.2.6 Global attributes / onplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplay">8.1.7.2.1 IDL definitions / onplay</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplay">GlobalEventHandlers.onplay</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onplay.asp">onplay Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onplay(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onplay(IOSupplierE<?, Ex> onplay) throws IOException, Ex {
-		return OnplayUnexpected.super.onplay(onplay);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplay">3.2.6 Global attributes / onplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplay">8.1.7.2.1 IDL definitions / onplay</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplay">GlobalEventHandlers.onplay</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onplay.asp">onplay Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onplay(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onplay(IOSupplierE<?, Ex> onplay) throws IOException, Ex {
+    return OnplayUnexpected.super.onplay(onplay);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplay">3.2.6 Global attributes / onplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplay</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplay">8.1.7.2.1 IDL definitions / onplay</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplay">GlobalEventHandlers.onplay</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onplay.asp">onplay Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onplay(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onplay(JavaScriptWritable<Ex> onplay) throws IOException, Ex {
-		return OnplayUnexpected.super.onplay(onplay);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplay">3.2.6 Global attributes / onplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplay</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplay">8.1.7.2.1 IDL definitions / onplay</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplay">GlobalEventHandlers.onplay</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onplay.asp">onplay Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onplay(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onplay(JavaScriptWritable<Ex> onplay) throws IOException, Ex {
+    return OnplayUnexpected.super.onplay(onplay);
+  }
 }

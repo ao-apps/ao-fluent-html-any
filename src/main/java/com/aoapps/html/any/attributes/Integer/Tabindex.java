@@ -49,67 +49,67 @@ import java.io.IOException;
 // Matches TabindexHtml4
 public interface Tabindex<E extends Element<?, ?, E> & Tabindex<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the tabindex attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E tabindex(int tabindex) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "tabindex");
-		return Attributes.Integer.attribute(element, "tabindex", tabindex);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the tabindex attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E tabindex(int tabindex) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "tabindex");
+    return Attributes.Integer.attribute(element, "tabindex", tabindex);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the tabindex attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E tabindex(Integer tabindex) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "tabindex");
-		return Attributes.Integer.attribute(element, "tabindex", tabindex);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the tabindex attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E tabindex(Integer tabindex) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "tabindex");
+    return Attributes.Integer.attribute(element, "tabindex", tabindex);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the tabindex attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #tabindex(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E tabindex(IOSupplierE<? extends Integer, Ex> tabindex) throws IOException, Ex {
-		return tabindex((tabindex == null) ? null : tabindex.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the tabindex attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #tabindex(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E tabindex(IOSupplierE<? extends Integer, Ex> tabindex) throws IOException, Ex {
+    return tabindex((tabindex == null) ? null : tabindex.get());
+  }
 }

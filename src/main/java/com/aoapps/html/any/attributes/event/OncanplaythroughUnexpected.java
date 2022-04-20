@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OncanplaythroughUnexpected<E extends Element<?, ?, E> & OncanplaythroughUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the oncanplaythrough attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E oncanplaythrough(Object oncanplaythrough) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "oncanplaythrough");
-		return Attributes.Event.attribute(element, "oncanplaythrough", oncanplaythrough);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the oncanplaythrough attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E oncanplaythrough(Object oncanplaythrough) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "oncanplaythrough");
+    return Attributes.Event.attribute(element, "oncanplaythrough", oncanplaythrough);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncanplaythrough(java.lang.Object)
-	 *
-	 * @deprecated  Although the oncanplaythrough attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E oncanplaythrough(IOSupplierE<?, Ex> oncanplaythrough) throws IOException, Ex {
-		return oncanplaythrough((oncanplaythrough == null) ? null : oncanplaythrough.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncanplaythrough(java.lang.Object)
+   *
+   * @deprecated  Although the oncanplaythrough attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E oncanplaythrough(IOSupplierE<?, Ex> oncanplaythrough) throws IOException, Ex {
+    return oncanplaythrough((oncanplaythrough == null) ? null : oncanplaythrough.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncanplaythrough(java.lang.Object)
-	 *
-	 * @deprecated  Although the oncanplaythrough attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E oncanplaythrough(JavaScriptWritable<Ex> oncanplaythrough) throws IOException, Ex {
-		return oncanplaythrough((Object)oncanplaythrough);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncanplaythrough(java.lang.Object)
+   *
+   * @deprecated  Although the oncanplaythrough attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E oncanplaythrough(JavaScriptWritable<Ex> oncanplaythrough) throws IOException, Ex {
+    return oncanplaythrough((Object)oncanplaythrough);
+  }
 }

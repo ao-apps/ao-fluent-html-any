@@ -44,52 +44,52 @@ import java.io.IOException;
 @Deprecated
 public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute in HTML5.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onmousewheel(Object onmousewheel) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onmousewheel", onmousewheel);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
+   * </ul>
+   *
+   * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute in HTML5.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onmousewheel(Object onmousewheel) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onmousewheel", onmousewheel);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onmousewheel(java.lang.Object)
-	 *
-	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.lang.io.function.IOSupplierE) onwheel} attribute in HTML5.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onmousewheel(IOSupplierE<?, Ex> onmousewheel) throws IOException, Ex {
-		return onmousewheel((onmousewheel == null) ? null : onmousewheel.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onmousewheel(java.lang.Object)
+   *
+   * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.lang.io.function.IOSupplierE) onwheel} attribute in HTML5.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onmousewheel(IOSupplierE<?, Ex> onmousewheel) throws IOException, Ex {
+    return onmousewheel((onmousewheel == null) ? null : onmousewheel.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onmousewheel(java.lang.Object)
-	 *
-	 * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.encoding.JavaScriptWritable) onwheel} attribute in HTML5.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onmousewheel(JavaScriptWritable<Ex> onmousewheel) throws IOException, Ex {
-		return onmousewheel((Object)onmousewheel);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onmousewheel(java.lang.Object)
+   *
+   * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.encoding.JavaScriptWritable) onwheel} attribute in HTML5.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onmousewheel(JavaScriptWritable<Ex> onmousewheel) throws IOException, Ex {
+    return onmousewheel((Object)onmousewheel);
+  }
 }

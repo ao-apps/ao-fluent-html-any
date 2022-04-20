@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Ontimeupdate<E extends Element<?, ?, E> & Ontimeupdate<E>> extends OntimeupdateUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E ontimeupdate(Object ontimeupdate) throws IOException {
-		return OntimeupdateUnexpected.super.ontimeupdate(ontimeupdate);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E ontimeupdate(Object ontimeupdate) throws IOException {
+    return OntimeupdateUnexpected.super.ontimeupdate(ontimeupdate);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ontimeupdate(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E ontimeupdate(IOSupplierE<?, Ex> ontimeupdate) throws IOException, Ex {
-		return OntimeupdateUnexpected.super.ontimeupdate(ontimeupdate);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ontimeupdate(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E ontimeupdate(IOSupplierE<?, Ex> ontimeupdate) throws IOException, Ex {
+    return OntimeupdateUnexpected.super.ontimeupdate(ontimeupdate);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ontimeupdate(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E ontimeupdate(JavaScriptWritable<Ex> ontimeupdate) throws IOException, Ex {
-		return OntimeupdateUnexpected.super.ontimeupdate(ontimeupdate);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ontimeupdate(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E ontimeupdate(JavaScriptWritable<Ex> ontimeupdate) throws IOException, Ex {
+    return OntimeupdateUnexpected.super.ontimeupdate(ontimeupdate);
+  }
 }

@@ -42,37 +42,37 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyTFOOT<
-	D  extends AnyDocument<D>,
-	PC extends AnyTABLE_content<D, PC>,
-	E  extends AnyTFOOT<D, PC, E, __, _c>,
-	__ extends AnyTFOOT__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyTFOOT_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyTABLE_content<D, PC>,
+  E  extends AnyTFOOT<D, PC, E, __, _c>,
+  __ extends AnyTFOOT__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyTFOOT_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> {
 
-	protected AnyTFOOT(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyTFOOT(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<tfoot", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<tfoot", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></tfoot>", false);
-		} else {
-			document.autoNli(unsafe).unsafe(unsafe, "</tfoot>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></tfoot>", false);
+    } else {
+      document.autoNli(unsafe).unsafe(unsafe, "</tfoot>", false);
+    }
+    document.autoNl(unsafe);
+  }
 }

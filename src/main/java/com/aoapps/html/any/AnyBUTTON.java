@@ -36,13 +36,13 @@ package com.aoapps.html.any;
 // TODO: implements Formenctype<E> (and many others similar to AnyINPUT.Submit
 // TODO: com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
 public abstract class AnyBUTTON {
-	// TODO: Phrasing content, but there must be no interactive content descendant and no descendant with the tabindex attribute specified.
-	//           A sub-interface AnyInteractiveContentBlocked of AnyInteractiveContent, deprecating all methods?
-	//               This sub-interface might also apply other places where specification says "must be no interactive content descendant"
-	//               This might be of shallow benefit, as Phrasing -> element -> Phrasing nesting would lose knowledge of parent being blocked interative.
-	//                   Unless this additional level of interface relationships were maintained through every element and interface
-	//       AnyBUTTON content extends AnyPhrasingContent and deprecates all methods from AnyInteractiveContent?
-	//       Certainly no easy way to enforce no tabindex on descendents (other than complicating implementation)
-	//           Also no way to conditionally deprecate tabindex, short of having NoTabIndex variants of absolutely every element and interface
-	// TODO
+  // TODO: Phrasing content, but there must be no interactive content descendant and no descendant with the tabindex attribute specified.
+  //           A sub-interface AnyInteractiveContentBlocked of AnyInteractiveContent, deprecating all methods?
+  //               This sub-interface might also apply other places where specification says "must be no interactive content descendant"
+  //               This might be of shallow benefit, as Phrasing -> element -> Phrasing nesting would lose knowledge of parent being blocked interative.
+  //                   Unless this additional level of interface relationships were maintained through every element and interface
+  //       AnyBUTTON content extends AnyPhrasingContent and deprecates all methods from AnyInteractiveContent?
+  //       Certainly no easy way to enforce no tabindex on descendents (other than complicating implementation)
+  //           Also no way to conditionally deprecate tabindex, short of having NoTabIndex variants of absolutely every element and interface
+  // TODO
 }

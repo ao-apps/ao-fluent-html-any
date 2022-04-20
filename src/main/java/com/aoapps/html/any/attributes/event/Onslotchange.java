@@ -47,57 +47,57 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onslotchange<E extends Element<?, ?, E> & Onslotchange<E>> extends OnslotchangeUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onslotchange">3.2.6 Global attributes / onslotchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onslotchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onslotchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onslotchange">8.1.7.2.1 IDL definitions / onslotchange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onslotchange">GlobalEventHandlers.onslotchange</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onslotchange(Object onslotchange) throws IOException {
-		return OnslotchangeUnexpected.super.onslotchange(onslotchange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onslotchange">3.2.6 Global attributes / onslotchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onslotchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onslotchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onslotchange">8.1.7.2.1 IDL definitions / onslotchange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onslotchange">GlobalEventHandlers.onslotchange</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onslotchange(Object onslotchange) throws IOException {
+    return OnslotchangeUnexpected.super.onslotchange(onslotchange);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onslotchange">3.2.6 Global attributes / onslotchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onslotchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onslotchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onslotchange">8.1.7.2.1 IDL definitions / onslotchange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onslotchange">GlobalEventHandlers.onslotchange</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onslotchange(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onslotchange(IOSupplierE<?, Ex> onslotchange) throws IOException, Ex {
-		return OnslotchangeUnexpected.super.onslotchange(onslotchange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onslotchange">3.2.6 Global attributes / onslotchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onslotchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onslotchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onslotchange">8.1.7.2.1 IDL definitions / onslotchange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onslotchange">GlobalEventHandlers.onslotchange</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onslotchange(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onslotchange(IOSupplierE<?, Ex> onslotchange) throws IOException, Ex {
+    return OnslotchangeUnexpected.super.onslotchange(onslotchange);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onslotchange">3.2.6 Global attributes / onslotchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onslotchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onslotchange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onslotchange">8.1.7.2.1 IDL definitions / onslotchange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onslotchange">GlobalEventHandlers.onslotchange</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onslotchange(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onslotchange(JavaScriptWritable<Ex> onslotchange) throws IOException, Ex {
-		return OnslotchangeUnexpected.super.onslotchange(onslotchange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onslotchange">3.2.6 Global attributes / onslotchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onslotchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onslotchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onslotchange">8.1.7.2.1 IDL definitions / onslotchange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onslotchange">GlobalEventHandlers.onslotchange</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onslotchange(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onslotchange(JavaScriptWritable<Ex> onslotchange) throws IOException, Ex {
+    return OnslotchangeUnexpected.super.onslotchange(onslotchange);
+  }
 }

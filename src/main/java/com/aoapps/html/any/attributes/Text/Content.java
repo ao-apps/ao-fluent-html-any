@@ -40,35 +40,35 @@ import java.io.IOException;
  */
 public interface Content<E extends Element<?, ?, E> & Content<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_content.asp">HTML content Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E content(Object content) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		// TODO: Might be able to perform markup for some types of content (keywords, description, ...)?
-		return Attributes.Text.attribute(element, "content", MarkupType.NONE, content, false, false, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_content.asp">HTML content Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E content(Object content) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    // TODO: Might be able to perform markup for some types of content (keywords, description, ...)?
+    return Attributes.Text.attribute(element, "content", MarkupType.NONE, content, false, false, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_content.asp">HTML content Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #content(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E content(IOSupplierE<?, Ex> content) throws IOException, Ex {
-		return content((content == null) ? null : content.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_content.asp">HTML content Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #content(java.lang.Object)
+   */
+  default <Ex extends Throwable> E content(IOSupplierE<?, Ex> content) throws IOException, Ex {
+    return content((content == null) ? null : content.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_content.asp">HTML content Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #content(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E content(TextWritable<Ex> content) throws IOException, Ex {
-		return content((Object)content);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_content.asp">HTML content Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #content(java.lang.Object)
+   */
+  default <Ex extends Throwable> E content(TextWritable<Ex> content) throws IOException, Ex {
+    return content((Object)content);
+  }
 }

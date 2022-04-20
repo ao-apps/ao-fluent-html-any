@@ -71,93 +71,93 @@ import java.io.IOException;
 @Deprecated
 public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & OnmouseleaveUnexpected<E>> extends Onmouseleave<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onmouseleave attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E onmouseleave(Object onmouseleave) throws IOException {
-		return Onmouseleave.super.onmouseleave(onmouseleave);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onmouseleave attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E onmouseleave(Object onmouseleave) throws IOException {
+    return Onmouseleave.super.onmouseleave(onmouseleave);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onmouseleave(java.lang.Object)
-	 *
-	 * @deprecated  Although the onmouseleave attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	default <Ex extends Throwable> E onmouseleave(IOSupplierE<?, Ex> onmouseleave) throws IOException, Ex {
-		return Onmouseleave.super.onmouseleave(onmouseleave);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onmouseleave(java.lang.Object)
+   *
+   * @deprecated  Although the onmouseleave attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  default <Ex extends Throwable> E onmouseleave(IOSupplierE<?, Ex> onmouseleave) throws IOException, Ex {
+    return Onmouseleave.super.onmouseleave(onmouseleave);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onmouseleave(java.lang.Object)
-	 *
-	 * @deprecated  Although the onmouseleave attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	default <Ex extends Throwable> E onmouseleave(JavaScriptWritable<Ex> onmouseleave) throws IOException, Ex {
-		return Onmouseleave.super.onmouseleave(onmouseleave);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onmouseleave(java.lang.Object)
+   *
+   * @deprecated  Although the onmouseleave attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  default <Ex extends Throwable> E onmouseleave(JavaScriptWritable<Ex> onmouseleave) throws IOException, Ex {
+    return Onmouseleave.super.onmouseleave(onmouseleave);
+  }
 }

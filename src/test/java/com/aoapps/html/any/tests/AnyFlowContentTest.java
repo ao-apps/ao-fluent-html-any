@@ -53,171 +53,171 @@ import org.junit.Test;
 @SuppressWarnings("rawtypes")
 public class AnyFlowContentTest {
 
-	private final Class<? extends AnyFlowContent> testingClass;
+  private final Class<? extends AnyFlowContent> testingClass;
 
-	protected AnyFlowContentTest(Class<? extends AnyFlowContent> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyFlowContentTest(Class<? extends AnyFlowContent> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyFlowContentTest() {
-		this(AnyFlowContent.class);
-	}
+  public AnyFlowContentTest() {
+    this(AnyFlowContent.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyFlowContent.class,
-			//
-			// Unions:
-			//
-			AnyUnion_COLGROUP_ScriptSupporting.class,
-			AnyUnion_DL_Palpable.class,
-			AnyUnion_Embedded_Interactive.class,
-			AnyUnion_Embedded_Palpable_Phrasing.class,
-			AnyUnion_Interactive_Phrasing.class,
-			AnyUnion_Metadata_Phrasing.class,
-			AnyUnion_Palpable_Phrasing.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyFlowContent.class,
+      //
+      // Unions:
+      //
+      AnyUnion_COLGROUP_ScriptSupporting.class,
+      AnyUnion_DL_Palpable.class,
+      AnyUnion_Embedded_Interactive.class,
+      AnyUnion_Embedded_Palpable_Phrasing.class,
+      AnyUnion_Interactive_Phrasing.class,
+      AnyUnion_Metadata_Phrasing.class,
+      AnyUnion_Palpable_Phrasing.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyFlowContent.class,
-			//
-			// Content models:
-			//
-			Content.class,
-			AnyEmbeddedContent.class,
-			AnyHeadingContent.class,
-			AnyInteractiveContent.class,
-			AnyPalpableContent.class,
-			AnyPhrasingContent.class,
-			AnyScriptSupportingContent.class,
-			AnySectioningContent.class,
-			AnyTextContent.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyFlowContent.class,
+      //
+      // Content models:
+      //
+      Content.class,
+      AnyEmbeddedContent.class,
+      AnyHeadingContent.class,
+      AnyInteractiveContent.class,
+      AnyPalpableContent.class,
+      AnyPhrasingContent.class,
+      AnyScriptSupportingContent.class,
+      AnySectioningContent.class,
+      AnyTextContent.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyFlowContent.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyFlowContent.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"a",
-			"abbr",
-			"address",
-			"area", // if a descendent of map
-			"article",
-			"aside",
-			"audio",
-			"b",
-			"bdi",
-			"bdo",
-			"blockquote",
-			"br",
-			"button",
-			"canvas",
-			"cite",
-			"code",
-			"data",
-			"datalist",
-			"del",
-			"details",
-			"dfn",
-			"dialog",
-			"div",
-			"dl",
-			"em",
-			"embed",
-			"fieldset",
-			"figure",
-			"footer",
-			"form",
-			"h1",
-			"h2",
-			"h3",
-			"h4",
-			"h5",
-			"h6",
-			"h#",
-			"header",
-			"hgroup",
-			"hr",
-			"i",
-			"iframe",
-			"img",
-			"input",
-			"ins",
-			"kbd",
-			"label",
-			"link", // if it is allowed in body
-			"main", // if it is a hierarchically correct main element
-			"map",
-			"mark",
-			// TODO: MathML math
-			"menu",
-			"meta", // if the itemprop attribute is present
-			"meter",
-			"nav",
-			"noscript",
-			"object",
-			"ol",
-			"output",
-			"p",
-			"picture",
-			"pre",
-			"progress",
-			"q",
-			"ruby",
-			"s",
-			"samp",
-			"script",
-			"section",
-			"select",
-			"slot",
-			"small",
-			"span",
-			"strong",
-			"sub",
-			"sup",
-			// TODO: SVG svg
-			"table",
-			"template",
-			"textarea",
-			"time",
-			"u",
-			"ul",
-			"var",
-			"video",
-			"wbr"
-			// TODO: autonomous custom elements: 4.13 Custom elements: https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "a",
+      "abbr",
+      "address",
+      "area", // if a descendent of map
+      "article",
+      "aside",
+      "audio",
+      "b",
+      "bdi",
+      "bdo",
+      "blockquote",
+      "br",
+      "button",
+      "canvas",
+      "cite",
+      "code",
+      "data",
+      "datalist",
+      "del",
+      "details",
+      "dfn",
+      "dialog",
+      "div",
+      "dl",
+      "em",
+      "embed",
+      "fieldset",
+      "figure",
+      "footer",
+      "form",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "h#",
+      "header",
+      "hgroup",
+      "hr",
+      "i",
+      "iframe",
+      "img",
+      "input",
+      "ins",
+      "kbd",
+      "label",
+      "link", // if it is allowed in body
+      "main", // if it is a hierarchically correct main element
+      "map",
+      "mark",
+      // TODO: MathML math
+      "menu",
+      "meta", // if the itemprop attribute is present
+      "meter",
+      "nav",
+      "noscript",
+      "object",
+      "ol",
+      "output",
+      "p",
+      "picture",
+      "pre",
+      "progress",
+      "q",
+      "ruby",
+      "s",
+      "samp",
+      "script",
+      "section",
+      "select",
+      "slot",
+      "small",
+      "span",
+      "strong",
+      "sub",
+      "sup",
+      // TODO: SVG svg
+      "table",
+      "template",
+      "textarea",
+      "time",
+      "u",
+      "ul",
+      "var",
+      "video",
+      "wbr"
+      // TODO: autonomous custom elements: 4.13 Custom elements: https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals(
-			"Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-			-1,
-			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyFlowContent.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyFlowContent.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals(
+      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+      -1,
+      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyFlowContent.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyFlowContent.class);
+  }
 }

@@ -40,34 +40,34 @@ import java.io.IOException;
  */
 public interface Accept<E extends Element<?, ?, E> & Accept<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_accept.asp">HTML accept Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E accept(Object accept) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "accept", MarkupType.NONE, accept, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_accept.asp">HTML accept Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E accept(Object accept) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "accept", MarkupType.NONE, accept, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_accept.asp">HTML accept Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #accept(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E accept(IOSupplierE<?, Ex> accept) throws IOException, Ex {
-		return accept((accept == null) ? null : accept.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_accept.asp">HTML accept Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #accept(java.lang.Object)
+   */
+  default <Ex extends Throwable> E accept(IOSupplierE<?, Ex> accept) throws IOException, Ex {
+    return accept((accept == null) ? null : accept.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_accept.asp">HTML accept Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #accept(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E accept(TextWritable<Ex> accept) throws IOException, Ex {
-		return accept((Object)accept);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_accept.asp">HTML accept Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #accept(java.lang.Object)
+   */
+  default <Ex extends Throwable> E accept(TextWritable<Ex> accept) throws IOException, Ex {
+    return accept((Object)accept);
+  }
 }

@@ -40,41 +40,41 @@ import java.io.IOException;
 @Deprecated
 public interface Noshade<E extends Element<?, ?, E> & Noshade<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_hr_noshade.asp">HTML hr noshade Attribute</a>.
-	 *
-	 * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E noshade(boolean noshade) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Boolean.attribute(element, "noshade", noshade);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_hr_noshade.asp">HTML hr noshade Attribute</a>.
+   *
+   * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E noshade(boolean noshade) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Boolean.attribute(element, "noshade", noshade);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_hr_noshade.asp">HTML hr noshade Attribute</a>.
-	 *
-	 * @see #noshade(boolean)
-	 *
-	 * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	default E noshade(Boolean noshade) throws IOException {
-		return noshade(noshade != null && noshade);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_hr_noshade.asp">HTML hr noshade Attribute</a>.
+   *
+   * @see #noshade(boolean)
+   *
+   * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  default E noshade(Boolean noshade) throws IOException {
+    return noshade(noshade != null && noshade);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_hr_noshade.asp">HTML hr noshade Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #noshade(java.lang.Boolean)
-	 *
-	 * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E noshade(IOSupplierE<? extends Boolean, Ex> noshade) throws IOException, Ex {
-		return noshade((noshade == null) ? null : noshade.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_hr_noshade.asp">HTML hr noshade Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #noshade(java.lang.Boolean)
+   *
+   * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E noshade(IOSupplierE<? extends Boolean, Ex> noshade) throws IOException, Ex {
+    return noshade((noshade == null) ? null : noshade.get());
+  }
 }

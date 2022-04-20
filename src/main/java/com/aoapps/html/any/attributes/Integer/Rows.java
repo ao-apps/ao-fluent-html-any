@@ -37,34 +37,36 @@ import java.io.IOException;
  */
 public interface Rows<E extends Element<?, ?, E> & Rows<E>> {
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-rows">4.10.11 The textarea element / rows</a>.
-	 */
-	@Attributes.Funnel
-	default E rows(int rows) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.Integer.attribute(element, "rows", rows);
-		return element;
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-rows">4.10.11 The textarea element / rows</a>.
+   */
+  @Attributes.Funnel
+  default E rows(int rows) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.Integer.attribute(element, "rows", rows);
+    return element;
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-rows">4.10.11 The textarea element / rows</a>.
-	 */
-	@Attributes.Funnel
-	default E rows(Integer rows) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(rows != null) Attributes.Integer.attribute(element, "rows", rows);
-		return element;
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-rows">4.10.11 The textarea element / rows</a>.
+   */
+  @Attributes.Funnel
+  default E rows(Integer rows) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    if (rows != null) {
+      Attributes.Integer.attribute(element, "rows", rows);
+    }
+    return element;
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-rows">4.10.11 The textarea element / rows</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #rows(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E rows(IOSupplierE<? extends Integer, Ex> rows) throws IOException, Ex {
-		return rows((rows == null) ? null : rows.get());
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-rows">4.10.11 The textarea element / rows</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #rows(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E rows(IOSupplierE<? extends Integer, Ex> rows) throws IOException, Ex {
+    return rows((rows == null) ? null : rows.get());
+  }
 }

@@ -44,62 +44,62 @@ import java.util.function.Function;
  */
 @Deprecated
 public interface Align<
-	E extends Element<?, ?, E> & Align<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Align<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
-	 *
-	 * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E align(String align) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "align", MarkupType.NONE, align, true, true);
-	}
+  /**
+   * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
+   *
+   * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E align(String align) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "align", MarkupType.NONE, align, true, true);
+  }
 
-	/**
-	 * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #align(java.lang.String)
-	 *
-	 * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E align(Suppliers.String<Ex> align) throws IOException, Ex {
-		return align((align == null) ? null : align.get());
-	}
+  /**
+   * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #align(java.lang.String)
+   *
+   * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E align(Suppliers.String<Ex> align) throws IOException, Ex {
+    return align((align == null) ? null : align.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
-	 *
-	 * @see #align(java.lang.String)
-	 *
-	 * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	default E align(V align) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return align((align == null) ? null : align.apply(element.getDocument()));
-	}
+  /**
+   * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
+   *
+   * @see #align(java.lang.String)
+   *
+   * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  default E align(V align) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return align((align == null) ? null : align.apply(element.getDocument()));
+  }
 
-	/**
-	 * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #align(java.lang.Enum)
-	 *
-	 * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E align(IOSupplierE<? extends V, Ex> align) throws IOException, Ex {
-		return align((align == null) ? null : align.get());
-	}
+  /**
+   * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #align(java.lang.Enum)
+   *
+   * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E align(IOSupplierE<? extends V, Ex> align) throws IOException, Ex {
+    return align((align == null) ? null : align.get());
+  }
 }

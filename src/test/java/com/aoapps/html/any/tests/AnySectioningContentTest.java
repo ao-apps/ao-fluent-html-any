@@ -38,73 +38,73 @@ import org.junit.Test;
 @SuppressWarnings("rawtypes")
 public class AnySectioningContentTest {
 
-	private final Class<? extends AnySectioningContent> testingClass;
+  private final Class<? extends AnySectioningContent> testingClass;
 
-	protected AnySectioningContentTest(Class<? extends AnySectioningContent> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnySectioningContentTest(Class<? extends AnySectioningContent> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnySectioningContentTest() {
-		this(AnySectioningContent.class);
-	}
+  public AnySectioningContentTest() {
+    this(AnySectioningContent.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnySectioningContent.class
-			//
-			// Unions:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnySectioningContent.class
+      //
+      // Unions:
+      //
+      // None
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnySectioningContent.class,
-			//
-			// Content models:
-			//
-			Content.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnySectioningContent.class,
+      //
+      // Content models:
+      //
+      Content.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnySectioningContent.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnySectioningContent.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"article",
-			"aside",
-			"nav",
-			"section"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "article",
+      "aside",
+      "nav",
+      "section"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals(
-			"Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-			-1,
-			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnySectioningContent.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnySectioningContent.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals(
+      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+      -1,
+      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnySectioningContent.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnySectioningContent.class);
+  }
 }

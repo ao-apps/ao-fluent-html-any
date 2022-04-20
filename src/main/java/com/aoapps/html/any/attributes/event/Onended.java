@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onended<E extends Element<?, ?, E> & Onended<E>> extends OnendedUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onended">3.2.6 Global attributes / onended</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onended">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onended</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onended">8.1.7.2.1 IDL definitions / onended</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onended">GlobalEventHandlers.onended</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onended.asp">onended Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onended(Object onended) throws IOException {
-		return OnendedUnexpected.super.onended(onended);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onended">3.2.6 Global attributes / onended</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onended">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onended</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onended">8.1.7.2.1 IDL definitions / onended</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onended">GlobalEventHandlers.onended</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onended.asp">onended Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onended(Object onended) throws IOException {
+    return OnendedUnexpected.super.onended(onended);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onended">3.2.6 Global attributes / onended</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onended">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onended</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onended">8.1.7.2.1 IDL definitions / onended</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onended">GlobalEventHandlers.onended</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onended.asp">onended Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onended(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onended(IOSupplierE<?, Ex> onended) throws IOException, Ex {
-		return OnendedUnexpected.super.onended(onended);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onended">3.2.6 Global attributes / onended</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onended">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onended</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onended">8.1.7.2.1 IDL definitions / onended</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onended">GlobalEventHandlers.onended</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onended.asp">onended Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onended(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onended(IOSupplierE<?, Ex> onended) throws IOException, Ex {
+    return OnendedUnexpected.super.onended(onended);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onended">3.2.6 Global attributes / onended</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onended">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onended</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onended">8.1.7.2.1 IDL definitions / onended</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onended">GlobalEventHandlers.onended</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onended.asp">onended Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onended(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onended(JavaScriptWritable<Ex> onended) throws IOException, Ex {
-		return OnendedUnexpected.super.onended(onended);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onended">3.2.6 Global attributes / onended</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onended">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onended</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onended">8.1.7.2.1 IDL definitions / onended</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onended">GlobalEventHandlers.onended</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onended.asp">onended Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onended(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onended(JavaScriptWritable<Ex> onended) throws IOException, Ex {
+    return OnendedUnexpected.super.onended(onended);
+  }
 }

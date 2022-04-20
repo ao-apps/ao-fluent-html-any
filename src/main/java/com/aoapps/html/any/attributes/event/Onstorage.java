@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onstorage(Object onstorage) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onstorage");
-		return Attributes.Event.attribute(element, "onstorage", onstorage);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onstorage(Object onstorage) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onstorage");
+    return Attributes.Event.attribute(element, "onstorage", onstorage);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onstorage(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onstorage(IOSupplierE<?, Ex> onstorage) throws IOException, Ex {
-		return onstorage((onstorage == null) ? null : onstorage.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onstorage(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onstorage(IOSupplierE<?, Ex> onstorage) throws IOException, Ex {
+    return onstorage((onstorage == null) ? null : onstorage.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onstorage(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onstorage(JavaScriptWritable<Ex> onstorage) throws IOException, Ex {
-		return onstorage((Object)onstorage);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onstorage(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onstorage(JavaScriptWritable<Ex> onstorage) throws IOException, Ex {
+    return onstorage((Object)onstorage);
+  }
 }

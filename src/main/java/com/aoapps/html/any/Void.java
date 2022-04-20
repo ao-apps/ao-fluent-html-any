@@ -37,49 +37,49 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class Void<
-	D  extends AnyDocument<D>,
-	PC extends Content<D, PC>,
-	E  extends Void<D, PC, E>
+  D  extends AnyDocument<D>,
+  PC extends Content<D, PC>,
+  E  extends Void<D, PC, E>
 > extends Element<D, PC, E> {
 
-	protected Void(D document, PC pc) {
-		super(document, pc);
-	}
+  protected Void(D document, PC pc) {
+    super(document, pc);
+  }
 
-	/**
-	 * Closes this element.
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	@SuppressWarnings("deprecation")
-	public PC __() throws IOException {
-		Writer unsafe = document.getRawUnsafe(null);
-		Serialization serialization = document.encodingContext.getSerialization();
-		if(document.getAtnl()) {
-			document.autoIndent(unsafe);
-			if(serialization == Serialization.SGML) {
-				unsafe.append('>');
-			} else {
-				assert serialization == Serialization.XML;
-				unsafe.write("/>");
-			}
-			document.clearAtnl();
-		} else {
-			serialization.selfClose(unsafe);
-		}
-		assert !document.getAtnl();
-		doAfterElement(unsafe);
-		return pc;
-	}
+  /**
+   * Closes this element.
+   *
+   * @return  The parent content model this element is within
+   */
+  @SuppressWarnings("deprecation")
+  public PC __() throws IOException {
+    Writer unsafe = document.getRawUnsafe(null);
+    Serialization serialization = document.encodingContext.getSerialization();
+    if (document.getAtnl()) {
+      document.autoIndent(unsafe);
+      if (serialization == Serialization.SGML) {
+        unsafe.append('>');
+      } else {
+        assert serialization == Serialization.XML;
+        unsafe.write("/>");
+      }
+      document.clearAtnl();
+    } else {
+      serialization.selfClose(unsafe);
+    }
+    assert !document.getAtnl();
+    doAfterElement(unsafe);
+    return pc;
+  }
 
-	/**
-	 * Called after the element is closed.
-	 * <p>
-	 * An common use is expected to be invoking {@link AnyDocument#autoNl(java.io.Writer)}.
-	 * </p>
-	 */
-	@SuppressWarnings("NoopMethodInAbstractClass")
-	protected void doAfterElement(Writer unsafe) throws IOException {
-		// Do nothing
-	}
+  /**
+   * Called after the element is closed.
+   * <p>
+   * An common use is expected to be invoking {@link AnyDocument#autoNl(java.io.Writer)}.
+   * </p>
+   */
+  @SuppressWarnings("NoopMethodInAbstractClass")
+  protected void doAfterElement(Writer unsafe) throws IOException {
+    // Do nothing
+  }
 }

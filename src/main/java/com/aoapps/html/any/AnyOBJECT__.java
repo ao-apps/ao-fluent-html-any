@@ -48,26 +48,26 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOBJECT__<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Embedded_Interactive<D, PC>,
-	__ extends AnyOBJECT__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Embedded_Interactive<D, PC>,
+  __ extends AnyOBJECT__<D, PC, __>
 >
-	extends Normal__<D, PC, __>
-	implements AnyOBJECT_content<D, __> {
+  extends Normal__<D, PC, __>
+  implements AnyOBJECT_content<D, __> {
 
-	protected AnyOBJECT__(AnyOBJECT<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyOBJECT__(AnyOBJECT<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 
-	/**
-	 * Gets the parent content model, which may also be used for creating child elements.
-	 * <p><em>
-	 * This is the full, context-aware content model, which will likely include more elements.
-	 * </em></p>
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	public PC pc() {
-		return element.pc;
-	}
+  /**
+   * Gets the parent content model, which may also be used for creating child elements.
+   * <p><em>
+   * This is the full, context-aware content model, which will likely include more elements.
+   * </em></p>
+   *
+   * @return  The parent content model this element is within
+   */
+  public PC pc() {
+    return element.pc;
+  }
 }

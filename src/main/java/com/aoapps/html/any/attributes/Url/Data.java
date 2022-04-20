@@ -37,23 +37,23 @@ import java.io.IOException;
  */
 public interface Data<E extends Element<?, ?, E> & Data<E>> {
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-data">4.8.7 The object element / data</a>.
-	 */
-	@Attributes.Funnel
-	default E data(String data) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Url.attribute(element, "data", data);
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-data">4.8.7 The object element / data</a>.
+   */
+  @Attributes.Funnel
+  default E data(String data) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Url.attribute(element, "data", data);
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-data">4.8.7 The object element / data</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #data(java.lang.String)
-	 */
-	default <Ex extends Throwable> E data(IOSupplierE<? extends String, Ex> data) throws IOException, Ex {
-		return data((data == null) ? null : data.get());
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-data">4.8.7 The object element / data</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #data(java.lang.String)
+   */
+  default <Ex extends Throwable> E data(IOSupplierE<? extends String, Ex> data) throws IOException, Ex {
+    return data((data == null) ? null : data.get());
+  }
 }

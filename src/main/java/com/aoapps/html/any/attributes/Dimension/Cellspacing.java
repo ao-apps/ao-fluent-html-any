@@ -41,67 +41,67 @@ import java.io.IOException;
 @Deprecated
 public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
-	 *
-	 * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E cellspacing(int pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Dimension.attribute(element, "cellspacing", pixels);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
+   *
+   * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E cellspacing(int pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Dimension.attribute(element, "cellspacing", pixels);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
-	 *
-	 * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E cellspacing(Integer pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Dimension.attribute(element, "cellspacing", pixels);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
+   *
+   * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E cellspacing(Integer pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Dimension.attribute(element, "cellspacing", pixels);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E cellspacing(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
-		return cellspacing((pixels == null) ? null : pixels.get());
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E cellspacing(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+    return cellspacing((pixels == null) ? null : pixels.get());
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
-	 *
-	 * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E cellspacing(String pixelsOrPercent) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Dimension.attribute(element, "cellspacing", pixelsOrPercent);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
+   *
+   * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E cellspacing(String pixelsOrPercent) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Dimension.attribute(element, "cellspacing", pixelsOrPercent);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #cellspacing(java.lang.String)
-	 *
-	 * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E cellspacing(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {
-		return cellspacing((pixelsOrPercent == null) ? null : pixelsOrPercent.get());
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #cellspacing(java.lang.String)
+   *
+   * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E cellspacing(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {
+    return cellspacing((pixelsOrPercent == null) ? null : pixelsOrPercent.get());
+  }
 }

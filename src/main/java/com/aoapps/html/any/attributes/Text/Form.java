@@ -45,50 +45,50 @@ import java.io.IOException;
  */
 public interface Form<E extends Element<?, ?, E> & Form<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E form(Object form) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "form");
-		return Attributes.Text.attribute(element, "form", MarkupType.NONE, form, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E form(Object form) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "form");
+    return Attributes.Text.attribute(element, "form", MarkupType.NONE, form, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #form(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E form(IOSupplierE<?, Ex> form) throws IOException, Ex {
-		return form((form == null) ? null : form.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #form(java.lang.Object)
+   */
+  default <Ex extends Throwable> E form(IOSupplierE<?, Ex> form) throws IOException, Ex {
+    return form((form == null) ? null : form.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #form(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E form(TextWritable<Ex> form) throws IOException, Ex {
-		return form((Object)form);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #form(java.lang.Object)
+   */
+  default <Ex extends Throwable> E form(TextWritable<Ex> form) throws IOException, Ex {
+    return form((Object)form);
+  }
 }

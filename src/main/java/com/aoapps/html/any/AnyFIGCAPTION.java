@@ -35,6 +35,6 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyFIGCAPTION {
-	// TODO: __ extends AnyFigcaptionContent<D, __> (where AnyFigcaptionContent extends AnyFlowContent + AnyFigcaption)
-	// TODO
+  // TODO: __ extends AnyFigcaptionContent<D, __> (where AnyFigcaptionContent extends AnyFlowContent + AnyFigcaption)
+  // TODO
 }

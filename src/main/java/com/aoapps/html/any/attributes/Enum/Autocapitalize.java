@@ -52,139 +52,139 @@ import java.util.function.Function;
 @SuppressWarnings("deprecation")
 public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> extends AutocapitalizeUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E autocapitalize(String autocapitalize) throws IOException {
-		return AutocapitalizeUnexpected.super.autocapitalize(autocapitalize);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E autocapitalize(String autocapitalize) throws IOException {
+    return AutocapitalizeUnexpected.super.autocapitalize(autocapitalize);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #autocapitalize(java.lang.String)
-	 */
-	@Override
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E autocapitalize(Suppliers.String<Ex> autocapitalize) throws IOException, Ex {
-		return AutocapitalizeUnexpected.super.autocapitalize(autocapitalize);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #autocapitalize(java.lang.String)
+   */
+  @Override
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E autocapitalize(Suppliers.String<Ex> autocapitalize) throws IOException, Ex {
+    return AutocapitalizeUnexpected.super.autocapitalize(autocapitalize);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #autocapitalize(java.lang.String)
-	 */
-	@Override
-	default E autocapitalize(Value autocapitalize) throws IOException {
-		return AutocapitalizeUnexpected.super.autocapitalize(autocapitalize);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @see #autocapitalize(java.lang.String)
+   */
+  @Override
+  default E autocapitalize(Value autocapitalize) throws IOException {
+    return AutocapitalizeUnexpected.super.autocapitalize(autocapitalize);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #autocapitalize(com.aoapps.html.any.attributes.Enum.Autocapitalize.Value)
-	 */
-	@Override
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E autocapitalize(IOSupplierE<? extends Value, Ex> autocapitalize) throws IOException, Ex {
-		return AutocapitalizeUnexpected.super.autocapitalize(autocapitalize);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #autocapitalize(com.aoapps.html.any.attributes.Enum.Autocapitalize.Value)
+   */
+  @Override
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E autocapitalize(IOSupplierE<? extends Value, Ex> autocapitalize) throws IOException, Ex {
+    return AutocapitalizeUnexpected.super.autocapitalize(autocapitalize);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	public enum Value implements Function<AnyDocument<?>, String> {
-		/**
-		 * No autocapitalization is applied (all letters default to lowercase)
-		 *
-		 * @deprecated  Please use {@link #NONE} as it is more descriptive
-		 */
-		@Deprecated
-		OFF("off"),
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public enum Value implements Function<AnyDocument<?>, String> {
+    /**
+     * No autocapitalization is applied (all letters default to lowercase)
+     *
+     * @deprecated  Please use {@link #NONE} as it is more descriptive
+     */
+    @Deprecated
+    OFF("off"),
 
-		/**
-		 * No autocapitalization is applied (all letters default to lowercase)
-		 */
-		NONE("none"),
+    /**
+     * No autocapitalization is applied (all letters default to lowercase)
+     */
+    NONE("none"),
 
-		/**
-		 * The first letter of each sentence defaults to a capital letter; all other letters default to lowercase
-		 *
-		 * @deprecated  Please use {@link #SENTENCES} as it is more descriptive
-		 */
-		@Deprecated
-		ON("on"),
+    /**
+     * The first letter of each sentence defaults to a capital letter; all other letters default to lowercase
+     *
+     * @deprecated  Please use {@link #SENTENCES} as it is more descriptive
+     */
+    @Deprecated
+    ON("on"),
 
-		/**
-		 * The first letter of each sentence defaults to a capital letter; all other letters default to lowercase
-		 */
-		SENTENCES("sentences"),
+    /**
+     * The first letter of each sentence defaults to a capital letter; all other letters default to lowercase
+     */
+    SENTENCES("sentences"),
 
-		/**
-		 * The first letter of each word defaults to a capital letter; all other letters default to lowercase
-		 */
-		WORDS("words"),
+    /**
+     * The first letter of each word defaults to a capital letter; all other letters default to lowercase
+     */
+    WORDS("words"),
 
-		/**
-		 * All letters should default to uppercase
-		 */
-		CHARACTERS("characters");
+    /**
+     * All letters should default to uppercase
+     */
+    CHARACTERS("characters");
 
-		private final String value;
+    private final String value;
 
-		private Value(String value) {
-			this.value = value;
-		}
+    private Value(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
 
-		public String getValue() {
-			return value;
-		}
-	}
+    public String getValue() {
+      return value;
+    }
+  }
 }

@@ -37,32 +37,32 @@ import java.io.IOException;
  */
 public interface Span<E extends Element<?, ?, E> & Span<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_span.asp">HTML span Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E span(int span) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "span", span);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_span.asp">HTML span Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E span(int span) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "span", span);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_span.asp">HTML span Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E span(Integer span) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "span", span);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_span.asp">HTML span Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E span(Integer span) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "span", span);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_span.asp">HTML span Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #span(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E span(IOSupplierE<? extends Integer, Ex> span) throws IOException, Ex {
-		return span((span == null) ? null : span.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_span.asp">HTML span Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #span(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E span(IOSupplierE<? extends Integer, Ex> span) throws IOException, Ex {
+    return span((span == null) ? null : span.get());
+  }
 }

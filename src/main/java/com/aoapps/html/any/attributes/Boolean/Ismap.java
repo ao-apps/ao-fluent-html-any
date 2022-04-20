@@ -37,32 +37,32 @@ import java.io.IOException;
  */
 public interface Ismap<E extends Element<?, ?, E> & Ismap<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_ismap.asp">HTML ismap Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E ismap(boolean ismap) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Boolean.attribute(element, "ismap", ismap);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_ismap.asp">HTML ismap Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E ismap(boolean ismap) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Boolean.attribute(element, "ismap", ismap);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_ismap.asp">HTML ismap Attribute</a>.
-	 *
-	 * @see #ismap(boolean)
-	 */
-	default E ismap(Boolean ismap) throws IOException {
-		return ismap(ismap != null && ismap);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_ismap.asp">HTML ismap Attribute</a>.
+   *
+   * @see #ismap(boolean)
+   */
+  default E ismap(Boolean ismap) throws IOException {
+    return ismap(ismap != null && ismap);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_ismap.asp">HTML ismap Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #ismap(java.lang.Boolean)
-	 */
-	default <Ex extends Throwable> E ismap(IOSupplierE<? extends Boolean, Ex> ismap) throws IOException, Ex {
-		return ismap((ismap == null) ? null : ismap.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_ismap.asp">HTML ismap Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #ismap(java.lang.Boolean)
+   */
+  default <Ex extends Throwable> E ismap(IOSupplierE<? extends Boolean, Ex> ismap) throws IOException, Ex {
+    return ismap((ismap == null) ? null : ismap.get());
+  }
 }

@@ -48,81 +48,81 @@ import java.io.IOException;
 // Matches Style
 public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> extends Style<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">HTMLElement.style</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_style.asp">HTML style Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the style attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 */
-	@Override
-	@Attributes.Funnel
-	default E style(Object style) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style");
-		return Style.super.style(style);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">HTMLElement.style</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_style.asp">HTML style Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the style attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   */
+  @Override
+  @Attributes.Funnel
+  default E style(Object style) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style");
+    return Style.super.style(style);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">HTMLElement.style</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_style.asp">HTML style Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the style attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 */
-	@Override
-	@Attributes.Funnel
-	default E style(Object ... style) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style");
-		return Style.super.style(style);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">HTMLElement.style</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_style.asp">HTML style Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the style attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   */
+  @Override
+  @Attributes.Funnel
+  default E style(Object ... style) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style");
+    return Style.super.style(style);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">HTMLElement.style</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_style.asp">HTML style Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the style attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #style(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E style(IOSupplierE<?, Ex> style) throws IOException, Ex {
-		return Style.super.style(style);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">HTMLElement.style</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_style.asp">HTML style Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the style attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #style(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E style(IOSupplierE<?, Ex> style) throws IOException, Ex {
+    return Style.super.style(style);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">HTMLElement.style</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_style.asp">HTML style Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the style attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #style(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E style(StyleWritable<Ex> style) throws IOException, Ex {
-		return Style.super.style(style);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">HTMLElement.style</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_style.asp">HTML style Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the style attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #style(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E style(StyleWritable<Ex> style) throws IOException, Ex {
+    return Style.super.style(style);
+  }
 }

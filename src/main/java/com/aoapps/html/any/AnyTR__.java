@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyTR__<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_TBODY_THEAD_TFOOT<D, PC>,
-	__ extends AnyTR__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_TBODY_THEAD_TFOOT<D, PC>,
+  __ extends AnyTR__<D, PC, __>
 >
-	extends Normal__<D, PC, __>
-	implements AnyTR_content<D, __> {
+  extends Normal__<D, PC, __>
+  implements AnyTR_content<D, __> {
 
-	protected AnyTR__(AnyTR<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyTR__(AnyTR<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

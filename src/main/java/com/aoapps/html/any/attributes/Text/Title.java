@@ -49,58 +49,58 @@ import java.io.IOException;
 // Matches TitleNoHtml4
 public interface Title<E extends Element<?, ?, E> & Title<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the title attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 */
-	@Attributes.Funnel
-	default E title(Object title) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "title", MarkupType.TEXT, title, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the title attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   */
+  @Attributes.Funnel
+  default E title(Object title) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "title", MarkupType.TEXT, title, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the title attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #title(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
-		return title((title == null) ? null : title.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the title attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #title(java.lang.Object)
+   */
+  default <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
+    return title((title == null) ? null : title.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the title attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #title(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
-		return title((Object)title);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the title attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #title(java.lang.Object)
+   */
+  default <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
+    return title((Object)title);
+  }
 }

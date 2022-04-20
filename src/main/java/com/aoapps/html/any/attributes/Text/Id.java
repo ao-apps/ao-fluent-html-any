@@ -48,56 +48,56 @@ import java.io.IOException;
 // Matches IdNoHtml4
 public interface Id<E extends Element<?, ?, E> & Id<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the id attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 */
-	@Attributes.Funnel
-	default E id(Object id) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		// TODO: Validate, with doctype-aware character constraints.  XmlUtils can help, or build into Doctype itself.
-		return Attributes.Text.attribute(element, "id", MarkupType.NONE, id, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the id attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   */
+  @Attributes.Funnel
+  default E id(Object id) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    // TODO: Validate, with doctype-aware character constraints.  XmlUtils can help, or build into Doctype itself.
+    return Attributes.Text.attribute(element, "id", MarkupType.NONE, id, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the id attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #id(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E id(IOSupplierE<?, Ex> id) throws IOException, Ex {
-		return id((id == null) ? null : id.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the id attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #id(java.lang.Object)
+   */
+  default <Ex extends Throwable> E id(IOSupplierE<?, Ex> id) throws IOException, Ex {
+    return id((id == null) ? null : id.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the id attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #id(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E id(TextWritable<Ex> id) throws IOException, Ex {
-		return id((Object)id);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the id attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #id(java.lang.Object)
+   */
+  default <Ex extends Throwable> E id(TextWritable<Ex> id) throws IOException, Ex {
+    return id((Object)id);
+  }
 }

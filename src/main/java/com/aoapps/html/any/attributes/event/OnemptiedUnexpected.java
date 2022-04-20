@@ -52,68 +52,68 @@ import java.io.IOException;
 @Deprecated
 public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onemptied">3.2.6 Global attributes / onemptied</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onemptied">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onemptied</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onemptied">8.1.7.2.1 IDL definitions / onemptied</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onemptied">GlobalEventHandlers.onemptied</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onemptied attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onemptied(Object onemptied) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onemptied");
-		return Attributes.Event.attribute(element, "onemptied", onemptied);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onemptied">3.2.6 Global attributes / onemptied</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onemptied">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onemptied</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onemptied">8.1.7.2.1 IDL definitions / onemptied</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onemptied">GlobalEventHandlers.onemptied</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onemptied attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onemptied(Object onemptied) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onemptied");
+    return Attributes.Event.attribute(element, "onemptied", onemptied);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onemptied">3.2.6 Global attributes / onemptied</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onemptied">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onemptied</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onemptied">8.1.7.2.1 IDL definitions / onemptied</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onemptied">GlobalEventHandlers.onemptied</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onemptied(java.lang.Object)
-	 *
-	 * @deprecated  Although the onemptied attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onemptied(IOSupplierE<?, Ex> onemptied) throws IOException, Ex {
-		return onemptied((onemptied == null) ? null : onemptied.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onemptied">3.2.6 Global attributes / onemptied</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onemptied">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onemptied</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onemptied">8.1.7.2.1 IDL definitions / onemptied</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onemptied">GlobalEventHandlers.onemptied</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onemptied(java.lang.Object)
+   *
+   * @deprecated  Although the onemptied attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onemptied(IOSupplierE<?, Ex> onemptied) throws IOException, Ex {
+    return onemptied((onemptied == null) ? null : onemptied.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onemptied">3.2.6 Global attributes / onemptied</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onemptied">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onemptied</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onemptied">8.1.7.2.1 IDL definitions / onemptied</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onemptied">GlobalEventHandlers.onemptied</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onemptied(java.lang.Object)
-	 *
-	 * @deprecated  Although the onemptied attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onemptied(JavaScriptWritable<Ex> onemptied) throws IOException, Ex {
-		return onemptied((Object)onemptied);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onemptied">3.2.6 Global attributes / onemptied</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onemptied">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onemptied</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onemptied">8.1.7.2.1 IDL definitions / onemptied</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onemptied">GlobalEventHandlers.onemptied</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onemptied(java.lang.Object)
+   *
+   * @deprecated  Although the onemptied attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onemptied(JavaScriptWritable<Ex> onemptied) throws IOException, Ex {
+    return onemptied((Object)onemptied);
+  }
 }

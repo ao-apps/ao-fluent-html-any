@@ -65,80 +65,80 @@ import java.io.IOException;
 @Deprecated
 public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onerror">3.2.6 Global attributes / onerror</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onerror</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onerror">8.1.7.2.1 IDL definitions / onerror</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror">GlobalEventHandlers.onerror</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onerror.asp">onerror Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onerror attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
-	 *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
-	 *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onerror(Object onerror) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onerror");
-		return Attributes.Event.attribute(element, "onerror", onerror);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onerror">3.2.6 Global attributes / onerror</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onerror</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onerror">8.1.7.2.1 IDL definitions / onerror</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror">GlobalEventHandlers.onerror</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onerror.asp">onerror Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onerror attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
+   *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
+   *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onerror(Object onerror) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onerror");
+    return Attributes.Event.attribute(element, "onerror", onerror);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onerror">3.2.6 Global attributes / onerror</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onerror</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onerror">8.1.7.2.1 IDL definitions / onerror</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror">GlobalEventHandlers.onerror</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onerror.asp">onerror Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onerror(java.lang.Object)
-	 *
-	 * @deprecated  Although the onerror attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
-	 *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
-	 *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onerror(IOSupplierE<?, Ex> onerror) throws IOException, Ex {
-		return onerror((onerror == null) ? null : onerror.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onerror">3.2.6 Global attributes / onerror</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onerror</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onerror">8.1.7.2.1 IDL definitions / onerror</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror">GlobalEventHandlers.onerror</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onerror.asp">onerror Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onerror(java.lang.Object)
+   *
+   * @deprecated  Although the onerror attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
+   *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
+   *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onerror(IOSupplierE<?, Ex> onerror) throws IOException, Ex {
+    return onerror((onerror == null) ? null : onerror.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onerror">3.2.6 Global attributes / onerror</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onerror</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onerror">8.1.7.2.1 IDL definitions / onerror</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror">GlobalEventHandlers.onerror</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onerror.asp">onerror Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onerror(java.lang.Object)
-	 *
-	 * @deprecated  Although the onerror attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
-	 *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
-	 *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onerror(JavaScriptWritable<Ex> onerror) throws IOException, Ex {
-		return onerror((Object)onerror);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onerror">3.2.6 Global attributes / onerror</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onerror">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onerror</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onerror">8.1.7.2.1 IDL definitions / onerror</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onerror">GlobalEventHandlers.onerror</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onerror.asp">onerror Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onerror(java.lang.Object)
+   *
+   * @deprecated  Although the onerror attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
+   *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
+   *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onerror(JavaScriptWritable<Ex> onerror) throws IOException, Ex {
+    return onerror((Object)onerror);
+  }
 }

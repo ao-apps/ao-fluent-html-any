@@ -21,10 +21,10 @@
  * along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.aoapps.html.any.devel {
-	exports com.aoapps.html.any.i18n;
-	// Direct
-	requires com.aoapps.hodgepodge; // <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId>
-	requires static jsr305; // <groupId>com.google.code.findbugs</groupId><artifactId>jsr305</artifactId>
-	// Java SE
-	requires java.logging;
+  exports com.aoapps.html.any.i18n;
+  // Direct
+  requires com.aoapps.hodgepodge; // <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId>
+  requires static jsr305; // <groupId>com.google.code.findbugs</groupId><artifactId>jsr305</artifactId>
+  // Java SE
+  requires java.logging;
 }

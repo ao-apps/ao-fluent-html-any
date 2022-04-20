@@ -43,119 +43,127 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyTEXTAREA<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-	E  extends AnyTEXTAREA<D, PC, E, __, _c>,
-	__ extends AnyTEXTAREA__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyTEXTAREA_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+  E  extends AnyTEXTAREA<D, PC, E, __, _c>,
+  __ extends AnyTEXTAREA__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyTEXTAREA_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-	com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyTEXTAREA.Autocomplete>,
-	com.aoapps.html.any.attributes.Integer.Cols<E>,
-	com.aoapps.html.any.attributes.Text.Dirname<E>,
-	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-	com.aoapps.html.any.attributes.Text.Form<E>,
-	com.aoapps.html.any.attributes.Integer.Maxlength<E>,
-	com.aoapps.html.any.attributes.Integer.Minlength<E>,
-	com.aoapps.html.any.attributes.Text.Name<E>,
-	com.aoapps.html.any.attributes.Text.Placeholder<E>,
-	com.aoapps.html.any.attributes.Boolean.Readonly<E>,
-	com.aoapps.html.any.attributes.Boolean.Required<E>,
-	com.aoapps.html.any.attributes.Integer.Rows<E>,
-	com.aoapps.html.any.attributes.Enum.Wrap<E, com.aoapps.html.any.attributes.Enum.Wrap.Value>,
-	// Global Attributes overrides
-	com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
-	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
-	// Global Event Attributes overrides
-	com.aoapps.html.any.attributes.event.Onchange<E>,
-	com.aoapps.html.any.attributes.event.Oninput<E>,
-	com.aoapps.html.any.attributes.event.Onselect<E>
+  com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyTEXTAREA.Autocomplete>,
+  com.aoapps.html.any.attributes.Integer.Cols<E>,
+  com.aoapps.html.any.attributes.Text.Dirname<E>,
+  com.aoapps.html.any.attributes.Boolean.Disabled<E>,
+  com.aoapps.html.any.attributes.Text.Form<E>,
+  com.aoapps.html.any.attributes.Integer.Maxlength<E>,
+  com.aoapps.html.any.attributes.Integer.Minlength<E>,
+  com.aoapps.html.any.attributes.Text.Name<E>,
+  com.aoapps.html.any.attributes.Text.Placeholder<E>,
+  com.aoapps.html.any.attributes.Boolean.Readonly<E>,
+  com.aoapps.html.any.attributes.Boolean.Required<E>,
+  com.aoapps.html.any.attributes.Integer.Rows<E>,
+  com.aoapps.html.any.attributes.Enum.Wrap<E, com.aoapps.html.any.attributes.Enum.Wrap.Value>,
+  // Global Attributes overrides
+  com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
+  com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
+  // Global Event Attributes overrides
+  com.aoapps.html.any.attributes.event.Onchange<E>,
+  com.aoapps.html.any.attributes.event.Oninput<E>,
+  com.aoapps.html.any.attributes.event.Onselect<E>
 {
 
-	private boolean oldAutonli;
-	private boolean oldIndent;
-	private int oldDepth;
+  private boolean oldAutonli;
+  private boolean oldIndent;
+  private int oldDepth;
 
-	protected AnyTEXTAREA(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyTEXTAREA(D document, PC pc) {
+    super(document, pc);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-autocomplete">&lt;textarea&gt;: The Textarea element / autocomplete</a>.
-	 *
-	 * @since HTML 5
-	 *
-	 * @see AnyINPUT.Autocomplete
-	 */
-	public enum Autocomplete implements Function<AnyDocument<?>, String> {
-		OFF(AnyINPUT.Autocomplete.OFF),
-		ON(AnyINPUT.Autocomplete.ON);
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea#attr-autocomplete">&lt;textarea&gt;: The Textarea element / autocomplete</a>.
+   *
+   * @since HTML 5
+   *
+   * @see AnyINPUT.Autocomplete
+   */
+  public enum Autocomplete implements Function<AnyDocument<?>, String> {
+    OFF(AnyINPUT.Autocomplete.OFF),
+    ON(AnyINPUT.Autocomplete.ON);
 
-		private final AnyINPUT.Autocomplete value;
+    private final AnyINPUT.Autocomplete value;
 
-		private Autocomplete(AnyINPUT.Autocomplete value) {
-			this.value = value;
-		}
+    private Autocomplete(AnyINPUT.Autocomplete value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value.toString();
-		}
+    @Override
+    public String toString() {
+      return value.toString();
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value.apply(document);
-		}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value.apply(document);
+    }
 
-		public AnyINPUT.Autocomplete getValue() {
-			return value;
-		}
+    public AnyINPUT.Autocomplete getValue() {
+      return value;
+    }
 
-		static {
-			for(Autocomplete value : values()) {
-				if(!value.name().equals(value.value.name())) throw new AssertionError("Enum name mismatch");
-			}
-		}
-	}
+    static {
+      for (Autocomplete value : values()) {
+        if (!value.name().equals(value.value.name())) {
+          throw new AssertionError("Enum name mismatch");
+        }
+      }
+    }
+  }
 
-	/**
-	 * Does not have indented content.
-	 *
-	 * @return {@code false} - does not indent
-	 */
-	@Override
-	protected boolean isContentIndented() {
-		return false;
-	}
+  /**
+   * Does not have indented content.
+   *
+   * @return {@code false} - does not indent
+   */
+  @Override
+  protected boolean isContentIndented() {
+    return false;
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<textarea", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<textarea", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		oldAutonli = document.getAutonli();
-		if(oldAutonli) document.setAutonli(false);
-		oldIndent = document.getIndent();
-		if(oldIndent) document.setIndent(false);
-		oldDepth = document.getDepth();
-		if(oldDepth != 0) document.setDepth(0);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    oldAutonli = document.getAutonli();
+    if (oldAutonli) {
+      document.setAutonli(false);
+    }
+    oldIndent = document.getIndent();
+    if (oldIndent) {
+      document.setIndent(false);
+    }
+    oldDepth = document.getDepth();
+    if (oldDepth != 0) {
+      document.setDepth(0);
+    }
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document
-			.setDepth(oldDepth)
-			.setIndent(oldIndent)
-			.setAutonli(oldAutonli);
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></textarea>", false);
-		} else {
-			document.unsafe(unsafe, "</textarea>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document
+      .setDepth(oldDepth)
+      .setIndent(oldIndent)
+      .setAutonli(oldAutonli);
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></textarea>", false);
+    } else {
+      document.unsafe(unsafe, "</textarea>", false);
+    }
+    document.autoNl(unsafe);
+  }
 }

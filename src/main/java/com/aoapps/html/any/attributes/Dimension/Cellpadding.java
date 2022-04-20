@@ -41,67 +41,67 @@ import java.io.IOException;
 @Deprecated
 public interface Cellpadding<E extends Element<?, ?, E> & Cellpadding<E>> {
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
-	 *
-	 * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E cellpadding(int pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Dimension.attribute(element, "cellpadding", pixels);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
+   *
+   * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E cellpadding(int pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Dimension.attribute(element, "cellpadding", pixels);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
-	 *
-	 * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E cellpadding(Integer pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Dimension.attribute(element, "cellpadding", pixels);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
+   *
+   * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E cellpadding(Integer pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Dimension.attribute(element, "cellpadding", pixels);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E cellpadding(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
-		return cellpadding((pixels == null) ? null : pixels.get());
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E cellpadding(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+    return cellpadding((pixels == null) ? null : pixels.get());
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
-	 *
-	 * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E cellpadding(String pixelsOrPercent) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Dimension.attribute(element, "cellpadding", pixelsOrPercent);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
+   *
+   * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E cellpadding(String pixelsOrPercent) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Dimension.attribute(element, "cellpadding", pixelsOrPercent);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #cellpadding(java.lang.String)
-	 *
-	 * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E cellpadding(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {
-		return cellpadding((pixelsOrPercent == null) ? null : pixelsOrPercent.get());
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #cellpadding(java.lang.String)
+   *
+   * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E cellpadding(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {
+    return cellpadding((pixelsOrPercent == null) ? null : pixelsOrPercent.get());
+  }
 }

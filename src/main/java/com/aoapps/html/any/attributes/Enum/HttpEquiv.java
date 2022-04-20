@@ -45,64 +45,64 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface HttpEquiv<
-	E extends Element<?, ?, E> & HttpEquiv<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & HttpEquiv<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E httpEquiv(String httpEquiv) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "http-equiv", MarkupType.NONE, httpEquiv, true, false);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E httpEquiv(String httpEquiv) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "http-equiv", MarkupType.NONE, httpEquiv, true, false);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E httpEquiv(Suppliers.String<Ex> httpEquiv) throws IOException, Ex {
-		return httpEquiv((httpEquiv == null) ? null : httpEquiv.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E httpEquiv(Suppliers.String<Ex> httpEquiv) throws IOException, Ex {
+    return httpEquiv((httpEquiv == null) ? null : httpEquiv.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
-	 * </ul>
-	 *
-	 * @see #httpEquiv(java.lang.String)
-	 */
-	default E httpEquiv(V httpEquiv) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return httpEquiv((httpEquiv == null) ? null : httpEquiv.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
+   * </ul>
+   *
+   * @see #httpEquiv(java.lang.String)
+   */
+  default E httpEquiv(V httpEquiv) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return httpEquiv((httpEquiv == null) ? null : httpEquiv.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #httpEquiv(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E httpEquiv(IOSupplierE<? extends V, Ex> httpEquiv) throws IOException, Ex {
-		return httpEquiv((httpEquiv== null) ? null : httpEquiv.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #httpEquiv(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E httpEquiv(IOSupplierE<? extends V, Ex> httpEquiv) throws IOException, Ex {
+    return httpEquiv((httpEquiv == null) ? null : httpEquiv.get());
+  }
 }

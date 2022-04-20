@@ -45,96 +45,96 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Target<
-	E extends Element<?, ?, E> & Target<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Target<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-target">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_target.asp">HTML target Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E target(String target) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "target", MarkupType.NONE, target, true, true);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-target">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_target.asp">HTML target Attribute</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E target(String target) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "target", MarkupType.NONE, target, true, true);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-target">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_target.asp">HTML target Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #target(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E target(Suppliers.String<Ex> target) throws IOException, Ex {
-		return target((target == null) ? null : target.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-target">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_target.asp">HTML target Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #target(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E target(Suppliers.String<Ex> target) throws IOException, Ex {
+    return target((target == null) ? null : target.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-target">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_target.asp">HTML target Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @see #target(java.lang.String)
-	 */
-	default E target(V target) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return target((target == null) ? null : target.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-target">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_target.asp">HTML target Attribute</a>.</li>
+   * </ul>
+   *
+   * @see #target(java.lang.String)
+   */
+  default E target(V target) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return target((target == null) ? null : target.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-target">4.10.18.6 Form submission attributes</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_target.asp">HTML target Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #target(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E target(IOSupplierE<? extends V, Ex> target) throws IOException, Ex {
-		return target((target == null) ? null : target.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-target">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_target.asp">HTML target Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #target(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E target(IOSupplierE<? extends V, Ex> target) throws IOException, Ex {
+    return target((target == null) ? null : target.get());
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/browsers.html#valid-browsing-context-name-or-keyword">7.1.5 Browsing context names</a>.
-	 */
-	public enum Value implements Function<AnyDocument<?>, String> {
-		_BLANK("_blank"),
-		_SELF("_self"),
-		_PARENT("_parent"),
-		_TOP("_top");
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/browsers.html#valid-browsing-context-name-or-keyword">7.1.5 Browsing context names</a>.
+   */
+  public enum Value implements Function<AnyDocument<?>, String> {
+    _BLANK("_blank"),
+    _SELF("_self"),
+    _PARENT("_parent"),
+    _TOP("_top");
 
-		private final String value;
+    private final String value;
 
-		private Value(String value) {
-			this.value = value;
-		}
+    private Value(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
 
-		public String getValue() {
-			return value;
-		}
-	}
+    public String getValue() {
+      return value;
+    }
+  }
 }

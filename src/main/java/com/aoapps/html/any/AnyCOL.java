@@ -42,127 +42,127 @@ import java.util.function.Function;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyCOL<
-	D  extends AnyDocument<D>,
-	PC extends AnyCOLGROUP_content<D, PC>,
-	E  extends AnyCOL<D, PC, E>
+  D  extends AnyDocument<D>,
+  PC extends AnyCOLGROUP_content<D, PC>,
+  E  extends AnyCOL<D, PC, E>
 > extends Void<D, PC, E> implements
-	com.aoapps.html.any.attributes.Enum.Align<E, AnyCOL.Align>,
-	// TODO: bgcolor (deprecated)
-	// TODO: char (deprecated)
-	// TODO: charoff (deprecated)
-	com.aoapps.html.any.attributes.Integer.Span<E>,
-	com.aoapps.html.any.attributes.Enum.Valign<E, AnyCOL.Valign>,
-	com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
+  com.aoapps.html.any.attributes.Enum.Align<E, AnyCOL.Align>,
+  // TODO: bgcolor (deprecated)
+  // TODO: char (deprecated)
+  // TODO: charoff (deprecated)
+  com.aoapps.html.any.attributes.Integer.Span<E>,
+  com.aoapps.html.any.attributes.Enum.Valign<E, AnyCOL.Valign>,
+  com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
 {
 
-	protected AnyCOL(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyCOL(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<col", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<col", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doAfterElement(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doAfterElement(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_col_align.asp">HTML col align Attribute</a>.
-	 *
-	 * @deprecated  The align attribute of &lt;col&gt; is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	public enum Align implements Function<AnyDocument<?>, String> {
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_col_align.asp">HTML col align Attribute</a>.
+   *
+   * @deprecated  The align attribute of &lt;col&gt; is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  public enum Align implements Function<AnyDocument<?>, String> {
 
-		/**
-		 * Left-align content
-		 */
-		LEFT("left"),
+    /**
+     * Left-align content
+     */
+    LEFT("left"),
 
-		/**
-		 * Right-align content
-		 */
-		RIGHT("right"),
+    /**
+     * Right-align content
+     */
+    RIGHT("right"),
 
-		/**
-		 * Center-align content
-		 */
-		CENTER("center"),
+    /**
+     * Center-align content
+     */
+    CENTER("center"),
 
-		/**
-		 * Stretches the lines so that each line has equal width (like in newspapers and magazines)
-		 */
-		JUSTIFY("justify"),
+    /**
+     * Stretches the lines so that each line has equal width (like in newspapers and magazines)
+     */
+    JUSTIFY("justify"),
 
-		/**
-		 * Align the content to a specific character
-		 */
-		CHAR("char");
+    /**
+     * Align the content to a specific character
+     */
+    CHAR("char");
 
-		private final String value;
+    private final String value;
 
-		private Align(String value) {
-			this.value = value;
-		}
+    private Align(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-	}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_col_valign.asp">HTML col valign Attribute</a>.
-	 *
-	 * @deprecated  The valign attribute of &lt;col&gt; is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	public enum Valign implements Function<AnyDocument<?>, String> {
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_col_valign.asp">HTML col valign Attribute</a>.
+   *
+   * @deprecated  The valign attribute of &lt;col&gt; is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  public enum Valign implements Function<AnyDocument<?>, String> {
 
-		/**
-		 * Top-align content
-		 */
-		TOP("top"),
+    /**
+     * Top-align content
+     */
+    TOP("top"),
 
-		/**
-		 * Center-align content
-		 */
-		MIDDLE("middle"),
+    /**
+     * Center-align content
+     */
+    MIDDLE("middle"),
 
-		/**
-		 * Bottom-align content
-		 */
-		BOTTOM("bottom"),
+    /**
+     * Bottom-align content
+     */
+    BOTTOM("bottom"),
 
-		/**
-		 * The baseline is the "imaginary line" which most letters "sit" on, in a line of text.
-		 */
-		BASELINE("baseline");
+    /**
+     * The baseline is the "imaginary line" which most letters "sit" on, in a line of text.
+     */
+    BASELINE("baseline");
 
-		private final String value;
+    private final String value;
 
-		private Valign(String value) {
-			this.value = value;
-		}
+    private Valign(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-	}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
+  }
 }

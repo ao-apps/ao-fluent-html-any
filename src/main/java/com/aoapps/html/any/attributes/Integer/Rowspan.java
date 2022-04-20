@@ -37,39 +37,43 @@ import java.io.IOException;
  */
 public interface Rowspan<E extends Element<?, ?, E> & Rowspan<E>> {
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-rowspan">4.9.11 Attributes common to td and th elements / rowspan</a>.
-	 *
-	 * @param  rowspan  Will not write the attribute when is {@code 1}.
-	 */
-	@Attributes.Funnel
-	default E rowspan(int rowspan) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(rowspan != 1) Attributes.Integer.attribute(element, "rowspan", rowspan);
-		return element;
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-rowspan">4.9.11 Attributes common to td and th elements / rowspan</a>.
+   *
+   * @param  rowspan  Will not write the attribute when is {@code 1}.
+   */
+  @Attributes.Funnel
+  default E rowspan(int rowspan) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    if (rowspan != 1) {
+      Attributes.Integer.attribute(element, "rowspan", rowspan);
+    }
+    return element;
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-rowspan">4.9.11 Attributes common to td and th elements / rowspan</a>.
-	 *
-	 * @param  rowspan  Will not write the attribute when is {@code null} or {@code 1}.
-	 */
-	@Attributes.Funnel
-	default E rowspan(Integer rowspan) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(rowspan != null && rowspan != 1) Attributes.Integer.attribute(element, "rowspan", rowspan);
-		return element;
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-rowspan">4.9.11 Attributes common to td and th elements / rowspan</a>.
+   *
+   * @param  rowspan  Will not write the attribute when is {@code null} or {@code 1}.
+   */
+  @Attributes.Funnel
+  default E rowspan(Integer rowspan) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    if (rowspan != null && rowspan != 1) {
+      Attributes.Integer.attribute(element, "rowspan", rowspan);
+    }
+    return element;
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-rowspan">4.9.11 Attributes common to td and th elements / rowspan</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 * @param  rowspan  Will not write the attribute when is {@code null} or {@code 1}.
-	 *
-	 * @see #rowspan(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E rowspan(IOSupplierE<? extends Integer, Ex> rowspan) throws IOException, Ex {
-		return rowspan((rowspan == null) ? null : rowspan.get());
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/tables.html#attr-tdth-rowspan">4.9.11 Attributes common to td and th elements / rowspan</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   * @param  rowspan  Will not write the attribute when is {@code null} or {@code 1}.
+   *
+   * @see #rowspan(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E rowspan(IOSupplierE<? extends Integer, Ex> rowspan) throws IOException, Ex {
+    return rowspan((rowspan == null) ? null : rowspan.get());
+  }
 }

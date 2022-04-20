@@ -42,41 +42,41 @@ import java.io.IOException;
  */
 public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E placeholder(Object placeholder) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "placeholder");
-		return Attributes.Text.attribute(element, "placeholder", MarkupType.TEXT, placeholder, false, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E placeholder(Object placeholder) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "placeholder");
+    return Attributes.Text.attribute(element, "placeholder", MarkupType.TEXT, placeholder, false, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #placeholder(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E placeholder(IOSupplierE<?, Ex> placeholder) throws IOException, Ex {
-		return placeholder((placeholder == null) ? null : placeholder.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #placeholder(java.lang.Object)
+   */
+  default <Ex extends Throwable> E placeholder(IOSupplierE<?, Ex> placeholder) throws IOException, Ex {
+    return placeholder((placeholder == null) ? null : placeholder.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #placeholder(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E placeholder(TextWritable<Ex> placeholder) throws IOException, Ex {
-		return placeholder((Object)placeholder);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #placeholder(java.lang.Object)
+   */
+  default <Ex extends Throwable> E placeholder(TextWritable<Ex> placeholder) throws IOException, Ex {
+    return placeholder((Object)placeholder);
+  }
 }

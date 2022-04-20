@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Onpagehide<E extends Element<?, ?, E> & Onpagehide<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onpagehide.asp">HTML onpagehide Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onpagehide(Object onpagehide) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onpagehide");
-		return Attributes.Event.attribute(element, "onpagehide", onpagehide);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onpagehide.asp">HTML onpagehide Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onpagehide(Object onpagehide) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onpagehide");
+    return Attributes.Event.attribute(element, "onpagehide", onpagehide);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onpagehide.asp">HTML onpagehide Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onpagehide(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onpagehide(IOSupplierE<?, Ex> onpagehide) throws IOException, Ex {
-		return onpagehide((onpagehide == null) ? null : onpagehide.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onpagehide.asp">HTML onpagehide Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onpagehide(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onpagehide(IOSupplierE<?, Ex> onpagehide) throws IOException, Ex {
+    return onpagehide((onpagehide == null) ? null : onpagehide.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onpagehide.asp">HTML onpagehide Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onpagehide(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onpagehide(JavaScriptWritable<Ex> onpagehide) throws IOException, Ex {
-		return onpagehide((Object)onpagehide);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onpagehide.asp">HTML onpagehide Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onpagehide(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onpagehide(JavaScriptWritable<Ex> onpagehide) throws IOException, Ex {
+    return onpagehide((Object)onpagehide);
+  }
 }

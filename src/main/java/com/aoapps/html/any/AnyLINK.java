@@ -54,389 +54,389 @@ import java.util.function.Function;
 // TODO: Have multiple implementations, along with "Dynamic", similar to AnyINPUT?
 @SuppressWarnings("deprecation")
 public abstract class AnyLINK<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Metadata_Phrasing<D, PC>,
-	E  extends AnyLINK<D, PC, E>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Metadata_Phrasing<D, PC>,
+  E  extends AnyLINK<D, PC, E>
 > extends Void<D, PC, E> implements
-	// TODO: as
-	com.aoapps.html.any.attributes.Enum.CharsetHtml4Only<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
-	com.aoapps.html.any.attributes.Enum.Crossorigin<E, AnyLINK.Crossorigin>,
-	// https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-disabled
-	com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-	com.aoapps.html.any.attributes.Url.Href<E>,
-	com.aoapps.html.any.attributes.Text.Hreflang<E>,
-	com.aoapps.html.any.attributes.Text.Media<E>,
-	com.aoapps.html.any.attributes.Enum.Rel<E, AnyLINK.Rel>,
-	// TODO: rev
-	// TODO: sizes
-	// TODO: target (not standardized per MDN)
-	// TODO: type
-	// Global Event Attributes overrides
-	com.aoapps.html.any.attributes.event.Onerror<E>,
-	com.aoapps.html.any.attributes.event.Onload<E>
+  // TODO: as
+  com.aoapps.html.any.attributes.Enum.CharsetHtml4Only<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
+  com.aoapps.html.any.attributes.Enum.Crossorigin<E, AnyLINK.Crossorigin>,
+  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-disabled
+  com.aoapps.html.any.attributes.Boolean.Disabled<E>,
+  com.aoapps.html.any.attributes.Url.Href<E>,
+  com.aoapps.html.any.attributes.Text.Hreflang<E>,
+  com.aoapps.html.any.attributes.Text.Media<E>,
+  com.aoapps.html.any.attributes.Enum.Rel<E, AnyLINK.Rel>,
+  // TODO: rev
+  // TODO: sizes
+  // TODO: target (not standardized per MDN)
+  // TODO: type
+  // Global Event Attributes overrides
+  com.aoapps.html.any.attributes.event.Onerror<E>,
+  com.aoapps.html.any.attributes.event.Onload<E>
 {
 
-	private static final com.aoapps.lang.i18n.Resources RESOURCES =
-		com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyLINK.class);
+  private static final com.aoapps.lang.i18n.Resources RESOURCES =
+    com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyLINK.class);
 
-	protected AnyLINK(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyLINK(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<link", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<link", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
-	 *
-	 * @since HTML 5
-	 */
-	public enum Crossorigin implements Function<AnyDocument<?>, String> {
-		ANONYMOUS(
-			Attributes.NO_VALUE,
-			"anonymous"
-		),
-		USE_CREDENTIALS(
-			"use-credentials",
-			"use-credentials"
-		);
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+   *
+   * @since HTML 5
+   */
+  public enum Crossorigin implements Function<AnyDocument<?>, String> {
+    ANONYMOUS(
+      Attributes.NO_VALUE,
+      "anonymous"
+    ),
+    USE_CREDENTIALS(
+      "use-credentials",
+      "use-credentials"
+    );
 
-		private final String sgml;
-		private final String xml;
+    private final String sgml;
+    private final String xml;
 
-		private Crossorigin(String sgml, String xml) {
-			this.sgml = sgml;
-			this.xml = xml;
-		}
+    private Crossorigin(String sgml, String xml) {
+      this.sgml = sgml;
+      this.xml = xml;
+    }
 
-		@Override
-		public String toString() {
-			return xml;
-		}
+    @Override
+    public String toString() {
+      return xml;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			Serialization serialization = document.encodingContext.getSerialization();
-			if(serialization == Serialization.SGML) {
-				return sgml;
-			} else {
-				assert serialization == Serialization.XML;
-				return xml;
-			}
-		}
-	}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      Serialization serialization = document.encodingContext.getSerialization();
+      if (serialization == Serialization.SGML) {
+        return sgml;
+      } else {
+        assert serialization == Serialization.XML;
+        return xml;
+      }
+    }
+  }
 
-	/**
-	 * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-	 * <blockquote>
-	 *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-	 * </blockquote>
-	 */
-	private Object itemprop;
+  /**
+   * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
+   * <blockquote>
+   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
+   * </blockquote>
+   */
+  private Object itemprop;
 
-	// TODO: Is global property, move there and add See comment, still checking for link-specific rules here
-	// TODO: Attributes...itemprop in global
-	public E itemprop(Object itemprop) throws IOException {
-		itemprop = Coercion.trimNullIfEmpty(itemprop);
-		if(itemprop != null) {
-			if(this.itemprop != null) {
-				throw new LocalizedIllegalStateException(
-					AnyDocument.RESOURCES,
-					"duplicateAttribute",
-					"link",
-					"itemprop",
-					Coercion.toString(this.itemprop),
-					Coercion.toString(itemprop)
-				);
-			}
-			this.itemprop = itemprop;
-			if(this.rel != null) {
-				throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
-			}
-			Writer unsafe = document.getRawUnsafe(null);
-			if(document.getAtnl()) {
-				document.autoIndent(unsafe, 1);
-				unsafe.write("itemprop=\"");
-				document.clearAtnl();
-			} else {
-				unsafe.write(" itemprop=\"");
-			}
-			Coercion.write(itemprop, textInXhtmlAttributeEncoder, unsafe);
-			unsafe.append('"');
-		}
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  // TODO: Is global property, move there and add See comment, still checking for link-specific rules here
+  // TODO: Attributes...itemprop in global
+  public E itemprop(Object itemprop) throws IOException {
+    itemprop = Coercion.trimNullIfEmpty(itemprop);
+    if (itemprop != null) {
+      if (this.itemprop != null) {
+        throw new LocalizedIllegalStateException(
+          AnyDocument.RESOURCES,
+          "duplicateAttribute",
+          "link",
+          "itemprop",
+          Coercion.toString(this.itemprop),
+          Coercion.toString(itemprop)
+        );
+      }
+      this.itemprop = itemprop;
+      if (this.rel != null) {
+        throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
+      }
+      Writer unsafe = document.getRawUnsafe(null);
+      if (document.getAtnl()) {
+        document.autoIndent(unsafe, 1);
+        unsafe.write("itemprop=\"");
+        document.clearAtnl();
+      } else {
+        unsafe.write(" itemprop=\"");
+      }
+      Coercion.write(itemprop, textInXhtmlAttributeEncoder, unsafe);
+      unsafe.append('"');
+    }
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">Link types - HTML: Hypertext Markup Language</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
-	 * </ul>
-	 */
-	public enum Rel implements Function<AnyDocument<?>, String> {
-		ALTERNATE("alternate"),
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		ARCHIVES("archives"), // MDN only
-		AUTHOR("author"), // w3schools, MDN only
-		CANONICAL("canonical"), // MDN only
-		DNS_PREFETCH("dns-prefetch"),
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		FIRST("first"), // MDN only
-		HELP("help"), // w3schools, MDN only
-		ICON("icon"),
-		IMPORT("import"), // MDN only
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		INDEX("index"), // MDN only
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		LAST("last"), // MDN only
-		LICENSE("license"), // w3schools, MDN only
-		MANIFEST("manifest"), // MDN only
-		MODULEPRELOAD("modulepreload"),
-		NEXT("next"),
-		PINGBACK("pingback"),
-		PRECONNECT("preconnect"),
-		PREFETCH("prefetch"),
-		PRELOAD("preload"),
-		PRERENDER("prerender"),
-		PREV("prev"), // w3schools, MDN only
-		SEARCH("search"),
-		SHORTLINK("shortlink"), // MDN only
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		SIDEBAR("sidebar"), // MDN only
-		STYLESHEET("stylesheet"),
-		/**
-		 * @deprecated
-		 */
-		@Deprecated
-		UP("up"), // MDN only
+  /**
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Link_types">Link types - HTML: Hypertext Markup Language</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
+   * </ul>
+   */
+  public enum Rel implements Function<AnyDocument<?>, String> {
+    ALTERNATE("alternate"),
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    ARCHIVES("archives"), // MDN only
+    AUTHOR("author"), // w3schools, MDN only
+    CANONICAL("canonical"), // MDN only
+    DNS_PREFETCH("dns-prefetch"),
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    FIRST("first"), // MDN only
+    HELP("help"), // w3schools, MDN only
+    ICON("icon"),
+    IMPORT("import"), // MDN only
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    INDEX("index"), // MDN only
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    LAST("last"), // MDN only
+    LICENSE("license"), // w3schools, MDN only
+    MANIFEST("manifest"), // MDN only
+    MODULEPRELOAD("modulepreload"),
+    NEXT("next"),
+    PINGBACK("pingback"),
+    PRECONNECT("preconnect"),
+    PREFETCH("prefetch"),
+    PRELOAD("preload"),
+    PRERENDER("prerender"),
+    PREV("prev"), // w3schools, MDN only
+    SEARCH("search"),
+    SHORTLINK("shortlink"), // MDN only
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    SIDEBAR("sidebar"), // MDN only
+    STYLESHEET("stylesheet"),
+    /**
+     * @deprecated
+     */
+    @Deprecated
+    UP("up"), // MDN only
 
-		/**
-		 * <p>
-		 * To specify an icon for a single webpage or replace the website icon with a webpage-specific icon, add a link element to the webpage.
-		 * </p>
-		 * <p>
-		 * See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.
-		 * </p>
-		 */
-		APPLE_TOUCH_ICON("apple-touch-icon"),
+    /**
+     * <p>
+     * To specify an icon for a single webpage or replace the website icon with a webpage-specific icon, add a link element to the webpage.
+     * </p>
+     * <p>
+     * See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.
+     * </p>
+     */
+    APPLE_TOUCH_ICON("apple-touch-icon"),
 
-		/**
-		 * <p>
-		 * On iOS, similar to native applications, you can specify a launch screen image that is displayed while your web application launches.
-		 * </p>
-		 * <p>
-		 * See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.
-		 * </p>
-		 */
-		APPLE_TOUCH_STARTUP_IMAGE("apple-touch-startup-image");
+    /**
+     * <p>
+     * On iOS, similar to native applications, you can specify a launch screen image that is displayed while your web application launches.
+     * </p>
+     * <p>
+     * See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.
+     * </p>
+     */
+    APPLE_TOUCH_STARTUP_IMAGE("apple-touch-startup-image");
 
-		private final String value;
-		// TODO: Verify values by doctype
+    private final String value;
+    // TODO: Verify values by doctype
 
-		private Rel(String value) {
-			this.value = value;
-		}
+    private Rel(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-	}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
+  }
 
-	private String rel;
+  private String rel;
 
-	/**
-	 * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-	 * <blockquote>
-	 *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-	 * </blockquote>
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Override
-	public E rel(String rel) throws IOException {
-		rel = Strings.trimNullIfEmpty(rel);
-		if(rel != null) {
-			if(this.rel != null) {
-				throw new LocalizedIllegalStateException(
-					AnyDocument.RESOURCES,
-					"duplicateAttribute",
-					"link",
-					"rel",
-					Coercion.toString(this.rel),
-					Coercion.toString(rel)
-				);
-			}
-			this.rel = rel;
-			if(this.itemprop != null) {
-				throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
-			}
-			com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
-		}
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  /**
+   * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
+   * <blockquote>
+   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
+   * </blockquote>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
+   * </ul>
+   */
+  @Override
+  public E rel(String rel) throws IOException {
+    rel = Strings.trimNullIfEmpty(rel);
+    if (rel != null) {
+      if (this.rel != null) {
+        throw new LocalizedIllegalStateException(
+          AnyDocument.RESOURCES,
+          "duplicateAttribute",
+          "link",
+          "rel",
+          Coercion.toString(this.rel),
+          Coercion.toString(rel)
+        );
+      }
+      this.rel = rel;
+      if (this.itemprop != null) {
+        throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
+      }
+      com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
+    }
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	/**
-	 * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-	 * <blockquote>
-	 *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-	 * </blockquote>
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #rel(java.lang.String)
-	 */
-	@Override
-	public <Ex extends Throwable> E rel(Suppliers.String<Ex> rel) throws IOException, Ex {
-		return com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
-	}
+  /**
+   * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
+   * <blockquote>
+   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
+   * </blockquote>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #rel(java.lang.String)
+   */
+  @Override
+  public <Ex extends Throwable> E rel(Suppliers.String<Ex> rel) throws IOException, Ex {
+    return com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
+  }
 
-	/**
-	 * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-	 * <blockquote>
-	 *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-	 * </blockquote>
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @see #rel(java.lang.String)
-	 */
-	@Override
-	public E rel(Rel rel) throws IOException {
-		return com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
-	}
+  /**
+   * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
+   * <blockquote>
+   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
+   * </blockquote>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
+   * </ul>
+   *
+   * @see #rel(java.lang.String)
+   */
+  @Override
+  public E rel(Rel rel) throws IOException {
+    return com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
+  }
 
-	/**
-	 * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-	 * <blockquote>
-	 *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-	 * </blockquote>
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #rel(com.aoapps.html.AnyLINK.Rel)
-	 */
-	@Override
-	public <Ex extends Throwable> E rel(IOSupplierE<? extends Rel, Ex> rel) throws IOException, Ex {
-		return com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
-	}
+  /**
+   * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
+   * <blockquote>
+   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
+   * </blockquote>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #rel(com.aoapps.html.AnyLINK.Rel)
+   */
+  @Override
+  public <Ex extends Throwable> E rel(IOSupplierE<? extends Rel, Ex> rel) throws IOException, Ex {
+    return com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
+  }
 
-	private String type;
+  private String type;
 
-	/**
-	 * If the rel is {@link Rel#STYLESHEET}, the type is {@link Type#TEXT_CSS},
-	 * and the {@link Doctype} is {@link Doctype#HTML5}, skips writing
-	 * the type.
-	 *
-	 * See <a href="https://www.w3schools.com/tags/att_link_type.asp">HTML link type Attribute</a>.
-	 */
-	public E type(String type) throws IOException {
-		type = Strings.trimNullIfEmpty(type);
-		this.type = type;
-		if(
-			type != null
-			&& !(
-				document.encodingContext.getDoctype() == Doctype.HTML5
-				&& rel != null
-				&& rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
-				&& ContentType.CSS.equalsIgnoreCase(type)
-			)
-		) {
-			Writer unsafe = document.getRawUnsafe(null);
-			if(document.getAtnl()) {
-				document.autoIndent(unsafe, 1);
-				unsafe.write("type=\"");
-				document.clearAtnl();
-			} else {
-				unsafe.write(" type=\"");
-			}
-			encodeTextInXhtmlAttribute(type, unsafe);
-			unsafe.append('"');
-		}
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  /**
+   * If the rel is {@link Rel#STYLESHEET}, the type is {@link Type#TEXT_CSS},
+   * and the {@link Doctype} is {@link Doctype#HTML5}, skips writing
+   * the type.
+   *
+   * See <a href="https://www.w3schools.com/tags/att_link_type.asp">HTML link type Attribute</a>.
+   */
+  public E type(String type) throws IOException {
+    type = Strings.trimNullIfEmpty(type);
+    this.type = type;
+    if (
+      type != null
+      && !(
+        document.encodingContext.getDoctype() == Doctype.HTML5
+        && rel != null
+        && rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
+        && ContentType.CSS.equalsIgnoreCase(type)
+      )
+    ) {
+      Writer unsafe = document.getRawUnsafe(null);
+      if (document.getAtnl()) {
+        document.autoIndent(unsafe, 1);
+        unsafe.write("type=\"");
+        document.clearAtnl();
+      } else {
+        unsafe.write(" type=\"");
+      }
+      encodeTextInXhtmlAttribute(type, unsafe);
+      unsafe.append('"');
+    }
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * If the rel is {@link Rel#STYLESHEET}, a {@linkplain #type(java.lang.String) type}
-	 * has not been written, and the {@link Doctype} is not {@link Doctype#HTML5},
-	 * writes the default type {@link Type#TEXT_CSS} for backward compatibility.
-	 * </p>
-	 * <p>
-	 * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-	 * </p>
-	 * <blockquote>
-	 *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-	 * </blockquote>
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	@Override
-	public PC __() throws IOException {
-		if(
-			type == null
-			&& document.encodingContext.getDoctype() != Doctype.HTML5
-			&& rel != null
-			&& rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
-		) {
-			Writer unsafe = document.getRawUnsafe(null);
-			if(document.getAtnl()) {
-				document.autoIndent(unsafe, 1);
-				unsafe.write("type=\"" + ContentType.CSS + '"');
-				document.clearAtnl();
-			} else {
-				unsafe.write(" type=\"" + ContentType.CSS + '"');
-			}
-		}
-		return super.__();
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * If the rel is {@link Rel#STYLESHEET}, a {@linkplain #type(java.lang.String) type}
+   * has not been written, and the {@link Doctype} is not {@link Doctype#HTML5},
+   * writes the default type {@link Type#TEXT_CSS} for backward compatibility.
+   * </p>
+   * <p>
+   * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
+   * </p>
+   * <blockquote>
+   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
+   * </blockquote>
+   *
+   * @return  The parent content model this element is within
+   */
+  @Override
+  public PC __() throws IOException {
+    if (
+      type == null
+      && document.encodingContext.getDoctype() != Doctype.HTML5
+      && rel != null
+      && rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
+    ) {
+      Writer unsafe = document.getRawUnsafe(null);
+      if (document.getAtnl()) {
+        document.autoIndent(unsafe, 1);
+        unsafe.write("type=\"" + ContentType.CSS + '"');
+        document.clearAtnl();
+      } else {
+        unsafe.write(" type=\"" + ContentType.CSS + '"');
+      }
+    }
+    return super.__();
+  }
 
-	@Override
-	protected void doAfterElement(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-		if(rel == null && itemprop == null) {
-			throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
-		}
-	}
+  @Override
+  protected void doAfterElement(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+    if (rel == null && itemprop == null) {
+      throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
+    }
+  }
 }

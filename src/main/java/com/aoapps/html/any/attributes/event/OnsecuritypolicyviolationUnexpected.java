@@ -52,68 +52,68 @@ import java.io.IOException;
 @Deprecated
 public interface OnsecuritypolicyviolationUnexpected<E extends Element<?, ?, E> & OnsecuritypolicyviolationUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsecuritypolicyviolation">3.2.6 Global attributes / onsecuritypolicyviolation</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsecuritypolicyviolation">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsecuritypolicyviolation</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsecuritypolicyviolation">8.1.7.2.1 IDL definitions / onsecuritypolicyviolation</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsecuritypolicyviolation">GlobalEventHandlers.onsecuritypolicyviolation</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
-	 *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onsecuritypolicyviolation(Object onsecuritypolicyviolation) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onsecuritypolicyviolation");
-		return Attributes.Event.attribute(element, "onsecuritypolicyviolation", onsecuritypolicyviolation);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsecuritypolicyviolation">3.2.6 Global attributes / onsecuritypolicyviolation</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsecuritypolicyviolation">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsecuritypolicyviolation</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsecuritypolicyviolation">8.1.7.2.1 IDL definitions / onsecuritypolicyviolation</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsecuritypolicyviolation">GlobalEventHandlers.onsecuritypolicyviolation</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
+   *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onsecuritypolicyviolation(Object onsecuritypolicyviolation) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onsecuritypolicyviolation");
+    return Attributes.Event.attribute(element, "onsecuritypolicyviolation", onsecuritypolicyviolation);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsecuritypolicyviolation">3.2.6 Global attributes / onsecuritypolicyviolation</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsecuritypolicyviolation">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsecuritypolicyviolation</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsecuritypolicyviolation">8.1.7.2.1 IDL definitions / onsecuritypolicyviolation</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsecuritypolicyviolation">GlobalEventHandlers.onsecuritypolicyviolation</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onsecuritypolicyviolation(java.lang.Object)
-	 *
-	 * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
-	 *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onsecuritypolicyviolation(IOSupplierE<?, Ex> onsecuritypolicyviolation) throws IOException, Ex {
-		return onsecuritypolicyviolation((onsecuritypolicyviolation == null) ? null : onsecuritypolicyviolation.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsecuritypolicyviolation">3.2.6 Global attributes / onsecuritypolicyviolation</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsecuritypolicyviolation">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsecuritypolicyviolation</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsecuritypolicyviolation">8.1.7.2.1 IDL definitions / onsecuritypolicyviolation</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsecuritypolicyviolation">GlobalEventHandlers.onsecuritypolicyviolation</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onsecuritypolicyviolation(java.lang.Object)
+   *
+   * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
+   *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onsecuritypolicyviolation(IOSupplierE<?, Ex> onsecuritypolicyviolation) throws IOException, Ex {
+    return onsecuritypolicyviolation((onsecuritypolicyviolation == null) ? null : onsecuritypolicyviolation.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsecuritypolicyviolation">3.2.6 Global attributes / onsecuritypolicyviolation</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsecuritypolicyviolation">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsecuritypolicyviolation</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsecuritypolicyviolation">8.1.7.2.1 IDL definitions / onsecuritypolicyviolation</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsecuritypolicyviolation">GlobalEventHandlers.onsecuritypolicyviolation</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onsecuritypolicyviolation(java.lang.Object)
-	 *
-	 * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
-	 *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onsecuritypolicyviolation(JavaScriptWritable<Ex> onsecuritypolicyviolation) throws IOException, Ex {
-		return onsecuritypolicyviolation((Object)onsecuritypolicyviolation);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsecuritypolicyviolation">3.2.6 Global attributes / onsecuritypolicyviolation</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsecuritypolicyviolation">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsecuritypolicyviolation</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsecuritypolicyviolation">8.1.7.2.1 IDL definitions / onsecuritypolicyviolation</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsecuritypolicyviolation">GlobalEventHandlers.onsecuritypolicyviolation</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onsecuritypolicyviolation(java.lang.Object)
+   *
+   * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
+   *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onsecuritypolicyviolation(JavaScriptWritable<Ex> onsecuritypolicyviolation) throws IOException, Ex {
+    return onsecuritypolicyviolation((Object)onsecuritypolicyviolation);
+  }
 }

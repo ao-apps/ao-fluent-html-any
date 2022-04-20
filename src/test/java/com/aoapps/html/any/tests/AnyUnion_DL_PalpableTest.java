@@ -38,69 +38,69 @@ import org.junit.Test;
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class AnyUnion_DL_PalpableTest {
 
-	private final Class<? extends AnyUnion_DL_Palpable> testingClass;
+  private final Class<? extends AnyUnion_DL_Palpable> testingClass;
 
-	protected AnyUnion_DL_PalpableTest(Class<? extends AnyUnion_DL_Palpable> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyUnion_DL_PalpableTest(Class<? extends AnyUnion_DL_Palpable> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyUnion_DL_PalpableTest() {
-		this(AnyUnion_DL_Palpable.class);
-	}
+  public AnyUnion_DL_PalpableTest() {
+    this(AnyUnion_DL_Palpable.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyUnion_DL_Palpable.class
-			//
-			// Unions:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyUnion_DL_Palpable.class
+      //
+      // Unions:
+      //
+      // None
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyUnion_DL_Palpable.class,
-			//
-			// Content models:
-			//
-			Content.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyUnion_DL_Palpable.class,
+      //
+      // Content models:
+      //
+      Content.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyUnion_DL_Palpable.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyUnion_DL_Palpable.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"div"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "div"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-			-1,
-			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DL_Palpable.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DL_Palpable.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
+      -1,
+      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DL_Palpable.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DL_Palpable.class);
+  }
 }

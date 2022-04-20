@@ -66,80 +66,80 @@ import java.io.IOException;
 @Deprecated
 public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
-	 *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
-	 *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
-	 *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onload(Object onload) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onload");
-		return Attributes.Event.attribute(element, "onload", onload);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
+   *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
+   *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onload(Object onload) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onload");
+    return Attributes.Event.attribute(element, "onload", onload);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onload(java.lang.Object)
-	 *
-	 * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
-	 *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
-	 *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
-	 *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onload(IOSupplierE<?, Ex> onload) throws IOException, Ex {
-		return onload((onload == null) ? null : onload.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onload(java.lang.Object)
+   *
+   * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
+   *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
+   *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onload(IOSupplierE<?, Ex> onload) throws IOException, Ex {
+    return onload((onload == null) ? null : onload.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onload(java.lang.Object)
-	 *
-	 * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
-	 *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
-	 *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
-	 *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onload(JavaScriptWritable<Ex> onload) throws IOException, Ex {
-		return onload((Object)onload);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onload">3.2.6 Global attributes / onload</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onload">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onload</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onload">8.1.7.2.1 IDL definitions / onload</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onload">GlobalEventHandlers.onload</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onload.asp">onload Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onload(java.lang.Object)
+   *
+   * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
+   *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
+   *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onload(JavaScriptWritable<Ex> onload) throws IOException, Ex {
+    return onload((Object)onload);
+  }
 }

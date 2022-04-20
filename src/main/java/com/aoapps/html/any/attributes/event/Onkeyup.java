@@ -45,52 +45,52 @@ import java.io.IOException;
 // Matches OnkeyupUnexpected
 public interface Onkeyup<E extends Element<?, ?, E> & Onkeyup<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E onkeyup(Object onkeyup) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onkeyup", onkeyup);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E onkeyup(Object onkeyup) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onkeyup", onkeyup);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onkeyup(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onkeyup(IOSupplierE<?, Ex> onkeyup) throws IOException, Ex {
-		return onkeyup((onkeyup == null) ? null : onkeyup.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onkeyup(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onkeyup(IOSupplierE<?, Ex> onkeyup) throws IOException, Ex {
+    return onkeyup((onkeyup == null) ? null : onkeyup.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onkeyup(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onkeyup(JavaScriptWritable<Ex> onkeyup) throws IOException, Ex {
-		return onkeyup((Object)onkeyup);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeyup">3.2.6 Global attributes / onkeyup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeyup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeyup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeyup">8.1.7.2.1 IDL definitions / onkeyup</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeyup">GlobalEventHandlers.onkeyup</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onkeyup.asp">onkeyup Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onkeyup(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onkeyup(JavaScriptWritable<Ex> onkeyup) throws IOException, Ex {
+    return onkeyup((Object)onkeyup);
+  }
 }

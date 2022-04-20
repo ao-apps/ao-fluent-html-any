@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnpauseUnexpected<E extends Element<?, ?, E> & OnpauseUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onpause">3.2.6 Global attributes / onpause</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onpause">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onpause</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onpause">8.1.7.2.1 IDL definitions / onpause</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpause">GlobalEventHandlers.onpause</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onpause.asp">onpause Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onpause attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onpause(Object onpause) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onpause");
-		return Attributes.Event.attribute(element, "onpause", onpause);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onpause">3.2.6 Global attributes / onpause</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onpause">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onpause</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onpause">8.1.7.2.1 IDL definitions / onpause</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpause">GlobalEventHandlers.onpause</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onpause.asp">onpause Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onpause attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onpause(Object onpause) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onpause");
+    return Attributes.Event.attribute(element, "onpause", onpause);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onpause">3.2.6 Global attributes / onpause</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onpause">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onpause</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onpause">8.1.7.2.1 IDL definitions / onpause</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpause">GlobalEventHandlers.onpause</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onpause.asp">onpause Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onpause(java.lang.Object)
-	 *
-	 * @deprecated  Although the onpause attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onpause(IOSupplierE<?, Ex> onpause) throws IOException, Ex {
-		return onpause((onpause == null) ? null : onpause.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onpause">3.2.6 Global attributes / onpause</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onpause">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onpause</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onpause">8.1.7.2.1 IDL definitions / onpause</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpause">GlobalEventHandlers.onpause</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onpause.asp">onpause Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onpause(java.lang.Object)
+   *
+   * @deprecated  Although the onpause attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onpause(IOSupplierE<?, Ex> onpause) throws IOException, Ex {
+    return onpause((onpause == null) ? null : onpause.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onpause">3.2.6 Global attributes / onpause</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onpause">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onpause</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onpause">8.1.7.2.1 IDL definitions / onpause</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpause">GlobalEventHandlers.onpause</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onpause.asp">onpause Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onpause(java.lang.Object)
-	 *
-	 * @deprecated  Although the onpause attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onpause(JavaScriptWritable<Ex> onpause) throws IOException, Ex {
-		return onpause((Object)onpause);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onpause">3.2.6 Global attributes / onpause</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onpause">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onpause</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onpause">8.1.7.2.1 IDL definitions / onpause</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onpause">GlobalEventHandlers.onpause</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onpause.asp">onpause Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onpause(java.lang.Object)
+   *
+   * @deprecated  Although the onpause attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onpause(JavaScriptWritable<Ex> onpause) throws IOException, Ex {
+    return onpause((Object)onpause);
+  }
 }

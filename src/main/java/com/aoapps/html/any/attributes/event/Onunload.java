@@ -38,34 +38,34 @@ import java.io.IOException;
  */
 public interface Onunload<E extends Element<?, ?, E> & Onunload<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onunload.asp">HTML onunload Event Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E onunload(Object onunload) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onunload", onunload);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onunload.asp">HTML onunload Event Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E onunload(Object onunload) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onunload", onunload);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onunload.asp">HTML onunload Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onunload(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onunload(IOSupplierE<?, Ex> onunload) throws IOException, Ex {
-		return onunload((onunload == null) ? null : onunload.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onunload.asp">HTML onunload Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onunload(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onunload(IOSupplierE<?, Ex> onunload) throws IOException, Ex {
+    return onunload((onunload == null) ? null : onunload.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onunload.asp">HTML onunload Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onunload(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onunload(JavaScriptWritable<Ex> onunload) throws IOException, Ex {
-		return onunload((Object)onunload);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onunload.asp">HTML onunload Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onunload(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onunload(JavaScriptWritable<Ex> onunload) throws IOException, Ex {
+    return onunload((Object)onunload);
+  }
 }

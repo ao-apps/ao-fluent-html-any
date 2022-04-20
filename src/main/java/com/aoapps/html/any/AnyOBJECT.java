@@ -42,38 +42,38 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOBJECT<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Embedded_Interactive<D, PC>,
-	E  extends AnyOBJECT<D, PC, E, __, _c>,
-	__ extends AnyOBJECT__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyOBJECT_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Embedded_Interactive<D, PC>,
+  E  extends AnyOBJECT<D, PC, E, __, _c>,
+  __ extends AnyOBJECT__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyOBJECT_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-	com.aoapps.html.any.attributes.Url.Data<E>,
-	com.aoapps.html.any.attributes.Text.Type<E>,
-	com.aoapps.html.any.attributes.Text.Name<E>,
-	com.aoapps.html.any.attributes.Text.Form<E>,
-	com.aoapps.html.any.attributes.Integer.Width<E>,
-	com.aoapps.html.any.attributes.Integer.Height<E>,
-	// Global Attributes overrides
-	com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
-	// Global Event Attributes overrides
-	com.aoapps.html.any.attributes.event.Onload<E>
+  com.aoapps.html.any.attributes.Url.Data<E>,
+  com.aoapps.html.any.attributes.Text.Type<E>,
+  com.aoapps.html.any.attributes.Text.Name<E>,
+  com.aoapps.html.any.attributes.Text.Form<E>,
+  com.aoapps.html.any.attributes.Integer.Width<E>,
+  com.aoapps.html.any.attributes.Integer.Height<E>,
+  // Global Attributes overrides
+  com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
+  // Global Event Attributes overrides
+  com.aoapps.html.any.attributes.event.Onload<E>
 {
 
-	protected AnyOBJECT(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyOBJECT(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, "<object", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, "<object", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></object>" : "</object>", false);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></object>" : "</object>", false);
+  }
 }

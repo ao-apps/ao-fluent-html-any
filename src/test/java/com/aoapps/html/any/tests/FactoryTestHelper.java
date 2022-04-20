@@ -48,210 +48,212 @@ import org.junit.Assert;
 @SuppressWarnings("rawtypes")
 public final class FactoryTestHelper {
 
-	/** Make no instances. */
-	private FactoryTestHelper() {throw new AssertionError();}
+  /** Make no instances. */
+  private FactoryTestHelper() {
+    throw new AssertionError();
+  }
 
-	/**
-	 * Using constant to avoid making Factory annotation public.
-	 */
-	private static final String FACTORY_CLASSNAME = "com.aoapps.html.any.Factory"; // Factory.class.getCanonicalName()
+  /**
+   * Using constant to avoid making Factory annotation public.
+   */
+  private static final String FACTORY_CLASSNAME = "com.aoapps.html.any.Factory"; // Factory.class.getCanonicalName()
 
-	/**
-	 * Gets the set of all element factory names.
-	 */
-	public static String[] getAllFactories() {
-		return new String[] {
-			"abbr",
-			"address",
-			"a",
-			"area",
-			"article",
-			"aside",
-			"audio",
-			"base",
-			"bdi",
-			"bdo",
-			"b",
-			"blockquote",
-			"body",
-			"br",
-			"button",
-			"canvas",
-			"caption",
-			"cite",
-			"code",
-			"col",
-			"colgroup",
-			"data",
-			"datalist",
-			"dd",
-			"del",
-			"details",
-			"dfn",
-			"dialog",
-			"div",
-			"dl",
-			"dt",
-			"embed",
-			"em",
-			"fieldset",
-			"figcaption",
-			"figure",
-			"form",
-			"footer",
-			"h1",
-			"h2",
-			"h3",
-			"h4",
-			"h5",
-			"h6",
-			"h#",
-			"header",
-			"head",
-			"hgroup",
-			"hr",
-			"html",
-			"i",
-			"iframe",
-			"img",
-			"input",
-			"ins",
-			"kbd",
-			"label",
-			"legend",
-			"li",
-			"link",
-			"main",
-			"map",
-			"mark",
-			"menu",
-			"meta",
-			"meter",
-			"nav",
-			"noscript",
-			"object",
-			"ol",
-			"optgroup",
-			"option",
-			"output",
-			"param",
-			"p",
-			"picture",
-			"pre",
-			"progress",
-			"q",
-			"rp",
-			"rt",
-			"ruby",
-			"samp",
-			"script",
-			"section",
-			"select",
-			"s",
-			"slot",
-			"small",
-			"source",
-			"span",
-			"strong",
-			"style",
-			"sub",
-			"summary",
-			"sup",
-			"table",
-			"tbody",
-			"td",
-			"template",
-			"textarea",
-			"tfoot",
-			"thead",
-			"th",
-			"time",
-			"title",
-			"track",
-			"tr",
-			"u",
-			"ul",
-			"var",
-			"video",
-			"wbr"
-		};
-	}
+  /**
+   * Gets the set of all element factory names.
+   */
+  public static String[] getAllFactories() {
+    return new String[] {
+      "abbr",
+      "address",
+      "a",
+      "area",
+      "article",
+      "aside",
+      "audio",
+      "base",
+      "bdi",
+      "bdo",
+      "b",
+      "blockquote",
+      "body",
+      "br",
+      "button",
+      "canvas",
+      "caption",
+      "cite",
+      "code",
+      "col",
+      "colgroup",
+      "data",
+      "datalist",
+      "dd",
+      "del",
+      "details",
+      "dfn",
+      "dialog",
+      "div",
+      "dl",
+      "dt",
+      "embed",
+      "em",
+      "fieldset",
+      "figcaption",
+      "figure",
+      "form",
+      "footer",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "h#",
+      "header",
+      "head",
+      "hgroup",
+      "hr",
+      "html",
+      "i",
+      "iframe",
+      "img",
+      "input",
+      "ins",
+      "kbd",
+      "label",
+      "legend",
+      "li",
+      "link",
+      "main",
+      "map",
+      "mark",
+      "menu",
+      "meta",
+      "meter",
+      "nav",
+      "noscript",
+      "object",
+      "ol",
+      "optgroup",
+      "option",
+      "output",
+      "param",
+      "p",
+      "picture",
+      "pre",
+      "progress",
+      "q",
+      "rp",
+      "rt",
+      "ruby",
+      "samp",
+      "script",
+      "section",
+      "select",
+      "s",
+      "slot",
+      "small",
+      "source",
+      "span",
+      "strong",
+      "style",
+      "sub",
+      "summary",
+      "sup",
+      "table",
+      "tbody",
+      "td",
+      "template",
+      "textarea",
+      "tfoot",
+      "thead",
+      "th",
+      "time",
+      "title",
+      "track",
+      "tr",
+      "u",
+      "ul",
+      "var",
+      "video",
+      "wbr"
+    };
+  }
 
-	private static final String FACTORY_ANNOTATION_TYPE = "L" + FACTORY_CLASSNAME.replace('.', '/') + ";";
+  private static final String FACTORY_ANNOTATION_TYPE = "L" + FACTORY_CLASSNAME.replace('.', '/') + ";";
 
-	private static final Map<Class<? extends Content>, Set<String>> factoryCache = new HashMap<>();
+  private static final Map<Class<? extends Content>, Set<String>> factoryCache = new HashMap<>();
 
-	/**
-	 * Finds the set of all element factory name for the given class.
-	 */
-	private static void getFactoryNames(Class<? extends Content> clazz, Set<String> factoryNames) throws IOException {
-		Set<String> factories = factoryCache.get(clazz);
-		if(factories == null) {
-			factories = new HashSet<>();
-			ClassPath.ClassFile classFile = ClassPath.SYSTEM_CLASS_PATH.getClassFile(clazz.getCanonicalName());
-			for(
-				Method method :
-				new ClassParser(classFile.getInputStream(), classFile.getPath()).parse().getMethods()
-			) {
-				for(AnnotationEntry annotation : method.getAnnotationEntries()) {
-					String annotationType = annotation.getAnnotationType();
-					if(FACTORY_ANNOTATION_TYPE.equals(annotationType)) {
-						for(ElementValuePair pair : annotation.getElementValuePairs()) {
-							if("value".equals(pair.getNameString())) {
-								ElementValue value = pair.getValue();
-								int valueType = value.getElementValueType();
-								if(valueType == ElementValue.STRING) {
-									factories.add(value.toString());
-								} else {
-									Assert.fail("Unexected annotation element value type (" + valueType + "): " + pair.toShortString());
-								}
-							} else {
-								Assert.fail("Unexected annotation element: " + pair.toShortString());
-							}
-						}
-					} else if(
-						// Allow Deprecated
-						!annotationType.startsWith("Ljava/lang")
-					) {
-						Assert.fail("Unexected annotation type \"" + annotationType + "\": " + annotation);
-					}
-				}
-			}
-			factoryCache.put(clazz, factories);
-		}
-		factoryNames.addAll(factories);
-	}
+  /**
+   * Finds the set of all element factory name for the given class.
+   */
+  private static void getFactoryNames(Class<? extends Content> clazz, Set<String> factoryNames) throws IOException {
+    Set<String> factories = factoryCache.get(clazz);
+    if (factories == null) {
+      factories = new HashSet<>();
+      ClassPath.ClassFile classFile = ClassPath.SYSTEM_CLASS_PATH.getClassFile(clazz.getCanonicalName());
+      for (
+        Method method :
+        new ClassParser(classFile.getInputStream(), classFile.getPath()).parse().getMethods()
+      ) {
+        for (AnnotationEntry annotation : method.getAnnotationEntries()) {
+          String annotationType = annotation.getAnnotationType();
+          if (FACTORY_ANNOTATION_TYPE.equals(annotationType)) {
+            for (ElementValuePair pair : annotation.getElementValuePairs()) {
+              if ("value".equals(pair.getNameString())) {
+                ElementValue value = pair.getValue();
+                int valueType = value.getElementValueType();
+                if (valueType == ElementValue.STRING) {
+                  factories.add(value.toString());
+                } else {
+                  Assert.fail("Unexected annotation element value type (" + valueType + "): " + pair.toShortString());
+                }
+              } else {
+                Assert.fail("Unexected annotation element: " + pair.toShortString());
+              }
+            }
+          } else if (
+            // Allow Deprecated
+            !annotationType.startsWith("Ljava/lang")
+          ) {
+            Assert.fail("Unexected annotation type \"" + annotationType + "\": " + annotation);
+          }
+        }
+      }
+      factoryCache.put(clazz, factories);
+    }
+    factoryNames.addAll(factories);
+  }
 
-	public static void testFactories(Class<? extends Content> clazz, String ... expected) throws IOException {
-		String[] all = getAllFactories();
-		Set<String> allSet = new HashSet<>(Arrays.asList(all));
-		// Check parameters
-		for(String factory : expected) {
-			Assert.assertTrue("factory not in getAllFactories(): " + factory, allSet.contains(factory));
-		}
-		// Find all content interfaces
-		Set<Class<? extends Content>> allClasses = Classes.getAllClasses(clazz, Content.class);
-		// First make sure has all the expected
-		Set<String> clazzFactories = new HashSet<>();
-		for(Class<? extends Content> iface : allClasses) {
-			getFactoryNames(iface, clazzFactories);
-		}
-		for(String factory : expected) {
-			Assert.assertTrue(
-				clazz.getSimpleName() + " must have factory methods for \"" + factory + '"',
-				clazzFactories.contains(factory)
-			);
-		}
-		// Next make sure no unexpected
-		Set<String> expectedSet = new HashSet<>(Arrays.asList(expected));
-		for(String factory : clazzFactories) {
-			Assert.assertTrue("factory not in getAllFactories(): " + factory, allSet.contains(factory));
-			Assert.assertTrue(
-				clazz.getSimpleName() + " may not have factory methods for \"" + factory + '"',
-				expectedSet.contains(factory)
-			);
-		}
-		// TODO: Test factory not inherited from different interfaces?
-		//       Would this instead verify an @OverrideFactory annotation, which would require all override?
-	}
+  public static void testFactories(Class<? extends Content> clazz, String ... expected) throws IOException {
+    String[] all = getAllFactories();
+    Set<String> allSet = new HashSet<>(Arrays.asList(all));
+    // Check parameters
+    for (String factory : expected) {
+      Assert.assertTrue("factory not in getAllFactories(): " + factory, allSet.contains(factory));
+    }
+    // Find all content interfaces
+    Set<Class<? extends Content>> allClasses = Classes.getAllClasses(clazz, Content.class);
+    // First make sure has all the expected
+    Set<String> clazzFactories = new HashSet<>();
+    for (Class<? extends Content> iface : allClasses) {
+      getFactoryNames(iface, clazzFactories);
+    }
+    for (String factory : expected) {
+      Assert.assertTrue(
+        clazz.getSimpleName() + " must have factory methods for \"" + factory + '"',
+        clazzFactories.contains(factory)
+      );
+    }
+    // Next make sure no unexpected
+    Set<String> expectedSet = new HashSet<>(Arrays.asList(expected));
+    for (String factory : clazzFactories) {
+      Assert.assertTrue("factory not in getAllFactories(): " + factory, allSet.contains(factory));
+      Assert.assertTrue(
+        clazz.getSimpleName() + " may not have factory methods for \"" + factory + '"',
+        expectedSet.contains(factory)
+      );
+    }
+    // TODO: Test factory not inherited from different interfaces?
+    //       Would this instead verify an @OverrideFactory annotation, which would require all override?
+  }
 }

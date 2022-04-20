@@ -44,97 +44,97 @@ import java.io.Writer;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyBDO<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-	E  extends AnyBDO<D, PC, E, __, _c>,
-	__ extends AnyBDO__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyBDO_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+  E  extends AnyBDO<D, PC, E, __, _c>,
+  __ extends AnyBDO__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyBDO_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-	// Global Attributes overrides
-	com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-	com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-	com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-	// Global Event Attributes overrides
-	com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-	com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
+  // Global Attributes overrides
+  com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+  com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
+  com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+  // Global Event Attributes overrides
+  com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+  com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 
-	protected AnyBDO(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyBDO(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, "<bdo", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, "<bdo", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></bdo>" : "</bdo>", false);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></bdo>" : "</bdo>", false);
+  }
 
-	/**
-	 * @param  dir  <em>The <code>auto</code> value must not be specified.</em>
-	 */
-	@Override
-	public E dir(String dir) throws IOException {
-		// TODO: Enforce auto value must not be specified
-		return super.dir(dir);
-	}
+  /**
+   * @param  dir  <em>The <code>auto</code> value must not be specified.</em>
+   */
+  @Override
+  public E dir(String dir) throws IOException {
+    // TODO: Enforce auto value must not be specified
+    return super.dir(dir);
+  }
 
-	/**
-	 * @param  dir  <em>The <code>auto</code> value must not be specified.</em>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Override
-	public <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
-		return super.dir(dir);
-	}
+  /**
+   * @param  dir  <em>The <code>auto</code> value must not be specified.</em>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Override
+  public <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
+    return super.dir(dir);
+  }
 
-	/**
-	 * @param  dir  <em>The <code>auto</code> value must not be specified.</em>
-	 */
-	@Override
-	public E dir(Value dir) throws IOException {
-		return super.dir(dir);
-	}
+  /**
+   * @param  dir  <em>The <code>auto</code> value must not be specified.</em>
+   */
+  @Override
+  public E dir(Value dir) throws IOException {
+    return super.dir(dir);
+  }
 
-	/**
-	 * @param  dir  <em>The <code>auto</code> value must not be specified.</em>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Override
-	public <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
-		return super.dir(dir);
-	}
+  /**
+   * @param  dir  <em>The <code>auto</code> value must not be specified.</em>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Override
+  public <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
+    return super.dir(dir);
+  }
 }

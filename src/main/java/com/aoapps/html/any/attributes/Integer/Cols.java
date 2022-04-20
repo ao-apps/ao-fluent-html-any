@@ -37,34 +37,36 @@ import java.io.IOException;
  */
 public interface Cols<E extends Element<?, ?, E> & Cols<E>> {
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-cols">4.10.11 The textarea element / cols</a>.
-	 */
-	@Attributes.Funnel
-	default E cols(int cols) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.Integer.attribute(element, "cols", cols);
-		return element;
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-cols">4.10.11 The textarea element / cols</a>.
+   */
+  @Attributes.Funnel
+  default E cols(int cols) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.Integer.attribute(element, "cols", cols);
+    return element;
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-cols">4.10.11 The textarea element / cols</a>.
-	 */
-	@Attributes.Funnel
-	default E cols(Integer cols) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		if(cols != null) Attributes.Integer.attribute(element, "cols", cols);
-		return element;
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-cols">4.10.11 The textarea element / cols</a>.
+   */
+  @Attributes.Funnel
+  default E cols(Integer cols) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    if (cols != null) {
+      Attributes.Integer.attribute(element, "cols", cols);
+    }
+    return element;
+  }
 
-	/**
-	 * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-cols">4.10.11 The textarea element / cols</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #cols(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E cols(IOSupplierE<? extends Integer, Ex> cols) throws IOException, Ex {
-		return cols((cols == null) ? null : cols.get());
-	}
+  /**
+   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-cols">4.10.11 The textarea element / cols</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #cols(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E cols(IOSupplierE<? extends Integer, Ex> cols) throws IOException, Ex {
+    return cols((cols == null) ? null : cols.get());
+  }
 }

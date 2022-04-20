@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnwaitingUnexpected<E extends Element<?, ?, E> & OnwaitingUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwaiting">3.2.6 Global attributes / onwaiting</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwaiting">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwaiting</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwaiting">8.1.7.2.1 IDL definitions / onwaiting</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwaiting">GlobalEventHandlers.onwaiting</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onwaiting.asp">onwaiting Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onwaiting attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onwaiting(Object onwaiting) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onwaiting");
-		return Attributes.Event.attribute(element, "onwaiting", onwaiting);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwaiting">3.2.6 Global attributes / onwaiting</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwaiting">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwaiting</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwaiting">8.1.7.2.1 IDL definitions / onwaiting</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwaiting">GlobalEventHandlers.onwaiting</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onwaiting.asp">onwaiting Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onwaiting attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onwaiting(Object onwaiting) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onwaiting");
+    return Attributes.Event.attribute(element, "onwaiting", onwaiting);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwaiting">3.2.6 Global attributes / onwaiting</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwaiting">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwaiting</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwaiting">8.1.7.2.1 IDL definitions / onwaiting</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwaiting">GlobalEventHandlers.onwaiting</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onwaiting.asp">onwaiting Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onwaiting(java.lang.Object)
-	 *
-	 * @deprecated  Although the onwaiting attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onwaiting(IOSupplierE<?, Ex> onwaiting) throws IOException, Ex {
-		return onwaiting((onwaiting == null) ? null : onwaiting.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwaiting">3.2.6 Global attributes / onwaiting</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwaiting">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwaiting</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwaiting">8.1.7.2.1 IDL definitions / onwaiting</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwaiting">GlobalEventHandlers.onwaiting</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onwaiting.asp">onwaiting Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onwaiting(java.lang.Object)
+   *
+   * @deprecated  Although the onwaiting attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onwaiting(IOSupplierE<?, Ex> onwaiting) throws IOException, Ex {
+    return onwaiting((onwaiting == null) ? null : onwaiting.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwaiting">3.2.6 Global attributes / onwaiting</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwaiting">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwaiting</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwaiting">8.1.7.2.1 IDL definitions / onwaiting</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwaiting">GlobalEventHandlers.onwaiting</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onwaiting.asp">onwaiting Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onwaiting(java.lang.Object)
-	 *
-	 * @deprecated  Although the onwaiting attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onwaiting(JavaScriptWritable<Ex> onwaiting) throws IOException, Ex {
-		return onwaiting((Object)onwaiting);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onwaiting">3.2.6 Global attributes / onwaiting</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwaiting">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onwaiting</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwaiting">8.1.7.2.1 IDL definitions / onwaiting</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onwaiting">GlobalEventHandlers.onwaiting</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onwaiting.asp">onwaiting Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onwaiting(java.lang.Object)
+   *
+   * @deprecated  Although the onwaiting attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onwaiting(JavaScriptWritable<Ex> onwaiting) throws IOException, Ex {
+    return onwaiting((Object)onwaiting);
+  }
 }

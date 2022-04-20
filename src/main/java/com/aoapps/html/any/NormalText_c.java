@@ -36,14 +36,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class NormalText_c<
-	D  extends AnyDocument<D>,
-	PC extends Content<D, PC>,
-	_c extends NormalText_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends Content<D, PC>,
+  _c extends NormalText_c<D, PC, _c>
 >
-	extends Normal_c<D, PC, _c>
-	implements AnyTextContent<D, _c> {
+  extends Normal_c<D, PC, _c>
+  implements AnyTextContent<D, _c> {
 
-	protected NormalText_c(NormalText<D, PC, ?, ?, _c> element) {
-		super(element);
-	}
+  protected NormalText_c(NormalText<D, PC, ?, ?, _c> element) {
+    super(element);
+  }
 }

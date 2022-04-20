@@ -44,38 +44,38 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyASIDE<
-	D  extends AnyDocument<D>,
-	PC extends AnySectioningContent<D, PC>,
-	E  extends AnyASIDE<D, PC, E, __, _c>,
-	__ extends AnyASIDE__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyASIDE_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnySectioningContent<D, PC>,
+  E  extends AnyASIDE<D, PC, E, __, _c>,
+  __ extends AnyASIDE__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyASIDE_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
-	protected AnyASIDE(D document, PC pc) {
-		super(document, pc);
-		Elements.onlySupportedInHtml5(document, "<aside>");
-	}
+  protected AnyASIDE(D document, PC pc) {
+    super(document, pc);
+    Elements.onlySupportedInHtml5(document, "<aside>");
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<aside", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<aside", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></aside>", false);
-		} else {
-			document.autoNli(unsafe).unsafe(unsafe, "</aside>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></aside>", false);
+    } else {
+      document.autoNli(unsafe).unsafe(unsafe, "</aside>", false);
+    }
+    document.autoNl(unsafe);
+  }
 }

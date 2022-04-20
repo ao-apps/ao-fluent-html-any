@@ -35,38 +35,38 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_Embedded_Palpable_Phrasing<
-	D  extends AnyDocument<D>,
-	__ extends AnyUnion_Embedded_Palpable_Phrasing<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyUnion_Embedded_Palpable_Phrasing<D, __>
 > extends
-	//
-	// Content models:
-	//
-	Content<D, __>
+  //
+  // Content models:
+  //
+  Content<D, __>
 {
-	//
-	// Factories:
-	//
-	// <editor-fold defaultstate="collapsed" desc="CANVAS">
-	/**
-	 * Opens a new canvas element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">4.12.5 The canvas element</a>.
-	 * </p>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  TODO: Implement canvas
-	 */
-	@Deprecated
-	@Factory("canvas")
-	default AnyCANVAS canvas() throws IOException {
-		throw new AssertionError("TODO: Implement canvas");
-	}
-	// </editor-fold>
-	// <editor-fold defaultstate="collapsed" desc="TODO: MathML math">
-	// See <a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html#mathml">4.8.16 MathML</a>.
-	// </editor-fold>
-	// <editor-fold defaultstate="collapsed" desc="TODO: SVG svg">
-	// See <a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html#svg-0">4.8.17 SVG</a>.
-	// </editor-fold>
+  //
+  // Factories:
+  //
+  // <editor-fold defaultstate="collapsed" desc="CANVAS">
+  /**
+   * Opens a new canvas element.
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/canvas.html#the-canvas-element">4.12.5 The canvas element</a>.
+   * </p>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  TODO: Implement canvas
+   */
+  @Deprecated
+  @Factory("canvas")
+  default AnyCANVAS canvas() throws IOException {
+    throw new AssertionError("TODO: Implement canvas");
+  }
+  // </editor-fold>
+  // <editor-fold defaultstate="collapsed" desc="TODO: MathML math">
+  // See <a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html#mathml">4.8.16 MathML</a>.
+  // </editor-fold>
+  // <editor-fold defaultstate="collapsed" desc="TODO: SVG svg">
+  // See <a href="https://html.spec.whatwg.org/multipage/embedded-content-other.html#svg-0">4.8.17 SVG</a>.
+  // </editor-fold>
 }

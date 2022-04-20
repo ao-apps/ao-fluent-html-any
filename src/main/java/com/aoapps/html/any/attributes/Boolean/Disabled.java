@@ -37,32 +37,32 @@ import java.io.IOException;
  */
 public interface Disabled<E extends Element<?, ?, E> & Disabled<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_disabled.asp">HTML disabled Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E disabled(boolean disabled) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Boolean.attribute(element, "disabled", disabled);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_disabled.asp">HTML disabled Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E disabled(boolean disabled) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Boolean.attribute(element, "disabled", disabled);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_disabled.asp">HTML disabled Attribute</a>.
-	 *
-	 * @see #disabled(boolean)
-	 */
-	default E disabled(Boolean disabled) throws IOException {
-		return disabled(disabled != null && disabled);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_disabled.asp">HTML disabled Attribute</a>.
+   *
+   * @see #disabled(boolean)
+   */
+  default E disabled(Boolean disabled) throws IOException {
+    return disabled(disabled != null && disabled);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_disabled.asp">HTML disabled Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #disabled(java.lang.Boolean)
-	 */
-	default <Ex extends Throwable> E disabled(IOSupplierE<? extends Boolean, Ex> disabled) throws IOException, Ex {
-		return disabled((disabled == null) ? null : disabled.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_disabled.asp">HTML disabled Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #disabled(java.lang.Boolean)
+   */
+  default <Ex extends Throwable> E disabled(IOSupplierE<? extends Boolean, Ex> disabled) throws IOException, Ex {
+    return disabled((disabled == null) ? null : disabled.get());
+  }
 }

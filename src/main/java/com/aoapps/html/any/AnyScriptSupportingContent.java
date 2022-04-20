@@ -36,87 +36,87 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyScriptSupportingContent<
-	D  extends AnyDocument<D>,
-	__ extends AnyScriptSupportingContent<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyScriptSupportingContent<D, __>
 > extends
-	//
-	// Unions:
-	//
-	AnyUnion_COLGROUP_ScriptSupporting<D, __>
+  //
+  // Unions:
+  //
+  AnyUnion_COLGROUP_ScriptSupporting<D, __>
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
 {
-	//
-	// Factories:
-	//
-	// <editor-fold defaultstate="collapsed" desc="SCRIPT">
-	/**
-	 * Opens a new script element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
-	 * </ul>
-	 *
-	 * @see Doctype#scriptType(java.lang.Appendable)
-	 */
-	@Factory("script")
-	AnySCRIPT<D, __, ?> script() throws IOException;
+  //
+  // Factories:
+  //
+  // <editor-fold defaultstate="collapsed" desc="SCRIPT">
+  /**
+   * Opens a new script element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
+   * </ul>
+   *
+   * @see Doctype#scriptType(java.lang.Appendable)
+   */
+  @Factory("script")
+  AnySCRIPT<D, __, ?> script() throws IOException;
 
-	/**
-	 * Opens a new script element of the given type.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Factory("script")
-	AnySCRIPT<D, __, ?> script(String type) throws IOException;
+  /**
+   * Opens a new script element of the given type.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
+   * </ul>
+   */
+  @Factory("script")
+  AnySCRIPT<D, __, ?> script(String type) throws IOException;
 
-	/**
-	 * Opens a new script element of the given type.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Factory("script")
-	<Ex extends Throwable> AnySCRIPT<D, __, ?> script(Suppliers.String<Ex> type) throws IOException, Ex;
+  /**
+   * Opens a new script element of the given type.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Factory("script")
+  <Ex extends Throwable> AnySCRIPT<D, __, ?> script(Suppliers.String<Ex> type) throws IOException, Ex;
 
-	/**
-	 * Opens a new script element of the given type.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Factory("script")
-	AnySCRIPT<D, __, ?> script(AnySCRIPT.Type type) throws IOException;
+  /**
+   * Opens a new script element of the given type.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
+   * </ul>
+   */
+  @Factory("script")
+  AnySCRIPT<D, __, ?> script(AnySCRIPT.Type type) throws IOException;
 
-	/**
-	 * Opens a new script element of the given type.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Factory("script")
-	<Ex extends Throwable> AnySCRIPT<D, __, ?> script(IOSupplierE<? extends AnySCRIPT.Type, Ex> type) throws IOException, Ex;
-	// </editor-fold>
-	// Inherited: TEMPLATE
+  /**
+   * Opens a new script element of the given type.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element">4.12.1 The script element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">&lt;script&gt;: The Script element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_script.asp">HTML script tag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Factory("script")
+  <Ex extends Throwable> AnySCRIPT<D, __, ?> script(IOSupplierE<? extends AnySCRIPT.Type, Ex> type) throws IOException, Ex;
+  // </editor-fold>
+  // Inherited: TEMPLATE
 }

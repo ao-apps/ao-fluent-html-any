@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onhashchange.asp">HTML onhashchange Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onhashchange(Object onhashchange) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onhashchange");
-		return Attributes.Event.attribute(element, "onhashchange", onhashchange);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onhashchange.asp">HTML onhashchange Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onhashchange(Object onhashchange) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onhashchange");
+    return Attributes.Event.attribute(element, "onhashchange", onhashchange);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onhashchange.asp">HTML onhashchange Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onhashchange(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onhashchange(IOSupplierE<?, Ex> onhashchange) throws IOException, Ex {
-		return onhashchange((onhashchange == null) ? null : onhashchange.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onhashchange.asp">HTML onhashchange Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onhashchange(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onhashchange(IOSupplierE<?, Ex> onhashchange) throws IOException, Ex {
+    return onhashchange((onhashchange == null) ? null : onhashchange.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onhashchange.asp">HTML onhashchange Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onhashchange(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onhashchange(JavaScriptWritable<Ex> onhashchange) throws IOException, Ex {
-		return onhashchange((Object)onhashchange);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onhashchange.asp">HTML onhashchange Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onhashchange(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onhashchange(JavaScriptWritable<Ex> onhashchange) throws IOException, Ex {
+    return onhashchange((Object)onhashchange);
+  }
 }

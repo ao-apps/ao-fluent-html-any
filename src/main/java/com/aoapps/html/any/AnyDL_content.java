@@ -36,28 +36,28 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public interface AnyDL_content<
-	D  extends AnyDocument<D>,
-	__ extends AnyDL_content<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyDL_content<D, __>
 > extends
-	//
-	// Unions:
-	//
-	// Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-	AnyUnion_DIV_DL<D, __>,
-	AnyUnion_DL_Palpable<D, __>,
+  //
+  // Unions:
+  //
+  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+  AnyUnion_DIV_DL<D, __>,
+  AnyUnion_DL_Palpable<D, __>,
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
-	AnyScriptSupportingContent<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+  AnyScriptSupportingContent<D, __>
 {
-	//
-	// Factories:
-	//
-	// Inherited: DD
-	// Inherited: DIV
-	// Inherited: DT
-	// Inherited: SCRIPT
-	// Inherited: TEMPLATE
+  //
+  // Factories:
+  //
+  // Inherited: DD
+  // Inherited: DIV
+  // Inherited: DT
+  // Inherited: SCRIPT
+  // Inherited: TEMPLATE
 }

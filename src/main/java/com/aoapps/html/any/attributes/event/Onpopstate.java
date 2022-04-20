@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Onpopstate<E extends Element<?, ?, E> & Onpopstate<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onpopstate.asp">HTML onpopstate Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onpopstate(Object onpopstate) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onpopstate");
-		return Attributes.Event.attribute(element, "onpopstate", onpopstate);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onpopstate.asp">HTML onpopstate Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onpopstate(Object onpopstate) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onpopstate");
+    return Attributes.Event.attribute(element, "onpopstate", onpopstate);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onpopstate.asp">HTML onpopstate Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onpopstate(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onpopstate(IOSupplierE<?, Ex> onpopstate) throws IOException, Ex {
-		return onpopstate((onpopstate == null) ? null : onpopstate.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onpopstate.asp">HTML onpopstate Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onpopstate(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onpopstate(IOSupplierE<?, Ex> onpopstate) throws IOException, Ex {
+    return onpopstate((onpopstate == null) ? null : onpopstate.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onpopstate.asp">HTML onpopstate Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onpopstate(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onpopstate(JavaScriptWritable<Ex> onpopstate) throws IOException, Ex {
-		return onpopstate((Object)onpopstate);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onpopstate.asp">HTML onpopstate Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onpopstate(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onpopstate(JavaScriptWritable<Ex> onpopstate) throws IOException, Ex {
+    return onpopstate((Object)onpopstate);
+  }
 }

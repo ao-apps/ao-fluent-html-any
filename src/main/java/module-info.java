@@ -21,19 +21,19 @@
  * along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.aoapps.html.any {
-	exports com.aoapps.html.any;
-	exports com.aoapps.html.any.attributes.Boolean;
-	exports com.aoapps.html.any.attributes.Dimension;
-	exports com.aoapps.html.any.attributes.Enum;
-	exports com.aoapps.html.any.attributes.Integer;
-	exports com.aoapps.html.any.attributes.Text;
-	exports com.aoapps.html.any.attributes.Url;
-	exports com.aoapps.html.any.attributes.event;
-	// Direct
-	requires com.aoapps.collections; // <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId>
-	requires com.aoapps.encoding; // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>
-	requires com.aoapps.hodgepodge; // <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId>
-	requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
-	// Java SE
-	requires java.desktop;
+  exports com.aoapps.html.any;
+  exports com.aoapps.html.any.attributes.Boolean;
+  exports com.aoapps.html.any.attributes.Dimension;
+  exports com.aoapps.html.any.attributes.Enum;
+  exports com.aoapps.html.any.attributes.Integer;
+  exports com.aoapps.html.any.attributes.Text;
+  exports com.aoapps.html.any.attributes.Url;
+  exports com.aoapps.html.any.attributes.event;
+  // Direct
+  requires com.aoapps.collections; // <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId>
+  requires com.aoapps.encoding; // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>
+  requires com.aoapps.hodgepodge; // <groupId>com.aoapps</groupId><artifactId>ao-hodgepodge</artifactId>
+  requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
+  // Java SE
+  requires java.desktop;
 }

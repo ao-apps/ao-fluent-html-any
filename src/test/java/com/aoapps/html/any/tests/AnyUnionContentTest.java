@@ -45,38 +45,38 @@ import org.junit.Test;
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class AnyUnionContentTest {
 
-	/**
-	 * Gets the set of all <code>Union_*</code> interfaces.
-	 */
-	static Class<? extends Content>[] getAllUnions() {
-		return new Class[] {
-			AnyUnion_COLGROUP_ScriptSupporting.class,
-			AnyUnion_DATALIST_OPTGROUP.class,
-			AnyUnion_DIV_DL.class,
-			AnyUnion_DL_Palpable.class,
-			AnyUnion_Embedded_Interactive.class,
-			AnyUnion_Embedded_Palpable_Phrasing.class,
-			AnyUnion_Interactive_Phrasing.class,
-			AnyUnion_Metadata_Phrasing.class,
-			AnyUnion_Palpable_Phrasing.class,
-			AnyUnion_TBODY_THEAD_TFOOT.class
-		};
-	}
+  /**
+   * Gets the set of all <code>Union_*</code> interfaces.
+   */
+  static Class<? extends Content>[] getAllUnions() {
+    return new Class[] {
+      AnyUnion_COLGROUP_ScriptSupporting.class,
+      AnyUnion_DATALIST_OPTGROUP.class,
+      AnyUnion_DIV_DL.class,
+      AnyUnion_DL_Palpable.class,
+      AnyUnion_Embedded_Interactive.class,
+      AnyUnion_Embedded_Palpable_Phrasing.class,
+      AnyUnion_Interactive_Phrasing.class,
+      AnyUnion_Metadata_Phrasing.class,
+      AnyUnion_Palpable_Phrasing.class,
+      AnyUnion_TBODY_THEAD_TFOOT.class
+    };
+  }
 
-	static void testUnions(Class<? extends Content> clazz, Class<? extends Content> ... expected) {
-		InheritanceTestHelper.testInterfaces(
-			Content.class,
-			iface -> iface.getSimpleName().startsWith("AnyUnion_"),
-			getAllUnions(),
-			clazz,
-			expected
-		);
-	}
+  static void testUnions(Class<? extends Content> clazz, Class<? extends Content> ... expected) {
+    InheritanceTestHelper.testInterfaces(
+      Content.class,
+      iface -> iface.getSimpleName().startsWith("AnyUnion_"),
+      getAllUnions(),
+      clazz,
+      expected
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		for(Class<? extends Content> iface : getAllUnions()) {
-			InheritanceTestHelper.testNoImplementInherited(Content.class, iface);
-		}
-	}
+  @Test
+  public void testNoImplementInherited() {
+    for (Class<? extends Content> iface : getAllUnions()) {
+      InheritanceTestHelper.testNoImplementInherited(Content.class, iface);
+    }
+  }
 }

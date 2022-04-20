@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnySELECT__<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-	__ extends AnySELECT__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+  __ extends AnySELECT__<D, PC, __>
 >
-	extends Normal__<D, PC, __>
-	implements AnySELECT_content<D, __> {
+  extends Normal__<D, PC, __>
+  implements AnySELECT_content<D, __> {
 
-	protected AnySELECT__(AnySELECT<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnySELECT__(AnySELECT<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

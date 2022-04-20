@@ -40,41 +40,41 @@ import java.io.IOException;
  */
 public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmessage.asp">HTML onmessage Event Attribute</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E onmessage(Object onmessage) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onmessage");
-		return Attributes.Event.attribute(element, "onmessage", onmessage);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onmessage.asp">HTML onmessage Event Attribute</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E onmessage(Object onmessage) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onmessage");
+    return Attributes.Event.attribute(element, "onmessage", onmessage);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmessage.asp">HTML onmessage Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onmessage(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmessage(IOSupplierE<?, Ex> onmessage) throws IOException, Ex {
-		return onmessage((onmessage == null) ? null : onmessage.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onmessage.asp">HTML onmessage Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onmessage(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmessage(IOSupplierE<?, Ex> onmessage) throws IOException, Ex {
+    return onmessage((onmessage == null) ? null : onmessage.get());
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/ev_onmessage.asp">HTML onmessage Event Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onmessage(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmessage(JavaScriptWritable<Ex> onmessage) throws IOException, Ex {
-		return onmessage((Object)onmessage);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/ev_onmessage.asp">HTML onmessage Event Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onmessage(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmessage(JavaScriptWritable<Ex> onmessage) throws IOException, Ex {
+    return onmessage((Object)onmessage);
+  }
 }

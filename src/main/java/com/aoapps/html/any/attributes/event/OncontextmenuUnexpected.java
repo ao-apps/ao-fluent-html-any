@@ -71,93 +71,93 @@ import java.io.IOException;
 @Deprecated
 public interface OncontextmenuUnexpected<E extends Element<?, ?, E> & OncontextmenuUnexpected<E>> extends Oncontextmenu<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the oncontextmenu attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E oncontextmenu(Object oncontextmenu) throws IOException {
-		return Oncontextmenu.super.oncontextmenu(oncontextmenu);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the oncontextmenu attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E oncontextmenu(Object oncontextmenu) throws IOException {
+    return Oncontextmenu.super.oncontextmenu(oncontextmenu);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncontextmenu(java.lang.Object)
-	 *
-	 * @deprecated  Although the oncontextmenu attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	default <Ex extends Throwable> E oncontextmenu(IOSupplierE<?, Ex> oncontextmenu) throws IOException, Ex {
-		return Oncontextmenu.super.oncontextmenu(oncontextmenu);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncontextmenu(java.lang.Object)
+   *
+   * @deprecated  Although the oncontextmenu attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  default <Ex extends Throwable> E oncontextmenu(IOSupplierE<?, Ex> oncontextmenu) throws IOException, Ex {
+    return Oncontextmenu.super.oncontextmenu(oncontextmenu);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #oncontextmenu(java.lang.Object)
-	 *
-	 * @deprecated  Although the oncontextmenu attribute is global, it is not expected on
-	 *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
-	 *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
-	 *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
-	 *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
-	 *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-	 *              <p>
-	 *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-	 *              </p>
-	 */
-	@Deprecated
-	@Override
-	default <Ex extends Throwable> E oncontextmenu(JavaScriptWritable<Ex> oncontextmenu) throws IOException, Ex {
-		return Oncontextmenu.super.oncontextmenu(oncontextmenu);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncontextmenu">3.2.6 Global attributes / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncontextmenu">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncontextmenu</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncontextmenu">8.1.7.2.1 IDL definitions / oncontextmenu</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncontextmenu">GlobalEventHandlers.oncontextmenu</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncontextmenu.asp">oncontextmenu Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #oncontextmenu(java.lang.Object)
+   *
+   * @deprecated  Although the oncontextmenu attribute is global, it is not expected on
+   *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
+   *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
+   *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
+   *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
+   *              or {@linkplain AnyWBR &lt;wbr&gt;}.
+   *              <p>
+   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
+   *              </p>
+   */
+  @Deprecated
+  @Override
+  default <Ex extends Throwable> E oncontextmenu(JavaScriptWritable<Ex> oncontextmenu) throws IOException, Ex {
+    return Oncontextmenu.super.oncontextmenu(oncontextmenu);
+  }
 }

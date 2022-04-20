@@ -43,59 +43,59 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Crossorigin<
-	E extends Element<?, ?, E> & Crossorigin<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & Crossorigin<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E crossorigin(String crossorigin) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "crossorigin");
-		return Attributes.String.attribute(element, "crossorigin", MarkupType.NONE, crossorigin, true, true);
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E crossorigin(String crossorigin) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "crossorigin");
+    return Attributes.String.attribute(element, "crossorigin", MarkupType.NONE, crossorigin, true, true);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #crossorigin(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E crossorigin(Suppliers.String<Ex> crossorigin) throws IOException, Ex {
-		return crossorigin((crossorigin == null) ? null : crossorigin.get());
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #crossorigin(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E crossorigin(Suppliers.String<Ex> crossorigin) throws IOException, Ex {
+    return crossorigin((crossorigin == null) ? null : crossorigin.get());
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #crossorigin(java.lang.String)
-	 */
-	default E crossorigin(V crossorigin) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return crossorigin((crossorigin == null) ? null : crossorigin.apply(element.getDocument()));
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+   *
+   * @since HTML 5
+   *
+   * @see #crossorigin(java.lang.String)
+   */
+  default E crossorigin(V crossorigin) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return crossorigin((crossorigin == null) ? null : crossorigin.apply(element.getDocument()));
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #crossorigin(java.lang.Enum)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E crossorigin(IOSupplierE<? extends V, Ex> crossorigin) throws IOException, Ex {
-		return crossorigin((crossorigin == null) ? null : crossorigin.get());
-	}
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #crossorigin(java.lang.Enum)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E crossorigin(IOSupplierE<? extends V, Ex> crossorigin) throws IOException, Ex {
+    return crossorigin((crossorigin == null) ? null : crossorigin.get());
+  }
 }

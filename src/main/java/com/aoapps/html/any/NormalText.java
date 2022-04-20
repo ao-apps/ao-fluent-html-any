@@ -41,41 +41,45 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class NormalText<
-	D  extends AnyDocument<D>,
-	PC extends Content<D, PC>,
-	E  extends NormalText<D, PC, E, __, _c>,
-	__ extends NormalText__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends NormalText_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends Content<D, PC>,
+  E  extends NormalText<D, PC, E, __, _c>,
+  __ extends NormalText__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends NormalText_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> {
 
-	protected NormalText(D document, PC pc) {
-		super(document, pc);
-	}
+  protected NormalText(D document, PC pc) {
+    super(document, pc);
+  }
 
-	/**
-	 * Ends attributes, writes a text body, then closes this element.
-	 *
-	 * @return  The parent content model this element is within
-	 *
-	 * @see  AnyDocument#text(java.lang.Object)
-	 */
-	// Matches TransparentText.__(Object)
-	// TODO: More overrides, such as IOSupplier and such?
-	public PC __(Object text) throws IOException {
-		@SuppressWarnings("deprecation")
-		Writer unsafe = document.getRawUnsafe(null);
-		if(text != null) {
-			document.autoIndent(unsafe).unsafe(unsafe, '>');
-			boolean contentIndented = isContentIndented();
-			if(contentIndented) document.incDepth();
-			doBeforeBody(unsafe);
-			document.text(unsafe, text);
-			if(contentIndented) document.decDepth();
-			writeClose(unsafe, false);
-		} else {
-			writeClose(unsafe, true);
-		}
-		return pc;
-	}
+  /**
+   * Ends attributes, writes a text body, then closes this element.
+   *
+   * @return  The parent content model this element is within
+   *
+   * @see  AnyDocument#text(java.lang.Object)
+   */
+  // Matches TransparentText.__(Object)
+  // TODO: More overrides, such as IOSupplier and such?
+  public PC __(Object text) throws IOException {
+    @SuppressWarnings("deprecation")
+    Writer unsafe = document.getRawUnsafe(null);
+    if (text != null) {
+      document.autoIndent(unsafe).unsafe(unsafe, '>');
+      boolean contentIndented = isContentIndented();
+      if (contentIndented) {
+        document.incDepth();
+      }
+      doBeforeBody(unsafe);
+      document.text(unsafe, text);
+      if (contentIndented) {
+        document.decDepth();
+      }
+      writeClose(unsafe, false);
+    } else {
+      writeClose(unsafe, true);
+    }
+    return pc;
+  }
 }

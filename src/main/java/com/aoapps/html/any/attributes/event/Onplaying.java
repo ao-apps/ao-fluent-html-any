@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onplaying<E extends Element<?, ?, E> & Onplaying<E>> extends OnplayingUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onplaying(Object onplaying) throws IOException {
-		return OnplayingUnexpected.super.onplaying(onplaying);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onplaying(Object onplaying) throws IOException {
+    return OnplayingUnexpected.super.onplaying(onplaying);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onplaying(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onplaying(IOSupplierE<?, Ex> onplaying) throws IOException, Ex {
-		return OnplayingUnexpected.super.onplaying(onplaying);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onplaying(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onplaying(IOSupplierE<?, Ex> onplaying) throws IOException, Ex {
+    return OnplayingUnexpected.super.onplaying(onplaying);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onplaying(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onplaying(JavaScriptWritable<Ex> onplaying) throws IOException, Ex {
-		return OnplayingUnexpected.super.onplaying(onplaying);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplaying">3.2.6 Global attributes / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplaying">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplaying</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onplaying">8.1.7.2.1 IDL definitions / onplaying</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onplaying">GlobalEventHandlers.onplaying</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onplaying.asp">onplaying Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onplaying(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onplaying(JavaScriptWritable<Ex> onplaying) throws IOException, Ex {
+    return OnplayingUnexpected.super.onplaying(onplaying);
+  }
 }

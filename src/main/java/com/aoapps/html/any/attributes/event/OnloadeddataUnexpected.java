@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnloadeddataUnexpected<E extends Element<?, ?, E> & OnloadeddataUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onloadeddata attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onloadeddata(Object onloadeddata) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onloadeddata");
-		return Attributes.Event.attribute(element, "onloadeddata", onloadeddata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onloadeddata attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onloadeddata(Object onloadeddata) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onloadeddata");
+    return Attributes.Event.attribute(element, "onloadeddata", onloadeddata);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onloadeddata(java.lang.Object)
-	 *
-	 * @deprecated  Although the onloadeddata attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onloadeddata(IOSupplierE<?, Ex> onloadeddata) throws IOException, Ex {
-		return onloadeddata((onloadeddata == null) ? null : onloadeddata.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onloadeddata(java.lang.Object)
+   *
+   * @deprecated  Although the onloadeddata attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onloadeddata(IOSupplierE<?, Ex> onloadeddata) throws IOException, Ex {
+    return onloadeddata((onloadeddata == null) ? null : onloadeddata.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onloadeddata(java.lang.Object)
-	 *
-	 * @deprecated  Although the onloadeddata attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onloadeddata(JavaScriptWritable<Ex> onloadeddata) throws IOException, Ex {
-		return onloadeddata((Object)onloadeddata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onloadeddata(java.lang.Object)
+   *
+   * @deprecated  Although the onloadeddata attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onloadeddata(JavaScriptWritable<Ex> onloadeddata) throws IOException, Ex {
+    return onloadeddata((Object)onloadeddata);
+  }
 }

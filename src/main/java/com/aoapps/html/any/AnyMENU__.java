@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyMENU__<
-	D  extends AnyDocument<D>,
-	PC extends AnyInteractiveContent<D, PC>,
-	__ extends AnyMENU__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyInteractiveContent<D, PC>,
+  __ extends AnyMENU__<D, PC, __>
 >
-	extends Normal__<D, PC, __>
-	implements AnyListContent<D, __> {
+  extends Normal__<D, PC, __>
+  implements AnyListContent<D, __> {
 
-	protected AnyMENU__(AnyMENU<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyMENU__(AnyMENU<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

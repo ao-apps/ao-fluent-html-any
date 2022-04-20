@@ -35,28 +35,28 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface Closeable<
-	D  extends AnyDocument<D>,
-	PC extends Content<D, PC>
+  D  extends AnyDocument<D>,
+  PC extends Content<D, PC>
 > extends java.io.Closeable {
 
-	/**
-	 * Closes the content and ends the parent tag.
-	 * This is for use in try-with-resources, and simply calls {@link #__()}.
-	 * <p>
-	 * Note: Every implementation must be idempotent and only call {@link #__()} on the first call to {@link #close()}.
-	 * </p>
-	 *
-	 * @see  #__()
-	 */
-	@Override
-	void close() throws IOException;
+  /**
+   * Closes the content and ends the parent tag.
+   * This is for use in try-with-resources, and simply calls {@link #__()}.
+   * <p>
+   * Note: Every implementation must be idempotent and only call {@link #__()} on the first call to {@link #close()}.
+   * </p>
+   *
+   * @see  #__()
+   */
+  @Override
+  void close() throws IOException;
 
-	/**
-	 * Closes the content and ends the parent tag.
-	 *
-	 * @return  The parent content model this element is within
-	 *
-	 * @see  #close()
-	 */
-	PC __() throws IOException;
+  /**
+   * Closes the content and ends the parent tag.
+   *
+   * @return  The parent content model this element is within
+   *
+   * @see  #close()
+   */
+  PC __() throws IOException;
 }

@@ -38,32 +38,32 @@ import java.io.IOException;
 // Matches WidthHtml5Only
 public interface Width<E extends Element<?, ?, E> & Width<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E width(int pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "width", pixels);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E width(int pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "width", pixels);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E width(Integer pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "width", pixels);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E width(Integer pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "width", pixels);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #width(java.lang.Integer)
-	 */
-	default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
-		return width((pixels == null) ? null : pixels.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #width(java.lang.Integer)
+   */
+  default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+    return width((pixels == null) ? null : pixels.get());
+  }
 }

@@ -47,41 +47,41 @@ import org.junit.Test;
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class ContentModelTest {
 
-	/**
-	 * Gets the set of all <code>*Content</code> content model interfaces.
-	 */
-	static Class<? extends Content>[] getAllContentModels() {
-		return new Class[] {
-			AnyContent.class,
-			Content.class,
-			AnyEmbeddedContent.class,
-			AnyFlowContent.class,
-			AnyHeadingContent.class,
-			AnyInteractiveContent.class,
-			AnyListContent.class,
-			AnyMetadataContent.class,
-			AnyPalpableContent.class,
-			AnyPhrasingContent.class,
-			AnyScriptSupportingContent.class,
-			AnySectioningContent.class,
-			AnyTextContent.class
-		};
-	}
+  /**
+   * Gets the set of all <code>*Content</code> content model interfaces.
+   */
+  static Class<? extends Content>[] getAllContentModels() {
+    return new Class[] {
+      AnyContent.class,
+      Content.class,
+      AnyEmbeddedContent.class,
+      AnyFlowContent.class,
+      AnyHeadingContent.class,
+      AnyInteractiveContent.class,
+      AnyListContent.class,
+      AnyMetadataContent.class,
+      AnyPalpableContent.class,
+      AnyPhrasingContent.class,
+      AnyScriptSupportingContent.class,
+      AnySectioningContent.class,
+      AnyTextContent.class
+    };
+  }
 
-	static void testContentModels(Class<? extends Content> clazz, Class<? extends Content> ... expected) {
-		InheritanceTestHelper.testInterfaces(
-			Content.class,
-			iface -> iface.getSimpleName().endsWith("Content"),
-			getAllContentModels(),
-			clazz,
-			expected
-		);
-	}
+  static void testContentModels(Class<? extends Content> clazz, Class<? extends Content> ... expected) {
+    InheritanceTestHelper.testInterfaces(
+      Content.class,
+      iface -> iface.getSimpleName().endsWith("Content"),
+      getAllContentModels(),
+      clazz,
+      expected
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		for(Class<? extends Content> iface : getAllContentModels()) {
-			InheritanceTestHelper.testNoImplementInherited(Content.class, iface);
-		}
-	}
+  @Test
+  public void testNoImplementInherited() {
+    for (Class<? extends Content> iface : getAllContentModels()) {
+      InheritanceTestHelper.testNoImplementInherited(Content.class, iface);
+    }
+  }
 }

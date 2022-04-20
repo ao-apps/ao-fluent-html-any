@@ -38,88 +38,88 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public interface AnyDATALIST_content<
-	D  extends AnyDocument<D>,
-	__ extends AnyDATALIST_content<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyDATALIST_content<D, __>
 > extends
-	//
-	// Unions:
-	//
-	// Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-	AnyUnion_DATALIST_OPTGROUP<D, __>,
-	// Inherited: AnyUnion_Embedded_Interactive<D, __>
-	// Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
-	// Inherited: AnyUnion_Interactive_Phrasing<D, __>
-	// Inherited: AnyUnion_Metadata_Phrasing<D, __>
-	// Inherited: AnyUnion_Palpable_Phrasing<D, __>
+  //
+  // Unions:
+  //
+  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+  AnyUnion_DATALIST_OPTGROUP<D, __>,
+  // Inherited: AnyUnion_Embedded_Interactive<D, __>
+  // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
+  // Inherited: AnyUnion_Interactive_Phrasing<D, __>
+  // Inherited: AnyUnion_Metadata_Phrasing<D, __>
+  // Inherited: AnyUnion_Palpable_Phrasing<D, __>
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
-	// Inherited: AnyEmbeddedContent<D, __>
-	AnyPhrasingContent<D, __>
-	// Inherited: AnyScriptSupportingContent<D, __>
-	// Inherited: AnyTextContent<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+  // Inherited: AnyEmbeddedContent<D, __>
+  AnyPhrasingContent<D, __>
+  // Inherited: AnyScriptSupportingContent<D, __>
+  // Inherited: AnyTextContent<D, __>
 {
-	//
-	// Factories:
-	//
-	// Inherited: A
-	// Inherited: ABBR
-	// Inherited: AREA - if a descendent of map
-	// Inherited: AUDIO
-	// Inherited: B
-	// Inherited: BDI
-	// Inherited: BDO
-	// Inherited: BR
-	// Inherited: BUTTON
-	// Inherited: CANVAS
-	// Inherited: CITE
-	// Inherited: CODE
-	// Inherited: DATA
-	// Inherited: DATALIST
-	// Inherited: DEL
-	// Inherited: DFN
-	// Inherited: EM
-	// Inherited: EMBED
-	// Inherited: I
-	// Inherited: IFRAME
-	// Inherited: IMG
-	// Inherited: INPUT
-	// Inherited: INS
-	// Inherited: KBD
-	// Inherited: LABEL
-	// Inherited: LINK - if it is allowed in body
-	// Inherited: MAP
-	// Inherited: MARK
-	// Inherited: MathML math
-	// Inherited: META - if the itemprop attribute is present
-	// Inherited: METER
-	// Inherited: NOSCRIPT
-	// Inherited: OBJECT
-	// Inherited: OPTION
-	// Inherited: OUTPUT
-	// Inherited: PICTURE
-	// Inherited: PROGRESS
-	// Inherited: Q
-	// Inherited: RUBY
-	// Inherited: S
-	// Inherited: SAMP
-	// Inherited: SCRIPT
-	// Inherited: SELECT
-	// Inherited: SLOT
-	// Inherited: SMALL
-	// Inherited: SPAN
-	// Inherited: STRONG
-	// Inherited: SUB
-	// Inherited: SUP
-	// Inherited: SVG svg
-	// Inherited: TEMPLATE
-	// Inherited: TEXTAREA
-	// Inherited: TIME
-	// Inherited: U
-	// Inherited: VAR
-	// Inherited: VIDEO
-	// Inherited: WBR
-	// Inherited: autonomous custom elements
+  //
+  // Factories:
+  //
+  // Inherited: A
+  // Inherited: ABBR
+  // Inherited: AREA - if a descendent of map
+  // Inherited: AUDIO
+  // Inherited: B
+  // Inherited: BDI
+  // Inherited: BDO
+  // Inherited: BR
+  // Inherited: BUTTON
+  // Inherited: CANVAS
+  // Inherited: CITE
+  // Inherited: CODE
+  // Inherited: DATA
+  // Inherited: DATALIST
+  // Inherited: DEL
+  // Inherited: DFN
+  // Inherited: EM
+  // Inherited: EMBED
+  // Inherited: I
+  // Inherited: IFRAME
+  // Inherited: IMG
+  // Inherited: INPUT
+  // Inherited: INS
+  // Inherited: KBD
+  // Inherited: LABEL
+  // Inherited: LINK - if it is allowed in body
+  // Inherited: MAP
+  // Inherited: MARK
+  // Inherited: MathML math
+  // Inherited: META - if the itemprop attribute is present
+  // Inherited: METER
+  // Inherited: NOSCRIPT
+  // Inherited: OBJECT
+  // Inherited: OPTION
+  // Inherited: OUTPUT
+  // Inherited: PICTURE
+  // Inherited: PROGRESS
+  // Inherited: Q
+  // Inherited: RUBY
+  // Inherited: S
+  // Inherited: SAMP
+  // Inherited: SCRIPT
+  // Inherited: SELECT
+  // Inherited: SLOT
+  // Inherited: SMALL
+  // Inherited: SPAN
+  // Inherited: STRONG
+  // Inherited: SUB
+  // Inherited: SUP
+  // Inherited: SVG svg
+  // Inherited: TEMPLATE
+  // Inherited: TEXTAREA
+  // Inherited: TIME
+  // Inherited: U
+  // Inherited: VAR
+  // Inherited: VIDEO
+  // Inherited: WBR
+  // Inherited: autonomous custom elements
 }

@@ -38,69 +38,69 @@ import org.junit.Test;
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class AnyUnion_DATALIST_OPTGROUPTest {
 
-	private final Class<? extends AnyUnion_DATALIST_OPTGROUP> testingClass;
+  private final Class<? extends AnyUnion_DATALIST_OPTGROUP> testingClass;
 
-	protected AnyUnion_DATALIST_OPTGROUPTest(Class<? extends AnyUnion_DATALIST_OPTGROUP> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyUnion_DATALIST_OPTGROUPTest(Class<? extends AnyUnion_DATALIST_OPTGROUP> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyUnion_DATALIST_OPTGROUPTest() {
-		this(AnyUnion_DATALIST_OPTGROUP.class);
-	}
+  public AnyUnion_DATALIST_OPTGROUPTest() {
+    this(AnyUnion_DATALIST_OPTGROUP.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyUnion_DATALIST_OPTGROUP.class
-			//
-			// Unions:
-			//
-			// NOne
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyUnion_DATALIST_OPTGROUP.class
+      //
+      // Unions:
+      //
+      // NOne
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyUnion_DATALIST_OPTGROUP.class,
-			//
-			// Content models:
-			//
-			Content.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyUnion_DATALIST_OPTGROUP.class,
+      //
+      // Content models:
+      //
+      Content.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyUnion_DATALIST_OPTGROUP.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyUnion_DATALIST_OPTGROUP.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"option"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "option"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-			-1,
-			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DATALIST_OPTGROUP.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DATALIST_OPTGROUP.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
+      -1,
+      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DATALIST_OPTGROUP.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DATALIST_OPTGROUP.class);
+  }
 }

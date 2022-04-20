@@ -35,6 +35,6 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnySUMMARY {
-	// TODO: __ extends DETAILS_content<D, __>
-	// TODO
+  // TODO: __ extends DETAILS_content<D, __>
+  // TODO
 }

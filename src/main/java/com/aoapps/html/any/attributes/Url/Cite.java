@@ -41,31 +41,31 @@ import java.io.IOException;
  */
 public interface Cite<E extends Element<?, ?, E> & Cite<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite">4.4.4 The blockquote element / cite</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-q-cite">4.5.7 The q element / cite</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#attr-mod-cite">4.7.3 Attributes common to ins and del elements / cite</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E cite(String cite) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Url.attribute(element, "cite", cite);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite">4.4.4 The blockquote element / cite</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-q-cite">4.5.7 The q element / cite</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#attr-mod-cite">4.7.3 Attributes common to ins and del elements / cite</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E cite(String cite) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Url.attribute(element, "cite", cite);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite">4.4.4 The blockquote element / cite</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-q-cite">4.5.7 The q element / cite</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#attr-mod-cite">4.7.3 Attributes common to ins and del elements / cite</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #cite(java.lang.String)
-	 */
-	default <Ex extends Throwable> E cite(IOSupplierE<? extends String, Ex> cite) throws IOException, Ex {
-		return cite((cite == null) ? null : cite.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite">4.4.4 The blockquote element / cite</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-q-cite">4.5.7 The q element / cite</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#attr-mod-cite">4.7.3 Attributes common to ins and del elements / cite</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #cite(java.lang.String)
+   */
+  default <Ex extends Throwable> E cite(IOSupplierE<? extends String, Ex> cite) throws IOException, Ex {
+    return cite((cite == null) ? null : cite.get());
+  }
 }

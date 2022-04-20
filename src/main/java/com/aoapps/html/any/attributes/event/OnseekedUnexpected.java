@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnseekedUnexpected<E extends Element<?, ?, E> & OnseekedUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onseeked attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onseeked(Object onseeked) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onseeked");
-		return Attributes.Event.attribute(element, "onseeked", onseeked);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onseeked attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onseeked(Object onseeked) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onseeked");
+    return Attributes.Event.attribute(element, "onseeked", onseeked);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onseeked(java.lang.Object)
-	 *
-	 * @deprecated  Although the onseeked attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onseeked(IOSupplierE<?, Ex> onseeked) throws IOException, Ex {
-		return onseeked((onseeked == null) ? null : onseeked.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onseeked(java.lang.Object)
+   *
+   * @deprecated  Although the onseeked attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onseeked(IOSupplierE<?, Ex> onseeked) throws IOException, Ex {
+    return onseeked((onseeked == null) ? null : onseeked.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onseeked(java.lang.Object)
-	 *
-	 * @deprecated  Although the onseeked attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onseeked(JavaScriptWritable<Ex> onseeked) throws IOException, Ex {
-		return onseeked((Object)onseeked);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onseeked(java.lang.Object)
+   *
+   * @deprecated  Although the onseeked attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onseeked(JavaScriptWritable<Ex> onseeked) throws IOException, Ex {
+    return onseeked((Object)onseeked);
+  }
 }

@@ -49,119 +49,119 @@ import java.util.function.Function;
 // Matches Charset
 @Deprecated
 public interface CharsetHtml4Only<
-	E extends Element<?, ?, E> & CharsetHtml4Only<E, V>,
-	V extends Enum<V> & Function<? super AnyDocument<?>, String>
+  E extends Element<?, ?, E> & CharsetHtml4Only<E, V>,
+  V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > extends Charset<E, V> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @deprecated  Not supported in HTML5.
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E charset(String charset) throws IOException {
-		// Not calling super: overridden to support HTML 4
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, true, true);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @deprecated  Not supported in HTML5.
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E charset(String charset) throws IOException {
+    // Not calling super: overridden to support HTML 4
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, true, true);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #charset(java.lang.String)
-	 *
-	 * @deprecated  Not supported in HTML5.
-	 */
-	@Deprecated
-	@Override
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
-		return Charset.super.charset(charset);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #charset(java.lang.String)
+   *
+   * @deprecated  Not supported in HTML5.
+   */
+  @Deprecated
+  @Override
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
+    return Charset.super.charset(charset);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @see #charset(java.lang.String)
-	 *
-	 * @deprecated  Not supported in HTML5.
-	 */
-	@Deprecated
-	@Override
-	default E charset(java.nio.charset.Charset charset) throws IOException {
-		return Charset.super.charset(charset);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @see #charset(java.lang.String)
+   *
+   * @deprecated  Not supported in HTML5.
+   */
+  @Deprecated
+  @Override
+  default E charset(java.nio.charset.Charset charset) throws IOException {
+    return Charset.super.charset(charset);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #charset(java.nio.charset.Charset)
-	 *
-	 * @deprecated  Not supported in HTML5.
-	 */
-	@Deprecated
-	@Override
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
-		return Charset.super.charset(charset);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #charset(java.nio.charset.Charset)
+   *
+   * @deprecated  Not supported in HTML5.
+   */
+  @Deprecated
+  @Override
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
+    return Charset.super.charset(charset);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @see #charset(java.lang.String)
-	 *
-	 * @deprecated  Not supported in HTML5.
-	 */
-	@Deprecated
-	@Override
-	default E charset(V charset) throws IOException {
-		return Charset.super.charset(charset);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @see #charset(java.lang.String)
+   *
+   * @deprecated  Not supported in HTML5.
+   */
+  @Deprecated
+  @Override
+  default E charset(V charset) throws IOException {
+    return Charset.super.charset(charset);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #charset(java.lang.Enum)
-	 *
-	 * @deprecated  Not supported in HTML5.
-	 */
-	@Deprecated
-	@Override
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {
-		return Charset.super.charset(charset);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_charset.asp">HTML charset Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-charset">&lt;meta&gt;: The metadata element / charset</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/ref_charactersets.asp">HTML Character Sets</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #charset(java.lang.Enum)
+   *
+   * @deprecated  Not supported in HTML5.
+   */
+  @Deprecated
+  @Override
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {
+    return Charset.super.charset(charset);
+  }
 }

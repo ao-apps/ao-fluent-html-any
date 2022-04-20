@@ -38,33 +38,33 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyCOLGROUP_content<
-	D  extends AnyDocument<D>,
-	__ extends AnyCOLGROUP_content<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyCOLGROUP_content<D, __>
 > extends
-	//
-	// Unions:
-	//
-	AnyUnion_COLGROUP_ScriptSupporting<D, __>
+  //
+  // Unions:
+  //
+  AnyUnion_COLGROUP_ScriptSupporting<D, __>
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
 {
-	//
-	// Factories:
-	//
-	// <editor-fold defaultstate="collapsed" desc="COL">
-	/**
-	 * Opens a new col element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-col-element">4.9.4 The col element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col">&lt;col&gt; - The Table Column element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_col.asp">HTML col tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("col")
-	AnyCOL<D, __, ?> col() throws IOException;
-	// </editor-fold>
-	// Inherited: TEMPLATE
+  //
+  // Factories:
+  //
+  // <editor-fold defaultstate="collapsed" desc="COL">
+  /**
+   * Opens a new col element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-col-element">4.9.4 The col element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/col">&lt;col&gt; - The Table Column element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_col.asp">HTML col tag</a>.</li>
+   * </ul>
+   */
+  @Factory("col")
+  AnyCOL<D, __, ?> col() throws IOException;
+  // </editor-fold>
+  // Inherited: TEMPLATE
 }

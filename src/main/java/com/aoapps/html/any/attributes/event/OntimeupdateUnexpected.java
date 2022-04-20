@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OntimeupdateUnexpected<E extends Element<?, ?, E> & OntimeupdateUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the ontimeupdate attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E ontimeupdate(Object ontimeupdate) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "ontimeupdate");
-		return Attributes.Event.attribute(element, "ontimeupdate", ontimeupdate);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the ontimeupdate attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E ontimeupdate(Object ontimeupdate) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "ontimeupdate");
+    return Attributes.Event.attribute(element, "ontimeupdate", ontimeupdate);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ontimeupdate(java.lang.Object)
-	 *
-	 * @deprecated  Although the ontimeupdate attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E ontimeupdate(IOSupplierE<?, Ex> ontimeupdate) throws IOException, Ex {
-		return ontimeupdate((ontimeupdate == null) ? null : ontimeupdate.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ontimeupdate(java.lang.Object)
+   *
+   * @deprecated  Although the ontimeupdate attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E ontimeupdate(IOSupplierE<?, Ex> ontimeupdate) throws IOException, Ex {
+    return ontimeupdate((ontimeupdate == null) ? null : ontimeupdate.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ontimeupdate(java.lang.Object)
-	 *
-	 * @deprecated  Although the ontimeupdate attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E ontimeupdate(JavaScriptWritable<Ex> ontimeupdate) throws IOException, Ex {
-		return ontimeupdate((Object)ontimeupdate);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ontimeupdate(java.lang.Object)
+   *
+   * @deprecated  Although the ontimeupdate attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E ontimeupdate(JavaScriptWritable<Ex> ontimeupdate) throws IOException, Ex {
+    return ontimeupdate((Object)ontimeupdate);
+  }
 }

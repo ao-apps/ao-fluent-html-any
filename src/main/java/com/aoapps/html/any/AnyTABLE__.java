@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyTABLE__<
-	D  extends AnyDocument<D>,
-	PC extends AnyPalpableContent<D, PC>,
-	__ extends AnyTABLE__<D, PC, __>
+  D  extends AnyDocument<D>,
+  PC extends AnyPalpableContent<D, PC>,
+  __ extends AnyTABLE__<D, PC, __>
 >
-	extends Normal__<D, PC, __>
-	implements AnyTABLE_content<D, __> {
+  extends Normal__<D, PC, __>
+  implements AnyTABLE_content<D, __> {
 
-	protected AnyTABLE__(AnyTABLE<D, PC, ?, __, ?> element) {
-		super(element);
-	}
+  protected AnyTABLE__(AnyTABLE<D, PC, ?, __, ?> element) {
+    super(element);
+  }
 }

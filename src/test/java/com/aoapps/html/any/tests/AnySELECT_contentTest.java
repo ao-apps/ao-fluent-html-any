@@ -42,75 +42,75 @@ import org.junit.Test;
 @SuppressWarnings("rawtypes")
 public class AnySELECT_contentTest {
 
-	private final Class<? extends AnySELECT_content> testingClass;
+  private final Class<? extends AnySELECT_content> testingClass;
 
-	protected AnySELECT_contentTest(Class<? extends AnySELECT_content> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnySELECT_contentTest(Class<? extends AnySELECT_content> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnySELECT_contentTest() {
-		this(AnySELECT_content.class);
-	}
+  public AnySELECT_contentTest() {
+    this(AnySELECT_content.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnySELECT_content.class,
-			//
-			// Unions:
-			//
-			AnyUnion_COLGROUP_ScriptSupporting.class,
-			AnyUnion_DATALIST_OPTGROUP.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnySELECT_content.class,
+      //
+      // Unions:
+      //
+      AnyUnion_COLGROUP_ScriptSupporting.class,
+      AnyUnion_DATALIST_OPTGROUP.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnySELECT_content.class,
-			//
-			// Content models:
-			//
-			Content.class,
-			AnyScriptSupportingContent.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnySELECT_content.class,
+      //
+      // Content models:
+      //
+      Content.class,
+      AnyScriptSupportingContent.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnySELECT_content.class,
-			//
-			// Per-element content models:
-			//
-			AnyOPTGROUP_content.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnySELECT_content.class,
+      //
+      // Per-element content models:
+      //
+      AnyOPTGROUP_content.class
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"optgroup",
-			"option",
-			"script",
-			"template"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "optgroup",
+      "option",
+      "script",
+      "template"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals(
-			"Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
-			-1,
-			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnySELECT_content.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnySELECT_content.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals(
+      "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
+      -1,
+      AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnySELECT_content.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnySELECT_content.class);
+  }
 }

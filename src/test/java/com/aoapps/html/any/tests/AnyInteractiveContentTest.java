@@ -40,84 +40,84 @@ import org.junit.Test;
 @SuppressWarnings("rawtypes")
 public class AnyInteractiveContentTest {
 
-	private final Class<? extends AnyInteractiveContent> testingClass;
+  private final Class<? extends AnyInteractiveContent> testingClass;
 
-	protected AnyInteractiveContentTest(Class<? extends AnyInteractiveContent> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyInteractiveContentTest(Class<? extends AnyInteractiveContent> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyInteractiveContentTest() {
-		this(AnyInteractiveContent.class);
-	}
+  public AnyInteractiveContentTest() {
+    this(AnyInteractiveContent.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyInteractiveContent.class,
-			//
-			// Unions:
-			//
-			AnyUnion_Embedded_Interactive.class,
-			AnyUnion_Interactive_Phrasing.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyInteractiveContent.class,
+      //
+      // Unions:
+      //
+      AnyUnion_Embedded_Interactive.class,
+      AnyUnion_Interactive_Phrasing.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyInteractiveContent.class,
-			//
-			// Content models:
-			//
-			Content.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyInteractiveContent.class,
+      //
+      // Content models:
+      //
+      Content.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyInteractiveContent.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyInteractiveContent.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"a", // if the href attribute is present
-			"audio", // if the controls attribute is present
-			"button",
-			"details",
-			"embed",
-			"iframe",
-			"img", // if the usemap attribute is present
-			"input", // if type attribute is not in the hidden state
-			"label",
-			"menu", // (MDN only) if the type attribute is in the toolbar state
-			"object", // if the usemap attribute is present
-			"select",
-			"textarea",
-			"video" // if the controls attribute is present
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "a", // if the href attribute is present
+      "audio", // if the controls attribute is present
+      "button",
+      "details",
+      "embed",
+      "iframe",
+      "img", // if the usemap attribute is present
+      "input", // if type attribute is not in the hidden state
+      "label",
+      "menu", // (MDN only) if the type attribute is in the toolbar state
+      "object", // if the usemap attribute is present
+      "select",
+      "textarea",
+      "video" // if the controls attribute is present
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals(
-			"Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-			-1,
-			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyInteractiveContent.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyInteractiveContent.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals(
+      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+      -1,
+      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyInteractiveContent.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyInteractiveContent.class);
+  }
 }

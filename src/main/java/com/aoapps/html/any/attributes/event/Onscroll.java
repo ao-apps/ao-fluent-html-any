@@ -45,52 +45,52 @@ import java.io.IOException;
 // Matches OnscrollUnexpected
 public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E onscroll(Object onscroll) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onscroll", onscroll);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E onscroll(Object onscroll) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onscroll", onscroll);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onscroll(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onscroll(IOSupplierE<?, Ex> onscroll) throws IOException, Ex {
-		return onscroll((onscroll == null) ? null : onscroll.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onscroll(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onscroll(IOSupplierE<?, Ex> onscroll) throws IOException, Ex {
+    return onscroll((onscroll == null) ? null : onscroll.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onscroll(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onscroll(JavaScriptWritable<Ex> onscroll) throws IOException, Ex {
-		return onscroll((Object)onscroll);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onscroll">3.2.6 Global attributes / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onscroll">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onscroll</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onscroll">8.1.7.2.1 IDL definitions / onscroll</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onscroll">GlobalEventHandlers.onscroll</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onscroll.asp">onscroll Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onscroll(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onscroll(JavaScriptWritable<Ex> onscroll) throws IOException, Ex {
+    return onscroll((Object)onscroll);
+  }
 }

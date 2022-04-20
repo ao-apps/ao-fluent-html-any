@@ -42,69 +42,69 @@ import java.util.function.Function;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyHR<
-	D  extends AnyDocument<D>,
-	PC extends AnyFlowContent<D, PC>,
-	E  extends AnyHR<D, PC, E>
+  D  extends AnyDocument<D>,
+  PC extends AnyFlowContent<D, PC>,
+  E  extends AnyHR<D, PC, E>
 > extends Void<D, PC, E> implements
-	com.aoapps.html.any.attributes.Enum.Align<E, AnyHR.Align>,
-	com.aoapps.html.any.attributes.Boolean.Noshade<E>,
-	com.aoapps.html.any.attributes.Integer.SizeHtml4Only<E>,
-	com.aoapps.html.any.attributes.Dimension.Width<E>
+  com.aoapps.html.any.attributes.Enum.Align<E, AnyHR.Align>,
+  com.aoapps.html.any.attributes.Boolean.Noshade<E>,
+  com.aoapps.html.any.attributes.Integer.SizeHtml4Only<E>,
+  com.aoapps.html.any.attributes.Dimension.Width<E>
 {
 
-	protected AnyHR(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyHR(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<hr", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<hr", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doAfterElement(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doAfterElement(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_hr_align.asp">HTML hr align Attribute</a>.
-	 *
-	 * @deprecated  The align attribute of &lt;hr&gt; is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	public enum Align implements Function<AnyDocument<?>, String> {
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_hr_align.asp">HTML hr align Attribute</a>.
+   *
+   * @deprecated  The align attribute of &lt;hr&gt; is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  public enum Align implements Function<AnyDocument<?>, String> {
 
-		/**
-		 * Left-aligns the horizontal line
-		 */
-		LEFT("left"),
+    /**
+     * Left-aligns the horizontal line
+     */
+    LEFT("left"),
 
-		/**
-		 * Center-aligns the horizontal line (this is default)
-		 */
-		CENTER("center"),
+    /**
+     * Center-aligns the horizontal line (this is default)
+     */
+    CENTER("center"),
 
-		/**
-		 * Right-aligns the horizontal line
-		 */
-		RIGHT("right");
+    /**
+     * Right-aligns the horizontal line
+     */
+    RIGHT("right");
 
-		private final String value;
+    private final String value;
 
-		private Align(String value) {
-			this.value = value;
-		}
+    private Align(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-	}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
+  }
 }

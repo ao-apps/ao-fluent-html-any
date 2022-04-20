@@ -41,28 +41,28 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyDEL<
-	D  extends AnyDocument<D>,
-	PC extends AnyPhrasingContent<D, PC>,
-	E  extends AnyDEL<D, PC, E, _c>,
-	_c extends AnyDEL_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyPhrasingContent<D, PC>,
+  E  extends AnyDEL<D, PC, E, _c>,
+  _c extends AnyDEL_c<D, PC, _c>
 > extends Transparent<D, PC, E, _c> implements
-	com.aoapps.html.any.attributes.Url.Cite<E>
-	// TODO: datetime
+  com.aoapps.html.any.attributes.Url.Cite<E>
+  // TODO: datetime
 {
 
-	protected AnyDEL(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyDEL(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, "<del", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, "<del", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></del>" : "</del>", false);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></del>" : "</del>", false);
+  }
 }

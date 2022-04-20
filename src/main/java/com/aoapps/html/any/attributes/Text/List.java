@@ -46,53 +46,53 @@ import java.io.IOException;
  */
 public interface List<E extends Element<?, ?, E> & List<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_list.asp">HTML list Attribute</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_input_list.asp">HTML input list Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdeflist">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Attributes.Funnel
-	default E list(Object list) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "list");
-		return Attributes.Text.attribute(element, "list", MarkupType.NONE, list, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_list.asp">HTML list Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_input_list.asp">HTML input list Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdeflist">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Attributes.Funnel
+  default E list(Object list) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "list");
+    return Attributes.Text.attribute(element, "list", MarkupType.NONE, list, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_list.asp">HTML list Attribute</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_input_list.asp">HTML input list Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdeflist">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #list(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E list(IOSupplierE<?, Ex> list) throws IOException, Ex {
-		return list((list == null) ? null : list.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_list.asp">HTML list Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_input_list.asp">HTML input list Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdeflist">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #list(java.lang.Object)
+   */
+  default <Ex extends Throwable> E list(IOSupplierE<?, Ex> list) throws IOException, Ex {
+    return list((list == null) ? null : list.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_list.asp">HTML list Attribute</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_input_list.asp">HTML input list Attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdeflist">&lt;input&gt;: The Input (Form Input) element</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #list(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E list(TextWritable<Ex> list) throws IOException, Ex {
-		return list((Object)list);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_list.asp">HTML list Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_input_list.asp">HTML input list Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdeflist">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #list(java.lang.Object)
+   */
+  default <Ex extends Throwable> E list(TextWritable<Ex> list) throws IOException, Ex {
+    return list((Object)list);
+  }
 }

@@ -40,109 +40,109 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnySELECT_content<
-	D  extends AnyDocument<D>,
-	__ extends AnySELECT_content<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnySELECT_content<D, __>
 > extends
-	//
-	// Unions:
-	//
-	// Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-	// Inherited: AnyUnion_DATALIST_OPTGROUP<D, __>
+  //
+  // Unions:
+  //
+  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+  // Inherited: AnyUnion_DATALIST_OPTGROUP<D, __>
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
-	// Inherited: AnyScriptSupportingContent<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+  // Inherited: AnyScriptSupportingContent<D, __>
 
-	//
-	// Per-element content models:
-	//
-	AnyOPTGROUP_content<D, __>
+  //
+  // Per-element content models:
+  //
+  AnyOPTGROUP_content<D, __>
 {
-	//
-	// Factories:
-	//
-	// <editor-fold defaultstate="collapsed" desc="OPTGROUP">
-	/**
-	 * Opens a new optgroup element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("optgroup")
-	AnyOPTGROUP<D, __, ?, ?, ?> optgroup() throws IOException;
+  //
+  // Factories:
+  //
+  // <editor-fold defaultstate="collapsed" desc="OPTGROUP">
+  /**
+   * Opens a new optgroup element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
+   * </ul>
+   */
+  @Factory("optgroup")
+  AnyOPTGROUP<D, __, ?, ?, ?> optgroup() throws IOException;
 
-	/**
-	 * Creates an optgroup element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("optgroup")
-	default <Ex extends Throwable> __ optgroup__(IORunnableE<Ex> optgroup) throws IOException, Ex {
-		return optgroup().__(optgroup);
-	}
+  /**
+   * Creates an optgroup element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("optgroup")
+  default <Ex extends Throwable> __ optgroup__(IORunnableE<Ex> optgroup) throws IOException, Ex {
+    return optgroup().__(optgroup);
+  }
 
-	/**
-	 * Creates an optgroup element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("optgroup")
-	default <Ex extends Throwable> __ optgroup__any(IOConsumerE<? super AnyOPTGROUP__<D, __, ? extends AnyOPTGROUP__<D, __, ?>>, Ex> optgroup) throws IOException, Ex {
-		return optgroup().__(optgroup);
-	}
+  /**
+   * Creates an optgroup element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("optgroup")
+  default <Ex extends Throwable> __ optgroup__any(IOConsumerE<? super AnyOPTGROUP__<D, __, ? extends AnyOPTGROUP__<D, __, ?>>, Ex> optgroup) throws IOException, Ex {
+    return optgroup().__(optgroup);
+  }
 
-	/**
-	 * Creates an empty optgroup element with no attributes.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("optgroup")
-	default __ optgroup__() throws IOException {
-		return optgroup().__();
-	}
+  /**
+   * Creates an empty optgroup element with no attributes.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("optgroup")
+  default __ optgroup__() throws IOException {
+    return optgroup().__();
+  }
 
-	/**
-	 * Creates an optgroup element with no attributes then begins element content
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  The content model of this element, which will be the parent content model of child elements.
-	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
-	 *          the tag.  This is well suited for use in a try-with-resources block.
-	 *
-	 * @see  Closeable#__()
-	 * @see  Closeable#close()
-	 */
-	@Factory("optgroup")
-	AnyOPTGROUP_c<D, __, ?> optgroup_c() throws IOException;
-	// </editor-fold>
-	// Inherited: OPTION
-	// Inherited: SCRIPT
-	// Inherited: TEMPLATE
+  /**
+   * Creates an optgroup element with no attributes then begins element content
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_optgroup.asp">HTML optgroup tag</a>.</li>
+   * </ul>
+   *
+   * @return  The content model of this element, which will be the parent content model of child elements.
+   *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+   *          the tag.  This is well suited for use in a try-with-resources block.
+   *
+   * @see  Closeable#__()
+   * @see  Closeable#close()
+   */
+  @Factory("optgroup")
+  AnyOPTGROUP_c<D, __, ?> optgroup_c() throws IOException;
+  // </editor-fold>
+  // Inherited: OPTION
+  // Inherited: SCRIPT
+  // Inherited: TEMPLATE
 }

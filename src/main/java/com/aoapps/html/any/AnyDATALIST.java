@@ -44,38 +44,38 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyDATALIST<
-	D  extends AnyDocument<D>,
-	PC extends AnyPhrasingContent<D, PC>,
-	E  extends AnyDATALIST<D, PC, E, __, _c>,
-	__ extends AnyDATALIST__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyDATALIST_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyPhrasingContent<D, PC>,
+  E  extends AnyDATALIST<D, PC, E, __, _c>,
+  __ extends AnyDATALIST__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyDATALIST_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
-	protected AnyDATALIST(D document, PC pc) {
-		super(document, pc);
-		Elements.onlySupportedInHtml5(document, "<datalist>");
-	}
+  protected AnyDATALIST(D document, PC pc) {
+    super(document, pc);
+    Elements.onlySupportedInHtml5(document, "<datalist>");
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<datalist", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<datalist", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></datalist>", false);
-		} else {
-			document.autoNli(unsafe).unsafe(unsafe, "</datalist>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></datalist>", false);
+    } else {
+      document.autoNli(unsafe).unsafe(unsafe, "</datalist>", false);
+    }
+    document.autoNl(unsafe);
+  }
 }

@@ -42,69 +42,69 @@ import java.io.IOException;
 @Deprecated
 public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> extends Width<E> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
-	 *
-	 * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E width(int pixels) throws IOException {
-		return Width.super.width(pixels);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
+   *
+   * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E width(int pixels) throws IOException {
+    return Width.super.width(pixels);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
-	 *
-	 * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E width(Integer pixels) throws IOException {
-		return Width.super.width(pixels);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
+   *
+   * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E width(Integer pixels) throws IOException {
+    return Width.super.width(pixels);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Override
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
-		return Width.super.width(pixels);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Override
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+    return Width.super.width(pixels);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
-	 *
-	 * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Override
-	@Attributes.Funnel
-	default E width(String pixelsOrPercent) throws IOException {
-		return Width.super.width(pixelsOrPercent);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
+   *
+   * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Override
+  @Attributes.Funnel
+  default E width(String pixelsOrPercent) throws IOException {
+    return Width.super.width(pixelsOrPercent);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #width(java.lang.String)
-	 *
-	 * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	@Override
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E width(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {
-		return Width.super.width(pixelsOrPercent);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #width(java.lang.String)
+   *
+   * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  @Override
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E width(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {
+    return Width.super.width(pixelsOrPercent);
+  }
 }

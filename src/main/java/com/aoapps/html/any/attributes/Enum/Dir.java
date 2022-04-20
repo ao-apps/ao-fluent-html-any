@@ -57,178 +57,184 @@ import java.util.function.Function;
 // Matches DirUnexpected
 public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
 
-	/**
-	 * <p>
-	 * Utility class for working with {@link Dir}.
-	 * </p>
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 */
-	public static final class dir {
+  /**
+   * <p>
+   * Utility class for working with {@link Dir}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   */
+  public static final class dir {
 
-		/** Make no instances. */
-		private dir() {throw new AssertionError();}
+    /** Make no instances. */
+    private dir() {
+      throw new AssertionError();
+    }
 
-		/**
-		 * Normalizes a dir attribute.
-		 *
-		 * @see  Strings#trimNullIfEmpty(java.lang.String)
-		 * @see  java.lang.String#toLowerCase(java.util.Locale)
-		 * @see  Locale#ROOT
-		 */
-		// TODO: Normalize other attributes the same way
-		public static String normalize(String dir) {
-			dir = Strings.trimNullIfEmpty(dir);
-			if(dir != null) dir = dir.toLowerCase(Locale.ROOT);
-			return dir;
-		}
+    /**
+     * Normalizes a dir attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     * @see  java.lang.String#toLowerCase(java.util.Locale)
+     * @see  Locale#ROOT
+     */
+    // TODO: Normalize other attributes the same way
+    public static String normalize(String dir) {
+      dir = Strings.trimNullIfEmpty(dir);
+      if (dir != null) {
+        dir = dir.toLowerCase(Locale.ROOT);
+      }
+      return dir;
+    }
 
-		/**
-		 * Validates a dir attribute.
-		 * The value should already be {@linkplain #normalize(java.lang.String) normalized}.
-		 *
-		 * @see #normalize(java.lang.String)
-		 */
-		public static ValidationResult validate(String dir) {
-			if(
-				dir != null
-				&& Dir.Value.getByValue(dir) == null
-			) {
-				return new InvalidResult(
-					RESOURCES,
-					"Enum.Dir.invalid",
-					dir
-				);
-			} else {
-				return ValidResult.getInstance();
-			}
-		}
-	}
+    /**
+     * Validates a dir attribute.
+     * The value should already be {@linkplain #normalize(java.lang.String) normalized}.
+     *
+     * @see #normalize(java.lang.String)
+     */
+    public static ValidationResult validate(String dir) {
+      if (
+        dir != null
+        && Dir.Value.getByValue(dir) == null
+      ) {
+        return new InvalidResult(
+          RESOURCES,
+          "Enum.Dir.invalid",
+          dir
+        );
+      } else {
+        return ValidResult.getInstance();
+      }
+    }
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E dir(String dir) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.String.attribute(
-			element,
-			"dir",
-			MarkupType.NONE,
-			Attributes.validate(
-				Dir.dir.normalize(dir),
-				Dir.dir::validate
-			),
-			false,
-			false
-		);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E dir(String dir) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.String.attribute(
+      element,
+      "dir",
+      MarkupType.NONE,
+      Attributes.validate(
+        Dir.dir.normalize(dir),
+        Dir.dir::validate
+      ),
+      false,
+      false
+    );
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #dir(java.lang.String)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
-		return dir((dir == null) ? null : dir.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #dir(java.lang.String)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
+    return dir((dir == null) ? null : dir.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @see #dir(java.lang.String)
-	 */
-	default E dir(Value dir) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return dir((dir == null) ? null : dir.apply(element.getDocument()));
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   *
+   * @see #dir(java.lang.String)
+   */
+  default E dir(Value dir) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return dir((dir == null) ? null : dir.apply(element.getDocument()));
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #dir(com.aoapps.html.any.attributes.Enum.Dir.Value)
-	 */
-	@SuppressWarnings("overloads")
-	default <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
-		return dir((dir == null) ? null : dir.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #dir(com.aoapps.html.any.attributes.Enum.Dir.Value)
+   */
+  @SuppressWarnings("overloads")
+  default <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
+    return dir((dir == null) ? null : dir.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
-	 * </ul>
-	 */
-	public enum Value implements Function<AnyDocument<?>, String> {
-		LTR("ltr"),
-		RTL("rtl"),
-		AUTO("auto");
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
+   * </ul>
+   */
+  public enum Value implements Function<AnyDocument<?>, String> {
+    LTR("ltr"),
+    RTL("rtl"),
+    AUTO("auto");
 
-		private final String value;
+    private final String value;
 
-		private Value(String value) {
-			this.value = value;
-		}
+    private Value(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
 
-		public String getValue() {
-			return value;
-		}
+    public String getValue() {
+      return value;
+    }
 
-		private static final Value[] values = values();
+    private static final Value[] values = values();
 
-		/**
-		 * Gets the enum by value, case-sensitive.
-		 *
-		 * @return  The enum or {@code null} when not found.
-		 */
-		public static Value getByValue(String dir) {
-			if(dir != null) {
-				for(Value value : values) {
-					if(value.value.equals(dir)) return value;
-				}
-			}
-			return null;
-		}
-	}
+    /**
+     * Gets the enum by value, case-sensitive.
+     *
+     * @return  The enum or {@code null} when not found.
+     */
+    public static Value getByValue(String dir) {
+      if (dir != null) {
+        for (Value value : values) {
+          if (value.value.equals(dir)) {
+            return value;
+          }
+        }
+      }
+      return null;
+    }
+  }
 }

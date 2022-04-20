@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onseeked<E extends Element<?, ?, E> & Onseeked<E>> extends OnseekedUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onseeked(Object onseeked) throws IOException {
-		return OnseekedUnexpected.super.onseeked(onseeked);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onseeked(Object onseeked) throws IOException {
+    return OnseekedUnexpected.super.onseeked(onseeked);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onseeked(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onseeked(IOSupplierE<?, Ex> onseeked) throws IOException, Ex {
-		return OnseekedUnexpected.super.onseeked(onseeked);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onseeked(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onseeked(IOSupplierE<?, Ex> onseeked) throws IOException, Ex {
+    return OnseekedUnexpected.super.onseeked(onseeked);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onseeked(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onseeked(JavaScriptWritable<Ex> onseeked) throws IOException, Ex {
-		return OnseekedUnexpected.super.onseeked(onseeked);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeked">3.2.6 Global attributes / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeked">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeked</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeked">8.1.7.2.1 IDL definitions / onseeked</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeked">GlobalEventHandlers.onseeked</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onseeked.asp">onseeked Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onseeked(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onseeked(JavaScriptWritable<Ex> onseeked) throws IOException, Ex {
+    return OnseekedUnexpected.super.onseeked(onseeked);
+  }
 }

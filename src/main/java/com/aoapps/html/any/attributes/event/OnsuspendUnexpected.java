@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnsuspendUnexpected<E extends Element<?, ?, E> & OnsuspendUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsuspend">3.2.6 Global attributes / onsuspend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsuspend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsuspend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsuspend">8.1.7.2.1 IDL definitions / onsuspend</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsuspend">GlobalEventHandlers.onsuspend</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onsuspend attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onsuspend(Object onsuspend) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onsuspend");
-		return Attributes.Event.attribute(element, "onsuspend", onsuspend);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsuspend">3.2.6 Global attributes / onsuspend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsuspend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsuspend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsuspend">8.1.7.2.1 IDL definitions / onsuspend</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsuspend">GlobalEventHandlers.onsuspend</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onsuspend attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onsuspend(Object onsuspend) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onsuspend");
+    return Attributes.Event.attribute(element, "onsuspend", onsuspend);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsuspend">3.2.6 Global attributes / onsuspend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsuspend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsuspend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsuspend">8.1.7.2.1 IDL definitions / onsuspend</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsuspend">GlobalEventHandlers.onsuspend</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onsuspend(java.lang.Object)
-	 *
-	 * @deprecated  Although the onsuspend attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onsuspend(IOSupplierE<?, Ex> onsuspend) throws IOException, Ex {
-		return onsuspend((onsuspend == null) ? null : onsuspend.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsuspend">3.2.6 Global attributes / onsuspend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsuspend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsuspend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsuspend">8.1.7.2.1 IDL definitions / onsuspend</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsuspend">GlobalEventHandlers.onsuspend</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onsuspend(java.lang.Object)
+   *
+   * @deprecated  Although the onsuspend attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onsuspend(IOSupplierE<?, Ex> onsuspend) throws IOException, Ex {
+    return onsuspend((onsuspend == null) ? null : onsuspend.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsuspend">3.2.6 Global attributes / onsuspend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsuspend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsuspend</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsuspend">8.1.7.2.1 IDL definitions / onsuspend</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsuspend">GlobalEventHandlers.onsuspend</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onsuspend(java.lang.Object)
-	 *
-	 * @deprecated  Although the onsuspend attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onsuspend(JavaScriptWritable<Ex> onsuspend) throws IOException, Ex {
-		return onsuspend((Object)onsuspend);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsuspend">3.2.6 Global attributes / onsuspend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsuspend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsuspend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsuspend">8.1.7.2.1 IDL definitions / onsuspend</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsuspend">GlobalEventHandlers.onsuspend</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onsuspend(java.lang.Object)
+   *
+   * @deprecated  Although the onsuspend attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onsuspend(JavaScriptWritable<Ex> onsuspend) throws IOException, Ex {
+    return onsuspend((Object)onsuspend);
+  }
 }

@@ -47,62 +47,62 @@ import java.io.IOException;
 // Matches Tabindex
 public interface TabindexHtml4<E extends Element<?, ?, E> & TabindexHtml4<E>> extends Tabindex<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
-	 * </blockquote>
-	 */
-	@Override
-	@Attributes.Funnel
-	default E tabindex(int tabindex) throws IOException {
-		// Not calling super: overridden to support HTML 4
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Integer.attribute(element, "tabindex", tabindex);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
+   * </blockquote>
+   */
+  @Override
+  @Attributes.Funnel
+  default E tabindex(int tabindex) throws IOException {
+    // Not calling super: overridden to support HTML 4
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Integer.attribute(element, "tabindex", tabindex);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
-	 * </blockquote>
-	 */
-	@Override
-	@Attributes.Funnel
-	default E tabindex(Integer tabindex) throws IOException {
-		return Tabindex.super.tabindex(tabindex);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
+   * </blockquote>
+   */
+  @Override
+  @Attributes.Funnel
+  default E tabindex(Integer tabindex) throws IOException {
+    return Tabindex.super.tabindex(tabindex);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #tabindex(java.lang.Integer)
-	 */
-	@Override
-	default <Ex extends Throwable> E tabindex(IOSupplierE<? extends Integer, Ex> tabindex) throws IOException, Ex {
-		return Tabindex.super.tabindex(tabindex);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-tabindex-attribute">6.6.3 The tabindex attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex">Global attributes / tabindex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex">HTMLElement.tabIndex</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#building_keyboard_accessibility_back_in">Building keyboard accessibility back in</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_tabindex.asp">HTML tabindex Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the tabindex attribute can be used with: &lt;a&gt;, &lt;area&gt;, &lt;button&gt;, &lt;input&gt;, &lt;object&gt;, &lt;select&gt;, and &lt;textarea&gt;.
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #tabindex(java.lang.Integer)
+   */
+  @Override
+  default <Ex extends Throwable> E tabindex(IOSupplierE<? extends Integer, Ex> tabindex) throws IOException, Ex {
+    return Tabindex.super.tabindex(tabindex);
+  }
 }

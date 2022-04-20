@@ -37,23 +37,23 @@ import java.io.IOException;
  */
 public interface Action<E extends Element<?, ?, E> & Action<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_action.asp">HTML action Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E action(String action) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Url.attribute(element, "action", action);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_action.asp">HTML action Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E action(String action) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Url.attribute(element, "action", action);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_action.asp">HTML action Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #action(java.lang.String)
-	 */
-	default <Ex extends Throwable> E action(IOSupplierE<? extends String, Ex> action) throws IOException, Ex {
-		return action((action == null) ? null : action.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_action.asp">HTML action Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #action(java.lang.String)
+   */
+  default <Ex extends Throwable> E action(IOSupplierE<? extends String, Ex> action) throws IOException, Ex {
+    return action((action == null) ? null : action.get());
+  }
 }

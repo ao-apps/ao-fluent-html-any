@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onprogress<E extends Element<?, ?, E> & Onprogress<E>> extends OnprogressUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onprogress(Object onprogress) throws IOException {
-		return OnprogressUnexpected.super.onprogress(onprogress);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onprogress(Object onprogress) throws IOException {
+    return OnprogressUnexpected.super.onprogress(onprogress);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onprogress(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onprogress(IOSupplierE<?, Ex> onprogress) throws IOException, Ex {
-		return OnprogressUnexpected.super.onprogress(onprogress);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onprogress(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onprogress(IOSupplierE<?, Ex> onprogress) throws IOException, Ex {
+    return OnprogressUnexpected.super.onprogress(onprogress);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onprogress(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onprogress(JavaScriptWritable<Ex> onprogress) throws IOException, Ex {
-		return OnprogressUnexpected.super.onprogress(onprogress);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onprogress(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onprogress(JavaScriptWritable<Ex> onprogress) throws IOException, Ex {
+    return OnprogressUnexpected.super.onprogress(onprogress);
+  }
 }

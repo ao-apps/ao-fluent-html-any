@@ -45,52 +45,52 @@ import java.io.IOException;
 // Matches OnkeypressUnexpected
 public interface Onkeypress<E extends Element<?, ?, E> & Onkeypress<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeypress">3.2.6 Global attributes / onkeypress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeypress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeypress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeypress">8.1.7.2.1 IDL definitions / onkeypress</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress">GlobalEventHandlers.onkeypress</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onkeypress.asp">onkeypress Event</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E onkeypress(Object onkeypress) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onkeypress", onkeypress);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeypress">3.2.6 Global attributes / onkeypress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeypress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeypress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeypress">8.1.7.2.1 IDL definitions / onkeypress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress">GlobalEventHandlers.onkeypress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onkeypress.asp">onkeypress Event</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E onkeypress(Object onkeypress) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onkeypress", onkeypress);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeypress">3.2.6 Global attributes / onkeypress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeypress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeypress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeypress">8.1.7.2.1 IDL definitions / onkeypress</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress">GlobalEventHandlers.onkeypress</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onkeypress.asp">onkeypress Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onkeypress(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onkeypress(IOSupplierE<?, Ex> onkeypress) throws IOException, Ex {
-		return onkeypress((onkeypress == null) ? null : onkeypress.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeypress">3.2.6 Global attributes / onkeypress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeypress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeypress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeypress">8.1.7.2.1 IDL definitions / onkeypress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress">GlobalEventHandlers.onkeypress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onkeypress.asp">onkeypress Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onkeypress(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onkeypress(IOSupplierE<?, Ex> onkeypress) throws IOException, Ex {
+    return onkeypress((onkeypress == null) ? null : onkeypress.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeypress">3.2.6 Global attributes / onkeypress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeypress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeypress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeypress">8.1.7.2.1 IDL definitions / onkeypress</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress">GlobalEventHandlers.onkeypress</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onkeypress.asp">onkeypress Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onkeypress(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onkeypress(JavaScriptWritable<Ex> onkeypress) throws IOException, Ex {
-		return onkeypress((Object)onkeypress);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeypress">3.2.6 Global attributes / onkeypress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeypress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeypress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeypress">8.1.7.2.1 IDL definitions / onkeypress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress">GlobalEventHandlers.onkeypress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onkeypress.asp">onkeypress Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onkeypress(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onkeypress(JavaScriptWritable<Ex> onkeypress) throws IOException, Ex {
+    return onkeypress((Object)onkeypress);
+  }
 }

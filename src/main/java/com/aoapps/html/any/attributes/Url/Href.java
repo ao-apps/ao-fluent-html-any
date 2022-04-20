@@ -37,23 +37,23 @@ import java.io.IOException;
  */
 public interface Href<E extends Element<?, ?, E> & Href<E>> {
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_href.asp">HTML href Attribute</a>.
-	 */
-	@Attributes.Funnel
-	default E href(String href) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Url.attribute(element, "href", href);
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_href.asp">HTML href Attribute</a>.
+   */
+  @Attributes.Funnel
+  default E href(String href) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Url.attribute(element, "href", href);
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_href.asp">HTML href Attribute</a>.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #href(java.lang.String)
-	 */
-	default <Ex extends Throwable> E href(IOSupplierE<? extends String, Ex> href) throws IOException, Ex {
-		return href((href == null) ? null : href.get());
-	}
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_href.asp">HTML href Attribute</a>.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #href(java.lang.String)
+   */
+  default <Ex extends Throwable> E href(IOSupplierE<? extends String, Ex> href) throws IOException, Ex {
+    return href((href == null) ? null : href.get());
+  }
 }

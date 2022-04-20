@@ -48,62 +48,62 @@ import java.io.IOException;
 // Matches Title
 public interface TitleNoHtml4<E extends Element<?, ?, E> & TitleNoHtml4<E>> extends Title<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the title attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 */
-	@Override
-	@Attributes.Funnel
-	default E title(Object title) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "title");
-		return Title.super.title(title);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the title attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   */
+  @Override
+  @Attributes.Funnel
+  default E title(Object title) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "title");
+    return Title.super.title(title);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the title attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #title(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
-		return Title.super.title(title);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the title attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #title(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
+    return Title.super.title(title);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML 4.01, the title attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #title(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
-		return Title.super.title(title);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML 4.01, the title attribute cannot be used with: &lt;base&gt;, &lt;head&gt;, &lt;html&gt;, &lt;meta&gt;, &lt;param&gt;, &lt;script&gt;, &lt;style&gt;, and &lt;title&gt;.
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #title(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
+    return Title.super.title(title);
+  }
 }

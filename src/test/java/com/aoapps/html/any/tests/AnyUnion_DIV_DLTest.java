@@ -38,70 +38,70 @@ import org.junit.Test;
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class AnyUnion_DIV_DLTest {
 
-	private final Class<? extends AnyUnion_DIV_DL> testingClass;
+  private final Class<? extends AnyUnion_DIV_DL> testingClass;
 
-	protected AnyUnion_DIV_DLTest(Class<? extends AnyUnion_DIV_DL> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyUnion_DIV_DLTest(Class<? extends AnyUnion_DIV_DL> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyUnion_DIV_DLTest() {
-		this(AnyUnion_DIV_DL.class);
-	}
+  public AnyUnion_DIV_DLTest() {
+    this(AnyUnion_DIV_DL.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyUnion_DIV_DL.class
-			//
-			// Unions:
-			//
-			// NOne
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyUnion_DIV_DL.class
+      //
+      // Unions:
+      //
+      // NOne
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyUnion_DIV_DL.class,
-			//
-			// Content models:
-			//
-			Content.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyUnion_DIV_DL.class,
+      //
+      // Content models:
+      //
+      Content.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyUnion_DIV_DL.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyUnion_DIV_DL.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"dd",
-			"dt"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "dd",
+      "dt"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-			-1,
-			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DIV_DL.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DIV_DL.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
+      -1,
+      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DIV_DL.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DIV_DL.class);
+  }
 }

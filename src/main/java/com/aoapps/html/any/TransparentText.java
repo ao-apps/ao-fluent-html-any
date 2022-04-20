@@ -41,37 +41,37 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class TransparentText<
-	D  extends AnyDocument<D>,
-	PC extends Content<D, PC>,
-	E  extends TransparentText<D, PC, E, _c>,
-	// Would prefer "_c extends PC & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends TransparentText_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends Content<D, PC>,
+  E  extends TransparentText<D, PC, E, _c>,
+  // Would prefer "_c extends PC & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends TransparentText_c<D, PC, _c>
 > extends Transparent<D, PC, E, _c> {
 
-	protected TransparentText(D document, PC pc) {
-		super(document, pc);
-	}
+  protected TransparentText(D document, PC pc) {
+    super(document, pc);
+  }
 
-	/**
-	 * Ends attributes, writes a text body, then closes this element.
-	 *
-	 * @return  The parent content model this element is within
-	 *
-	 * @see  AnyDocument#text(java.lang.Object)
-	 */
-	// Matches NormalText.__(Object)
-	// TODO: More overrides, such as IOSupplier and such?
-	public PC __(Object text) throws IOException {
-		@SuppressWarnings("deprecation")
-		Writer unsafe = document.getRawUnsafe(null);
-		if(text != null) {
-			document.autoIndent(unsafe).unsafe(unsafe, '>').incDepth();
-			doBeforeBody(unsafe);
-			document.text(unsafe, text).decDepth();
-			writeClose(unsafe, false);
-		} else {
-			writeClose(unsafe, true);
-		}
-		return pc;
-	}
+  /**
+   * Ends attributes, writes a text body, then closes this element.
+   *
+   * @return  The parent content model this element is within
+   *
+   * @see  AnyDocument#text(java.lang.Object)
+   */
+  // Matches NormalText.__(Object)
+  // TODO: More overrides, such as IOSupplier and such?
+  public PC __(Object text) throws IOException {
+    @SuppressWarnings("deprecation")
+    Writer unsafe = document.getRawUnsafe(null);
+    if (text != null) {
+      document.autoIndent(unsafe).unsafe(unsafe, '>').incDepth();
+      doBeforeBody(unsafe);
+      document.text(unsafe, text).decDepth();
+      writeClose(unsafe, false);
+    } else {
+      writeClose(unsafe, true);
+    }
+    return pc;
+  }
 }

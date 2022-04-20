@@ -49,137 +49,137 @@ import org.junit.Test;
 @SuppressWarnings("rawtypes")
 public class AnyDATALIST_contentTest {
 
-	private final Class<? extends AnyDATALIST_content> testingClass;
+  private final Class<? extends AnyDATALIST_content> testingClass;
 
-	protected AnyDATALIST_contentTest(Class<? extends AnyDATALIST_content> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyDATALIST_contentTest(Class<? extends AnyDATALIST_content> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyDATALIST_contentTest() {
-		this(AnyDATALIST_content.class);
-	}
+  public AnyDATALIST_contentTest() {
+    this(AnyDATALIST_content.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyDATALIST_content.class,
-			//
-			// Unions:
-			//
-			AnyUnion_COLGROUP_ScriptSupporting.class,
-			AnyUnion_DATALIST_OPTGROUP.class,
-			AnyUnion_Embedded_Interactive.class,
-			AnyUnion_Embedded_Palpable_Phrasing.class,
-			AnyUnion_Interactive_Phrasing.class,
-			AnyUnion_Metadata_Phrasing.class,
-			AnyUnion_Palpable_Phrasing.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyDATALIST_content.class,
+      //
+      // Unions:
+      //
+      AnyUnion_COLGROUP_ScriptSupporting.class,
+      AnyUnion_DATALIST_OPTGROUP.class,
+      AnyUnion_Embedded_Interactive.class,
+      AnyUnion_Embedded_Palpable_Phrasing.class,
+      AnyUnion_Interactive_Phrasing.class,
+      AnyUnion_Metadata_Phrasing.class,
+      AnyUnion_Palpable_Phrasing.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyDATALIST_content.class,
-			//
-			// Content models:
-			//
-			Content.class,
-			AnyEmbeddedContent.class,
-			AnyPhrasingContent.class,
-			AnyScriptSupportingContent.class,
-			AnyTextContent.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyDATALIST_content.class,
+      //
+      // Content models:
+      //
+      Content.class,
+      AnyEmbeddedContent.class,
+      AnyPhrasingContent.class,
+      AnyScriptSupportingContent.class,
+      AnyTextContent.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyDATALIST_content.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyDATALIST_content.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"a",
-			"abbr",
-			"area", // if a descendent of map
-			"audio",
-			"b",
-			"bdi",
-			"bdo",
-			"br",
-			"button",
-			"canvas",
-			"cite",
-			"code",
-			"data",
-			"datalist",
-			"del",
-			"dfn",
-			"em",
-			"embed",
-			"i",
-			"iframe",
-			"img",
-			"input",
-			"ins",
-			"kbd",
-			"label",
-			"link", // if it is allowed in body
-			"map",
-			"mark",
-			// TODO: MathML math
-			"meta", // if the itemprop attribute is present
-			"meter",
-			"noscript",
-			"object",
-			"option",
-			"output",
-			"picture",
-			"progress",
-			"q",
-			"ruby",
-			"s",
-			"samp",
-			"script",
-			"select",
-			"slot",
-			"small",
-			"span",
-			"strong",
-			"sub",
-			"sup",
-			// TODO: SVG svg
-			"template",
-			"textarea",
-			"time",
-			"u",
-			"var",
-			"video",
-			"wbr"
-			// TODO: autonomous custom elements: 4.13 Custom elements: https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "a",
+      "abbr",
+      "area", // if a descendent of map
+      "audio",
+      "b",
+      "bdi",
+      "bdo",
+      "br",
+      "button",
+      "canvas",
+      "cite",
+      "code",
+      "data",
+      "datalist",
+      "del",
+      "dfn",
+      "em",
+      "embed",
+      "i",
+      "iframe",
+      "img",
+      "input",
+      "ins",
+      "kbd",
+      "label",
+      "link", // if it is allowed in body
+      "map",
+      "mark",
+      // TODO: MathML math
+      "meta", // if the itemprop attribute is present
+      "meter",
+      "noscript",
+      "object",
+      "option",
+      "output",
+      "picture",
+      "progress",
+      "q",
+      "ruby",
+      "s",
+      "samp",
+      "script",
+      "select",
+      "slot",
+      "small",
+      "span",
+      "strong",
+      "sub",
+      "sup",
+      // TODO: SVG svg
+      "template",
+      "textarea",
+      "time",
+      "u",
+      "var",
+      "video",
+      "wbr"
+      // TODO: autonomous custom elements: 4.13 Custom elements: https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals(
-			"Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
-			-1,
-			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyDATALIST_content.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDATALIST_content.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals(
+      "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
+      -1,
+      AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyDATALIST_content.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDATALIST_content.class);
+  }
 }

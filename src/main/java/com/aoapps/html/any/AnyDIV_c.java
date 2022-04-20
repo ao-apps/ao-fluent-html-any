@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyDIV_c<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_DL_Palpable<D, PC>,
-	_c extends AnyDIV_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_DL_Palpable<D, PC>,
+  _c extends AnyDIV_c<D, PC, _c>
 >
-	extends NormalText_c<D, PC, _c>
-	implements AnyDIV_content<D, _c> {
+  extends NormalText_c<D, PC, _c>
+  implements AnyDIV_content<D, _c> {
 
-	protected AnyDIV_c(AnyDIV<D, PC, ?, ?, _c> element) {
-		super(element);
-	}
+  protected AnyDIV_c(AnyDIV<D, PC, ?, ?, _c> element) {
+    super(element);
+  }
 }

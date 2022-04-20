@@ -37,14 +37,14 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyMAP_c<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-	_c extends AnyMAP_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+  _c extends AnyMAP_c<D, PC, _c>
 >
-	extends TransparentText_c<D, PC, _c>
-	implements AnyUnion_Palpable_Phrasing<D, _c> {
+  extends TransparentText_c<D, PC, _c>
+  implements AnyUnion_Palpable_Phrasing<D, _c> {
 
-	protected AnyMAP_c(AnyMAP<D, PC, ?, _c> element) {
-		super(element);
-	}
+  protected AnyMAP_c(AnyMAP<D, PC, ?, _c> element) {
+    super(element);
+  }
 }

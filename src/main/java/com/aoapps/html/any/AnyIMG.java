@@ -42,89 +42,89 @@ import java.util.function.Function;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyIMG<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Embedded_Interactive<D, PC>,
-	E  extends AnyIMG<D, PC, E>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Embedded_Interactive<D, PC>,
+  E  extends AnyIMG<D, PC, E>
 > extends Void<D, PC, E> implements
-	com.aoapps.html.any.attributes.Enum.Align<E, AnyIMG.Align>,
-	com.aoapps.html.any.attributes.Text.Alt<E>,
-	// TODO: border
-	// TODO: crossorigin
-	com.aoapps.html.any.attributes.Integer.Height<E>,
-	// TODO: hspace
-	com.aoapps.html.any.attributes.Boolean.Ismap<E>,
-	// TODO: longdesc
-	// TODO: sizes
-	com.aoapps.html.any.attributes.Url.Src<E>,
-	// TODO: srcset
-	com.aoapps.html.any.attributes.Text.Usemap<E>,
-	// TODO: vspace
-	com.aoapps.html.any.attributes.Integer.Width<E>,
-	// TODO: More events
-	// Global Event Attributes overrides
-	com.aoapps.html.any.attributes.event.Onabort<E>,
-	com.aoapps.html.any.attributes.event.Onerror<E>,
-	com.aoapps.html.any.attributes.event.Onload<E>
+  com.aoapps.html.any.attributes.Enum.Align<E, AnyIMG.Align>,
+  com.aoapps.html.any.attributes.Text.Alt<E>,
+  // TODO: border
+  // TODO: crossorigin
+  com.aoapps.html.any.attributes.Integer.Height<E>,
+  // TODO: hspace
+  com.aoapps.html.any.attributes.Boolean.Ismap<E>,
+  // TODO: longdesc
+  // TODO: sizes
+  com.aoapps.html.any.attributes.Url.Src<E>,
+  // TODO: srcset
+  com.aoapps.html.any.attributes.Text.Usemap<E>,
+  // TODO: vspace
+  com.aoapps.html.any.attributes.Integer.Width<E>,
+  // TODO: More events
+  // Global Event Attributes overrides
+  com.aoapps.html.any.attributes.event.Onabort<E>,
+  com.aoapps.html.any.attributes.event.Onerror<E>,
+  com.aoapps.html.any.attributes.event.Onload<E>
 {
 
-	protected AnyIMG(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyIMG(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, "<img", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, "<img", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	/**
-	 * See <a href="https://www.w3schools.com/tags/att_img_align.asp">HTML img align Attribute</a>.
-	 *
-	 * @deprecated  The align attribute of &lt;img&gt; is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	public enum Align implements Function<AnyDocument<?>, String> {
+  /**
+   * See <a href="https://www.w3schools.com/tags/att_img_align.asp">HTML img align Attribute</a>.
+   *
+   * @deprecated  The align attribute of &lt;img&gt; is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  public enum Align implements Function<AnyDocument<?>, String> {
 
-		/**
-		 * Align the image to the left
-		 */
-		LEFT("left"),
+    /**
+     * Align the image to the left
+     */
+    LEFT("left"),
 
-		/**
-		 * Align the image to the right
-		 */
-		RIGHT("right"),
+    /**
+     * Align the image to the right
+     */
+    RIGHT("right"),
 
-		/**
-		 * Align the image in the middle
-		 */
-		MIDDLE("middle"),
+    /**
+     * Align the image in the middle
+     */
+    MIDDLE("middle"),
 
-		/**
-		 * Align the image at the top
-		 */
-		TOP("top"),
+    /**
+     * Align the image at the top
+     */
+    TOP("top"),
 
-		/**
-		 * Align the image at the bottom
-		 */
-		BOTTOM("bottom");
+    /**
+     * Align the image at the bottom
+     */
+    BOTTOM("bottom");
 
-		private final String value;
+    private final String value;
 
-		private Align(String value) {
-			this.value = value;
-		}
+    private Align(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-	}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
+  }
 }

@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnprogressUnexpected<E extends Element<?, ?, E> & OnprogressUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onprogress attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onprogress(Object onprogress) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onprogress");
-		return Attributes.Event.attribute(element, "onprogress", onprogress);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onprogress attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onprogress(Object onprogress) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onprogress");
+    return Attributes.Event.attribute(element, "onprogress", onprogress);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onprogress(java.lang.Object)
-	 *
-	 * @deprecated  Although the onprogress attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onprogress(IOSupplierE<?, Ex> onprogress) throws IOException, Ex {
-		return onprogress((onprogress == null) ? null : onprogress.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onprogress(java.lang.Object)
+   *
+   * @deprecated  Although the onprogress attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onprogress(IOSupplierE<?, Ex> onprogress) throws IOException, Ex {
+    return onprogress((onprogress == null) ? null : onprogress.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onprogress(java.lang.Object)
-	 *
-	 * @deprecated  Although the onprogress attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onprogress(JavaScriptWritable<Ex> onprogress) throws IOException, Ex {
-		return onprogress((Object)onprogress);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onprogress">3.2.6 Global attributes / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onprogress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onprogress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onprogress">8.1.7.2.1 IDL definitions / onprogress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onprogress">GlobalEventHandlers.onprogress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onprogress.asp">onprogress Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onprogress(java.lang.Object)
+   *
+   * @deprecated  Although the onprogress attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onprogress(JavaScriptWritable<Ex> onprogress) throws IOException, Ex {
+    return onprogress((Object)onprogress);
+  }
 }

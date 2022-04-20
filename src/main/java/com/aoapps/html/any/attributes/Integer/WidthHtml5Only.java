@@ -43,52 +43,52 @@ import java.io.IOException;
 // Matches Width
 public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> extends Width<E> {
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * The width attribute is new in HTML5.
-	 * </p>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E width(int pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "width");
-		return Width.super.width(pixels);
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * The width attribute is new in HTML5.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E width(int pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "width");
+    return Width.super.width(pixels);
+  }
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * The width attribute is new in HTML5.
-	 * </p>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E width(Integer pixels) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "width");
-		return Width.super.width(pixels);
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * The width attribute is new in HTML5.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E width(Integer pixels) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "width");
+    return Width.super.width(pixels);
+  }
 
-	/**
-	 * {@inheritDoc}
-	 * <p>
-	 * The width attribute is new in HTML5.
-	 * </p>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #width(java.lang.Integer)
-	 */
-	@Override
-	default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
-		return Width.super.width(pixels);
-	}
+  /**
+   * {@inheritDoc}
+   * <p>
+   * The width attribute is new in HTML5.
+   * </p>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #width(java.lang.Integer)
+   */
+  @Override
+  default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+    return Width.super.width(pixels);
+  }
 }

@@ -44,87 +44,87 @@ import java.util.function.Function;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyTABLE<
-	D  extends AnyDocument<D>,
-	PC extends AnyPalpableContent<D, PC>,
-	E  extends AnyTABLE<D, PC, E, __, _c>,
-	__ extends AnyTABLE__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyTABLE_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyPalpableContent<D, PC>,
+  E  extends AnyTABLE<D, PC, E, __, _c>,
+  __ extends AnyTABLE__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyTABLE_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-	com.aoapps.html.any.attributes.Enum.Align<E, AnyTABLE.Align>,
-	// TODO: bgcolor (deprecated)
-	com.aoapps.html.any.attributes.Integer.Border<E>,
-	com.aoapps.html.any.attributes.Dimension.Cellpadding<E>,
-	com.aoapps.html.any.attributes.Dimension.Cellspacing<E>,
-	// TODO: frame (deprecated)
-	// TODO: rules (deprecated)
-	// TODO: summary (deprecated)
-	com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
+  com.aoapps.html.any.attributes.Enum.Align<E, AnyTABLE.Align>,
+  // TODO: bgcolor (deprecated)
+  com.aoapps.html.any.attributes.Integer.Border<E>,
+  com.aoapps.html.any.attributes.Dimension.Cellpadding<E>,
+  com.aoapps.html.any.attributes.Dimension.Cellspacing<E>,
+  // TODO: frame (deprecated)
+  // TODO: rules (deprecated)
+  // TODO: summary (deprecated)
+  com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
 {
 
-	protected AnyTABLE(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyTABLE(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoNli(unsafe).unsafe(unsafe, "<table", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoNli(unsafe).unsafe(unsafe, "<table", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void doBeforeBody(Writer unsafe) throws IOException {
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void doBeforeBody(Writer unsafe) throws IOException {
+    document.autoNl(unsafe);
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		if(closeAttributes) {
-			document.autoIndent(unsafe).unsafe(unsafe, "></table>", false);
-		} else {
-			document.autoNli(unsafe).unsafe(unsafe, "</table>", false);
-		}
-		document.autoNl(unsafe);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    if (closeAttributes) {
+      document.autoIndent(unsafe).unsafe(unsafe, "></table>", false);
+    } else {
+      document.autoNli(unsafe).unsafe(unsafe, "</table>", false);
+    }
+    document.autoNl(unsafe);
+  }
 
-	/**
-	 * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-align">&lt;table&gt;: The Table element / align</a>.
-	 *
-	 * @deprecated  The align attribute of &lt;table&gt; is not supported in HTML5. Use CSS instead.
-	 */
-	@Deprecated
-	public enum Align implements Function<AnyDocument<?>, String> {
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-align">&lt;table&gt;: The Table element / align</a>.
+   *
+   * @deprecated  The align attribute of &lt;table&gt; is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  public enum Align implements Function<AnyDocument<?>, String> {
 
-		/**
-		 * the table is displayed on the left side of the document
-		 */
-		LEFT("left"),
+    /**
+     * the table is displayed on the left side of the document
+     */
+    LEFT("left"),
 
-		/**
-		 * the table is displayed in the center of the document
-		 */
-		CENTER("center"),
+    /**
+     * the table is displayed in the center of the document
+     */
+    CENTER("center"),
 
-		/**
-		 * the table is displayed on the right side of the document
-		 */
-		RIGHT("right");
+    /**
+     * the table is displayed on the right side of the document
+     */
+    RIGHT("right");
 
-		private final String value;
+    private final String value;
 
-		private Align(String value) {
-			this.value = value;
-		}
+    private Align(String value) {
+      this.value = value;
+    }
 
-		@Override
-		public String toString() {
-			return value;
-		}
+    @Override
+    public String toString() {
+      return value;
+    }
 
-		@Override
-		public String apply(AnyDocument<?> document) {
-			return value;
-		}
-	}
+    @Override
+    public String apply(AnyDocument<?> document) {
+      return value;
+    }
+  }
 }

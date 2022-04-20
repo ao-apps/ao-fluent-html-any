@@ -48,73 +48,73 @@ import java.io.IOException;
 // Matches ClassNoHtml4
 public interface Class<E extends Element<?, ?, E> & Class<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the class attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 */
-	@Attributes.Funnel
-	default E clazz(Object clazz) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the class attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   */
+  @Attributes.Funnel
+  default E clazz(Object clazz) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the class attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @param  clazz  Multiple classes will be space-separated.
-	 */
-	@Attributes.Funnel
-	default E clazz(Object ... clazz) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, " ", true, true, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the class attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @param  clazz  Multiple classes will be space-separated.
+   */
+  @Attributes.Funnel
+  default E clazz(Object ... clazz) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, " ", true, true, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the class attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #clazz(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E clazz(IOSupplierE<?, Ex> clazz) throws IOException, Ex {
-		return clazz((clazz == null) ? null : clazz.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the class attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #clazz(java.lang.Object)
+   */
+  default <Ex extends Throwable> E clazz(IOSupplierE<?, Ex> clazz) throws IOException, Ex {
+    return clazz((clazz == null) ? null : clazz.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
-	 * </ul>
-	 * <blockquote>
-	 * In HTML5, the class attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
-	 * </blockquote>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #clazz(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E clazz(TextWritable<Ex> clazz) throws IOException, Ex {
-		return clazz((Object)clazz);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
+   * </ul>
+   * <blockquote>
+   * In HTML5, the class attribute can be used on <b>any</b> HTML element (it will validate on any HTML element. However, it is not necessarily useful).
+   * </blockquote>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #clazz(java.lang.Object)
+   */
+  default <Ex extends Throwable> E clazz(TextWritable<Ex> clazz) throws IOException, Ex {
+    return clazz((Object)clazz);
+  }
 }

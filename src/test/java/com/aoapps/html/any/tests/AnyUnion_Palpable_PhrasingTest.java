@@ -42,116 +42,116 @@ import org.junit.Test;
 @SuppressWarnings({"rawtypes", "unchecked"})
 public class AnyUnion_Palpable_PhrasingTest {
 
-	private final Class<? extends AnyUnion_Palpable_Phrasing> testingClass;
+  private final Class<? extends AnyUnion_Palpable_Phrasing> testingClass;
 
-	protected AnyUnion_Palpable_PhrasingTest(Class<? extends AnyUnion_Palpable_Phrasing> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyUnion_Palpable_PhrasingTest(Class<? extends AnyUnion_Palpable_Phrasing> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyUnion_Palpable_PhrasingTest() {
-		this(AnyUnion_Palpable_Phrasing.class);
-	}
+  public AnyUnion_Palpable_PhrasingTest() {
+    this(AnyUnion_Palpable_Phrasing.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyUnion_Palpable_Phrasing.class,
-			//
-			// Unions:
-			//
-			AnyUnion_Embedded_Interactive.class,
-			AnyUnion_Embedded_Palpable_Phrasing.class,
-			AnyUnion_Interactive_Phrasing.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyUnion_Palpable_Phrasing.class,
+      //
+      // Unions:
+      //
+      AnyUnion_Embedded_Interactive.class,
+      AnyUnion_Embedded_Palpable_Phrasing.class,
+      AnyUnion_Interactive_Phrasing.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyUnion_Palpable_Phrasing.class,
-			//
-			// Content models:
-			//
-			Content.class,
-			AnyTextContent.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyUnion_Palpable_Phrasing.class,
+      //
+      // Content models:
+      //
+      Content.class,
+      AnyTextContent.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyUnion_Palpable_Phrasing.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyUnion_Palpable_Phrasing.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"a",
-			"abbr",
-			"audio",
-			"b",
-			"bdi",
-			"bdo",
-			"button",
-			"canvas",
-			"cite",
-			"code",
-			"data",
-			"dfn",
-			"em",
-			"embed",
-			"i",
-			"iframe",
-			"img",
-			"input",
-			"ins",
-			"kbd",
-			"label",
-			"map",
-			"mark",
-			// TODO: MathML math
-			"meter",
-			"object",
-			"output",
-			"progress",
-			"q",
-			"ruby",
-			"s",
-			"samp",
-			"select",
-			"small",
-			"span",
-			"strong",
-			"sub",
-			"sup",
-			// TODO: SVG svg
-			"textarea",
-			"time",
-			"u",
-			"var",
-			"video"
-			// TODO: autonomous custom elements: 4.13 Custom elements: https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "a",
+      "abbr",
+      "audio",
+      "b",
+      "bdi",
+      "bdo",
+      "button",
+      "canvas",
+      "cite",
+      "code",
+      "data",
+      "dfn",
+      "em",
+      "embed",
+      "i",
+      "iframe",
+      "img",
+      "input",
+      "ins",
+      "kbd",
+      "label",
+      "map",
+      "mark",
+      // TODO: MathML math
+      "meter",
+      "object",
+      "output",
+      "progress",
+      "q",
+      "ruby",
+      "s",
+      "samp",
+      "select",
+      "small",
+      "span",
+      "strong",
+      "sub",
+      "sup",
+      // TODO: SVG svg
+      "textarea",
+      "time",
+      "u",
+      "var",
+      "video"
+      // TODO: autonomous custom elements: 4.13 Custom elements: https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-			-1,
-			AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Palpable_Phrasing.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_Palpable_Phrasing.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
+      -1,
+      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Palpable_Phrasing.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_Palpable_Phrasing.class);
+  }
 }

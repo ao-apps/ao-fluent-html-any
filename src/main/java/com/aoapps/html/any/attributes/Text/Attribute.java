@@ -40,48 +40,48 @@ import java.io.IOException;
  */
 public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
 
-	/**
-	 * An arbitrary attribute.
-	 *
-	 * @param value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
-	 *
-	 * @deprecated  Please implement specific attributes as-needed
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E attribute(String name, Object value) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		// TODO: Validate attribute name by doctype: https://dev.w3.org/html5/html-author/#attributes (XmlUtils could help)
-		return Attributes.Text.attribute(element, name, MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
-	}
+  /**
+   * An arbitrary attribute.
+   *
+   * @param value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
+   *
+   * @deprecated  Please implement specific attributes as-needed
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E attribute(String name, Object value) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    // TODO: Validate attribute name by doctype: https://dev.w3.org/html5/html-author/#attributes (XmlUtils could help)
+    return Attributes.Text.attribute(element, name, MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
+  }
 
-	/**
-	 * An arbitrary attribute.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 * @param value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
-	 *
-	 * @see #attribute(java.lang.String, java.lang.Object)
-	 *
-	 * @deprecated  Please implement specific attributes as-needed
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E attribute(String name, IOSupplierE<?, Ex> value) throws IOException, Ex {
-		return attribute(name, (value == null) ? null : value.get());
-	}
+  /**
+   * An arbitrary attribute.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   * @param value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
+   *
+   * @see #attribute(java.lang.String, java.lang.Object)
+   *
+   * @deprecated  Please implement specific attributes as-needed
+   */
+  @Deprecated
+  default <Ex extends Throwable> E attribute(String name, IOSupplierE<?, Ex> value) throws IOException, Ex {
+    return attribute(name, (value == null) ? null : value.get());
+  }
 
-	/**
-	 * An arbitrary attribute.
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #attribute(java.lang.String, java.lang.Object)
-	 *
-	 * @deprecated  Please implement specific attributes as-needed
-	 */
-	@Deprecated
-	// TODO: Just MediaWritable here?  How does this interact with the various types of MediaWriters?
-	default <Ex extends Throwable> E attribute(String name, XhtmlAttributeWritable<Ex> value) throws IOException, Ex {
-		return attribute(name, (Object)value);
-	}
+  /**
+   * An arbitrary attribute.
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #attribute(java.lang.String, java.lang.Object)
+   *
+   * @deprecated  Please implement specific attributes as-needed
+   */
+  @Deprecated
+  // TODO: Just MediaWritable here?  How does this interact with the various types of MediaWriters?
+  default <Ex extends Throwable> E attribute(String name, XhtmlAttributeWritable<Ex> value) throws IOException, Ex {
+    return attribute(name, (Object)value);
+  }
 }

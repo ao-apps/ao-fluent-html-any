@@ -42,77 +42,77 @@ import org.junit.Test;
 @SuppressWarnings("rawtypes")
 public class AnyDL_contentTest {
 
-	private final Class<? extends AnyDL_content> testingClass;
+  private final Class<? extends AnyDL_content> testingClass;
 
-	protected AnyDL_contentTest(Class<? extends AnyDL_content> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyDL_contentTest(Class<? extends AnyDL_content> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyDL_contentTest() {
-		this(AnyDL_content.class);
-	}
+  public AnyDL_contentTest() {
+    this(AnyDL_content.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyDL_content.class,
-			//
-			// Unions:
-			//
-			AnyUnion_COLGROUP_ScriptSupporting.class,
-			AnyUnion_DIV_DL.class,
-			AnyUnion_DL_Palpable.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyDL_content.class,
+      //
+      // Unions:
+      //
+      AnyUnion_COLGROUP_ScriptSupporting.class,
+      AnyUnion_DIV_DL.class,
+      AnyUnion_DL_Palpable.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyDL_content.class,
-			//
-			// Content models:
-			//
-			Content.class,
-			AnyScriptSupportingContent.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyDL_content.class,
+      //
+      // Content models:
+      //
+      Content.class,
+      AnyScriptSupportingContent.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyDL_content.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyDL_content.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"dd",
-			"div",
-			"dt",
-			"script",
-			"template"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "dd",
+      "div",
+      "dt",
+      "script",
+      "template"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals(
-			"Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
-			-1,
-			AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyDL_content.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDL_content.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals(
+      "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
+      -1,
+      AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyDL_content.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDL_content.class);
+  }
 }

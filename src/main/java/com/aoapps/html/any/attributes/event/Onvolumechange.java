@@ -48,60 +48,60 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Onvolumechange<E extends Element<?, ?, E> & Onvolumechange<E>> extends OnvolumechangeUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onvolumechange">3.2.6 Global attributes / onvolumechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onvolumechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onvolumechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onvolumechange">8.1.7.2.1 IDL definitions / onvolumechange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onvolumechange">GlobalEventHandlers.onvolumechange</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onvolumechange.asp">onvolumechange Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E onvolumechange(Object onvolumechange) throws IOException {
-		return OnvolumechangeUnexpected.super.onvolumechange(onvolumechange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onvolumechange">3.2.6 Global attributes / onvolumechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onvolumechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onvolumechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onvolumechange">8.1.7.2.1 IDL definitions / onvolumechange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onvolumechange">GlobalEventHandlers.onvolumechange</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onvolumechange.asp">onvolumechange Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E onvolumechange(Object onvolumechange) throws IOException {
+    return OnvolumechangeUnexpected.super.onvolumechange(onvolumechange);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onvolumechange">3.2.6 Global attributes / onvolumechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onvolumechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onvolumechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onvolumechange">8.1.7.2.1 IDL definitions / onvolumechange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onvolumechange">GlobalEventHandlers.onvolumechange</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onvolumechange.asp">onvolumechange Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onvolumechange(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onvolumechange(IOSupplierE<?, Ex> onvolumechange) throws IOException, Ex {
-		return OnvolumechangeUnexpected.super.onvolumechange(onvolumechange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onvolumechange">3.2.6 Global attributes / onvolumechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onvolumechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onvolumechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onvolumechange">8.1.7.2.1 IDL definitions / onvolumechange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onvolumechange">GlobalEventHandlers.onvolumechange</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onvolumechange.asp">onvolumechange Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onvolumechange(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onvolumechange(IOSupplierE<?, Ex> onvolumechange) throws IOException, Ex {
+    return OnvolumechangeUnexpected.super.onvolumechange(onvolumechange);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onvolumechange">3.2.6 Global attributes / onvolumechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onvolumechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onvolumechange</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onvolumechange">8.1.7.2.1 IDL definitions / onvolumechange</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onvolumechange">GlobalEventHandlers.onvolumechange</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onvolumechange.asp">onvolumechange Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onvolumechange(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E onvolumechange(JavaScriptWritable<Ex> onvolumechange) throws IOException, Ex {
-		return OnvolumechangeUnexpected.super.onvolumechange(onvolumechange);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onvolumechange">3.2.6 Global attributes / onvolumechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onvolumechange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onvolumechange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onvolumechange">8.1.7.2.1 IDL definitions / onvolumechange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onvolumechange">GlobalEventHandlers.onvolumechange</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onvolumechange.asp">onvolumechange Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onvolumechange(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E onvolumechange(JavaScriptWritable<Ex> onvolumechange) throws IOException, Ex {
+    return OnvolumechangeUnexpected.super.onvolumechange(onvolumechange);
+  }
 }

@@ -41,79 +41,79 @@ import org.junit.Test;
 @SuppressWarnings("rawtypes")
 public class AnyMetadataContentTest {
 
-	private final Class<? extends AnyMetadataContent> testingClass;
+  private final Class<? extends AnyMetadataContent> testingClass;
 
-	protected AnyMetadataContentTest(Class<? extends AnyMetadataContent> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyMetadataContentTest(Class<? extends AnyMetadataContent> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyMetadataContentTest() {
-		this(AnyMetadataContent.class);
-	}
+  public AnyMetadataContentTest() {
+    this(AnyMetadataContent.class);
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyMetadataContent.class,
-			//
-			// Unions:
-			//
-			AnyUnion_COLGROUP_ScriptSupporting.class,
-			AnyUnion_Metadata_Phrasing.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyMetadataContent.class,
+      //
+      // Unions:
+      //
+      AnyUnion_COLGROUP_ScriptSupporting.class,
+      AnyUnion_Metadata_Phrasing.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyMetadataContent.class,
-			//
-			// Content models:
-			//
-			Content.class,
-			AnyScriptSupportingContent.class
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyMetadataContent.class,
+      //
+      // Content models:
+      //
+      Content.class,
+      AnyScriptSupportingContent.class
+    );
+  }
 
-	@Test
-	@SuppressWarnings("unchecked")
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyMetadataContent.class
-			//
-			// Per-element content models:
-			//
-			// None
-		);
-	}
+  @Test
+  @SuppressWarnings("unchecked")
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyMetadataContent.class
+      //
+      // Per-element content models:
+      //
+      // None
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			"base",
-			"link",
-			"meta",
-			"noscript",
-			"script",
-			"style",
-			"template", // WHATWG only
-			"title"
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      "base",
+      "link",
+      "meta",
+      "noscript",
+      "script",
+      "style",
+      "template", // WHATWG only
+      "title"
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		Assert.assertNotEquals(
-			"Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-			-1,
-			AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyMetadataContent.class)
-		);
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyMetadataContent.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    Assert.assertNotEquals(
+      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+      -1,
+      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyMetadataContent.class)
+    );
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyMetadataContent.class);
+  }
 }

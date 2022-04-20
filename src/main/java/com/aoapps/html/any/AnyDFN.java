@@ -46,76 +46,76 @@ import java.io.Writer;
  */
 // TODO: Phrasing content, but there must be no dfn element descendants.
 public abstract class AnyDFN<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-	E  extends AnyDFN<D, PC, E, __, _c>,
-	__ extends AnyDFN__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyDFN_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+  E  extends AnyDFN<D, PC, E, __, _c>,
+  __ extends AnyDFN__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyDFN_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
-	protected AnyDFN(D document, PC pc) {
-		super(document, pc);
-	}
+  protected AnyDFN(D document, PC pc) {
+    super(document, pc);
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, "<dfn", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, "<dfn", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></dfn>" : "</dfn>", false);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></dfn>" : "</dfn>", false);
+  }
 
-	/**
-	 * The {@linkplain Title#title(java.lang.Object) title} attribute
-	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-dfn-title">has special semantics</a>
-	 * on this element: Full term or expansion of abbreviation.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
-	 * </ul>
-	 */
-	@Override
-	public E title(Object title) throws IOException {
-		return super.title(title);
-	}
+  /**
+   * The {@linkplain Title#title(java.lang.Object) title} attribute
+   * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-dfn-title">has special semantics</a>
+   * on this element: Full term or expansion of abbreviation.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
+   * </ul>
+   */
+  @Override
+  public E title(Object title) throws IOException {
+    return super.title(title);
+  }
 
-	/**
-	 * The {@linkplain Title#title(com.aoapps.lang.io.function.IOSupplierE) title} attribute
-	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-dfn-title">has special semantics</a>
-	 * on this element: Full term or expansion of abbreviation.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Override
-	public <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
-		return super.title(title);
-	}
+  /**
+   * The {@linkplain Title#title(com.aoapps.lang.io.function.IOSupplierE) title} attribute
+   * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-dfn-title">has special semantics</a>
+   * on this element: Full term or expansion of abbreviation.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Override
+  public <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
+    return super.title(title);
+  }
 
-	/**
-	 * The {@linkplain Title#title(com.aoapps.encoding.TextWritable) title} attribute
-	 * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-dfn-title">has special semantics</a>
-	 * on this element: Full term or expansion of abbreviation.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Override
-	public <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
-		return super.title(title);
-	}
+  /**
+   * The {@linkplain Title#title(com.aoapps.encoding.TextWritable) title} attribute
+   * <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-dfn-title">has special semantics</a>
+   * on this element: Full term or expansion of abbreviation.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_dfn.asp">HTML dfn tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Override
+  public <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
+    return super.title(title);
+  }
 }

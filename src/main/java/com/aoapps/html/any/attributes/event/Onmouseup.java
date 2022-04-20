@@ -45,52 +45,52 @@ import java.io.IOException;
 // Matches OnmouseupUnexpected
 public interface Onmouseup<E extends Element<?, ?, E> & Onmouseup<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
-	 * </ul>
-	 */
-	@Attributes.Funnel
-	default E onmouseup(Object onmouseup) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return Attributes.Event.attribute(element, "onmouseup", onmouseup);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
+   * </ul>
+   */
+  @Attributes.Funnel
+  default E onmouseup(Object onmouseup) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return Attributes.Event.attribute(element, "onmouseup", onmouseup);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onmouseup(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmouseup(IOSupplierE<?, Ex> onmouseup) throws IOException, Ex {
-		return onmouseup((onmouseup == null) ? null : onmouseup.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onmouseup(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmouseup(IOSupplierE<?, Ex> onmouseup) throws IOException, Ex {
+    return onmouseup((onmouseup == null) ? null : onmouseup.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @see #onmouseup(java.lang.Object)
-	 */
-	default <Ex extends Throwable> E onmouseup(JavaScriptWritable<Ex> onmouseup) throws IOException, Ex {
-		return onmouseup((Object)onmouseup);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseup">3.2.6 Global attributes / onmouseup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseup">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseup</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseup">8.1.7.2.1 IDL definitions / onmouseup</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseup">GlobalEventHandlers.onmouseup</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseup.asp">onmouseup Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @see #onmouseup(java.lang.Object)
+   */
+  default <Ex extends Throwable> E onmouseup(JavaScriptWritable<Ex> onmouseup) throws IOException, Ex {
+    return onmouseup((Object)onmouseup);
+  }
 }

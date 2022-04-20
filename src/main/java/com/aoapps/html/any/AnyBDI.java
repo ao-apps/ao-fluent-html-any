@@ -46,96 +46,96 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyBDI<
-	D  extends AnyDocument<D>,
-	PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-	E  extends AnyBDI<D, PC, E, __, _c>,
-	__ extends AnyBDI__<D, PC, __>,
-	// Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-	_c extends AnyBDI_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+  E  extends AnyBDI<D, PC, E, __, _c>,
+  __ extends AnyBDI__<D, PC, __>,
+  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+  _c extends AnyBDI_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
-	protected AnyBDI(D document, PC pc) {
-		super(document, pc);
-		Elements.onlySupportedInHtml5(document, "<bdi>");
-	}
+  protected AnyBDI(D document, PC pc) {
+    super(document, pc);
+    Elements.onlySupportedInHtml5(document, "<bdi>");
+  }
 
-	@Override
-	protected E writeOpen(Writer unsafe) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, "<bdi", false);
-		@SuppressWarnings("unchecked") E element = (E)this;
-		return element;
-	}
+  @Override
+  protected E writeOpen(Writer unsafe) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, "<bdi", false);
+    @SuppressWarnings("unchecked") E element = (E)this;
+    return element;
+  }
 
-	@Override
-	protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
-		document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></bdi>" : "</bdi>", false);
-	}
+  @Override
+  protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
+    document.autoIndent(unsafe).unsafe(unsafe, closeAttributes ? "></bdi>" : "</bdi>", false);
+  }
 
-	/**
-	 * The {@linkplain Dir#dir(java.lang.String) dir} global attribute defaults to <code>auto</code>
-	 * on this element (it never inherits from the parent element like with other elements).
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	public E dir(String dir) throws IOException {
-		return super.dir(dir);
-	}
+  /**
+   * The {@linkplain Dir#dir(java.lang.String) dir} global attribute defaults to <code>auto</code>
+   * on this element (it never inherits from the parent element like with other elements).
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  public E dir(String dir) throws IOException {
+    return super.dir(dir);
+  }
 
-	/**
-	 * The {@linkplain Dir#dir(com.aoapps.html.Suppliers.String) dir} global attribute defaults to <code>auto</code>
-	 * on this element (it never inherits from the parent element like with other elements).
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	public <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
-		return super.dir(dir);
-	}
+  /**
+   * The {@linkplain Dir#dir(com.aoapps.html.Suppliers.String) dir} global attribute defaults to <code>auto</code>
+   * on this element (it never inherits from the parent element like with other elements).
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   */
+  @Override
+  public <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
+    return super.dir(dir);
+  }
 
-	/**
-	 * The {@linkplain Dir#dir(com.aoapps.html.any.attributes.Enum.Dir.Value) dir} global attribute defaults to <code>auto</code>
-	 * on this element (it never inherits from the parent element like with other elements).
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	public E dir(Value dir) throws IOException {
-		return super.dir(dir);
-	}
+  /**
+   * The {@linkplain Dir#dir(com.aoapps.html.any.attributes.Enum.Dir.Value) dir} global attribute defaults to <code>auto</code>
+   * on this element (it never inherits from the parent element like with other elements).
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  public E dir(Value dir) throws IOException {
+    return super.dir(dir);
+  }
 
-	/**
-	 * The {@linkplain Dir#dir(com.aoapps.lang.io.function.IOSupplierE) dir} global attribute defaults to <code>auto</code>
-	 * on this element (it never inherits from the parent element like with other elements).
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	public <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
-		return super.dir(dir);
-	}
+  /**
+   * The {@linkplain Dir#dir(com.aoapps.lang.io.function.IOSupplierE) dir} global attribute defaults to <code>auto</code>
+   * on this element (it never inherits from the parent element like with other elements).
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_bdi.asp">HTML bdi Tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   */
+  @Override
+  public <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
+    return super.dir(dir);
+  }
 }

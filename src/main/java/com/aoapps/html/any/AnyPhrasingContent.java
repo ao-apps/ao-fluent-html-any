@@ -42,457 +42,457 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyPhrasingContent<
-	D  extends AnyDocument<D>,
-	__ extends AnyPhrasingContent<D, __>
+  D  extends AnyDocument<D>,
+  __ extends AnyPhrasingContent<D, __>
 > extends
-	//
-	// Unions:
-	//
-	// Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-	// Inherited: AnyUnion_Embedded_Interactive<D, __>
-	// Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
-	// Inherited: AnyUnion_Interactive_Phrasing<D, __>
-	AnyUnion_Metadata_Phrasing<D, __>,
-	AnyUnion_Palpable_Phrasing<D, __>,
+  //
+  // Unions:
+  //
+  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+  // Inherited: AnyUnion_Embedded_Interactive<D, __>
+  // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
+  // Inherited: AnyUnion_Interactive_Phrasing<D, __>
+  AnyUnion_Metadata_Phrasing<D, __>,
+  AnyUnion_Palpable_Phrasing<D, __>,
 
-	//
-	// Content models:
-	//
-	// Inherited: Content<D, __>
-	AnyEmbeddedContent<D, __>
-	// Inherited: AnyScriptSupportingContent<D, __>
-	// Inherited: AnyTextContent<D, __>
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+  AnyEmbeddedContent<D, __>
+  // Inherited: AnyScriptSupportingContent<D, __>
+  // Inherited: AnyTextContent<D, __>
 {
-	//
-	// Factories:
-	//
-	// Inherited: A
-	// Inherited: ABBR
-	// <editor-fold defaultstate="collapsed" desc="AREA - if a descendent of map">
-	/**
-	 * Opens a new area element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("area")
-	AnyAREA<D, __, ?> area() throws IOException;
+  //
+  // Factories:
+  //
+  // Inherited: A
+  // Inherited: ABBR
+  // <editor-fold defaultstate="collapsed" desc="AREA - if a descendent of map">
+  /**
+   * Opens a new area element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
+   * </ul>
+   */
+  @Factory("area")
+  AnyAREA<D, __, ?> area() throws IOException;
 
-	/**
-	 * Opens a new area element with the given coords attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("area")
-	AnyAREA<D, __, ?> area(Rectangle rect) throws IOException;
+  /**
+   * Opens a new area element with the given coords attribute.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
+   * </ul>
+   */
+  @Factory("area")
+  AnyAREA<D, __, ?> area(Rectangle rect) throws IOException;
 
-	/**
-	 * Opens a new area element with the given coords attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Factory("area")
-	<Ex extends Throwable> AnyAREA<D, __, ?> area(Suppliers.Rectangle<Ex> rect) throws IOException, Ex;
+  /**
+   * Opens a new area element with the given coords attribute.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Factory("area")
+  <Ex extends Throwable> AnyAREA<D, __, ?> area(Suppliers.Rectangle<Ex> rect) throws IOException, Ex;
 
-	/**
-	 * Opens a new area element with the given coords attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("area")
-	AnyAREA<D, __, ?> area(Circle circle) throws IOException;
+  /**
+   * Opens a new area element with the given coords attribute.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
+   * </ul>
+   */
+  @Factory("area")
+  AnyAREA<D, __, ?> area(Circle circle) throws IOException;
 
-	/**
-	 * Opens a new area element with the given coords attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Factory("area")
-	<Ex extends Throwable> AnyAREA<D, __, ?> area(Suppliers.Circle<Ex> circle) throws IOException, Ex;
+  /**
+   * Opens a new area element with the given coords attribute.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Factory("area")
+  <Ex extends Throwable> AnyAREA<D, __, ?> area(Suppliers.Circle<Ex> circle) throws IOException, Ex;
 
-	/**
-	 * Opens a new area element with the given coords attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("area")
-	AnyAREA<D, __, ?> area(Polygon poly) throws IOException;
+  /**
+   * Opens a new area element with the given coords attribute.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
+   * </ul>
+   */
+  @Factory("area")
+  AnyAREA<D, __, ?> area(Polygon poly) throws IOException;
 
-	/**
-	 * Opens a new area element with the given coords attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Factory("area")
-	<Ex extends Throwable> AnyAREA<D, __, ?> area(Suppliers.Polygon<Ex> poly) throws IOException, Ex;
+  /**
+   * Opens a new area element with the given coords attribute.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Factory("area")
+  <Ex extends Throwable> AnyAREA<D, __, ?> area(Suppliers.Polygon<Ex> poly) throws IOException, Ex;
 
-	/**
-	 * Opens a new area element with the given coords attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("area")
-	AnyAREA<D, __, ?> area(Shape shape) throws IOException;
+  /**
+   * Opens a new area element with the given coords attribute.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
+   * </ul>
+   */
+  @Factory("area")
+  AnyAREA<D, __, ?> area(Shape shape) throws IOException;
 
-	/**
-	 * Opens a new area element with the given coords attribute.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 */
-	@Factory("area")
-	<Ex extends Throwable> AnyAREA<D, __, ?> area(Suppliers.Shape<Ex> shape) throws IOException, Ex;
-	// </editor-fold>
-	// Inherited: AUDIO
-	// Inherited: B
-	// Inherited: BDI
-	// Inherited: BDO
-	// <editor-fold defaultstate="collapsed" desc="BR">
-	/**
-	 * Opens a new br element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element">4.5.27 The br element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br">&lt;br&gt;: The Line Break element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_br.asp">HTML br tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("br")
-	AnyBR<D, __, ?> br() throws IOException;
+  /**
+   * Opens a new area element with the given coords attribute.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-area-element">4.8.14 The area element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area">&lt;area&gt;: The Image Map Area element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_area.asp">HTML area tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   */
+  @Factory("area")
+  <Ex extends Throwable> AnyAREA<D, __, ?> area(Suppliers.Shape<Ex> shape) throws IOException, Ex;
+  // </editor-fold>
+  // Inherited: AUDIO
+  // Inherited: B
+  // Inherited: BDI
+  // Inherited: BDO
+  // <editor-fold defaultstate="collapsed" desc="BR">
+  /**
+   * Opens a new br element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element">4.5.27 The br element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br">&lt;br&gt;: The Line Break element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_br.asp">HTML br tag</a>.</li>
+   * </ul>
+   */
+  @Factory("br")
+  AnyBR<D, __, ?> br() throws IOException;
 
-	/**
-	 * Creates a br element with no attributes.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element">4.5.27 The br element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br">&lt;br&gt;: The Line Break element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_br.asp">HTML br tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("br")
-	default __ br__() throws IOException {
-		return br().__();
-	}
-	// </editor-fold>
-	// Inherited: BUTTON
-	// Inherited: CANVAS
-	// Inherited: CITE
-	// Inherited: CODE
-	// Inherited: DATA
-	// <editor-fold defaultstate="collapsed" desc="DATALIST">
-	/**
-	 * Opens a new datalist element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Factory("datalist")
-	AnyDATALIST<D, __, ?, ?, ?> datalist() throws IOException;
+  /**
+   * Creates a br element with no attributes.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-br-element">4.5.27 The br element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/br">&lt;br&gt;: The Line Break element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_br.asp">HTML br tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("br")
+  default __ br__() throws IOException {
+    return br().__();
+  }
+  // </editor-fold>
+  // Inherited: BUTTON
+  // Inherited: CANVAS
+  // Inherited: CITE
+  // Inherited: CODE
+  // Inherited: DATA
+  // <editor-fold defaultstate="collapsed" desc="DATALIST">
+  /**
+   * Opens a new datalist element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Factory("datalist")
+  AnyDATALIST<D, __, ?, ?, ?> datalist() throws IOException;
 
-	/**
-	 * Creates a datalist element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 *
-	 * @since HTML 5
-	 */
-	@Factory("datalist")
-	default <Ex extends Throwable> __ datalist__(IORunnableE<Ex> datalist) throws IOException, Ex {
-		return datalist().__(datalist);
-	}
+  /**
+   * Creates a datalist element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   *
+   * @since HTML 5
+   */
+  @Factory("datalist")
+  default <Ex extends Throwable> __ datalist__(IORunnableE<Ex> datalist) throws IOException, Ex {
+    return datalist().__(datalist);
+  }
 
-	/**
-	 * Creates a datalist element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 *
-	 * @since HTML 5
-	 */
-	@Factory("datalist")
-	default <Ex extends Throwable> __ datalist__any(IOConsumerE<? super AnyDATALIST__<D, __, ? extends AnyDATALIST__<D, __, ?>>, Ex> datalist) throws IOException, Ex {
-		return datalist().__(datalist);
-	}
+  /**
+   * Creates a datalist element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   *
+   * @since HTML 5
+   */
+  @Factory("datalist")
+  default <Ex extends Throwable> __ datalist__any(IOConsumerE<? super AnyDATALIST__<D, __, ? extends AnyDATALIST__<D, __, ?>>, Ex> datalist) throws IOException, Ex {
+    return datalist().__(datalist);
+  }
 
-	/**
-	 * Creates a datalist element with no attributes and a text body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 *
-	 * @since HTML 5
-	 */
-	@Factory("datalist")
-	default __ datalist__(Object text) throws IOException {
-		return datalist().__(text);
-	}
+  /**
+   * Creates a datalist element with no attributes and a text body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   *
+   * @since HTML 5
+   */
+  @Factory("datalist")
+  default __ datalist__(Object text) throws IOException {
+    return datalist().__(text);
+  }
 
-	/**
-	 * Creates an empty datalist element with no attributes.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 *
-	 * @since HTML 5
-	 */
-	@Factory("datalist")
-	default __ datalist__() throws IOException {
-		return datalist().__();
-	}
+  /**
+   * Creates an empty datalist element with no attributes.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   *
+   * @since HTML 5
+   */
+  @Factory("datalist")
+  default __ datalist__() throws IOException {
+    return datalist().__();
+  }
 
-	/**
-	 * Creates a datalist element with no attributes then begins element content
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  The content model of this element, which will be the parent content model of child elements.
-	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
-	 *          the tag.  This is well suited for use in a try-with-resources block.
-	 *
-	 * @since HTML 5
-	 *
-	 * @see  Closeable#__()
-	 * @see  Closeable#close()
-	 */
-	@Factory("datalist")
-	AnyDATALIST_c<D, __, ?> datalist_c() throws IOException;
-	// </editor-fold>
-	// <editor-fold defaultstate="collapsed" desc="DEL">
-	/**
-	 * Opens a new del element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
-	 * </ul>
-	 */
-	@Factory("del")
-	AnyDEL<D, __, ?, ?> del() throws IOException;
+  /**
+   * Creates a datalist element with no attributes then begins element content
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_datalist.asp">HTML datalist Tag</a>.</li>
+   * </ul>
+   *
+   * @return  The content model of this element, which will be the parent content model of child elements.
+   *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+   *          the tag.  This is well suited for use in a try-with-resources block.
+   *
+   * @since HTML 5
+   *
+   * @see  Closeable#__()
+   * @see  Closeable#close()
+   */
+  @Factory("datalist")
+  AnyDATALIST_c<D, __, ?> datalist_c() throws IOException;
+  // </editor-fold>
+  // <editor-fold defaultstate="collapsed" desc="DEL">
+  /**
+   * Opens a new del element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+   * </ul>
+   */
+  @Factory("del")
+  AnyDEL<D, __, ?, ?> del() throws IOException;
 
-	/**
-	 * Creates a del element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("del")
-	default <Ex extends Throwable> __ del__(IORunnableE<Ex> del) throws IOException, Ex {
-		return del().__(del);
-	}
+  /**
+   * Creates a del element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("del")
+  default <Ex extends Throwable> __ del__(IORunnableE<Ex> del) throws IOException, Ex {
+    return del().__(del);
+  }
 
-	/**
-	 * Creates a del element with no attributes and the given body.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("del")
-	default <Ex extends Throwable> __ del__(IOConsumerE<? super __, Ex> del) throws IOException, Ex {
-		return del().__(del);
-	}
+  /**
+   * Creates a del element with no attributes and the given body.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("del")
+  default <Ex extends Throwable> __ del__(IOConsumerE<? super __, Ex> del) throws IOException, Ex {
+    return del().__(del);
+  }
 
-	/**
-	 * Creates an empty del element with no attributes.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 */
-	@Factory("del")
-	default __ del__() throws IOException {
-		return del().__();
-	}
+  /**
+   * Creates an empty del element with no attributes.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   */
+  @Factory("del")
+  default __ del__() throws IOException {
+    return del().__();
+  }
 
-	/**
-	 * Creates a del element with no attributes then begins element content
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  The content model of this element, which will be the parent content model of child elements.
-	 *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
-	 *          the tag.  This is well suited for use in a try-with-resources block.
-	 *          <p>
-	 *          Due to limitations in Java generics, this content model does not directly reflect the parent content
-	 *          model, despite this being a transparent content model.  Rather, it includes only the content model that
-	 *          always applies to this element type.
-	 *          </p>
-	 *          <p><em>
-	 *          For the full, context-aware content model, which will likely include more elements,
-	 *          {@linkplain Transparent_c#pc() use the parent content model directly}.
-	 *          </em></p>
-	 *
-	 * @see  Closeable#__()
-	 * @see  Closeable#close()
-	 * @see  Transparent_c#pc()
-	 */
-	@Factory("del")
-	AnyDEL_c<D, __, ?> del_c() throws IOException;
-	// </editor-fold>
-	// Inherited: DFN
-	// Inherited: EM
-	// Inherited: EMBED
-	// Inherited: I
-	// Inherited: IFRAME
-	// Inherited: IMG
-	// Inherited: INPUT
-	// Inherited: INS
-	// Inherited: KBD
-	// Inherited: LABEL
-	// Inherited: LINK - if it is allowed in body
-	// Inherited: MAP
-	// Inherited: MARK
-	// Inherited: MathML math
-	// Inherited: META - if the itemprop attribute is present
-	// Inherited: METER
-	// Inherited: NOSCRIPT
-	// Inherited: OBJECT
-	// Inherited: OUTPUT
-	// Inherited: PICTURE
-	// Inherited: PROGRESS
-	// Inherited: Q
-	// Inherited: RUBY
-	// Inherited: S
-	// Inherited: SAMP
-	// Inherited: SCRIPT
-	// Inherited: SELECT
-	// <editor-fold defaultstate="collapsed" desc="SLOT">
-	/**
-	 * Opens a new slot element.
-	 * <p>
-	 * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">4.12.4 The slot element</a>.
-	 * </p>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  TODO: Implement slot
-	 */
-	@Deprecated
-	@Factory("slot")
-	default AnySLOT slot() throws IOException {
-		throw new AssertionError("TODO: Implement slot");
-	}
-	// </editor-fold>
-	// Inherited: SMALL
-	// Inherited: SPAN
-	// Inherited: STRONG
-	// Inherited: SUB
-	// Inherited: SUP
-	// Inherited: SVG svg
-	// Inherited: TEMPLATE
-	// Inherited: TEXTAREA
-	// Inherited: TIME
-	// Inherited: U
-	// Inherited: VAR
-	// Inherited: VIDEO
-	// <editor-fold defaultstate="collapsed" desc="WBR">
-	/**
-	 * Opens a new wbr element.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element">4.5.28 The wbr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr">&lt;wbr&gt;: The Line Break Opportunity element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_wbr.asp">HTML wbr tag</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Factory("wbr")
-	AnyWBR<D, __, ?> wbr() throws IOException;
+  /**
+   * Creates a del element with no attributes then begins element content
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_del.asp">HTML del tag</a>.</li>
+   * </ul>
+   *
+   * @return  The content model of this element, which will be the parent content model of child elements.
+   *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
+   *          the tag.  This is well suited for use in a try-with-resources block.
+   *          <p>
+   *          Due to limitations in Java generics, this content model does not directly reflect the parent content
+   *          model, despite this being a transparent content model.  Rather, it includes only the content model that
+   *          always applies to this element type.
+   *          </p>
+   *          <p><em>
+   *          For the full, context-aware content model, which will likely include more elements,
+   *          {@linkplain Transparent_c#pc() use the parent content model directly}.
+   *          </em></p>
+   *
+   * @see  Closeable#__()
+   * @see  Closeable#close()
+   * @see  Transparent_c#pc()
+   */
+  @Factory("del")
+  AnyDEL_c<D, __, ?> del_c() throws IOException;
+  // </editor-fold>
+  // Inherited: DFN
+  // Inherited: EM
+  // Inherited: EMBED
+  // Inherited: I
+  // Inherited: IFRAME
+  // Inherited: IMG
+  // Inherited: INPUT
+  // Inherited: INS
+  // Inherited: KBD
+  // Inherited: LABEL
+  // Inherited: LINK - if it is allowed in body
+  // Inherited: MAP
+  // Inherited: MARK
+  // Inherited: MathML math
+  // Inherited: META - if the itemprop attribute is present
+  // Inherited: METER
+  // Inherited: NOSCRIPT
+  // Inherited: OBJECT
+  // Inherited: OUTPUT
+  // Inherited: PICTURE
+  // Inherited: PROGRESS
+  // Inherited: Q
+  // Inherited: RUBY
+  // Inherited: S
+  // Inherited: SAMP
+  // Inherited: SCRIPT
+  // Inherited: SELECT
+  // <editor-fold defaultstate="collapsed" desc="SLOT">
+  /**
+   * Opens a new slot element.
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">4.12.4 The slot element</a>.
+   * </p>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  TODO: Implement slot
+   */
+  @Deprecated
+  @Factory("slot")
+  default AnySLOT slot() throws IOException {
+    throw new AssertionError("TODO: Implement slot");
+  }
+  // </editor-fold>
+  // Inherited: SMALL
+  // Inherited: SPAN
+  // Inherited: STRONG
+  // Inherited: SUB
+  // Inherited: SUP
+  // Inherited: SVG svg
+  // Inherited: TEMPLATE
+  // Inherited: TEXTAREA
+  // Inherited: TIME
+  // Inherited: U
+  // Inherited: VAR
+  // Inherited: VIDEO
+  // <editor-fold defaultstate="collapsed" desc="WBR">
+  /**
+   * Opens a new wbr element.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element">4.5.28 The wbr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr">&lt;wbr&gt;: The Line Break Opportunity element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_wbr.asp">HTML wbr tag</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Factory("wbr")
+  AnyWBR<D, __, ?> wbr() throws IOException;
 
-	/**
-	 * Creates a wbr element with no attributes.
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element">4.5.28 The wbr element</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr">&lt;wbr&gt;: The Line Break Opportunity element</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/tags/tag_wbr.asp">HTML wbr tag</a>.</li>
-	 * </ul>
-	 *
-	 * @return  This content model, which will be the parent content model of child elements
-	 *
-	 * @since HTML 5
-	 */
-	@Factory("wbr")
-	default __ wbr__() throws IOException {
-		return wbr().__();
-	}
-	// </editor-fold>
-	// Inherited: autonomous custom elements
+  /**
+   * Creates a wbr element with no attributes.
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-wbr-element">4.5.28 The wbr element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/wbr">&lt;wbr&gt;: The Line Break Opportunity element</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/tag_wbr.asp">HTML wbr tag</a>.</li>
+   * </ul>
+   *
+   * @return  This content model, which will be the parent content model of child elements
+   *
+   * @since HTML 5
+   */
+  @Factory("wbr")
+  default __ wbr__() throws IOException {
+    return wbr().__();
+  }
+  // </editor-fold>
+  // Inherited: autonomous custom elements
 }

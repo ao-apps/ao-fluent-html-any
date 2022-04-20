@@ -36,62 +36,62 @@ import org.junit.Test;
 @SuppressWarnings("rawtypes")
 public class AnyDocumentTest {
 
-	private final Class<? extends AnyDocument> testingClass;
+  private final Class<? extends AnyDocument> testingClass;
 
-	protected AnyDocumentTest(Class<? extends AnyDocument> testingClass) {
-		this.testingClass = testingClass;
-	}
+  protected AnyDocumentTest(Class<? extends AnyDocument> testingClass) {
+    this.testingClass = testingClass;
+  }
 
-	public AnyDocumentTest() {
-		this(AnyDocument.class);
-	}
+  public AnyDocumentTest() {
+    this(AnyDocument.class);
+  }
 
-	@Test
-	public void testUnions() {
-		AnyUnionContentTest.testUnions(
-			AnyDocument.class,
-			//
-			// Unions:
-			//
-			AnyUnionContentTest.getAllUnions()
-		);
-	}
+  @Test
+  public void testUnions() {
+    AnyUnionContentTest.testUnions(
+      AnyDocument.class,
+      //
+      // Unions:
+      //
+      AnyUnionContentTest.getAllUnions()
+    );
+  }
 
-	@Test
-	public void testContentModels() {
-		ContentModelTest.testContentModels(
-			AnyDocument.class,
-			//
-			// Content models:
-			//
-			ContentModelTest.getAllContentModels()
-		);
-	}
+  @Test
+  public void testContentModels() {
+    ContentModelTest.testContentModels(
+      AnyDocument.class,
+      //
+      // Content models:
+      //
+      ContentModelTest.getAllContentModels()
+    );
+  }
 
-	@Test
-	public void testElementContentModels() {
-		ElementContentModelTest.testElementContentModels(
-			AnyDocument.class,
-			//
-			// Per-element content models:
-			//
-			ElementContentModelTest.getAllElementContentModels()
-		);
-	}
+  @Test
+  public void testElementContentModels() {
+    ElementContentModelTest.testElementContentModels(
+      AnyDocument.class,
+      //
+      // Per-element content models:
+      //
+      ElementContentModelTest.getAllElementContentModels()
+    );
+  }
 
-	@Test
-	public void testFactories() throws IOException {
-		FactoryTestHelper.testFactories(
-			testingClass,
-			//
-			// Factories:
-			//
-			FactoryTestHelper.getAllFactories()
-		);
-	}
+  @Test
+  public void testFactories() throws IOException {
+    FactoryTestHelper.testFactories(
+      testingClass,
+      //
+      // Factories:
+      //
+      FactoryTestHelper.getAllFactories()
+    );
+  }
 
-	@Test
-	public void testNoImplementInherited() {
-		InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDocument.class);
-	}
+  @Test
+  public void testNoImplementInherited() {
+    InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDocument.class);
+  }
 }

@@ -53,71 +53,71 @@ import java.io.IOException;
 @Deprecated
 public interface OnloadedmetadataUnexpected<E extends Element<?, ?, E> & OnloadedmetadataUnexpected<E>> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 *
-	 * @deprecated  Although the onloadedmetadata attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	@Attributes.Funnel
-	default E onloadedmetadata(Object onloadedmetadata) throws IOException {
-		@SuppressWarnings("unchecked") E element = (E)this;
-		Attributes.onlySupportedInHtml5(element, "onloadedmetadata");
-		return Attributes.Event.attribute(element, "onloadedmetadata", onloadedmetadata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   *
+   * @deprecated  Although the onloadedmetadata attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  @Attributes.Funnel
+  default E onloadedmetadata(Object onloadedmetadata) throws IOException {
+    @SuppressWarnings("unchecked") E element = (E)this;
+    Attributes.onlySupportedInHtml5(element, "onloadedmetadata");
+    return Attributes.Event.attribute(element, "onloadedmetadata", onloadedmetadata);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onloadedmetadata(java.lang.Object)
-	 *
-	 * @deprecated  Although the onloadedmetadata attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onloadedmetadata(IOSupplierE<?, Ex> onloadedmetadata) throws IOException, Ex {
-		return onloadedmetadata((onloadedmetadata == null) ? null : onloadedmetadata.get());
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onloadedmetadata(java.lang.Object)
+   *
+   * @deprecated  Although the onloadedmetadata attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onloadedmetadata(IOSupplierE<?, Ex> onloadedmetadata) throws IOException, Ex {
+    return onloadedmetadata((onloadedmetadata == null) ? null : onloadedmetadata.get());
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #onloadedmetadata(java.lang.Object)
-	 *
-	 * @deprecated  Although the onloadedmetadata attribute is global, it is only expected on
-	 *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
-	 */
-	@Deprecated
-	default <Ex extends Throwable> E onloadedmetadata(JavaScriptWritable<Ex> onloadedmetadata) throws IOException, Ex {
-		return onloadedmetadata((Object)onloadedmetadata);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadedmetadata">3.2.6 Global attributes / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadedmetadata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadedmetadata">8.1.7.2.1 IDL definitions / onloadedmetadata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadedmetadata">GlobalEventHandlers.onloadedmetadata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadedmetadata.asp">onloadedmetadata Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #onloadedmetadata(java.lang.Object)
+   *
+   * @deprecated  Although the onloadedmetadata attribute is global, it is only expected on
+   *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
+   */
+  @Deprecated
+  default <Ex extends Throwable> E onloadedmetadata(JavaScriptWritable<Ex> onloadedmetadata) throws IOException, Ex {
+    return onloadedmetadata((Object)onloadedmetadata);
+  }
 }

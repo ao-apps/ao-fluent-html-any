@@ -44,25 +44,25 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class Transparent_c<
-	D  extends AnyDocument<D>,
-	PC extends Content<D, PC>,
-	_c extends Transparent_c<D, PC, _c>
+  D  extends AnyDocument<D>,
+  PC extends Content<D, PC>,
+  _c extends Transparent_c<D, PC, _c>
 >
-	extends Normal_c<D, PC, _c> {
+  extends Normal_c<D, PC, _c> {
 
-	protected Transparent_c(Transparent<D, PC, ?, _c> element) {
-		super(element);
-	}
+  protected Transparent_c(Transparent<D, PC, ?, _c> element) {
+    super(element);
+  }
 
-	/**
-	 * Gets the parent content model, which may also be used for creating child elements.
-	 * <p><em>
-	 * This is the full, context-aware content model, which will likely include more elements.
-	 * </em></p>
-	 *
-	 * @return  The parent content model this element is within
-	 */
-	public PC pc() {
-		return element.pc;
-	}
+  /**
+   * Gets the parent content model, which may also be used for creating child elements.
+   * <p><em>
+   * This is the full, context-aware content model, which will likely include more elements.
+   * </em></p>
+   *
+   * @return  The parent content model this element is within
+   */
+  public PC pc() {
+    return element.pc;
+  }
 }

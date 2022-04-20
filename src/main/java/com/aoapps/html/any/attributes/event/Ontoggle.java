@@ -47,57 +47,57 @@ import java.io.IOException;
 @SuppressWarnings("deprecation")
 public interface Ontoggle<E extends Element<?, ?, E> & Ontoggle<E>> extends OntoggleUnexpected<E> {
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
-	 * </ul>
-	 *
-	 * @since HTML 5
-	 */
-	@Override
-	@Attributes.Funnel
-	default E ontoggle(Object ontoggle) throws IOException {
-		return OntoggleUnexpected.super.ontoggle(ontoggle);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  @Override
+  @Attributes.Funnel
+  default E ontoggle(Object ontoggle) throws IOException {
+    return OntoggleUnexpected.super.ontoggle(ontoggle);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ontoggle(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E ontoggle(IOSupplierE<?, Ex> ontoggle) throws IOException, Ex {
-		return OntoggleUnexpected.super.ontoggle(ontoggle);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ontoggle(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E ontoggle(IOSupplierE<?, Ex> ontoggle) throws IOException, Ex {
+    return OntoggleUnexpected.super.ontoggle(ontoggle);
+  }
 
-	/**
-	 * <ul>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
-	 * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
-	 * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
-	 * </ul>
-	 *
-	 * @param  <Ex>  An arbitrary exception type that may be thrown
-	 *
-	 * @since HTML 5
-	 *
-	 * @see #ontoggle(java.lang.Object)
-	 */
-	@Override
-	default <Ex extends Throwable> E ontoggle(JavaScriptWritable<Ex> ontoggle) throws IOException, Ex {
-		return OntoggleUnexpected.super.ontoggle(ontoggle);
-	}
+  /**
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
+   * </ul>
+   *
+   * @param  <Ex>  An arbitrary exception type that may be thrown
+   *
+   * @since HTML 5
+   *
+   * @see #ontoggle(java.lang.Object)
+   */
+  @Override
+  default <Ex extends Throwable> E ontoggle(JavaScriptWritable<Ex> ontoggle) throws IOException, Ex {
+    return OntoggleUnexpected.super.ontoggle(ontoggle);
+  }
 }
