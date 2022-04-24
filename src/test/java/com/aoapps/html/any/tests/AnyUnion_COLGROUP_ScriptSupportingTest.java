@@ -52,11 +52,11 @@ public class AnyUnion_COLGROUP_ScriptSupportingTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyUnion_COLGROUP_ScriptSupporting.class
-      //
-      // Unions:
-      //
-      // None
+        AnyUnion_COLGROUP_ScriptSupporting.class
+    //
+    // Unions:
+    //
+    // None
     );
   }
 
@@ -64,11 +64,11 @@ public class AnyUnion_COLGROUP_ScriptSupportingTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyUnion_COLGROUP_ScriptSupporting.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyUnion_COLGROUP_ScriptSupporting.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -76,30 +76,30 @@ public class AnyUnion_COLGROUP_ScriptSupportingTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyUnion_COLGROUP_ScriptSupporting.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyUnion_COLGROUP_ScriptSupporting.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "template"
+        testingClass,
+        //
+        // Factories:
+        //
+        "template"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-      -1,
-      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_COLGROUP_ScriptSupporting.class)
+        -1,
+        AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_COLGROUP_ScriptSupporting.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_COLGROUP_ScriptSupporting.class);
   }

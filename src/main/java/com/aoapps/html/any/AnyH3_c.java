@@ -37,11 +37,11 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyH3_c<
-  D  extends AnyDocument<D>,
-  PC extends AnyHeadingContent<D, PC>,
-  _c extends AnyH3_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyHeadingContent<D, PC>,
+    _c extends AnyH3_c<D, PC, _c>
 >
-  extends AnyH_c<D, PC, _c> {
+    extends AnyH_c<D, PC, _c> {
 
   protected AnyH3_c(AnyH3<D, PC, ?, ?, _c> element) {
     super(element);

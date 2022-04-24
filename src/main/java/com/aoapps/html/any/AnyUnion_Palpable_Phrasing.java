@@ -38,21 +38,21 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_Palpable_Phrasing<
-  D  extends AnyDocument<D>,
-  __ extends AnyUnion_Palpable_Phrasing<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyUnion_Palpable_Phrasing<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyEmbedded_Interactive<D, __>
-  AnyUnion_Embedded_Palpable_Phrasing<D, __>,
-  AnyUnion_Interactive_Phrasing<D, __>,
+    //
+    // Unions:
+    //
+    // Inherited: AnyEmbedded_Interactive<D, __>
+    AnyUnion_Embedded_Palpable_Phrasing<D, __>,
+    AnyUnion_Interactive_Phrasing<D, __>,
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  AnyTextContent<D, __> // that is not inter-element whitespace
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    AnyTextContent<D, __> // that is not inter-element whitespace
 {
   //
   // Factories:
@@ -151,6 +151,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("abbr")
   AnyABBR_c<D, __, ?> abbr_c() throws IOException;
+
   // </editor-fold>
   // Inherited: AUDIO
   // <editor-fold defaultstate="collapsed" desc="B">
@@ -246,6 +247,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("b")
   AnyB_c<D, __, ?> b_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="BDI">
   /**
@@ -352,6 +354,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("bdi")
   AnyBDI_c<D, __, ?> bdi_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="BDO">
   /**
@@ -508,6 +511,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("bdo")
   AnyBDO_c<D, __, ?> bdo_c(Dir.Value dir) throws IOException;
+
   // </editor-fold>
   // Inherited: BUTTON
   // Inherited: CANVAS
@@ -604,6 +608,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("cite")
   AnyCITE_c<D, __, ?> cite_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="CODE">
   /**
@@ -698,6 +703,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("code")
   AnyCODE_c<D, __, ?> code_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="DATA">
   /**
@@ -832,6 +838,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("data")
   AnyDATA_c<D, __, ?> data_c(Object value) throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="DFN">
   /**
@@ -926,6 +933,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("dfn")
   AnyDFN_c<D, __, ?> dfn_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="EM">
   /**
@@ -1020,6 +1028,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("em")
   AnyEM_c<D, __, ?> em_c() throws IOException;
+
   // </editor-fold>
   // Inherited: EMBED
   // <editor-fold defaultstate="collapsed" desc="I">
@@ -1115,6 +1124,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("i")
   AnyI_c<D, __, ?> i_c() throws IOException;
+
   // </editor-fold>
   // Inherited: IFRAME
   // Inherited: IMG
@@ -1222,6 +1232,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("ins")
   AnyINS_c<D, __, ?> ins_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="KBD">
   /**
@@ -1316,6 +1327,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("kbd")
   AnyKBD_c<D, __, ?> kbd_c() throws IOException;
+
   // </editor-fold>
   // Inherited: LABEL
   // <editor-fold defaultstate="collapsed" desc="MAP">
@@ -1449,6 +1461,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("map")
   AnyMAP_c<D, __, ?> map_c(String name) throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="MARK">
   /**
@@ -1555,6 +1568,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("mark")
   AnyMARK_c<D, __, ?> mark_c() throws IOException;
+
   // </editor-fold>
   // Inherited: MathML math
   // <editor-fold defaultstate="collapsed" desc="METER">
@@ -1664,6 +1678,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("meter")
   AnyMETER_c<D, __, ?> meter_c() throws IOException;
+
   // </editor-fold>
   // Inherited: OBJECT
   // <editor-fold defaultstate="collapsed" desc="OUTPUT">
@@ -1771,6 +1786,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("output")
   AnyOUTPUT_c<D, __, ?> output_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="PROGRESS">
   /**
@@ -1877,6 +1893,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("progress")
   AnyPROGRESS_c<D, __, ?> progress_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="Q">
   /**
@@ -1971,6 +1988,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("q")
   AnyQ_c<D, __, ?> q_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="RUBY">
   /**
@@ -1988,6 +2006,7 @@ public interface AnyUnion_Palpable_Phrasing<
   default AnyRUBY ruby() throws IOException {
     throw new AssertionError("TODO: Implement ruby");
   }
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="S">
   /**
@@ -2082,6 +2101,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("s")
   AnyS_c<D, __, ?> s_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="SAMP">
   /**
@@ -2176,6 +2196,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("samp")
   AnySAMP_c<D, __, ?> samp_c() throws IOException;
+
   // </editor-fold>
   // Inherited: SELECT
   // <editor-fold defaultstate="collapsed" desc="SMALL">
@@ -2271,6 +2292,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("small")
   AnySMALL_c<D, __, ?> small_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="SPAN">
   /**
@@ -2365,6 +2387,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("span")
   AnySPAN_c<D, __, ?> span_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="STRONG">
   /**
@@ -2459,6 +2482,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("strong")
   AnySTRONG_c<D, __, ?> strong_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="SUB">
   /**
@@ -2553,6 +2577,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("sub")
   AnySUB_c<D, __, ?> sub_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="SUP">
   /**
@@ -2647,6 +2672,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("sup")
   AnySUP_c<D, __, ?> sup_c() throws IOException;
+
   // </editor-fold>
   // Inherited: SVG svg
   // Inherited: TEXTAREA
@@ -2666,6 +2692,7 @@ public interface AnyUnion_Palpable_Phrasing<
   default AnyTIME time() throws IOException {
     throw new AssertionError("TODO: Implement time");
   }
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="U">
   /**
@@ -2760,6 +2787,7 @@ public interface AnyUnion_Palpable_Phrasing<
    */
   @Factory("u")
   AnyU_c<D, __, ?> u_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="VAR">
   /**

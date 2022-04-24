@@ -46,8 +46,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Enctype<
-  E extends Element<?, ?, E> & Enctype<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Enctype<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -59,7 +59,8 @@ public interface Enctype<
    */
   @Attributes.Funnel
   default E enctype(String enctype) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "enctype", MarkupType.NONE, enctype, true, true);
   }
 
@@ -89,7 +90,8 @@ public interface Enctype<
    * @see #enctype(java.lang.String)
    */
   default E enctype(V enctype) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return enctype((enctype == null) ? null : enctype.apply(element.getDocument()));
   }
 

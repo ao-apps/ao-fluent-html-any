@@ -45,19 +45,19 @@ import java.io.Writer;
  */
 // TODO: Phrasing content, but there must be no meter element descendants.
 public abstract class AnyMETER<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-  E  extends AnyMETER<D, PC, E, __, _c>,
-  __ extends AnyMETER__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyMETER_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+    E  extends AnyMETER<D, PC, E, __, _c>,
+    __ extends AnyMETER__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyMETER_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c>
-  // TODO: value
-  // TODO: min
-  // TODO: max
-  // TODO: low
-  // TODO: high
-  // TODO: optimum
+// TODO: value
+// TODO: min
+// TODO: max
+// TODO: low
+// TODO: high
+// TODO: optimum
 {
 
   protected AnyMETER(D document, PC pc) {
@@ -68,7 +68,8 @@ public abstract class AnyMETER<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<meter", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

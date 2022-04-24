@@ -42,14 +42,14 @@ import java.util.function.Function;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyHR<
-  D  extends AnyDocument<D>,
-  PC extends AnyFlowContent<D, PC>,
-  E  extends AnyHR<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends AnyFlowContent<D, PC>,
+    E  extends AnyHR<D, PC, E>
 > extends Void<D, PC, E> implements
-  com.aoapps.html.any.attributes.Enum.Align<E, AnyHR.Align>,
-  com.aoapps.html.any.attributes.Boolean.Noshade<E>,
-  com.aoapps.html.any.attributes.Integer.SizeHtml4Only<E>,
-  com.aoapps.html.any.attributes.Dimension.Width<E>
+    com.aoapps.html.any.attributes.Enum.Align<E, AnyHR.Align>,
+    com.aoapps.html.any.attributes.Boolean.Noshade<E>,
+    com.aoapps.html.any.attributes.Integer.SizeHtml4Only<E>,
+    com.aoapps.html.any.attributes.Dimension.Width<E>
 {
 
   protected AnyHR(D document, PC pc) {
@@ -59,7 +59,8 @@ public abstract class AnyHR<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<hr", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

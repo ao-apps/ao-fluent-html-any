@@ -37,19 +37,19 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyEmbeddedContent<
-  D  extends AnyDocument<D>,
-  __ extends AnyEmbeddedContent<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyEmbeddedContent<D, __>
 > extends
-  //
-  // Unions:
-  //
-  AnyUnion_Embedded_Interactive<D, __>,
-  AnyUnion_Embedded_Palpable_Phrasing<D, __>
+    //
+    // Unions:
+    //
+    AnyUnion_Embedded_Interactive<D, __>,
+    AnyUnion_Embedded_Palpable_Phrasing<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
+//
+// Content models:
+//
+// Inherited: Content<D, __>
 {
   //
   // Factories:

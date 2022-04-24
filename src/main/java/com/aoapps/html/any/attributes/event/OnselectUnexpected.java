@@ -70,7 +70,8 @@ public interface OnselectUnexpected<E extends Element<?, ?, E> & OnselectUnexpec
   @Deprecated
   @Attributes.Funnel
   default E onselect(Object onselect) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onselect");
     return Attributes.Event.attribute(element, "onselect", onselect);
   }
@@ -118,6 +119,6 @@ public interface OnselectUnexpected<E extends Element<?, ?, E> & OnselectUnexpec
    */
   @Deprecated
   default <Ex extends Throwable> E onselect(JavaScriptWritable<Ex> onselect) throws IOException, Ex {
-    return onselect((Object)onselect);
+    return onselect((Object) onselect);
   }
 }

@@ -50,7 +50,8 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
   @Deprecated
   @Attributes.Funnel
   default E attribute(String name, Object value) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     // TODO: Validate attribute name by doctype: https://dev.w3.org/html5/html-author/#attributes (XmlUtils could help)
     return Attributes.Text.attribute(element, name, MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
   }
@@ -82,6 +83,6 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
   @Deprecated
   // TODO: Just MediaWritable here?  How does this interact with the various types of MediaWriters?
   default <Ex extends Throwable> E attribute(String name, XhtmlAttributeWritable<Ex> value) throws IOException, Ex {
-    return attribute(name, (Object)value);
+    return attribute(name, (Object) value);
   }
 }

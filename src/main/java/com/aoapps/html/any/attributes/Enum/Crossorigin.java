@@ -43,8 +43,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Crossorigin<
-  E extends Element<?, ?, E> & Crossorigin<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Crossorigin<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -54,7 +54,8 @@ public interface Crossorigin<
    */
   @Attributes.Funnel
   default E crossorigin(String crossorigin) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "crossorigin");
     return Attributes.String.attribute(element, "crossorigin", MarkupType.NONE, crossorigin, true, true);
   }
@@ -81,7 +82,8 @@ public interface Crossorigin<
    * @see #crossorigin(java.lang.String)
    */
   default E crossorigin(V crossorigin) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return crossorigin((crossorigin == null) ? null : crossorigin.apply(element.getDocument()));
   }
 

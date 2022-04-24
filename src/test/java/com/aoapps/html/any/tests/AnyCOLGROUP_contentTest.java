@@ -53,11 +53,11 @@ public class AnyCOLGROUP_contentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyCOLGROUP_content.class,
-      //
-      // Unions:
-      //
-      AnyUnion_COLGROUP_ScriptSupporting.class
+        AnyCOLGROUP_content.class,
+        //
+        // Unions:
+        //
+        AnyUnion_COLGROUP_ScriptSupporting.class
     );
   }
 
@@ -65,11 +65,11 @@ public class AnyCOLGROUP_contentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyCOLGROUP_content.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyCOLGROUP_content.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -77,32 +77,32 @@ public class AnyCOLGROUP_contentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyCOLGROUP_content.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyCOLGROUP_content.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "col",
-      "template"
+        testingClass,
+        //
+        // Factories:
+        //
+        "col",
+        "template"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
-      -1,
-      AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyCOLGROUP_content.class)
+        "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
+        -1,
+        AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyCOLGROUP_content.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyCOLGROUP_content.class);
   }

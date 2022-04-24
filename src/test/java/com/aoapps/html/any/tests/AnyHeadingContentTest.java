@@ -52,11 +52,11 @@ public class AnyHeadingContentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyHeadingContent.class
-      //
-      // Unions:
-      //
-      // None
+        AnyHeadingContent.class
+    //
+    // Unions:
+    //
+    // None
     );
   }
 
@@ -64,11 +64,11 @@ public class AnyHeadingContentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyHeadingContent.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyHeadingContent.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -76,38 +76,38 @@ public class AnyHeadingContentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyHeadingContent.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyHeadingContent.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "h1",
-      "h2",
-      "h3",
-      "h4",
-      "h5",
-      "h6",
-      "h#",
-      "hgroup"
+        testingClass,
+        //
+        // Factories:
+        //
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "h#",
+        "hgroup"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-      -1,
-      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyHeadingContent.class)
+        "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+        -1,
+        AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyHeadingContent.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyHeadingContent.class);
   }

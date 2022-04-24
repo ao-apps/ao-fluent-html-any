@@ -42,7 +42,8 @@ public interface Defer<E extends Element<?, ?, E> & Defer<E>> {
    */
   @Attributes.Funnel
   default E defer(boolean defer) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Boolean.attribute(element, "defer", defer);
   }
 

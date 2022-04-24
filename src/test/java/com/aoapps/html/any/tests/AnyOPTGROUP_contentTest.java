@@ -55,12 +55,12 @@ public class AnyOPTGROUP_contentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyOPTGROUP_content.class,
-      //
-      // Unions:
-      //
-      AnyUnion_COLGROUP_ScriptSupporting.class,
-      AnyUnion_DATALIST_OPTGROUP.class
+        AnyOPTGROUP_content.class,
+        //
+        // Unions:
+        //
+        AnyUnion_COLGROUP_ScriptSupporting.class,
+        AnyUnion_DATALIST_OPTGROUP.class
     );
   }
 
@@ -68,12 +68,12 @@ public class AnyOPTGROUP_contentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyOPTGROUP_content.class,
-      //
-      // Content models:
-      //
-      Content.class,
-      AnyScriptSupportingContent.class
+        AnyOPTGROUP_content.class,
+        //
+        // Content models:
+        //
+        Content.class,
+        AnyScriptSupportingContent.class
     );
   }
 
@@ -81,33 +81,33 @@ public class AnyOPTGROUP_contentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyOPTGROUP_content.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyOPTGROUP_content.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "option",
-      "script",
-      "template"
+        testingClass,
+        //
+        // Factories:
+        //
+        "option",
+        "script",
+        "template"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
-      -1,
-      AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyOPTGROUP_content.class)
+        "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
+        -1,
+        AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyOPTGROUP_content.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyOPTGROUP_content.class);
   }

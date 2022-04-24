@@ -42,12 +42,12 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyTHEAD<
-  D  extends AnyDocument<D>,
-  PC extends AnyTABLE_content<D, PC>,
-  E  extends AnyTHEAD<D, PC, E, __, _c>,
-  __ extends AnyTHEAD__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyTHEAD_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyTABLE_content<D, PC>,
+    E  extends AnyTHEAD<D, PC, E, __, _c>,
+    __ extends AnyTHEAD__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyTHEAD_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> {
 
   protected AnyTHEAD(D document, PC pc) {
@@ -57,7 +57,8 @@ public abstract class AnyTHEAD<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<thead", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

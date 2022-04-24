@@ -36,18 +36,18 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyScriptSupportingContent<
-  D  extends AnyDocument<D>,
-  __ extends AnyScriptSupportingContent<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyScriptSupportingContent<D, __>
 > extends
-  //
-  // Unions:
-  //
-  AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    //
+    // Unions:
+    //
+    AnyUnion_COLGROUP_ScriptSupporting<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
+//
+// Content models:
+//
+// Inherited: Content<D, __>
 {
   //
   // Factories:

@@ -56,7 +56,8 @@ public interface Onkeypress<E extends Element<?, ?, E> & Onkeypress<E>> {
    */
   @Attributes.Funnel
   default E onkeypress(Object onkeypress) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onkeypress", onkeypress);
   }
 
@@ -91,6 +92,6 @@ public interface Onkeypress<E extends Element<?, ?, E> & Onkeypress<E>> {
    * @see #onkeypress(java.lang.Object)
    */
   default <Ex extends Throwable> E onkeypress(JavaScriptWritable<Ex> onkeypress) throws IOException, Ex {
-    return onkeypress((Object)onkeypress);
+    return onkeypress((Object) onkeypress);
   }
 }

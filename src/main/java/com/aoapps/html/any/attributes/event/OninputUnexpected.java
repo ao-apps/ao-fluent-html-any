@@ -73,7 +73,8 @@ public interface OninputUnexpected<E extends Element<?, ?, E> & OninputUnexpecte
   @Deprecated
   @Attributes.Funnel
   default E oninput(Object oninput) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "oninput");
     return Attributes.Event.attribute(element, "oninput", oninput);
   }
@@ -123,6 +124,6 @@ public interface OninputUnexpected<E extends Element<?, ?, E> & OninputUnexpecte
    */
   @Deprecated
   default <Ex extends Throwable> E oninput(JavaScriptWritable<Ex> oninput) throws IOException, Ex {
-    return oninput((Object)oninput);
+    return oninput((Object) oninput);
   }
 }

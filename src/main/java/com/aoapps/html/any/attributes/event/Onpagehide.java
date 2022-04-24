@@ -47,7 +47,8 @@ public interface Onpagehide<E extends Element<?, ?, E> & Onpagehide<E>> {
    */
   @Attributes.Funnel
   default E onpagehide(Object onpagehide) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onpagehide");
     return Attributes.Event.attribute(element, "onpagehide", onpagehide);
   }
@@ -75,6 +76,6 @@ public interface Onpagehide<E extends Element<?, ?, E> & Onpagehide<E>> {
    * @see #onpagehide(java.lang.Object)
    */
   default <Ex extends Throwable> E onpagehide(JavaScriptWritable<Ex> onpagehide) throws IOException, Ex {
-    return onpagehide((Object)onpagehide);
+    return onpagehide((Object) onpagehide);
   }
 }

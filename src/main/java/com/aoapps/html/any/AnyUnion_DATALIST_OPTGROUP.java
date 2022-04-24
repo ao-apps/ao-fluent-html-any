@@ -36,13 +36,13 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_DATALIST_OPTGROUP<
-  D  extends AnyDocument<D>,
-  __ extends AnyUnion_DATALIST_OPTGROUP<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyUnion_DATALIST_OPTGROUP<D, __>
 > extends
-  //
-  // Content models:
-  //
-  Content<D, __>
+    //
+    // Content models:
+    //
+    Content<D, __>
 {
   //
   // Factories:

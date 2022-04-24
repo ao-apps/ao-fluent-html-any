@@ -60,7 +60,8 @@ public interface Class<E extends Element<?, ?, E> & Class<E>> {
    */
   @Attributes.Funnel
   default E clazz(Object clazz) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, true, true, textInXhtmlAttributeEncoder);
   }
 
@@ -78,7 +79,8 @@ public interface Class<E extends Element<?, ?, E> & Class<E>> {
    */
   @Attributes.Funnel
   default E clazz(Object ... clazz) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, " ", true, true, textInXhtmlAttributeEncoder);
   }
 
@@ -115,6 +117,6 @@ public interface Class<E extends Element<?, ?, E> & Class<E>> {
    * @see #clazz(java.lang.Object)
    */
   default <Ex extends Throwable> E clazz(TextWritable<Ex> clazz) throws IOException, Ex {
-    return clazz((Object)clazz);
+    return clazz((Object) clazz);
   }
 }

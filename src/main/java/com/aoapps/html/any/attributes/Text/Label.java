@@ -45,7 +45,8 @@ public interface Label<E extends Element<?, ?, E> & Label<E>> {
    */
   @Attributes.Funnel
   default E label(Object label) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "label", MarkupType.TEXT, label, false, false, textInXhtmlAttributeEncoder);
   }
 
@@ -68,6 +69,6 @@ public interface Label<E extends Element<?, ?, E> & Label<E>> {
    * @see #label(java.lang.Object)
    */
   default <Ex extends Throwable> E label(TextWritable<Ex> label) throws IOException, Ex {
-    return label((Object)label);
+    return label((Object) label);
   }
 }

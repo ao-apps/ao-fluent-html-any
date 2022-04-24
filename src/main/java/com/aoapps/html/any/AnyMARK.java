@@ -44,12 +44,12 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyMARK<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-  E  extends AnyMARK<D, PC, E, __, _c>,
-  __ extends AnyMARK__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyMARK_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+    E  extends AnyMARK<D, PC, E, __, _c>,
+    __ extends AnyMARK__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyMARK_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
   protected AnyMARK(D document, PC pc) {
@@ -60,7 +60,8 @@ public abstract class AnyMARK<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<mark", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

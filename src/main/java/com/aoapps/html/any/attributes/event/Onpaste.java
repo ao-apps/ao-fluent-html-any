@@ -56,7 +56,8 @@ public interface Onpaste<E extends Element<?, ?, E> & Onpaste<E>> {
    */
   @Attributes.Funnel
   default E onpaste(Object onpaste) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onpaste", onpaste);
   }
 
@@ -91,6 +92,6 @@ public interface Onpaste<E extends Element<?, ?, E> & Onpaste<E>> {
    * @see #onpaste(java.lang.Object)
    */
   default <Ex extends Throwable> E onpaste(JavaScriptWritable<Ex> onpaste) throws IOException, Ex {
-    return onpaste((Object)onpaste);
+    return onpaste((Object) onpaste);
   }
 }

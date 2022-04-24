@@ -99,13 +99,13 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
      */
     public static ValidationResult validate(String dir) {
       if (
-        dir != null
-        && Dir.Value.getByValue(dir) == null
+          dir != null
+              && Dir.Value.getByValue(dir) == null
       ) {
         return new InvalidResult(
-          RESOURCES,
-          "Enum.Dir.invalid",
-          dir
+            RESOURCES,
+            "Enum.Dir.invalid",
+            dir
         );
       } else {
         return ValidResult.getInstance();
@@ -123,17 +123,18 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
    */
   @Attributes.Funnel
   default E dir(String dir) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(
-      element,
-      "dir",
-      MarkupType.NONE,
-      Attributes.validate(
-        Dir.dir.normalize(dir),
-        Dir.dir::validate
-      ),
-      false,
-      false
+        element,
+        "dir",
+        MarkupType.NONE,
+        Attributes.validate(
+            Dir.dir.normalize(dir),
+            Dir.dir::validate
+        ),
+        false,
+        false
     );
   }
 
@@ -165,7 +166,8 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
    * @see #dir(java.lang.String)
    */
   default E dir(Value dir) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return dir((dir == null) ? null : dir.apply(element.getDocument()));
   }
 

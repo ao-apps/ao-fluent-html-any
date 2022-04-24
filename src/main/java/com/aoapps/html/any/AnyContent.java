@@ -36,57 +36,57 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyContent<
-  D  extends AnyDocument<D>,
-  __ extends AnyContent<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyContent<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-  // Inherited: AnyUnion_DATALIST_OPTGROUP<D, __>
-  // Inherited: AnyUnion_DIV_DL<D, __>
-  // Inherited: AnyUnion_DL_Palpable<D, __>
-  // Inherited: AnyUnion_Embedded_Interactive<D, __>
-  // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
-  // Inherited: AnyUnion_Interactive_Phrasing<D, __>
-  // Inherited: AnyUnion_Metadata_Phrasing<D, __>
-  // Inherited: AnyUnion_Palpable_Phrasing<D, __>
-  // Inherited: AnyUnion_TBODY_THEAD_TFOOT<D, __>
+    //
+    // Unions:
+    //
+    // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    // Inherited: AnyUnion_DATALIST_OPTGROUP<D, __>
+    // Inherited: AnyUnion_DIV_DL<D, __>
+    // Inherited: AnyUnion_DL_Palpable<D, __>
+    // Inherited: AnyUnion_Embedded_Interactive<D, __>
+    // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
+    // Inherited: AnyUnion_Interactive_Phrasing<D, __>
+    // Inherited: AnyUnion_Metadata_Phrasing<D, __>
+    // Inherited: AnyUnion_Palpable_Phrasing<D, __>
+    // Inherited: AnyUnion_TBODY_THEAD_TFOOT<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  // Inherited: AnyEmbeddedContent<D, __>
-  // Inherited: AnyFlowContent<D, __>
-  // Inherited: AnyHeadingContent<D, __>
-  // Inherited: AnyInteractiveContent<D, __>
-  AnyListContent<D, __>,
-  AnyMetadataContent<D, __>,
-  // Inherited: AnyPalpableContent<D, __>
-  // Inherited: AnyPhrasingContent<D, __>
-  // Inherited: AnyScriptSupportingContent<D, __>
-  // Inherited: AnySectioningContent<D, __>
-  // Inherited: AnyTextContent<D, __>
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    // Inherited: AnyEmbeddedContent<D, __>
+    // Inherited: AnyFlowContent<D, __>
+    // Inherited: AnyHeadingContent<D, __>
+    // Inherited: AnyInteractiveContent<D, __>
+    AnyListContent<D, __>,
+    AnyMetadataContent<D, __>,
+    // Inherited: AnyPalpableContent<D, __>
+    // Inherited: AnyPhrasingContent<D, __>
+    // Inherited: AnyScriptSupportingContent<D, __>
+    // Inherited: AnySectioningContent<D, __>
+    // Inherited: AnyTextContent<D, __>
 
-  //
-  // Per-element content models:
-  //
-  AnyCOLGROUP_content<D, __>,
-  AnyDATALIST_content<D, __>,
-  AnyDIV_content<D, __>,
-  AnyDL_content<D, __>,
-  AnyHTML_content<D, __>,
-  AnyOBJECT_content<D, __>,
-  // Inherited: AnyOPTGROUP_content<D, __>
-  AnySELECT_content<D, __>,
-  AnyTABLE_content<D, __>,
-  AnyTR_content<D, __>
+    //
+    // Per-element content models:
+    //
+    AnyCOLGROUP_content<D, __>,
+    AnyDATALIST_content<D, __>,
+    AnyDIV_content<D, __>,
+    AnyDL_content<D, __>,
+    AnyHTML_content<D, __>,
+    AnyOBJECT_content<D, __>,
+    // Inherited: AnyOPTGROUP_content<D, __>
+    AnySELECT_content<D, __>,
+    AnyTABLE_content<D, __>,
+    AnyTR_content<D, __>
 
-  //
-  // Others:
-  //
-  // Inherited: Whitespace
+//
+// Others:
+//
+// Inherited: Whitespace
 {
   //
   // Factories:
@@ -169,6 +169,7 @@ public interface AnyContent<
    */
   @Factory("html")
   AnyHTML_c<D, __, ?> html_c() throws IOException;
+
   // </editor-fold>
   // Inherited: HEAD
   // Inherited: TITLE
@@ -219,6 +220,7 @@ public interface AnyContent<
   default AnyFIGCAPTION figcaption() throws IOException {
     throw new AssertionError("TODO: Implement figcaption");
   }
+
   // </editor-fold>
   // Inherited: MAIN
   // Inherited: DIV
@@ -248,6 +250,7 @@ public interface AnyContent<
   default AnyRT rt() throws IOException {
     throw new AssertionError("TODO: Implement rt");
   }
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="RP">
   /**
@@ -265,6 +268,7 @@ public interface AnyContent<
   default AnyRP rp() throws IOException {
     throw new AssertionError("TODO: Implement rp");
   }
+
   // </editor-fold>
   // Inherited: DATA
   // Inherited: TIME
@@ -302,6 +306,7 @@ public interface AnyContent<
   default AnySOURCE source() throws IOException {
     throw new AssertionError("TODO: Implement source");
   }
+
   // </editor-fold>
   // Inherited: IMG
   // Inherited: IFRAME
@@ -326,6 +331,7 @@ public interface AnyContent<
   default AnyTRACK track() throws IOException {
     throw new AssertionError("TODO: Implement track");
   }
+
   // </editor-fold>
   // Inherited: MAP
   // Inherited: AREA
@@ -381,6 +387,7 @@ public interface AnyContent<
   default __ tr__() throws IOException {
     return AnyTABLE_content.super.tr__();
   }
+
   // </editor-fold>
   // Inherited: TD
   // Inherited: TH
@@ -411,6 +418,7 @@ public interface AnyContent<
   default AnyLEGEND legend() throws IOException {
     throw new AssertionError("TODO: Implement legend");
   }
+
   // </editor-fold>
   // Inherited: DETAILS
   // <editor-fold defaultstate="collapsed" desc="SUMMARY">

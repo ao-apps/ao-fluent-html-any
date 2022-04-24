@@ -45,8 +45,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Target<
-  E extends Element<?, ?, E> & Target<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Target<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -58,7 +58,8 @@ public interface Target<
    */
   @Attributes.Funnel
   default E target(String target) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "target", MarkupType.NONE, target, true, true);
   }
 
@@ -88,7 +89,8 @@ public interface Target<
    * @see #target(java.lang.String)
    */
   default E target(V target) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return target((target == null) ? null : target.apply(element.getDocument()));
   }
 

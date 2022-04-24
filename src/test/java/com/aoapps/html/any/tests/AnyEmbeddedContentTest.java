@@ -54,12 +54,12 @@ public class AnyEmbeddedContentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyEmbeddedContent.class,
-      //
-      // Unions:
-      //
-      AnyUnion_Embedded_Interactive.class,
-      AnyUnion_Embedded_Palpable_Phrasing.class
+        AnyEmbeddedContent.class,
+        //
+        // Unions:
+        //
+        AnyUnion_Embedded_Interactive.class,
+        AnyUnion_Embedded_Palpable_Phrasing.class
     );
   }
 
@@ -67,11 +67,11 @@ public class AnyEmbeddedContentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyEmbeddedContent.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyEmbeddedContent.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -79,40 +79,40 @@ public class AnyEmbeddedContentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyEmbeddedContent.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyEmbeddedContent.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "audio",
-      "canvas",
-      "embed",
-      "iframe",
-      "img",
-      // TODO: MathML math
-      "object",
-      "picture",
-      // TODO: SVG svg
-      "video"
+        testingClass,
+        //
+        // Factories:
+        //
+        "audio",
+        "canvas",
+        "embed",
+        "iframe",
+        "img",
+        // TODO: MathML math
+        "object",
+        "picture",
+        // TODO: SVG svg
+        "video"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-      -1,
-      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyEmbeddedContent.class)
+        "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+        -1,
+        AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyEmbeddedContent.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyEmbeddedContent.class);
   }

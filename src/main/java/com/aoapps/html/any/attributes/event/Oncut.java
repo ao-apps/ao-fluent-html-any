@@ -56,7 +56,8 @@ public interface Oncut<E extends Element<?, ?, E> & Oncut<E>> {
    */
   @Attributes.Funnel
   default E oncut(Object oncut) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "oncut", oncut);
   }
 
@@ -91,6 +92,6 @@ public interface Oncut<E extends Element<?, ?, E> & Oncut<E>> {
    * @see #oncut(java.lang.Object)
    */
   default <Ex extends Throwable> E oncut(JavaScriptWritable<Ex> oncut) throws IOException, Ex {
-    return oncut((Object)oncut);
+    return oncut((Object) oncut);
   }
 }

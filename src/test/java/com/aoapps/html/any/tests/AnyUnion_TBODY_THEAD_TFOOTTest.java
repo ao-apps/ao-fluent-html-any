@@ -54,11 +54,11 @@ public class AnyUnion_TBODY_THEAD_TFOOTTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyUnion_TBODY_THEAD_TFOOT.class,
-      //
-      // Unions:
-      //
-      AnyUnion_COLGROUP_ScriptSupporting.class
+        AnyUnion_TBODY_THEAD_TFOOT.class,
+        //
+        // Unions:
+        //
+        AnyUnion_COLGROUP_ScriptSupporting.class
     );
   }
 
@@ -66,12 +66,12 @@ public class AnyUnion_TBODY_THEAD_TFOOTTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyUnion_TBODY_THEAD_TFOOT.class,
-      //
-      // Content models:
-      //
-      Content.class,
-      AnyScriptSupportingContent.class
+        AnyUnion_TBODY_THEAD_TFOOT.class,
+        //
+        // Content models:
+        //
+        Content.class,
+        AnyScriptSupportingContent.class
     );
   }
 
@@ -79,32 +79,32 @@ public class AnyUnion_TBODY_THEAD_TFOOTTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyUnion_TBODY_THEAD_TFOOT.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyUnion_TBODY_THEAD_TFOOT.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "tr",
-      "script",
-      "template"
+        testingClass,
+        //
+        // Factories:
+        //
+        "tr",
+        "script",
+        "template"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-      -1,
-      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_TBODY_THEAD_TFOOT.class)
+        -1,
+        AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_TBODY_THEAD_TFOOT.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_TBODY_THEAD_TFOOT.class);
   }

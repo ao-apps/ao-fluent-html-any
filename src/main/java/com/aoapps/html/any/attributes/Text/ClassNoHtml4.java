@@ -60,7 +60,8 @@ public interface ClassNoHtml4<E extends Element<?, ?, E> & ClassNoHtml4<E>> exte
   @Override
   @Attributes.Funnel
   default E clazz(Object clazz) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "class");
     return Class.super.clazz(clazz);
   }
@@ -78,7 +79,8 @@ public interface ClassNoHtml4<E extends Element<?, ?, E> & ClassNoHtml4<E>> exte
   @Override
   @Attributes.Funnel
   default E clazz(Object ... clazz) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "class");
     return Class.super.clazz(clazz);
   }

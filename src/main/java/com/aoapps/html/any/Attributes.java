@@ -108,11 +108,11 @@ public final class Attributes {
       return value;
     } else {
       if (validationResult instanceof InvalidResult) {
-        InvalidResult invalidResult = (InvalidResult)validationResult;
+        InvalidResult invalidResult = (InvalidResult) validationResult;
         throw new LocalizedIllegalArgumentException(
-          invalidResult.getResources(),
-          invalidResult.getKey(),
-          invalidResult.getArgs()
+            invalidResult.getResources(),
+            invalidResult.getKey(),
+            invalidResult.getArgs()
         );
       } else {
         throw new IllegalArgumentException(validationResult.toString());
@@ -140,10 +140,10 @@ public final class Attributes {
     Doctype doctype = document.encodingContext.getDoctype();
     if (doctype != Doctype.HTML5) {
       throw new LocalizedUnsupportedOperationException(
-        RESOURCES,
-        "onlySupportedInHtml5",
-        doctype,
-        attrName
+          RESOURCES,
+          "onlySupportedInHtml5",
+          doctype,
+          attrName
       );
     }
   }
@@ -166,11 +166,11 @@ public final class Attributes {
     Doctype doctype = element.getDocument().encodingContext.getDoctype();
     if (doctype != requiredDoctype) {
       throw new LocalizedUnsupportedOperationException(
-        RESOURCES,
-        "invalidGlobalAttributeForDoctype",
-        doctype,
-        requiredDoctype,
-        attrName
+          RESOURCES,
+          "invalidGlobalAttributeForDoctype",
+          doctype,
+          requiredDoctype,
+          attrName
       );
     }
   }
@@ -271,7 +271,7 @@ public final class Attributes {
      * @param  <E>  This element type
      */
     public static <
-      E extends Element<?, ?, E>
+        E extends Element<?, ?, E>
     > E attribute(E element, java.lang.String name, Object script) throws IOException {
       return Attributes.Text.attribute(element, name, MarkupType.JAVASCRIPT, script, true, true, javascriptInXhtmlAttributeEncoder);
     }
@@ -340,8 +340,8 @@ public final class Attributes {
     public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, MarkupType markupType, java.lang.String value, boolean trim, boolean nullIfEmpty) throws IOException {
       if (value != null) {
         if (
-          // Identity comparison for marker value
-          value == NO_VALUE
+            // Identity comparison for marker value
+            value == NO_VALUE
         ) {
           // Empty attribute
           AnyDocument<?> document = element.document;
@@ -372,9 +372,9 @@ public final class Attributes {
             unsafe.write("=\"");
             BundleLookupThreadContext threadContext;
             if (
-              markupType == null
-              || markupType == MarkupType.NONE
-              || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+                markupType == null
+                    || markupType == MarkupType.NONE
+                    || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
             ) {
               // Short-cut additional type checks done by Coercion, since we already have a String
               encodeTextInXhtmlAttribute(value, unsafe);
@@ -414,16 +414,18 @@ public final class Attributes {
      * @param  value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
      */
     public static <
-      E extends Element<?, ?, E>
+        E extends Element<?, ?, E>
     > E attribute(E element, java.lang.String name, MarkupType markupType, Object value, boolean trim, boolean nullIfEmpty, MediaEncoder encoder) throws IOException {
       // TODO: Assert is valid attribute name by doctype
       while (value instanceof IOSupplierE<?, ?>) {
-        @SuppressWarnings("unchecked") IOSupplierE<?, ? extends RuntimeException> supplier = (IOSupplierE<?, ? extends RuntimeException>)value;
+        @SuppressWarnings("unchecked")
+        IOSupplierE<?, ? extends RuntimeException> supplier = (IOSupplierE<?, ? extends RuntimeException>) value;
         value = supplier.get();
       }
       if (value != null) {
         if (value instanceof MediaWritable<?>) {
-          @SuppressWarnings("unchecked") MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>)value;
+          @SuppressWarnings("unchecked")
+          MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>) value;
           AnyDocument<?> document = element.document;
           @SuppressWarnings("deprecation")
           Writer unsafe = document.getRawUnsafe(null);
@@ -436,21 +438,21 @@ public final class Attributes {
           unsafe.write(name);
           unsafe.write("=\"");
           writer.writeTo(
-            encoder.getValidMediaInputType().newMediaWriter(
-              document.encodingContext,
-              encoder,
-              unsafe,
-              false,
-              null, // Attributes get own indentation scope and settings
-              mediaWriter -> true, // isNoClose
-              null // Ignore close
-            )
+              encoder.getValidMediaInputType().newMediaWriter(
+                  document.encodingContext,
+                  encoder,
+                  unsafe,
+                  false,
+                  null, // Attributes get own indentation scope and settings
+                  mediaWriter -> true, // isNoClose
+                  null // Ignore close
+              )
           );
           unsafe.append('"');
         } else {
           if (
-            // Identity comparison for marker value
-            value == NO_VALUE
+              // Identity comparison for marker value
+              value == NO_VALUE
           ) {
             // Empty attribute
             AnyDocument<?> document = element.document;
@@ -487,12 +489,12 @@ public final class Attributes {
               unsafe.write(name);
               unsafe.write("=\"");
               MarkupCoercion.write(
-                value,
-                markupType,
-                true,
-                encoder,
-                false,
-                unsafe
+                  value,
+                  markupType,
+                  true,
+                  encoder,
+                  false,
+                  unsafe
               );
               unsafe.append('"');
             }
@@ -510,7 +512,7 @@ public final class Attributes {
      */
     @SuppressWarnings("AssignmentToForLoopParameter")
     public static <
-      E extends Element<?, ?, E>
+        E extends Element<?, ?, E>
     > E attribute(E element, java.lang.String name, MarkupType markupType, Object[] values, java.lang.String separator, boolean trim, boolean nullIfEmpty, MediaEncoder encoder) throws IOException {
       if (values != null) {
         AnyDocument<?> document = element.document;
@@ -521,12 +523,14 @@ public final class Attributes {
         for (Object value : values) {
           // TODO: Assert is valid attribute name by doctype
           while (value instanceof IOSupplierE<?, ?>) {
-            @SuppressWarnings("unchecked") IOSupplierE<?, ? extends RuntimeException> supplier = (IOSupplierE<?, ? extends RuntimeException>)value;
+            @SuppressWarnings("unchecked")
+            IOSupplierE<?, ? extends RuntimeException> supplier = (IOSupplierE<?, ? extends RuntimeException>) value;
             value = supplier.get();
           }
           if (value != null) {
             if (value instanceof MediaWritable<?>) {
-              @SuppressWarnings("unchecked") MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>)value;
+              @SuppressWarnings("unchecked")
+              MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>) value;
               if (val) {
                 assert attr;
                 if (separator != null) {
@@ -547,20 +551,20 @@ public final class Attributes {
                 val = true;
               }
               writer.writeTo(
-                encoder.getValidMediaInputType().newMediaWriter(
-                  document.encodingContext,
-                  encoder,
-                  unsafe,
-                  false,
-                  null, // Attributes get own indentation scope and settings
-                  mediaWriter -> true, // isNoClose
-                  null // Ignore close
-                )
+                  encoder.getValidMediaInputType().newMediaWriter(
+                      document.encodingContext,
+                      encoder,
+                      unsafe,
+                      false,
+                      null, // Attributes get own indentation scope and settings
+                      mediaWriter -> true, // isNoClose
+                      null // Ignore close
+                  )
               );
             } else {
               if (
-                // Identity comparison for marker value
-                value == NO_VALUE
+                  // Identity comparison for marker value
+                  value == NO_VALUE
               ) {
                 // Empty attribute
                 if (!attr) {
@@ -605,12 +609,12 @@ public final class Attributes {
                     val = true;
                   }
                   MarkupCoercion.write(
-                    value,
-                    markupType,
-                    true,
-                    encoder,
-                    false,
-                    unsafe
+                      value,
+                      markupType,
+                      true,
+                      encoder,
+                      false,
+                      unsafe
                   );
                 }
               }

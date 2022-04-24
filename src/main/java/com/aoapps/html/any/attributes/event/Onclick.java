@@ -56,7 +56,8 @@ public interface Onclick<E extends Element<?, ?, E> & Onclick<E>> {
    */
   @Attributes.Funnel
   default E onclick(Object onclick) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onclick", onclick);
   }
 
@@ -91,6 +92,6 @@ public interface Onclick<E extends Element<?, ?, E> & Onclick<E>> {
    * @see #onclick(java.lang.Object)
    */
   default <Ex extends Throwable> E onclick(JavaScriptWritable<Ex> onclick) throws IOException, Ex {
-    return onclick((Object)onclick);
+    return onclick((Object) onclick);
   }
 }

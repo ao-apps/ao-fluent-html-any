@@ -37,12 +37,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyBODY_c<
-  D  extends AnyDocument<D>,
-  PC extends AnyHTML_content<D, PC>,
-  _c extends AnyBODY_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyHTML_content<D, PC>,
+    _c extends AnyBODY_c<D, PC, _c>
 >
-  extends Normal_c<D, PC, _c>
-  implements AnyFlowContent<D, _c> {
+    extends Normal_c<D, PC, _c>
+    implements AnyFlowContent<D, _c> {
 
   protected AnyBODY_c(AnyBODY<D, PC, ?, ?, _c> element) {
     super(element);

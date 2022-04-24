@@ -60,7 +60,8 @@ public interface Ondrop<E extends Element<?, ?, E> & Ondrop<E>> {
    */
   @Attributes.Funnel
   default E ondrop(Object ondrop) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ondrop");
     return Attributes.Event.attribute(element, "ondrop", ondrop);
   }
@@ -100,6 +101,6 @@ public interface Ondrop<E extends Element<?, ?, E> & Ondrop<E>> {
    * @see #ondrop(java.lang.Object)
    */
   default <Ex extends Throwable> E ondrop(JavaScriptWritable<Ex> ondrop) throws IOException, Ex {
-    return ondrop((Object)ondrop);
+    return ondrop((Object) ondrop);
   }
 }

@@ -47,19 +47,19 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_TBODY_THEAD_TFOOT<
-  D  extends AnyDocument<D>,
-  __ extends AnyUnion_TBODY_THEAD_TFOOT<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyUnion_TBODY_THEAD_TFOOT<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyCOLGROUP_ScriptSupporting<D, __>
+    //
+    // Unions:
+    //
+    // Inherited: AnyCOLGROUP_ScriptSupporting<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  AnyScriptSupportingContent<D, __>
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    AnyScriptSupportingContent<D, __>
 {
   //
   // Factories:

@@ -37,12 +37,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyCOLGROUP_c<
-  D  extends AnyDocument<D>,
-  PC extends AnyTABLE_content<D, PC>,
-  _c extends AnyCOLGROUP_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyTABLE_content<D, PC>,
+    _c extends AnyCOLGROUP_c<D, PC, _c>
 >
-  extends Normal_c<D, PC, _c>
-  implements AnyCOLGROUP_content<D, _c> {
+    extends Normal_c<D, PC, _c>
+    implements AnyCOLGROUP_content<D, _c> {
 
   protected AnyCOLGROUP_c(AnyCOLGROUP<D, PC, ?, ?, _c> element) {
     super(element);

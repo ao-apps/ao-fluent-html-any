@@ -37,12 +37,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyDEL_c<
-  D  extends AnyDocument<D>,
-  PC extends AnyPhrasingContent<D, PC>,
-  _c extends AnyDEL_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyPhrasingContent<D, PC>,
+    _c extends AnyDEL_c<D, PC, _c>
 >
-  extends Transparent_c<D, PC, _c>
-  implements AnyPhrasingContent<D, _c> {
+    extends Transparent_c<D, PC, _c>
+    implements AnyPhrasingContent<D, _c> {
 
   protected AnyDEL_c(AnyDEL<D, PC, ?, _c> element) {
     super(element);

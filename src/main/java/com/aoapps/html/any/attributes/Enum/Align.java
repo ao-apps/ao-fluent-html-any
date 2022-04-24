@@ -44,8 +44,8 @@ import java.util.function.Function;
  */
 @Deprecated
 public interface Align<
-  E extends Element<?, ?, E> & Align<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Align<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -56,7 +56,8 @@ public interface Align<
   @Deprecated
   @Attributes.Funnel
   default E align(String align) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "align", MarkupType.NONE, align, true, true);
   }
 
@@ -84,7 +85,8 @@ public interface Align<
    */
   @Deprecated
   default E align(V align) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return align((align == null) ? null : align.apply(element.getDocument()));
   }
 

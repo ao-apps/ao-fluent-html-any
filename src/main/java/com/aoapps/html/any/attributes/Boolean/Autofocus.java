@@ -55,7 +55,8 @@ public interface Autofocus<E extends Element<?, ?, E> & Autofocus<E>> {
    */
   @Attributes.Funnel
   default E autofocus(boolean autofocus) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "autofocus");
     return Attributes.Boolean.attribute(element, "autofocus", autofocus);
   }

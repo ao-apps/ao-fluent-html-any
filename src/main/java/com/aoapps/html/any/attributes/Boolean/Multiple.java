@@ -46,7 +46,8 @@ public interface Multiple<E extends Element<?, ?, E> & Multiple<E>> {
    */
   @Attributes.Funnel
   default E multiple(boolean multiple) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "multiple");
     return Attributes.Boolean.attribute(element, "multiple", multiple);
   }

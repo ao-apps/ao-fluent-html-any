@@ -36,34 +36,34 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public interface AnyDIV_content<
-  D  extends AnyDocument<D>,
-  __ extends AnyDIV_content<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyDIV_content<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-  AnyUnion_DIV_DL<D, __>,
-  // Inherited: AnyUnion_DL_Palpable<D, __>
-  // Inherited: AnyUnion_Embedded_Interactive<D, __>
-  // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
-  // Inherited: AnyUnion_Interactive_Phrasing<D, __>
-  // Inherited: AnyUnion_Metadata_Phrasing<D, __>
-  // Inherited: AnyUnion_Palpable_Phrasing<D, __>
+    //
+    // Unions:
+    //
+    // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    AnyUnion_DIV_DL<D, __>,
+    // Inherited: AnyUnion_DL_Palpable<D, __>
+    // Inherited: AnyUnion_Embedded_Interactive<D, __>
+    // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
+    // Inherited: AnyUnion_Interactive_Phrasing<D, __>
+    // Inherited: AnyUnion_Metadata_Phrasing<D, __>
+    // Inherited: AnyUnion_Palpable_Phrasing<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  // Inherited: AnyEmbeddedContent<D, __>
-  AnyFlowContent<D, __>
-  // Inherited: AnyHeadingContent<D, __>
-  // Inherited: AnyInteractiveContent<D, __>
-  // Inherited: AnyPalpableContent<D, __>
-  // Inherited: AnyPhrasingContent<D, __>
-  // Inherited: AnyScriptSupportingContent<D, __>
-  // Inherited: AnySectioningContent<D, __>
-  // Inherited: AnyTextContent<D, __>
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    // Inherited: AnyEmbeddedContent<D, __>
+    AnyFlowContent<D, __>
+// Inherited: AnyHeadingContent<D, __>
+// Inherited: AnyInteractiveContent<D, __>
+// Inherited: AnyPalpableContent<D, __>
+// Inherited: AnyPhrasingContent<D, __>
+// Inherited: AnyScriptSupportingContent<D, __>
+// Inherited: AnySectioningContent<D, __>
+// Inherited: AnyTextContent<D, __>
 {
   //
   // Factories:

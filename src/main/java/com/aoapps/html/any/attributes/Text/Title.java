@@ -62,7 +62,8 @@ public interface Title<E extends Element<?, ?, E> & Title<E>> {
    */
   @Attributes.Funnel
   default E title(Object title) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "title", MarkupType.TEXT, title, true, true, textInXhtmlAttributeEncoder);
   }
 
@@ -101,6 +102,6 @@ public interface Title<E extends Element<?, ?, E> & Title<E>> {
    * @see #title(java.lang.Object)
    */
   default <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
-    return title((Object)title);
+    return title((Object) title);
   }
 }

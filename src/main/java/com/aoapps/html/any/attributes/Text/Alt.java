@@ -45,7 +45,8 @@ public interface Alt<E extends Element<?, ?, E> & Alt<E>> {
    */
   @Attributes.Funnel
   default E alt(Object alt) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "alt", MarkupType.TEXT, alt, true, false, textInXhtmlAttributeEncoder);
   }
 
@@ -68,6 +69,6 @@ public interface Alt<E extends Element<?, ?, E> & Alt<E>> {
    * @see #alt(java.lang.Object)
    */
   default <Ex extends Throwable> E alt(TextWritable<Ex> alt) throws IOException, Ex {
-    return alt((Object)alt);
+    return alt((Object) alt);
   }
 }

@@ -42,7 +42,8 @@ public interface Selected<E extends Element<?, ?, E> & Selected<E>> {
    */
   @Attributes.Funnel
   default E selected(boolean selected) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Boolean.attribute(element, "selected", selected);
   }
 

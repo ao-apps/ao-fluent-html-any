@@ -47,7 +47,8 @@ public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
    */
   @Attributes.Funnel
   default E onhashchange(Object onhashchange) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onhashchange");
     return Attributes.Event.attribute(element, "onhashchange", onhashchange);
   }
@@ -75,6 +76,6 @@ public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
    * @see #onhashchange(java.lang.Object)
    */
   default <Ex extends Throwable> E onhashchange(JavaScriptWritable<Ex> onhashchange) throws IOException, Ex {
-    return onhashchange((Object)onhashchange);
+    return onhashchange((Object) onhashchange);
   }
 }

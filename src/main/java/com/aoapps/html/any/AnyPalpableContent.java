@@ -40,26 +40,26 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyPalpableContent<
-  D  extends AnyDocument<D>,
-  __ extends AnyPalpableContent<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyPalpableContent<D, __>
 > extends
-  //
-  // Unions:
-  //
-  AnyUnion_DL_Palpable<D, __>,
-  // Inherited: AnyUnion_Embedded_Interactive<D, __>
-  // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
-  // Inherited: AnyUnion_Interactive_Phrasing<D, __>
-  AnyUnion_Palpable_Phrasing<D, __>,
+    //
+    // Unions:
+    //
+    AnyUnion_DL_Palpable<D, __>,
+    // Inherited: AnyUnion_Embedded_Interactive<D, __>
+    // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
+    // Inherited: AnyUnion_Interactive_Phrasing<D, __>
+    AnyUnion_Palpable_Phrasing<D, __>,
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  AnySectioningContent<D, __>,
-  AnyHeadingContent<D, __>,
-  AnyInteractiveContent<D, __>
-  // Inherited: AnyTextContent<D, __> // that is not inter-element whitespace
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    AnySectioningContent<D, __>,
+    AnyHeadingContent<D, __>,
+    AnyInteractiveContent<D, __>
+// Inherited: AnyTextContent<D, __> // that is not inter-element whitespace
 {
   //
   // Factories:
@@ -159,6 +159,7 @@ public interface AnyPalpableContent<
    */
   @Factory("address")
   AnyADDRESS_c<D, __, ?> address_c() throws IOException;
+
   // </editor-fold>
   // Inherited: ARTICLE
   // Inherited: ASIDE
@@ -259,6 +260,7 @@ public interface AnyPalpableContent<
    */
   @Factory("blockquote")
   AnyBLOCKQUOTE_c<D, __, ?> blockquote_c() throws IOException;
+
   // </editor-fold>
   // Inherited: BUTTON
   // Inherited: CANVAS
@@ -346,6 +348,7 @@ public interface AnyPalpableContent<
    */
   @Factory("dl")
   AnyDL_c<D, __, ?> dl_c() throws IOException;
+
   // </editor-fold>
   // Inherited: EM
   // Inherited: EMBED
@@ -363,6 +366,7 @@ public interface AnyPalpableContent<
   default AnyFIELDSET fieldset() throws IOException {
     throw new AssertionError("TODO: Implement fieldset");
   }
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="FIGURE">
   /**
@@ -380,6 +384,7 @@ public interface AnyPalpableContent<
   default AnyFIGURE figure() throws IOException {
     throw new AssertionError("TODO: Implement figure");
   }
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="FOOTER">
   /**
@@ -486,6 +491,7 @@ public interface AnyPalpableContent<
    */
   @Factory("footer")
   AnyFOOTER_c<D, __, ?> footer_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="FORM">
   /**
@@ -604,6 +610,7 @@ public interface AnyPalpableContent<
    */
   @Factory("form")
   AnyFORM_c<D, __, ?> form_c() throws IOException;
+
   // </editor-fold>
   // Inherited: H1
   // Inherited: H2
@@ -716,6 +723,7 @@ public interface AnyPalpableContent<
    */
   @Factory("header")
   AnyHEADER_c<D, __, ?> header_c() throws IOException;
+
   // </editor-fold>
   // Inherited: HGROUP
   // Inherited: I
@@ -830,6 +838,7 @@ public interface AnyPalpableContent<
    */
   @Factory("main")
   AnyMAIN_c<D, __, ?> main_c() throws IOException;
+
   // </editor-fold>
   // Inherited: MAP
   // Inherited: MARK
@@ -916,6 +925,7 @@ public interface AnyPalpableContent<
    */
   @Factory("ol")
   AnyOL_c<D, __, ?> ol_c() throws IOException;
+
   // </editor-fold>
   // Inherited: OUTPUT
   // <editor-fold defaultstate="collapsed" desc="P">
@@ -1011,6 +1021,7 @@ public interface AnyPalpableContent<
    */
   @Factory("p")
   AnyP_c<D, __, ?> p_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="PRE">
   /**
@@ -1105,6 +1116,7 @@ public interface AnyPalpableContent<
    */
   @Factory("pre")
   AnyPRE_c<D, __, ?> pre_c() throws IOException;
+
   // </editor-fold>
   // Inherited: PROGRESS
   // Inherited: Q
@@ -1197,6 +1209,7 @@ public interface AnyPalpableContent<
    */
   @Factory("table")
   AnyTABLE_c<D, __, ?> table_c() throws IOException;
+
   // </editor-fold>
   // Inherited: TEXTAREA
   // Inherited: TIME

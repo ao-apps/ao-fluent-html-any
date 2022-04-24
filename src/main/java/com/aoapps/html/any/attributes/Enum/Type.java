@@ -41,8 +41,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Type<
-  E extends Element<?, ?, E> & Type<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Type<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -50,7 +50,8 @@ public interface Type<
    */
   @Attributes.Funnel
   default E type(String type) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "type", MarkupType.NONE, type, true, true);
   }
 
@@ -72,7 +73,8 @@ public interface Type<
    * @see #type(java.lang.String)
    */
   default E type(V type) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return type((type == null) ? null : type.apply(element.getDocument()));
   }
 

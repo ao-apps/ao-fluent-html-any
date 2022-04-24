@@ -60,7 +60,8 @@ public interface Oncontextmenu<E extends Element<?, ?, E> & Oncontextmenu<E>> {
    */
   @Attributes.Funnel
   default E oncontextmenu(Object oncontextmenu) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "oncontextmenu");
     return Attributes.Event.attribute(element, "oncontextmenu", oncontextmenu);
   }
@@ -100,6 +101,6 @@ public interface Oncontextmenu<E extends Element<?, ?, E> & Oncontextmenu<E>> {
    * @see #oncontextmenu(java.lang.Object)
    */
   default <Ex extends Throwable> E oncontextmenu(JavaScriptWritable<Ex> oncontextmenu) throws IOException, Ex {
-    return oncontextmenu((Object)oncontextmenu);
+    return oncontextmenu((Object) oncontextmenu);
   }
 }

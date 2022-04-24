@@ -76,7 +76,8 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
   @Deprecated
   @Attributes.Funnel
   default E onchange(Object onchange) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onchange");
     return Attributes.Event.attribute(element, "onchange", onchange);
   }
@@ -128,6 +129,6 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
    */
   @Deprecated
   default <Ex extends Throwable> E onchange(JavaScriptWritable<Ex> onchange) throws IOException, Ex {
-    return onchange((Object)onchange);
+    return onchange((Object) onchange);
   }
 }

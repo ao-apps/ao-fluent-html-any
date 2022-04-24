@@ -34,19 +34,19 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_Metadata_Phrasing<
-  D  extends AnyDocument<D>,
-  __ extends AnyUnion_Metadata_Phrasing<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyUnion_Metadata_Phrasing<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyCOLGROUP_ScriptSupporting<D, __>
+    //
+    // Unions:
+    //
+    // Inherited: AnyCOLGROUP_ScriptSupporting<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  AnyScriptSupportingContent<D, __>
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    AnyScriptSupportingContent<D, __>
 {
   //
   // Factories:
@@ -77,6 +77,7 @@ public interface AnyUnion_Metadata_Phrasing<
    */
   @Factory("link")
   AnyLINK<D, __, ?> link(AnyLINK.Rel rel) throws IOException;
+
   // No link__(), since either rel or itemprop is required
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="META">

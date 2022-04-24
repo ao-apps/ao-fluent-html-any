@@ -53,9 +53,9 @@ public class Circle implements Shape, Serializable {
     final int DOUBLE_THRESHOLD = 0x100000; // 1 MiB, or 1/32nd of the mantissa to leave room for calculations without significant rounding effects
 
     if (
-         ex  > -DOUBLE_THRESHOLD && ex  < DOUBLE_THRESHOLD
-      && ey  > -DOUBLE_THRESHOLD && ey  < DOUBLE_THRESHOLD
-      && ewh > -DOUBLE_THRESHOLD && ewh < DOUBLE_THRESHOLD
+        ex  > -DOUBLE_THRESHOLD && ex  < DOUBLE_THRESHOLD
+            && ey  > -DOUBLE_THRESHOLD && ey  < DOUBLE_THRESHOLD
+            && ewh > -DOUBLE_THRESHOLD && ewh < DOUBLE_THRESHOLD
     ) {
       return new Ellipse2D.Float(ex, ey, ewh, ewh);
     } else {
@@ -110,9 +110,9 @@ public class Circle implements Shape, Serializable {
     if (obj instanceof Circle) {
       Circle c = (Circle) obj;
       return
-        getX() == c.getX()
-        && getY() == c.getY()
-        && getRadius() == c.getRadius();
+          getX() == c.getX()
+              && getY() == c.getY()
+              && getRadius() == c.getRadius();
     }
     return false;
   }

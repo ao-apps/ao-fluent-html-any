@@ -60,7 +60,8 @@ public interface Ondragend<E extends Element<?, ?, E> & Ondragend<E>> {
    */
   @Attributes.Funnel
   default E ondragend(Object ondragend) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ondragend");
     return Attributes.Event.attribute(element, "ondragend", ondragend);
   }
@@ -100,6 +101,6 @@ public interface Ondragend<E extends Element<?, ?, E> & Ondragend<E>> {
    * @see #ondragend(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragend(JavaScriptWritable<Ex> ondragend) throws IOException, Ex {
-    return ondragend((Object)ondragend);
+    return ondragend((Object) ondragend);
   }
 }

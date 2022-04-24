@@ -43,7 +43,8 @@ public interface Onunload<E extends Element<?, ?, E> & Onunload<E>> {
    */
   @Attributes.Funnel
   default E onunload(Object onunload) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onunload", onunload);
   }
 
@@ -66,6 +67,6 @@ public interface Onunload<E extends Element<?, ?, E> & Onunload<E>> {
    * @see #onunload(java.lang.Object)
    */
   default <Ex extends Throwable> E onunload(JavaScriptWritable<Ex> onunload) throws IOException, Ex {
-    return onunload((Object)onunload);
+    return onunload((Object) onunload);
   }
 }

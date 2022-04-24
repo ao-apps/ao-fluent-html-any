@@ -67,7 +67,8 @@ public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpec
   @Deprecated
   @Attributes.Funnel
   default E ontoggle(Object ontoggle) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ontoggle");
     return Attributes.Event.attribute(element, "ontoggle", ontoggle);
   }
@@ -113,6 +114,6 @@ public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpec
    */
   @Deprecated
   default <Ex extends Throwable> E ontoggle(JavaScriptWritable<Ex> ontoggle) throws IOException, Ex {
-    return ontoggle((Object)ontoggle);
+    return ontoggle((Object) ontoggle);
   }
 }

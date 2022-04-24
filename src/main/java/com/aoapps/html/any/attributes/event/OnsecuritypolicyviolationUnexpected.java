@@ -68,7 +68,8 @@ public interface OnsecuritypolicyviolationUnexpected<E extends Element<?, ?, E> 
   @Deprecated
   @Attributes.Funnel
   default E onsecuritypolicyviolation(Object onsecuritypolicyviolation) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onsecuritypolicyviolation");
     return Attributes.Event.attribute(element, "onsecuritypolicyviolation", onsecuritypolicyviolation);
   }
@@ -114,6 +115,6 @@ public interface OnsecuritypolicyviolationUnexpected<E extends Element<?, ?, E> 
    */
   @Deprecated
   default <Ex extends Throwable> E onsecuritypolicyviolation(JavaScriptWritable<Ex> onsecuritypolicyviolation) throws IOException, Ex {
-    return onsecuritypolicyviolation((Object)onsecuritypolicyviolation);
+    return onsecuritypolicyviolation((Object) onsecuritypolicyviolation);
   }
 }

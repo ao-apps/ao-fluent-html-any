@@ -37,13 +37,13 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_Embedded_Interactive<
-  D  extends AnyDocument<D>,
-  __ extends AnyUnion_Embedded_Interactive<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyUnion_Embedded_Interactive<D, __>
 > extends
-  //
-  // Content models:
-  //
-  Content<D, __>
+    //
+    // Content models:
+    //
+    Content<D, __>
 {
   //
   // Factories:
@@ -64,6 +64,7 @@ public interface AnyUnion_Embedded_Interactive<
   default AnyAUDIO audio() throws IOException {
     throw new AssertionError("TODO: Implement audio");
   }
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="EMBED">
   /**
@@ -79,6 +80,7 @@ public interface AnyUnion_Embedded_Interactive<
   default AnyEMBED embed() throws IOException {
     throw new AssertionError("TODO: Implement embed");
   }
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="IFRAME">
   /**
@@ -94,6 +96,7 @@ public interface AnyUnion_Embedded_Interactive<
   default AnyIFRAME iframe() throws IOException {
     throw new AssertionError("TODO: Implement iframe");
   }
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="IMG">
   /**
@@ -130,6 +133,7 @@ public interface AnyUnion_Embedded_Interactive<
    */
   @Factory("img")
   <Ex extends Throwable> AnyIMG<D, __, ?> img(IOSupplierE<? extends String, Ex> src) throws IOException, Ex;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="OBJECT">
   /**
@@ -231,6 +235,7 @@ public interface AnyUnion_Embedded_Interactive<
    */
   @Factory("object")
   AnyOBJECT_c<D, __, ?> object_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="VIDEO">
   /**

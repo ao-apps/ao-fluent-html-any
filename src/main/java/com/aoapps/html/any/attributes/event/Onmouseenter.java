@@ -60,7 +60,8 @@ public interface Onmouseenter<E extends Element<?, ?, E> & Onmouseenter<E>> {
    */
   @Attributes.Funnel
   default E onmouseenter(Object onmouseenter) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onmouseenter");
     return Attributes.Event.attribute(element, "onmouseenter", onmouseenter);
   }
@@ -100,6 +101,6 @@ public interface Onmouseenter<E extends Element<?, ?, E> & Onmouseenter<E>> {
    * @see #onmouseenter(java.lang.Object)
    */
   default <Ex extends Throwable> E onmouseenter(JavaScriptWritable<Ex> onmouseenter) throws IOException, Ex {
-    return onmouseenter((Object)onmouseenter);
+    return onmouseenter((Object) onmouseenter);
   }
 }

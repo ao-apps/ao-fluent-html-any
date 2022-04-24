@@ -86,7 +86,8 @@ public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<
   @Deprecated
   @Attributes.Funnel
   default E onload(Object onload) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onload");
     return Attributes.Event.attribute(element, "onload", onload);
   }
@@ -140,6 +141,6 @@ public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<
    */
   @Deprecated
   default <Ex extends Throwable> E onload(JavaScriptWritable<Ex> onload) throws IOException, Ex {
-    return onload((Object)onload);
+    return onload((Object) onload);
   }
 }

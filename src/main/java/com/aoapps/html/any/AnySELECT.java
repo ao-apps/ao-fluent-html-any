@@ -45,26 +45,26 @@ import java.util.function.Function;
 // TODO: indent before, and newline after?  Review whitespace rules.  (this decision will affect AnyFORM, too)
 //       https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Whitespace
 public abstract class AnySELECT<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-  E  extends AnySELECT<D, PC, E, __, _c>,
-  __ extends AnySELECT__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnySELECT_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+    E  extends AnySELECT<D, PC, E, __, _c>,
+    __ extends AnySELECT__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnySELECT_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-  com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnySELECT.Autocomplete>,
-  com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-  com.aoapps.html.any.attributes.Text.Form<E>,
-  com.aoapps.html.any.attributes.Boolean.Multiple<E>,
-  com.aoapps.html.any.attributes.Text.Name<E>,
-  com.aoapps.html.any.attributes.Boolean.Required<E>,
-  com.aoapps.html.any.attributes.Integer.Size<E>,
-  // Global Attributes overrides
-  com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
-  com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
-  // Global Event Attributes overrides
-  com.aoapps.html.any.attributes.event.Onchange<E>,
-  com.aoapps.html.any.attributes.event.Oninput<E>
+    com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnySELECT.Autocomplete>,
+    com.aoapps.html.any.attributes.Boolean.Disabled<E>,
+    com.aoapps.html.any.attributes.Text.Form<E>,
+    com.aoapps.html.any.attributes.Boolean.Multiple<E>,
+    com.aoapps.html.any.attributes.Text.Name<E>,
+    com.aoapps.html.any.attributes.Boolean.Required<E>,
+    com.aoapps.html.any.attributes.Integer.Size<E>,
+    // Global Attributes overrides
+    com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
+    com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
+    // Global Event Attributes overrides
+    com.aoapps.html.any.attributes.event.Onchange<E>,
+    com.aoapps.html.any.attributes.event.Oninput<E>
 {
 
   protected AnySELECT(D document, PC pc) {
@@ -114,7 +114,8 @@ public abstract class AnySELECT<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<select", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

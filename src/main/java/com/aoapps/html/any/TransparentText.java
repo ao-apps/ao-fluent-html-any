@@ -41,11 +41,11 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class TransparentText<
-  D  extends AnyDocument<D>,
-  PC extends Content<D, PC>,
-  E  extends TransparentText<D, PC, E, _c>,
-  // Would prefer "_c extends PC & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends TransparentText_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends Content<D, PC>,
+    E  extends TransparentText<D, PC, E, _c>,
+    // Would prefer "_c extends PC & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends TransparentText_c<D, PC, _c>
 > extends Transparent<D, PC, E, _c> {
 
   protected TransparentText(D document, PC pc) {

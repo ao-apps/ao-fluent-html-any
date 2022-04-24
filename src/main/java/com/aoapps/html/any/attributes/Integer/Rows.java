@@ -42,7 +42,8 @@ public interface Rows<E extends Element<?, ?, E> & Rows<E>> {
    */
   @Attributes.Funnel
   default E rows(int rows) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.Integer.attribute(element, "rows", rows);
     return element;
   }
@@ -52,7 +53,8 @@ public interface Rows<E extends Element<?, ?, E> & Rows<E>> {
    */
   @Attributes.Funnel
   default E rows(Integer rows) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     if (rows != null) {
       Attributes.Integer.attribute(element, "rows", rows);
     }

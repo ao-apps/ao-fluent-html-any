@@ -42,15 +42,15 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOPTGROUP<
-  D  extends AnyDocument<D>,
-  PC extends AnySELECT_content<D, PC>,
-  E  extends AnyOPTGROUP<D, PC, E, __, _c>,
-  __ extends AnyOPTGROUP__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyOPTGROUP_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnySELECT_content<D, PC>,
+    E  extends AnyOPTGROUP<D, PC, E, __, _c>,
+    __ extends AnyOPTGROUP__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyOPTGROUP_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-  com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-  com.aoapps.html.any.attributes.Text.Label<E>
+    com.aoapps.html.any.attributes.Boolean.Disabled<E>,
+    com.aoapps.html.any.attributes.Text.Label<E>
 {
 
   protected AnyOPTGROUP(D document, PC pc) {
@@ -60,7 +60,8 @@ public abstract class AnyOPTGROUP<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<optgroup", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

@@ -44,17 +44,17 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOPTION<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_DATALIST_OPTGROUP<D, PC>,
-  E  extends AnyOPTION<D, PC, E, __, _c>,
-  __ extends AnyOPTION__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyOPTION_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_DATALIST_OPTGROUP<D, PC>,
+    E  extends AnyOPTION<D, PC, E, __, _c>,
+    __ extends AnyOPTION__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyOPTION_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-  com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-  com.aoapps.html.any.attributes.Text.Label<E>,
-  com.aoapps.html.any.attributes.Boolean.Selected<E>,
-  com.aoapps.html.any.attributes.Text.Value<E>
+    com.aoapps.html.any.attributes.Boolean.Disabled<E>,
+    com.aoapps.html.any.attributes.Text.Label<E>,
+    com.aoapps.html.any.attributes.Boolean.Selected<E>,
+    com.aoapps.html.any.attributes.Text.Value<E>
 {
 
   private boolean oldAutonli;
@@ -78,7 +78,8 @@ public abstract class AnyOPTION<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<option", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -170,9 +171,9 @@ public abstract class AnyOPTION<
   @Override
   protected void writeClose(Writer unsafe, boolean closeAttributes) throws IOException {
     document
-      .setDepth(oldDepth)
-      .setIndent(oldIndent)
-      .setAutonli(oldAutonli);
+        .setDepth(oldDepth)
+        .setIndent(oldIndent)
+        .setAutonli(oldAutonli);
     if (closeAttributes) {
       document.autoIndent(unsafe).unsafe(unsafe, "></option>", false);
     } else {

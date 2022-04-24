@@ -49,7 +49,8 @@ public interface Cellpadding<E extends Element<?, ?, E> & Cellpadding<E>> {
   @Deprecated
   @Attributes.Funnel
   default E cellpadding(int pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "cellpadding", pixels);
   }
 
@@ -61,7 +62,8 @@ public interface Cellpadding<E extends Element<?, ?, E> & Cellpadding<E>> {
   @Deprecated
   @Attributes.Funnel
   default E cellpadding(Integer pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "cellpadding", pixels);
   }
 
@@ -86,7 +88,8 @@ public interface Cellpadding<E extends Element<?, ?, E> & Cellpadding<E>> {
   @Deprecated
   @Attributes.Funnel
   default E cellpadding(String pixelsOrPercent) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "cellpadding", pixelsOrPercent);
   }
 

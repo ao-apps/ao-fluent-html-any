@@ -60,7 +60,8 @@ public interface Ondragleave<E extends Element<?, ?, E> & Ondragleave<E>> {
    */
   @Attributes.Funnel
   default E ondragleave(Object ondragleave) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ondragleave");
     return Attributes.Event.attribute(element, "ondragleave", ondragleave);
   }
@@ -100,6 +101,6 @@ public interface Ondragleave<E extends Element<?, ?, E> & Ondragleave<E>> {
    * @see #ondragleave(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragleave(JavaScriptWritable<Ex> ondragleave) throws IOException, Ex {
-    return ondragleave((Object)ondragleave);
+    return ondragleave((Object) ondragleave);
   }
 }

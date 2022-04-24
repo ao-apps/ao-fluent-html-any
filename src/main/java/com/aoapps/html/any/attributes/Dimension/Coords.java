@@ -58,7 +58,8 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
   @Attributes.Funnel
   @SuppressWarnings("deprecation")
   default E coords(String coords) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "coords", coords);
   }
 
@@ -87,10 +88,10 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    */
   default E coords(int left, int top, int right, int bottom) throws IOException {
     return coords(
-      Integer.toString(left),
-      Integer.toString(top),
-      Integer.toString(right),
-      Integer.toString(bottom)
+        Integer.toString(left),
+        Integer.toString(top),
+        Integer.toString(right),
+        Integer.toString(bottom)
     );
   }
 
@@ -102,10 +103,10 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    */
   default E coords(Integer left, Integer top, Integer right, Integer bottom) throws IOException {
     return coords(
-      Objects.toString(left, null),
-      Objects.toString(top, null),
-      Objects.toString(right, null),
-      Objects.toString(bottom, null)
+        Objects.toString(left, null),
+        Objects.toString(top, null),
+        Objects.toString(right, null),
+        Objects.toString(bottom, null)
     );
   }
 
@@ -119,7 +120,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
     if (rect != null) {
       return coords(rect.x, rect.y, rect.x + rect.width, rect.y + rect.height);
     } else {
-      return coords((Integer)null, null, null, null);
+      return coords((Integer) null, null, null, null);
     }
   }
 
@@ -156,7 +157,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
     if (left != null || top != null || right != null || bottom != null) {
       return coords(left + "," + top + "," + right + "," + bottom);
     } else {
-      return coords((String)null);
+      return coords((String) null);
     }
   }
 
@@ -170,9 +171,9 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    */
   default E coords(int x, int y, int radius) throws IOException {
     return coords(
-      Integer.toString(x),
-      Integer.toString(y),
-      Integer.toString(radius)
+        Integer.toString(x),
+        Integer.toString(y),
+        Integer.toString(radius)
     );
   }
 
@@ -184,9 +185,9 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    */
   default E coords(Integer x, Integer y, Integer radius) throws IOException {
     return coords(
-      Objects.toString(x, null),
-      Objects.toString(y, null),
-      Objects.toString(radius, null)
+        Objects.toString(x, null),
+        Objects.toString(y, null),
+        Objects.toString(radius, null)
     );
   }
 
@@ -200,7 +201,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
     if (circle != null) {
       return coords(circle.getX(), circle.getY(), circle.getRadius());
     } else {
-      return coords((Integer)null, null, null);
+      return coords((Integer) null, null, null);
     }
   }
 
@@ -236,7 +237,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
     if (x != null || y != null || radius != null) {
       return coords(x + "," + y + "," + radius);
     } else {
-      return coords((String)null);
+      return coords((String) null);
     }
   }
 
@@ -271,7 +272,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    */
   default E coords(Polygon poly) throws IOException {
     if (poly == null || poly.npoints == 0) {
-      return coords((String)null);
+      return coords((String) null);
     } else {
       StringBuilder sb = new StringBuilder();
       for (int i = 0; i < poly.npoints; i++) {
@@ -309,27 +310,27 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    */
   default E coords(java.awt.Shape shape) throws IOException {
     if (shape == null) {
-      return coords((String)null);
+      return coords((String) null);
     }
     if (shape instanceof Rectangle) {
-      return coords((Rectangle)shape);
+      return coords((Rectangle) shape);
     }
     if (shape instanceof Circle) {
-      return coords((Circle)shape);
+      return coords((Circle) shape);
     }
     if (shape instanceof Polygon) {
-      return coords((Polygon)shape);
+      return coords((Polygon) shape);
     }
     throw new LocalizedIllegalArgumentException(
-      RESOURCES,
-      "Dimension.Coords.unexpectedShape",
-      java.awt.Shape.class.getName(),
-      "coords",
-      java.awt.Rectangle.class.getName(),
-      Circle.class.getName(),
-      java.awt.Polygon.class.getName(),
-      shape.getClass().getName(),
-      shape.toString()
+        RESOURCES,
+        "Dimension.Coords.unexpectedShape",
+        java.awt.Shape.class.getName(),
+        "coords",
+        java.awt.Rectangle.class.getName(),
+        Circle.class.getName(),
+        java.awt.Polygon.class.getName(),
+        shape.getClass().getName(),
+        shape.toString()
     );
   }
 

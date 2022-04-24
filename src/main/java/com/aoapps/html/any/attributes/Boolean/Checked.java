@@ -42,7 +42,8 @@ public interface Checked<E extends Element<?, ?, E> & Checked<E>> {
    */
   @Attributes.Funnel
   default E checked(boolean checked) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Boolean.attribute(element, "checked", checked);
   }
 

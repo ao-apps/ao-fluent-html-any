@@ -60,7 +60,8 @@ public interface Onwheel<E extends Element<?, ?, E> & Onwheel<E>> {
    */
   @Attributes.Funnel
   default E onwheel(Object onwheel) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onwheel");
     return Attributes.Event.attribute(element, "onwheel", onwheel);
   }
@@ -100,6 +101,6 @@ public interface Onwheel<E extends Element<?, ?, E> & Onwheel<E>> {
    * @see #onwheel(java.lang.Object)
    */
   default <Ex extends Throwable> E onwheel(JavaScriptWritable<Ex> onwheel) throws IOException, Ex {
-    return onwheel((Object)onwheel);
+    return onwheel((Object) onwheel);
   }
 }

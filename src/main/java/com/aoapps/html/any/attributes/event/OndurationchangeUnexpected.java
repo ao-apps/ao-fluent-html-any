@@ -70,7 +70,8 @@ public interface OndurationchangeUnexpected<E extends Element<?, ?, E> & Ondurat
   @Deprecated
   @Attributes.Funnel
   default E ondurationchange(Object ondurationchange) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ondurationchange");
     return Attributes.Event.attribute(element, "ondurationchange", ondurationchange);
   }
@@ -118,6 +119,6 @@ public interface OndurationchangeUnexpected<E extends Element<?, ?, E> & Ondurat
    */
   @Deprecated
   default <Ex extends Throwable> E ondurationchange(JavaScriptWritable<Ex> ondurationchange) throws IOException, Ex {
-    return ondurationchange((Object)ondurationchange);
+    return ondurationchange((Object) ondurationchange);
   }
 }

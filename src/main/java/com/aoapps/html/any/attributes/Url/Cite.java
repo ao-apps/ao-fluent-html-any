@@ -50,7 +50,8 @@ public interface Cite<E extends Element<?, ?, E> & Cite<E>> {
    */
   @Attributes.Funnel
   default E cite(String cite) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Url.attribute(element, "cite", cite);
   }
 

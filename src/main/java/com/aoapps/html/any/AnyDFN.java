@@ -46,12 +46,12 @@ import java.io.Writer;
  */
 // TODO: Phrasing content, but there must be no dfn element descendants.
 public abstract class AnyDFN<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-  E  extends AnyDFN<D, PC, E, __, _c>,
-  __ extends AnyDFN__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyDFN_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+    E  extends AnyDFN<D, PC, E, __, _c>,
+    __ extends AnyDFN__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyDFN_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
   protected AnyDFN(D document, PC pc) {
@@ -61,7 +61,8 @@ public abstract class AnyDFN<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<dfn", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

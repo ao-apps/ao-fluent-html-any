@@ -47,7 +47,8 @@ public interface Onpopstate<E extends Element<?, ?, E> & Onpopstate<E>> {
    */
   @Attributes.Funnel
   default E onpopstate(Object onpopstate) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onpopstate");
     return Attributes.Event.attribute(element, "onpopstate", onpopstate);
   }
@@ -75,6 +76,6 @@ public interface Onpopstate<E extends Element<?, ?, E> & Onpopstate<E>> {
    * @see #onpopstate(java.lang.Object)
    */
   default <Ex extends Throwable> E onpopstate(JavaScriptWritable<Ex> onpopstate) throws IOException, Ex {
-    return onpopstate((Object)onpopstate);
+    return onpopstate((Object) onpopstate);
   }
 }

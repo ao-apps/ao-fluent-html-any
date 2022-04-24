@@ -56,7 +56,8 @@ public interface Onmousedown<E extends Element<?, ?, E> & Onmousedown<E>> {
    */
   @Attributes.Funnel
   default E onmousedown(Object onmousedown) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onmousedown", onmousedown);
   }
 
@@ -91,6 +92,6 @@ public interface Onmousedown<E extends Element<?, ?, E> & Onmousedown<E>> {
    * @see #onmousedown(java.lang.Object)
    */
   default <Ex extends Throwable> E onmousedown(JavaScriptWritable<Ex> onmousedown) throws IOException, Ex {
-    return onmousedown((Object)onmousedown);
+    return onmousedown((Object) onmousedown);
   }
 }

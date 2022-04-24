@@ -46,7 +46,8 @@ public interface Minlength<E extends Element<?, ?, E> & Minlength<E>> {
    */
   @Attributes.Funnel
   default E minlength(int minlength) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "minlength");
     return Attributes.Integer.attribute(element, "minlength", minlength);
   }
@@ -58,7 +59,8 @@ public interface Minlength<E extends Element<?, ?, E> & Minlength<E>> {
    */
   @Attributes.Funnel
   default E minlength(Integer minlength) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "minlength");
     return Attributes.Integer.attribute(element, "minlength", minlength);
   }

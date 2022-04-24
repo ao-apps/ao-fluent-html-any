@@ -42,16 +42,16 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyTD<
-  D  extends AnyDocument<D>,
-  PC extends AnyTR_content<D, PC>,
-  E  extends AnyTD<D, PC, E, __, _c>,
-  __ extends AnyTD__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyTD_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyTR_content<D, PC>,
+    E  extends AnyTD<D, PC, E, __, _c>,
+    __ extends AnyTD__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyTD_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-  com.aoapps.html.any.attributes.Integer.Colspan<E>,
-  com.aoapps.html.any.attributes.Integer.Rowspan<E>
-  // TODO: headers
+    com.aoapps.html.any.attributes.Integer.Colspan<E>,
+    com.aoapps.html.any.attributes.Integer.Rowspan<E>
+// TODO: headers
 {
 
   protected AnyTD(D document, PC pc) {
@@ -61,7 +61,8 @@ public abstract class AnyTD<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<td", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

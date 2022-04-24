@@ -41,12 +41,12 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class NormalText<
-  D  extends AnyDocument<D>,
-  PC extends Content<D, PC>,
-  E  extends NormalText<D, PC, E, __, _c>,
-  __ extends NormalText__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends NormalText_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends Content<D, PC>,
+    E  extends NormalText<D, PC, E, __, _c>,
+    __ extends NormalText__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends NormalText_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> {
 
   protected NormalText(D document, PC pc) {

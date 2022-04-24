@@ -40,13 +40,13 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyHeadingContent<
-  D  extends AnyDocument<D>,
-  __ extends AnyHeadingContent<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyHeadingContent<D, __>
 > extends
-  //
-  // Content models:
-  //
-  Content<D, __>
+    //
+    // Content models:
+    //
+    Content<D, __>
 {
   //
   // Factories:
@@ -144,6 +144,7 @@ public interface AnyHeadingContent<
    */
   @Factory("h1")
   AnyH1_c<D, __, ?> h1_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="H2">
   /**
@@ -238,6 +239,7 @@ public interface AnyHeadingContent<
    */
   @Factory("h2")
   AnyH2_c<D, __, ?> h2_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="H3">
   /**
@@ -332,6 +334,7 @@ public interface AnyHeadingContent<
    */
   @Factory("h3")
   AnyH3_c<D, __, ?> h3_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="H4">
   /**
@@ -426,6 +429,7 @@ public interface AnyHeadingContent<
    */
   @Factory("h4")
   AnyH4_c<D, __, ?> h4_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="H5">
   /**
@@ -520,6 +524,7 @@ public interface AnyHeadingContent<
    */
   @Factory("h5")
   AnyH5_c<D, __, ?> h5_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="H6">
   /**
@@ -614,6 +619,7 @@ public interface AnyHeadingContent<
    */
   @Factory("h6")
   AnyH6_c<D, __, ?> h6_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="H#">
   /**
@@ -627,21 +633,22 @@ public interface AnyHeadingContent<
   @SuppressWarnings("unchecked")
   @Factory("h#")
   default <
-    H   extends com.aoapps.html.any.AnyH<D, __, H, H__, H_c>,
-    H__ extends com.aoapps.html.any.AnyH__<D, __, H__>,
-    H_c extends com.aoapps.html.any.AnyH_c<D, __, H_c>
+      H   extends com.aoapps.html.any.AnyH<D, __, H, H__, H_c>,
+      H__ extends com.aoapps.html.any.AnyH__<D, __, H__>,
+      H_c extends com.aoapps.html.any.AnyH_c<D, __, H_c>
   > H h(int rank) throws IOException {
     switch (rank) {
-      case 1 : return (H)h1();
-      case 2 : return (H)h2();
-      case 3 : return (H)h3();
-      case 4 : return (H)h4();
-      case 5 : return (H)h5();
-      case 6 : return (H)h6();
+      case 1 : return (H) h1();
+      case 2 : return (H) h2();
+      case 3 : return (H) h3();
+      case 4 : return (H) h4();
+      case 5 : return (H) h5();
+      case 6 : return (H) h6();
       default :
         throw new LocalizedIllegalArgumentException(Resources.PACKAGE_RESOURCES, "AnyHeadingContent.invalidRank", rank);
     }
   }
+
 //  default <
 //    E   extends AnyH<E, __, h__, h_c>,
 //    h__ extends AnyH__<__, h__>,
@@ -731,11 +738,12 @@ public interface AnyHeadingContent<
    */
   @Factory("h#")
   default <
-    H__ extends com.aoapps.html.any.AnyH__<D, __, H__>,
-    Ex extends Throwable
+      H__ extends com.aoapps.html.any.AnyH__<D, __, H__>,
+      Ex extends Throwable
   > __ h__(int rank, IOConsumerE<? super H__, Ex> h) throws IOException, Ex {
     return h(rank).__(h);
   }
+
 //  default <Ex extends Throwable> __ h__(int rank, IOConsumerE<? super H__<__, ?>, Ex> h) throws IOException, Ex {
 //    return h(rank).__(h);
 //  }
@@ -791,10 +799,11 @@ public interface AnyHeadingContent<
   @SuppressWarnings("unchecked")
   @Factory("h#")
   default <
-    H_c extends com.aoapps.html.any.AnyH_c<D, __, H_c>
+      H_c extends com.aoapps.html.any.AnyH_c<D, __, H_c>
   > H_c h_c(int rank) throws IOException {
-    return (H_c)h(rank)._c();
+    return (H_c) h(rank)._c();
   }
+
 //  default H_c<__, ?> h_c(int rank) throws IOException {
 //    return h(rank)._c();
 //  }

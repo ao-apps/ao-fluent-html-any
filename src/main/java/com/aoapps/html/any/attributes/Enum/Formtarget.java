@@ -46,8 +46,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Formtarget<
-  E extends Element<?, ?, E> & Formtarget<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Formtarget<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -60,7 +60,8 @@ public interface Formtarget<
    */
   @Attributes.Funnel
   default E formtarget(String formtarget) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "formtarget");
     return Attributes.String.attribute(element, "formtarget", MarkupType.NONE, formtarget, true, true);
   }
@@ -93,7 +94,8 @@ public interface Formtarget<
    * @see #formtarget(java.lang.String)
    */
   default E formtarget(V formtarget) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return formtarget((formtarget == null) ? null : formtarget.apply(element.getDocument()));
   }
 

@@ -48,7 +48,8 @@ public interface Noshade<E extends Element<?, ?, E> & Noshade<E>> {
   @Deprecated
   @Attributes.Funnel
   default E noshade(boolean noshade) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Boolean.attribute(element, "noshade", noshade);
   }
 

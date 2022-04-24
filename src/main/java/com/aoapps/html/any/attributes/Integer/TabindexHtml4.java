@@ -63,7 +63,8 @@ public interface TabindexHtml4<E extends Element<?, ?, E> & TabindexHtml4<E>> ex
   @Attributes.Funnel
   default E tabindex(int tabindex) throws IOException {
     // Not calling super: overridden to support HTML 4
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Integer.attribute(element, "tabindex", tabindex);
   }
 

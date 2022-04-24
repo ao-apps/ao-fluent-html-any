@@ -53,7 +53,8 @@ public interface Dirname<E extends Element<?, ?, E> & Dirname<E>> {
    */
   @Attributes.Funnel
   default E dirname(Object dirname) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "dirname", MarkupType.NONE, dirname, false, true, textInXhtmlAttributeEncoder);
   }
 
@@ -84,6 +85,6 @@ public interface Dirname<E extends Element<?, ?, E> & Dirname<E>> {
    * @see #dirname(java.lang.Object)
    */
   default <Ex extends Throwable> E dirname(TextWritable<Ex> dirname) throws IOException, Ex {
-    return dirname((Object)dirname);
+    return dirname((Object) dirname);
   }
 }

@@ -55,7 +55,8 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
   @Deprecated
   @Attributes.Funnel
   default E onmousewheel(Object onmousewheel) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onmousewheel", onmousewheel);
   }
 
@@ -90,6 +91,6 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
    */
   @Deprecated
   default <Ex extends Throwable> E onmousewheel(JavaScriptWritable<Ex> onmousewheel) throws IOException, Ex {
-    return onmousewheel((Object)onmousewheel);
+    return onmousewheel((Object) onmousewheel);
   }
 }

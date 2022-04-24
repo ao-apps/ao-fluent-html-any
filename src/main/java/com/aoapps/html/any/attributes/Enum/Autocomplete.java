@@ -50,8 +50,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Autocomplete<
-  E extends Element<?, ?, E> & Autocomplete<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Autocomplete<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -65,7 +65,8 @@ public interface Autocomplete<
    */
   @Attributes.Funnel
   default E autocomplete(String autocomplete) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "autocomplete");
     return Attributes.String.attribute(element, "autocomplete", MarkupType.NONE, autocomplete, true, true);
   }
@@ -100,7 +101,8 @@ public interface Autocomplete<
    * @see #autocomplete(java.lang.String)
    */
   default E autocomplete(V autocomplete) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return autocomplete((autocomplete == null) ? null : autocomplete.apply(element.getDocument()));
   }
 
@@ -133,7 +135,8 @@ public interface Autocomplete<
    */
   @Attributes.Funnel
   default E autocomplete(String ... autocomplete) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     AnyDocument<?> document = element.getDocument();
     Attributes.onlySupportedInHtml5(document, "autocomplete");
     if (autocomplete != null) {
@@ -180,7 +183,8 @@ public interface Autocomplete<
   @Attributes.Funnel
   @SuppressWarnings({"unchecked", "deprecation"}) // generic varargs
   default E autocomplete(V ... autocomplete) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     AnyDocument<?> document = element.getDocument();
     Attributes.onlySupportedInHtml5(document, "autocomplete");
     if (autocomplete != null) {

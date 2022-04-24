@@ -59,7 +59,8 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
    */
   @Attributes.Funnel
   default E lang(Object lang) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "lang", MarkupType.NONE, lang, true, true, textInXhtmlAttributeEncoder);
   }
 
@@ -124,6 +125,6 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
    * @see #lang(java.lang.Object)
    */
   default <Ex extends Throwable> E lang(TextWritable<Ex> lang) throws IOException, Ex {
-    return lang((Object)lang);
+    return lang((Object) lang);
   }
 }

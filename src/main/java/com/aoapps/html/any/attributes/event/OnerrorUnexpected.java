@@ -85,7 +85,8 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
   @Deprecated
   @Attributes.Funnel
   default E onerror(Object onerror) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onerror");
     return Attributes.Event.attribute(element, "onerror", onerror);
   }
@@ -139,6 +140,6 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
    */
   @Deprecated
   default <Ex extends Throwable> E onerror(JavaScriptWritable<Ex> onerror) throws IOException, Ex {
-    return onerror((Object)onerror);
+    return onerror((Object) onerror);
   }
 }

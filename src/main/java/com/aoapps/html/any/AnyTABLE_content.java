@@ -41,20 +41,20 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyTABLE_content<
-  D  extends AnyDocument<D>,
-  __ extends AnyTABLE_content<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyTABLE_content<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-  AnyUnion_TBODY_THEAD_TFOOT<D, __>
+    //
+    // Unions:
+    //
+    // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    AnyUnion_TBODY_THEAD_TFOOT<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  // Inherited: AnyScriptSupportingContent<D, __>
+//
+// Content models:
+//
+// Inherited: Content<D, __>
+// Inherited: AnyScriptSupportingContent<D, __>
 {
   //
   // Factories:
@@ -152,6 +152,7 @@ public interface AnyTABLE_content<
    */
   @Factory("caption")
   AnyCAPTION_c<D, __, ?> caption_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="COLGROUP">
   /**
@@ -231,6 +232,7 @@ public interface AnyTABLE_content<
    */
   @Factory("colgroup")
   AnyCOLGROUP_c<D, __, ?> colgroup_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="THEAD">
   /**
@@ -310,6 +312,7 @@ public interface AnyTABLE_content<
    */
   @Factory("thead")
   AnyTHEAD_c<D, __, ?> thead_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="TBODY">
   /**
@@ -389,6 +392,7 @@ public interface AnyTABLE_content<
    */
   @Factory("tbody")
   AnyTBODY_c<D, __, ?> tbody_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="Inherited: TR (deprecated to encourage use of <tbody> for SGML/XML consistency)">
   // TODO: Create a test to ensure all methods of TBODY_THEAD_TFOOT have been overridden and deprecated, based on a new @OverrideFactory annotation?
@@ -445,6 +449,7 @@ public interface AnyTABLE_content<
   default __ tr__() throws IOException {
     return AnyUnion_TBODY_THEAD_TFOOT.super.tr__();
   }
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="TFOOT">
   /**

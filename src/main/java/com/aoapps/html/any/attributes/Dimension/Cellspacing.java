@@ -49,7 +49,8 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
   @Deprecated
   @Attributes.Funnel
   default E cellspacing(int pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "cellspacing", pixels);
   }
 
@@ -61,7 +62,8 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
   @Deprecated
   @Attributes.Funnel
   default E cellspacing(Integer pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "cellspacing", pixels);
   }
 
@@ -86,7 +88,8 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
   @Deprecated
   @Attributes.Funnel
   default E cellspacing(String pixelsOrPercent) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "cellspacing", pixelsOrPercent);
   }
 

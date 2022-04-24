@@ -65,7 +65,8 @@ public interface Tabindex<E extends Element<?, ?, E> & Tabindex<E>> {
    */
   @Attributes.Funnel
   default E tabindex(int tabindex) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "tabindex");
     return Attributes.Integer.attribute(element, "tabindex", tabindex);
   }
@@ -86,7 +87,8 @@ public interface Tabindex<E extends Element<?, ?, E> & Tabindex<E>> {
    */
   @Attributes.Funnel
   default E tabindex(Integer tabindex) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "tabindex");
     return Attributes.Integer.attribute(element, "tabindex", tabindex);
   }

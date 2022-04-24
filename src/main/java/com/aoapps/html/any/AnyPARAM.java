@@ -43,50 +43,50 @@ import java.io.Writer;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyPARAM<
-  D  extends AnyDocument<D>,
-  PC extends AnyOBJECT_content<D, PC>,
-  E  extends AnyPARAM<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends AnyOBJECT_content<D, PC>,
+    E  extends AnyPARAM<D, PC, E>
 > extends Void<D, PC, E> implements
-  com.aoapps.html.any.attributes.Text.Name<E>,
-  // TODO: type (deprecated)
-  com.aoapps.html.any.attributes.Text.Value<E>,
-  // TODO: valuetype (deprecated)
-  // Global Attributes overrides
-  com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-  com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-  com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-  com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-  com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-  com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-  com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
-  // Global Event Attributes overrides
-  com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
+    com.aoapps.html.any.attributes.Text.Name<E>,
+    // TODO: type (deprecated)
+    com.aoapps.html.any.attributes.Text.Value<E>,
+    // TODO: valuetype (deprecated)
+    // Global Attributes overrides
+    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+    com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
+    com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
+    com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+    // Global Event Attributes overrides
+    com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 
   protected AnyPARAM(D document, PC pc) {
@@ -96,7 +96,8 @@ public abstract class AnyPARAM<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<param", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -111,7 +112,8 @@ public abstract class AnyPARAM<
   @Override
   public E name(Object name) throws IOException {
     // Overridden to not trim-to-null
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "name", MarkupType.NONE, name, false, false, textInXhtmlAttributeEncoder);
   }
 }

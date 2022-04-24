@@ -48,7 +48,8 @@ public interface Border<E extends Element<?, ?, E> & Border<E>> {
   @Deprecated
   @Attributes.Funnel
   default E border(int border) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "border", border);
   }
 
@@ -60,7 +61,8 @@ public interface Border<E extends Element<?, ?, E> & Border<E>> {
   @Deprecated
   @Attributes.Funnel
   default E border(Integer border) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "border", border);
   }
 

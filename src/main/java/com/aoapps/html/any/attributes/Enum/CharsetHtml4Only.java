@@ -49,8 +49,8 @@ import java.util.function.Function;
 // Matches Charset
 @Deprecated
 public interface CharsetHtml4Only<
-  E extends Element<?, ?, E> & CharsetHtml4Only<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & CharsetHtml4Only<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > extends Charset<E, V> {
 
   /**
@@ -67,7 +67,8 @@ public interface CharsetHtml4Only<
   @Attributes.Funnel
   default E charset(String charset) throws IOException {
     // Not calling super: overridden to support HTML 4
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, true, true);
   }
 

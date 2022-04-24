@@ -44,12 +44,12 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyNAV<
-  D  extends AnyDocument<D>,
-  PC extends AnySectioningContent<D, PC>,
-  E  extends AnyNAV<D, PC, E, __, _c>,
-  __ extends AnyNAV__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyNAV_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnySectioningContent<D, PC>,
+    E  extends AnyNAV<D, PC, E, __, _c>,
+    __ extends AnyNAV__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyNAV_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
   protected AnyNAV(D document, PC pc) {
@@ -60,7 +60,8 @@ public abstract class AnyNAV<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<nav", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

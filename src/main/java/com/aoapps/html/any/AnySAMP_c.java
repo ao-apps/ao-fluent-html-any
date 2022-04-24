@@ -37,12 +37,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnySAMP_c<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-  _c extends AnySAMP_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+    _c extends AnySAMP_c<D, PC, _c>
 >
-  extends NormalText_c<D, PC, _c>
-  implements AnyPhrasingContent<D, _c> {
+    extends NormalText_c<D, PC, _c>
+    implements AnyPhrasingContent<D, _c> {
 
   protected AnySAMP_c(AnySAMP<D, PC, ?, ?, _c> element) {
     super(element);

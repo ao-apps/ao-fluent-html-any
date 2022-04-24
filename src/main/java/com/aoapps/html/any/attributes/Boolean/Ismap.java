@@ -42,7 +42,8 @@ public interface Ismap<E extends Element<?, ?, E> & Ismap<E>> {
    */
   @Attributes.Funnel
   default E ismap(boolean ismap) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Boolean.attribute(element, "ismap", ismap);
   }
 

@@ -97,10 +97,10 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
       }
       if (!attrName.startsWith(ATTRIBUTE_PREFIX)) {
         return new InvalidResult(
-          RESOURCES,
-          "Text.Data.data.validate.invalidStart",
-          ATTRIBUTE_PREFIX,
-          attrName
+            RESOURCES,
+            "Text.Data.data.validate.invalidStart",
+            ATTRIBUTE_PREFIX,
+            attrName
         );
       }
       int len = attrName.length();
@@ -108,10 +108,10 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
       // The * may be replaced by any name following the production rule of XML names:
       if (!XmlUtils.isValidName(attrName, pos, len)) {
         return new InvalidResult(
-          RESOURCES,
-          "Text.Data.data.validate.notFollowedByValidName",
-          ATTRIBUTE_PREFIX,
-          attrName
+            RESOURCES,
+            "Text.Data.data.validate.notFollowedByValidName",
+            ATTRIBUTE_PREFIX,
+            attrName
         );
       }
       // the name must not contain any semicolon (U+003A):
@@ -122,19 +122,19 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
         char ch = attrName.charAt(pos++);
         if (ch >= 'A' && ch <= 'Z') {
           return new InvalidResult(
-            RESOURCES,
-            "Text.Data.data.validate.mayNotContainCapitalLetters",
-            attrName
+              RESOURCES,
+              "Text.Data.data.validate.mayNotContainCapitalLetters",
+              attrName
           );
         }
       }
       // the name must not start with xml, whatever case is used for these letters:
       if (attrName.regionMatches(ATTRIBUTE_PREFIX.length(), "xml", 0, 3)) {
         return new InvalidResult(
-          RESOURCES,
-          "Text.Data.data.validate.mayNotStartXml",
-          ATTRIBUTE_PREFIX,
-          attrName
+            RESOURCES,
+            "Text.Data.data.validate.mayNotStartXml",
+            ATTRIBUTE_PREFIX,
+            attrName
         );
       }
       return ValidResult.getInstance();
@@ -167,10 +167,10 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
     private static String toJSNameNoAssert(String attrName) {
       if (!attrName.startsWith(ATTRIBUTE_PREFIX)) {
         throw new LocalizedIllegalArgumentException(
-          RESOURCES,
-          "Text.Data.data.validate.invalidStart",
-          ATTRIBUTE_PREFIX,
-          attrName
+            RESOURCES,
+            "Text.Data.data.validate.invalidStart",
+            ATTRIBUTE_PREFIX,
+            attrName
         );
       }
       int len = attrName.length();
@@ -184,7 +184,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
           //    the dash is removed, and the letter is transformed into its uppercase counterpart
           char ch2 = attrName.charAt(pos);
           if (ch2 >= 'a' && ch2 <= 'z') {
-            ch = (char)(ch2 - ('a' - 'A'));
+            ch = (char) (ch2 - ('a' - 'A'));
             pos++;
           }
         }
@@ -212,17 +212,18 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
    */
   @Attributes.Funnel
   default E data(String attrName, Object value) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     validate(attrName, data::validate);
     Attributes.onlySupportedInHtml5(element, attrName);
     return Attributes.Text.attribute(
-      element,
-      attrName,
-      MarkupType.NONE,
-      value,
-      false,
-      false,
-      textInXhtmlAttributeEncoder
+        element,
+        attrName,
+        MarkupType.NONE,
+        value,
+        false,
+        false,
+        textInXhtmlAttributeEncoder
     );
   }
 
@@ -265,7 +266,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
    * @since HTML 5
    */
   default <Ex extends Throwable> E data(String attrName, TextWritable<Ex> value) throws IOException, Ex {
-    return data(attrName, (Object)value);
+    return data(attrName, (Object) value);
   }
 
   /**
@@ -308,19 +309,19 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
       while (pos < len) {
         pos = jsName.indexOf('-', pos) + 1;
         if (
-          // Not found
-          pos == 0
-          // Found at end
-          || pos >= len
+            // Not found
+            pos == 0
+                // Found at end
+                || pos >= len
         ) {
           break;
         }
         char nextChar = jsName.charAt(pos);
         if (nextChar >= 'a' && nextChar <= 'z') {
           return new InvalidResult(
-            RESOURCES,
-            "Text.Data.dataset.validate.dashThenLower",
-            jsName
+              RESOURCES,
+              "Text.Data.dataset.validate.dashThenLower",
+              jsName
           );
         }
       }
@@ -355,13 +356,13 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
     private static String toAttrNameNoAssert(String jsName) {
       int len = jsName.length();
       StringBuilder attrName = new StringBuilder(
-        // room for "data-"
-        data.ATTRIBUTE_PREFIX.length()
-        // and room for the JavaScript property name
-        + len
-        // and some space for some added dashes from conversion
-        // 10 is arbitrary, but bigger than the number of typical camelCase sections
-        + 10
+          // room for "data-"
+          data.ATTRIBUTE_PREFIX.length()
+              // and room for the JavaScript property name
+              + len
+              // and some space for some added dashes from conversion
+              // 10 is arbitrary, but bigger than the number of typical camelCase sections
+              + 10
       );
       // 2. The prefix data- is added
       attrName.append(data.ATTRIBUTE_PREFIX);
@@ -397,10 +398,10 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
    */
   default E dataset(String jsName, Object value) throws IOException {
     return data(
-      dataset.toAttrName(
-        validate(jsName, dataset::validate)
-      ),
-      value
+        dataset.toAttrName(
+            validate(jsName, dataset::validate)
+        ),
+        value
     );
   }
 
@@ -441,6 +442,6 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
    * @since HTML 5
    */
   default <Ex extends Throwable> E dataset(String jsName, TextWritable<Ex> value) throws IOException, Ex {
-    return dataset(jsName, (Object)value);
+    return dataset(jsName, (Object) value);
   }
 }

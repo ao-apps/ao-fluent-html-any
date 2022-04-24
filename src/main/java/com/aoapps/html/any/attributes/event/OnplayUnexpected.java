@@ -70,7 +70,8 @@ public interface OnplayUnexpected<E extends Element<?, ?, E> & OnplayUnexpected<
   @Deprecated
   @Attributes.Funnel
   default E onplay(Object onplay) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onplay");
     return Attributes.Event.attribute(element, "onplay", onplay);
   }
@@ -118,6 +119,6 @@ public interface OnplayUnexpected<E extends Element<?, ?, E> & OnplayUnexpected<
    */
   @Deprecated
   default <Ex extends Throwable> E onplay(JavaScriptWritable<Ex> onplay) throws IOException, Ex {
-    return onplay((Object)onplay);
+    return onplay((Object) onplay);
   }
 }

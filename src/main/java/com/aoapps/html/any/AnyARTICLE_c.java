@@ -39,12 +39,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyARTICLE_c<
-  D  extends AnyDocument<D>,
-  PC extends AnySectioningContent<D, PC>,
-  _c extends AnyARTICLE_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnySectioningContent<D, PC>,
+    _c extends AnyARTICLE_c<D, PC, _c>
 >
-  extends NormalText_c<D, PC, _c>
-  implements AnyFlowContent<D, _c> {
+    extends NormalText_c<D, PC, _c>
+    implements AnyFlowContent<D, _c> {
 
   protected AnyARTICLE_c(AnyARTICLE<D, PC, ?, ?, _c> element) {
     super(element);

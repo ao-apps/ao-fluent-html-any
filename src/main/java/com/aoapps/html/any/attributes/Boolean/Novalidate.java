@@ -54,7 +54,8 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
    */
   @Attributes.Funnel
   default E novalidate(boolean novalidate) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "novalidate");
     return Attributes.Boolean.attribute(element, "novalidate", novalidate);
   }

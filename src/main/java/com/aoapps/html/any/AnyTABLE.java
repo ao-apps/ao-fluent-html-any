@@ -44,22 +44,22 @@ import java.util.function.Function;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyTABLE<
-  D  extends AnyDocument<D>,
-  PC extends AnyPalpableContent<D, PC>,
-  E  extends AnyTABLE<D, PC, E, __, _c>,
-  __ extends AnyTABLE__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyTABLE_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyPalpableContent<D, PC>,
+    E  extends AnyTABLE<D, PC, E, __, _c>,
+    __ extends AnyTABLE__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyTABLE_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-  com.aoapps.html.any.attributes.Enum.Align<E, AnyTABLE.Align>,
-  // TODO: bgcolor (deprecated)
-  com.aoapps.html.any.attributes.Integer.Border<E>,
-  com.aoapps.html.any.attributes.Dimension.Cellpadding<E>,
-  com.aoapps.html.any.attributes.Dimension.Cellspacing<E>,
-  // TODO: frame (deprecated)
-  // TODO: rules (deprecated)
-  // TODO: summary (deprecated)
-  com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
+    com.aoapps.html.any.attributes.Enum.Align<E, AnyTABLE.Align>,
+    // TODO: bgcolor (deprecated)
+    com.aoapps.html.any.attributes.Integer.Border<E>,
+    com.aoapps.html.any.attributes.Dimension.Cellpadding<E>,
+    com.aoapps.html.any.attributes.Dimension.Cellspacing<E>,
+    // TODO: frame (deprecated)
+    // TODO: rules (deprecated)
+    // TODO: summary (deprecated)
+    com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
 {
 
   protected AnyTABLE(D document, PC pc) {
@@ -69,7 +69,8 @@ public abstract class AnyTABLE<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<table", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

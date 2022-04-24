@@ -46,8 +46,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Formenctype<
-  E extends Element<?, ?, E> & Formenctype<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Formenctype<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -60,7 +60,8 @@ public interface Formenctype<
    */
   @Attributes.Funnel
   default E formenctype(String formenctype) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "formenctype");
     return Attributes.String.attribute(element, "formenctype", MarkupType.NONE, formenctype, true, true);
   }
@@ -93,7 +94,8 @@ public interface Formenctype<
    * @see #formenctype(java.lang.String)
    */
   default E formenctype(V formenctype) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return formenctype((formenctype == null) ? null : formenctype.apply(element.getDocument()));
   }
 

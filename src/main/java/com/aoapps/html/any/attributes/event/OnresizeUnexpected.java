@@ -71,7 +71,8 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
   @Deprecated
   @Attributes.Funnel
   default E onresize(Object onresize) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onresize");
     return Attributes.Event.attribute(element, "onresize", onresize);
   }
@@ -119,6 +120,6 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
    */
   @Deprecated
   default <Ex extends Throwable> E onresize(JavaScriptWritable<Ex> onresize) throws IOException, Ex {
-    return onresize((Object)onresize);
+    return onresize((Object) onresize);
   }
 }

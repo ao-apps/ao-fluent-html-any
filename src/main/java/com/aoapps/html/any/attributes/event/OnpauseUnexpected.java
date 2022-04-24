@@ -70,7 +70,8 @@ public interface OnpauseUnexpected<E extends Element<?, ?, E> & OnpauseUnexpecte
   @Deprecated
   @Attributes.Funnel
   default E onpause(Object onpause) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onpause");
     return Attributes.Event.attribute(element, "onpause", onpause);
   }
@@ -118,6 +119,6 @@ public interface OnpauseUnexpected<E extends Element<?, ?, E> & OnpauseUnexpecte
    */
   @Deprecated
   default <Ex extends Throwable> E onpause(JavaScriptWritable<Ex> onpause) throws IOException, Ex {
-    return onpause((Object)onpause);
+    return onpause((Object) onpause);
   }
 }

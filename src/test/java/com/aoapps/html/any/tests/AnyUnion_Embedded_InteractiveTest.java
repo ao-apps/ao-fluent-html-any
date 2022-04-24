@@ -52,11 +52,11 @@ public class AnyUnion_Embedded_InteractiveTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyUnion_Embedded_Interactive.class
-      //
-      // Unions:
-      //
-      // None
+        AnyUnion_Embedded_Interactive.class
+    //
+    // Unions:
+    //
+    // None
     );
   }
 
@@ -64,11 +64,11 @@ public class AnyUnion_Embedded_InteractiveTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyUnion_Embedded_Interactive.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyUnion_Embedded_Interactive.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -76,35 +76,35 @@ public class AnyUnion_Embedded_InteractiveTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyUnion_Embedded_Interactive.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyUnion_Embedded_Interactive.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "audio",
-      "embed",
-      "iframe",
-      "img",
-      "object",
-      "video"
+        testingClass,
+        //
+        // Factories:
+        //
+        "audio",
+        "embed",
+        "iframe",
+        "img",
+        "object",
+        "video"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-      -1,
-      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Embedded_Interactive.class)
+        -1,
+        AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Embedded_Interactive.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_Embedded_Interactive.class);
   }

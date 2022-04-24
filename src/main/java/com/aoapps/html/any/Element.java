@@ -41,15 +41,15 @@ import java.io.Writer;
 // TODO: Should every element have a __() closing method?
 //       Should every element implement Closeable, even if does not have a specific __()?
 public abstract class Element<
-  D  extends AnyDocument<D>,
-  PC extends Content<D, PC>,
-  E  extends Element<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends Content<D, PC>,
+    E  extends Element<D, PC, E>
 > implements
-  DocumentWriter,
-  // Allow any arbitrary attributes
-  com.aoapps.html.any.attributes.Text.Attribute<E>,
-  // Global Attributes
-  GlobalAttributes<E>
+    DocumentWriter,
+    // Allow any arbitrary attributes
+    com.aoapps.html.any.attributes.Text.Attribute<E>,
+    // Global Attributes
+    GlobalAttributes<E>
 {
 
   protected final D document;
@@ -77,7 +77,8 @@ public abstract class Element<
   @Override
   public E nl() throws IOException {
     document.nl();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -90,7 +91,8 @@ public abstract class Element<
   @Override
   public E nli() throws IOException {
     document.nli();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -106,7 +108,8 @@ public abstract class Element<
   @Override
   public E nli(int depthOffset) throws IOException {
     document.nli(depthOffset);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -122,7 +125,8 @@ public abstract class Element<
   @Override
   public E indent() throws IOException {
     document.indent();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -138,7 +142,8 @@ public abstract class Element<
   @Override
   public E indent(int depthOffset) throws IOException {
     document.indent(depthOffset);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -168,7 +173,8 @@ public abstract class Element<
   @Override
   public E setIndent(boolean indent) {
     document.setIndent(indent);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -198,7 +204,8 @@ public abstract class Element<
   @Override
   public E setDepth(int depth) {
     document.setDepth(depth);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -214,7 +221,8 @@ public abstract class Element<
   @Override
   public E incDepth() {
     document.incDepth();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -230,7 +238,8 @@ public abstract class Element<
   @Override
   public E decDepth() {
     document.decDepth();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -246,7 +255,8 @@ public abstract class Element<
   @Override
   public E sp() throws IOException {
     document.sp();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -262,10 +272,12 @@ public abstract class Element<
   @Override
   public E sp(int count) throws IOException {
     this.
-    document.sp(count);
-    @SuppressWarnings("unchecked") E element = (E)this;
+        document.sp(count);
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
+
   // </editor-fold>
 
   // <editor-fold desc="DocumentWriter / Unsafe - delegate to Document" defaultstate="collapsed">
@@ -309,7 +321,8 @@ public abstract class Element<
   @Override
   public E unsafe(char ch) throws IOException {
     document.unsafe(ch);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -325,7 +338,8 @@ public abstract class Element<
   @Override
   public E unsafe(char[] cbuf) throws IOException {
     document.unsafe(cbuf);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -341,7 +355,8 @@ public abstract class Element<
   @Override
   public E unsafe(char[] cbuf, int offset, int len) throws IOException {
     document.unsafe(cbuf, offset, len);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -357,7 +372,8 @@ public abstract class Element<
   @Override
   public E unsafe(CharSequence csq) throws IOException {
     document.unsafe(csq);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -373,7 +389,8 @@ public abstract class Element<
   @Override
   public E unsafe(CharSequence csq, int start, int end) throws IOException {
     document.unsafe(csq, start, end);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -389,7 +406,8 @@ public abstract class Element<
   @Override
   public E unsafe(Object unsafe) throws IOException {
     document.unsafe(unsafe);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -405,7 +423,8 @@ public abstract class Element<
   @Override
   public <Ex extends Throwable> E unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
     document.unsafe(unsafe);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -421,7 +440,8 @@ public abstract class Element<
   @Override
   public E unsafe(Writable unsafe) throws IOException {
     document.unsafe(unsafe);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -438,6 +458,7 @@ public abstract class Element<
   public <W extends Writer & NoClose> W unsafe() throws IOException {
     return document.unsafe();
   }
+
   // </editor-fold>
 
   // <editor-fold desc="DocumentWriter / Automatic Newline and Indentation - delegate to Document" defaultstate="collapsed">
@@ -467,7 +488,8 @@ public abstract class Element<
   @Override
   public E setAutonli(boolean autonli) {
     document.setAutonli(autonli);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -497,7 +519,8 @@ public abstract class Element<
   @Override
   public E setAtnl() {
     document.setAtnl();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -513,7 +536,8 @@ public abstract class Element<
   @Override
   public E setAtnl(boolean atnl) {
     document.setAtnl(atnl);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -529,7 +553,8 @@ public abstract class Element<
   @Override
   public E clearAtnl() {
     document.clearAtnl();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -545,7 +570,8 @@ public abstract class Element<
   @Override
   public E autoNl() throws IOException {
     document.autoNl();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -558,7 +584,8 @@ public abstract class Element<
   @Override
   public E autoNli() throws IOException {
     document.autoNli();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -574,7 +601,8 @@ public abstract class Element<
   @Override
   public E autoNli(int depthOffset) throws IOException {
     document.autoNli(depthOffset);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -590,7 +618,8 @@ public abstract class Element<
   @Override
   public E autoIndent() throws IOException {
     document.autoIndent();
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -606,9 +635,11 @@ public abstract class Element<
   @Override
   public E autoIndent(int depthOffset) throws IOException {
     document.autoIndent(depthOffset);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
+
   // </editor-fold>
 
   /**

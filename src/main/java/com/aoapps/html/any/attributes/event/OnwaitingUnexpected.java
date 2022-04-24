@@ -70,7 +70,8 @@ public interface OnwaitingUnexpected<E extends Element<?, ?, E> & OnwaitingUnexp
   @Deprecated
   @Attributes.Funnel
   default E onwaiting(Object onwaiting) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onwaiting");
     return Attributes.Event.attribute(element, "onwaiting", onwaiting);
   }
@@ -118,6 +119,6 @@ public interface OnwaitingUnexpected<E extends Element<?, ?, E> & OnwaitingUnexp
    */
   @Deprecated
   default <Ex extends Throwable> E onwaiting(JavaScriptWritable<Ex> onwaiting) throws IOException, Ex {
-    return onwaiting((Object)onwaiting);
+    return onwaiting((Object) onwaiting);
   }
 }

@@ -42,26 +42,26 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyPhrasingContent<
-  D  extends AnyDocument<D>,
-  __ extends AnyPhrasingContent<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyPhrasingContent<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-  // Inherited: AnyUnion_Embedded_Interactive<D, __>
-  // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
-  // Inherited: AnyUnion_Interactive_Phrasing<D, __>
-  AnyUnion_Metadata_Phrasing<D, __>,
-  AnyUnion_Palpable_Phrasing<D, __>,
+    //
+    // Unions:
+    //
+    // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    // Inherited: AnyUnion_Embedded_Interactive<D, __>
+    // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
+    // Inherited: AnyUnion_Interactive_Phrasing<D, __>
+    AnyUnion_Metadata_Phrasing<D, __>,
+    AnyUnion_Palpable_Phrasing<D, __>,
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  AnyEmbeddedContent<D, __>
-  // Inherited: AnyScriptSupportingContent<D, __>
-  // Inherited: AnyTextContent<D, __>
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    AnyEmbeddedContent<D, __>
+// Inherited: AnyScriptSupportingContent<D, __>
+// Inherited: AnyTextContent<D, __>
 {
   //
   // Factories:
@@ -175,6 +175,7 @@ public interface AnyPhrasingContent<
    */
   @Factory("area")
   <Ex extends Throwable> AnyAREA<D, __, ?> area(Suppliers.Shape<Ex> shape) throws IOException, Ex;
+
   // </editor-fold>
   // Inherited: AUDIO
   // Inherited: B
@@ -206,6 +207,7 @@ public interface AnyPhrasingContent<
   default __ br__() throws IOException {
     return br().__();
   }
+
   // </editor-fold>
   // Inherited: BUTTON
   // Inherited: CANVAS
@@ -317,6 +319,7 @@ public interface AnyPhrasingContent<
    */
   @Factory("datalist")
   AnyDATALIST_c<D, __, ?> datalist_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="DEL">
   /**
@@ -406,6 +409,7 @@ public interface AnyPhrasingContent<
    */
   @Factory("del")
   AnyDEL_c<D, __, ?> del_c() throws IOException;
+
   // </editor-fold>
   // Inherited: DFN
   // Inherited: EM
@@ -450,6 +454,7 @@ public interface AnyPhrasingContent<
   default AnySLOT slot() throws IOException {
     throw new AssertionError("TODO: Implement slot");
   }
+
   // </editor-fold>
   // Inherited: SMALL
   // Inherited: SPAN

@@ -52,11 +52,11 @@ public class AnyUnion_DL_PalpableTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyUnion_DL_Palpable.class
-      //
-      // Unions:
-      //
-      // None
+        AnyUnion_DL_Palpable.class
+    //
+    // Unions:
+    //
+    // None
     );
   }
 
@@ -64,11 +64,11 @@ public class AnyUnion_DL_PalpableTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyUnion_DL_Palpable.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyUnion_DL_Palpable.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -76,30 +76,30 @@ public class AnyUnion_DL_PalpableTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyUnion_DL_Palpable.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyUnion_DL_Palpable.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "div"
+        testingClass,
+        //
+        // Factories:
+        //
+        "div"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-      -1,
-      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DL_Palpable.class)
+        -1,
+        AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DL_Palpable.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DL_Palpable.class);
   }

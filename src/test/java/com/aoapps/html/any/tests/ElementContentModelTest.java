@@ -49,27 +49,27 @@ public class ElementContentModelTest {
    * Gets the set of all <code>*_content</code> per-element content model interfaces.
    */
   static Class<? extends Content>[] getAllElementContentModels() {
-    return new Class[] {
-      AnyCOLGROUP_content.class,
-      AnyDATALIST_content.class,
-      AnyDIV_content.class,
-      AnyDL_content.class,
-      AnyHTML_content.class,
-      AnyOBJECT_content.class,
-      AnyOPTGROUP_content.class,
-      AnySELECT_content.class,
-      AnyTABLE_content.class,
-      AnyTR_content.class
+    return new Class[]{
+        AnyCOLGROUP_content.class,
+        AnyDATALIST_content.class,
+        AnyDIV_content.class,
+        AnyDL_content.class,
+        AnyHTML_content.class,
+        AnyOBJECT_content.class,
+        AnyOPTGROUP_content.class,
+        AnySELECT_content.class,
+        AnyTABLE_content.class,
+        AnyTR_content.class
     };
   }
 
   static void testElementContentModels(Class<? extends Content> clazz, Class<? extends Content> ... expected) {
     InheritanceTestHelper.testInterfaces(
-      Content.class,
-      iface -> iface.getSimpleName().endsWith("_content"),
-      getAllElementContentModels(),
-      clazz,
-      expected
+        Content.class,
+        iface -> iface.getSimpleName().endsWith("_content"),
+        getAllElementContentModels(),
+        clazz,
+        expected
     );
   }
 

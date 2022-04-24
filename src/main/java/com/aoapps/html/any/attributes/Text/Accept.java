@@ -45,7 +45,8 @@ public interface Accept<E extends Element<?, ?, E> & Accept<E>> {
    */
   @Attributes.Funnel
   default E accept(Object accept) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "accept", MarkupType.NONE, accept, true, true, textInXhtmlAttributeEncoder);
   }
 
@@ -68,6 +69,6 @@ public interface Accept<E extends Element<?, ?, E> & Accept<E>> {
    * @see #accept(java.lang.Object)
    */
   default <Ex extends Throwable> E accept(TextWritable<Ex> accept) throws IOException, Ex {
-    return accept((Object)accept);
+    return accept((Object) accept);
   }
 }

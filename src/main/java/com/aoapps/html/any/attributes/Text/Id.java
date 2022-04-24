@@ -60,7 +60,8 @@ public interface Id<E extends Element<?, ?, E> & Id<E>> {
    */
   @Attributes.Funnel
   default E id(Object id) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     // TODO: Validate, with doctype-aware character constraints.  XmlUtils can help, or build into Doctype itself.
     return Attributes.Text.attribute(element, "id", MarkupType.NONE, id, true, true, textInXhtmlAttributeEncoder);
   }
@@ -98,6 +99,6 @@ public interface Id<E extends Element<?, ?, E> & Id<E>> {
    * @see #id(java.lang.Object)
    */
   default <Ex extends Throwable> E id(TextWritable<Ex> id) throws IOException, Ex {
-    return id((Object)id);
+    return id((Object) id);
   }
 }

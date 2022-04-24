@@ -45,8 +45,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface HttpEquiv<
-  E extends Element<?, ?, E> & HttpEquiv<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & HttpEquiv<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -58,7 +58,8 @@ public interface HttpEquiv<
    */
   @Attributes.Funnel
   default E httpEquiv(String httpEquiv) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "http-equiv", MarkupType.NONE, httpEquiv, true, false);
   }
 
@@ -86,7 +87,8 @@ public interface HttpEquiv<
    * @see #httpEquiv(java.lang.String)
    */
   default E httpEquiv(V httpEquiv) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return httpEquiv((httpEquiv == null) ? null : httpEquiv.apply(element.getDocument()));
   }
 

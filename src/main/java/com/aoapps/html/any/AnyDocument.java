@@ -77,7 +77,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   public static final Charset ENCODING = StandardCharsets.UTF_8;
 
   static final com.aoapps.lang.i18n.Resources RESOURCES =
-    com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyDocument.class);
+      com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyDocument.class);
 
   public final EncodingContext encodingContext;
 
@@ -138,7 +138,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 
   @Override
   public D getDocument() {
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -164,7 +165,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   D nl(Writer unsafe) throws IOException {
     unsafe.append(NL);
     setAtnl();
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -244,7 +246,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         clearAtnl();
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -261,7 +264,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   @SuppressWarnings("deprecation")
   public D setIndent(boolean indent) {
     this.indent = indent;
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -280,7 +284,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       throw new IllegalArgumentException("depth < 0: " + depth);
     }
     this.depth = depth;
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -295,7 +300,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       }
     }
     assert depth >= 0;
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -310,7 +316,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       }
     }
     assert depth >= 0;
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -336,9 +343,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       WriterUtil.sp(unsafe, count);
       clearAtnl();
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
+
   // </editor-fold>
 
   // <editor-fold desc="DocumentWriter / Unsafe - implementation" defaultstate="collapsed">
@@ -404,13 +413,14 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       int len = cbuf.length;
       if (len > 0) {
         unsafe(
-          getRawUnsafe(null),
-          cbuf,
-          cbuf[len - 1] == NL
+            getRawUnsafe(null),
+            cbuf,
+            cbuf[len - 1] == NL
         );
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -442,14 +452,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   public D unsafe(char[] cbuf, int offset, int len) throws IOException {
     if (cbuf != null && len > 0) {
       unsafe(
-        getRawUnsafe(null),
-        cbuf,
-        offset,
-        len,
-        cbuf[offset + len - 1] == NL
+          getRawUnsafe(null),
+          cbuf,
+          offset,
+          len,
+          cbuf[offset + len - 1] == NL
       );
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -483,13 +494,14 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       int len = csq.length();
       if (len > 0) {
         unsafe(
-          getRawUnsafe(null),
-          csq,
-          csq.charAt(len - 1) == NL
+            getRawUnsafe(null),
+            csq,
+            csq.charAt(len - 1) == NL
         );
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -521,14 +533,15 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   public D unsafe(CharSequence csq, int start, int end) throws IOException {
     if (csq != null && end > start) {
       unsafe(
-        getRawUnsafe(null),
-        csq,
-        start,
-        end,
-        csq.charAt(end - 1) == NL
+          getRawUnsafe(null),
+          csq,
+          start,
+          end,
+          csq.charAt(end - 1) == NL
       );
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -565,54 +578,57 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   D unsafe(Writer unsafe, Object value) throws IOException {
     // Support Optional
     while (value instanceof Optional) {
-      value = ((Optional<?>)value).orElse(null);
+      value = ((Optional<?>) value).orElse(null);
     }
     while (value instanceof IOSupplierE<?, ?>) {
       try {
-        value = ((IOSupplierE<?, ?>)value).get();
+        value = ((IOSupplierE<?, ?>) value).get();
       } catch (Throwable t) {
         throw Throwables.wrap(t, IOException.class, IOException::new);
       }
     }
     if (value != null) {
       if (value instanceof char[]) {
-        char[] cbuf = (char[])value;
+        char[] cbuf = (char[]) value;
         int len = cbuf.length;
         if (len > 0) {
           return unsafe(
-            unsafe,
-            cbuf,
-            cbuf[len - 1] == NL
+              unsafe,
+              cbuf,
+              cbuf[len - 1] == NL
           );
         } else {
           // Nothing to write
-          @SuppressWarnings("unchecked") D d = (D)this;
+          @SuppressWarnings("unchecked")
+          D d = (D) this;
           return d;
         }
       }
       if (value instanceof CharSequence) {
-        CharSequence csq = (CharSequence)value;
+        CharSequence csq = (CharSequence) value;
         int len = csq.length();
         if (len > 0) {
           return unsafe(
-            unsafe,
-            csq,
-            csq.charAt(len - 1) == NL
+              unsafe,
+              csq,
+              csq.charAt(len - 1) == NL
           );
         } else {
           // Nothing to write
-          @SuppressWarnings("unchecked") D d = (D)this;
+          @SuppressWarnings("unchecked")
+          D d = (D) this;
           return d;
         }
       }
       if (value instanceof Writable) {
-        return unsafe(unsafe, (Writable)value);
+        return unsafe(unsafe, (Writable) value);
       }
       // Allow no markup from translations
       Coercion.write(value, unsafe);
       clearAtnl(); // Unknown, safe to assume not at newline
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -655,9 +671,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         int len = str.length();
         if (len > 0) {
           unsafe(
-            unsafe,
-            str,
-            str.charAt(len - 1) == NL
+              unsafe,
+              str,
+              str.charAt(len - 1) == NL
           );
         }
       } else {
@@ -666,7 +682,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         }
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -712,7 +729,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   @SuppressWarnings("deprecation")
   public D setAutonli(boolean autonli) {
     this.autonli = autonli;
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -736,7 +754,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   @SuppressWarnings("deprecation")
   public D setAtnl() {
     this.atnl = true;
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -749,7 +768,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   @SuppressWarnings("deprecation")
   public D setAtnl(boolean atnl) {
     this.atnl = atnl;
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -762,7 +782,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   @SuppressWarnings("deprecation")
   public D clearAtnl() {
     this.atnl = false;
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -781,7 +802,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       unsafe.append(NL);
       setAtnl();
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -819,7 +841,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         nli(unsafe, depthOffset);
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -853,9 +876,11 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
     if (getAutonli() && getAtnl()) {
       indent(unsafe, depthOffset);
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
+
   // </editor-fold>
 
   // <editor-fold desc="Encode - manual self-type and implementation" defaultstate="collapsed">
@@ -917,10 +942,10 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         // Already in the requested media type, no prefix/suffix required
         BundleLookupThreadContext threadContext;
         if (
-          csq == null
-          || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
-          // Other types that will not be converted to String for bundle lookups
-          || !(csq instanceof String)
+            csq == null
+                || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+                // Other types that will not be converted to String for bundle lookups
+                || !(csq instanceof String)
         ) {
           int len;
           if (csq != null && (len = csq.length()) > 0) {
@@ -939,7 +964,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
             }
           }
         } else {
-          String str = (String)csq;
+          String str = (String) csq;
           BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(str);
           if (lookupMarkup != null) {
             autoIndent(unsafe);
@@ -982,14 +1007,14 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
             MarkupType markupType = contentType.getMarkupType();
             BundleLookupThreadContext threadContext;
             if (
-              markupType == MarkupType.NONE
-              || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
-              // Other types that will not be converted to String for bundle lookups
-              || !(csq instanceof String)
+                markupType == MarkupType.NONE
+                    || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+                    // Other types that will not be converted to String for bundle lookups
+                    || !(csq instanceof String)
             ) {
               encoder.append(csq, encoderOptimized);
             } else {
-              String str = (String)csq;
+              String str = (String) csq;
               BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(str);
               if (lookupMarkup != null) {
                 lookupMarkup.appendPrefixTo(markupType, encoder, encoderOptimized);
@@ -1005,10 +1030,10 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
           // Bypass encoder for markup
           BundleLookupThreadContext threadContext;
           if (
-            csq == null
-            || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
-            // Other types that will not be converted to String for bundle lookups
-            || !(csq instanceof String)
+              csq == null
+                  || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+                  // Other types that will not be converted to String for bundle lookups
+                  || !(csq instanceof String)
           ) {
             encoder.writePrefixTo(encoderOptimized);
             if (csq != null) {
@@ -1016,7 +1041,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
             }
             encoder.writeSuffixTo(encoderOptimized, false);
           } else {
-            String str = (String)csq;
+            String str = (String) csq;
             BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup(str);
             if (lookupMarkup != null) {
               lookupMarkup.appendPrefixTo(MarkupType.XHTML, encoderOptimized);
@@ -1031,7 +1056,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         }
         clearAtnl(); // Unknown, safe to assume not at newline
       }
-      @SuppressWarnings("unchecked") D d = (D)this;
+      @SuppressWarnings("unchecked")
+      D d = (D) this;
       return d;
     }
   }
@@ -1074,16 +1100,16 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         // Already in the requested media type, no prefix/suffix required
         BundleLookupThreadContext threadContext;
         if (
-          csq == null
-          || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
-          // Other types that will not be converted to String for bundle lookups
-          || !(csq instanceof String)
+            csq == null
+                || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+                // Other types that will not be converted to String for bundle lookups
+                || !(csq instanceof String)
         ) {
           if (csq != null) {
             appendCharSequence(unsafe, csq, start, end);
           }
         } else {
-          BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+          BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String) csq);
           if (lookupMarkup != null) {
             autoIndent(unsafe);
             lookupMarkup.appendPrefixTo(MarkupType.XHTML, unsafe);
@@ -1110,14 +1136,14 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
             MarkupType markupType = contentType.getMarkupType();
             BundleLookupThreadContext threadContext;
             if (
-              markupType == MarkupType.NONE
-              || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
-              // Other types that will not be converted to String for bundle lookups
-              || !(csq instanceof String)
+                markupType == MarkupType.NONE
+                    || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+                    // Other types that will not be converted to String for bundle lookups
+                    || !(csq instanceof String)
             ) {
               encoder.append(csq, start, end, encoderOptimized);
             } else {
-              BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+              BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String) csq);
               if (lookupMarkup != null) {
                 lookupMarkup.appendPrefixTo(markupType, encoder, encoderOptimized);
               }
@@ -1132,10 +1158,10 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
           // Bypass encoder for markup
           BundleLookupThreadContext threadContext;
           if (
-            csq == null
-            || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
-            // Other types that will not be converted to String for bundle lookups
-            || !(csq instanceof String)
+              csq == null
+                  || (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+                  // Other types that will not be converted to String for bundle lookups
+                  || !(csq instanceof String)
           ) {
             encoder.writePrefixTo(encoderOptimized);
             if (csq != null) {
@@ -1143,7 +1169,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
             }
             encoder.writeSuffixTo(encoderOptimized, false);
           } else {
-            BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+            BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String) csq);
             if (lookupMarkup != null) {
               lookupMarkup.appendPrefixTo(MarkupType.XHTML, encoderOptimized);
             }
@@ -1157,7 +1183,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         }
         clearAtnl(); // Unknown, safe to assume not at newline
       }
-      @SuppressWarnings("unchecked") D d = (D)this;
+      @SuppressWarnings("unchecked")
+      D d = (D) this;
       return d;
     }
   }
@@ -1175,30 +1202,30 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
     } else {
       // Support Optional
       while (content instanceof Optional) {
-        content = ((Optional<?>)content).orElse(null);
+        content = ((Optional<?>) content).orElse(null);
       }
       while (content instanceof IOSupplierE<?, ?>) {
         try {
-          content = ((IOSupplierE<?, ?>)content).get();
+          content = ((IOSupplierE<?, ?>) content).get();
         } catch (Throwable t) {
           throw Throwables.wrap(t, IOException.class, IOException::new);
         }
       }
       if (content instanceof char[]) {
-        return encode(contentType, (char[])content);
+        return encode(contentType, (char[]) content);
       }
       if (content instanceof CharSequence) {
-        return encode(contentType, (CharSequence)content);
+        return encode(contentType, (CharSequence) content);
       }
       if (content instanceof Writable) {
-        Writable writable = (Writable)content;
+        Writable writable = (Writable) content;
         if (writable.isFastToString()) {
           return encode(contentType, writable.toString());
         }
       }
       if (content instanceof MediaWritable) {
         try {
-          return encode(contentType, (MediaWritable<?>)content);
+          return encode(contentType, (MediaWritable<?>) content);
         } catch (Throwable t) {
           throw Throwables.wrap(t, IOException.class, IOException::new);
         }
@@ -1210,9 +1237,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       if (contentType == MediaType.XHTML) {
         // Already in the requested media type, no prefix/suffix required
         MarkupCoercion.write(
-          content,
-          MarkupType.XHTML,
-          unsafe
+            content,
+            MarkupType.XHTML,
+            unsafe
         );
       } else {
         // In different media type, need prefix/suffix
@@ -1224,27 +1251,28 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         if (encoder.isBuffered()) {
           // Do not bypass buffered encoder for markup
           MarkupCoercion.write(
-            content,
-            contentType.getMarkupType(),
-            true,
-            encoder,
-            true,
-            unsafe
+              content,
+              contentType.getMarkupType(),
+              true,
+              encoder,
+              true,
+              unsafe
           );
         } else {
           // Bypass encoder for markup
           MarkupCoercion.write(
-            content,
-            MarkupType.XHTML,
-            false,
-            encoder,
-            true,
-            unsafe
+              content,
+              MarkupType.XHTML,
+              false,
+              encoder,
+              true,
+              unsafe
           );
         }
       }
       clearAtnl(); // Unknown, safe to assume not at newline
-      @SuppressWarnings("unchecked") D d = (D)this;
+      @SuppressWarnings("unchecked")
+      D d = (D) this;
       return d;
     }
   }
@@ -1270,6 +1298,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   }
 
   private static final MediaValidator xhtmlValidator = MediaValidator.getMediaValidator(MediaType.XHTML, NullWriter.getInstance());
+
   static {
     assert !(xhtmlValidator instanceof BufferedValidator) : "If were " + BufferedValidator.class.getName() + " could not share singleton";
   }
@@ -1281,7 +1310,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    */
   @Override
   public MediaWriter encode(MediaType contentType) throws IOException {
-    MediaEncoder encoder; {
+    MediaEncoder encoder;
+    {
       MediaEncoder encoder_ = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
       if (encoder_ == null) {
         encoder_ = new ValidateOnlyEncoder(xhtmlValidator);
@@ -1291,15 +1321,16 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
     Writer encoderOptimized = Coercion.optimize(getRawUnsafe(null), encoder);
     encoder.writePrefixTo(encoderOptimized);
     return contentType.newMediaWriter(
-      encodingContext,
-      encoder,
-      encoderOptimized,
-      true,
-      this,
-      mediaWriter -> false, // !isNoClose
-      closing -> encoder.writeSuffixTo(encoderOptimized, false)
+        encodingContext,
+        encoder,
+        encoderOptimized,
+        true,
+        this,
+        mediaWriter -> false, // !isNoClose
+        closing -> encoder.writeSuffixTo(encoderOptimized, false)
     );
   }
+
   // </editor-fold>
 
   // <editor-fold desc="Text - implementation" defaultstate="collapsed">
@@ -1333,7 +1364,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       WriterUtil.nbsp(unsafe, count);
       clearAtnl();
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -1387,7 +1419,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         }
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -1417,7 +1450,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         clearAtnl();
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -1459,13 +1493,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       // Bypass encoder for markup
       BundleLookupThreadContext threadContext;
       if (
-        (threadContext = BundleLookupThreadContext.getThreadContext()) == null
-        // Other types that will not be converted to String for bundle lookups
-        || !(csq instanceof String)
+          (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+              // Other types that will not be converted to String for bundle lookups
+              || !(csq instanceof String)
       ) {
         encodeCharSequence(unsafe, csq);
       } else {
-        BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+        BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String) csq);
         if (lookupMarkup != null) {
           autoIndent(unsafe);
           lookupMarkup.appendPrefixTo(MarkupType.XHTML, unsafe);
@@ -1477,7 +1511,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         }
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -1519,13 +1554,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       // Bypass encoder for markup
       BundleLookupThreadContext threadContext;
       if (
-        (threadContext = BundleLookupThreadContext.getThreadContext()) == null
-        // Other types that will not be converted to String for bundle lookups
-        || !(csq instanceof String)
+          (threadContext = BundleLookupThreadContext.getThreadContext()) == null
+              // Other types that will not be converted to String for bundle lookups
+              || !(csq instanceof String)
       ) {
         encodeCharSequence(unsafe, csq, start, end);
       } else {
-        BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String)csq);
+        BundleLookupMarkup lookupMarkup = threadContext.getLookupMarkup((String) csq);
         if (lookupMarkup != null) {
           autoIndent(unsafe);
           lookupMarkup.appendPrefixTo(MarkupType.XHTML, unsafe);
@@ -1537,7 +1572,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         }
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -1550,36 +1586,37 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   public D text(Object text) throws IOException {
     return text(getRawUnsafe(null), text);
   }
+
 // TODO: Compare to text() implemented by AnyTextContent, to see how it handles markuptype=text within TextContent, and how to have <option> only do markup when value attribute is set.
   @SuppressWarnings("UseSpecificCatch")
   D text(Writer unsafe, Object text) throws IOException {
     // Support Optional
     while (text instanceof Optional) {
-      text = ((Optional<?>)text).orElse(null);
+      text = ((Optional<?>) text).orElse(null);
     }
     while (text instanceof IOSupplierE<?, ?>) {
       try {
-        text = ((IOSupplierE<?, ?>)text).get();
+        text = ((IOSupplierE<?, ?>) text).get();
       } catch (Throwable t) {
         throw Throwables.wrap(t, IOException.class, IOException::new);
       }
     }
     if (text != null) {
       if (text instanceof char[]) {
-        return text(unsafe, (char[])text);
+        return text(unsafe, (char[]) text);
       }
       if (text instanceof CharSequence) {
-        return text(unsafe, (CharSequence)text);
+        return text(unsafe, (CharSequence) text);
       }
       if (text instanceof Writable) {
-        Writable writable = (Writable)text;
+        Writable writable = (Writable) text;
         if (writable.isFastToString()) {
           return text(unsafe, writable.toString());
         }
       }
       if (text instanceof TextWritable) {
         try {
-          return text(unsafe, (TextWritable<?>)text);
+          return text(unsafe, (TextWritable<?>) text);
         } catch (Throwable t) {
           throw Throwables.wrap(t, IOException.class, IOException::new);
         }
@@ -1590,16 +1627,17 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
       MediaEncoder encoder = textInXhtmlEncoder;
       assert !encoder.isBuffered() : "Is OK to bypass encoder for markup";
       MarkupCoercion.write(
-        text,
-        MarkupType.XHTML,
-        false,
-        encoder,
-        true,
-        unsafe
+          text,
+          MarkupType.XHTML,
+          false,
+          encoder,
+          true,
+          unsafe
       );
       clearAtnl(); // Unknown, safe to assume not at newline
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -1637,7 +1675,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
         text.writeTo(_out);
       }
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -1649,17 +1688,19 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   TextWriter text(Writer unsafe) throws IOException {
     autoIndent(unsafe);
     clearAtnl(); // Unknown, safe to assume not at newline
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return new TextWriter(
-      d.encodingContext,
-      textInXhtmlEncoder,
-      unsafe,
-      false,
-      d,
-      mediaWriter -> true, // isNoClose
-      null // Ignore close
+        d.encodingContext,
+        textInXhtmlEncoder,
+        unsafe,
+        false,
+        d,
+        mediaWriter -> true, // isNoClose
+        null // Ignore close
     );
   }
+
   // </editor-fold>
 
   // TODO: comments
@@ -1676,7 +1717,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
     if (encodingContext.getDoctype().xmlDeclaration(encodingContext.getSerialization(), documentEncoding, getRawUnsafe(null))) {
       setAtnl();
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 
@@ -1687,7 +1729,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
     if (encodingContext.getDoctype().doctype(encodingContext.getSerialization(), getRawUnsafe(null))) {
       setAtnl();
     }
-    @SuppressWarnings("unchecked") D d = (D)this;
+    @SuppressWarnings("unchecked")
+    D d = (D) this;
     return d;
   }
 }

@@ -60,7 +60,8 @@ public interface Onmouseleave<E extends Element<?, ?, E> & Onmouseleave<E>> {
    */
   @Attributes.Funnel
   default E onmouseleave(Object onmouseleave) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onmouseleave");
     return Attributes.Event.attribute(element, "onmouseleave", onmouseleave);
   }
@@ -100,6 +101,6 @@ public interface Onmouseleave<E extends Element<?, ?, E> & Onmouseleave<E>> {
    * @see #onmouseleave(java.lang.Object)
    */
   default <Ex extends Throwable> E onmouseleave(JavaScriptWritable<Ex> onmouseleave) throws IOException, Ex {
-    return onmouseleave((Object)onmouseleave);
+    return onmouseleave((Object) onmouseleave);
   }
 }

@@ -52,11 +52,11 @@ public class AnySectioningContentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnySectioningContent.class
-      //
-      // Unions:
-      //
-      // None
+        AnySectioningContent.class
+    //
+    // Unions:
+    //
+    // None
     );
   }
 
@@ -64,11 +64,11 @@ public class AnySectioningContentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnySectioningContent.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnySectioningContent.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -76,34 +76,34 @@ public class AnySectioningContentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnySectioningContent.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnySectioningContent.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "article",
-      "aside",
-      "nav",
-      "section"
+        testingClass,
+        //
+        // Factories:
+        //
+        "article",
+        "aside",
+        "nav",
+        "section"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-      -1,
-      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnySectioningContent.class)
+        "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+        -1,
+        AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnySectioningContent.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnySectioningContent.class);
   }

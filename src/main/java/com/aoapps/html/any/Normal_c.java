@@ -37,11 +37,11 @@ import java.util.concurrent.atomic.AtomicBoolean;
  */
 // TODO: Can this extend Normal__?  Should it?
 public abstract class Normal_c<
-  D  extends AnyDocument<D>,
-  PC extends Content<D, PC>,
-  _c extends Normal_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends Content<D, PC>,
+    _c extends Normal_c<D, PC, _c>
 >
-  implements Content<D, _c>, Closeable<D, PC> {
+    implements Content<D, _c>, Closeable<D, PC> {
 
   protected final Normal<D, PC, ?, ?, _c> element;
   protected final AtomicBoolean closed = new AtomicBoolean();

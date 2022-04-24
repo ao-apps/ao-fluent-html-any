@@ -42,12 +42,12 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyB<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-  E  extends AnyB<D, PC, E, __, _c>,
-  __ extends AnyB__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyB_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+    E  extends AnyB<D, PC, E, __, _c>,
+    __ extends AnyB__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyB_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
   protected AnyB(D document, PC pc) {
@@ -57,7 +57,8 @@ public abstract class AnyB<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<b", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

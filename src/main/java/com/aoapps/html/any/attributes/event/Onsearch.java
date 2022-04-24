@@ -50,7 +50,8 @@ public interface Onsearch<E extends Element<?, ?, E> & Onsearch<E>> {
    */
   @Attributes.Funnel
   default E onsearch(Object onsearch) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onscroll");
     return Attributes.Event.attribute(element, "onsearch", onsearch);
   }
@@ -78,6 +79,6 @@ public interface Onsearch<E extends Element<?, ?, E> & Onsearch<E>> {
    * @see #onsearch(java.lang.Object)
    */
   default <Ex extends Throwable> E onsearch(JavaScriptWritable<Ex> onsearch) throws IOException, Ex {
-    return onsearch((Object)onsearch);
+    return onsearch((Object) onsearch);
   }
 }

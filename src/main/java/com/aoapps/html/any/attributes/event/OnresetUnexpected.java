@@ -69,7 +69,8 @@ public interface OnresetUnexpected<E extends Element<?, ?, E> & OnresetUnexpecte
   @Deprecated
   @Attributes.Funnel
   default E onreset(Object onreset) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onreset");
     return Attributes.Event.attribute(element, "onreset", onreset);
   }
@@ -117,6 +118,6 @@ public interface OnresetUnexpected<E extends Element<?, ?, E> & OnresetUnexpecte
    */
   @Deprecated
   default <Ex extends Throwable> E onreset(JavaScriptWritable<Ex> onreset) throws IOException, Ex {
-    return onreset((Object)onreset);
+    return onreset((Object) onreset);
   }
 }

@@ -70,7 +70,8 @@ public interface OnendedUnexpected<E extends Element<?, ?, E> & OnendedUnexpecte
   @Deprecated
   @Attributes.Funnel
   default E onended(Object onended) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onended");
     return Attributes.Event.attribute(element, "onended", onended);
   }
@@ -118,6 +119,6 @@ public interface OnendedUnexpected<E extends Element<?, ?, E> & OnendedUnexpecte
    */
   @Deprecated
   default <Ex extends Throwable> E onended(JavaScriptWritable<Ex> onended) throws IOException, Ex {
-    return onended((Object)onended);
+    return onended((Object) onended);
   }
 }

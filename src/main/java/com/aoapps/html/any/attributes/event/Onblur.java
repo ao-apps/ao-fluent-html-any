@@ -56,7 +56,8 @@ public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
    */
   @Attributes.Funnel
   default E onblur(Object onblur) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onblur", onblur);
   }
 
@@ -91,6 +92,6 @@ public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
    * @see #onblur(java.lang.Object)
    */
   default <Ex extends Throwable> E onblur(JavaScriptWritable<Ex> onblur) throws IOException, Ex {
-    return onblur((Object)onblur);
+    return onblur((Object) onblur);
   }
 }

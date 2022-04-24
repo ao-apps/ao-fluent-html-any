@@ -53,11 +53,11 @@ public class AnyScriptSupportingContentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyScriptSupportingContent.class,
-      //
-      // Unions:
-      //
-      AnyUnion_COLGROUP_ScriptSupporting.class
+        AnyScriptSupportingContent.class,
+        //
+        // Unions:
+        //
+        AnyUnion_COLGROUP_ScriptSupporting.class
     );
   }
 
@@ -65,11 +65,11 @@ public class AnyScriptSupportingContentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyScriptSupportingContent.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyScriptSupportingContent.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -77,32 +77,32 @@ public class AnyScriptSupportingContentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyScriptSupportingContent.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyScriptSupportingContent.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "script",
-      "template"
+        testingClass,
+        //
+        // Factories:
+        //
+        "script",
+        "template"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-      -1,
-      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyScriptSupportingContent.class)
+        "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+        -1,
+        AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyScriptSupportingContent.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyScriptSupportingContent.class);
   }

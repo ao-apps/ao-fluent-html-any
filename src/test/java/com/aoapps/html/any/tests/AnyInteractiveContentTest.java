@@ -54,12 +54,12 @@ public class AnyInteractiveContentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyInteractiveContent.class,
-      //
-      // Unions:
-      //
-      AnyUnion_Embedded_Interactive.class,
-      AnyUnion_Interactive_Phrasing.class
+        AnyInteractiveContent.class,
+        //
+        // Unions:
+        //
+        AnyUnion_Embedded_Interactive.class,
+        AnyUnion_Interactive_Phrasing.class
     );
   }
 
@@ -67,11 +67,11 @@ public class AnyInteractiveContentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyInteractiveContent.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyInteractiveContent.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -79,44 +79,44 @@ public class AnyInteractiveContentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyInteractiveContent.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyInteractiveContent.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "a", // if the href attribute is present
-      "audio", // if the controls attribute is present
-      "button",
-      "details",
-      "embed",
-      "iframe",
-      "img", // if the usemap attribute is present
-      "input", // if type attribute is not in the hidden state
-      "label",
-      "menu", // (MDN only) if the type attribute is in the toolbar state
-      "object", // if the usemap attribute is present
-      "select",
-      "textarea",
-      "video" // if the controls attribute is present
+        testingClass,
+        //
+        // Factories:
+        //
+        "a", // if the href attribute is present
+        "audio", // if the controls attribute is present
+        "button",
+        "details",
+        "embed",
+        "iframe",
+        "img", // if the usemap attribute is present
+        "input", // if type attribute is not in the hidden state
+        "label",
+        "menu", // (MDN only) if the type attribute is in the toolbar state
+        "object", // if the usemap attribute is present
+        "select",
+        "textarea",
+        "video" // if the controls attribute is present
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-      -1,
-      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyInteractiveContent.class)
+        "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+        -1,
+        AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyInteractiveContent.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyInteractiveContent.class);
   }

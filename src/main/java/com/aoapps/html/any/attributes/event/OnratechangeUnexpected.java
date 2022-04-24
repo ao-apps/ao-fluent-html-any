@@ -70,7 +70,8 @@ public interface OnratechangeUnexpected<E extends Element<?, ?, E> & Onratechang
   @Deprecated
   @Attributes.Funnel
   default E onratechange(Object onratechange) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onratechange");
     return Attributes.Event.attribute(element, "onratechange", onratechange);
   }
@@ -118,6 +119,6 @@ public interface OnratechangeUnexpected<E extends Element<?, ?, E> & Onratechang
    */
   @Deprecated
   default <Ex extends Throwable> E onratechange(JavaScriptWritable<Ex> onratechange) throws IOException, Ex {
-    return onratechange((Object)onratechange);
+    return onratechange((Object) onratechange);
   }
 }

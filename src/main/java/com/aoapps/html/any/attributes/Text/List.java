@@ -57,7 +57,8 @@ public interface List<E extends Element<?, ?, E> & List<E>> {
    */
   @Attributes.Funnel
   default E list(Object list) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "list");
     return Attributes.Text.attribute(element, "list", MarkupType.NONE, list, true, true, textInXhtmlAttributeEncoder);
   }
@@ -93,6 +94,6 @@ public interface List<E extends Element<?, ?, E> & List<E>> {
    * @see #list(java.lang.Object)
    */
   default <Ex extends Throwable> E list(TextWritable<Ex> list) throws IOException, Ex {
-    return list((Object)list);
+    return list((Object) list);
   }
 }

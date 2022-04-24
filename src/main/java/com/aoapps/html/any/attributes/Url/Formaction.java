@@ -56,7 +56,8 @@ public interface Formaction<E extends Element<?, ?, E> & Formaction<E>> {
    */
   @Attributes.Funnel
   default E formaction(String formaction) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "formaction");
     return Attributes.Url.attribute(element, "formaction", formaction);
   }

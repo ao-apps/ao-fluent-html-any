@@ -51,30 +51,30 @@ public class ContentModelTest {
    * Gets the set of all <code>*Content</code> content model interfaces.
    */
   static Class<? extends Content>[] getAllContentModels() {
-    return new Class[] {
-      AnyContent.class,
-      Content.class,
-      AnyEmbeddedContent.class,
-      AnyFlowContent.class,
-      AnyHeadingContent.class,
-      AnyInteractiveContent.class,
-      AnyListContent.class,
-      AnyMetadataContent.class,
-      AnyPalpableContent.class,
-      AnyPhrasingContent.class,
-      AnyScriptSupportingContent.class,
-      AnySectioningContent.class,
-      AnyTextContent.class
+    return new Class[]{
+        AnyContent.class,
+        Content.class,
+        AnyEmbeddedContent.class,
+        AnyFlowContent.class,
+        AnyHeadingContent.class,
+        AnyInteractiveContent.class,
+        AnyListContent.class,
+        AnyMetadataContent.class,
+        AnyPalpableContent.class,
+        AnyPhrasingContent.class,
+        AnyScriptSupportingContent.class,
+        AnySectioningContent.class,
+        AnyTextContent.class
     };
   }
 
   static void testContentModels(Class<? extends Content> clazz, Class<? extends Content> ... expected) {
     InheritanceTestHelper.testInterfaces(
-      Content.class,
-      iface -> iface.getSimpleName().endsWith("Content"),
-      getAllContentModels(),
-      clazz,
-      expected
+        Content.class,
+        iface -> iface.getSimpleName().endsWith("Content"),
+        getAllContentModels(),
+        clazz,
+        expected
     );
   }
 

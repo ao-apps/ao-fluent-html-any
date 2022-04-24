@@ -42,12 +42,12 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnySPAN<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Palpable_Phrasing<D, PC>,
-  E  extends AnySPAN<D, PC, E, __, _c>,
-  __ extends AnySPAN__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnySPAN_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Palpable_Phrasing<D, PC>,
+    E  extends AnySPAN<D, PC, E, __, _c>,
+    __ extends AnySPAN__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnySPAN_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
   protected AnySPAN(D document, PC pc) {
@@ -57,7 +57,8 @@ public abstract class AnySPAN<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<span", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

@@ -45,7 +45,8 @@ public interface Value<E extends Element<?, ?, E> & Value<E>> {
    */
   @Attributes.Funnel
   default E value(Object value) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "value", MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
   }
 
@@ -68,6 +69,6 @@ public interface Value<E extends Element<?, ?, E> & Value<E>> {
    * @see #value(java.lang.Object)
    */
   default <Ex extends Throwable> E value(TextWritable<Ex> value) throws IOException, Ex {
-    return value((Object)value);
+    return value((Object) value);
   }
 }

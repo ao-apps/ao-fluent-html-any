@@ -45,12 +45,12 @@ import java.io.Writer;
  */
 // TODO: Flow content, but with no header or footer element descendants.
 public abstract class AnyFOOTER<
-  D  extends AnyDocument<D>,
-  PC extends AnyPalpableContent<D, PC>,
-  E  extends AnyFOOTER<D, PC, E, __, _c>,
-  __ extends AnyFOOTER__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyFOOTER_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyPalpableContent<D, PC>,
+    E  extends AnyFOOTER<D, PC, E, __, _c>,
+    __ extends AnyFOOTER__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyFOOTER_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
   protected AnyFOOTER(D document, PC pc) {
@@ -61,7 +61,8 @@ public abstract class AnyFOOTER<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<footer", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

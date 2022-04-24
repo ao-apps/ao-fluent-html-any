@@ -41,26 +41,26 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyAREA<
-  D  extends AnyDocument<D>,
-  PC extends AnyPhrasingContent<D, PC>,
-  E  extends AnyAREA<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends AnyPhrasingContent<D, PC>,
+    E  extends AnyAREA<D, PC, E>
 > extends Void<D, PC, E> implements
-  com.aoapps.html.any.attributes.Text.Alt<E>,
-  com.aoapps.html.any.attributes.Dimension.Coords<E>,
-  // TODO: download
-  com.aoapps.html.any.attributes.Url.Href<E>,
-  com.aoapps.html.any.attributes.Text.Hreflang<E>,
-  com.aoapps.html.any.attributes.Text.Media<E>,
-  // TODO: name? (MDN only)
-  // TODO: nohref
-  // TODO: ping
-  // TODO: referrerpolicy
-  com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
-  com.aoapps.html.any.attributes.Enum.Shape<E, AnyAREA.Shape>,
-  com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
-  // TODO: type (deprecated since definition is in conflict and doesn't do anything?)
-  // Global Attributes overrides
-  com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
+    com.aoapps.html.any.attributes.Text.Alt<E>,
+    com.aoapps.html.any.attributes.Dimension.Coords<E>,
+    // TODO: download
+    com.aoapps.html.any.attributes.Url.Href<E>,
+    com.aoapps.html.any.attributes.Text.Hreflang<E>,
+    com.aoapps.html.any.attributes.Text.Media<E>,
+    // TODO: name? (MDN only)
+    // TODO: nohref
+    // TODO: ping
+    // TODO: referrerpolicy
+    com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
+    com.aoapps.html.any.attributes.Enum.Shape<E, AnyAREA.Shape>,
+    com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
+    // TODO: type (deprecated since definition is in conflict and doesn't do anything?)
+    // Global Attributes overrides
+    com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
 {
 
   protected AnyAREA(D document, PC pc) {
@@ -70,7 +70,8 @@ public abstract class AnyAREA<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<area", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

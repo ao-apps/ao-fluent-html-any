@@ -72,7 +72,8 @@ public interface OnabortUnexpected<E extends Element<?, ?, E> & OnabortUnexpecte
   @Deprecated
   @Attributes.Funnel
   default E onabort(Object onabort) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onabort");
     return Attributes.Event.attribute(element, "onabort", onabort);
   }
@@ -120,6 +121,6 @@ public interface OnabortUnexpected<E extends Element<?, ?, E> & OnabortUnexpecte
    */
   @Deprecated
   default <Ex extends Throwable> E onabort(JavaScriptWritable<Ex> onabort) throws IOException, Ex {
-    return onabort((Object)onabort);
+    return onabort((Object) onabort);
   }
 }

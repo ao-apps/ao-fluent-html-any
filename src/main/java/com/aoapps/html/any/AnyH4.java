@@ -42,12 +42,12 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyH4<
-  D  extends AnyDocument<D>,
-  PC extends AnyHeadingContent<D, PC>,
-  E  extends AnyH4<D, PC, E, __, _c>,
-  __ extends AnyH4__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyH4_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyHeadingContent<D, PC>,
+    E  extends AnyH4<D, PC, E, __, _c>,
+    __ extends AnyH4__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyH4_c<D, PC, _c>
 > extends AnyH<D, PC, E, __, _c> {
 
   protected AnyH4(D document, PC pc) {
@@ -57,7 +57,8 @@ public abstract class AnyH4<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<h4", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

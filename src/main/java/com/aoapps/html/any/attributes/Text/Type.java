@@ -45,7 +45,8 @@ public interface Type<E extends Element<?, ?, E> & Type<E>> {
    */
   @Attributes.Funnel
   default E type(Object type) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "type", MarkupType.NONE, type, true, true, textInXhtmlAttributeEncoder);
   }
 
@@ -68,6 +69,6 @@ public interface Type<E extends Element<?, ?, E> & Type<E>> {
    * @see #type(java.lang.Object)
    */
   default <Ex extends Throwable> E type(TextWritable<Ex> type) throws IOException, Ex {
-    return type((Object)type);
+    return type((Object) type);
   }
 }

@@ -45,7 +45,8 @@ public interface Name<E extends Element<?, ?, E> & Name<E>> {
    */
   @Attributes.Funnel
   default E name(Object name) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     // TODO: Review if trim-to-null is the best default.
     //       Maybe default to "false" and override where should be true instead.
     //       Any change to textarea/input name attribute would also need to be reflected in dirname attribute
@@ -71,6 +72,6 @@ public interface Name<E extends Element<?, ?, E> & Name<E>> {
    * @see #name(java.lang.Object)
    */
   default <Ex extends Throwable> E name(TextWritable<Ex> name) throws IOException, Ex {
-    return name((Object)name);
+    return name((Object) name);
   }
 }

@@ -56,13 +56,13 @@ public class AnyDL_contentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyDL_content.class,
-      //
-      // Unions:
-      //
-      AnyUnion_COLGROUP_ScriptSupporting.class,
-      AnyUnion_DIV_DL.class,
-      AnyUnion_DL_Palpable.class
+        AnyDL_content.class,
+        //
+        // Unions:
+        //
+        AnyUnion_COLGROUP_ScriptSupporting.class,
+        AnyUnion_DIV_DL.class,
+        AnyUnion_DL_Palpable.class
     );
   }
 
@@ -70,12 +70,12 @@ public class AnyDL_contentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyDL_content.class,
-      //
-      // Content models:
-      //
-      Content.class,
-      AnyScriptSupportingContent.class
+        AnyDL_content.class,
+        //
+        // Content models:
+        //
+        Content.class,
+        AnyScriptSupportingContent.class
     );
   }
 
@@ -83,35 +83,35 @@ public class AnyDL_contentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyDL_content.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyDL_content.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "dd",
-      "div",
-      "dt",
-      "script",
-      "template"
+        testingClass,
+        //
+        // Factories:
+        //
+        "dd",
+        "div",
+        "dt",
+        "script",
+        "template"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
-      -1,
-      AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyDL_content.class)
+        "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
+        -1,
+        AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyDL_content.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyDL_content.class);
   }

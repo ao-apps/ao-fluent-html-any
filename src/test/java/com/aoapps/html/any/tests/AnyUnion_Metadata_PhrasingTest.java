@@ -54,11 +54,11 @@ public class AnyUnion_Metadata_PhrasingTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyUnion_Metadata_Phrasing.class,
-      //
-      // Unions:
-      //
-      AnyUnion_COLGROUP_ScriptSupporting.class
+        AnyUnion_Metadata_Phrasing.class,
+        //
+        // Unions:
+        //
+        AnyUnion_COLGROUP_ScriptSupporting.class
     );
   }
 
@@ -66,12 +66,12 @@ public class AnyUnion_Metadata_PhrasingTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyUnion_Metadata_Phrasing.class,
-      //
-      // Content models:
-      //
-      Content.class,
-      AnyScriptSupportingContent.class
+        AnyUnion_Metadata_Phrasing.class,
+        //
+        // Content models:
+        //
+        Content.class,
+        AnyScriptSupportingContent.class
     );
   }
 
@@ -79,34 +79,34 @@ public class AnyUnion_Metadata_PhrasingTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyUnion_Metadata_Phrasing.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyUnion_Metadata_Phrasing.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "link",
-      "meta",
-      "noscript",
-      "script",
-      "template"
+        testingClass,
+        //
+        // Factories:
+        //
+        "link",
+        "meta",
+        "noscript",
+        "script",
+        "template"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-      -1,
-      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Metadata_Phrasing.class)
+        -1,
+        AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_Metadata_Phrasing.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_Metadata_Phrasing.class);
   }

@@ -42,7 +42,8 @@ public interface Span<E extends Element<?, ?, E> & Span<E>> {
    */
   @Attributes.Funnel
   default E span(int span) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Integer.attribute(element, "span", span);
   }
 
@@ -51,7 +52,8 @@ public interface Span<E extends Element<?, ?, E> & Span<E>> {
    */
   @Attributes.Funnel
   default E span(Integer span) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Integer.attribute(element, "span", span);
   }
 

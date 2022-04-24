@@ -42,14 +42,14 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyCOLGROUP<
-  D  extends AnyDocument<D>,
-  PC extends AnyTABLE_content<D, PC>,
-  E  extends AnyCOLGROUP<D, PC, E, __, _c>,
-  __ extends AnyCOLGROUP__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyCOLGROUP_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyTABLE_content<D, PC>,
+    E  extends AnyCOLGROUP<D, PC, E, __, _c>,
+    __ extends AnyCOLGROUP__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyCOLGROUP_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> implements
-  com.aoapps.html.any.attributes.Integer.Span<E>
+    com.aoapps.html.any.attributes.Integer.Span<E>
 {
 
   protected AnyCOLGROUP(D document, PC pc) {
@@ -59,7 +59,8 @@ public abstract class AnyCOLGROUP<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<colgroup", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

@@ -43,14 +43,14 @@ import java.io.Writer;
  */
 // TODO: Phrasing content, but with no descendant labelable elements unless it is the element's labeled control, and no descendant label elements.
 public abstract class AnyLABEL<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-  E  extends AnyLABEL<D, PC, E, __, _c>,
-  __ extends AnyLABEL__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyLABEL_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+    E  extends AnyLABEL<D, PC, E, __, _c>,
+    __ extends AnyLABEL__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyLABEL_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> implements
-  com.aoapps.html.any.attributes.Text.For<E>
+    com.aoapps.html.any.attributes.Text.For<E>
 {
 
   protected AnyLABEL(D document, PC pc) {
@@ -60,7 +60,8 @@ public abstract class AnyLABEL<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<label", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

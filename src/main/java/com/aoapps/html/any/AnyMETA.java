@@ -45,51 +45,51 @@ import java.util.function.Function;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyMETA<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Metadata_Phrasing<D, PC>,
-  E  extends AnyMETA<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Metadata_Phrasing<D, PC>,
+    E  extends AnyMETA<D, PC, E>
 > extends Void<D, PC, E> implements
-  com.aoapps.html.any.attributes.Enum.Charset<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
-  com.aoapps.html.any.attributes.Text.Content<E>,
-  com.aoapps.html.any.attributes.Enum.HttpEquiv<E, AnyMETA.HttpEquiv>,
-  com.aoapps.html.any.attributes.Enum.Name<E, AnyMETA.Name>,
-  // TODO: scheme
-  // Global Attributes overrides
-  com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-  com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-  com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-  com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-  com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-  com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-  com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
-  // Global Event Attributes overrides
-  com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
+    com.aoapps.html.any.attributes.Enum.Charset<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
+    com.aoapps.html.any.attributes.Text.Content<E>,
+    com.aoapps.html.any.attributes.Enum.HttpEquiv<E, AnyMETA.HttpEquiv>,
+    com.aoapps.html.any.attributes.Enum.Name<E, AnyMETA.Name>,
+    // TODO: scheme
+    // Global Attributes overrides
+    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+    com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
+    com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
+    com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+    // Global Event Attributes overrides
+    com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 
   protected AnyMETA(D document, PC pc) {
@@ -99,7 +99,8 @@ public abstract class AnyMETA<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<meta", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -223,6 +224,7 @@ public abstract class AnyMETA<
   public <Ex extends Throwable> E charset(IOSupplierE<? extends com.aoapps.html.any.attributes.Enum.Charset.Value, Ex> charset) throws IOException, Ex {
     return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
   }
+
   // </editor-fold>
 
   /**
@@ -239,7 +241,7 @@ public abstract class AnyMETA<
      * @deprecated  Do not use this value, as it is obsolete. Prefer the <code>lang</code> attribute on the &lt;html&gt; element.
      */
     @Deprecated
-    CONTENT_LANGUAGE("content-language"),
+      CONTENT_LANGUAGE("content-language"),
 
     /**
      * Allows page authors to define a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">content policy</a> for the current page.
@@ -258,7 +260,7 @@ public abstract class AnyMETA<
      * @deprecated  This is no longer required as of HTML 5.
      */
     @Deprecated
-    CONTENT_SCRIPT_TYPE("content-script-type"),
+        CONTENT_SCRIPT_TYPE("content-script-type"),
 
     /**
      * <p>
@@ -271,7 +273,7 @@ public abstract class AnyMETA<
      * @deprecated  This is no longer required as of HTML 5.
      */
     @Deprecated
-    CONTENT_STYLE_TYPE("content-style-type"),
+        CONTENT_STYLE_TYPE("content-style-type"),
 
     /**
      * Defines the <a href="https://developer.mozilla.org/en-US/docs/Glossary/MIME_type">MIME type</a> of the document, followed by its character encoding.
@@ -286,7 +288,7 @@ public abstract class AnyMETA<
      *              attribute on the {@link AnyMETA &lt;meta&gt;} element.
      */
     @Deprecated
-    CONTENT_TYPE("content-type"),
+        CONTENT_TYPE("content-type"),
 
     /**
      * <p>
@@ -328,7 +330,7 @@ public abstract class AnyMETA<
      *              and <a href="https://www.chromestatus.com/feature/6170540112871424">Chrome 65</a>.
      */
     @Deprecated
-    SET_COOKIE("set-cookie");
+        SET_COOKIE("set-cookie");
 
     private final String value;
 

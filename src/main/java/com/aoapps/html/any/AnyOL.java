@@ -42,16 +42,16 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOL<
-  D  extends AnyDocument<D>,
-  PC extends AnyPalpableContent<D, PC>,
-  E  extends AnyOL<D, PC, E, __, _c>,
-  __ extends AnyOL__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyOL_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyPalpableContent<D, PC>,
+    E  extends AnyOL<D, PC, E, __, _c>,
+    __ extends AnyOL__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyOL_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c>
-  // TOOD: reversed
-  // TODO: start
-  // TODO: type
+// TOOD: reversed
+// TODO: start
+// TODO: type
 {
 
   protected AnyOL(D document, PC pc) {
@@ -61,7 +61,8 @@ public abstract class AnyOL<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<ol", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

@@ -47,7 +47,8 @@ public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
    */
   @Attributes.Funnel
   default E onstorage(Object onstorage) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onstorage");
     return Attributes.Event.attribute(element, "onstorage", onstorage);
   }
@@ -75,6 +76,6 @@ public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
    * @see #onstorage(java.lang.Object)
    */
   default <Ex extends Throwable> E onstorage(JavaScriptWritable<Ex> onstorage) throws IOException, Ex {
-    return onstorage((Object)onstorage);
+    return onstorage((Object) onstorage);
   }
 }

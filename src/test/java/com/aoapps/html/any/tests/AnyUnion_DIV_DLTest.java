@@ -52,11 +52,11 @@ public class AnyUnion_DIV_DLTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyUnion_DIV_DL.class
-      //
-      // Unions:
-      //
-      // NOne
+        AnyUnion_DIV_DL.class
+    //
+    // Unions:
+    //
+    // NOne
     );
   }
 
@@ -64,11 +64,11 @@ public class AnyUnion_DIV_DLTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyUnion_DIV_DL.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyUnion_DIV_DL.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -76,31 +76,31 @@ public class AnyUnion_DIV_DLTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyUnion_DIV_DL.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyUnion_DIV_DL.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "dd",
-      "dt"
+        testingClass,
+        //
+        // Factories:
+        //
+        "dd",
+        "dt"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-      -1,
-      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DIV_DL.class)
+        -1,
+        AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DIV_DL.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DIV_DL.class);
   }

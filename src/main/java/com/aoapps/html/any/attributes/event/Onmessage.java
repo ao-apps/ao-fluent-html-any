@@ -47,7 +47,8 @@ public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
    */
   @Attributes.Funnel
   default E onmessage(Object onmessage) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onmessage");
     return Attributes.Event.attribute(element, "onmessage", onmessage);
   }
@@ -75,6 +76,6 @@ public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
    * @see #onmessage(java.lang.Object)
    */
   default <Ex extends Throwable> E onmessage(JavaScriptWritable<Ex> onmessage) throws IOException, Ex {
-    return onmessage((Object)onmessage);
+    return onmessage((Object) onmessage);
   }
 }

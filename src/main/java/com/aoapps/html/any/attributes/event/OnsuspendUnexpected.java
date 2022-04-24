@@ -70,7 +70,8 @@ public interface OnsuspendUnexpected<E extends Element<?, ?, E> & OnsuspendUnexp
   @Deprecated
   @Attributes.Funnel
   default E onsuspend(Object onsuspend) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onsuspend");
     return Attributes.Event.attribute(element, "onsuspend", onsuspend);
   }
@@ -118,6 +119,6 @@ public interface OnsuspendUnexpected<E extends Element<?, ?, E> & OnsuspendUnexp
    */
   @Deprecated
   default <Ex extends Throwable> E onsuspend(JavaScriptWritable<Ex> onsuspend) throws IOException, Ex {
-    return onsuspend((Object)onsuspend);
+    return onsuspend((Object) onsuspend);
   }
 }

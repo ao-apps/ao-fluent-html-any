@@ -42,7 +42,8 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
    */
   @Attributes.Funnel
   default E data(String data) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Url.attribute(element, "data", data);
   }
 

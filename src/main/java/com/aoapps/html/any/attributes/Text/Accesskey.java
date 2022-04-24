@@ -60,7 +60,8 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
    */
   @Attributes.Funnel
   default E accesskey(Object accesskey) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "accesskey");
     return Attributes.Text.attribute(element, "accesskey", MarkupType.NONE, accesskey, true, true, textInXhtmlAttributeEncoder);
   }
@@ -85,7 +86,7 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
           accesskey.append(' ');
         }
         if (Character.isBmpCodePoint(codePoint)) {
-          accesskey.append((char)codePoint);
+          accesskey.append((char) codePoint);
         } else if (Character.isValidCodePoint(codePoint)) {
           accesskey.append(Character.highSurrogate(codePoint));
           accesskey.append(Character.lowSurrogate(codePoint));
@@ -95,7 +96,8 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
       }
       return accesskey(accesskey);
     } else {
-      @SuppressWarnings("unchecked") E element = (E)this;
+      @SuppressWarnings("unchecked")
+      E element = (E) this;
       return element;
     }
   }
@@ -133,6 +135,6 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
    * @see #accesskey(java.lang.Object)
    */
   default <Ex extends Throwable> E accesskey(TextWritable<Ex> accesskey) throws IOException, Ex {
-    return accesskey((Object)accesskey);
+    return accesskey((Object) accesskey);
   }
 }

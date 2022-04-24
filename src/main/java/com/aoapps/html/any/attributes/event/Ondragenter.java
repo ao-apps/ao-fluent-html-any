@@ -60,7 +60,8 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
    */
   @Attributes.Funnel
   default E ondragenter(Object ondragenter) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ondragenter");
     return Attributes.Event.attribute(element, "ondragenter", ondragenter);
   }
@@ -100,6 +101,6 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
    * @see #ondragenter(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragenter(JavaScriptWritable<Ex> ondragenter) throws IOException, Ex {
-    return ondragenter((Object)ondragenter);
+    return ondragenter((Object) ondragenter);
   }
 }

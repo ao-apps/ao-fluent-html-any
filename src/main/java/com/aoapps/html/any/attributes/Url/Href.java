@@ -42,7 +42,8 @@ public interface Href<E extends Element<?, ?, E> & Href<E>> {
    */
   @Attributes.Funnel
   default E href(String href) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Url.attribute(element, "href", href);
   }
 

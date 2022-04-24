@@ -52,11 +52,11 @@ public class AnyTextContentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyTextContent.class
-      //
-      // Unions:
-      //
-      // None
+        AnyTextContent.class
+    //
+    // Unions:
+    //
+    // None
     );
   }
 
@@ -64,11 +64,11 @@ public class AnyTextContentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyTextContent.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyTextContent.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -76,31 +76,31 @@ public class AnyTextContentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyTextContent.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyTextContent.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass
-      //
-      // Factories:
-      //
-      // None
+        testingClass
+    //
+    // Factories:
+    //
+    // None
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-      -1,
-      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyTextContent.class)
+        "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+        -1,
+        AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyTextContent.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyTextContent.class);
   }

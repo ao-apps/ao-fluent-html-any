@@ -47,7 +47,8 @@ public interface Onbeforeunload<E extends Element<?, ?, E> & Onbeforeunload<E>> 
    */
   @Attributes.Funnel
   default E onbeforeunload(Object onbeforeunload) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onbeforeunload");
     return Attributes.Event.attribute(element, "onbeforeunload", onbeforeunload);
   }
@@ -75,6 +76,6 @@ public interface Onbeforeunload<E extends Element<?, ?, E> & Onbeforeunload<E>> 
    * @see #onbeforeunload(java.lang.Object)
    */
   default <Ex extends Throwable> E onbeforeunload(JavaScriptWritable<Ex> onbeforeunload) throws IOException, Ex {
-    return onbeforeunload((Object)onbeforeunload);
+    return onbeforeunload((Object) onbeforeunload);
   }
 }

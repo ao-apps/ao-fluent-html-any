@@ -45,8 +45,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Method<
-  E extends Element<?, ?, E> & Method<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Method<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -58,7 +58,8 @@ public interface Method<
    */
   @Attributes.Funnel
   default E method(String method) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "method", MarkupType.NONE, method, true, true);
   }
 
@@ -88,7 +89,8 @@ public interface Method<
    * @see #method(java.lang.String)
    */
   default E method(V method) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return method((method == null) ? null : method.apply(element.getDocument()));
   }
 

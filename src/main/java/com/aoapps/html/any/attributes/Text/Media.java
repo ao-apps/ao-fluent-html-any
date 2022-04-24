@@ -46,7 +46,8 @@ public interface Media<E extends Element<?, ?, E> & Media<E>> {
    */
   @Attributes.Funnel
   default E media(Object media) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "media", MarkupType.NONE, media, true, true, textInXhtmlAttributeEncoder);
   }
 
@@ -69,6 +70,6 @@ public interface Media<E extends Element<?, ?, E> & Media<E>> {
    * @see #media(java.lang.Object)
    */
   default <Ex extends Throwable> E media(TextWritable<Ex> media) throws IOException, Ex {
-    return media((Object)media);
+    return media((Object) media);
   }
 }

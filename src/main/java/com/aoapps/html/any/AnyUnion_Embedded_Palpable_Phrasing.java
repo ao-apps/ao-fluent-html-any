@@ -35,13 +35,13 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_Embedded_Palpable_Phrasing<
-  D  extends AnyDocument<D>,
-  __ extends AnyUnion_Embedded_Palpable_Phrasing<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyUnion_Embedded_Palpable_Phrasing<D, __>
 > extends
-  //
-  // Content models:
-  //
-  Content<D, __>
+    //
+    // Content models:
+    //
+    Content<D, __>
 {
   //
   // Factories:

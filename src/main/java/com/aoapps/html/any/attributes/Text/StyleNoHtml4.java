@@ -62,7 +62,8 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
   @Override
   @Attributes.Funnel
   default E style(Object style) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style");
     return Style.super.style(style);
   }
@@ -81,7 +82,8 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
   @Override
   @Attributes.Funnel
   default E style(Object ... style) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style");
     return Style.super.style(style);
   }

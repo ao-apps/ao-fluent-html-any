@@ -70,7 +70,8 @@ public interface OnloadedmetadataUnexpected<E extends Element<?, ?, E> & Onloade
   @Deprecated
   @Attributes.Funnel
   default E onloadedmetadata(Object onloadedmetadata) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onloadedmetadata");
     return Attributes.Event.attribute(element, "onloadedmetadata", onloadedmetadata);
   }
@@ -118,6 +119,6 @@ public interface OnloadedmetadataUnexpected<E extends Element<?, ?, E> & Onloade
    */
   @Deprecated
   default <Ex extends Throwable> E onloadedmetadata(JavaScriptWritable<Ex> onloadedmetadata) throws IOException, Ex {
-    return onloadedmetadata((Object)onloadedmetadata);
+    return onloadedmetadata((Object) onloadedmetadata);
   }
 }

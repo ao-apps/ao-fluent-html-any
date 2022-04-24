@@ -44,7 +44,8 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
    */
   @Attributes.Funnel
   default E width(int pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "width", pixels);
   }
 
@@ -53,7 +54,8 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
    */
   @Attributes.Funnel
   default E width(Integer pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "width", pixels);
   }
 
@@ -77,7 +79,8 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
   @Deprecated
   @Attributes.Funnel
   default E width(String pixelsOrPercent) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Dimension.attribute(element, "width", pixelsOrPercent);
   }
 

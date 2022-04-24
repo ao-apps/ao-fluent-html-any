@@ -70,7 +70,8 @@ public interface OnloadstartUnexpected<E extends Element<?, ?, E> & OnloadstartU
   @Deprecated
   @Attributes.Funnel
   default E onloadstart(Object onloadstart) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onloadstart");
     return Attributes.Event.attribute(element, "onloadstart", onloadstart);
   }
@@ -118,6 +119,6 @@ public interface OnloadstartUnexpected<E extends Element<?, ?, E> & OnloadstartU
    */
   @Deprecated
   default <Ex extends Throwable> E onloadstart(JavaScriptWritable<Ex> onloadstart) throws IOException, Ex {
-    return onloadstart((Object)onloadstart);
+    return onloadstart((Object) onloadstart);
   }
 }

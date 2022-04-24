@@ -57,54 +57,54 @@ import java.util.Locale;
 // TODO: Extend RawTextElement: https://html.spec.whatwg.org/multipage/syntax.html#raw-text-elements
 @SuppressWarnings("deprecation")
 public abstract class AnySCRIPT<
-  D  extends AnyDocument<D>,
-  PC extends AnyScriptSupportingContent<D, PC>,
-  E  extends AnySCRIPT<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends AnyScriptSupportingContent<D, PC>,
+    E  extends AnySCRIPT<D, PC, E>
 > extends Element<D, PC, E> implements
-  com.aoapps.html.any.attributes.Boolean.Async<E>,
-  com.aoapps.html.any.attributes.Enum.Charset<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
-  com.aoapps.html.any.attributes.Boolean.Defer<E>,
-  com.aoapps.html.any.attributes.Url.Src<E>,
-  // TODO: type
-  // TODO: xmlSpace
-  // Global Attributes overrides
-  com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-  com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-  com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-  com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-  com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-  com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-  com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
-  // Global Event Attributes overrides
-  com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
-  com.aoapps.html.any.attributes.event.Onerror<E>,
-  com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
-  com.aoapps.html.any.attributes.event.Onload<E>,
-  com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
+    com.aoapps.html.any.attributes.Boolean.Async<E>,
+    com.aoapps.html.any.attributes.Enum.Charset<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
+    com.aoapps.html.any.attributes.Boolean.Defer<E>,
+    com.aoapps.html.any.attributes.Url.Src<E>,
+    // TODO: type
+    // TODO: xmlSpace
+    // Global Attributes overrides
+    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+    com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
+    com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
+    com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+    // Global Event Attributes overrides
+    com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
+    com.aoapps.html.any.attributes.event.Onerror<E>,
+    com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+    com.aoapps.html.any.attributes.event.Onload<E>,
+    com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 
   /**
@@ -122,7 +122,7 @@ public abstract class AnySCRIPT<
      * @deprecated  Use {@link #APPLICATION_JAVASCRIPT} in HTML 5.
      */
     @Deprecated
-    TEXT_JAVASCRIPT(ContentType.JAVASCRIPT_OLD),
+        TEXT_JAVASCRIPT(ContentType.JAVASCRIPT_OLD),
 
     /**
      * A JSON object graph.
@@ -162,6 +162,7 @@ public abstract class AnySCRIPT<
       }
       return true;
     }
+
     static {
       assert assertAllLowerCaseAndTrimmed();
     }
@@ -190,7 +191,8 @@ public abstract class AnySCRIPT<
     document.autoNli(unsafe).unsafe(unsafe, "<script", false);
     E s = type();
     assert s == this;
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -203,9 +205,9 @@ public abstract class AnySCRIPT<
     Writer unsafe = document.getRawUnsafe(null);
     // TODO: Check didBody here and other attributes, perhaps in some central attribute registry that detects duplicate attributes, too
     if (
-      type == null
-      || type.equals(ContentType.JAVASCRIPT)
-      || type.equals(ContentType.JAVASCRIPT_OLD)
+        type == null
+            || type.equals(ContentType.JAVASCRIPT)
+            || type.equals(ContentType.JAVASCRIPT_OLD)
     ) {
       String typeAttr = document.encodingContext.getDoctype().getScriptType();
       int len = typeAttr.length();
@@ -230,7 +232,8 @@ public abstract class AnySCRIPT<
       encodeTextInXhtmlAttribute(type, unsafe);
       unsafe.append('"');
     }
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -244,14 +247,14 @@ public abstract class AnySCRIPT<
 
   protected boolean doCdata() {
     return
-      document.encodingContext.getSerialization() == Serialization.XML
-      && (
-        type == null
-        || type.equals(ContentType.JAVASCRIPT)
-        || type.equals(ContentType.JAVASCRIPT_OLD)
-        || type.equals(ContentType.ECMASCRIPT)
-        || type.equals(ContentType.ECMASCRIPT_OLD)
-      );
+        document.encodingContext.getSerialization() == Serialization.XML
+            && (
+            type == null
+                || type.equals(ContentType.JAVASCRIPT)
+                || type.equals(ContentType.JAVASCRIPT_OLD)
+                || type.equals(ContentType.ECMASCRIPT)
+                || type.equals(ContentType.ECMASCRIPT_OLD)
+        );
   }
 
   private boolean didBody;
@@ -259,9 +262,9 @@ public abstract class AnySCRIPT<
   protected void startBody(Writer unsafe) throws IOException {
     if (!didBody) {
       document
-        .autoIndent(unsafe)
-        .unsafe(unsafe, doCdata() ? (">//<![CDATA[" + NL) : (">" + NL), true)
-        .incDepth();
+          .autoIndent(unsafe)
+          .unsafe(unsafe, doCdata() ? (">//<![CDATA[" + NL) : (">" + NL), true)
+          .incDepth();
       didBody = true;
     }
   }
@@ -275,14 +278,15 @@ public abstract class AnySCRIPT<
   public E out(Object script) throws IOException {
     while (script instanceof IOSupplierE<?, ?>) {
       try {
-        script = ((IOSupplierE<?, ?>)script).get();
+        script = ((IOSupplierE<?, ?>) script).get();
       } catch (Throwable t) {
         throw Throwables.wrap(t, IOException.class, IOException::new);
       }
     }
     if (script instanceof JavaScriptWritable) {
       try {
-        @SuppressWarnings("unchecked") JavaScriptWritable<?> writable = (JavaScriptWritable<?>)script;
+        @SuppressWarnings("unchecked")
+        JavaScriptWritable<?> writable = (JavaScriptWritable<?>) script;
         return out(writable);
       } catch (Throwable t) {
         throw Throwables.wrap(t, IOException.class, IOException::new);
@@ -295,16 +299,17 @@ public abstract class AnySCRIPT<
       // Allow text markup from translations
       MediaType mediaType = getMediaType();
       MarkupCoercion.write(
-        script,
-        mediaType.getMarkupType(),
-        true,
-        getMediaEncoder(mediaType),
-        false,
-        unsafe
+          script,
+          mediaType.getMarkupType(),
+          true,
+          getMediaEncoder(mediaType),
+          false,
+          unsafe
       );
       document.clearAtnl(); // Unknown, safe to assume not at newline
     }
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -327,19 +332,20 @@ public abstract class AnySCRIPT<
       Writer unsafe = document.getRawUnsafe(null);
       startBody(unsafe);
       script.writeTo(
-        newOutputType.newMediaWriter(
-          document.encodingContext,
-          encoder,
-          document.getRawUnsafe(null),
-          false,
-          document,
-          mediaWriter -> true, // isNoClose
-          null // Ignore close
-        )
+          newOutputType.newMediaWriter(
+              document.encodingContext,
+              encoder,
+              document.getRawUnsafe(null),
+              false,
+              document,
+              mediaWriter -> true, // isNoClose
+              null // Ignore close
+          )
       );
       document.clearAtnl(); // Unknown, safe to assume not at newline
     }
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -355,14 +361,14 @@ public abstract class AnySCRIPT<
     Writer unsafe = document.getRawUnsafe(null);
     startBody(unsafe);
     // Invoking via newMediaWriter to support subclasses of JavaScriptWriter
-    return (JavaScriptWriter)newOutputType.newMediaWriter(
-      document.encodingContext,
-      encoder,
-      unsafe,
-      false,
-      document,
-      mediaWriter -> false, // !isNoClose
-      closing -> __()
+    return (JavaScriptWriter) newOutputType.newMediaWriter(
+        document.encodingContext,
+        encoder,
+        unsafe,
+        false,
+        document,
+        mediaWriter -> false, // !isNoClose
+        closing -> __()
     );
   }
 

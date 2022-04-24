@@ -57,7 +57,8 @@ public interface Onabort<E extends Element<?, ?, E> & Onabort<E>> extends Onabor
   @Attributes.Funnel
   default E onabort(Object onabort) throws IOException {
     // Not calling super: overridden to support HTML 4
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onabort", onabort);
   }
 

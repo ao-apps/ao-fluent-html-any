@@ -70,7 +70,8 @@ public interface OncanplaythroughUnexpected<E extends Element<?, ?, E> & Oncanpl
   @Deprecated
   @Attributes.Funnel
   default E oncanplaythrough(Object oncanplaythrough) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "oncanplaythrough");
     return Attributes.Event.attribute(element, "oncanplaythrough", oncanplaythrough);
   }
@@ -118,6 +119,6 @@ public interface OncanplaythroughUnexpected<E extends Element<?, ?, E> & Oncanpl
    */
   @Deprecated
   default <Ex extends Throwable> E oncanplaythrough(JavaScriptWritable<Ex> oncanplaythrough) throws IOException, Ex {
-    return oncanplaythrough((Object)oncanplaythrough);
+    return oncanplaythrough((Object) oncanplaythrough);
   }
 }

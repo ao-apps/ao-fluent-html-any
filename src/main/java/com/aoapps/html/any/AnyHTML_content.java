@@ -40,13 +40,13 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyHTML_content<
-  D  extends AnyDocument<D>,
-  __ extends AnyHTML_content<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyHTML_content<D, __>
 > extends
-  //
-  // Content models:
-  //
-  Content<D, __>
+    //
+    // Content models:
+    //
+    Content<D, __>
 {
   //
   // Factories:
@@ -129,6 +129,7 @@ public interface AnyHTML_content<
    */
   @Factory("head")
   AnyHEAD_c<D, __, ?> head_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="BODY">
   /**

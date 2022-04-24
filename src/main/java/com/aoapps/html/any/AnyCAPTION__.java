@@ -37,12 +37,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyCAPTION__<
-  D  extends AnyDocument<D>,
-  PC extends AnyTABLE_content<D, PC>,
-  __ extends AnyCAPTION__<D, PC, __>
+    D  extends AnyDocument<D>,
+    PC extends AnyTABLE_content<D, PC>,
+    __ extends AnyCAPTION__<D, PC, __>
 >
-  extends NormalText__<D, PC, __>
-  implements AnyFlowContent<D, __> {
+    extends NormalText__<D, PC, __>
+    implements AnyFlowContent<D, __> {
 
   protected AnyCAPTION__(AnyCAPTION<D, PC, ?, __, ?> element) {
     super(element);

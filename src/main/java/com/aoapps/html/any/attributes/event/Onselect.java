@@ -59,7 +59,8 @@ public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends Onse
   @Attributes.Funnel
   default E onselect(Object onselect) throws IOException {
     // Not calling super: overridden to support HTML 4
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onselect", onselect);
   }
 

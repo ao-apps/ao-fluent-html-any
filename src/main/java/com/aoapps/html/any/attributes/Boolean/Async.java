@@ -46,7 +46,8 @@ public interface Async<E extends Element<?, ?, E> & Async<E>> {
    */
   @Attributes.Funnel
   default E async(boolean async) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "async");
     return Attributes.Boolean.attribute(element, "async", async);
   }

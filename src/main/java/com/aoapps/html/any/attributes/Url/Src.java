@@ -42,7 +42,8 @@ public interface Src<E extends Element<?, ?, E> & Src<E>> {
    */
   @Attributes.Funnel
   default E src(String src) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Url.attribute(element, "src", src);
   }
 

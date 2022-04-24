@@ -56,7 +56,8 @@ public interface Onmousemove<E extends Element<?, ?, E> & Onmousemove<E>> {
    */
   @Attributes.Funnel
   default E onmousemove(Object onmousemove) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onmousemove", onmousemove);
   }
 
@@ -91,6 +92,6 @@ public interface Onmousemove<E extends Element<?, ?, E> & Onmousemove<E>> {
    * @see #onmousemove(java.lang.Object)
    */
   default <Ex extends Throwable> E onmousemove(JavaScriptWritable<Ex> onmousemove) throws IOException, Ex {
-    return onmousemove((Object)onmousemove);
+    return onmousemove((Object) onmousemove);
   }
 }

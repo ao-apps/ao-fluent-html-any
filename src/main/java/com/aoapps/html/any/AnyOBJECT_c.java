@@ -48,12 +48,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOBJECT_c<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Embedded_Interactive<D, PC>,
-  _c extends AnyOBJECT_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Embedded_Interactive<D, PC>,
+    _c extends AnyOBJECT_c<D, PC, _c>
 >
-  extends Normal_c<D, PC, _c>
-  implements AnyOBJECT_content<D, _c> {
+    extends Normal_c<D, PC, _c>
+    implements AnyOBJECT_content<D, _c> {
 
   protected AnyOBJECT_c(AnyOBJECT<D, PC, ?, ?, _c> element) {
     super(element);

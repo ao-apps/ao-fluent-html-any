@@ -39,19 +39,19 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyInteractiveContent<
-  D  extends AnyDocument<D>,
-  __ extends AnyInteractiveContent<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyInteractiveContent<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyUnion_Embedded_Interactive<D, __>
-  AnyUnion_Interactive_Phrasing<D, __>
+    //
+    // Unions:
+    //
+    // Inherited: AnyUnion_Embedded_Interactive<D, __>
+    AnyUnion_Interactive_Phrasing<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
+//
+// Content models:
+//
+// Inherited: Content<D, __>
 {
   //
   // Factories:
@@ -75,6 +75,7 @@ public interface AnyInteractiveContent<
   default AnyDETAILS details() throws IOException {
     throw new AssertionError("TODO: Implement details");
   }
+
   // </editor-fold>
   // Inherited: EMBED
   // Inherited: IFRAME

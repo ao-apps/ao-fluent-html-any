@@ -51,7 +51,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
   @Override
   @Attributes.Funnel
   default E height(int pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "height");
     return Height.super.height(pixels);
   }
@@ -67,7 +68,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
   @Override
   @Attributes.Funnel
   default E height(Integer pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "height");
     return Height.super.height(pixels);
   }

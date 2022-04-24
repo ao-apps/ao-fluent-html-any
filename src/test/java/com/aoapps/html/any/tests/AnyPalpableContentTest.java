@@ -61,15 +61,15 @@ public class AnyPalpableContentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyPalpableContent.class,
-      //
-      // Unions:
-      //
-      AnyUnion_DL_Palpable.class,
-      AnyUnion_Embedded_Interactive.class,
-      AnyUnion_Embedded_Palpable_Phrasing.class,
-      AnyUnion_Interactive_Phrasing.class,
-      AnyUnion_Palpable_Phrasing.class
+        AnyPalpableContent.class,
+        //
+        // Unions:
+        //
+        AnyUnion_DL_Palpable.class,
+        AnyUnion_Embedded_Interactive.class,
+        AnyUnion_Embedded_Palpable_Phrasing.class,
+        AnyUnion_Interactive_Phrasing.class,
+        AnyUnion_Palpable_Phrasing.class
     );
   }
 
@@ -77,15 +77,15 @@ public class AnyPalpableContentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyPalpableContent.class,
-      //
-      // Content models:
-      //
-      Content.class,
-      AnySectioningContent.class,
-      AnyHeadingContent.class,
-      AnyInteractiveContent.class,
-      AnyTextContent.class // that is not inter-element whitespace
+        AnyPalpableContent.class,
+        //
+        // Content models:
+        //
+        Content.class,
+        AnySectioningContent.class,
+        AnyHeadingContent.class,
+        AnyInteractiveContent.class,
+        AnyTextContent.class // that is not inter-element whitespace
     );
   }
 
@@ -93,104 +93,104 @@ public class AnyPalpableContentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyPalpableContent.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyPalpableContent.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "a",
-      "abbr",
-      "address",
-      "article",
-      "aside",
-      "audio", // if the controls attribute is present
-      "b",
-      "bdi",
-      "bdo",
-      "blockquote",
-      "button",
-      "canvas",
-      "cite",
-      "code",
-      "data",
-      "details",
-      "dfn",
-      "div",
-      "dl", // if children contain at least one name/value pair
-      "em",
-      "embed",
-      "fieldset",
-      "figure",
-      "footer",
-      "form",
-      "h1",
-      "h2",
-      "h3",
-      "h4",
-      "h5",
-      "h6",
-      "h#",
-      "header",
-      "hgroup",
-      "i",
-      "iframe",
-      "img",
-      "input", // if type attribute is not in the hidden state
-      "ins",
-      "kbd",
-      "label",
-      "main",
-      "map",
-      "mark",
-      // TODO: MathML math
-      "menu", // if children include at least one li
-      "meter",
-      "nav",
-      "object",
-      "ol", // if children include at least one li
-      "output",
-      "p",
-      "pre",
-      "progress",
-      "q",
-      "ruby",
-      "s",
-      "samp",
-      "section",
-      "select",
-      "small",
-      "span",
-      "strong",
-      "sub",
-      "sup",
-      // TODO: SVG svg
-      "table",
-      "textarea",
-      "time",
-      "u",
-      "ul", // if children include at least one li
-      "var",
-      "video"
-      // TODO: autonomous custom elements: 4.13 Custom elements: https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
+        testingClass,
+        //
+        // Factories:
+        //
+        "a",
+        "abbr",
+        "address",
+        "article",
+        "aside",
+        "audio", // if the controls attribute is present
+        "b",
+        "bdi",
+        "bdo",
+        "blockquote",
+        "button",
+        "canvas",
+        "cite",
+        "code",
+        "data",
+        "details",
+        "dfn",
+        "div",
+        "dl", // if children contain at least one name/value pair
+        "em",
+        "embed",
+        "fieldset",
+        "figure",
+        "footer",
+        "form",
+        "h1",
+        "h2",
+        "h3",
+        "h4",
+        "h5",
+        "h6",
+        "h#",
+        "header",
+        "hgroup",
+        "i",
+        "iframe",
+        "img",
+        "input", // if type attribute is not in the hidden state
+        "ins",
+        "kbd",
+        "label",
+        "main",
+        "map",
+        "mark",
+        // TODO: MathML math
+        "menu", // if children include at least one li
+        "meter",
+        "nav",
+        "object",
+        "ol", // if children include at least one li
+        "output",
+        "p",
+        "pre",
+        "progress",
+        "q",
+        "ruby",
+        "s",
+        "samp",
+        "section",
+        "select",
+        "small",
+        "span",
+        "strong",
+        "sub",
+        "sup",
+        // TODO: SVG svg
+        "table",
+        "textarea",
+        "time",
+        "u",
+        "ul", // if children include at least one li
+        "var",
+        "video"
+    // TODO: autonomous custom elements: 4.13 Custom elements: https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
-      -1,
-      AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyPalpableContent.class)
+        "Must be included in " + ContentModelTest.class.getSimpleName() + ".getAllContentModels()",
+        -1,
+        AoArrays.indexOf(ContentModelTest.getAllContentModels(), AnyPalpableContent.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyPalpableContent.class);
   }

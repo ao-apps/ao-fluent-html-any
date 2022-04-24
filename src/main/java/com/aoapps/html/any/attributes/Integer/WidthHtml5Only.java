@@ -54,7 +54,8 @@ public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> 
   @Override
   @Attributes.Funnel
   default E width(int pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "width");
     return Width.super.width(pixels);
   }
@@ -70,7 +71,8 @@ public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> 
   @Override
   @Attributes.Funnel
   default E width(Integer pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "width");
     return Width.super.width(pixels);
   }

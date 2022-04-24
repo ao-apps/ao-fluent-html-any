@@ -44,8 +44,8 @@ import java.util.function.Function;
  */
 @Deprecated
 public interface Valign<
-  E extends Element<?, ?, E> & Valign<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Valign<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -56,7 +56,8 @@ public interface Valign<
   @Deprecated
   @Attributes.Funnel
   default E valign(String valign) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "valign", MarkupType.NONE, valign, true, true);
   }
 
@@ -84,7 +85,8 @@ public interface Valign<
    */
   @Deprecated
   default E valign(V valign) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return valign((valign == null) ? null : valign.apply(element.getDocument()));
   }
 

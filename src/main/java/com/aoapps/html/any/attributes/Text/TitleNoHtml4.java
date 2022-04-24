@@ -62,7 +62,8 @@ public interface TitleNoHtml4<E extends Element<?, ?, E> & TitleNoHtml4<E>> exte
   @Override
   @Attributes.Funnel
   default E title(Object title) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "title");
     return Title.super.title(title);
   }

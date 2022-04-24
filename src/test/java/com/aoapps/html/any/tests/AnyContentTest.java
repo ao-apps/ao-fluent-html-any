@@ -49,44 +49,44 @@ public class AnyContentTest {
   @Test
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyContent.class,
-      //
-      // Unions:
-      //
-      AnyUnionContentTest.getAllUnions()
+        AnyContent.class,
+        //
+        // Unions:
+        //
+        AnyUnionContentTest.getAllUnions()
     );
   }
 
   @Test
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyContent.class,
-      //
-      // Content models:
-      //
-      ContentModelTest.getAllContentModels()
+        AnyContent.class,
+        //
+        // Content models:
+        //
+        ContentModelTest.getAllContentModels()
     );
   }
 
   @Test
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyContent.class,
-      //
-      // Per-element content models:
-      //
-      ElementContentModelTest.getAllElementContentModels()
+        AnyContent.class,
+        //
+        // Per-element content models:
+        //
+        ElementContentModelTest.getAllElementContentModels()
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      FactoryTestHelper.getAllFactories()
+        testingClass,
+        //
+        // Factories:
+        //
+        FactoryTestHelper.getAllFactories()
     );
   }
 

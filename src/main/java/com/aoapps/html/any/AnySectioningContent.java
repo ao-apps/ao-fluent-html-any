@@ -41,13 +41,13 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnySectioningContent<
-  D  extends AnyDocument<D>,
-  __ extends AnySectioningContent<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnySectioningContent<D, __>
 > extends
-  //
-  // Content models:
-  //
-  Content<D, __>
+    //
+    // Content models:
+    //
+    Content<D, __>
 {
   //
   // Factories:
@@ -157,6 +157,7 @@ public interface AnySectioningContent<
    */
   @Factory("article")
   AnyARTICLE_c<D, __, ?> article_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="ASIDE">
   /**
@@ -263,6 +264,7 @@ public interface AnySectioningContent<
    */
   @Factory("aside")
   AnyASIDE_c<D, __, ?> aside_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="NAV">
   /**
@@ -369,6 +371,7 @@ public interface AnySectioningContent<
    */
   @Factory("nav")
   AnyNAV_c<D, __, ?> nav_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="SECTION">
   /**

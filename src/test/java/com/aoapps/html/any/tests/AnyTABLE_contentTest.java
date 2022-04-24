@@ -55,12 +55,12 @@ public class AnyTABLE_contentTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyTABLE_content.class,
-      //
-      // Unions:
-      //
-      AnyUnion_COLGROUP_ScriptSupporting.class,
-      AnyUnion_TBODY_THEAD_TFOOT.class
+        AnyTABLE_content.class,
+        //
+        // Unions:
+        //
+        AnyUnion_COLGROUP_ScriptSupporting.class,
+        AnyUnion_TBODY_THEAD_TFOOT.class
     );
   }
 
@@ -68,12 +68,12 @@ public class AnyTABLE_contentTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyTABLE_content.class,
-      //
-      // Content models:
-      //
-      Content.class,
-      AnyScriptSupportingContent.class
+        AnyTABLE_content.class,
+        //
+        // Content models:
+        //
+        Content.class,
+        AnyScriptSupportingContent.class
     );
   }
 
@@ -81,38 +81,38 @@ public class AnyTABLE_contentTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyTABLE_content.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyTABLE_content.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "caption",
-      "colgroup",
-      "thead",
-      "tbody",
-      "tr",
-      "tfoot",
-      "script",
-      "template"
+        testingClass,
+        //
+        // Factories:
+        //
+        "caption",
+        "colgroup",
+        "thead",
+        "tbody",
+        "tr",
+        "tfoot",
+        "script",
+        "template"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals(
-      "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
-      -1,
-      AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyTABLE_content.class)
+        "Must be included in " + ElementContentModelTest.class.getSimpleName() + ".getAllElementContentModels()",
+        -1,
+        AoArrays.indexOf(ElementContentModelTest.getAllElementContentModels(), AnyTABLE_content.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyTABLE_content.class);
   }

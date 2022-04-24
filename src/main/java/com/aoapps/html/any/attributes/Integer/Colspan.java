@@ -44,7 +44,8 @@ public interface Colspan<E extends Element<?, ?, E> & Colspan<E>> {
    */
   @Attributes.Funnel
   default E colspan(int colspan) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     if (colspan != 1) {
       Attributes.Integer.attribute(element, "colspan", colspan);
     }
@@ -58,7 +59,8 @@ public interface Colspan<E extends Element<?, ?, E> & Colspan<E>> {
    */
   @Attributes.Funnel
   default E colspan(Integer colspan) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     if (colspan != null && colspan != 1) {
       Attributes.Integer.attribute(element, "colspan", colspan);
     }

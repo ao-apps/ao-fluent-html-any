@@ -54,30 +54,30 @@ import java.util.function.Function;
 // TODO: Have multiple implementations, along with "Dynamic", similar to AnyINPUT?
 @SuppressWarnings("deprecation")
 public abstract class AnyLINK<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Metadata_Phrasing<D, PC>,
-  E  extends AnyLINK<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Metadata_Phrasing<D, PC>,
+    E  extends AnyLINK<D, PC, E>
 > extends Void<D, PC, E> implements
-  // TODO: as
-  com.aoapps.html.any.attributes.Enum.CharsetHtml4Only<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
-  com.aoapps.html.any.attributes.Enum.Crossorigin<E, AnyLINK.Crossorigin>,
-  // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-disabled
-  com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-  com.aoapps.html.any.attributes.Url.Href<E>,
-  com.aoapps.html.any.attributes.Text.Hreflang<E>,
-  com.aoapps.html.any.attributes.Text.Media<E>,
-  com.aoapps.html.any.attributes.Enum.Rel<E, AnyLINK.Rel>,
-  // TODO: rev
-  // TODO: sizes
-  // TODO: target (not standardized per MDN)
-  // TODO: type
-  // Global Event Attributes overrides
-  com.aoapps.html.any.attributes.event.Onerror<E>,
-  com.aoapps.html.any.attributes.event.Onload<E>
+    // TODO: as
+    com.aoapps.html.any.attributes.Enum.CharsetHtml4Only<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
+    com.aoapps.html.any.attributes.Enum.Crossorigin<E, AnyLINK.Crossorigin>,
+    // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-disabled
+    com.aoapps.html.any.attributes.Boolean.Disabled<E>,
+    com.aoapps.html.any.attributes.Url.Href<E>,
+    com.aoapps.html.any.attributes.Text.Hreflang<E>,
+    com.aoapps.html.any.attributes.Text.Media<E>,
+    com.aoapps.html.any.attributes.Enum.Rel<E, AnyLINK.Rel>,
+    // TODO: rev
+    // TODO: sizes
+    // TODO: target (not standardized per MDN)
+    // TODO: type
+    // Global Event Attributes overrides
+    com.aoapps.html.any.attributes.event.Onerror<E>,
+    com.aoapps.html.any.attributes.event.Onload<E>
 {
 
   private static final com.aoapps.lang.i18n.Resources RESOURCES =
-    com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyLINK.class);
+      com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyLINK.class);
 
   protected AnyLINK(D document, PC pc) {
     super(document, pc);
@@ -86,7 +86,8 @@ public abstract class AnyLINK<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<link", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -99,10 +100,10 @@ public abstract class AnyLINK<
     ANONYMOUS(
       Attributes.NO_VALUE,
       "anonymous"
-    ),
+  ),
     USE_CREDENTIALS(
-      "use-credentials",
-      "use-credentials"
+        "use-credentials",
+        "use-credentials"
     );
 
     private final String sgml;
@@ -145,12 +146,12 @@ public abstract class AnyLINK<
     if (itemprop != null) {
       if (this.itemprop != null) {
         throw new LocalizedIllegalStateException(
-          AnyDocument.RESOURCES,
-          "duplicateAttribute",
-          "link",
-          "itemprop",
-          Coercion.toString(this.itemprop),
-          Coercion.toString(itemprop)
+            AnyDocument.RESOURCES,
+            "duplicateAttribute",
+            "link",
+            "itemprop",
+            Coercion.toString(this.itemprop),
+            Coercion.toString(itemprop)
         );
       }
       this.itemprop = itemprop;
@@ -168,7 +169,8 @@ public abstract class AnyLINK<
       Coercion.write(itemprop, textInXhtmlAttributeEncoder, unsafe);
       unsafe.append('"');
     }
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -185,7 +187,7 @@ public abstract class AnyLINK<
      * @deprecated
      */
     @Deprecated
-    ARCHIVES("archives"), // MDN only
+        ARCHIVES("archives"), // MDN only
     AUTHOR("author"), // w3schools, MDN only
     CANONICAL("canonical"), // MDN only
     DNS_PREFETCH("dns-prefetch"),
@@ -193,7 +195,7 @@ public abstract class AnyLINK<
      * @deprecated
      */
     @Deprecated
-    FIRST("first"), // MDN only
+        FIRST("first"), // MDN only
     HELP("help"), // w3schools, MDN only
     ICON("icon"),
     IMPORT("import"), // MDN only
@@ -201,12 +203,12 @@ public abstract class AnyLINK<
      * @deprecated
      */
     @Deprecated
-    INDEX("index"), // MDN only
+        INDEX("index"), // MDN only
     /**
      * @deprecated
      */
     @Deprecated
-    LAST("last"), // MDN only
+        LAST("last"), // MDN only
     LICENSE("license"), // w3schools, MDN only
     MANIFEST("manifest"), // MDN only
     MODULEPRELOAD("modulepreload"),
@@ -223,13 +225,13 @@ public abstract class AnyLINK<
      * @deprecated
      */
     @Deprecated
-    SIDEBAR("sidebar"), // MDN only
+        SIDEBAR("sidebar"), // MDN only
     STYLESHEET("stylesheet"),
     /**
      * @deprecated
      */
     @Deprecated
-    UP("up"), // MDN only
+        UP("up"), // MDN only
 
     /**
      * <p>
@@ -252,6 +254,7 @@ public abstract class AnyLINK<
     APPLE_TOUCH_STARTUP_IMAGE("apple-touch-startup-image");
 
     private final String value;
+
     // TODO: Verify values by doctype
 
     private Rel(String value) {
@@ -287,12 +290,12 @@ public abstract class AnyLINK<
     if (rel != null) {
       if (this.rel != null) {
         throw new LocalizedIllegalStateException(
-          AnyDocument.RESOURCES,
-          "duplicateAttribute",
-          "link",
-          "rel",
-          Coercion.toString(this.rel),
-          Coercion.toString(rel)
+            AnyDocument.RESOURCES,
+            "duplicateAttribute",
+            "link",
+            "rel",
+            Coercion.toString(this.rel),
+            Coercion.toString(rel)
         );
       }
       this.rel = rel;
@@ -301,7 +304,8 @@ public abstract class AnyLINK<
       }
       com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
     }
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -373,13 +377,13 @@ public abstract class AnyLINK<
     type = Strings.trimNullIfEmpty(type);
     this.type = type;
     if (
-      type != null
-      && !(
-        document.encodingContext.getDoctype() == Doctype.HTML5
-        && rel != null
-        && rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
-        && ContentType.CSS.equalsIgnoreCase(type)
-      )
+        type != null
+            && !(
+            document.encodingContext.getDoctype() == Doctype.HTML5
+                && rel != null
+                && rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
+                && ContentType.CSS.equalsIgnoreCase(type)
+        )
     ) {
       Writer unsafe = document.getRawUnsafe(null);
       if (document.getAtnl()) {
@@ -392,7 +396,8 @@ public abstract class AnyLINK<
       encodeTextInXhtmlAttribute(type, unsafe);
       unsafe.append('"');
     }
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -415,10 +420,10 @@ public abstract class AnyLINK<
   @Override
   public PC __() throws IOException {
     if (
-      type == null
-      && document.encodingContext.getDoctype() != Doctype.HTML5
-      && rel != null
-      && rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
+        type == null
+            && document.encodingContext.getDoctype() != Doctype.HTML5
+            && rel != null
+            && rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
     ) {
       Writer unsafe = document.getRawUnsafe(null);
       if (document.getAtnl()) {

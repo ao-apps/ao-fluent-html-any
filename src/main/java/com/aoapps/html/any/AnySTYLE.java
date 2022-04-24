@@ -57,50 +57,50 @@ import java.util.Locale;
 // TODO: Extend RawTextElement: https://html.spec.whatwg.org/multipage/syntax.html#raw-text-elements
 @SuppressWarnings("deprecation")
 public abstract class AnySTYLE<
-  D  extends AnyDocument<D>,
-  PC extends AnyMetadataContent<D, PC>,
-  E  extends AnySTYLE<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends AnyMetadataContent<D, PC>,
+    E  extends AnySTYLE<D, PC, E>
 > extends Element<D, PC, E> implements
-  com.aoapps.html.any.attributes.Text.Media<E>,
-  // TODO: type as enum, deprecated?  See type implementation in AnyScript
-  // Global Attributes overrides
-  com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-  com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-  com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-  com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-  com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-  com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-  com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
-  // Global Event Attributes overrides
-  com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
-  com.aoapps.html.any.attributes.event.Onerror<E>, // Only listed at https://www.w3schools.com/tags/ref_attributes.asp
-  com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
-  com.aoapps.html.any.attributes.event.Onload<E>,
-  com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-  com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
+    com.aoapps.html.any.attributes.Text.Media<E>,
+    // TODO: type as enum, deprecated?  See type implementation in AnyScript
+    // Global Attributes overrides
+    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
+    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+    com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
+    com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
+    com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+    // Global Event Attributes overrides
+    com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
+    com.aoapps.html.any.attributes.event.Onerror<E>, // Only listed at https://www.w3schools.com/tags/ref_attributes.asp
+    com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+    com.aoapps.html.any.attributes.event.Onload<E>,
+    com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
 {
 
   /**
@@ -138,6 +138,7 @@ public abstract class AnySTYLE<
       }
       return true;
     }
+
     static {
       assert assertAllLowerCaseAndTrimmed();
     }
@@ -166,7 +167,8 @@ public abstract class AnySTYLE<
     document.autoNli(unsafe).unsafe(unsafe, "<style", false);
     E s = type();
     assert s == this;
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -178,8 +180,8 @@ public abstract class AnySTYLE<
   protected E type() throws IOException {
     Writer unsafe = document.getRawUnsafe(null);
     if (
-      type == null
-      || type.equals(ContentType.CSS)
+        type == null
+            || type.equals(ContentType.CSS)
     ) {
       String typeAttr = document.encodingContext.getDoctype().getStyleType();
       int len = typeAttr.length();
@@ -204,7 +206,8 @@ public abstract class AnySTYLE<
       encodeTextInXhtmlAttribute(type, unsafe);
       unsafe.append('"');
     }
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -225,9 +228,9 @@ public abstract class AnySTYLE<
   protected void startBody(Writer unsafe) throws IOException {
     if (!didBody) {
       document
-        .autoIndent(unsafe)
-        .unsafe(unsafe, doCdata() ? (">/*<![CDATA[*/" + NL) : (">" + NL), true)
-        .incDepth();
+          .autoIndent(unsafe)
+          .unsafe(unsafe, doCdata() ? (">/*<![CDATA[*/" + NL) : (">" + NL), true)
+          .incDepth();
       didBody = true;
     }
   }
@@ -242,14 +245,15 @@ public abstract class AnySTYLE<
   public E out(Object style) throws IOException {
     while (style instanceof IOSupplierE<?, ?>) {
       try {
-        style = ((IOSupplierE<?, ?>)style).get();
+        style = ((IOSupplierE<?, ?>) style).get();
       } catch (Throwable t) {
         throw Throwables.wrap(t, IOException.class, IOException::new);
       }
     }
     if (style instanceof StyleWritable) {
       try {
-        @SuppressWarnings("unchecked") StyleWritable<?> writable = (StyleWritable<?>)style;
+        @SuppressWarnings("unchecked")
+        StyleWritable<?> writable = (StyleWritable<?>) style;
         return out(writable);
       } catch (Throwable t) {
         throw Throwables.wrap(t, IOException.class, IOException::new);
@@ -262,16 +266,17 @@ public abstract class AnySTYLE<
       // Allow text markup from translations
       MediaType mediaType = getMediaType();
       MarkupCoercion.write(
-        style,
-        mediaType.getMarkupType(),
-        true,
-        getMediaEncoder(mediaType),
-        false,
-        unsafe
+          style,
+          mediaType.getMarkupType(),
+          true,
+          getMediaEncoder(mediaType),
+          false,
+          unsafe
       );
       document.clearAtnl(); // Unknown, safe to assume not at newline
     }
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -294,19 +299,20 @@ public abstract class AnySTYLE<
       Writer unsafe = document.getRawUnsafe(null);
       startBody(unsafe);
       style.writeTo(
-        newOutputType.newMediaWriter(
-          document.encodingContext,
-          encoder,
-          document.getRawUnsafe(null),
-          false,
-          document,
-          mediaWriter -> true, // isNoClose
-          null // Ignore close
-        )
+          newOutputType.newMediaWriter(
+              document.encodingContext,
+              encoder,
+              document.getRawUnsafe(null),
+              false,
+              document,
+              mediaWriter -> true, // isNoClose
+              null // Ignore close
+          )
       );
       document.clearAtnl(); // Unknown, safe to assume not at newline
     }
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -322,14 +328,14 @@ public abstract class AnySTYLE<
     Writer unsafe = document.getRawUnsafe(null);
     startBody(unsafe);
     // Invoking via newMediaWriter to support subclasses of StyleWriter
-    return (StyleWriter)newOutputType.newMediaWriter(
-      document.encodingContext,
-      encoder,
-      unsafe,
-      false,
-      document,
-      mediaWriter -> false, // !isNoClose
-      closing -> __()
+    return (StyleWriter) newOutputType.newMediaWriter(
+        document.encodingContext,
+        encoder,
+        unsafe,
+        false,
+        document,
+        mediaWriter -> false, // !isNoClose
+        closing -> __()
     );
   }
 

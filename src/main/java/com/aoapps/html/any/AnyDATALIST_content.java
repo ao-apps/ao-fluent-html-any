@@ -38,28 +38,28 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public interface AnyDATALIST_content<
-  D  extends AnyDocument<D>,
-  __ extends AnyDATALIST_content<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyDATALIST_content<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-  AnyUnion_DATALIST_OPTGROUP<D, __>,
-  // Inherited: AnyUnion_Embedded_Interactive<D, __>
-  // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
-  // Inherited: AnyUnion_Interactive_Phrasing<D, __>
-  // Inherited: AnyUnion_Metadata_Phrasing<D, __>
-  // Inherited: AnyUnion_Palpable_Phrasing<D, __>
+    //
+    // Unions:
+    //
+    // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    AnyUnion_DATALIST_OPTGROUP<D, __>,
+    // Inherited: AnyUnion_Embedded_Interactive<D, __>
+    // Inherited: AnyUnion_Embedded_Palpable_Phrasing<D, __>
+    // Inherited: AnyUnion_Interactive_Phrasing<D, __>
+    // Inherited: AnyUnion_Metadata_Phrasing<D, __>
+    // Inherited: AnyUnion_Palpable_Phrasing<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  // Inherited: AnyEmbeddedContent<D, __>
-  AnyPhrasingContent<D, __>
-  // Inherited: AnyScriptSupportingContent<D, __>
-  // Inherited: AnyTextContent<D, __>
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    // Inherited: AnyEmbeddedContent<D, __>
+    AnyPhrasingContent<D, __>
+// Inherited: AnyScriptSupportingContent<D, __>
+// Inherited: AnyTextContent<D, __>
 {
   //
   // Factories:

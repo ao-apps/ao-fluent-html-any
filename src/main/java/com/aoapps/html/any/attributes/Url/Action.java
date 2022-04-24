@@ -42,7 +42,8 @@ public interface Action<E extends Element<?, ?, E> & Action<E>> {
    */
   @Attributes.Funnel
   default E action(String action) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Url.attribute(element, "action", action);
   }
 

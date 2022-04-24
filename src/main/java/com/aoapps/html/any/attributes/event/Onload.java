@@ -59,7 +59,8 @@ public interface Onload<E extends Element<?, ?, E> & Onload<E>> extends OnloadUn
   @Attributes.Funnel
   default E onload(Object onload) throws IOException {
     // Not calling super: overridden to support HTML 4
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onload", onload);
   }
 

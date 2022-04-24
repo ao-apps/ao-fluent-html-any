@@ -39,12 +39,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyHEADER__<
-  D  extends AnyDocument<D>,
-  PC extends AnyPalpableContent<D, PC>,
-  __ extends AnyHEADER__<D, PC, __>
+    D  extends AnyDocument<D>,
+    PC extends AnyPalpableContent<D, PC>,
+    __ extends AnyHEADER__<D, PC, __>
 >
-  extends NormalText__<D, PC, __>
-  implements AnyFlowContent<D, __> {
+    extends NormalText__<D, PC, __>
+    implements AnyFlowContent<D, __> {
 
   protected AnyHEADER__(AnyHEADER<D, PC, ?, __, ?> element) {
     super(element);

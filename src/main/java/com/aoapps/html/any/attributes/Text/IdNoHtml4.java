@@ -61,7 +61,8 @@ public interface IdNoHtml4<E extends Element<?, ?, E> & IdNoHtml4<E>> extends Id
   @Attributes.Funnel
   default E id(Object id) throws IOException {
     // TODO: normalize, then only throw when non-empty/null.  Here and other attributes.
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "id");
     return Id.super.id(id);
   }

@@ -46,8 +46,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Formmethod<
-  E extends Element<?, ?, E> & Formmethod<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Formmethod<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -60,7 +60,8 @@ public interface Formmethod<
    */
   @Attributes.Funnel
   default E formmethod(String formmethod) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "formmethod");
     return Attributes.String.attribute(element, "formmethod", MarkupType.NONE, formmethod, true, true);
   }
@@ -93,7 +94,8 @@ public interface Formmethod<
    * @see #formmethod(java.lang.String)
    */
   default E formmethod(V formmethod) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return formmethod((formmethod == null) ? null : formmethod.apply(element.getDocument()));
   }
 

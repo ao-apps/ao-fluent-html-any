@@ -67,7 +67,8 @@ public interface OnslotchangeUnexpected<E extends Element<?, ?, E> & Onslotchang
   @Deprecated
   @Attributes.Funnel
   default E onslotchange(Object onslotchange) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onslotchange");
     return Attributes.Event.attribute(element, "onslotchange", onslotchange);
   }
@@ -113,6 +114,6 @@ public interface OnslotchangeUnexpected<E extends Element<?, ?, E> & Onslotchang
    */
   @Deprecated
   default <Ex extends Throwable> E onslotchange(JavaScriptWritable<Ex> onslotchange) throws IOException, Ex {
-    return onslotchange((Object)onslotchange);
+    return onslotchange((Object) onslotchange);
   }
 }

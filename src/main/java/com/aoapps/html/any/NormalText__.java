@@ -36,9 +36,9 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class NormalText__<
-  D  extends AnyDocument<D>,
-  PC extends Content<D, PC>,
-  __ extends NormalText__<D, PC, __>
+    D  extends AnyDocument<D>,
+    PC extends Content<D, PC>,
+    __ extends NormalText__<D, PC, __>
 > extends Normal__<D, PC, __> implements AnyTextContent<D, __> {
 
   protected NormalText__(NormalText<D, PC, ?, __, ?> element) {

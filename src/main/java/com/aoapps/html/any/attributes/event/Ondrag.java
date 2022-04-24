@@ -60,7 +60,8 @@ public interface Ondrag<E extends Element<?, ?, E> & Ondrag<E>> {
    */
   @Attributes.Funnel
   default E ondrag(Object ondrag) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ondrag");
     return Attributes.Event.attribute(element, "ondrag", ondrag);
   }
@@ -100,6 +101,6 @@ public interface Ondrag<E extends Element<?, ?, E> & Ondrag<E>> {
    * @see #ondrag(java.lang.Object)
    */
   default <Ex extends Throwable> E ondrag(JavaScriptWritable<Ex> ondrag) throws IOException, Ex {
-    return ondrag((Object)ondrag);
+    return ondrag((Object) ondrag);
   }
 }

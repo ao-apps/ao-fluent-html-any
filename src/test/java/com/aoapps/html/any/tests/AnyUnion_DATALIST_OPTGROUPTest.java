@@ -52,11 +52,11 @@ public class AnyUnion_DATALIST_OPTGROUPTest {
   @SuppressWarnings("unchecked")
   public void testUnions() {
     AnyUnionContentTest.testUnions(
-      AnyUnion_DATALIST_OPTGROUP.class
-      //
-      // Unions:
-      //
-      // NOne
+        AnyUnion_DATALIST_OPTGROUP.class
+    //
+    // Unions:
+    //
+    // NOne
     );
   }
 
@@ -64,11 +64,11 @@ public class AnyUnion_DATALIST_OPTGROUPTest {
   @SuppressWarnings("unchecked")
   public void testContentModels() {
     ContentModelTest.testContentModels(
-      AnyUnion_DATALIST_OPTGROUP.class,
-      //
-      // Content models:
-      //
-      Content.class
+        AnyUnion_DATALIST_OPTGROUP.class,
+        //
+        // Content models:
+        //
+        Content.class
     );
   }
 
@@ -76,30 +76,30 @@ public class AnyUnion_DATALIST_OPTGROUPTest {
   @SuppressWarnings("unchecked")
   public void testElementContentModels() {
     ElementContentModelTest.testElementContentModels(
-      AnyUnion_DATALIST_OPTGROUP.class
-      //
-      // Per-element content models:
-      //
-      // None
+        AnyUnion_DATALIST_OPTGROUP.class
+    //
+    // Per-element content models:
+    //
+    // None
     );
   }
 
   @Test
   public void testFactories() throws IOException {
     FactoryTestHelper.testFactories(
-      testingClass,
-      //
-      // Factories:
-      //
-      "option"
+        testingClass,
+        //
+        // Factories:
+        //
+        "option"
     );
   }
 
   @Test
   public void testNoImplementInherited() {
     Assert.assertNotEquals("Must be included in " + AnyUnionContentTest.class.getSimpleName() + ".getAllUnions()",
-      -1,
-      AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DATALIST_OPTGROUP.class)
+        -1,
+        AoArrays.indexOf(AnyUnionContentTest.getAllUnions(), AnyUnion_DATALIST_OPTGROUP.class)
     );
     InheritanceTestHelper.testNoImplementInherited(Content.class, AnyUnion_DATALIST_OPTGROUP.class);
   }

@@ -48,8 +48,8 @@ import java.util.function.Function;
  */
 // Matches CharsetHtml4Only
 public interface Charset<
-  E extends Element<?, ?, E> & Charset<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Charset<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -63,7 +63,8 @@ public interface Charset<
    */
   @Attributes.Funnel
   default E charset(String charset) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "charset");
     return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, true, true);
   }
@@ -131,7 +132,8 @@ public interface Charset<
    * @see #charset(java.lang.String)
    */
   default E charset(V charset) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return charset((charset == null) ? null : charset.apply(element.getDocument()));
   }
 

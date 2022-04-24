@@ -56,7 +56,8 @@ public interface Oncopy<E extends Element<?, ?, E> & Oncopy<E>> {
    */
   @Attributes.Funnel
   default E oncopy(Object oncopy) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "oncopy", oncopy);
   }
 
@@ -91,6 +92,6 @@ public interface Oncopy<E extends Element<?, ?, E> & Oncopy<E>> {
    * @see #oncopy(java.lang.Object)
    */
   default <Ex extends Throwable> E oncopy(JavaScriptWritable<Ex> oncopy) throws IOException, Ex {
-    return oncopy((Object)oncopy);
+    return oncopy((Object) oncopy);
   }
 }

@@ -43,7 +43,8 @@ public interface Size<E extends Element<?, ?, E> & Size<E>> {
    */
   @Attributes.Funnel
   default E size(int size) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Integer.attribute(element, "size", size);
   }
 
@@ -52,7 +53,8 @@ public interface Size<E extends Element<?, ?, E> & Size<E>> {
    */
   @Attributes.Funnel
   default E size(Integer size) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Integer.attribute(element, "size", size);
   }
 

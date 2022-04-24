@@ -45,7 +45,8 @@ public interface Readonly<E extends Element<?, ?, E> & Readonly<E>> {
    */
   @Attributes.Funnel
   default E readonly(boolean readonly) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Boolean.attribute(element, "readonly", readonly);
   }
 

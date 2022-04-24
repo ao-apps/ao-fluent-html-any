@@ -55,7 +55,8 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
    */
   @Attributes.Funnel
   default E form(Object form) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "form");
     return Attributes.Text.attribute(element, "form", MarkupType.NONE, form, true, true, textInXhtmlAttributeEncoder);
   }
@@ -89,6 +90,6 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
    * @see #form(java.lang.Object)
    */
   default <Ex extends Throwable> E form(TextWritable<Ex> form) throws IOException, Ex {
-    return form((Object)form);
+    return form((Object) form);
   }
 }

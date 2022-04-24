@@ -42,8 +42,8 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public interface Content<
-  D  extends AnyDocument<D>,
-  __ extends Content<D, __>
+    D  extends AnyDocument<D>,
+    __ extends Content<D, __>
 > extends DocumentWriter {
 
   /**
@@ -63,7 +63,8 @@ public interface Content<
   @Override
   default __ nl() throws IOException {
     getDocument().nl();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -77,7 +78,8 @@ public interface Content<
   @Override
   default __ nli() throws IOException {
     getDocument().nli();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -91,7 +93,8 @@ public interface Content<
   @Override
   default __ nli(int depthOffset) throws IOException {
     getDocument().nli(depthOffset);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -108,7 +111,8 @@ public interface Content<
   @Override
   default __ indent() throws IOException {
     getDocument().indent();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -125,7 +129,8 @@ public interface Content<
   @Override
   default __ indent(int depthOffset) throws IOException {
     getDocument().indent(depthOffset);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -157,7 +162,8 @@ public interface Content<
   @Override
   default __ setIndent(boolean indent) {
     getDocument().setIndent(indent);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -189,7 +195,8 @@ public interface Content<
   @Override
   default __ setDepth(int depth) {
     getDocument().setDepth(depth);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -206,7 +213,8 @@ public interface Content<
   @Override
   default __ incDepth() {
     getDocument().incDepth();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -223,7 +231,8 @@ public interface Content<
   @Override
   default __ decDepth() {
     getDocument().decDepth();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -237,7 +246,8 @@ public interface Content<
   @Override
   default __ sp() throws IOException {
     getDocument().sp();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -251,9 +261,11 @@ public interface Content<
   @Override
   default __ sp(int count) throws IOException {
     getDocument().sp(count);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
+
   // </editor-fold>
 
   // <editor-fold desc="DocumentWriter / Unsafe - delegate to Document" defaultstate="collapsed">
@@ -300,7 +312,8 @@ public interface Content<
   @Override
   default __ unsafe(char ch) throws IOException {
     getDocument().unsafe(ch);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -317,7 +330,8 @@ public interface Content<
   @Override
   default __ unsafe(char[] cbuf) throws IOException {
     getDocument().unsafe(cbuf);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -334,7 +348,8 @@ public interface Content<
   @Override
   default __ unsafe(char[] cbuf, int offset, int len) throws IOException {
     getDocument().unsafe(cbuf, offset, len);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -351,7 +366,8 @@ public interface Content<
   @Override
   default __ unsafe(CharSequence csq) throws IOException {
     getDocument().unsafe(csq);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -368,7 +384,8 @@ public interface Content<
   @Override
   default __ unsafe(CharSequence csq, int start, int end) throws IOException {
     getDocument().unsafe(csq, start, end);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -385,7 +402,8 @@ public interface Content<
   @Override
   default __ unsafe(Object unsafe) throws IOException {
     getDocument().unsafe(unsafe);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -402,7 +420,8 @@ public interface Content<
   @Override
   default <Ex extends Throwable> __ unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
     getDocument().unsafe(unsafe);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -419,7 +438,8 @@ public interface Content<
   @Override
   default __ unsafe(Writable unsafe) throws IOException {
     getDocument().unsafe(unsafe);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -437,6 +457,7 @@ public interface Content<
   default <W extends Writer & NoClose> W unsafe() throws IOException {
     return getDocument().unsafe();
   }
+
   // </editor-fold>
 
   // <editor-fold desc="DocumentWriter / Automatic Newline and Indentation - delegate to Document" defaultstate="collapsed">
@@ -468,7 +489,8 @@ public interface Content<
   @Override
   default __ setAutonli(boolean autonli) {
     getDocument().setAutonli(autonli);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -500,7 +522,8 @@ public interface Content<
   @Override
   default __ setAtnl() {
     getDocument().setAtnl();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -517,7 +540,8 @@ public interface Content<
   @Override
   default __ setAtnl(boolean atnl) {
     getDocument().setAtnl(atnl);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -534,7 +558,8 @@ public interface Content<
   @Override
   default __ clearAtnl() {
     getDocument().clearAtnl();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -548,7 +573,8 @@ public interface Content<
   @Override
   default __ autoNl() throws IOException {
     getDocument().autoNl();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -562,7 +588,8 @@ public interface Content<
   @Override
   default __ autoNli() throws IOException {
     getDocument().autoNli();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -576,7 +603,8 @@ public interface Content<
   @Override
   default __ autoNli(int depthOffset) throws IOException {
     getDocument().autoNli(depthOffset);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -593,7 +621,8 @@ public interface Content<
   @Override
   default __ autoIndent() throws IOException {
     getDocument().autoIndent();
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
 
@@ -610,7 +639,8 @@ public interface Content<
   @Override
   default __ autoIndent(int depthOffset) throws IOException {
     getDocument().autoIndent(depthOffset);
-    @SuppressWarnings("unchecked") __ c = (__)this;
+    @SuppressWarnings("unchecked")
+    __ c = (__) this;
     return c;
   }
   // </editor-fold>

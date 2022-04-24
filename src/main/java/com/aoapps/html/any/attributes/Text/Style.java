@@ -62,7 +62,8 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
    */
   @Attributes.Funnel
   default E style(Object style) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, true, true, styleInXhtmlAttributeEncoder);
   }
 
@@ -81,7 +82,8 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
    */
   @Attributes.Funnel
   default E style(Object ... style) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, ";", true, true, styleInXhtmlAttributeEncoder);
   }
 
@@ -120,6 +122,6 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
    * @see #style(java.lang.Object)
    */
   default <Ex extends Throwable> E style(StyleWritable<Ex> style) throws IOException, Ex {
-    return style((Object)style);
+    return style((Object) style);
   }
 }

@@ -42,20 +42,20 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyMetadataContent<
-  D  extends AnyDocument<D>,
-  __ extends AnyMetadataContent<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyMetadataContent<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-  AnyUnion_Metadata_Phrasing<D, __>
+    //
+    // Unions:
+    //
+    // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    AnyUnion_Metadata_Phrasing<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  // Inherited: AnyScriptSupportingContent<D, __>
+//
+// Content models:
+//
+// Inherited: Content<D, __>
+// Inherited: AnyScriptSupportingContent<D, __>
 {
   //
   // Factories:
@@ -86,6 +86,7 @@ public interface AnyMetadataContent<
   default __ base__(String href) throws IOException {
     return base().href(href).__();
   }
+
   // TODO: IOSupplierE version like A? (review others, too)
   // </editor-fold>
   // Inherited: LINK
@@ -157,6 +158,7 @@ public interface AnyMetadataContent<
    */
   @Factory("style")
   <Ex extends Throwable> AnySTYLE<D, __, ?> style(IOSupplierE<? extends AnySTYLE.Type, Ex> type) throws IOException, Ex;
+
   // TODO: style__() - go directly to out, since no attributes? Lambda versions, too
   // TODO: A version called HtmlWriter that extends ChainWriter to avoid all this passing of appendables?
   // TODO: html.input.style.type().print("...").__().  How far do we take this?

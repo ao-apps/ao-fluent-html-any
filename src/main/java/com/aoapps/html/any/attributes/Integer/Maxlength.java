@@ -45,7 +45,8 @@ public interface Maxlength<E extends Element<?, ?, E> & Maxlength<E>> {
    */
   @Attributes.Funnel
   default E maxlength(int maxlength) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Integer.attribute(element, "maxlength", maxlength);
   }
 
@@ -54,7 +55,8 @@ public interface Maxlength<E extends Element<?, ?, E> & Maxlength<E>> {
    */
   @Attributes.Funnel
   default E maxlength(Integer maxlength) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Integer.attribute(element, "maxlength", maxlength);
   }
 

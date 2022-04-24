@@ -36,13 +36,13 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_DIV_DL<
-  D  extends AnyDocument<D>,
-  __ extends AnyUnion_DIV_DL<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyUnion_DIV_DL<D, __>
 > extends
-  //
-  // Content models:
-  //
-  Content<D, __>
+    //
+    // Content models:
+    //
+    Content<D, __>
 {
   //
   // Factories:
@@ -140,6 +140,7 @@ public interface AnyUnion_DIV_DL<
    */
   @Factory("dd")
   AnyDD_c<D, __, ?> dd_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="DT">
   /**

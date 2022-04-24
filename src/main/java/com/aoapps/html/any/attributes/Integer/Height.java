@@ -43,7 +43,8 @@ public interface Height<E extends Element<?, ?, E> & Height<E>> {
    */
   @Attributes.Funnel
   default E height(int pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Integer.attribute(element, "height", pixels);
   }
 
@@ -52,7 +53,8 @@ public interface Height<E extends Element<?, ?, E> & Height<E>> {
    */
   @Attributes.Funnel
   default E height(Integer pixels) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Integer.attribute(element, "height", pixels);
   }
 

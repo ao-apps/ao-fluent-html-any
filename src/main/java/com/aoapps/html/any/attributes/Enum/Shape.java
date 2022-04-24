@@ -41,8 +41,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Shape<
-  E extends Element<?, ?, E> & Shape<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Shape<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -50,7 +50,8 @@ public interface Shape<
    */
   @Attributes.Funnel
   default E shape(String shape) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "shape", MarkupType.NONE, shape, true, true);
   }
 
@@ -72,7 +73,8 @@ public interface Shape<
    * @see #shape(java.lang.String)
    */
   default E shape(V shape) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return shape((shape == null) ? null : shape.apply(element.getDocument()));
   }
 

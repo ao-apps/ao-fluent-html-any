@@ -47,8 +47,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Wrap<
-  E extends Element<?, ?, E> & Wrap<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Wrap<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -89,13 +89,13 @@ public interface Wrap<
      */
     public static ValidationResult validate(String wrap) {
       if (
-        wrap != null
-        && Wrap.Value.getByValue(wrap) == null
+          wrap != null
+              && Wrap.Value.getByValue(wrap) == null
       ) {
         return new InvalidResult(
-          RESOURCES,
-          "Enum.Wrap.invalid",
-          wrap
+            RESOURCES,
+            "Enum.Wrap.invalid",
+            wrap
         );
       } else {
         return ValidResult.getInstance();
@@ -108,17 +108,18 @@ public interface Wrap<
    */
   @Attributes.Funnel
   default E wrap(String wrap) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(
-      element,
-      "wrap",
-      MarkupType.NONE,
-      Attributes.validate(
-        Wrap.wrap.normalize(wrap),
-        Wrap.wrap::validate
-      ),
-      false,
-      false
+        element,
+        "wrap",
+        MarkupType.NONE,
+        Attributes.validate(
+            Wrap.wrap.normalize(wrap),
+            Wrap.wrap::validate
+        ),
+        false,
+        false
     );
   }
 
@@ -140,7 +141,8 @@ public interface Wrap<
    * @see #wrap(java.lang.String)
    */
   default E wrap(V wrap) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return wrap((wrap == null) ? null : wrap.apply(element.getDocument()));
   }
 

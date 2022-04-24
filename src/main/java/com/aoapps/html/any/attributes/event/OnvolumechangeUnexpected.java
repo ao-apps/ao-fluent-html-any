@@ -70,7 +70,8 @@ public interface OnvolumechangeUnexpected<E extends Element<?, ?, E> & Onvolumec
   @Deprecated
   @Attributes.Funnel
   default E onvolumechange(Object onvolumechange) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onvolumechange");
     return Attributes.Event.attribute(element, "onvolumechange", onvolumechange);
   }
@@ -118,6 +119,6 @@ public interface OnvolumechangeUnexpected<E extends Element<?, ?, E> & Onvolumec
    */
   @Deprecated
   default <Ex extends Throwable> E onvolumechange(JavaScriptWritable<Ex> onvolumechange) throws IOException, Ex {
-    return onvolumechange((Object)onvolumechange);
+    return onvolumechange((Object) onvolumechange);
   }
 }

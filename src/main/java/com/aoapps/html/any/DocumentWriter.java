@@ -86,6 +86,7 @@ public interface DocumentWriter extends Whitespace {
 
   @Override
   DocumentWriter sp(int count) throws IOException;
+
   // </editor-fold>
 
   // <editor-fold desc="Unsafe - definition" defaultstate="collapsed">
@@ -240,6 +241,7 @@ public interface DocumentWriter extends Whitespace {
    */
   @Deprecated
   <W extends Writer & NoClose> W unsafe() throws IOException;
+
   // </editor-fold>
 
   // <editor-fold desc="Automatic Newline and Indentation - definition" defaultstate="collapsed">

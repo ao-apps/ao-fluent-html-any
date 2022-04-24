@@ -47,7 +47,8 @@ public interface Ononline<E extends Element<?, ?, E> & Ononline<E>> {
    */
   @Attributes.Funnel
   default E ononline(Object ononline) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ononline");
     return Attributes.Event.attribute(element, "ononline", ononline);
   }
@@ -75,6 +76,6 @@ public interface Ononline<E extends Element<?, ?, E> & Ononline<E>> {
    * @see #ononline(java.lang.Object)
    */
   default <Ex extends Throwable> E ononline(JavaScriptWritable<Ex> ononline) throws IOException, Ex {
-    return ononline((Object)ononline);
+    return ononline((Object) ononline);
   }
 }

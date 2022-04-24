@@ -56,7 +56,8 @@ public interface Onfocus<E extends Element<?, ?, E> & Onfocus<E>> {
    */
   @Attributes.Funnel
   default E onfocus(Object onfocus) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onfocus", onfocus);
   }
 
@@ -91,6 +92,6 @@ public interface Onfocus<E extends Element<?, ?, E> & Onfocus<E>> {
    * @see #onfocus(java.lang.Object)
    */
   default <Ex extends Throwable> E onfocus(JavaScriptWritable<Ex> onfocus) throws IOException, Ex {
-    return onfocus((Object)onfocus);
+    return onfocus((Object) onfocus);
   }
 }

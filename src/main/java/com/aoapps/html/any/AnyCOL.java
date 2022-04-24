@@ -42,17 +42,17 @@ import java.util.function.Function;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyCOL<
-  D  extends AnyDocument<D>,
-  PC extends AnyCOLGROUP_content<D, PC>,
-  E  extends AnyCOL<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends AnyCOLGROUP_content<D, PC>,
+    E  extends AnyCOL<D, PC, E>
 > extends Void<D, PC, E> implements
-  com.aoapps.html.any.attributes.Enum.Align<E, AnyCOL.Align>,
-  // TODO: bgcolor (deprecated)
-  // TODO: char (deprecated)
-  // TODO: charoff (deprecated)
-  com.aoapps.html.any.attributes.Integer.Span<E>,
-  com.aoapps.html.any.attributes.Enum.Valign<E, AnyCOL.Valign>,
-  com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
+    com.aoapps.html.any.attributes.Enum.Align<E, AnyCOL.Align>,
+    // TODO: bgcolor (deprecated)
+    // TODO: char (deprecated)
+    // TODO: charoff (deprecated)
+    com.aoapps.html.any.attributes.Integer.Span<E>,
+    com.aoapps.html.any.attributes.Enum.Valign<E, AnyCOL.Valign>,
+    com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
 {
 
   protected AnyCOL(D document, PC pc) {
@@ -62,7 +62,8 @@ public abstract class AnyCOL<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<col", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

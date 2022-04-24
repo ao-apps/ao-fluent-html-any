@@ -36,20 +36,20 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public interface AnyOPTGROUP_content<
-  D  extends AnyDocument<D>,
-  __ extends AnyOPTGROUP_content<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyOPTGROUP_content<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-  AnyUnion_DATALIST_OPTGROUP<D, __>,
+    //
+    // Unions:
+    //
+    // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    AnyUnion_DATALIST_OPTGROUP<D, __>,
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  AnyScriptSupportingContent<D, __>
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    AnyScriptSupportingContent<D, __>
 {
   //
   // Factories:

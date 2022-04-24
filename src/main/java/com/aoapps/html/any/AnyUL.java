@@ -42,12 +42,12 @@ import java.io.Writer;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyUL<
-  D  extends AnyDocument<D>,
-  PC extends AnyPalpableContent<D, PC>,
-  E  extends AnyUL<D, PC, E, __, _c>,
-  __ extends AnyUL__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyUL_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyPalpableContent<D, PC>,
+    E  extends AnyUL<D, PC, E, __, _c>,
+    __ extends AnyUL__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyUL_c<D, PC, _c>
 > extends Normal<D, PC, E, __, _c> {
 
   protected AnyUL(D document, PC pc) {
@@ -57,7 +57,8 @@ public abstract class AnyUL<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<ul", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

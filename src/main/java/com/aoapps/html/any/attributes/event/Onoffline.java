@@ -47,7 +47,8 @@ public interface Onoffline<E extends Element<?, ?, E> & Onoffline<E>> {
    */
   @Attributes.Funnel
   default E onoffline(Object onoffline) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onoffline");
     return Attributes.Event.attribute(element, "onoffline", onoffline);
   }
@@ -75,6 +76,6 @@ public interface Onoffline<E extends Element<?, ?, E> & Onoffline<E>> {
    * @see #onoffline(java.lang.Object)
    */
   default <Ex extends Throwable> E onoffline(JavaScriptWritable<Ex> onoffline) throws IOException, Ex {
-    return onoffline((Object)onoffline);
+    return onoffline((Object) onoffline);
   }
 }

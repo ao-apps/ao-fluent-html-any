@@ -70,7 +70,8 @@ public interface OntimeupdateUnexpected<E extends Element<?, ?, E> & Ontimeupdat
   @Deprecated
   @Attributes.Funnel
   default E ontimeupdate(Object ontimeupdate) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ontimeupdate");
     return Attributes.Event.attribute(element, "ontimeupdate", ontimeupdate);
   }
@@ -118,6 +119,6 @@ public interface OntimeupdateUnexpected<E extends Element<?, ?, E> & Ontimeupdat
    */
   @Deprecated
   default <Ex extends Throwable> E ontimeupdate(JavaScriptWritable<Ex> ontimeupdate) throws IOException, Ex {
-    return ontimeupdate((Object)ontimeupdate);
+    return ontimeupdate((Object) ontimeupdate);
   }
 }

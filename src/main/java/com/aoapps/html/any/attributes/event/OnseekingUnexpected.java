@@ -70,7 +70,8 @@ public interface OnseekingUnexpected<E extends Element<?, ?, E> & OnseekingUnexp
   @Deprecated
   @Attributes.Funnel
   default E onseeking(Object onseeking) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onseeking");
     return Attributes.Event.attribute(element, "onseeking", onseeking);
   }
@@ -118,6 +119,6 @@ public interface OnseekingUnexpected<E extends Element<?, ?, E> & OnseekingUnexp
    */
   @Deprecated
   default <Ex extends Throwable> E onseeking(JavaScriptWritable<Ex> onseeking) throws IOException, Ex {
-    return onseeking((Object)onseeking);
+    return onseeking((Object) onseeking);
   }
 }

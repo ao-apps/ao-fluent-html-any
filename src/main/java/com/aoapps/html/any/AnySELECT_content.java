@@ -40,25 +40,25 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnySELECT_content<
-  D  extends AnyDocument<D>,
-  __ extends AnySELECT_content<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnySELECT_content<D, __>
 > extends
-  //
-  // Unions:
-  //
-  // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-  // Inherited: AnyUnion_DATALIST_OPTGROUP<D, __>
+    //
+    // Unions:
+    //
+    // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    // Inherited: AnyUnion_DATALIST_OPTGROUP<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
-  // Inherited: AnyScriptSupportingContent<D, __>
+    //
+    // Content models:
+    //
+    // Inherited: Content<D, __>
+    // Inherited: AnyScriptSupportingContent<D, __>
 
-  //
-  // Per-element content models:
-  //
-  AnyOPTGROUP_content<D, __>
+    //
+    // Per-element content models:
+    //
+    AnyOPTGROUP_content<D, __>
 {
   //
   // Factories:

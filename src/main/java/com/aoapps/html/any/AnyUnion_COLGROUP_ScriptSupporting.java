@@ -34,13 +34,13 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_COLGROUP_ScriptSupporting<
-  D  extends AnyDocument<D>,
-  __ extends AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyUnion_COLGROUP_ScriptSupporting<D, __>
 > extends
-  //
-  // Content models:
-  //
-  Content<D, __>
+    //
+    // Content models:
+    //
+    Content<D, __>
 {
   //
   // Factories:

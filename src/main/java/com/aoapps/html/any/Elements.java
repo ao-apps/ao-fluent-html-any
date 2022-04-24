@@ -52,10 +52,10 @@ final class Elements {
     Doctype doctype = document.encodingContext.getDoctype();
     if (doctype != Doctype.HTML5) {
       throw new LocalizedUnsupportedOperationException(
-        RESOURCES,
-        "onlySupportedInHtml5",
-        doctype,
-        element
+          RESOURCES,
+          "onlySupportedInHtml5",
+          doctype,
+          element
       );
     }
   }

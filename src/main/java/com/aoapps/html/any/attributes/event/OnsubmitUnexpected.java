@@ -69,7 +69,8 @@ public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpec
   @Deprecated
   @Attributes.Funnel
   default E onsubmit(Object onsubmit) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onsubmit");
     return Attributes.Event.attribute(element, "onsubmit", onsubmit);
   }
@@ -117,6 +118,6 @@ public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpec
    */
   @Deprecated
   default <Ex extends Throwable> E onsubmit(JavaScriptWritable<Ex> onsubmit) throws IOException, Ex {
-    return onsubmit((Object)onsubmit);
+    return onsubmit((Object) onsubmit);
   }
 }

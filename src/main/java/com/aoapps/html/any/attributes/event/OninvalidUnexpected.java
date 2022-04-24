@@ -71,7 +71,8 @@ public interface OninvalidUnexpected<E extends Element<?, ?, E> & OninvalidUnexp
   @Deprecated
   @Attributes.Funnel
   default E oninvalid(Object oninvalid) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "oninvalid");
     return Attributes.Event.attribute(element, "oninvalid", oninvalid);
   }
@@ -121,6 +122,6 @@ public interface OninvalidUnexpected<E extends Element<?, ?, E> & OninvalidUnexp
    */
   @Deprecated
   default <Ex extends Throwable> E oninvalid(JavaScriptWritable<Ex> oninvalid) throws IOException, Ex {
-    return oninvalid((Object)oninvalid);
+    return oninvalid((Object) oninvalid);
   }
 }

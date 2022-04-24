@@ -38,18 +38,18 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface AnyUnion_Interactive_Phrasing<
-  D  extends AnyDocument<D>,
-  __ extends AnyUnion_Interactive_Phrasing<D, __>
+    D  extends AnyDocument<D>,
+    __ extends AnyUnion_Interactive_Phrasing<D, __>
 > extends
-  //
-  // Unions:
-  //
-  AnyUnion_Embedded_Interactive<D, __>
+    //
+    // Unions:
+    //
+    AnyUnion_Embedded_Interactive<D, __>
 
-  //
-  // Content models:
-  //
-  // Inherited: Content<D, __>
+//
+// Content models:
+//
+// Inherited: Content<D, __>
 {
   //
   // Factories:
@@ -193,6 +193,7 @@ public interface AnyUnion_Interactive_Phrasing<
    */
   @Factory("a")
   AnyA_c<D, __, ?> a_c() throws IOException;
+
   // </editor-fold>
   // Inherited: AUDIO
   // <editor-fold defaultstate="collapsed" desc="BUTTON">
@@ -209,6 +210,7 @@ public interface AnyUnion_Interactive_Phrasing<
   default AnyBUTTON button() throws IOException {
     throw new AssertionError("TODO: Implement button");
   }
+
   // </editor-fold>
   // Inherited: EMBED
   // <editor-fold defaultstate="collapsed" desc="INPUT">
@@ -224,8 +226,8 @@ public interface AnyUnion_Interactive_Phrasing<
    * @param  <__>  This content model, which will be the parent content model of child elements
    */
   public abstract static class InputFactory<
-    D  extends AnyDocument<D>,
-    __ extends AnyUnion_Interactive_Phrasing<D, __>
+      D  extends AnyDocument<D>,
+      __ extends AnyUnion_Interactive_Phrasing<D, __>
   > {
 
     protected final D document;
@@ -575,6 +577,7 @@ public interface AnyUnion_Interactive_Phrasing<
    */
   @Factory("input")
   InputFactory<D, __> input();
+
   // </editor-fold>
   // Inherited: IFRAME
   // Inherited: IMG
@@ -673,6 +676,7 @@ public interface AnyUnion_Interactive_Phrasing<
    */
   @Factory("label")
   AnyLABEL_c<D, __, ?> label_c() throws IOException;
+
   // </editor-fold>
   // Inherited: OBJECT
   // <editor-fold defaultstate="collapsed" desc="SELECT">
@@ -753,6 +757,7 @@ public interface AnyUnion_Interactive_Phrasing<
    */
   @Factory("select")
   AnySELECT_c<D, __, ?> select_c() throws IOException;
+
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="TEXTAREA">
   /**

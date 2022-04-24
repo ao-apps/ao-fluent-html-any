@@ -46,7 +46,8 @@ public interface For<E extends Element<?, ?, E> & For<E>> {
   // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
   @Attributes.Funnel
   default E forAttr(Object forAttr) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "for", MarkupType.NONE, forAttr, true, true, textInXhtmlAttributeEncoder);
   }
 
@@ -71,6 +72,6 @@ public interface For<E extends Element<?, ?, E> & For<E>> {
    */
   // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
   default <Ex extends Throwable> E forAttr(TextWritable<Ex> forAttr) throws IOException, Ex {
-    return forAttr((Object)forAttr);
+    return forAttr((Object) forAttr);
   }
 }

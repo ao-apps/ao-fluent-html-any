@@ -47,7 +47,8 @@ public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
    */
   @Attributes.Funnel
   default E onafterprint(Object onafterprint) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onafterprint");
     return Attributes.Event.attribute(element, "onafterprint", onafterprint);
   }
@@ -75,6 +76,6 @@ public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
    * @see #onafterprint(java.lang.Object)
    */
   default <Ex extends Throwable> E onafterprint(JavaScriptWritable<Ex> onafterprint) throws IOException, Ex {
-    return onafterprint((Object)onafterprint);
+    return onafterprint((Object) onafterprint);
   }
 }

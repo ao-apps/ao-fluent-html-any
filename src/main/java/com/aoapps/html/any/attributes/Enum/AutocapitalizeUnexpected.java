@@ -85,7 +85,8 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
   @Deprecated
   @Attributes.Funnel
   default E autocapitalize(String autocapitalize) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "autocapitalize");
     return Attributes.String.attribute(element, "autocapitalize", MarkupType.NONE, autocapitalize, true, true);
   }
@@ -138,7 +139,8 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
    */
   @Deprecated
   default E autocapitalize(Autocapitalize.Value autocapitalize) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return autocapitalize((autocapitalize == null) ? null : autocapitalize.apply(element.getDocument()));
   }
 

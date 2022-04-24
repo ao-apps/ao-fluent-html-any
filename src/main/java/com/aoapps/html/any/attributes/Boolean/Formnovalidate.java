@@ -56,7 +56,8 @@ public interface Formnovalidate<E extends Element<?, ?, E> & Formnovalidate<E>> 
    */
   @Attributes.Funnel
   default E formnovalidate(boolean formnovalidate) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "formnovalidate");
     return Attributes.Boolean.attribute(element, "formnovalidate", formnovalidate);
   }

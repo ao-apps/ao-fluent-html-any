@@ -39,12 +39,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyNAV__<
-  D  extends AnyDocument<D>,
-  PC extends AnySectioningContent<D, PC>,
-  __ extends AnyNAV__<D, PC, __>
+    D  extends AnyDocument<D>,
+    PC extends AnySectioningContent<D, PC>,
+    __ extends AnyNAV__<D, PC, __>
 >
-  extends NormalText__<D, PC, __>
-  implements AnyFlowContent<D, __> {
+    extends NormalText__<D, PC, __>
+    implements AnyFlowContent<D, __> {
 
   protected AnyNAV__(AnyNAV<D, PC, ?, __, ?> element) {
     super(element);

@@ -41,8 +41,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Rel<
-  E extends Element<?, ?, E> & Rel<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Rel<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -50,7 +50,8 @@ public interface Rel<
    */
   @Attributes.Funnel
   default E rel(String rel) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.String.attribute(element, "rel", MarkupType.NONE, rel, true, true);
   }
 
@@ -72,7 +73,8 @@ public interface Rel<
    * @see #rel(java.lang.String)
    */
   default E rel(V rel) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return rel((rel == null) ? null : rel.apply(element.getDocument()));
   }
 

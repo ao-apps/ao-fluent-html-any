@@ -41,8 +41,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Name<
-  E extends Element<?, ?, E> & Name<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Name<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -50,7 +50,8 @@ public interface Name<
    */
   @Attributes.Funnel
   default E name(String name) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     // TODO: Is nullIfEmpty correct?  Is an empty name ever valid?
     return Attributes.String.attribute(element, "name", MarkupType.NONE, name, true, true);
   }
@@ -73,7 +74,8 @@ public interface Name<
    * @see #name(java.lang.String)
    */
   default E name(V name) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return name((name == null) ? null : name.apply(element.getDocument()));
   }
 

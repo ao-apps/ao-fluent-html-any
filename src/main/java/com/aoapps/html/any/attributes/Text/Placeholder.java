@@ -49,7 +49,8 @@ public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
    */
   @Attributes.Funnel
   default E placeholder(Object placeholder) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "placeholder");
     return Attributes.Text.attribute(element, "placeholder", MarkupType.TEXT, placeholder, false, true, textInXhtmlAttributeEncoder);
   }
@@ -77,6 +78,6 @@ public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
    * @see #placeholder(java.lang.Object)
    */
   default <Ex extends Throwable> E placeholder(TextWritable<Ex> placeholder) throws IOException, Ex {
-    return placeholder((Object)placeholder);
+    return placeholder((Object) placeholder);
   }
 }

@@ -35,8 +35,8 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 public interface Closeable<
-  D  extends AnyDocument<D>,
-  PC extends Content<D, PC>
+    D  extends AnyDocument<D>,
+    PC extends Content<D, PC>
 > extends java.io.Closeable {
 
   /**

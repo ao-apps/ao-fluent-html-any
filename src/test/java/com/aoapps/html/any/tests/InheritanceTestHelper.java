@@ -45,11 +45,11 @@ public final class InheritanceTestHelper {
   }
 
   public static <C extends Content> void testInterfaces(
-    Class<C> testFromClazz,
-    Predicate<? super Class<? extends C>> filter,
-    Class<? extends C>[] all,
-    Class<? extends C> clazz,
-    Class<? extends C> ... expected
+      Class<C> testFromClazz,
+      Predicate<? super Class<? extends C>> filter,
+      Class<? extends C>[] all,
+      Class<? extends C> clazz,
+      Class<? extends C> ... expected
   ) {
     // Check parameters
     for (Class<? extends C> iface : expected) {
@@ -59,8 +59,8 @@ public final class InheritanceTestHelper {
     // First make sure has all the expected
     for (Class<? extends C> iface : expected) {
       Assert.assertTrue(
-        clazz.getSimpleName() + " must be assignable to " + iface.getSimpleName(),
-        iface.isAssignableFrom(clazz)
+          clazz.getSimpleName() + " must be assignable to " + iface.getSimpleName(),
+          iface.isAssignableFrom(clazz)
       );
     }
     // Next make sure no unexpected by pattern
@@ -70,9 +70,9 @@ public final class InheritanceTestHelper {
         Assert.assertTrue(iface.isInterface());
         if (filter.test(iface)) {
           Assert.assertNotEquals(
-            clazz.getSimpleName() + " may not implement " + iface.getSimpleName(),
-            -1,
-            AoArrays.indexOf(expected, iface)
+              clazz.getSimpleName() + " may not implement " + iface.getSimpleName(),
+              -1,
+              AoArrays.indexOf(expected, iface)
           );
         }
       }
@@ -81,8 +81,8 @@ public final class InheritanceTestHelper {
     for (Class<? extends C> iface : all) {
       if (iface != clazz && AoArrays.indexOf(expected, iface) == -1) {
         Assert.assertFalse(
-          clazz.getSimpleName() + " may not be assignable to " + iface.getSimpleName(),
-          iface.isAssignableFrom(clazz)
+            clazz.getSimpleName() + " may not be assignable to " + iface.getSimpleName(),
+            iface.isAssignableFrom(clazz)
         );
       }
     }
@@ -108,8 +108,8 @@ public final class InheritanceTestHelper {
         Class<? extends C> contentIface = iface.asSubclass(testFromClazz);
         //System.out.println("Direct interface: " + contentIface);
         Assert.assertFalse(
-          clazz.getSimpleName() + " may not both directly implement and inherit " + contentIface.getSimpleName() + " - comment-out direct implements to be inherited-only.",
-          inherited.contains(contentIface)
+            clazz.getSimpleName() + " may not both directly implement and inherit " + contentIface.getSimpleName() + " - comment-out direct implements to be inherited-only.",
+            inherited.contains(contentIface)
         );
         testNoImplementInherited(testFromClazz, contentIface);
       }

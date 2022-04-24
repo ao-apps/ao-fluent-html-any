@@ -39,12 +39,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyDATALIST_c<
-  D  extends AnyDocument<D>,
-  PC extends AnyPhrasingContent<D, PC>,
-  _c extends AnyDATALIST_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyPhrasingContent<D, PC>,
+    _c extends AnyDATALIST_c<D, PC, _c>
 >
-  extends NormalText_c<D, PC, _c>
-  implements AnyDATALIST_content<D, _c> {
+    extends NormalText_c<D, PC, _c>
+    implements AnyDATALIST_content<D, _c> {
 
   protected AnyDATALIST_c(AnyDATALIST<D, PC, ?, ?, _c> element) {
     super(element);

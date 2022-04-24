@@ -56,7 +56,8 @@ public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
    */
   @Attributes.Funnel
   default E onscroll(Object onscroll) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onscroll", onscroll);
   }
 
@@ -91,6 +92,6 @@ public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
    * @see #onscroll(java.lang.Object)
    */
   default <Ex extends Throwable> E onscroll(JavaScriptWritable<Ex> onscroll) throws IOException, Ex {
-    return onscroll((Object)onscroll);
+    return onscroll((Object) onscroll);
   }
 }

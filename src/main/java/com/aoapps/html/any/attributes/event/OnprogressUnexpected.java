@@ -70,7 +70,8 @@ public interface OnprogressUnexpected<E extends Element<?, ?, E> & OnprogressUne
   @Deprecated
   @Attributes.Funnel
   default E onprogress(Object onprogress) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onprogress");
     return Attributes.Event.attribute(element, "onprogress", onprogress);
   }
@@ -118,6 +119,6 @@ public interface OnprogressUnexpected<E extends Element<?, ?, E> & OnprogressUne
    */
   @Deprecated
   default <Ex extends Throwable> E onprogress(JavaScriptWritable<Ex> onprogress) throws IOException, Ex {
-    return onprogress((Object)onprogress);
+    return onprogress((Object) onprogress);
   }
 }

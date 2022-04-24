@@ -60,7 +60,8 @@ public interface Ondragover<E extends Element<?, ?, E> & Ondragover<E>> {
    */
   @Attributes.Funnel
   default E ondragover(Object ondragover) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "ondragover");
     return Attributes.Event.attribute(element, "ondragover", ondragover);
   }
@@ -100,6 +101,6 @@ public interface Ondragover<E extends Element<?, ?, E> & Ondragover<E>> {
    * @see #ondragover(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragover(JavaScriptWritable<Ex> ondragover) throws IOException, Ex {
-    return ondragover((Object)ondragover);
+    return ondragover((Object) ondragover);
   }
 }

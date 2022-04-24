@@ -47,7 +47,8 @@ public interface Onpageshow<E extends Element<?, ?, E> & Onpageshow<E>> {
    */
   @Attributes.Funnel
   default E onpageshow(Object onpageshow) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onpageshow");
     return Attributes.Event.attribute(element, "onpageshow", onpageshow);
   }
@@ -75,6 +76,6 @@ public interface Onpageshow<E extends Element<?, ?, E> & Onpageshow<E>> {
    * @see #onpageshow(java.lang.Object)
    */
   default <Ex extends Throwable> E onpageshow(JavaScriptWritable<Ex> onpageshow) throws IOException, Ex {
-    return onpageshow((Object)onpageshow);
+    return onpageshow((Object) onpageshow);
   }
 }

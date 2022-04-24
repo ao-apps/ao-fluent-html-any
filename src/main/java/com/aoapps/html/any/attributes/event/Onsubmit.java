@@ -59,7 +59,8 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends Onsu
   @Attributes.Funnel
   default E onsubmit(Object onsubmit) throws IOException {
     // Not calling super: overridden to support HTML 4
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Event.attribute(element, "onsubmit", onsubmit);
   }
 

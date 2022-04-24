@@ -48,8 +48,8 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public interface Capture<
-  E extends Element<?, ?, E> & Capture<E, V>,
-  V extends Enum<V> & Function<? super AnyDocument<?>, String>
+    E extends Element<?, ?, E> & Capture<E, V>,
+    V extends Enum<V> & Function<? super AnyDocument<?>, String>
 > {
 
   /**
@@ -64,7 +64,8 @@ public interface Capture<
    */
   @Attributes.Funnel
   default E capture(String capture) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "capture");
     return Attributes.String.attribute(element, "capture", MarkupType.NONE, capture, true, true);
   }
@@ -101,7 +102,8 @@ public interface Capture<
    * @see #capture(java.lang.String)
    */
   default E capture(V capture) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return capture((capture == null) ? null : capture.apply(element.getDocument()));
   }
 

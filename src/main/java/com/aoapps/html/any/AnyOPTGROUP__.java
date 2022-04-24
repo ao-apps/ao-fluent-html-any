@@ -37,12 +37,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyOPTGROUP__<
-  D  extends AnyDocument<D>,
-  PC extends AnySELECT_content<D, PC>,
-  __ extends AnyOPTGROUP__<D, PC, __>
+    D  extends AnyDocument<D>,
+    PC extends AnySELECT_content<D, PC>,
+    __ extends AnyOPTGROUP__<D, PC, __>
 >
-  extends Normal__<D, PC, __>
-  implements AnyOPTGROUP_content<D, __> {
+    extends Normal__<D, PC, __>
+    implements AnyOPTGROUP_content<D, __> {
 
   protected AnyOPTGROUP__(AnyOPTGROUP<D, PC, ?, __, ?> element) {
     super(element);

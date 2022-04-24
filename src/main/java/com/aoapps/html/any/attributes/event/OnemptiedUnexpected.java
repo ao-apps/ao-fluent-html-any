@@ -68,7 +68,8 @@ public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexp
   @Deprecated
   @Attributes.Funnel
   default E onemptied(Object onemptied) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "onemptied");
     return Attributes.Event.attribute(element, "onemptied", onemptied);
   }
@@ -114,6 +115,6 @@ public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexp
    */
   @Deprecated
   default <Ex extends Throwable> E onemptied(JavaScriptWritable<Ex> onemptied) throws IOException, Ex {
-    return onemptied((Object)onemptied);
+    return onemptied((Object) onemptied);
   }
 }

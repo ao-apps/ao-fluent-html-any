@@ -42,7 +42,8 @@ public interface Disabled<E extends Element<?, ?, E> & Disabled<E>> {
    */
   @Attributes.Funnel
   default E disabled(boolean disabled) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Boolean.attribute(element, "disabled", disabled);
   }
 

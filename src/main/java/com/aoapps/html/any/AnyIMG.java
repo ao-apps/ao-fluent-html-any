@@ -42,29 +42,29 @@ import java.util.function.Function;
  */
 @SuppressWarnings("deprecation")
 public abstract class AnyIMG<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Embedded_Interactive<D, PC>,
-  E  extends AnyIMG<D, PC, E>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Embedded_Interactive<D, PC>,
+    E  extends AnyIMG<D, PC, E>
 > extends Void<D, PC, E> implements
-  com.aoapps.html.any.attributes.Enum.Align<E, AnyIMG.Align>,
-  com.aoapps.html.any.attributes.Text.Alt<E>,
-  // TODO: border
-  // TODO: crossorigin
-  com.aoapps.html.any.attributes.Integer.Height<E>,
-  // TODO: hspace
-  com.aoapps.html.any.attributes.Boolean.Ismap<E>,
-  // TODO: longdesc
-  // TODO: sizes
-  com.aoapps.html.any.attributes.Url.Src<E>,
-  // TODO: srcset
-  com.aoapps.html.any.attributes.Text.Usemap<E>,
-  // TODO: vspace
-  com.aoapps.html.any.attributes.Integer.Width<E>,
-  // TODO: More events
-  // Global Event Attributes overrides
-  com.aoapps.html.any.attributes.event.Onabort<E>,
-  com.aoapps.html.any.attributes.event.Onerror<E>,
-  com.aoapps.html.any.attributes.event.Onload<E>
+    com.aoapps.html.any.attributes.Enum.Align<E, AnyIMG.Align>,
+    com.aoapps.html.any.attributes.Text.Alt<E>,
+    // TODO: border
+    // TODO: crossorigin
+    com.aoapps.html.any.attributes.Integer.Height<E>,
+    // TODO: hspace
+    com.aoapps.html.any.attributes.Boolean.Ismap<E>,
+    // TODO: longdesc
+    // TODO: sizes
+    com.aoapps.html.any.attributes.Url.Src<E>,
+    // TODO: srcset
+    com.aoapps.html.any.attributes.Text.Usemap<E>,
+    // TODO: vspace
+    com.aoapps.html.any.attributes.Integer.Width<E>,
+    // TODO: More events
+    // Global Event Attributes overrides
+    com.aoapps.html.any.attributes.event.Onabort<E>,
+    com.aoapps.html.any.attributes.event.Onerror<E>,
+    com.aoapps.html.any.attributes.event.Onload<E>
 {
 
   protected AnyIMG(D document, PC pc) {
@@ -74,7 +74,8 @@ public abstract class AnyIMG<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<img", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

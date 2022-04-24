@@ -137,7 +137,7 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
      * @deprecated  Please use {@link #NONE} as it is more descriptive
      */
     @Deprecated
-    OFF("off"),
+      OFF("off"),
 
     /**
      * No autocapitalization is applied (all letters default to lowercase)
@@ -150,7 +150,7 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
      * @deprecated  Please use {@link #SENTENCES} as it is more descriptive
      */
     @Deprecated
-    ON("on"),
+        ON("on"),
 
     /**
      * The first letter of each sentence defaults to a capital letter; all other letters default to lowercase

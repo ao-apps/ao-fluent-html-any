@@ -47,7 +47,8 @@ public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
    */
   @Attributes.Funnel
   default E hreflang(Object hreflang) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return Attributes.Text.attribute(element, "hreflang", MarkupType.NONE, hreflang, true, true, textInXhtmlAttributeEncoder);
   }
 
@@ -92,6 +93,6 @@ public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
    * @see #hreflang(java.lang.Object)
    */
   default <Ex extends Throwable> E hreflang(TextWritable<Ex> hreflang) throws IOException, Ex {
-    return hreflang((Object)hreflang);
+    return hreflang((Object) hreflang);
   }
 }

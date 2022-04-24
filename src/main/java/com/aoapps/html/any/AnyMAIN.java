@@ -45,12 +45,12 @@ import java.io.Writer;
  */
 // TODO: Where flow content is expected, but only if it is a hierarchically correct main element.
 public abstract class AnyMAIN<
-  D  extends AnyDocument<D>,
-  PC extends AnyPalpableContent<D, PC>,
-  E  extends AnyMAIN<D, PC, E, __, _c>,
-  __ extends AnyMAIN__<D, PC, __>,
-  // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
-  _c extends AnyMAIN_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyPalpableContent<D, PC>,
+    E  extends AnyMAIN<D, PC, E, __, _c>,
+    __ extends AnyMAIN__<D, PC, __>,
+    // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
+    _c extends AnyMAIN_c<D, PC, _c>
 > extends NormalText<D, PC, E, __, _c> {
 
   protected AnyMAIN(D document, PC pc) {
@@ -61,7 +61,8 @@ public abstract class AnyMAIN<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<main", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 

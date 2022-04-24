@@ -52,7 +52,8 @@ public interface Required<E extends Element<?, ?, E> & Required<E>> {
    */
   @Attributes.Funnel
   default E required(boolean required) throws IOException {
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     Attributes.onlySupportedInHtml5(element, "required");
     return Attributes.Boolean.attribute(element, "required", required);
   }

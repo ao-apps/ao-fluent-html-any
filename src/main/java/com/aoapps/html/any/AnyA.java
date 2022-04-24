@@ -46,25 +46,25 @@ import java.util.function.Function;
 // TODO: Transparent, but there must be no interactive content descendent, a element descendent, or descendent with
 //       the tabindex attribute specified.
 public abstract class AnyA<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-  E  extends AnyA<D, PC, E, _c>,
-  _c extends AnyA_c<D, PC, _c>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+    E  extends AnyA<D, PC, E, _c>,
+    _c extends AnyA_c<D, PC, _c>
 > extends Transparent<D, PC, E, _c> implements
-  com.aoapps.html.any.attributes.Url.Href<E>,
-  com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
-  // TODO: download
-  // TODO: ping
-  com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
-  com.aoapps.html.any.attributes.Text.Hreflang<E>,
-  // TODO: type
-  // TODO: referrerpolicy
-  // Global Attributes overrides
-  com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
+    com.aoapps.html.any.attributes.Url.Href<E>,
+    com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
+    // TODO: download
+    // TODO: ping
+    com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
+    com.aoapps.html.any.attributes.Text.Hreflang<E>,
+    // TODO: type
+    // TODO: referrerpolicy
+    // Global Attributes overrides
+    com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
 {
 
   private static final com.aoapps.lang.i18n.Resources RESOURCES =
-    com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyA.class);
+      com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyA.class);
 
   protected AnyA(D document, PC pc) {
     super(document, pc);
@@ -73,7 +73,8 @@ public abstract class AnyA<
   @Override
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<a", false);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked")
+    E element = (E) this;
     return element;
   }
 
@@ -126,7 +127,7 @@ public abstract class AnyA<
      * @deprecated
      */
     @Deprecated
-    ARCHIVES("archives"), // MDN only
+        ARCHIVES("archives"), // MDN only
     AUTHOR("author"), // w3schools, MDN only
     BOOKMARK("bookmark"),
     EXTERNAL("external"),
@@ -134,18 +135,18 @@ public abstract class AnyA<
      * @deprecated
      */
     @Deprecated
-    FIRST("first"), // MDN only
+        FIRST("first"), // MDN only
     HELP("help"), // w3schools, MDN only
     /**
      * @deprecated
      */
     @Deprecated
-    INDEX("index"), // MDN only
+        INDEX("index"), // MDN only
     /**
      * @deprecated
      */
     @Deprecated
-    LAST("last"), // MDN only
+        LAST("last"), // MDN only
     LICENSE("license"), // w3schools, MDN only
     NEXT("next"),
     NOFOLLOW("nofollow"),
@@ -158,15 +159,16 @@ public abstract class AnyA<
      * @deprecated
      */
     @Deprecated
-    SIDEBAR("sidebar"), // MDN only
+        SIDEBAR("sidebar"), // MDN only
     TAG("tag"),
     /**
      * @deprecated
      */
     @Deprecated
-    UP("up"); // MDN only
+        UP("up"); // MDN only
 
     private final String value;
+
     // TODO: Verify values by doctype
 
     private Rel(String value) {

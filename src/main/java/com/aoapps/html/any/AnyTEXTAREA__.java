@@ -37,12 +37,12 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyTEXTAREA__<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-  __ extends AnyTEXTAREA__<D, PC, __>
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+    __ extends AnyTEXTAREA__<D, PC, __>
 >
-  extends NormalText__<D, PC, __>
-  implements AnyTextContent<D, __> {
+    extends NormalText__<D, PC, __>
+    implements AnyTextContent<D, __> {
 
   protected AnyTEXTAREA__(AnyTEXTAREA<D, PC, ?, __, ?> element) {
     super(element);
