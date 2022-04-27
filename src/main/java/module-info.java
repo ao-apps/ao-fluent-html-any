@@ -36,4 +36,4 @@ module com.aoapps.html.any {
   requires com.aoapps.lang; // <groupId>com.aoapps</groupId><artifactId>ao-lang</artifactId>
   // Java SE
   requires java.desktop;
-}
+} // TODO: Avoiding rewrite-maven-plugin-4.22.2 truncation
