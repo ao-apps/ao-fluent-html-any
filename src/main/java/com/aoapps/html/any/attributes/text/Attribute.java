@@ -25,7 +25,7 @@ package com.aoapps.html.any.attributes.text;
 
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 
-import com.aoapps.encoding.XhtmlAttributeWritable;
+import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -83,7 +83,7 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
    */
   @Deprecated
   // TODO: Just MediaWritable here?  How does this interact with the various types of MediaWriters?
-  default <Ex extends Throwable> E attribute(String name, XhtmlAttributeWritable<Ex> value) throws IOException, Ex {
+  default <Ex extends Throwable> E attribute(String name, TextWritable<Ex> value) throws IOException, Ex {
     return attribute(name, (Object) value);
   }
 }
