@@ -44,11 +44,12 @@ public abstract class AnyBR<
     D  extends AnyDocument<D>,
     PC extends AnyPhrasingContent<D, PC>,
     E  extends AnyBR<D, PC, E>
-> extends Void<D, PC, E> implements
+    >
+    extends Void<D, PC, E> implements
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+    com.aoapps.html.any.attributes.text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.bool.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.enumeration.DirUnexpected<E>,
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
@@ -76,8 +77,7 @@ public abstract class AnyBR<
     com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
-{
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E> {
 
   protected AnyBR(D document, PC pc) {
     super(document, pc);

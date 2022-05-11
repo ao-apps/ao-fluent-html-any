@@ -23,7 +23,7 @@
 
 package com.aoapps.html.any;
 
-import com.aoapps.html.any.attributes.Enum.Dir;
+import com.aoapps.html.any.attributes.enumeration.Dir;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.Writer;
@@ -52,7 +52,8 @@ public abstract class AnyBDI<
     __ extends AnyBDI__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyBDI_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> {
+    >
+    extends NormalText<D, PC, E, __, _c> {
 
   protected AnyBDI(D document, PC pc) {
     super(document, pc);
@@ -107,7 +108,7 @@ public abstract class AnyBDI<
   }
 
   /**
-   * The {@linkplain Dir#dir(com.aoapps.html.any.attributes.Enum.Dir.Value) dir} global attribute defaults to <code>auto</code>
+   * The {@linkplain Dir#dir(com.aoapps.html.any.attributes.enumeration.Dir.Value) dir} global attribute defaults to <code>auto</code>
    * on this element (it never inherits from the parent element like with other elements).
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>

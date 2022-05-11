@@ -40,7 +40,7 @@ public abstract class AnyTFOOT_c<
     D  extends AnyDocument<D>,
     PC extends AnyTABLE_content<D, PC>,
     _c extends AnyTFOOT_c<D, PC, _c>
->
+    >
     extends Normal_c<D, PC, _c>
     implements AnyUnion_TBODY_THEAD_TFOOT<D, _c> {
 

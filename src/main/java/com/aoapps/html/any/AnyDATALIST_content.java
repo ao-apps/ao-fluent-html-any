@@ -40,7 +40,8 @@ package com.aoapps.html.any;
 public interface AnyDATALIST_content<
     D  extends AnyDocument<D>,
     __ extends AnyDATALIST_content<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -57,10 +58,10 @@ public interface AnyDATALIST_content<
     //
     // Inherited: Content<D, __>
     // Inherited: AnyEmbeddedContent<D, __>
-    AnyPhrasingContent<D, __>
-// Inherited: AnyScriptSupportingContent<D, __>
-// Inherited: AnyTextContent<D, __>
-{
+    AnyPhrasingContent<D, __> {
+  // Inherited: AnyScriptSupportingContent<D, __>
+  // Inherited: AnyTextContent<D, __>
+
   //
   // Factories:
   //

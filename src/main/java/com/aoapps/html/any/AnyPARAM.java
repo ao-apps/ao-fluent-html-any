@@ -24,6 +24,7 @@
 package com.aoapps.html.any;
 
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import java.io.IOException;
 import java.io.Writer;
@@ -46,19 +47,20 @@ public abstract class AnyPARAM<
     D  extends AnyDocument<D>,
     PC extends AnyOBJECT_content<D, PC>,
     E  extends AnyPARAM<D, PC, E>
-> extends Void<D, PC, E> implements
-    com.aoapps.html.any.attributes.Text.Name<E>,
+    >
+    extends Void<D, PC, E> implements
+    com.aoapps.html.any.attributes.text.Name<E>,
     // TODO: type (deprecated)
-    com.aoapps.html.any.attributes.Text.Value<E>,
+    com.aoapps.html.any.attributes.text.Value<E>,
     // TODO: valuetype (deprecated)
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-    com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-    com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.bool.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.text.ClassNoHtml4<E>,
+    com.aoapps.html.any.attributes.enumeration.DirUnexpected<E>,
+    com.aoapps.html.any.attributes.text.IdNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.StyleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.TitleNoHtml4<E>,
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
@@ -86,8 +88,7 @@ public abstract class AnyPARAM<
     com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
-{
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E> {
 
   protected AnyPARAM(D document, PC pc) {
     super(document, pc);

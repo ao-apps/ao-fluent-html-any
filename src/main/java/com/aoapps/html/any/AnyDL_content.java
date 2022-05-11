@@ -38,7 +38,8 @@ package com.aoapps.html.any;
 public interface AnyDL_content<
     D  extends AnyDocument<D>,
     __ extends AnyDL_content<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -50,8 +51,7 @@ public interface AnyDL_content<
     // Content models:
     //
     // Inherited: Content<D, __>
-    AnyScriptSupportingContent<D, __>
-{
+    AnyScriptSupportingContent<D, __> {
   //
   // Factories:
   //

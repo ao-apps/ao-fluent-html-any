@@ -40,7 +40,7 @@ public abstract class AnyINS_c<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_Palpable_Phrasing<D, PC>,
     _c extends AnyINS_c<D, PC, _c>
->
+    >
     extends TransparentText_c<D, PC, _c>
     implements AnyUnion_Palpable_Phrasing<D, _c> {
 

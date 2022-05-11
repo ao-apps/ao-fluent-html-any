@@ -38,7 +38,8 @@ package com.aoapps.html.any;
 public interface AnyDIV_content<
     D  extends AnyDocument<D>,
     __ extends AnyDIV_content<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -56,15 +57,15 @@ public interface AnyDIV_content<
     //
     // Inherited: Content<D, __>
     // Inherited: AnyEmbeddedContent<D, __>
-    AnyFlowContent<D, __>
-// Inherited: AnyHeadingContent<D, __>
-// Inherited: AnyInteractiveContent<D, __>
-// Inherited: AnyPalpableContent<D, __>
-// Inherited: AnyPhrasingContent<D, __>
-// Inherited: AnyScriptSupportingContent<D, __>
-// Inherited: AnySectioningContent<D, __>
-// Inherited: AnyTextContent<D, __>
-{
+    AnyFlowContent<D, __> {
+  // Inherited: AnyHeadingContent<D, __>
+  // Inherited: AnyInteractiveContent<D, __>
+  // Inherited: AnyPalpableContent<D, __>
+  // Inherited: AnyPhrasingContent<D, __>
+  // Inherited: AnyScriptSupportingContent<D, __>
+  // Inherited: AnySectioningContent<D, __>
+  // Inherited: AnyTextContent<D, __>
+
   //
   // Factories:
   //

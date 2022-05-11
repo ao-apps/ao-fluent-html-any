@@ -43,19 +43,20 @@ import java.io.IOException;
 public interface AnyTABLE_content<
     D  extends AnyDocument<D>,
     __ extends AnyTABLE_content<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
     // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-    AnyUnion_TBODY_THEAD_TFOOT<D, __>
+    AnyUnion_TBODY_THEAD_TFOOT<D, __> {
 
-//
-// Content models:
-//
-// Inherited: Content<D, __>
-// Inherited: AnyScriptSupportingContent<D, __>
-{
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+  // Inherited: AnyScriptSupportingContent<D, __>
+
   //
   // Factories:
   //
@@ -136,7 +137,7 @@ public interface AnyTABLE_content<
   }
 
   /**
-   * Creates a caption element with no attributes then begins element content
+   * Creates a caption element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-caption-element">4.9.2 The caption element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/caption">&lt;caption&gt;: The Table Caption element</a>.</li>
@@ -216,7 +217,7 @@ public interface AnyTABLE_content<
   }
 
   /**
-   * Creates a colgroup element with no attributes then begins element content
+   * Creates a colgroup element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-colgroup-element">4.9.3 The colgroup element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/colgroup">&lt;colgroup&gt;: The Table Column Group element</a>.</li>
@@ -296,7 +297,7 @@ public interface AnyTABLE_content<
   }
 
   /**
-   * Creates a thead element with no attributes then begins element content
+   * Creates a thead element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-thead-element">4.9.6 The thead element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/thead">&lt;thead&gt;: The Table Head element</a>.</li>
@@ -376,7 +377,7 @@ public interface AnyTABLE_content<
   }
 
   /**
-   * Creates a tbody element with no attributes then begins element content
+   * Creates a tbody element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tbody-element">4.9.5 The tbody element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tbody">&lt;tbody&gt;: The Table Body element</a>.</li>
@@ -513,7 +514,7 @@ public interface AnyTABLE_content<
   }
 
   /**
-   * Creates a tfoot element with no attributes then begins element content
+   * Creates a tfoot element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tfoot-element">4.9.7 The tfoot element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tfoot">&lt;tfoot&gt;: The Table Foot element</a>.</li>

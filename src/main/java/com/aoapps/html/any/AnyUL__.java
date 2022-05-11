@@ -40,7 +40,7 @@ public abstract class AnyUL__<
     D  extends AnyDocument<D>,
     PC extends AnyPalpableContent<D, PC>,
     __ extends AnyUL__<D, PC, __>
->
+    >
     extends Normal__<D, PC, __>
     implements AnyListContent<D, __> {
 

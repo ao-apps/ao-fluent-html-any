@@ -50,17 +50,17 @@ public abstract class AnyTABLE<
     __ extends AnyTABLE__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyTABLE_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c> implements
-    com.aoapps.html.any.attributes.Enum.Align<E, AnyTABLE.Align>,
+    >
+    extends Normal<D, PC, E, __, _c> implements
+    com.aoapps.html.any.attributes.enumeration.Align<E, AnyTABLE.Align>,
     // TODO: bgcolor (deprecated)
-    com.aoapps.html.any.attributes.Integer.Border<E>,
-    com.aoapps.html.any.attributes.Dimension.Cellpadding<E>,
-    com.aoapps.html.any.attributes.Dimension.Cellspacing<E>,
+    com.aoapps.html.any.attributes.integer.Border<E>,
+    com.aoapps.html.any.attributes.dimension.Cellpadding<E>,
+    com.aoapps.html.any.attributes.dimension.Cellspacing<E>,
     // TODO: frame (deprecated)
     // TODO: rules (deprecated)
     // TODO: summary (deprecated)
-    com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
-{
+    com.aoapps.html.any.attributes.dimension.WidthHtml4Only<E> {
 
   protected AnyTABLE(D document, PC pc) {
     super(document, pc);
@@ -98,17 +98,17 @@ public abstract class AnyTABLE<
   public enum Align implements Function<AnyDocument<?>, String> {
 
     /**
-     * the table is displayed on the left side of the document
+     * the table is displayed on the left side of the document.
      */
     LEFT("left"),
 
     /**
-     * the table is displayed in the center of the document
+     * the table is displayed in the center of the document.
      */
     CENTER("center"),
 
     /**
-     * the table is displayed on the right side of the document
+     * the table is displayed on the right side of the document.
      */
     RIGHT("right");
 

@@ -36,12 +36,12 @@ import java.io.IOException;
 public interface AnyUnion_COLGROUP_ScriptSupporting<
     D  extends AnyDocument<D>,
     __ extends AnyUnion_COLGROUP_ScriptSupporting<D, __>
-> extends
+    >
+    extends
     //
     // Content models:
     //
-    Content<D, __>
-{
+    Content<D, __> {
   //
   // Factories:
   //

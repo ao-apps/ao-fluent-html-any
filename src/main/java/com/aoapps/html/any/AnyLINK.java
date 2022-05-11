@@ -23,10 +23,11 @@
 
 package com.aoapps.html.any;
 
-import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.Serialization;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+
+import com.aoapps.encoding.Doctype;
+import com.aoapps.encoding.Serialization;
 import com.aoapps.html.any.AnySTYLE.Type;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.LocalizedIllegalStateException;
@@ -57,24 +58,24 @@ public abstract class AnyLINK<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_Metadata_Phrasing<D, PC>,
     E  extends AnyLINK<D, PC, E>
-> extends Void<D, PC, E> implements
+    >
+    extends Void<D, PC, E> implements
     // TODO: as
-    com.aoapps.html.any.attributes.Enum.CharsetHtml4Only<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
-    com.aoapps.html.any.attributes.Enum.Crossorigin<E, AnyLINK.Crossorigin>,
+    com.aoapps.html.any.attributes.enumeration.CharsetHtml4Only<E, com.aoapps.html.any.attributes.enumeration.Charset.Value>,
+    com.aoapps.html.any.attributes.enumeration.Crossorigin<E, AnyLINK.Crossorigin>,
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-disabled
-    com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-    com.aoapps.html.any.attributes.Url.Href<E>,
-    com.aoapps.html.any.attributes.Text.Hreflang<E>,
-    com.aoapps.html.any.attributes.Text.Media<E>,
-    com.aoapps.html.any.attributes.Enum.Rel<E, AnyLINK.Rel>,
+    com.aoapps.html.any.attributes.bool.Disabled<E>,
+    com.aoapps.html.any.attributes.url.Href<E>,
+    com.aoapps.html.any.attributes.text.Hreflang<E>,
+    com.aoapps.html.any.attributes.text.Media<E>,
+    com.aoapps.html.any.attributes.enumeration.Rel<E, AnyLINK.Rel>,
     // TODO: rev
     // TODO: sizes
     // TODO: target (not standardized per MDN)
     // TODO: type
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.Onerror<E>,
-    com.aoapps.html.any.attributes.event.Onload<E>
-{
+    com.aoapps.html.any.attributes.event.Onload<E> {
 
   private static final com.aoapps.lang.i18n.Resources RESOURCES =
       com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyLINK.class);
@@ -133,9 +134,7 @@ public abstract class AnyLINK<
 
   /**
    * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-   * <blockquote>
-   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-   * </blockquote>
+   * "A link element must have either a rel attribute or an itemprop attribute, but not both".
    */
   private Object itemprop;
 
@@ -184,31 +183,39 @@ public abstract class AnyLINK<
   public enum Rel implements Function<AnyDocument<?>, String> {
     ALTERNATE("alternate"),
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        ARCHIVES("archives"), // MDN only
+        ARCHIVES("archives"),
     AUTHOR("author"), // w3schools, MDN only
     CANONICAL("canonical"), // MDN only
     DNS_PREFETCH("dns-prefetch"),
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        FIRST("first"), // MDN only
+        FIRST("first"),
     HELP("help"), // w3schools, MDN only
     ICON("icon"),
     IMPORT("import"), // MDN only
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        INDEX("index"), // MDN only
+        INDEX("index"),
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        LAST("last"), // MDN only
+        LAST("last"),
     LICENSE("license"), // w3schools, MDN only
     MANIFEST("manifest"), // MDN only
     MODULEPRELOAD("modulepreload"),
@@ -222,16 +229,20 @@ public abstract class AnyLINK<
     SEARCH("search"),
     SHORTLINK("shortlink"), // MDN only
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        SIDEBAR("sidebar"), // MDN only
+        SIDEBAR("sidebar"),
     STYLESHEET("stylesheet"),
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        UP("up"), // MDN only
+        UP("up"),
 
     /**
      * <p>
@@ -276,9 +287,7 @@ public abstract class AnyLINK<
 
   /**
    * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-   * <blockquote>
-   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-   * </blockquote>
+   * "A link element must have either a rel attribute or an itemprop attribute, but not both".
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
@@ -302,7 +311,7 @@ public abstract class AnyLINK<
       if (this.itemprop != null) {
         throw new LocalizedIllegalStateException(RESOURCES, "relOrItemprop");
       }
-      com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
+      com.aoapps.html.any.attributes.enumeration.Rel.super.rel(rel);
     }
     @SuppressWarnings("unchecked")
     E element = (E) this;
@@ -311,9 +320,7 @@ public abstract class AnyLINK<
 
   /**
    * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-   * <blockquote>
-   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-   * </blockquote>
+   * "A link element must have either a rel attribute or an itemprop attribute, but not both".
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
@@ -325,14 +332,12 @@ public abstract class AnyLINK<
    */
   @Override
   public <Ex extends Throwable> E rel(Suppliers.String<Ex> rel) throws IOException, Ex {
-    return com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
+    return com.aoapps.html.any.attributes.enumeration.Rel.super.rel(rel);
   }
 
   /**
    * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-   * <blockquote>
-   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-   * </blockquote>
+   * "A link element must have either a rel attribute or an itemprop attribute, but not both".
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
@@ -342,14 +347,12 @@ public abstract class AnyLINK<
    */
   @Override
   public E rel(Rel rel) throws IOException {
-    return com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
+    return com.aoapps.html.any.attributes.enumeration.Rel.super.rel(rel);
   }
 
   /**
    * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-   * <blockquote>
-   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-   * </blockquote>
+   * "A link element must have either a rel attribute or an itemprop attribute, but not both".
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#attr-link-rel">HTML Standard</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
@@ -361,7 +364,7 @@ public abstract class AnyLINK<
    */
   @Override
   public <Ex extends Throwable> E rel(IOSupplierE<? extends Rel, Ex> rel) throws IOException, Ex {
-    return com.aoapps.html.any.attributes.Enum.Rel.super.rel(rel);
+    return com.aoapps.html.any.attributes.enumeration.Rel.super.rel(rel);
   }
 
   private String type;
@@ -370,8 +373,9 @@ public abstract class AnyLINK<
    * If the rel is {@link Rel#STYLESHEET}, the type is {@link Type#TEXT_CSS},
    * and the {@link Doctype} is {@link Doctype#HTML5}, skips writing
    * the type.
-   *
+   * <p>
    * See <a href="https://www.w3schools.com/tags/att_link_type.asp">HTML link type Attribute</a>.
+   * </p>
    */
   public E type(String type) throws IOException {
     type = Strings.trimNullIfEmpty(type);
@@ -410,10 +414,8 @@ public abstract class AnyLINK<
    * </p>
    * <p>
    * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
+   * "A link element must have either a rel attribute or an itemprop attribute, but not both".
    * </p>
-   * <blockquote>
-   *   A link element must have either a rel attribute or an itemprop attribute, but not both.
-   * </blockquote>
    *
    * @return  The parent content model this element is within
    */

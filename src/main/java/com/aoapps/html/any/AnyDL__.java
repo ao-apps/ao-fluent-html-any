@@ -40,7 +40,7 @@ public abstract class AnyDL__<
     D  extends AnyDocument<D>,
     PC extends AnyPalpableContent<D, PC>,
     __ extends AnyDL__<D, PC, __>
->
+    >
     extends Normal__<D, PC, __>
     implements AnyDL_content<D, __> {
 

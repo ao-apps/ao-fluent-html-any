@@ -39,18 +39,19 @@ import java.io.IOException;
 public interface AnyEmbeddedContent<
     D  extends AnyDocument<D>,
     __ extends AnyEmbeddedContent<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
     AnyUnion_Embedded_Interactive<D, __>,
-    AnyUnion_Embedded_Palpable_Phrasing<D, __>
+    AnyUnion_Embedded_Palpable_Phrasing<D, __> {
 
-//
-// Content models:
-//
-// Inherited: Content<D, __>
-{
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+
   //
   // Factories:
   //

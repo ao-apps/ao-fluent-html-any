@@ -42,12 +42,12 @@ import java.io.IOException;
 public interface AnyHTML_content<
     D  extends AnyDocument<D>,
     __ extends AnyHTML_content<D, __>
-> extends
+    >
+    extends
     //
     // Content models:
     //
-    Content<D, __>
-{
+    Content<D, __> {
   //
   // Factories:
   //
@@ -113,7 +113,7 @@ public interface AnyHTML_content<
   }
 
   /**
-   * Creates a head element with no attributes then begins element content
+   * Creates a head element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-head-element">4.2.1 The head element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/head">&lt;head&gt;: The Document Metadata (Header) element</a>.</li>
@@ -193,7 +193,7 @@ public interface AnyHTML_content<
   }
 
   /**
-   * Creates a body element with no attributes then begins element content
+   * Creates a body element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-body-element">4.3.1 The body element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body">&lt;body&gt;: The Document Body element</a>.</li>

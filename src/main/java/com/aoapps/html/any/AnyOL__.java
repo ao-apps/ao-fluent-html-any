@@ -40,7 +40,7 @@ public abstract class AnyOL__<
     D  extends AnyDocument<D>,
     PC extends AnyPalpableContent<D, PC>,
     __ extends AnyOL__<D, PC, __>
->
+    >
     extends Normal__<D, PC, __>
     implements AnyListContent<D, __> {
 

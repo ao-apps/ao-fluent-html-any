@@ -40,7 +40,7 @@ public abstract class AnyTD__<
     D  extends AnyDocument<D>,
     PC extends AnyTR_content<D, PC>,
     __ extends AnyTD__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyFlowContent<D, __> {
 

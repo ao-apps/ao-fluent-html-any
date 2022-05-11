@@ -41,18 +41,19 @@ import java.io.IOException;
 public interface AnyInteractiveContent<
     D  extends AnyDocument<D>,
     __ extends AnyInteractiveContent<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
     // Inherited: AnyUnion_Embedded_Interactive<D, __>
-    AnyUnion_Interactive_Phrasing<D, __>
+    AnyUnion_Interactive_Phrasing<D, __> {
 
-//
-// Content models:
-//
-// Inherited: Content<D, __>
-{
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+
   //
   // Factories:
   //
@@ -144,7 +145,7 @@ public interface AnyInteractiveContent<
   }
 
   /**
-   * Creates a menu element with no attributes then begins element content
+   * Creates a menu element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-menu-element">4.4.7 The menu element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/menu">&lt;menu&gt;: The Menu element</a>.</li>

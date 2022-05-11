@@ -38,12 +38,12 @@ import java.io.IOException;
 public interface AnyUnion_DIV_DL<
     D  extends AnyDocument<D>,
     __ extends AnyUnion_DIV_DL<D, __>
-> extends
+    >
+    extends
     //
     // Content models:
     //
-    Content<D, __>
-{
+    Content<D, __> {
   //
   // Factories:
   //
@@ -124,7 +124,7 @@ public interface AnyUnion_DIV_DL<
   }
 
   /**
-   * Creates a dd element with no attributes then begins element content
+   * Creates a dd element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dd-element">4.4.11 The dd element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dd">&lt;dd&gt;: The Description Details element</a>.</li>
@@ -219,7 +219,7 @@ public interface AnyUnion_DIV_DL<
   }
 
   /**
-   * Creates a dt element with no attributes then begins element content
+   * Creates a dt element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dt-element">4.4.10 The dt element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dt">&lt;dt&gt;: The Description Term element</a>.</li>

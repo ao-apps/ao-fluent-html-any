@@ -45,12 +45,12 @@ public abstract class AnyHR<
     D  extends AnyDocument<D>,
     PC extends AnyFlowContent<D, PC>,
     E  extends AnyHR<D, PC, E>
-> extends Void<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Align<E, AnyHR.Align>,
-    com.aoapps.html.any.attributes.Boolean.Noshade<E>,
-    com.aoapps.html.any.attributes.Integer.SizeHtml4Only<E>,
-    com.aoapps.html.any.attributes.Dimension.Width<E>
-{
+    >
+    extends Void<D, PC, E> implements
+    com.aoapps.html.any.attributes.enumeration.Align<E, AnyHR.Align>,
+    com.aoapps.html.any.attributes.bool.Noshade<E>,
+    com.aoapps.html.any.attributes.integer.SizeHtml4Only<E>,
+    com.aoapps.html.any.attributes.dimension.Width<E> {
 
   protected AnyHR(D document, PC pc) {
     super(document, pc);
@@ -78,17 +78,17 @@ public abstract class AnyHR<
   public enum Align implements Function<AnyDocument<?>, String> {
 
     /**
-     * Left-aligns the horizontal line
+     * Left-aligns the horizontal line.
      */
     LEFT("left"),
 
     /**
-     * Center-aligns the horizontal line (this is default)
+     * Center-aligns the horizontal line (this is default).
      */
     CENTER("center"),
 
     /**
-     * Right-aligns the horizontal line
+     * Right-aligns the horizontal line.
      */
     RIGHT("right");
 

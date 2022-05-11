@@ -42,7 +42,8 @@ import java.io.IOException;
 public interface AnySELECT_content<
     D  extends AnyDocument<D>,
     __ extends AnySELECT_content<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -58,8 +59,7 @@ public interface AnySELECT_content<
     //
     // Per-element content models:
     //
-    AnyOPTGROUP_content<D, __>
-{
+    AnyOPTGROUP_content<D, __> {
   //
   // Factories:
   //
@@ -125,7 +125,7 @@ public interface AnySELECT_content<
   }
 
   /**
-   * Creates an optgroup element with no attributes then begins element content
+   * Creates an optgroup element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-optgroup-element">4.10.9 The optgroup element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/optgroup">&lt;optgroup&gt;: The Option Group element</a>.</li>

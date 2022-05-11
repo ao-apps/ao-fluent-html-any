@@ -48,10 +48,10 @@ public abstract class AnyOPTGROUP<
     __ extends AnyOPTGROUP__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyOPTGROUP_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c> implements
-    com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-    com.aoapps.html.any.attributes.Text.Label<E>
-{
+    >
+    extends Normal<D, PC, E, __, _c> implements
+    com.aoapps.html.any.attributes.bool.Disabled<E>,
+    com.aoapps.html.any.attributes.text.Label<E> {
 
   protected AnyOPTGROUP(D document, PC pc) {
     super(document, pc);

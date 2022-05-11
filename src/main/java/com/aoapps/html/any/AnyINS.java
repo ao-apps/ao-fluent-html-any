@@ -45,10 +45,10 @@ public abstract class AnyINS<
     PC extends AnyUnion_Palpable_Phrasing<D, PC>,
     E  extends AnyINS<D, PC, E, _c>,
     _c extends AnyINS_c<D, PC, _c>
-> extends TransparentText<D, PC, E, _c> implements
-    com.aoapps.html.any.attributes.Url.Cite<E>
-// TODO: datetime
-{
+    >
+    extends TransparentText<D, PC, E, _c> implements
+    com.aoapps.html.any.attributes.url.Cite<E> {
+  // TODO: datetime
 
   protected AnyINS(D document, PC pc) {
     super(document, pc);

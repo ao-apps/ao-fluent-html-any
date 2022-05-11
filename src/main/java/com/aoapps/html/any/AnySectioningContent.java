@@ -43,12 +43,12 @@ import java.io.IOException;
 public interface AnySectioningContent<
     D  extends AnyDocument<D>,
     __ extends AnySectioningContent<D, __>
-> extends
+    >
+    extends
     //
     // Content models:
     //
-    Content<D, __>
-{
+    Content<D, __> {
   //
   // Factories:
   //
@@ -139,7 +139,7 @@ public interface AnySectioningContent<
   }
 
   /**
-   * Creates an article element with no attributes then begins element content
+   * Creates an article element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-article-element">4.3.2 The article element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/article">&lt;article&gt;: The Article Contents element</a>.</li>
@@ -246,7 +246,7 @@ public interface AnySectioningContent<
   }
 
   /**
-   * Creates an aside element with no attributes then begins element content
+   * Creates an aside element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-aside-element">4.3.5 The aside element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/aside">&lt;aside&gt;: The Aside element</a>.</li>
@@ -353,7 +353,7 @@ public interface AnySectioningContent<
   }
 
   /**
-   * Creates a nav element with no attributes then begins element content
+   * Creates a nav element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-nav-element">4.3.4 The nav element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/nav">&lt;nav&gt;: The Navigation Section element</a>.</li>
@@ -460,7 +460,7 @@ public interface AnySectioningContent<
   }
 
   /**
-   * Creates a section element with no attributes then begins element content
+   * Creates a section element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-section-element">4.3.3 The section element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/section">&lt;section&gt;: The Generic Section element</a>.</li>

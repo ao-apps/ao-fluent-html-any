@@ -48,7 +48,8 @@ public abstract class AnyH3<
     __ extends AnyH3__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyH3_c<D, PC, _c>
-> extends AnyH<D, PC, E, __, _c> {
+    >
+    extends AnyH<D, PC, E, __, _c> {
 
   protected AnyH3(D document, PC pc) {
     super(document, pc);

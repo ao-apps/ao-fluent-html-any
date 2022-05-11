@@ -50,21 +50,21 @@ public abstract class AnyFORM<
     __ extends AnyFORM__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyFORM_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
+    >
+    extends NormalText<D, PC, E, __, _c> implements
     // TODO: accept (MDN only, HTML-4 only)
     // TODO: accept-charset
-    com.aoapps.html.any.attributes.Url.Action<E>,
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyFORM.Autocomplete>,
-    com.aoapps.html.any.attributes.Enum.Enctype<E, com.aoapps.html.any.attributes.Enum.Enctype.Value>,
-    com.aoapps.html.any.attributes.Enum.Method<E, com.aoapps.html.any.attributes.Enum.Method.Value>,
+    com.aoapps.html.any.attributes.url.Action<E>,
+    com.aoapps.html.any.attributes.enumeration.Autocomplete<E, AnyFORM.Autocomplete>,
+    com.aoapps.html.any.attributes.enumeration.Enctype<E, com.aoapps.html.any.attributes.enumeration.Enctype.Value>,
+    com.aoapps.html.any.attributes.enumeration.Method<E, com.aoapps.html.any.attributes.enumeration.Method.Value>,
     // TODO: name (only support Id, and do name like <ao:iframe>?)  Deprecated as of html 4
-    com.aoapps.html.any.attributes.Boolean.Novalidate<E>,
-    com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
+    com.aoapps.html.any.attributes.bool.Novalidate<E>,
+    com.aoapps.html.any.attributes.enumeration.Target<E, com.aoapps.html.any.attributes.enumeration.Target.Value>,
     // TODO: rel
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.Onreset<E>,
-    com.aoapps.html.any.attributes.event.Onsubmit<E>
-{
+    com.aoapps.html.any.attributes.event.Onsubmit<E> {
 
   protected AnyFORM(D document, PC pc) {
     super(document, pc);

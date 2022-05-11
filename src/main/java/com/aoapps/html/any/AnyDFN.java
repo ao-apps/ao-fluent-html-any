@@ -24,7 +24,7 @@
 package com.aoapps.html.any;
 
 import com.aoapps.encoding.TextWritable;
-import com.aoapps.html.any.attributes.Text.Title;
+import com.aoapps.html.any.attributes.text.Title;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.io.Writer;
@@ -52,7 +52,8 @@ public abstract class AnyDFN<
     __ extends AnyDFN__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyDFN_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> {
+    >
+    extends NormalText<D, PC, E, __, _c> {
 
   protected AnyDFN(D document, PC pc) {
     super(document, pc);

@@ -48,20 +48,21 @@ public abstract class AnyMETA<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_Metadata_Phrasing<D, PC>,
     E  extends AnyMETA<D, PC, E>
-> extends Void<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Charset<E, com.aoapps.html.any.attributes.Enum.Charset.Value>,
-    com.aoapps.html.any.attributes.Text.Content<E>,
-    com.aoapps.html.any.attributes.Enum.HttpEquiv<E, AnyMETA.HttpEquiv>,
-    com.aoapps.html.any.attributes.Enum.Name<E, AnyMETA.Name>,
+    >
+    extends Void<D, PC, E> implements
+    com.aoapps.html.any.attributes.enumeration.Charset<E, com.aoapps.html.any.attributes.enumeration.Charset.Value>,
+    com.aoapps.html.any.attributes.text.Content<E>,
+    com.aoapps.html.any.attributes.enumeration.HttpEquiv<E, AnyMETA.HttpEquiv>,
+    com.aoapps.html.any.attributes.enumeration.Name<E, AnyMETA.Name>,
     // TODO: scheme
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-    com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-    com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.bool.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.text.ClassNoHtml4<E>,
+    com.aoapps.html.any.attributes.enumeration.DirUnexpected<E>,
+    com.aoapps.html.any.attributes.text.IdNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.StyleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.TitleNoHtml4<E>,
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
@@ -89,8 +90,7 @@ public abstract class AnyMETA<
     com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
-{
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E> {
 
   protected AnyMETA(D document, PC pc) {
     super(document, pc);
@@ -138,7 +138,7 @@ public abstract class AnyMETA<
   @Deprecated
   @Override
   public E charset(String charset) throws IOException {
-    return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+    return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
   }
 
   /**
@@ -156,7 +156,7 @@ public abstract class AnyMETA<
   @SuppressWarnings("overloads")
   @Override
   public <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
-    return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+    return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
   }
 
   /**
@@ -171,7 +171,7 @@ public abstract class AnyMETA<
   @Deprecated
   @Override
   public E charset(Charset charset) throws IOException {
-    return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+    return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
   }
 
   /**
@@ -189,7 +189,7 @@ public abstract class AnyMETA<
   @SuppressWarnings("overloads")
   @Override
   public <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
-    return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+    return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
   }
 
   /**
@@ -203,8 +203,8 @@ public abstract class AnyMETA<
    */
   @Deprecated
   @Override
-  public E charset(com.aoapps.html.any.attributes.Enum.Charset.Value charset) throws IOException {
-    return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+  public E charset(com.aoapps.html.any.attributes.enumeration.Charset.Value charset) throws IOException {
+    return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
   }
 
   /**
@@ -221,8 +221,8 @@ public abstract class AnyMETA<
   @Deprecated
   @SuppressWarnings("overloads")
   @Override
-  public <Ex extends Throwable> E charset(IOSupplierE<? extends com.aoapps.html.any.attributes.Enum.Charset.Value, Ex> charset) throws IOException, Ex {
-    return com.aoapps.html.any.attributes.Enum.Charset.super.charset(charset);
+  public <Ex extends Throwable> E charset(IOSupplierE<? extends com.aoapps.html.any.attributes.enumeration.Charset.Value, Ex> charset) throws IOException, Ex {
+    return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
   }
 
   // </editor-fold>
@@ -284,7 +284,7 @@ public abstract class AnyMETA<
      * where <code>IANAcharset</code> is the <i>preferred MIME name</i> for a character set as
      * <a href="https://www.iana.org/assignments/character-sets">defined by the IANA</a>.
      *
-     * @deprecated  Do not use this value, as it is obsolete. Use the {@link com.aoapps.html.any.attributes.Enum.Charset charset}
+     * @deprecated  Do not use this value, as it is obsolete. Use the {@link com.aoapps.html.any.attributes.enumeration.Charset charset}
      *              attribute on the {@link AnyMETA &lt;meta&gt;} element.
      */
     @Deprecated
@@ -304,15 +304,15 @@ public abstract class AnyMETA<
     DEFAULT_STYLE("default-style"),
 
     /**
-     * This instruction specifies:
+     * The refresh instruction.  This instruction specifies:
      * <ul>
      * <li>
      *   The number of seconds until the page should be reloaded
-     *   - only if the {@link com.aoapps.html.any.attributes.Text.Content content} attribute contains a positive integer.
+     *   - only if the {@link com.aoapps.html.any.attributes.text.Content content} attribute contains a positive integer.
      * </li>
      * <li>
      *   The number of seconds until the page should redirect to another
-     *   - only if the {@link com.aoapps.html.any.attributes.Text.Content content} attribute contains a
+     *   - only if the {@link com.aoapps.html.any.attributes.text.Content content} attribute contains a
      *   positive integer followed by the string '<code>;url=</code>', and a valid URL.
      * </li>
      * </ul>

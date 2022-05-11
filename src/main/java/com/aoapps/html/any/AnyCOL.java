@@ -45,15 +45,15 @@ public abstract class AnyCOL<
     D  extends AnyDocument<D>,
     PC extends AnyCOLGROUP_content<D, PC>,
     E  extends AnyCOL<D, PC, E>
-> extends Void<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Align<E, AnyCOL.Align>,
+    >
+    extends Void<D, PC, E> implements
+    com.aoapps.html.any.attributes.enumeration.Align<E, AnyCOL.Align>,
     // TODO: bgcolor (deprecated)
     // TODO: char (deprecated)
     // TODO: charoff (deprecated)
-    com.aoapps.html.any.attributes.Integer.Span<E>,
-    com.aoapps.html.any.attributes.Enum.Valign<E, AnyCOL.Valign>,
-    com.aoapps.html.any.attributes.Dimension.WidthHtml4Only<E>
-{
+    com.aoapps.html.any.attributes.integer.Span<E>,
+    com.aoapps.html.any.attributes.enumeration.Valign<E, AnyCOL.Valign>,
+    com.aoapps.html.any.attributes.dimension.WidthHtml4Only<E> {
 
   protected AnyCOL(D document, PC pc) {
     super(document, pc);
@@ -81,27 +81,27 @@ public abstract class AnyCOL<
   public enum Align implements Function<AnyDocument<?>, String> {
 
     /**
-     * Left-align content
+     * Left-align content.
      */
     LEFT("left"),
 
     /**
-     * Right-align content
+     * Right-align content.
      */
     RIGHT("right"),
 
     /**
-     * Center-align content
+     * Center-align content.
      */
     CENTER("center"),
 
     /**
-     * Stretches the lines so that each line has equal width (like in newspapers and magazines)
+     * Stretches the lines so that each line has equal width (like in newspapers and magazines).
      */
     JUSTIFY("justify"),
 
     /**
-     * Align the content to a specific character
+     * Align the content to a specific character.
      */
     CHAR("char");
 
@@ -131,17 +131,17 @@ public abstract class AnyCOL<
   public enum Valign implements Function<AnyDocument<?>, String> {
 
     /**
-     * Top-align content
+     * Top-align content.
      */
     TOP("top"),
 
     /**
-     * Center-align content
+     * Center-align content.
      */
     MIDDLE("middle"),
 
     /**
-     * Bottom-align content
+     * Bottom-align content.
      */
     BOTTOM("bottom"),
 

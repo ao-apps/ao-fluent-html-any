@@ -48,9 +48,9 @@ public abstract class AnyQ<
     __ extends AnyQ__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyQ_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
-    com.aoapps.html.any.attributes.Url.Cite<E>
-{
+    >
+    extends NormalText<D, PC, E, __, _c> implements
+    com.aoapps.html.any.attributes.url.Cite<E> {
 
   protected AnyQ(D document, PC pc) {
     super(document, pc);

@@ -48,9 +48,9 @@ public abstract class AnyCOLGROUP<
     __ extends AnyCOLGROUP__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyCOLGROUP_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c> implements
-    com.aoapps.html.any.attributes.Integer.Span<E>
-{
+    >
+    extends Normal<D, PC, E, __, _c> implements
+    com.aoapps.html.any.attributes.integer.Span<E> {
 
   protected AnyCOLGROUP(D document, PC pc) {
     super(document, pc);

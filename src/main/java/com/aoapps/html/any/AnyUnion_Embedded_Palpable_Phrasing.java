@@ -37,12 +37,12 @@ import java.io.IOException;
 public interface AnyUnion_Embedded_Palpable_Phrasing<
     D  extends AnyDocument<D>,
     __ extends AnyUnion_Embedded_Palpable_Phrasing<D, __>
-> extends
+    >
+    extends
     //
     // Content models:
     //
-    Content<D, __>
-{
+    Content<D, __> {
   //
   // Factories:
   //

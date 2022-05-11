@@ -50,12 +50,12 @@ public abstract class AnyOPTION<
     __ extends AnyOPTION__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyOPTION_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
-    com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-    com.aoapps.html.any.attributes.Text.Label<E>,
-    com.aoapps.html.any.attributes.Boolean.Selected<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>
-{
+    >
+    extends NormalText<D, PC, E, __, _c> implements
+    com.aoapps.html.any.attributes.bool.Disabled<E>,
+    com.aoapps.html.any.attributes.text.Label<E>,
+    com.aoapps.html.any.attributes.bool.Selected<E>,
+    com.aoapps.html.any.attributes.text.Value<E> {
 
   private boolean oldAutonli;
   private boolean oldIndent;
@@ -112,7 +112,7 @@ public abstract class AnyOPTION<
   @Deprecated
   @Override
   public E label(Object label) throws IOException {
-    return com.aoapps.html.any.attributes.Text.Label.super.label(label);
+    return com.aoapps.html.any.attributes.text.Label.super.label(label);
   }
 
   /**
@@ -132,7 +132,7 @@ public abstract class AnyOPTION<
   @Deprecated
   @Override
   public <Ex extends Throwable> E label(IOSupplierE<?, Ex> label) throws IOException, Ex {
-    return com.aoapps.html.any.attributes.Text.Label.super.label(label);
+    return com.aoapps.html.any.attributes.text.Label.super.label(label);
   }
 
   /**
@@ -152,7 +152,7 @@ public abstract class AnyOPTION<
   @Deprecated
   @Override
   public <Ex extends Throwable> E label(TextWritable<Ex> label) throws IOException, Ex {
-    return com.aoapps.html.any.attributes.Text.Label.super.label(label);
+    return com.aoapps.html.any.attributes.text.Label.super.label(label);
   }
 
   /**
@@ -164,7 +164,7 @@ public abstract class AnyOPTION<
    */
   @Override
   public E value(Object value) throws IOException {
-    return com.aoapps.html.any.attributes.Text.Value.super.value(value);
+    return com.aoapps.html.any.attributes.text.Value.super.value(value);
   }
 
   // TODO: How to ensure markup type NONE when no value set or TEXT when set?

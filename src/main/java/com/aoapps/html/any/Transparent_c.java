@@ -47,7 +47,7 @@ public abstract class Transparent_c<
     D  extends AnyDocument<D>,
     PC extends Content<D, PC>,
     _c extends Transparent_c<D, PC, _c>
->
+    >
     extends Normal_c<D, PC, _c> {
 
   protected Transparent_c(Transparent<D, PC, ?, _c> element) {

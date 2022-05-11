@@ -40,7 +40,7 @@ public abstract class AnyADDRESS__<
     D  extends AnyDocument<D>,
     PC extends AnyPalpableContent<D, PC>,
     __ extends AnyADDRESS__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyFlowContent<D, __> {
 

@@ -40,17 +40,18 @@ import java.io.IOException;
 public interface AnyUnion_Interactive_Phrasing<
     D  extends AnyDocument<D>,
     __ extends AnyUnion_Interactive_Phrasing<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
-    AnyUnion_Embedded_Interactive<D, __>
+    AnyUnion_Embedded_Interactive<D, __> {
 
-//
-// Content models:
-//
-// Inherited: Content<D, __>
-{
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+
   //
   // Factories:
   //
@@ -167,7 +168,7 @@ public interface AnyUnion_Interactive_Phrasing<
   }
 
   /**
-   * Creates an a element with no attributes then begins element content
+   * Creates an a element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-a-element">4.5.1 The a element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
@@ -228,7 +229,7 @@ public interface AnyUnion_Interactive_Phrasing<
   public abstract static class InputFactory<
       D  extends AnyDocument<D>,
       __ extends AnyUnion_Interactive_Phrasing<D, __>
-  > {
+      > {
 
     protected final D document;
     protected final __ pc;
@@ -660,7 +661,7 @@ public interface AnyUnion_Interactive_Phrasing<
   }
 
   /**
-   * Creates a label element with no attributes then begins element content
+   * Creates a label element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-label-element">4.10.4 The label element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label">&lt;label&gt;: The Input Label element</a>.</li>
@@ -741,7 +742,7 @@ public interface AnyUnion_Interactive_Phrasing<
   }
 
   /**
-   * Creates a select element with no attributes then begins element content
+   * Creates a select element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-select-element">4.10.7 The select element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select">&lt;section&gt;: The HTML Select element</a>.</li>
@@ -836,7 +837,7 @@ public interface AnyUnion_Interactive_Phrasing<
   }
 
   /**
-   * Creates a textarea element with no attributes then begins element content
+   * Creates a textarea element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element">4.10.11 The textarea element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea">&lt;textarea&gt;: The Textarea element</a>.</li>

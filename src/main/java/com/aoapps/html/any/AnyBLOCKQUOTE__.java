@@ -40,7 +40,7 @@ public abstract class AnyBLOCKQUOTE__<
     D  extends AnyDocument<D>,
     PC extends AnyPalpableContent<D, PC>,
     __ extends AnyBLOCKQUOTE__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyFlowContent<D, __> {
 

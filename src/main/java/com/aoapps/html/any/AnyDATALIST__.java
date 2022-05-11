@@ -42,7 +42,7 @@ public abstract class AnyDATALIST__<
     D  extends AnyDocument<D>,
     PC extends AnyPhrasingContent<D, PC>,
     __ extends AnyDATALIST__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyDATALIST_content<D, __> {
 

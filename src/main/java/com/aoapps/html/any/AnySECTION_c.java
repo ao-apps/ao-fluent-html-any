@@ -42,7 +42,7 @@ public abstract class AnySECTION_c<
     D  extends AnyDocument<D>,
     PC extends AnySectioningContent<D, PC>,
     _c extends AnySECTION_c<D, PC, _c>
->
+    >
     extends NormalText_c<D, PC, _c>
     implements AnyFlowContent<D, _c> {
 

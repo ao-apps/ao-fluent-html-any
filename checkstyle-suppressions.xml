@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
+Copyright (C) 2022  AO Industries, Inc.
+    support@aoindustries.com
+    7262 Bull Pen Cir
+    Mobile, AL 36695
+
+This file is part of ao-fluent-html-any.
+
+ao-fluent-html-any is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ao-fluent-html-any is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<!DOCTYPE suppressions PUBLIC
+  "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+  "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+
+  <!-- TODO: Complete Javadocs -->
+  <suppress checks="(MissingJavadocMethod|SummaryJavadoc)" />
+
+  <!-- Using "Ex" for generic exceptions, since "E" if often "Element" -->
+  <suppress
+    checks="(InterfaceTypeParameterName|MethodTypeParameterName)"
+    message="'Ex'"
+  />
+
+  <!-- Special Union_* types -->
+  <suppress
+    checks="(AbbreviationAsWordInName|TypeName)"
+    files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\](tests[/\\])?AnyUnion_[A-Za-z_]+\.java$"
+    message="'AnyUnion_[A-Za-z_]+'"
+  />
+
+  <!-- All-caps HTML tag types -->
+  <suppress
+    checks="AbbreviationAsWordInName"
+    files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\]Any[A-Z]+\.java$"
+    message="'Any[A-Z]+'"
+  />
+
+  <!-- *__ and *_c types -->
+  <suppress
+    checks="(AbbreviationAsWordInName|TypeName)"
+    files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\](Normal|NormalText|Transparent|TransparentText|Any[A-Z]+[0-9]?)(__|_c)\.java$"
+    message="'(Normal|NormalText|Transparent|TransparentText|Any[A-Z]+[0-9]?)(__|_c)'"
+  />
+
+  <!-- *_content and *_contentTest types -->
+  <suppress
+    checks="(AbbreviationAsWordInName|TypeName)"
+    files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\]Any[A-Z]+_content\.java$"
+    message="'Any[A-Z]+_content'"
+  />
+  <suppress
+    checks="(AbbreviationAsWordInName|TypeName)"
+    files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\]tests[/\\]Any[A-Z]+_contentTest\.java$"
+    message="'Any[A-Z]+_contentTest'"
+  />
+
+  <!-- elem(), elem__(), elem_c(), and elem__any() element methods -->
+  <suppress
+    checks="MethodName"
+    message="'[a-z]+(__|_c|__any)?'"
+  />
+
+  <!-- __() and _c() content methods -->
+  <suppress
+    checks="MethodName"
+    message="'(__|_c)'"
+  />
+
+  <!-- @param  <PC>  The parent content model this element is within -->
+  <suppress
+    checks="(ClassTypeParameterName|InterfaceTypeParameterName)"
+    message="'PC'"
+  />
+
+  <!-- @param  <__>  This content model, which will be the parent content model of child elements -->
+  <suppress
+    checks="(ClassTypeParameterName|InterfaceTypeParameterName)"
+    message="'__'"
+  />
+  <suppress
+    checks="MethodTypeParameterName"
+    files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\]AnyHeadingContent\.java$"
+    message="'H__'"
+  />
+
+  <!-- @param  <_c>  This content model as {@link Closeable}, which will be the parent content model of child elements -->
+  <suppress
+    checks="ClassTypeParameterName"
+    message="'_c'"
+  />
+  <suppress
+    checks="MethodTypeParameterName"
+    files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\]AnyHeadingContent\.java$"
+    message="'H_c'"
+  />
+
+  <!-- Unusual patterns for Java DSL -->
+  <suppress
+    checks="TypeName"
+    files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\]attributes[/\\].*\.java$"
+    message="'[a-z]+'"
+  />
+
+  <!-- Allow single-character members -->
+  <suppress
+    checks="MemberName"
+    files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\]Circle\.java$"
+    message="'(x|y)'"
+  />
+
+  <!-- Will not reorder overloads -->
+  <suppress checks="OverloadMethodsDeclarationOrder" />
+
+</suppressions>

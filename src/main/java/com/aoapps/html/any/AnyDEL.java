@@ -45,10 +45,10 @@ public abstract class AnyDEL<
     PC extends AnyPhrasingContent<D, PC>,
     E  extends AnyDEL<D, PC, E, _c>,
     _c extends AnyDEL_c<D, PC, _c>
-> extends Transparent<D, PC, E, _c> implements
-    com.aoapps.html.any.attributes.Url.Cite<E>
-// TODO: datetime
-{
+    >
+    extends Transparent<D, PC, E, _c> implements
+    com.aoapps.html.any.attributes.url.Cite<E> {
+  // TODO: datetime
 
   protected AnyDEL(D document, PC pc) {
     super(document, pc);

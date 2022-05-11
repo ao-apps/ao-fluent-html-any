@@ -46,7 +46,8 @@ public abstract class Normal<
     __ extends Content<D, __>, // Transparent can have any: Normal__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends Normal_c<D, PC, _c>
-> extends Element<D, PC, E> {
+    >
+    extends Element<D, PC, E> {
 
   protected Normal(D document, PC pc) {
     super(document, pc);
@@ -151,7 +152,7 @@ public abstract class Normal<
   }
 
   /**
-   * Ends attributes then begins element content
+   * Ends attributes then begins element content.
    *
    * @return  The content model of this element, which will be the parent content model of child elements.
    *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end

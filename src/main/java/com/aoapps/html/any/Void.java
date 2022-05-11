@@ -40,7 +40,8 @@ public abstract class Void<
     D  extends AnyDocument<D>,
     PC extends Content<D, PC>,
     E  extends Void<D, PC, E>
-> extends Element<D, PC, E> {
+    >
+    extends Element<D, PC, E> {
 
   protected Void(D document, PC pc) {
     super(document, pc);

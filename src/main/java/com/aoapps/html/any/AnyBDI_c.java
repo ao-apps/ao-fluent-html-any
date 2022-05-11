@@ -42,7 +42,7 @@ public abstract class AnyBDI_c<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_Palpable_Phrasing<D, PC>,
     _c extends AnyBDI_c<D, PC, _c>
->
+    >
     extends NormalText_c<D, PC, _c>
     implements AnyPhrasingContent<D, _c> {
 

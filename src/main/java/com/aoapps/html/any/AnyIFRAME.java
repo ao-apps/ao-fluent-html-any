@@ -33,9 +33,9 @@ package com.aoapps.html.any;
  * @author  AO Industries, Inc.
  */
 // TODO:
-// com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-// com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-// com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
+// com.aoapps.html.any.attributes.text.AccesskeyUnexpected<E>,
+// com.aoapps.html.any.attributes.bool.AutofocusUnexpected<E>,
+// com.aoapps.html.any.attributes.enumeration.DirUnexpected<E>,
 // com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
 // com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
 // com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,

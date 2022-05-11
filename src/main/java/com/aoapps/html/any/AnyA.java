@@ -50,18 +50,18 @@ public abstract class AnyA<
     PC extends AnyUnion_Interactive_Phrasing<D, PC>,
     E  extends AnyA<D, PC, E, _c>,
     _c extends AnyA_c<D, PC, _c>
-> extends Transparent<D, PC, E, _c> implements
-    com.aoapps.html.any.attributes.Url.Href<E>,
-    com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
+    >
+    extends Transparent<D, PC, E, _c> implements
+    com.aoapps.html.any.attributes.url.Href<E>,
+    com.aoapps.html.any.attributes.enumeration.Target<E, com.aoapps.html.any.attributes.enumeration.Target.Value>,
     // TODO: download
     // TODO: ping
-    com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
-    com.aoapps.html.any.attributes.Text.Hreflang<E>,
+    com.aoapps.html.any.attributes.enumeration.Rel<E, AnyA.Rel>,
+    com.aoapps.html.any.attributes.text.Hreflang<E>,
     // TODO: type
     // TODO: referrerpolicy
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
-{
+    com.aoapps.html.any.attributes.integer.TabindexHtml4<E> {
 
   private static final com.aoapps.lang.i18n.Resources RESOURCES =
       com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyA.class);
@@ -124,29 +124,37 @@ public abstract class AnyA<
   public enum Rel implements Function<AnyDocument<?>, String> {
     ALTERNATE("alternate"),
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        ARCHIVES("archives"), // MDN only
+        ARCHIVES("archives"),
     AUTHOR("author"), // w3schools, MDN only
     BOOKMARK("bookmark"),
     EXTERNAL("external"),
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        FIRST("first"), // MDN only
+        FIRST("first"),
     HELP("help"), // w3schools, MDN only
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        INDEX("index"), // MDN only
+        INDEX("index"),
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        LAST("last"), // MDN only
+        LAST("last"),
     LICENSE("license"), // w3schools, MDN only
     NEXT("next"),
     NOFOLLOW("nofollow"),
@@ -156,16 +164,20 @@ public abstract class AnyA<
     PREV("prev"), // w3schools, MDN only
     SEARCH("search"),
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        SIDEBAR("sidebar"), // MDN only
+        SIDEBAR("sidebar"),
     TAG("tag"),
     /**
-     * @deprecated
+     * MDN only.
+     *
+     * @deprecated MDN only
      */
     @Deprecated
-        UP("up"); // MDN only
+        UP("up");
 
     private final String value;
 

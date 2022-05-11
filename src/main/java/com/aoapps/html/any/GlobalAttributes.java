@@ -44,17 +44,17 @@ package com.aoapps.html.any;
 @SuppressWarnings("deprecation")
 public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<E>> extends
     // Global Attributes
-    com.aoapps.html.any.attributes.Text.Accesskey<E>,
-    com.aoapps.html.any.attributes.Enum.AutocapitalizeUnexpected<E>,
-    com.aoapps.html.any.attributes.Boolean.Autofocus<E>,
-    com.aoapps.html.any.attributes.Text.Class<E>,
+    com.aoapps.html.any.attributes.text.Accesskey<E>,
+    com.aoapps.html.any.attributes.enumeration.AutocapitalizeUnexpected<E>,
+    com.aoapps.html.any.attributes.bool.Autofocus<E>,
+    com.aoapps.html.any.attributes.text.Class<E>,
     // TODO: contenteditable
     //       https://html.spec.whatwg.org/multipage/interaction.html#attr-contenteditable
     //       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/contenteditable
     //       https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/contentEditable
     //       https://www.w3schools.com/tags/att_global_contenteditable.asp
-    com.aoapps.html.any.attributes.Text.Data<E>,
-    com.aoapps.html.any.attributes.Enum.Dir<E>,
+    com.aoapps.html.any.attributes.text.Data<E>,
+    com.aoapps.html.any.attributes.enumeration.Dir<E>,
     // TODO: draggable
     //       https://html.spec.whatwg.org/multipage/dnd.html#attr-draggable
     //       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/draggable
@@ -71,7 +71,7 @@ public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<
     //       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/hidden
     //       https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/hidden
     //       https://www.w3schools.com/tags/att_global_hidden.asp
-    com.aoapps.html.any.attributes.Text.Id<E>,
+    com.aoapps.html.any.attributes.text.Id<E>,
     // TODO: inert
     //       https://html.spec.whatwg.org/multipage/interaction.html#the-inert-attribute
     //       https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/inert
@@ -102,7 +102,7 @@ public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<
     //       https://html.spec.whatwg.org/multipage/microdata.html#attr-itemtype
     //       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/itemtype
     //       https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/itemType
-    com.aoapps.html.any.attributes.Text.Lang<E>,
+    com.aoapps.html.any.attributes.text.Lang<E>,
     // TODO: nonce
     //       https://html.spec.whatwg.org/multipage/urls-and-fetching.html#attr-nonce
     //       https://fetch.spec.whatwg.org/#concept-request-nonce-metadata
@@ -119,9 +119,9 @@ public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<
     //       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/spellcheck
     //       https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/spellcheck
     //       https://www.w3schools.com/tags/att_global_spellcheck.asp
-    com.aoapps.html.any.attributes.Text.Style<E>,
-    com.aoapps.html.any.attributes.Integer.Tabindex<E>,
-    com.aoapps.html.any.attributes.Text.Title<E>,
+    com.aoapps.html.any.attributes.text.Style<E>,
+    com.aoapps.html.any.attributes.integer.Tabindex<E>,
+    com.aoapps.html.any.attributes.text.Title<E>,
     // TODO: translate
     //       https://html.spec.whatwg.org/multipage/dom.html#the-translate-attribute
     //       https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-translate
@@ -313,7 +313,6 @@ public interface GlobalAttributes<E extends Element<?, ?, E> & GlobalAttributes<
     // TODO: onwebkittransitionend
     //       https://html.spec.whatwg.org/multipage/webappapis.html#handler-onwebkittransitionend
     //       https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onwebkittransitionend
-    com.aoapps.html.any.attributes.event.Onwheel<E>
-{
+    com.aoapps.html.any.attributes.event.Onwheel<E> {
   // No methods, just adding attributes
 }

@@ -39,7 +39,8 @@ import java.io.IOException;
 public interface AnyFlowContent<
     D  extends AnyDocument<D>,
     __ extends AnyFlowContent<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -59,11 +60,11 @@ public interface AnyFlowContent<
     // Inherited: AnyHeadingContent<D, __>
     // Inherited: AnyInteractiveContent<D, __>
     AnyPalpableContent<D, __>,
-    AnyPhrasingContent<D, __>
-// Inherited: AnyScriptSupportingContent<D, __>
-// Inherited: AnySectioningContent<D, __>
-// Inherited: AnyTextContent<D, __>
-{
+    AnyPhrasingContent<D, __> {
+  // Inherited: AnyScriptSupportingContent<D, __>
+  // Inherited: AnySectioningContent<D, __>
+  // Inherited: AnyTextContent<D, __>
+
   //
   // Factories:
   //

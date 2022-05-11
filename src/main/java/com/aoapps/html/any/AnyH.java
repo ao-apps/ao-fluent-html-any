@@ -44,7 +44,8 @@ public abstract class AnyH<
     E  extends AnyH<D, PC, E, __, _c>,
     __ extends AnyH__<D, PC, __>,
     _c extends AnyH_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> {
+    >
+    extends NormalText<D, PC, E, __, _c> {
 
   protected AnyH(D document, PC pc) {
     super(document, pc);

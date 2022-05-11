@@ -40,17 +40,18 @@ import java.io.IOException;
 public interface AnyCOLGROUP_content<
     D  extends AnyDocument<D>,
     __ extends AnyCOLGROUP_content<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
-    AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    AnyUnion_COLGROUP_ScriptSupporting<D, __> {
 
-//
-// Content models:
-//
-// Inherited: Content<D, __>
-{
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+
   //
   // Factories:
   //

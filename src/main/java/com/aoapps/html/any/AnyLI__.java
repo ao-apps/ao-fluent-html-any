@@ -40,7 +40,7 @@ public abstract class AnyLI__<
     D  extends AnyDocument<D>,
     PC extends AnyListContent<D, PC>,
     __ extends AnyLI__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyFlowContent<D, __> {
 

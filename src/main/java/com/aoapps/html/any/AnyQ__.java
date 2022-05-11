@@ -40,7 +40,7 @@ public abstract class AnyQ__<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_Palpable_Phrasing<D, PC>,
     __ extends AnyQ__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyPhrasingContent<D, __> {
 

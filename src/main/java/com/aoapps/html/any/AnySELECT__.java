@@ -40,7 +40,7 @@ public abstract class AnySELECT__<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_Interactive_Phrasing<D, PC>,
     __ extends AnySELECT__<D, PC, __>
->
+    >
     extends Normal__<D, PC, __>
     implements AnySELECT_content<D, __> {
 

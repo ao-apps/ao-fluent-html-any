@@ -40,7 +40,7 @@ public abstract class AnyDIV__<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_DL_Palpable<D, PC>,
     __ extends AnyDIV__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyDIV_content<D, __> {
 

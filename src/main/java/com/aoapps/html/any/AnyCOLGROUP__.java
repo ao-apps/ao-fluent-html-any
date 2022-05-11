@@ -40,7 +40,7 @@ public abstract class AnyCOLGROUP__<
     D  extends AnyDocument<D>,
     PC extends AnyTABLE_content<D, PC>,
     __ extends AnyCOLGROUP__<D, PC, __>
->
+    >
     extends Normal__<D, PC, __>
     implements AnyCOLGROUP_content<D, __> {
 

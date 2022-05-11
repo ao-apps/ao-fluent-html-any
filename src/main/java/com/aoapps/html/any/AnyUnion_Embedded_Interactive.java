@@ -39,12 +39,12 @@ import java.io.IOException;
 public interface AnyUnion_Embedded_Interactive<
     D  extends AnyDocument<D>,
     __ extends AnyUnion_Embedded_Interactive<D, __>
-> extends
+    >
+    extends
     //
     // Content models:
     //
-    Content<D, __>
-{
+    Content<D, __> {
   //
   // Factories:
   //
@@ -209,7 +209,7 @@ public interface AnyUnion_Embedded_Interactive<
   }
 
   /**
-   * Creates an object element with no attributes then begins element content
+   * Creates an object element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-object-element">4.8.7 The object element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/object">&lt;object&gt;: The External Object element</a>.</li>

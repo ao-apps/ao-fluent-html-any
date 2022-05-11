@@ -42,7 +42,7 @@ public abstract class AnyMAIN__<
     D  extends AnyDocument<D>,
     PC extends AnyPalpableContent<D, PC>,
     __ extends AnyMAIN__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyFlowContent<D, __> {
 

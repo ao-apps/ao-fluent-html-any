@@ -42,7 +42,8 @@ import java.io.IOException;
 public interface AnyPalpableContent<
     D  extends AnyDocument<D>,
     __ extends AnyPalpableContent<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -58,9 +59,9 @@ public interface AnyPalpableContent<
     // Inherited: Content<D, __>
     AnySectioningContent<D, __>,
     AnyHeadingContent<D, __>,
-    AnyInteractiveContent<D, __>
-// Inherited: AnyTextContent<D, __> // that is not inter-element whitespace
-{
+    AnyInteractiveContent<D, __> {
+  // Inherited: AnyTextContent<D, __> // that is not inter-element whitespace
+
   //
   // Factories:
   //
@@ -143,7 +144,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates an address element with no attributes then begins element content
+   * Creates an address element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-address-element">4.3.10 The address element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/address">&lt;address&gt;: The Contact Address element</a>.</li>
@@ -244,7 +245,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a blockquote element with no attributes then begins element content
+   * Creates a blockquote element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-blockquote-element">4.4.4 The blockquote element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">&lt;blockquote&gt;: The Block Quotation element</a>.</li>
@@ -332,7 +333,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a dl element with no attributes then begins element content
+   * Creates a dl element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-dl-element">4.4.9 The dl element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl">&lt;dl&gt;: The Description List element</a>.</li>
@@ -473,7 +474,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a footer element with no attributes then begins element content
+   * Creates a footer element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-footer-element">4.3.9 The footer element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/footer">&lt;footer&gt;</a>.</li>
@@ -594,7 +595,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a form element with no attributes then begins element content
+   * Creates a form element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#the-form-element">4.10.3 The form element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form">&lt;form&gt;: The Form element</a>.</li>
@@ -705,7 +706,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a header element with no attributes then begins element content
+   * Creates a header element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-header-element">4.3.8 The header element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header">&lt;header&gt;</a>.</li>
@@ -820,7 +821,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a main element with no attributes then begins element content
+   * Creates a main element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-main-element">4.4.14 The main element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main">&lt;main&gt;</a>.</li>
@@ -909,7 +910,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates an ol element with no attributes then begins element content
+   * Creates an ol element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ol-element">4.4.5 The ol element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ol">&lt;ol&gt;: The Ordered List element</a>.</li>
@@ -1005,7 +1006,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a p element with no attributes then begins element content
+   * Creates a p element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-p-element">4.4.1 The p element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p">&lt;p&gt;: The Paragraph element</a>.</li>
@@ -1100,7 +1101,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a pre element with no attributes then begins element content
+   * Creates a pre element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-pre-element">4.4.3 The pre element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre">&lt;pre&gt;: The Preformatted Text element</a>.</li>
@@ -1193,7 +1194,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a table element with no attributes then begins element content
+   * Creates a table element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-table-element">4.9.1 The table element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table">&lt;table&gt;: The Table element</a>.</li>
@@ -1276,7 +1277,7 @@ public interface AnyPalpableContent<
   }
 
   /**
-   * Creates a ul element with no attributes then begins element content
+   * Creates a ul element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-ul-element">4.4.6 The ul element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul">&lt;ul&gt;: The Unordered List element</a>.</li>

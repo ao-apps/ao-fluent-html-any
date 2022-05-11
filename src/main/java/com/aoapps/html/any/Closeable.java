@@ -37,7 +37,8 @@ import java.io.IOException;
 public interface Closeable<
     D  extends AnyDocument<D>,
     PC extends Content<D, PC>
-> extends java.io.Closeable {
+    >
+    extends java.io.Closeable {
 
   /**
    * Closes the content and ends the parent tag.

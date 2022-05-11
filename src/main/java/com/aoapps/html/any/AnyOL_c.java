@@ -40,7 +40,7 @@ public abstract class AnyOL_c<
     D  extends AnyDocument<D>,
     PC extends AnyPalpableContent<D, PC>,
     _c extends AnyOL_c<D, PC, _c>
->
+    >
     extends Normal_c<D, PC, _c>
     implements AnyListContent<D, _c> {
 

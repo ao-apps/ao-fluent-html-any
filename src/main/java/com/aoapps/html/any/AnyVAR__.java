@@ -40,7 +40,7 @@ public abstract class AnyVAR__<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_Palpable_Phrasing<D, PC>,
     __ extends AnyVAR__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyPhrasingContent<D, __> {
 

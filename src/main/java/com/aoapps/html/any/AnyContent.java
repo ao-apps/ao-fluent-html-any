@@ -38,7 +38,8 @@ import java.io.IOException;
 public interface AnyContent<
     D  extends AnyDocument<D>,
     __ extends AnyContent<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -81,13 +82,13 @@ public interface AnyContent<
     // Inherited: AnyOPTGROUP_content<D, __>
     AnySELECT_content<D, __>,
     AnyTABLE_content<D, __>,
-    AnyTR_content<D, __>
+    AnyTR_content<D, __> {
 
-//
-// Others:
-//
-// Inherited: Whitespace
-{
+  //
+  // Others:
+  //
+  // Inherited: Whitespace
+
   //
   // Factories:
   //
@@ -153,7 +154,7 @@ public interface AnyContent<
   }
 
   /**
-   * Creates a html element with no attributes then begins element content
+   * Creates a html element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-html-element">4.1.1 The html element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/html">&lt;html&gt;: The HTML Document / Root element</a>.</li>

@@ -38,17 +38,18 @@ import java.io.IOException;
 public interface AnyScriptSupportingContent<
     D  extends AnyDocument<D>,
     __ extends AnyScriptSupportingContent<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
-    AnyUnion_COLGROUP_ScriptSupporting<D, __>
+    AnyUnion_COLGROUP_ScriptSupporting<D, __> {
 
-//
-// Content models:
-//
-// Inherited: Content<D, __>
-{
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+
   //
   // Factories:
   //

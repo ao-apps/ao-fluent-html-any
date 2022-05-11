@@ -50,13 +50,13 @@ public abstract class AnyOUTPUT<
     __ extends AnyOUTPUT__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyOUTPUT_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
+    >
+    extends NormalText<D, PC, E, __, _c> implements
     // TODO: for, like AnyLABEL.for, but attribute named "ForArray", with support for multiple values like the Class attribute.
-    com.aoapps.html.any.attributes.Text.Form<E>,
-    com.aoapps.html.any.attributes.Text.Name<E>,
+    com.aoapps.html.any.attributes.text.Form<E>,
+    com.aoapps.html.any.attributes.text.Name<E>,
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Enum.Autocapitalize<E>
-{
+    com.aoapps.html.any.attributes.enumeration.Autocapitalize<E> {
 
   protected AnyOUTPUT(D document, PC pc) {
     super(document, pc);

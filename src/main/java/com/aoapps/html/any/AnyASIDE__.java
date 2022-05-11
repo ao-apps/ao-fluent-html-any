@@ -42,7 +42,7 @@ public abstract class AnyASIDE__<
     D  extends AnyDocument<D>,
     PC extends AnySectioningContent<D, PC>,
     __ extends AnyASIDE__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyFlowContent<D, __> {
 

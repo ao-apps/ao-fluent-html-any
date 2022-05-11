@@ -40,7 +40,7 @@ public abstract class Normal_c<
     D  extends AnyDocument<D>,
     PC extends Content<D, PC>,
     _c extends Normal_c<D, PC, _c>
->
+    >
     implements Content<D, _c>, Closeable<D, PC> {
 
   protected final Normal<D, PC, ?, ?, _c> element;

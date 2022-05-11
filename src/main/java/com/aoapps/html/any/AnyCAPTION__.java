@@ -40,7 +40,7 @@ public abstract class AnyCAPTION__<
     D  extends AnyDocument<D>,
     PC extends AnyTABLE_content<D, PC>,
     __ extends AnyCAPTION__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyFlowContent<D, __> {
 

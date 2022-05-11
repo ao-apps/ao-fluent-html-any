@@ -40,7 +40,8 @@ public abstract class Transparent<
     E  extends Transparent<D, PC, E, _c>,
     // Would prefer "_c extends PC & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends Transparent_c<D, PC, _c>
-> extends Normal<D, PC, E, PC, _c> {
+    >
+    extends Normal<D, PC, E, PC, _c> {
 
   protected Transparent(D document, PC pc) {
     super(document, pc);

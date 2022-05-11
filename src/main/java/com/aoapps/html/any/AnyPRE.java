@@ -48,7 +48,8 @@ public abstract class AnyPRE<
     __ extends AnyPRE__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyPRE_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> {
+    >
+    extends NormalText<D, PC, E, __, _c> {
 
   private boolean oldAutonli;
   private boolean oldIndent;

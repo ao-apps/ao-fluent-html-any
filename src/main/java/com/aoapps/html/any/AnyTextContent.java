@@ -44,7 +44,8 @@ import java.io.IOException;
 public interface AnyTextContent<
     D  extends AnyDocument<D>,
     __ extends AnyTextContent<D, __>
-> extends Text,
+    >
+    extends Text,
     Content<D, __> {
 
   // <editor-fold desc="Whitespace - manual self-type" defaultstate="collapsed">

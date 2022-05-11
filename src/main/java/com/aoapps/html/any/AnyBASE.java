@@ -44,17 +44,18 @@ public abstract class AnyBASE<
     D  extends AnyDocument<D>,
     PC extends AnyMetadataContent<D, PC>,
     E  extends AnyBASE<D, PC, E>
-> extends Void<D, PC, E> implements
-    com.aoapps.html.any.attributes.Url.Href<E>,
-    com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
+    >
+    extends Void<D, PC, E> implements
+    com.aoapps.html.any.attributes.url.Href<E>,
+    com.aoapps.html.any.attributes.enumeration.Target<E, com.aoapps.html.any.attributes.enumeration.Target.Value>,
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-    com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.bool.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.enumeration.DirUnexpected<E>,
+    com.aoapps.html.any.attributes.text.ClassNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.IdNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.StyleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.TitleNoHtml4<E>,
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
@@ -82,8 +83,7 @@ public abstract class AnyBASE<
     com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
-{
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E> {
 
   protected AnyBASE(D document, PC pc) {
     super(document, pc);

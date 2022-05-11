@@ -48,7 +48,8 @@ public abstract class AnyTHEAD<
     __ extends AnyTHEAD__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyTHEAD_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c> {
+    >
+    extends Normal<D, PC, E, __, _c> {
 
   protected AnyTHEAD(D document, PC pc) {
     super(document, pc);

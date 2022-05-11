@@ -49,14 +49,15 @@ public abstract class AnyTITLE<
     __ extends AnyTITLE__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyTITLE_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
+    >
+    extends NormalText<D, PC, E, __, _c> implements
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-    com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.bool.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.text.ClassNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.IdNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.StyleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.TitleNoHtml4<E>,
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
@@ -84,8 +85,7 @@ public abstract class AnyTITLE<
     com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
-{
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E> {
 
   private boolean oldAutonli;
   private boolean oldIndent;

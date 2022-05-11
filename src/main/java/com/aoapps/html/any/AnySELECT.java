@@ -51,21 +51,21 @@ public abstract class AnySELECT<
     __ extends AnySELECT__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnySELECT_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnySELECT.Autocomplete>,
-    com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-    com.aoapps.html.any.attributes.Text.Form<E>,
-    com.aoapps.html.any.attributes.Boolean.Multiple<E>,
-    com.aoapps.html.any.attributes.Text.Name<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Integer.Size<E>,
+    >
+    extends Normal<D, PC, E, __, _c> implements
+    com.aoapps.html.any.attributes.enumeration.Autocomplete<E, AnySELECT.Autocomplete>,
+    com.aoapps.html.any.attributes.bool.Disabled<E>,
+    com.aoapps.html.any.attributes.text.Form<E>,
+    com.aoapps.html.any.attributes.bool.Multiple<E>,
+    com.aoapps.html.any.attributes.text.Name<E>,
+    com.aoapps.html.any.attributes.bool.Required<E>,
+    com.aoapps.html.any.attributes.integer.Size<E>,
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
-    com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
+    com.aoapps.html.any.attributes.enumeration.Autocapitalize<E>,
+    com.aoapps.html.any.attributes.integer.TabindexHtml4<E>,
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>
-{
+    com.aoapps.html.any.attributes.event.Oninput<E> {
 
   protected AnySELECT(D document, PC pc) {
     super(document, pc);

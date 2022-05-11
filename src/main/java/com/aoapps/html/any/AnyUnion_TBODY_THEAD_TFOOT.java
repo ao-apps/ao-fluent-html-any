@@ -49,7 +49,8 @@ import java.io.IOException;
 public interface AnyUnion_TBODY_THEAD_TFOOT<
     D  extends AnyDocument<D>,
     __ extends AnyUnion_TBODY_THEAD_TFOOT<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -59,8 +60,7 @@ public interface AnyUnion_TBODY_THEAD_TFOOT<
     // Content models:
     //
     // Inherited: Content<D, __>
-    AnyScriptSupportingContent<D, __>
-{
+    AnyScriptSupportingContent<D, __> {
   //
   // Factories:
   //
@@ -126,7 +126,7 @@ public interface AnyUnion_TBODY_THEAD_TFOOT<
   }
 
   /**
-   * Creates a tr element with no attributes then begins element content
+   * Creates a tr element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-tr-element">4.9.8 The tr element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/tr">&lt;tr&gt;: The Table Row element</a>.</li>

@@ -38,7 +38,8 @@ package com.aoapps.html.any;
 public interface AnyOPTGROUP_content<
     D  extends AnyDocument<D>,
     __ extends AnyOPTGROUP_content<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -49,8 +50,7 @@ public interface AnyOPTGROUP_content<
     // Content models:
     //
     // Inherited: Content<D, __>
-    AnyScriptSupportingContent<D, __>
-{
+    AnyScriptSupportingContent<D, __> {
   //
   // Factories:
   //

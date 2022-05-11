@@ -49,13 +49,13 @@ public abstract class AnyTH<
     __ extends AnyTH__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyTH_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
-    com.aoapps.html.any.attributes.Integer.Colspan<E>,
-    com.aoapps.html.any.attributes.Integer.Rowspan<E>
-// TODO: headers
-// TODO: scope
-// TODO: abbr
-{
+    >
+    extends NormalText<D, PC, E, __, _c> implements
+    com.aoapps.html.any.attributes.integer.Colspan<E>,
+    com.aoapps.html.any.attributes.integer.Rowspan<E> {
+  // TODO: headers
+  // TODO: scope
+  // TODO: abbr
 
   protected AnyTH(D document, PC pc) {
     super(document, pc);

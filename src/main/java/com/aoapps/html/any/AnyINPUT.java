@@ -23,10 +23,11 @@
 
 package com.aoapps.html.any;
 
-import com.aoapps.collections.AoCollections;
-import com.aoapps.encoding.Doctype;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+
+import com.aoapps.collections.AoCollections;
+import com.aoapps.encoding.Doctype;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.LocalizedIllegalStateException;
 import com.aoapps.lang.LocalizedUnsupportedOperationException;
@@ -59,25 +60,25 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 public abstract class AnyINPUT<
-  D  extends AnyDocument<D>,
-  PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-  E  extends AnyINPUT<D, PC, E>
-> extends Void<D, PC, E> implements
-  com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-  com.aoapps.html.any.attributes.Text.Form<E>,
-  // TODO: inputmode here or global?
-  // TODO: list
-  // TODO: max
-  // TODO: min
-  com.aoapps.html.any.attributes.Text.Name<E>,
-  // TODO: pattern
-  // TODO: step
-  // Global Attributes overrides
-  com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
-{
+    D  extends AnyDocument<D>,
+    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+    E  extends AnyINPUT<D, PC, E>
+    >
+    extends Void<D, PC, E> implements
+    com.aoapps.html.any.attributes.bool.Disabled<E>,
+    com.aoapps.html.any.attributes.text.Form<E>,
+    // TODO: inputmode here or global?
+    // TODO: list
+    // TODO: max
+    // TODO: min
+    com.aoapps.html.any.attributes.text.Name<E>,
+    // TODO: pattern
+    // TODO: step
+    // Global Attributes overrides
+    com.aoapps.html.any.attributes.integer.TabindexHtml4<E> {
 
   private static final com.aoapps.lang.i18n.Resources RESOURCES =
-    com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyINPUT.class);
+      com.aoapps.lang.i18n.Resources.getResources(ResourceBundle::getBundle, AnyINPUT.class);
 
   private static void typeOnlySupportedInHtml5(AnyDocument<?> document, Dynamic.Type type) throws UnsupportedOperationException {
     assert type.getRequiredDoctype() == Doctype.HTML5;
@@ -100,7 +101,7 @@ public abstract class AnyINPUT<
   protected E writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<input", false);
     openWriteType(unsafe);
-    @SuppressWarnings("unchecked") E element = (E)this;
+    @SuppressWarnings("unchecked") E element = (E) this;
     return element;
   }
 
@@ -215,50 +216,51 @@ public abstract class AnyINPUT<
    */
   @SuppressWarnings("deprecation")
   public abstract static class Dynamic<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Dynamic<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Text.Accept<E>,
-    com.aoapps.html.any.attributes.Enum.Align<E, Image.Align>,
-    com.aoapps.html.any.attributes.Text.Alt<E>,
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyINPUT.Autocomplete>,
-    com.aoapps.html.any.attributes.Enum.Capture<E, File.Capture>,
-    com.aoapps.html.any.attributes.Boolean.Checked<E>,
-    com.aoapps.html.any.attributes.Text.Dirname<E>,
-    com.aoapps.html.any.attributes.Url.Formaction<E>,
-    com.aoapps.html.any.attributes.Enum.Formenctype<E, com.aoapps.html.any.attributes.Enum.Enctype.Value>,
-    com.aoapps.html.any.attributes.Enum.Formmethod<E, com.aoapps.html.any.attributes.Enum.Method.Value>,
-    com.aoapps.html.any.attributes.Boolean.Formnovalidate<E>,
-    com.aoapps.html.any.attributes.Enum.Formtarget<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
-    com.aoapps.html.any.attributes.Integer.HeightHtml5Only<E>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Integer.Maxlength<E>,
-    com.aoapps.html.any.attributes.Integer.Minlength<E>,
-    com.aoapps.html.any.attributes.Boolean.Multiple<E>,
-    com.aoapps.html.any.attributes.Text.Placeholder<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Integer.Size<E>,
-    com.aoapps.html.any.attributes.Url.Src<E>,
-    com.aoapps.html.any.attributes.Enum.Type<E, Dynamic.Type>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    com.aoapps.html.any.attributes.Integer.WidthHtml5Only<E>,
-    // Event Attributes
-    com.aoapps.html.any.attributes.event.Onsearch<E>,
-    // Global Attributes overrides
-    com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onabort<E>,
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Onerror<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>,
-    com.aoapps.html.any.attributes.event.Onload<E>,
-    com.aoapps.html.any.attributes.event.Onselect<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Dynamic<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.text.Accept<E>,
+      com.aoapps.html.any.attributes.enumeration.Align<E, Image.Align>,
+      com.aoapps.html.any.attributes.text.Alt<E>,
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, AnyINPUT.Autocomplete>,
+      com.aoapps.html.any.attributes.enumeration.Capture<E, File.Capture>,
+      com.aoapps.html.any.attributes.bool.Checked<E>,
+      com.aoapps.html.any.attributes.text.Dirname<E>,
+      com.aoapps.html.any.attributes.url.Formaction<E>,
+      com.aoapps.html.any.attributes.enumeration.Formenctype<E, com.aoapps.html.any.attributes.enumeration.Enctype.Value>,
+      com.aoapps.html.any.attributes.enumeration.Formmethod<E, com.aoapps.html.any.attributes.enumeration.Method.Value>,
+      com.aoapps.html.any.attributes.bool.Formnovalidate<E>,
+      com.aoapps.html.any.attributes.enumeration.Formtarget<E, com.aoapps.html.any.attributes.enumeration.Target.Value>,
+      com.aoapps.html.any.attributes.integer.HeightHtml5Only<E>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.integer.Maxlength<E>,
+      com.aoapps.html.any.attributes.integer.Minlength<E>,
+      com.aoapps.html.any.attributes.bool.Multiple<E>,
+      com.aoapps.html.any.attributes.text.Placeholder<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.integer.Size<E>,
+      com.aoapps.html.any.attributes.url.Src<E>,
+      com.aoapps.html.any.attributes.enumeration.Type<E, Dynamic.Type>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      com.aoapps.html.any.attributes.integer.WidthHtml5Only<E>,
+      // Event Attributes
+      com.aoapps.html.any.attributes.event.Onsearch<E>,
+      // Global Attributes overrides
+      com.aoapps.html.any.attributes.enumeration.Autocapitalize<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onabort<E>,
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Onerror<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E>,
+      com.aoapps.html.any.attributes.event.Onload<E>,
+      com.aoapps.html.any.attributes.event.Onselect<E> {
 
     private String type;
+
     protected Dynamic(D document, PC pc) {
       super(document, pc);
       this.type = null;
@@ -294,6 +296,8 @@ public abstract class AnyINPUT<
     public enum Type implements Function<AnyDocument<?>, String> {
       BUTTON("button") {
         /**
+         * {@inheritDoc}
+         *
          * @see Button#value(java.lang.Object)
          */
         @Override
@@ -316,6 +320,8 @@ public abstract class AnyINPUT<
       RANGE("range", Doctype.HTML5),
       RESET("reset") {
         /**
+         * {@inheritDoc}
+         *
          * @see Reset#value(java.lang.Object)
          */
         @Override
@@ -326,6 +332,8 @@ public abstract class AnyINPUT<
       SEARCH("search", Doctype.HTML5),
       SUBMIT("submit") {
         /**
+         * {@inheritDoc}
+         *
          * @see Submit#value(java.lang.Object)
          */
         @Override
@@ -379,6 +387,7 @@ public abstract class AnyINPUT<
 
       private static final Type[] values = values();
       private static final Map<String, Type> byLowerValue = AoCollections.newHashMap(values.length);
+
       static {
         for (Type type : values) {
           if (!type.value.equals(type.value.toLowerCase(Locale.ROOT))) {
@@ -427,7 +436,7 @@ public abstract class AnyINPUT<
         encodeTextInXhtmlAttribute(type, unsafe);
         unsafe.append('"');
       }
-      @SuppressWarnings("unchecked") E element = (E)this;
+      @SuppressWarnings("unchecked") E element = (E) this;
       return element;
     }
 
@@ -471,7 +480,7 @@ public abstract class AnyINPUT<
         unsafe.write(type.value); // No encoding, is a known safe value.  TODO: Assert this above in static initializer?
         unsafe.append('"');
       }
-      @SuppressWarnings("unchecked") E element = (E)this;
+      @SuppressWarnings("unchecked") E element = (E) this;
       return element;
     }
 
@@ -483,7 +492,7 @@ public abstract class AnyINPUT<
       assert this.type == null || this.type.equals(this.type.toLowerCase(Locale.ROOT));
       assert this.type == null || this.type.equals(this.type.trim());
       Type typeEnum = Type.byLowerValue.get(this.type);
-      @SuppressWarnings("unchecked") E element = (E)this;
+      @SuppressWarnings("unchecked") E element = (E) this;
       return Attributes.Text.attribute(
         element,
         "value",
@@ -505,14 +514,15 @@ public abstract class AnyINPUT<
    * @param  <E>   This element type
    */
   public abstract static class Button<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Button<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Attributes overrides
-    com.aoapps.html.any.attributes.Enum.Autocapitalize<E> // Is allowed on <button>, so guessing here, too
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Button<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Attributes overrides
+      // Is allowed on <button>, so guessing here, too
+      com.aoapps.html.any.attributes.enumeration.Autocapitalize<E> {
 
     protected Button(D document, PC pc) {
       super(document, pc);
@@ -531,7 +541,7 @@ public abstract class AnyINPUT<
      */
     @Override
     public E value(Object value) throws IOException {
-      @SuppressWarnings("unchecked") E element = (E)this;
+      @SuppressWarnings("unchecked") E element = (E) this;
       return Attributes.Text.attribute(
         element,
         "value",
@@ -553,18 +563,18 @@ public abstract class AnyINPUT<
    * @param  <E>   This element type
    */
   public abstract static class Checkbox<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Checkbox<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Boolean.Checked<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Checkbox<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.bool.Checked<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E> {
 
     protected Checkbox(D document, PC pc) {
       super(document, pc);
@@ -587,18 +597,18 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Color<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Color<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Color.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Color<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Color.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>, // Guessed
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E> {
 
     protected Color(D document, PC pc) {
       super(document, pc);
@@ -667,20 +677,20 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Date<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Date<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Date.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Date<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Date.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>, // Guessed
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E> {
 
     protected Date(D document, PC pc) {
       super(document, pc);
@@ -751,20 +761,20 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class DatetimeLocal<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends DatetimeLocal<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, DatetimeLocal.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends DatetimeLocal<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, DatetimeLocal.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>, // Guessed
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E> {
 
     protected DatetimeLocal(D document, PC pc) {
       super(document, pc);
@@ -834,26 +844,27 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Email<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Email<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Email.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Integer.Maxlength<E>,
-    com.aoapps.html.any.attributes.Integer.Minlength<E>,
-    com.aoapps.html.any.attributes.Boolean.Multiple<E>,
-    com.aoapps.html.any.attributes.Text.Placeholder<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Integer.Size<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>,
-    com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Email<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Email.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.integer.Maxlength<E>,
+      com.aoapps.html.any.attributes.integer.Minlength<E>,
+      com.aoapps.html.any.attributes.bool.Multiple<E>,
+      com.aoapps.html.any.attributes.text.Placeholder<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.integer.Size<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E>,
+      // Guessed (to match Placeholder)
+      com.aoapps.html.any.attributes.event.Onselect<E> {
 
     protected Email(D document, PC pc) {
       super(document, pc);
@@ -926,21 +937,21 @@ public abstract class AnyINPUT<
    * @param  <E>   This element type
    */
   public abstract static class File<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends File<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Text.Accept<E>,
-    com.aoapps.html.any.attributes.Enum.Capture<E, File.Capture>,
-    com.aoapps.html.any.attributes.Boolean.Multiple<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    // Does not support value per https://www.w3schools.com/tags/att_input_value.asp: com.aoapps.html.any.attributes.Text.Value<File>
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>,
-    com.aoapps.html.any.attributes.event.Onselect<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends File<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.text.Accept<E>,
+      com.aoapps.html.any.attributes.enumeration.Capture<E, File.Capture>,
+      com.aoapps.html.any.attributes.bool.Multiple<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      // Does not support value per https://www.w3schools.com/tags/att_input_value.asp: com.aoapps.html.any.attributes.text.Value<File>
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E>,
+      com.aoapps.html.any.attributes.event.Onselect<E> {
 
     protected File(D document, PC pc) {
       super(document, pc);
@@ -1006,44 +1017,44 @@ public abstract class AnyINPUT<
    */
   @SuppressWarnings("deprecation")
   public abstract static class Hidden<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Hidden<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Attributes overrides
-    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Hidden<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Attributes overrides
+      com.aoapps.html.any.attributes.text.AccesskeyUnexpected<E>,
+      com.aoapps.html.any.attributes.bool.AutofocusUnexpected<E>,
+      com.aoapps.html.any.attributes.enumeration.DirUnexpected<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OncontextmenuUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OncopyUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OncutUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OndblclickUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OndragUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OndragendUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OndragenterUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OndragleaveUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OndragoverUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OndragstartUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OndropUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnfocusUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnkeydownUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnkeypressUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnkeyupUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnmousedownUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnmouseenterUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnmouseleaveUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnmousemoveUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnmouseoutUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnmouseoverUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
+      com.aoapps.html.any.attributes.event.OnwheelUnexpected<E> {
 
     protected Hidden(D document, PC pc) {
       super(document, pc);
@@ -1068,26 +1079,26 @@ public abstract class AnyINPUT<
    */
   @SuppressWarnings("deprecation")
   public abstract static class Image<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Image<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Align<E, Image.Align>,
-    com.aoapps.html.any.attributes.Text.Alt<E>,
-    com.aoapps.html.any.attributes.Url.Formaction<E>,
-    com.aoapps.html.any.attributes.Enum.Formenctype<E, com.aoapps.html.any.attributes.Enum.Enctype.Value>,
-    com.aoapps.html.any.attributes.Enum.Formmethod<E, com.aoapps.html.any.attributes.Enum.Method.Value>,
-    com.aoapps.html.any.attributes.Boolean.Formnovalidate<E>,
-    com.aoapps.html.any.attributes.Enum.Formtarget<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
-    com.aoapps.html.any.attributes.Integer.HeightHtml5Only<E>,
-    com.aoapps.html.any.attributes.Url.Src<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    com.aoapps.html.any.attributes.Integer.WidthHtml5Only<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onabort<E>,
-    com.aoapps.html.any.attributes.event.Onerror<E>,
-    com.aoapps.html.any.attributes.event.Onload<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Image<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Align<E, Image.Align>,
+      com.aoapps.html.any.attributes.text.Alt<E>,
+      com.aoapps.html.any.attributes.url.Formaction<E>,
+      com.aoapps.html.any.attributes.enumeration.Formenctype<E, com.aoapps.html.any.attributes.enumeration.Enctype.Value>,
+      com.aoapps.html.any.attributes.enumeration.Formmethod<E, com.aoapps.html.any.attributes.enumeration.Method.Value>,
+      com.aoapps.html.any.attributes.bool.Formnovalidate<E>,
+      com.aoapps.html.any.attributes.enumeration.Formtarget<E, com.aoapps.html.any.attributes.enumeration.Target.Value>,
+      com.aoapps.html.any.attributes.integer.HeightHtml5Only<E>,
+      com.aoapps.html.any.attributes.url.Src<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      com.aoapps.html.any.attributes.integer.WidthHtml5Only<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onabort<E>,
+      com.aoapps.html.any.attributes.event.Onerror<E>,
+      com.aoapps.html.any.attributes.event.Onload<E> {
 
     protected Image(D document, PC pc) {
       super(document, pc);
@@ -1108,27 +1119,27 @@ public abstract class AnyINPUT<
     public enum Align implements Function<AnyDocument<?>, String> {
 
       /**
-       * Left-aligns the image (this is default)
+       * Left-aligns the image (this is default).
        */
       LEFT("left"),
 
       /**
-       * Right-aligns the image
+       * Right-aligns the image.
        */
       RIGHT("right"),
 
       /**
-       * Top-aligns the image
+       * Top-aligns the image.
        */
       TOP("top"),
 
       /**
-       * Middle-aligns the image
+       * Middle-aligns the image.
        */
       MIDDLE("middle"),
 
       /**
-       * Bottom-aligns the image
+       * Bottom-aligns the image.
        */
       BOTTOM("bottom");
 
@@ -1160,20 +1171,20 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Month<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Month<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Month.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Month<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Month.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>, // Guessed
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E> {
 
     protected Month(D document, PC pc) {
       super(document, pc);
@@ -1245,20 +1256,20 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Number<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Number<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Number.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>, // TODO: Review types (this and others), perhaps Attributes.Number or similar?
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Number<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Number.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.text.Value<E>, // TODO: Review types (this and others), perhaps Attributes.Number or similar?
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E> {
 
     protected Number(D document, PC pc) {
       super(document, pc);
@@ -1344,24 +1355,24 @@ public abstract class AnyINPUT<
    * @param  <E>   This element type
    */
   public abstract static class Password<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Password<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Password.Autocomplete>,
-    com.aoapps.html.any.attributes.Integer.Maxlength<E>,
-    com.aoapps.html.any.attributes.Integer.Minlength<E>,
-    com.aoapps.html.any.attributes.Text.Placeholder<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Integer.Size<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>,
-    com.aoapps.html.any.attributes.event.Onselect<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Password<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Password.Autocomplete>,
+      com.aoapps.html.any.attributes.integer.Maxlength<E>,
+      com.aoapps.html.any.attributes.integer.Minlength<E>,
+      com.aoapps.html.any.attributes.text.Placeholder<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.integer.Size<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E>,
+      com.aoapps.html.any.attributes.event.Onselect<E> {
 
     protected Password(D document, PC pc) {
       super(document, pc);
@@ -1435,18 +1446,18 @@ public abstract class AnyINPUT<
    * @param  <E>   This element type
    */
   public abstract static class Radio<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Radio<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Boolean.Checked<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Radio<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.bool.Checked<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E> {
 
     protected Radio(D document, PC pc) {
       super(document, pc);
@@ -1469,17 +1480,17 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Range<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Range<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Range.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Range<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Range.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E> {
 
     protected Range(D document, PC pc) {
       super(document, pc);
@@ -1546,12 +1557,12 @@ public abstract class AnyINPUT<
    * @param  <E>   This element type
    */
   public abstract static class Reset<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Reset<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Text.Value<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Reset<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.text.Value<E> {
 
     protected Reset(D document, PC pc) {
       super(document, pc);
@@ -1570,7 +1581,7 @@ public abstract class AnyINPUT<
      */
     @Override
     public E value(Object value) throws IOException {
-      @SuppressWarnings("unchecked") E element = (E)this;
+      @SuppressWarnings("unchecked") E element = (E) this;
       return Attributes.Text.attribute(
         element,
         "value",
@@ -1594,30 +1605,31 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Search<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Search<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Search.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.Dirname<E>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Integer.Maxlength<E>,
-    com.aoapps.html.any.attributes.Integer.Minlength<E>,
-    com.aoapps.html.any.attributes.Text.Placeholder<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Integer.Size<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Event Attributes
-    com.aoapps.html.any.attributes.event.Onsearch<E>,
-    // Global Attributes overrides
-    com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>,
-    com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Search<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Search.Autocomplete>,
+      com.aoapps.html.any.attributes.text.Dirname<E>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.integer.Maxlength<E>,
+      com.aoapps.html.any.attributes.integer.Minlength<E>,
+      com.aoapps.html.any.attributes.text.Placeholder<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.integer.Size<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Event Attributes
+      com.aoapps.html.any.attributes.event.Onsearch<E>,
+      // Global Attributes overrides
+      com.aoapps.html.any.attributes.enumeration.Autocapitalize<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E>,
+      // Guessed (to match Placeholder)
+      com.aoapps.html.any.attributes.event.Onselect<E> {
 
     protected Search(D document, PC pc) {
       super(document, pc);
@@ -1733,17 +1745,17 @@ public abstract class AnyINPUT<
    * @param  <E>   This element type
    */
   public abstract static class Submit<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Submit<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Url.Formaction<E>,
-    com.aoapps.html.any.attributes.Enum.Formenctype<E, com.aoapps.html.any.attributes.Enum.Enctype.Value>,
-    com.aoapps.html.any.attributes.Enum.Formmethod<E, com.aoapps.html.any.attributes.Enum.Method.Value>,
-    com.aoapps.html.any.attributes.Boolean.Formnovalidate<E>,
-    com.aoapps.html.any.attributes.Enum.Formtarget<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
-    com.aoapps.html.any.attributes.Text.Value<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Submit<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.url.Formaction<E>,
+      com.aoapps.html.any.attributes.enumeration.Formenctype<E, com.aoapps.html.any.attributes.enumeration.Enctype.Value>,
+      com.aoapps.html.any.attributes.enumeration.Formmethod<E, com.aoapps.html.any.attributes.enumeration.Method.Value>,
+      com.aoapps.html.any.attributes.bool.Formnovalidate<E>,
+      com.aoapps.html.any.attributes.enumeration.Formtarget<E, com.aoapps.html.any.attributes.enumeration.Target.Value>,
+      com.aoapps.html.any.attributes.text.Value<E> {
 
     protected Submit(D document, PC pc) {
       super(document, pc);
@@ -1762,7 +1774,7 @@ public abstract class AnyINPUT<
      */
     @Override
     public E value(Object value) throws IOException {
-      @SuppressWarnings("unchecked") E element = (E)this;
+      @SuppressWarnings("unchecked") E element = (E) this;
       return Attributes.Text.attribute(
         element,
         "value",
@@ -1786,25 +1798,26 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Tel<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Tel<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Tel.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Integer.Maxlength<E>,
-    com.aoapps.html.any.attributes.Integer.Minlength<E>,
-    com.aoapps.html.any.attributes.Text.Placeholder<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Integer.Size<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>,
-    com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Tel<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Tel.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.integer.Maxlength<E>,
+      com.aoapps.html.any.attributes.integer.Minlength<E>,
+      com.aoapps.html.any.attributes.text.Placeholder<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>, // Guessed
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.integer.Size<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E>,
+      // Guessed (to match Placeholder)
+      com.aoapps.html.any.attributes.event.Onselect<E> {
 
     protected Tel(D document, PC pc) {
       super(document, pc);
@@ -1879,28 +1892,28 @@ public abstract class AnyINPUT<
    * @param  <E>   This element type
    */
   public abstract static class Text<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Text<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyINPUT.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.Dirname<E>,
-    com.aoapps.html.any.attributes.Integer.Maxlength<E>,
-    com.aoapps.html.any.attributes.Integer.Minlength<E>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Text.Placeholder<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Integer.Size<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Attributes overrides
-    com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>,
-    com.aoapps.html.any.attributes.event.Onselect<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Text<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, AnyINPUT.Autocomplete>,
+      com.aoapps.html.any.attributes.text.Dirname<E>,
+      com.aoapps.html.any.attributes.integer.Maxlength<E>,
+      com.aoapps.html.any.attributes.integer.Minlength<E>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.text.Placeholder<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.integer.Size<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Attributes overrides
+      com.aoapps.html.any.attributes.enumeration.Autocapitalize<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E>,
+      com.aoapps.html.any.attributes.event.Onselect<E> {
 
     protected Text(D document, PC pc) {
       super(document, pc);
@@ -1923,20 +1936,20 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Time<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Time<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Time.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Time<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Time.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>, // Guessed
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E> {
 
     protected Time(D document, PC pc) {
       super(document, pc);
@@ -2005,25 +2018,26 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Url<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Url<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Url.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Integer.Maxlength<E>,
-    com.aoapps.html.any.attributes.Integer.Minlength<E>,
-    com.aoapps.html.any.attributes.Text.Placeholder<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Integer.Size<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>,
-    com.aoapps.html.any.attributes.event.Onselect<E> // Guessed (to match Placeholder)
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Url<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Url.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.integer.Maxlength<E>,
+      com.aoapps.html.any.attributes.integer.Minlength<E>,
+      com.aoapps.html.any.attributes.text.Placeholder<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>,
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.integer.Size<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E>,
+      // Guessed (to match Placeholder)
+      com.aoapps.html.any.attributes.event.Onselect<E> {
 
     protected Url(D document, PC pc) {
       super(document, pc);
@@ -2099,20 +2113,20 @@ public abstract class AnyINPUT<
    * @since HTML 5
    */
   public abstract static class Week<
-    D  extends AnyDocument<D>,
-    PC extends AnyUnion_Interactive_Phrasing<D, PC>,
-    E  extends Week<D, PC, E>
-  > extends AnyINPUT<D, PC, E> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, Week.Autocomplete>,
-    com.aoapps.html.any.attributes.Text.List<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>, // Guessed
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Text.Value<E>,
-    // Global Event Attributes overrides
-    com.aoapps.html.any.attributes.event.Onchange<E>,
-    com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Oninvalid<E>
-  {
+      D  extends AnyDocument<D>,
+      PC extends AnyUnion_Interactive_Phrasing<D, PC>,
+      E  extends Week<D, PC, E>
+      >
+      extends AnyINPUT<D, PC, E> implements
+      com.aoapps.html.any.attributes.enumeration.Autocomplete<E, Week.Autocomplete>,
+      com.aoapps.html.any.attributes.text.List<E>,
+      com.aoapps.html.any.attributes.bool.Readonly<E>, // Guessed
+      com.aoapps.html.any.attributes.bool.Required<E>,
+      com.aoapps.html.any.attributes.text.Value<E>,
+      // Global Event Attributes overrides
+      com.aoapps.html.any.attributes.event.Onchange<E>,
+      com.aoapps.html.any.attributes.event.Oninput<E>,
+      com.aoapps.html.any.attributes.event.Oninvalid<E> {
 
     protected Week(D document, PC pc) {
       super(document, pc);

@@ -42,12 +42,12 @@ import java.io.IOException;
 public interface AnyHeadingContent<
     D  extends AnyDocument<D>,
     __ extends AnyHeadingContent<D, __>
-> extends
+    >
+    extends
     //
     // Content models:
     //
-    Content<D, __>
-{
+    Content<D, __> {
   //
   // Factories:
   //
@@ -128,7 +128,7 @@ public interface AnyHeadingContent<
   }
 
   /**
-   * Creates an h1 element with no attributes then begins element content
+   * Creates an h1 element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">4.3.6 The h1, h2, h3, h4, h5, and h6 elements</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lt;h1&gt;-&lt;h6&gt;: The HTML Section Heading elements</a>.</li>
@@ -223,7 +223,7 @@ public interface AnyHeadingContent<
   }
 
   /**
-   * Creates an h2 element with no attributes then begins element content
+   * Creates an h2 element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">4.3.6 The h1, h2, h3, h4, h5, and h6 elements</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lt;h1&gt;-&lt;h6&gt;: The HTML Section Heading elements</a>.</li>
@@ -318,7 +318,7 @@ public interface AnyHeadingContent<
   }
 
   /**
-   * Creates an h3 element with no attributes then begins element content
+   * Creates an h3 element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">4.3.6 The h1, h2, h3, h4, h5, and h6 elements</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lt;h1&gt;-&lt;h6&gt;: The HTML Section Heading elements</a>.</li>
@@ -413,7 +413,7 @@ public interface AnyHeadingContent<
   }
 
   /**
-   * Creates an h4 element with no attributes then begins element content
+   * Creates an h4 element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">4.3.6 The h1, h2, h3, h4, h5, and h6 elements</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lt;h1&gt;-&lt;h6&gt;: The HTML Section Heading elements</a>.</li>
@@ -508,7 +508,7 @@ public interface AnyHeadingContent<
   }
 
   /**
-   * Creates an h5 element with no attributes then begins element content
+   * Creates an h5 element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">4.3.6 The h1, h2, h3, h4, h5, and h6 elements</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lt;h1&gt;-&lt;h6&gt;: The HTML Section Heading elements</a>.</li>
@@ -603,7 +603,7 @@ public interface AnyHeadingContent<
   }
 
   /**
-   * Creates an h6 element with no attributes then begins element content
+   * Creates an h6 element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">4.3.6 The h1, h2, h3, h4, h5, and h6 elements</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lt;h1&gt;-&lt;h6&gt;: The HTML Section Heading elements</a>.</li>
@@ -636,76 +636,82 @@ public interface AnyHeadingContent<
       H   extends com.aoapps.html.any.AnyH<D, __, H, H__, H_c>,
       H__ extends com.aoapps.html.any.AnyH__<D, __, H__>,
       H_c extends com.aoapps.html.any.AnyH_c<D, __, H_c>
-  > H h(int rank) throws IOException {
+      > H h(int rank) throws IOException {
     switch (rank) {
-      case 1 : return (H) h1();
-      case 2 : return (H) h2();
-      case 3 : return (H) h3();
-      case 4 : return (H) h4();
-      case 5 : return (H) h5();
-      case 6 : return (H) h6();
-      default :
+      case 1:
+        return (H) h1();
+      case 2:
+        return (H) h2();
+      case 3:
+        return (H) h3();
+      case 4:
+        return (H) h4();
+      case 5:
+        return (H) h5();
+      case 6:
+        return (H) h6();
+      default:
         throw new LocalizedIllegalArgumentException(Resources.PACKAGE_RESOURCES, "AnyHeadingContent.invalidRank", rank);
     }
   }
 
-//  default <
-//    E   extends AnyH<E, __, h__, h_c>,
-//    h__ extends AnyH__<__, h__>,
-//    h_c extends AnyH_c<__, h_c>
-//  > H<E, __, h__, h_c> h(int rank) throws IOException {
-//    switch (rank) {
-//      case 1 : return h1();
-//      case 2 : return h2();
-//      case 3 : return h3();
-//      case 4 : return h4();
-//      case 5 : return h5();
-//      case 6 : return h6();
-//      default :
-//        throw new LocalizedIllegalArgumentException(Resources.PACKAGE_RESOURCES, "AnyHeadingContent.invalidRank", rank);
-//    }
-//  }
-//  default H<
-//    ?,
-//    __,
-//    ? extends H__<__, ? extends H__<__, ?>>,
-//    ? extends H_c<__, ? extends H_c<__, ?>>
-//  > h(int rank) throws IOException {
-//    switch (rank) {
-//      case 1 : return h1();
-//      case 2 : return h2();
-//      case 3 : return h3();
-//      case 4 : return h4();
-//      case 5 : return h5();
-//      case 6 : return h6();
-//      default :
-//        throw new LocalizedIllegalArgumentException(Resources.PACKAGE_RESOURCES, "AnyHeadingContent.invalidRank", rank);
-//    }
-//  }
-//  @SuppressWarnings("unchecked")
-//  default <
-//    H extends com.aoapps.html.any.AnyH<
-//      H,
-//      __,
-//      ? extends H__<__, ?>,
-//      ? extends H_c<__, ?>
-////      ? extends H__<__, ? extends H__<__, ?>>,
-////      ? extends H_c<__, ? extends H_c<__, ?>>
-////      ? extends H__<__, ? extends H__<__, ? extends H__<__, ?>>>, // TODO: This nesting could go forever without self-referential generics
-////      ? extends H_c<__, ? extends H_c<__, ? extends H_c<__, ?>>>  // TODO: This nesting could go forever without self-referential generics
-//    >
-//  > H h(int rank) throws IOException {
-//    switch (rank) {
-//      case 1 : return (H)h1();
-//      case 2 : return (H)h2();
-//      case 3 : return (H)h3();
-//      case 4 : return (H)h4();
-//      case 5 : return (H)h5();
-//      case 6 : return (H)h6();
-//      default :
-//        throw new LocalizedIllegalArgumentException(Resources.PACKAGE_RESOURCES, "AnyHeadingContent.invalidRank", rank);
-//    }
-//  }
+  //  default <
+  //    E   extends AnyH<E, __, h__, h_c>,
+  //    h__ extends AnyH__<__, h__>,
+  //    h_c extends AnyH_c<__, h_c>
+  //  > H<E, __, h__, h_c> h(int rank) throws IOException {
+  //    switch (rank) {
+  //      case 1: return h1();
+  //      case 2: return h2();
+  //      case 3: return h3();
+  //      case 4: return h4();
+  //      case 5: return h5();
+  //      case 6: return h6();
+  //      default:
+  //        throw new LocalizedIllegalArgumentException(Resources.PACKAGE_RESOURCES, "AnyHeadingContent.invalidRank", rank);
+  //    }
+  //  }
+  //  default H<
+  //    ?,
+  //    __,
+  //    ? extends H__<__, ? extends H__<__, ?>>,
+  //    ? extends H_c<__, ? extends H_c<__, ?>>
+  //  > h(int rank) throws IOException {
+  //    switch (rank) {
+  //      case 1: return h1();
+  //      case 2: return h2();
+  //      case 3: return h3();
+  //      case 4: return h4();
+  //      case 5: return h5();
+  //      case 6: return h6();
+  //      default:
+  //        throw new LocalizedIllegalArgumentException(Resources.PACKAGE_RESOURCES, "AnyHeadingContent.invalidRank", rank);
+  //    }
+  //  }
+  //  @SuppressWarnings("unchecked")
+  //  default <
+  //    H extends com.aoapps.html.any.AnyH<
+  //      H,
+  //      __,
+  //      ? extends H__<__, ?>,
+  //      ? extends H_c<__, ?>
+  ////      ? extends H__<__, ? extends H__<__, ?>>,
+  ////      ? extends H_c<__, ? extends H_c<__, ?>>
+  ////      ? extends H__<__, ? extends H__<__, ? extends H__<__, ?>>>, // TODO: This nesting could go forever without self-referential generics
+  ////      ? extends H_c<__, ? extends H_c<__, ? extends H_c<__, ?>>>  // TODO: This nesting could go forever without self-referential generics
+  //    >
+  //  > H h(int rank) throws IOException {
+  //    switch (rank) {
+  //      case 1: return (H)h1();
+  //      case 2: return (H)h2();
+  //      case 3: return (H)h3();
+  //      case 4: return (H)h4();
+  //      case 5: return (H)h5();
+  //      case 6: return (H)h6();
+  //      default:
+  //        throw new LocalizedIllegalArgumentException(Resources.PACKAGE_RESOURCES, "AnyHeadingContent.invalidRank", rank);
+  //    }
+  //  }
 
   /**
    * Creates an h# element with no attributes and the given body.
@@ -740,16 +746,16 @@ public interface AnyHeadingContent<
   default <
       H__ extends com.aoapps.html.any.AnyH__<D, __, H__>,
       Ex extends Throwable
-  > __ h__(int rank, IOConsumerE<? super H__, Ex> h) throws IOException, Ex {
+      > __ h__(int rank, IOConsumerE<? super H__, Ex> h) throws IOException, Ex {
     return h(rank).__(h);
   }
 
-//  default <Ex extends Throwable> __ h__(int rank, IOConsumerE<? super H__<__, ?>, Ex> h) throws IOException, Ex {
-//    return h(rank).__(h);
-//  }
-//  default <Ex extends Throwable> __ h__(int rank, IOConsumerE<? super H__<__, ? extends H__<__, ?>>, Ex> h) throws IOException, Ex {
-//    return h(rank).__(h);
-//  }
+  //  default <Ex extends Throwable> __ h__(int rank, IOConsumerE<? super H__<__, ?>, Ex> h) throws IOException, Ex {
+  //    return h(rank).__(h);
+  //  }
+  //  default <Ex extends Throwable> __ h__(int rank, IOConsumerE<? super H__<__, ? extends H__<__, ?>>, Ex> h) throws IOException, Ex {
+  //    return h(rank).__(h);
+  //  }
 
   /**
    * Creates an h# element with no attributes and a text body.
@@ -782,7 +788,7 @@ public interface AnyHeadingContent<
   }
 
   /**
-   * Creates an h# element with no attributes then begins element content
+   * Creates an h# element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements">4.3.6 The h1, h2, h3, h4, h5, and h6 elements</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements">&lt;h1&gt;-&lt;h6&gt;: The HTML Section Heading elements</a>.</li>
@@ -800,16 +806,16 @@ public interface AnyHeadingContent<
   @Factory("h#")
   default <
       H_c extends com.aoapps.html.any.AnyH_c<D, __, H_c>
-  > H_c h_c(int rank) throws IOException {
+      > H_c h_c(int rank) throws IOException {
     return (H_c) h(rank)._c();
   }
 
-//  default H_c<__, ?> h_c(int rank) throws IOException {
-//    return h(rank)._c();
-//  }
-//  default H_c<__, ? extends H_c<__, ?>> h_c(int rank) throws IOException {
-//    return h(rank)._c();
-//  }
+  //  default H_c<__, ?> h_c(int rank) throws IOException {
+  //    return h(rank)._c();
+  //  }
+  //  default H_c<__, ? extends H_c<__, ?>> h_c(int rank) throws IOException {
+  //    return h(rank)._c();
+  //  }
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="HGROUP">
   /**

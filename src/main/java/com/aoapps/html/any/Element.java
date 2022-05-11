@@ -44,13 +44,13 @@ public abstract class Element<
     D  extends AnyDocument<D>,
     PC extends Content<D, PC>,
     E  extends Element<D, PC, E>
-> implements
+    >
+    implements
     DocumentWriter,
     // Allow any arbitrary attributes
-    com.aoapps.html.any.attributes.Text.Attribute<E>,
+    com.aoapps.html.any.attributes.text.Attribute<E>,
     // Global Attributes
-    GlobalAttributes<E>
-{
+    GlobalAttributes<E> {
 
   protected final D document;
   protected final PC pc;
@@ -271,8 +271,7 @@ public abstract class Element<
   @Deprecated
   @Override
   public E sp(int count) throws IOException {
-    this.
-        document.sp(count);
+    this.document.sp(count);
     @SuppressWarnings("unchecked")
     E element = (E) this;
     return element;

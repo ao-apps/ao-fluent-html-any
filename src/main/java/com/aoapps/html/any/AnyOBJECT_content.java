@@ -40,17 +40,18 @@ import java.io.IOException;
 public interface AnyOBJECT_content<
     D  extends AnyDocument<D>,
     __ extends AnyOBJECT_content<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
-    AnyUnion_Embedded_Interactive<D, __>
+    AnyUnion_Embedded_Interactive<D, __> {
 
-//
-// Content models:
-//
-// Inherited: Content<D, __>
-{
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+
   //
   // Factories:
   //

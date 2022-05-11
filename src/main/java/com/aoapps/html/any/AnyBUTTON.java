@@ -32,9 +32,9 @@ package com.aoapps.html.any;
  *
  * @author  AO Industries, Inc.
  */
-// TODO: implements com.aoapps.html.any.attributes.Enum.Autocapitalize (comment that also added to <input type="button"> since declared here)
+// TODO: implements com.aoapps.html.any.attributes.enumeration.Autocapitalize (comment that also added to <input type="button"> since declared here)
 // TODO: implements Formenctype<E> (and many others similar to AnyINPUT.Submit
-// TODO: com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
+// TODO: com.aoapps.html.any.attributes.integer.TabindexHtml4<E>,
 public abstract class AnyBUTTON {
   // TODO: Phrasing content, but there must be no interactive content descendant and no descendant with the tabindex attribute specified.
   //           A sub-interface AnyInteractiveContentBlocked of AnyInteractiveContent, deprecating all methods?

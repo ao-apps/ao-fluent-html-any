@@ -42,7 +42,8 @@ import java.io.IOException;
 public interface AnyTR_content<
     D  extends AnyDocument<D>,
     __ extends AnyTR_content<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -52,8 +53,7 @@ public interface AnyTR_content<
     // Content models:
     //
     // Inherited: Content<D, __>
-    AnyScriptSupportingContent<D, __>
-{
+    AnyScriptSupportingContent<D, __> {
   //
   // Factories:
   //
@@ -134,7 +134,7 @@ public interface AnyTR_content<
   }
 
   /**
-   * Creates a td element with no attributes then begins element content
+   * Creates a td element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-td-element">4.9.9 The td element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td">&lt;td&gt;: The Table Data Cell element</a>.</li>
@@ -229,7 +229,7 @@ public interface AnyTR_content<
   }
 
   /**
-   * Creates a th element with no attributes then begins element content
+   * Creates a th element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/tables.html#the-th-element">4.9.10 The th element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/th">&lt;th&gt;: The Table Header element</a>.</li>

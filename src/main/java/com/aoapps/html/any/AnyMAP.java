@@ -45,9 +45,9 @@ public abstract class AnyMAP<
     PC extends AnyUnion_Palpable_Phrasing<D, PC>,
     E  extends AnyMAP<D, PC, E, _c>,
     _c extends AnyMAP_c<D, PC, _c>
-> extends TransparentText<D, PC, E, _c> implements
-    com.aoapps.html.any.attributes.Text.Name<E>
-{
+    >
+    extends TransparentText<D, PC, E, _c> implements
+    com.aoapps.html.any.attributes.text.Name<E> {
 
   protected AnyMAP(D document, PC pc) {
     super(document, pc);

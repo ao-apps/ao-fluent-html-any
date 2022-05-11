@@ -40,7 +40,7 @@ public abstract class AnyOPTGROUP__<
     D  extends AnyDocument<D>,
     PC extends AnySELECT_content<D, PC>,
     __ extends AnyOPTGROUP__<D, PC, __>
->
+    >
     extends Normal__<D, PC, __>
     implements AnyOPTGROUP_content<D, __> {
 

@@ -48,7 +48,8 @@ public abstract class AnyDL<
     __ extends AnyDL__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyDL_c<D, PC, _c>
-> extends Normal<D, PC, E, __, _c> {
+    >
+    extends Normal<D, PC, E, __, _c> {
 
   protected AnyDL(D document, PC pc) {
     super(document, pc);

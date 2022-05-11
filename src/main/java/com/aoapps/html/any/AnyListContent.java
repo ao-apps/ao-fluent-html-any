@@ -42,7 +42,8 @@ import java.io.IOException;
 public interface AnyListContent<
     D  extends AnyDocument<D>,
     __ extends AnyListContent<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -52,8 +53,7 @@ public interface AnyListContent<
     // Content models:
     //
     // Inherited: Content<D, __>
-    AnyScriptSupportingContent<D, __>
-{
+    AnyScriptSupportingContent<D, __> {
   //
   // Factories:
   //
@@ -134,7 +134,7 @@ public interface AnyListContent<
   }
 
   /**
-   * Creates a li element with no attributes then begins element content
+   * Creates a li element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-li-element">4.4.8 The li element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li">&lt;li&gt;: The List Item element</a>.</li>

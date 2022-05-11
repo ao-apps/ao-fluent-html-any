@@ -23,14 +23,15 @@
 
 package com.aoapps.html.any;
 
+import static com.aoapps.encoding.JavaScriptInXhtmlAttributeEncoder.javascriptInXhtmlAttributeEncoder;
+import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
+import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.EncodingContext;
-import static com.aoapps.encoding.JavaScriptInXhtmlAttributeEncoder.javascriptInXhtmlAttributeEncoder;
 import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.encoding.Serialization;
-import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
-import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 import com.aoapps.hodgepodge.i18n.BundleLookupMarkup;
 import com.aoapps.hodgepodge.i18n.BundleLookupThreadContext;
 import com.aoapps.hodgepodge.i18n.MarkupCoercion;
@@ -178,7 +179,7 @@ public final class Attributes {
   /**
    * See <a href="https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes">2.4.2 Boolean attributes</a>.
    *
-   * @see  com.aoapps.html.any.attributes.Boolean
+   * @see  com.aoapps.html.any.attributes.bool
    */
   public static final class Boolean {
 
@@ -221,7 +222,7 @@ public final class Attributes {
    * Supports Integer length or percentage of parent (HTML 4-only).
    * </p>
    *
-   * @see  com.aoapps.html.any.attributes.Dimension
+   * @see  com.aoapps.html.any.attributes.dimension
    */
   public static final class Dimension {
 
@@ -272,7 +273,7 @@ public final class Attributes {
      */
     public static <
         E extends Element<?, ?, E>
-    > E attribute(E element, java.lang.String name, Object script) throws IOException {
+        > E attribute(E element, java.lang.String name, Object script) throws IOException {
       return Attributes.Text.attribute(element, name, MarkupType.JAVASCRIPT, script, true, true, javascriptInXhtmlAttributeEncoder);
     }
   }
@@ -280,7 +281,7 @@ public final class Attributes {
   /**
    * See <a href="https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#signed-integers">2.4.4.1 Signed integers</a>.
    *
-   * @see  com.aoapps.html.any.attributes.Integer
+   * @see  com.aoapps.html.any.attributes.integer
    */
   public static final class Integer {
 
@@ -322,7 +323,7 @@ public final class Attributes {
   }
 
   /**
-   * Non-streamable text attributes (expected to be short, relatively fixed values)
+   * Non-streamable text attributes (expected to be short, relatively fixed values).
    */
   public static final class String {
 
@@ -400,7 +401,7 @@ public final class Attributes {
   /**
    * Streamable text attributes.
    *
-   * @see  com.aoapps.html.any.attributes.Text
+   * @see  com.aoapps.html.any.attributes.text
    */
   public static final class Text {
 
@@ -413,9 +414,15 @@ public final class Attributes {
      * @param  <E>    This element type
      * @param  value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
      */
-    public static <
-        E extends Element<?, ?, E>
-    > E attribute(E element, java.lang.String name, MarkupType markupType, Object value, boolean trim, boolean nullIfEmpty, MediaEncoder encoder) throws IOException {
+    public static <E extends Element<?, ?, E>> E attribute(
+        E element,
+        java.lang.String name,
+        MarkupType markupType,
+        Object value,
+        boolean trim,
+        boolean nullIfEmpty,
+        MediaEncoder encoder
+    ) throws IOException {
       // TODO: Assert is valid attribute name by doctype
       while (value instanceof IOSupplierE<?, ?>) {
         @SuppressWarnings("unchecked")
@@ -425,7 +432,7 @@ public final class Attributes {
       if (value != null) {
         if (value instanceof MediaWritable<?>) {
           @SuppressWarnings("unchecked")
-          MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>) value;
+          final MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>) value;
           AnyDocument<?> document = element.document;
           @SuppressWarnings("deprecation")
           Writer unsafe = document.getRawUnsafe(null);
@@ -511,9 +518,16 @@ public final class Attributes {
      *                    Not written when a value is {@link Attributes#NO_VALUE}.
      */
     @SuppressWarnings("AssignmentToForLoopParameter")
-    public static <
-        E extends Element<?, ?, E>
-    > E attribute(E element, java.lang.String name, MarkupType markupType, Object[] values, java.lang.String separator, boolean trim, boolean nullIfEmpty, MediaEncoder encoder) throws IOException {
+    public static <E extends Element<?, ?, E>> E attribute(
+        E element,
+        java.lang.String name,
+        MarkupType markupType,
+        Object[] values,
+        java.lang.String separator,
+        boolean trim,
+        boolean nullIfEmpty,
+        MediaEncoder encoder
+    ) throws IOException {
       if (values != null) {
         AnyDocument<?> document = element.document;
         @SuppressWarnings("deprecation")
@@ -633,7 +647,7 @@ public final class Attributes {
   /**
    * URL attributes.
    *
-   * @see  com.aoapps.html.any.attributes.Url
+   * @see  com.aoapps.html.any.attributes.url
    */
   // TODO: Encoding URL via encoding context
   public static final class Url {

@@ -50,9 +50,9 @@ public abstract class AnyDATA<
     __ extends AnyDATA__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyDATA_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
-    com.aoapps.html.any.attributes.Text.Value<E>
-{
+    >
+    extends NormalText<D, PC, E, __, _c> implements
+    com.aoapps.html.any.attributes.text.Value<E> {
 
   protected AnyDATA(D document, PC pc) {
     super(document, pc);

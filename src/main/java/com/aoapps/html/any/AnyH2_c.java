@@ -40,7 +40,7 @@ public abstract class AnyH2_c<
     D  extends AnyDocument<D>,
     PC extends AnyHeadingContent<D, PC>,
     _c extends AnyH2_c<D, PC, _c>
->
+    >
     extends AnyH_c<D, PC, _c> {
 
   protected AnyH2_c(AnyH2<D, PC, ?, ?, _c> element) {

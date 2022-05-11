@@ -42,7 +42,7 @@ public abstract class AnyNAV__<
     D  extends AnyDocument<D>,
     PC extends AnySectioningContent<D, PC>,
     __ extends AnyNAV__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyFlowContent<D, __> {
 

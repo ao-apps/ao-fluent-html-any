@@ -23,6 +23,9 @@
 
 package com.aoapps.html.any;
 
+import static com.aoapps.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
+import static com.aoapps.encoding.TextInXhtmlEncoder.textInXhtmlEncoder;
+
 import com.aoapps.encoding.BufferedValidator;
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.EncodingContext;
@@ -32,8 +35,6 @@ import com.aoapps.encoding.MediaValidator;
 import com.aoapps.encoding.MediaWritable;
 import com.aoapps.encoding.MediaWriter;
 import com.aoapps.encoding.NoCloseMediaValidator;
-import static com.aoapps.encoding.TextInXhtmlEncoder.encodeTextInXhtml;
-import static com.aoapps.encoding.TextInXhtmlEncoder.textInXhtmlEncoder;
 import com.aoapps.encoding.TextWritable;
 import com.aoapps.encoding.TextWriter;
 import com.aoapps.encoding.ValidateOnlyEncoder;
@@ -145,7 +146,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 
   // <editor-fold desc="Whitespace - implementation" defaultstate="collapsed">
   /**
-   * Is indenting enabled?
+   * Is indenting enabled.
    */
   // Matches WhitespaceWriter.indent
   private boolean indent;
@@ -710,7 +711,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 
   // <editor-fold desc="DocumentWriter / Automatic Newline and Indentation - implementation" defaultstate="collapsed">
   /**
-   * Is automatic newline and indenting enabled?
+   * Is automatic newline and indenting enabled.
    */
   private boolean autonli;
 
@@ -735,7 +736,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   }
 
   /**
-   * Is the output currently at a newline?
+   * Is the output currently at a newline.
    */
   private boolean atnl;
 
@@ -1311,13 +1312,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   @Override
   public MediaWriter encode(MediaType contentType) throws IOException {
     MediaEncoder encoder;
-    {
-      MediaEncoder encoder_ = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
-      if (encoder_ == null) {
-        encoder_ = new ValidateOnlyEncoder(xhtmlValidator);
+      {
+        MediaEncoder myEncoder = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
+        if (myEncoder == null) {
+          myEncoder = new ValidateOnlyEncoder(xhtmlValidator);
+        }
+        encoder = myEncoder;
       }
-      encoder = encoder_;
-    }
     Writer encoderOptimized = Coercion.optimize(getRawUnsafe(null), encoder);
     encoder.writePrefixTo(encoderOptimized);
     return contentType.newMediaWriter(
@@ -1587,7 +1588,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
     return text(getRawUnsafe(null), text);
   }
 
-// TODO: Compare to text() implemented by AnyTextContent, to see how it handles markuptype=text within TextContent, and how to have <option> only do markup when value attribute is set.
+  // TODO: Compare to text() implemented by AnyTextContent, to see how it handles markuptype=text within TextContent, and how to have <option> only do markup when value attribute is set.
   @SuppressWarnings("UseSpecificCatch")
   D text(Writer unsafe, Object text) throws IOException {
     // Support Optional

@@ -51,6 +51,8 @@ public final class Suppliers {
   public interface Charset<Ex extends Throwable> extends IOSupplierE<java.nio.charset.Charset, Ex> {
 
     /**
+     * {@inheritDoc}
+     *
      * @return  The attribute value or {@code null} for no attribute.
      */
     @Override
@@ -66,6 +68,8 @@ public final class Suppliers {
   public interface Circle<Ex extends Throwable> extends IOSupplierE<com.aoapps.html.any.Circle, Ex> {
 
     /**
+     * {@inheritDoc}
+     *
      * @return  The attribute value or {@code null} for no attribute.
      */
     @Override
@@ -81,6 +85,8 @@ public final class Suppliers {
   public interface Locale<Ex extends Throwable> extends IOSupplierE<java.util.Locale, Ex> {
 
     /**
+     * {@inheritDoc}
+     *
      * @return  The attribute value or {@code null} for no attribute.
      */
     @Override
@@ -96,6 +102,8 @@ public final class Suppliers {
   public interface Polygon<Ex extends Throwable> extends IOSupplierE<java.awt.Polygon, Ex> {
 
     /**
+     * {@inheritDoc}
+     *
      * @return  The attribute value or {@code null} for no attribute.
      */
     @Override
@@ -111,6 +119,8 @@ public final class Suppliers {
   public interface Rectangle<Ex extends Throwable> extends IOSupplierE<java.awt.Rectangle, Ex> {
 
     /**
+     * {@inheritDoc}
+     *
      * @return  The attribute value or {@code null} for no attribute.
      */
     @Override
@@ -126,6 +136,8 @@ public final class Suppliers {
   public interface Shape<Ex extends Throwable> extends IOSupplierE<java.awt.Shape, Ex> {
 
     /**
+     * {@inheritDoc}
+     *
      * @return  The attribute value or {@code null} for no attribute.
      */
     @Override
@@ -141,6 +153,8 @@ public final class Suppliers {
   public interface String<Ex extends Throwable> extends IOSupplierE<java.lang.String, Ex> {
 
     /**
+     * {@inheritDoc}
+     *
      * @return  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
      */
     @Override

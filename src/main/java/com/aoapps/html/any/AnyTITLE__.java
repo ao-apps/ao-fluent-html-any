@@ -40,7 +40,7 @@ public abstract class AnyTITLE__<
     D  extends AnyDocument<D>,
     PC extends AnyMetadataContent<D, PC>,
     __ extends AnyTITLE__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyTextContent<D, __> {
 

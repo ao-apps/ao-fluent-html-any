@@ -48,7 +48,8 @@ public abstract class AnySTRONG<
     __ extends AnySTRONG__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnySTRONG_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> {
+    >
+    extends NormalText<D, PC, E, __, _c> {
 
   protected AnySTRONG(D document, PC pc) {
     super(document, pc);

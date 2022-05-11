@@ -40,7 +40,7 @@ public abstract class AnyLABEL_c<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_Interactive_Phrasing<D, PC>,
     _c extends AnyLABEL_c<D, PC, _c>
->
+    >
     extends NormalText_c<D, PC, _c>
     implements AnyPhrasingContent<D, _c> {
 

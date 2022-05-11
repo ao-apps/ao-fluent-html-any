@@ -23,7 +23,7 @@
 
 package com.aoapps.html.any;
 
-import com.aoapps.html.any.attributes.Enum.Dir;
+import com.aoapps.html.any.attributes.enumeration.Dir;
 import com.aoapps.lang.io.function.IOConsumerE;
 import com.aoapps.lang.io.function.IORunnableE;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -40,7 +40,8 @@ import java.io.IOException;
 public interface AnyUnion_Palpable_Phrasing<
     D  extends AnyDocument<D>,
     __ extends AnyUnion_Palpable_Phrasing<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -52,8 +53,8 @@ public interface AnyUnion_Palpable_Phrasing<
     // Content models:
     //
     // Inherited: Content<D, __>
-    AnyTextContent<D, __> // that is not inter-element whitespace
-{
+    // that is not inter-element whitespace
+    AnyTextContent<D, __> {
   //
   // Factories:
   //
@@ -135,7 +136,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates an abbr element with no attributes then begins element content
+   * Creates an abbr element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-abbr-element">4.5.9 The abbr element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/abbr">&lt;abbr&gt;: The Abbreviation element</a>.</li>
@@ -231,7 +232,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a b element with no attributes then begins element content
+   * Creates a b element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-b-element">4.5.21 The b element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/b">&lt;b&gt;: The Bring Attention To element</a>.</li>
@@ -336,7 +337,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a bdi element with no attributes then begins element content
+   * Creates a bdi element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdi-element">4.5.24 The bdi element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdi">&lt;bdi&gt;: The Bidirectional Isolate element</a>.</li>
@@ -493,7 +494,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a bdo element with the given dir attribute then begins element content
+   * Creates a bdo element with the given dir attribute then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-bdo-element">4.5.25 The bdo element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/bdo">&lt;bdo&gt;: The Bidirectional Text Override element</a>.</li>
@@ -592,7 +593,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a cite element with no attributes then begins element content
+   * Creates a cite element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-cite-element">4.5.6 The cite element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/cite">&lt;cite&gt;: The Citation element</a>.</li>
@@ -687,7 +688,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a code element with no attributes then begins element content
+   * Creates a code element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-code-element">4.5.15 The code element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/code">&lt;code&gt;: The Embed Text Track element</a>.</li>
@@ -820,7 +821,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a data element with the given value then begins element content
+   * Creates a data element with the given value then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-data-element">4.5.13 The data element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/data">&lt;data&gt;: The Data element</a>.</li>
@@ -917,7 +918,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a dfn element with no attributes then begins element content
+   * Creates a dfn element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-dfn-element">4.5.8 The dfn element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dfn">&lt;dfn&gt;: The Definition element</a>.</li>
@@ -1012,7 +1013,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates an em element with no attributes then begins element content
+   * Creates an em element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-em-element">4.5.2 The em element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/em">&lt;em&gt;: The Emphasis element</a>.</li>
@@ -1108,7 +1109,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates an i element with no attributes then begins element content
+   * Creates an i element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-i-element">4.5.20 The i element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/i">&lt;i&gt;: The Idiomatic Text element</a>.</li>
@@ -1206,7 +1207,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates an ins element with no attributes then begins element content
+   * Creates an ins element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-ins-element">4.7.1 The ins element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ins">&lt;ins&gt;</a>.</li>
@@ -1311,7 +1312,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a kbd element with no attributes then begins element content
+   * Creates a kbd element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-kbd-element">4.5.18 The kbd element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd">&lt;kbd&gt;: The Keyboard Input element</a>.</li>
@@ -1435,7 +1436,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a map element the given name attribute then begins element content
+   * Creates a map element the given name attribute then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/image-maps.html#the-map-element">4.8.13 The map element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/map">&lt;map&gt;: The Image Map element</a>.</li>
@@ -1550,7 +1551,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a mark element with no attributes then begins element content
+   * Creates a mark element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-mark-element">4.5.23 The mark element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/mark">&lt;mark&gt;: The Mark Text element</a>.</li>
@@ -1660,7 +1661,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a meter element with no attributes then begins element content
+   * Creates a meter element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-meter-element">4.10.14 The meter element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter">&lt;meter&gt;: The HTML Meter element</a>.</li>
@@ -1768,7 +1769,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates an output element with no attributes then begins element content
+   * Creates an output element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-output-element">4.10.12 The output element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/output">&lt;output&gt;: The Output element</a>.</li>
@@ -1875,7 +1876,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a progress element with no attributes then begins element content
+   * Creates a progress element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-progress-element">4.10.13 The progress element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress">&lt;progress&gt;: The Progress Indicator element</a>.</li>
@@ -1972,7 +1973,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a q element with no attributes then begins element content
+   * Creates a q element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-q-element">4.5.7 The q element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q">&lt;q&gt;: The Inline Quotation element</a>.</li>
@@ -2085,7 +2086,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a s element with no attributes then begins element content
+   * Creates a s element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-s-element">4.5.5 The s element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/s">&lt;s&gt;: The Strikethrough element</a>.</li>
@@ -2180,7 +2181,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a samp element with no attributes then begins element content
+   * Creates a samp element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-samp-element">4.5.17 The samp element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/samp">&lt;samp&gt;: The Sample Output element</a>.</li>
@@ -2276,7 +2277,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a small element with no attributes then begins element content
+   * Creates a small element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-small-element">4.5.4 The small element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/small">&lt;small&gt;: the side comment element</a>.</li>
@@ -2371,7 +2372,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a span element with no attributes then begins element content
+   * Creates a span element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-span-element">4.5.26 The span element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span">&lt;span&gt;: The Content Span element</a>.</li>
@@ -2466,7 +2467,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a strong element with no attributes then begins element content
+   * Creates a strong element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-strong-element">4.5.3 The strong element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong">&lt;strong&gt;: The Strong Importance element</a>.</li>
@@ -2561,7 +2562,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a sub element with no attributes then begins element content
+   * Creates a sub element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements">4.5.19 The sub and sup elements</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sub">&lt;sub&gt;: The Subscript element</a>.</li>
@@ -2656,7 +2657,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a sup element with no attributes then begins element content
+   * Creates a sup element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-sub-and-sup-elements">4.5.19 The sub and sup elements</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/sup">&lt;sup&gt;: The Superscript element</a>.</li>
@@ -2771,7 +2772,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a u element with no attributes then begins element content
+   * Creates a u element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-u-element">4.5.22 The u element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/u">&lt;u&gt;: The Unarticulated Annotation (Underline) element</a>.</li>
@@ -2866,7 +2867,7 @@ public interface AnyUnion_Palpable_Phrasing<
   }
 
   /**
-   * Creates a var element with no attributes then begins element content
+   * Creates a var element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-var-element">4.5.16 The var element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/var">&lt;var&gt;: The Variable element</a>.</li>

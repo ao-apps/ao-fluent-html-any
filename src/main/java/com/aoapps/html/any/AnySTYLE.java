@@ -23,13 +23,14 @@
 
 package com.aoapps.html.any;
 
+import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
+
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.MediaEncoder;
 import com.aoapps.encoding.MediaType;
 import com.aoapps.encoding.Serialization;
 import com.aoapps.encoding.StyleWritable;
 import com.aoapps.encoding.StyleWriter;
-import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlAttribute;
 import com.aoapps.hodgepodge.i18n.MarkupCoercion;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.Strings;
@@ -60,17 +61,18 @@ public abstract class AnySTYLE<
     D  extends AnyDocument<D>,
     PC extends AnyMetadataContent<D, PC>,
     E  extends AnySTYLE<D, PC, E>
-> extends Element<D, PC, E> implements
-    com.aoapps.html.any.attributes.Text.Media<E>,
+    >
+    extends Element<D, PC, E> implements
+    com.aoapps.html.any.attributes.text.Media<E>,
     // TODO: type as enum, deprecated?  See type implementation in AnyScript
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Text.AccesskeyUnexpected<E>,
-    com.aoapps.html.any.attributes.Boolean.AutofocusUnexpected<E>,
-    com.aoapps.html.any.attributes.Text.ClassNoHtml4<E>,
-    com.aoapps.html.any.attributes.Enum.DirUnexpected<E>,
-    com.aoapps.html.any.attributes.Text.IdNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.StyleNoHtml4<E>,
-    com.aoapps.html.any.attributes.Text.TitleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.AccesskeyUnexpected<E>,
+    com.aoapps.html.any.attributes.bool.AutofocusUnexpected<E>,
+    com.aoapps.html.any.attributes.text.ClassNoHtml4<E>,
+    com.aoapps.html.any.attributes.enumeration.DirUnexpected<E>,
+    com.aoapps.html.any.attributes.text.IdNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.StyleNoHtml4<E>,
+    com.aoapps.html.any.attributes.text.TitleNoHtml4<E>,
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.OnblurUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnclickUnexpected<E>,
@@ -100,8 +102,7 @@ public abstract class AnySTYLE<
     com.aoapps.html.any.attributes.event.OnmouseupUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnpasteUnexpected<E>,
     com.aoapps.html.any.attributes.event.OnscrollUnexpected<E>,
-    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E>
-{
+    com.aoapps.html.any.attributes.event.OnwheelUnexpected<E> {
 
   /**
    * See <a href="https://www.w3schools.com/tags/att_script_type.asp">HTML script type Attribute</a>.

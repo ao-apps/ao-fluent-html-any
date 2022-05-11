@@ -40,7 +40,7 @@ public abstract class AnyBODY_c<
     D  extends AnyDocument<D>,
     PC extends AnyHTML_content<D, PC>,
     _c extends AnyBODY_c<D, PC, _c>
->
+    >
     extends Normal_c<D, PC, _c>
     implements AnyFlowContent<D, _c> {
 

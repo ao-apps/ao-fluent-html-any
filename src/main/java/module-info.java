@@ -22,13 +22,13 @@
  */
 module com.aoapps.html.any {
   exports com.aoapps.html.any;
-  exports com.aoapps.html.any.attributes.Boolean;
-  exports com.aoapps.html.any.attributes.Dimension;
-  exports com.aoapps.html.any.attributes.Enum;
-  exports com.aoapps.html.any.attributes.Integer;
-  exports com.aoapps.html.any.attributes.Text;
-  exports com.aoapps.html.any.attributes.Url;
+  exports com.aoapps.html.any.attributes.bool;
+  exports com.aoapps.html.any.attributes.dimension;
+  exports com.aoapps.html.any.attributes.enumeration;
   exports com.aoapps.html.any.attributes.event;
+  exports com.aoapps.html.any.attributes.integer;
+  exports com.aoapps.html.any.attributes.text;
+  exports com.aoapps.html.any.attributes.url;
   // Direct
   requires com.aoapps.collections; // <groupId>com.aoapps</groupId><artifactId>ao-collections</artifactId>
   requires com.aoapps.encoding; // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>

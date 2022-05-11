@@ -50,7 +50,8 @@ public abstract class AnyNAV<
     __ extends AnyNAV__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyNAV_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> {
+    >
+    extends NormalText<D, PC, E, __, _c> {
 
   protected AnyNAV(D document, PC pc) {
     super(document, pc);

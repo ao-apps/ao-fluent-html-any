@@ -50,7 +50,7 @@ public abstract class TransparentText_c<
     D  extends AnyDocument<D>,
     PC extends Content<D, PC>,
     _c extends TransparentText_c<D, PC, _c>
->
+    >
     extends Transparent_c<D, PC, _c>
     implements AnyTextContent<D, _c> {
 

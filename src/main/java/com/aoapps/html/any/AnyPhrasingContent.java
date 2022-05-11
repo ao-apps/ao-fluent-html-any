@@ -44,7 +44,8 @@ import java.io.IOException;
 public interface AnyPhrasingContent<
     D  extends AnyDocument<D>,
     __ extends AnyPhrasingContent<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
@@ -59,10 +60,10 @@ public interface AnyPhrasingContent<
     // Content models:
     //
     // Inherited: Content<D, __>
-    AnyEmbeddedContent<D, __>
-// Inherited: AnyScriptSupportingContent<D, __>
-// Inherited: AnyTextContent<D, __>
-{
+    AnyEmbeddedContent<D, __> {
+  // Inherited: AnyScriptSupportingContent<D, __>
+  // Inherited: AnyTextContent<D, __>
+
   //
   // Factories:
   //
@@ -301,7 +302,7 @@ public interface AnyPhrasingContent<
   }
 
   /**
-   * Creates a datalist element with no attributes then begins element content
+   * Creates a datalist element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-datalist-element">4.10.8 The datalist element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist">&lt;datalist&gt;: The HTML Data List element</a>.</li>
@@ -383,7 +384,7 @@ public interface AnyPhrasingContent<
   }
 
   /**
-   * Creates a del element with no attributes then begins element content
+   * Creates a del element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#the-del-element">4.7.2 The del element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/del">&lt;del&gt;: The Deleted Text element</a>.</li>

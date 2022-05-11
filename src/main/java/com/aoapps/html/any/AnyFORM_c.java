@@ -40,7 +40,7 @@ public abstract class AnyFORM_c<
     D  extends AnyDocument<D>,
     PC extends AnyPalpableContent<D, PC>,
     _c extends AnyFORM_c<D, PC, _c>
->
+    >
     extends NormalText_c<D, PC, _c>
     implements AnyFlowContent<D, _c> {
 

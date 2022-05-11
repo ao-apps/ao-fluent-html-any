@@ -51,7 +51,7 @@ public abstract class AnyOBJECT_c<
     D  extends AnyDocument<D>,
     PC extends AnyUnion_Embedded_Interactive<D, PC>,
     _c extends AnyOBJECT_c<D, PC, _c>
->
+    >
     extends Normal_c<D, PC, _c>
     implements AnyOBJECT_content<D, _c> {
 

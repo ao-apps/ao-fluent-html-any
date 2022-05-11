@@ -40,7 +40,7 @@ public abstract class AnyH1__<
     D  extends AnyDocument<D>,
     PC extends AnyHeadingContent<D, PC>,
     __ extends AnyH1__<D, PC, __>
->
+    >
     extends AnyH__<D, PC, __> {
 
   protected AnyH1__(AnyH1<D, PC, ?, __, ?> element) {

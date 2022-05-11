@@ -44,19 +44,20 @@ import java.io.IOException;
 public interface AnyMetadataContent<
     D  extends AnyDocument<D>,
     __ extends AnyMetadataContent<D, __>
-> extends
+    >
+    extends
     //
     // Unions:
     //
     // Inherited: AnyUnion_COLGROUP_ScriptSupporting<D, __>
-    AnyUnion_Metadata_Phrasing<D, __>
+    AnyUnion_Metadata_Phrasing<D, __> {
 
-//
-// Content models:
-//
-// Inherited: Content<D, __>
-// Inherited: AnyScriptSupportingContent<D, __>
-{
+  //
+  // Content models:
+  //
+  // Inherited: Content<D, __>
+  // Inherited: AnyScriptSupportingContent<D, __>
+
   //
   // Factories:
   //
@@ -226,24 +227,24 @@ public interface AnyMetadataContent<
     return title().__(text);
   }
 
-// Empty element not expected.  Requires "Text that is not inter-element whitespace":
-//  /**
-//   * Creates an empty title element with no attributes.
-//   * <ul>
-//   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
-//   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
-//   * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
-//   * </ul>
-//   *
-//   * @return  This content model, which will be the parent content model of child elements
-//   */
-//  @Factory("title")
-//  default __ title__() throws IOException {
-//    return title().__();
-//  }
+  // Empty element not expected.  Requires "Text that is not inter-element whitespace":
+  //  /**
+  //   * Creates an empty title element with no attributes.
+  //   * <ul>
+  //   * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
+  //   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>
+  //   * <li>See <a href="https://www.w3schools.com/tags/tag_title.asp">HTML title tag</a>.</li>
+  //   * </ul>
+  //   *
+  //   * @return  This content model, which will be the parent content model of child elements
+  //   */
+  //  @Factory("title")
+  //  default __ title__() throws IOException {
+  //    return title().__();
+  //  }
 
   /**
-   * Creates a title element with no attributes then begins element content
+   * Creates a title element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element">4.2.2 The title element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title">&lt;title&gt;: The Document Title element</a>.</li>

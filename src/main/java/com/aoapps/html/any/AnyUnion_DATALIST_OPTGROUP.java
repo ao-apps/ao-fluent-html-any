@@ -38,12 +38,12 @@ import java.io.IOException;
 public interface AnyUnion_DATALIST_OPTGROUP<
     D  extends AnyDocument<D>,
     __ extends AnyUnion_DATALIST_OPTGROUP<D, __>
-> extends
+    >
+    extends
     //
     // Content models:
     //
-    Content<D, __>
-{
+    Content<D, __> {
   //
   // Factories:
   //
@@ -124,7 +124,7 @@ public interface AnyUnion_DATALIST_OPTGROUP<
   }
 
   /**
-   * Creates an option element with no attributes then begins element content
+   * Creates an option element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element">4.10.10 The option element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option">&lt;option&gt;: The HTML Option element</a>.</li>

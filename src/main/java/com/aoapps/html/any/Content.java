@@ -44,7 +44,8 @@ import java.io.Writer;
 public interface Content<
     D  extends AnyDocument<D>,
     __ extends Content<D, __>
-> extends DocumentWriter {
+    >
+    extends DocumentWriter {
 
   /**
    * Gets the document for the current content model.  The document can be used to

@@ -40,7 +40,7 @@ public abstract class AnyPRE__<
     D  extends AnyDocument<D>,
     PC extends AnyPalpableContent<D, PC>,
     __ extends AnyPRE__<D, PC, __>
->
+    >
     extends NormalText__<D, PC, __>
     implements AnyPhrasingContent<D, __> {
 

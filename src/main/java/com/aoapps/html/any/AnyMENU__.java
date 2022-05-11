@@ -40,7 +40,7 @@ public abstract class AnyMENU__<
     D  extends AnyDocument<D>,
     PC extends AnyInteractiveContent<D, PC>,
     __ extends AnyMENU__<D, PC, __>
->
+    >
     extends Normal__<D, PC, __>
     implements AnyListContent<D, __> {
 

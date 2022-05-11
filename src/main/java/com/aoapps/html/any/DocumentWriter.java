@@ -294,7 +294,7 @@ public interface DocumentWriter extends Whitespace {
 
   /**
    * Performs automatic newline when {@link #getAutonli()} and not {@link #getAtnl()},
-   * followed by automatic indentation when {@linkplain #getIndent() enabled})
+   * followed by automatic indentation when {@linkplain #getIndent() enabled}.
    *
    * @return  {@code this} writer
    */
@@ -302,7 +302,7 @@ public interface DocumentWriter extends Whitespace {
 
   /**
    * Performs automatic newline when {@link #getAutonli()} and not {@link #getAtnl()},
-   * followed by automatic indentation with a depth offset when {@linkplain #getIndent() enabled})
+   * followed by automatic indentation with a depth offset when {@linkplain #getIndent() enabled}.
    *
    * @param  depthOffset  A value added to the current indentation depth.
    *                      For example, pass {@code -1} when performing a newline before a closing tag or ending curly brace.

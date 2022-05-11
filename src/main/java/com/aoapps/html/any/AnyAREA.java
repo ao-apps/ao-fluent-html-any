@@ -44,24 +44,24 @@ public abstract class AnyAREA<
     D  extends AnyDocument<D>,
     PC extends AnyPhrasingContent<D, PC>,
     E  extends AnyAREA<D, PC, E>
-> extends Void<D, PC, E> implements
-    com.aoapps.html.any.attributes.Text.Alt<E>,
-    com.aoapps.html.any.attributes.Dimension.Coords<E>,
+    >
+    extends Void<D, PC, E> implements
+    com.aoapps.html.any.attributes.text.Alt<E>,
+    com.aoapps.html.any.attributes.dimension.Coords<E>,
     // TODO: download
-    com.aoapps.html.any.attributes.Url.Href<E>,
-    com.aoapps.html.any.attributes.Text.Hreflang<E>,
-    com.aoapps.html.any.attributes.Text.Media<E>,
+    com.aoapps.html.any.attributes.url.Href<E>,
+    com.aoapps.html.any.attributes.text.Hreflang<E>,
+    com.aoapps.html.any.attributes.text.Media<E>,
     // TODO: name? (MDN only)
     // TODO: nohref
     // TODO: ping
     // TODO: referrerpolicy
-    com.aoapps.html.any.attributes.Enum.Rel<E, AnyA.Rel>,
-    com.aoapps.html.any.attributes.Enum.Shape<E, AnyAREA.Shape>,
-    com.aoapps.html.any.attributes.Enum.Target<E, com.aoapps.html.any.attributes.Enum.Target.Value>,
+    com.aoapps.html.any.attributes.enumeration.Rel<E, AnyA.Rel>,
+    com.aoapps.html.any.attributes.enumeration.Shape<E, AnyAREA.Shape>,
+    com.aoapps.html.any.attributes.enumeration.Target<E, com.aoapps.html.any.attributes.enumeration.Target.Value>,
     // TODO: type (deprecated since definition is in conflict and doesn't do anything?)
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>
-{
+    com.aoapps.html.any.attributes.integer.TabindexHtml4<E> {
 
   protected AnyAREA(D document, PC pc) {
     super(document, pc);

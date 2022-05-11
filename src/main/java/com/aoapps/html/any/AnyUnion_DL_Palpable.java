@@ -38,12 +38,12 @@ import java.io.IOException;
 public interface AnyUnion_DL_Palpable<
     D  extends AnyDocument<D>,
     __ extends AnyUnion_DL_Palpable<D, __>
-> extends
+    >
+    extends
     //
     // Content models:
     //
-    Content<D, __>
-{
+    Content<D, __> {
   //
   // Factories:
   //
@@ -124,7 +124,7 @@ public interface AnyUnion_DL_Palpable<
   }
 
   /**
-   * Creates a div element with no attributes then begins element content
+   * Creates a div element with no attributes then begins element content.
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-div-element">4.4.15 The div element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div">&lt;div&gt;: The Content Division element</a>.</li>

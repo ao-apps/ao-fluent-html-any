@@ -49,28 +49,28 @@ public abstract class AnyTEXTAREA<
     __ extends AnyTEXTAREA__<D, PC, __>,
     // Would prefer "_c extends __ & Closeable<D, PC>", but "a type variable may not be followed by other bounds"
     _c extends AnyTEXTAREA_c<D, PC, _c>
-> extends NormalText<D, PC, E, __, _c> implements
-    com.aoapps.html.any.attributes.Enum.Autocomplete<E, AnyTEXTAREA.Autocomplete>,
-    com.aoapps.html.any.attributes.Integer.Cols<E>,
-    com.aoapps.html.any.attributes.Text.Dirname<E>,
-    com.aoapps.html.any.attributes.Boolean.Disabled<E>,
-    com.aoapps.html.any.attributes.Text.Form<E>,
-    com.aoapps.html.any.attributes.Integer.Maxlength<E>,
-    com.aoapps.html.any.attributes.Integer.Minlength<E>,
-    com.aoapps.html.any.attributes.Text.Name<E>,
-    com.aoapps.html.any.attributes.Text.Placeholder<E>,
-    com.aoapps.html.any.attributes.Boolean.Readonly<E>,
-    com.aoapps.html.any.attributes.Boolean.Required<E>,
-    com.aoapps.html.any.attributes.Integer.Rows<E>,
-    com.aoapps.html.any.attributes.Enum.Wrap<E, com.aoapps.html.any.attributes.Enum.Wrap.Value>,
+    >
+    extends NormalText<D, PC, E, __, _c> implements
+    com.aoapps.html.any.attributes.enumeration.Autocomplete<E, AnyTEXTAREA.Autocomplete>,
+    com.aoapps.html.any.attributes.integer.Cols<E>,
+    com.aoapps.html.any.attributes.text.Dirname<E>,
+    com.aoapps.html.any.attributes.bool.Disabled<E>,
+    com.aoapps.html.any.attributes.text.Form<E>,
+    com.aoapps.html.any.attributes.integer.Maxlength<E>,
+    com.aoapps.html.any.attributes.integer.Minlength<E>,
+    com.aoapps.html.any.attributes.text.Name<E>,
+    com.aoapps.html.any.attributes.text.Placeholder<E>,
+    com.aoapps.html.any.attributes.bool.Readonly<E>,
+    com.aoapps.html.any.attributes.bool.Required<E>,
+    com.aoapps.html.any.attributes.integer.Rows<E>,
+    com.aoapps.html.any.attributes.enumeration.Wrap<E, com.aoapps.html.any.attributes.enumeration.Wrap.Value>,
     // Global Attributes overrides
-    com.aoapps.html.any.attributes.Enum.Autocapitalize<E>,
-    com.aoapps.html.any.attributes.Integer.TabindexHtml4<E>,
+    com.aoapps.html.any.attributes.enumeration.Autocapitalize<E>,
+    com.aoapps.html.any.attributes.integer.TabindexHtml4<E>,
     // Global Event Attributes overrides
     com.aoapps.html.any.attributes.event.Onchange<E>,
     com.aoapps.html.any.attributes.event.Oninput<E>,
-    com.aoapps.html.any.attributes.event.Onselect<E>
-{
+    com.aoapps.html.any.attributes.event.Onselect<E> {
 
   private boolean oldAutonli;
   private boolean oldIndent;
