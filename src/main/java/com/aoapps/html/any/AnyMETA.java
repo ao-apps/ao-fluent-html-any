@@ -457,7 +457,7 @@ public abstract class AnyMETA<
 
     /**
      * <p>
-     * On iOS, you can specify a web application title for the launch icon.
+     * On iOS, you can specify is capable as a web application with launch icon.
      * Use with caution.
      * </p>
      * <ul>
@@ -469,7 +469,7 @@ public abstract class AnyMETA<
 
     /**
      * <p>
-     * On iOS, you can specify a web application title for the launch icon.
+     * On iOS, you can specify a web application status bar style.
      * </p>
      * <p>
      * See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.
