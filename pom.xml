@@ -292,7 +292,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
       </dependency>
       <!-- Test Direct -->
       <dependency>
-        <groupId>org.apache.bcel</groupId><artifactId>bcel</artifactId><version>6.6.0</version>
+        <groupId>org.apache.bcel</groupId><artifactId>bcel</artifactId><version>6.6.1</version>
       </dependency>
       <dependency>
         <groupId>junit</groupId><artifactId>junit</artifactId><version>4.13.2</version>
