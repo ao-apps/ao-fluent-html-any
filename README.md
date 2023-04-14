@@ -22,7 +22,7 @@ Base abstract classes and interfaces for Fluent Java DSL for high-performance HT
 * [Project Home](https://oss.aoapps.com/fluent-html/any/)
 * [Changelog](https://oss.aoapps.com/fluent-html/any/changelog)
 * [API Docs](https://oss.aoapps.com/fluent-html/any/apidocs/)
-* [Maven Central Repository](https://central.sonatype.com/search?namespace=com.aoapps&q=a%3Aao-fluent-html-any)
+* [Maven Central Repository](https://central.sonatype.com/artifact/com.aoapps/ao-fluent-html-any)
 * [GitHub](https://github.com/ao-apps/ao-fluent-html-any)
 
 ## Contact Us
