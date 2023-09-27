@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,6 @@ import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.encodeTextInXhtmlA
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 
 import com.aoapps.encoding.Doctype;
-import com.aoapps.encoding.Serialization;
 import com.aoapps.html.any.AnySTYLE.Type;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.LocalizedIllegalStateException;
@@ -62,7 +61,7 @@ public abstract class AnyLINK<
     extends Void<D, PC, E> implements
     // TODO: as
     com.aoapps.html.any.attributes.enumeration.CharsetHtml4Only<E, com.aoapps.html.any.attributes.enumeration.Charset.Value>,
-    com.aoapps.html.any.attributes.enumeration.Crossorigin<E, AnyLINK.Crossorigin>,
+    com.aoapps.html.any.attributes.enumeration.Crossorigin<E>,
     // https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link#attr-disabled
     com.aoapps.html.any.attributes.bool.Disabled<E>,
     com.aoapps.html.any.attributes.url.Href<E>,
@@ -90,46 +89,6 @@ public abstract class AnyLINK<
     @SuppressWarnings("unchecked")
     E element = (E) this;
     return element;
-  }
-
-  /**
-   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
-   *
-   * @since HTML 5
-   */
-  public enum Crossorigin implements Function<AnyDocument<?>, String> {
-    ANONYMOUS(
-      Attributes.NO_VALUE,
-      "anonymous"
-  ),
-    USE_CREDENTIALS(
-        "use-credentials",
-        "use-credentials"
-    );
-
-    private final String sgml;
-    private final String xml;
-
-    private Crossorigin(String sgml, String xml) {
-      this.sgml = sgml;
-      this.xml = xml;
-    }
-
-    @Override
-    public String toString() {
-      return xml;
-    }
-
-    @Override
-    public String apply(AnyDocument<?> document) {
-      Serialization serialization = document.encodingContext.getSerialization();
-      if (serialization == Serialization.SGML) {
-        return sgml;
-      } else {
-        assert serialization == Serialization.XML;
-        return xml;
-      }
-    }
   }
 
   /**

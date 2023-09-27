@@ -37,7 +37,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2021-03-14T22:32:34-05:00"
-    dateModified="2022-05-13T23:12:42-05:00"
+    dateModified="2023-09-26T19:00:16Z"
   >
     <c:set var="latestRelease" value="0.7.0" />
     <c:if test="${
@@ -52,7 +52,15 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
         artifactId="@{documented.artifactId}"
         repository="@{nexusUrl}content/repositories/snapshots/"
         scmUrl="@{project.scm.url}"
-      />
+      >
+        <ul>
+          <li>
+            Added <code><ao:a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">crossorigin</ao:a></code> attribute to
+            <code><ao:a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><![CDATA[&lt;img&gt;]]></ao:a></code>
+            and <code><ao:a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element"><![CDATA[&lt;script&gt;]]></ao:a></code>.
+          </li>
+        </ul>
+      </changelog:release>
     </c:if>
 
     <changelog:release

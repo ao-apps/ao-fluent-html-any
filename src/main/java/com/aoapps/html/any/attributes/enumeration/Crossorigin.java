@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,6 +23,7 @@
 
 package com.aoapps.html.any.attributes.enumeration;
 
+import com.aoapps.encoding.Serialization;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
@@ -33,22 +34,18 @@ import java.io.IOException;
 import java.util.function.Function;
 
 /**
- * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+ * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">The crossorigin attribute: Requesting CORS access to content</a>.
  *
  * @param  <E>   This element type
- * @param  <V>   This enum type to use for this attribute
  *
  * @since HTML 5
  *
  * @author  AO Industries, Inc.
  */
-public interface Crossorigin<
-    E extends Element<?, ?, E> & Crossorigin<E, V>,
-    V extends Enum<V> & Function<? super AnyDocument<?>, String>
-    > {
+public interface Crossorigin<E extends Element<?, ?, E> & Crossorigin<E>> {
 
   /**
-   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">The crossorigin attribute: Requesting CORS access to content</a>.
    *
    * @since HTML 5
    */
@@ -61,7 +58,7 @@ public interface Crossorigin<
   }
 
   /**
-   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">The crossorigin attribute: Requesting CORS access to content</a>.
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
@@ -75,29 +72,69 @@ public interface Crossorigin<
   }
 
   /**
-   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">The crossorigin attribute: Requesting CORS access to content</a>.
    *
    * @since HTML 5
    *
    * @see #crossorigin(java.lang.String)
    */
-  default E crossorigin(V crossorigin) throws IOException {
+  default E crossorigin(Value crossorigin) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
     return crossorigin((crossorigin == null) ? null : crossorigin.apply(element.getDocument()));
   }
 
   /**
-   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/CORS_settings_attributes">The crossorigin attribute: Requesting CORS access to content</a>.
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">The crossorigin attribute: Requesting CORS access to content</a>.
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
    * @since HTML 5
    *
-   * @see #crossorigin(java.lang.Enum)
+   * @see #crossorigin(com.aoapps.html.any.attributes.enumeration.Crossorigin.Value)
    */
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E crossorigin(IOSupplierE<? extends V, Ex> crossorigin) throws IOException, Ex {
+  default <Ex extends Throwable> E crossorigin(IOSupplierE<? extends Value, Ex> crossorigin) throws IOException, Ex {
     return crossorigin((crossorigin == null) ? null : crossorigin.get());
+  }
+
+  /**
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">The crossorigin attribute: Requesting CORS access to content</a>.
+   *
+   * @since HTML 5
+   */
+  public enum Value implements Function<AnyDocument<?>, String> {
+    ANONYMOUS(
+      Attributes.NO_VALUE,
+      "anonymous"
+  ),
+    USE_CREDENTIALS(
+        "use-credentials",
+        "use-credentials"
+    );
+
+    private final String sgml;
+    private final String xml;
+
+    private Value(String sgml, String xml) {
+      this.sgml = sgml;
+      this.xml = xml;
+    }
+
+    @Override
+    public String toString() {
+      return xml;
+    }
+
+    @Override
+    public String apply(AnyDocument<?> document) {
+      Serialization serialization = document.encodingContext.getSerialization();
+      if (serialization == Serialization.SGML) {
+        return sgml;
+      } else {
+        assert serialization == Serialization.XML;
+        return xml;
+      }
+    }
   }
 }

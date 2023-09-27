@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,7 +50,7 @@ public abstract class AnyIMG<
     com.aoapps.html.any.attributes.enumeration.Align<E, AnyIMG.Align>,
     com.aoapps.html.any.attributes.text.Alt<E>,
     // TODO: border
-    // TODO: crossorigin
+    com.aoapps.html.any.attributes.enumeration.Crossorigin<E>,
     com.aoapps.html.any.attributes.integer.Height<E>,
     // TODO: hspace
     com.aoapps.html.any.attributes.bool.Ismap<E>,

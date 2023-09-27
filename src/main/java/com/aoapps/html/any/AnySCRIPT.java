@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -64,9 +64,15 @@ public abstract class AnySCRIPT<
     >
     extends Element<D, PC, E> implements
     com.aoapps.html.any.attributes.bool.Async<E>,
+    // TODO: blocking
     com.aoapps.html.any.attributes.enumeration.Charset<E, com.aoapps.html.any.attributes.enumeration.Charset.Value>,
+    com.aoapps.html.any.attributes.enumeration.Crossorigin<E>,
     com.aoapps.html.any.attributes.bool.Defer<E>,
+    // TODO: fetchpriority
+    // TODO: integrity
+    // TODO: nomodule
     com.aoapps.html.any.attributes.url.Src<E>,
+    // TODO: referrerpolicy
     // TODO: type
     // TODO: xmlSpace
     // Global Attributes overrides
