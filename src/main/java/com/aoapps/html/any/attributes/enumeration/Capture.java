@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,7 @@ import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -53,6 +54,35 @@ public interface Capture<
     > {
 
   /**
+   * <p>
+   * Utility class for working with {@link Capture}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/html-media-capture/#the-capture-attribute">5. The capture attribute</a>.</li>
+   * <li>See <a href="https://www.w3.org/TR/mediacapture-streams/#dom-videofacingmodeenum">Media Capture and Streams: VideoFacingModeEnum</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class capture {
+    /** Make no instances. */
+    private capture() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a capture attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String capture) {
+      return Strings.trimNullIfEmpty(capture);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefcapture">&lt;input&gt;: The Input (Form Input) element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#capture">&lt;input type="file"&gt;</a>.</li>
@@ -66,8 +96,8 @@ public interface Capture<
   default E capture(String capture) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "capture");
-    return Attributes.String.attribute(element, "capture", MarkupType.NONE, capture, true, true);
+    return Attributes.String.attribute(element, "capture", MarkupType.NONE, capture, Capture.capture::normalize,
+        value -> Attributes.validateInHtml5(element, "capture"));
   }
 
   /**

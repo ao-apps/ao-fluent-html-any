@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -47,6 +48,34 @@ import java.io.IOException;
 public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends OnselectUnexpected<E> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onselect}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onselect">3.2.6 Global attributes / onselect</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onselect">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onselect</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onselect">8.1.7.2.1 IDL definitions / onselect</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onselect">GlobalEventHandlers.onselect</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onselect.asp">onselect Event</a>.</li>
+   * </ul>
+   */
+  public static final class onselect {
+    /** Make no instances. */
+    private onselect() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onselect attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onselect) throws IOException {
+      return Coercion.trimNullIfEmpty(onselect);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onselect">3.2.6 Global attributes / onselect</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onselect">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onselect</a>.</li>
@@ -61,7 +90,7 @@ public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends Onse
     // Not calling super: overridden to support HTML 4
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Event.attribute(element, "onselect", onselect);
+    return Attributes.Event.attribute(element, "onselect", onselect, Onselect.onselect::normalize);
   }
 
   /**

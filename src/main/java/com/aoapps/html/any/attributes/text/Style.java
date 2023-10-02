@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.StyleWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -51,6 +52,33 @@ import java.io.IOException;
 public interface Style<E extends Element<?, ?, E> & Style<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Style}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style">HTMLElement.style</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_style.asp">HTML style Attribute</a>.</li>
+   * </ul>
+   */
+  public static final class style {
+    /** Make no instances. */
+    private style() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a style attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object style) throws IOException {
+      return Coercion.trimNullIfEmpty(style);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-style-attribute">3.2.6.5 The style attribute</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/style">Global attributes / style</a>.</li>
@@ -65,7 +93,8 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
   default E style(Object style) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, true, true, styleInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, Style.style::normalize,
+        styleInXhtmlAttributeEncoder);
   }
 
   /**
@@ -85,7 +114,8 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
   default E style(Object ... style) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, ";", true, true, styleInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, ";", Style.style::normalize,
+        styleInXhtmlAttributeEncoder);
   }
 
   /**

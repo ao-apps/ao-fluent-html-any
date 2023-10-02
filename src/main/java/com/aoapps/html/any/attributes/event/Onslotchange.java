@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -46,6 +47,35 @@ import java.io.IOException;
 // Matches OnslotchangeUnexpected
 @SuppressWarnings("deprecation")
 public interface Onslotchange<E extends Element<?, ?, E> & Onslotchange<E>> extends OnslotchangeUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Onslotchange}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onslotchange">3.2.6 Global attributes / onslotchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onslotchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onslotchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onslotchange">8.1.7.2.1 IDL definitions / onslotchange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onslotchange">GlobalEventHandlers.onslotchange</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class onslotchange {
+    /** Make no instances. */
+    private onslotchange() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onslotchange attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onslotchange) throws IOException {
+      return Coercion.trimNullIfEmpty(onslotchange);
+    }
+  }
 
   /**
    * <ul>

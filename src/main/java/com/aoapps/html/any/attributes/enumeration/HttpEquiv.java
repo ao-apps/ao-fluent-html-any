@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,7 @@ import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -50,6 +51,32 @@ public interface HttpEquiv<
     > {
 
   /**
+   * <p>
+   * Utility class for working with {@link HttpEquiv}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
+   * </ul>
+   */
+  public static final class httpEquiv {
+    /** Make no instances. */
+    private httpEquiv() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an httpEquiv attribute.
+     *
+     * @see  Strings#trim(java.lang.String)
+     */
+    public static String normalize(String httpEquiv) {
+      return Strings.trim(httpEquiv);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://www.w3schools.com/tags/att_http-equiv.asp">HTML http-equiv Attribute</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
@@ -60,7 +87,8 @@ public interface HttpEquiv<
   default E httpEquiv(String httpEquiv) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.String.attribute(element, "http-equiv", MarkupType.NONE, httpEquiv, true, false);
+    return Attributes.String.attribute(element, "http-equiv", MarkupType.NONE, httpEquiv,
+        HttpEquiv.httpEquiv::normalize);
   }
 
   /**

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -47,6 +48,33 @@ import java.io.IOException;
 public interface Form<E extends Element<?, ?, E> & Form<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Form}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class form {
+    /** Make no instances. */
+    private form() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a form attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object form) throws IOException {
+      return Coercion.trimNullIfEmpty(form);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>
@@ -58,8 +86,8 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
   default E form(Object form) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "form");
-    return Attributes.Text.attribute(element, "form", MarkupType.NONE, form, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "form", MarkupType.NONE, form, Form.form::normalize,
+        value -> Attributes.validateInHtml5(element, "form"), textInXhtmlAttributeEncoder);
   }
 
   /**

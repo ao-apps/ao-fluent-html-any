@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -51,6 +52,33 @@ import java.io.IOException;
 public interface Title<E extends Element<?, ?, E> & Title<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Title}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/title">HTMLElement.title</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_title.asp">HTML title Attribute</a>.</li>
+   * </ul>
+   */
+  public static final class title {
+    /** Make no instances. */
+    private title() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a title attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object title) throws IOException {
+      return Coercion.trimNullIfEmpty(title);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-title-attribute">3.2.6.1 The title attribute</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/title">Global attributes / title</a>.</li>
@@ -65,7 +93,8 @@ public interface Title<E extends Element<?, ?, E> & Title<E>> {
   default E title(Object title) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "title", MarkupType.TEXT, title, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "title", MarkupType.TEXT, title, Title.title::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**

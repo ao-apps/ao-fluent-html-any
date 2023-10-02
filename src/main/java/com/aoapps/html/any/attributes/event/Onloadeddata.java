@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -47,6 +48,36 @@ import java.io.IOException;
 // Matches OnloadeddataUnexpected
 @SuppressWarnings("deprecation")
 public interface Onloadeddata<E extends Element<?, ?, E> & Onloadeddata<E>> extends OnloadeddataUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Onloadeddata}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadeddata">3.2.6 Global attributes / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadeddata">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadeddata</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadeddata">8.1.7.2.1 IDL definitions / onloadeddata</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadeddata">GlobalEventHandlers.onloadeddata</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadeddata.asp">onloadeddata Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class onloadeddata {
+    /** Make no instances. */
+    private onloadeddata() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onloadeddata attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onloadeddata) throws IOException {
+      return Coercion.trimNullIfEmpty(onloadeddata);
+    }
+  }
 
   /**
    * <ul>

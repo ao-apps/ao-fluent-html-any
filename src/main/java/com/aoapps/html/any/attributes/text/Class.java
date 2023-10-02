@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -50,6 +51,32 @@ import java.io.IOException;
 public interface Class<E extends Element<?, ?, E> & Class<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Class}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_class.asp">HTML class Attribute</a>.</li>
+   * </ul>
+   */
+  public static final class clazz {
+    /** Make no instances. */
+    private clazz() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a clazz attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object clazz) throws IOException {
+      return Coercion.trimNullIfEmpty(clazz);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#classes">3.2.6 Global attributes / class</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/class">Global attributes / class</a>.</li>
@@ -63,7 +90,8 @@ public interface Class<E extends Element<?, ?, E> & Class<E>> {
   default E clazz(Object clazz) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, Class.clazz::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**
@@ -82,7 +110,8 @@ public interface Class<E extends Element<?, ?, E> & Class<E>> {
   default E clazz(Object ... clazz) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, " ", true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, " ", Class.clazz::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**

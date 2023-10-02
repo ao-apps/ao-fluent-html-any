@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,6 +25,7 @@ package com.aoapps.html.any.attributes.url;
 
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -38,13 +39,37 @@ import java.io.IOException;
 public interface Data<E extends Element<?, ?, E> & Data<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Data}.
+   * </p>
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-data">4.8.7 The object element / data</a>.
+   * </p>
+   */
+  public static final class data {
+    /** Make no instances. */
+    private data() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a data attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String data) {
+      return Strings.trimNullIfEmpty(data);
+    }
+  }
+
+  /**
    * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-data">4.8.7 The object element / data</a>.
    */
   @Attributes.Funnel
   default E data(String data) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Url.attribute(element, "data", data);
+    return Attributes.Url.attribute(element, "data", data, Data.data::normalize);
   }
 
   /**

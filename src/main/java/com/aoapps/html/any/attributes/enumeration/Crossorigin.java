@@ -29,6 +29,7 @@ import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -45,6 +46,32 @@ import java.util.function.Function;
 public interface Crossorigin<E extends Element<?, ?, E> & Crossorigin<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Crossorigin}.
+   * </p>
+   * <p>
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">The crossorigin attribute: Requesting CORS access to content</a>.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  public static final class crossorigin {
+    /** Make no instances. */
+    private crossorigin() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a crossorigin attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String crossorigin) {
+      return Strings.trimNullIfEmpty(crossorigin);
+    }
+  }
+
+  /**
    * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">The crossorigin attribute: Requesting CORS access to content</a>.
    *
    * @since HTML 5
@@ -53,8 +80,8 @@ public interface Crossorigin<E extends Element<?, ?, E> & Crossorigin<E>> {
   default E crossorigin(String crossorigin) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "crossorigin");
-    return Attributes.String.attribute(element, "crossorigin", MarkupType.NONE, crossorigin, true, true);
+    return Attributes.String.attribute(element, "crossorigin", MarkupType.NONE, crossorigin,
+        Crossorigin.crossorigin::normalize, value -> Attributes.validateInHtml5(element, "crossorigin"));
   }
 
   /**

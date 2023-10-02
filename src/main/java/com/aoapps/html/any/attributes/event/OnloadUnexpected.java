@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,8 +26,6 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBODY;
 import com.aoapps.html.any.AnyEMBED;
-import com.aoapps.html.any.AnyFRAME;
-import com.aoapps.html.any.AnyFRAMESET;
 import com.aoapps.html.any.AnyIFRAME;
 import com.aoapps.html.any.AnyIMG;
 import com.aoapps.html.any.AnyINPUT;
@@ -55,8 +53,8 @@ import java.io.IOException;
  * @since HTML 5
  *
  * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
- *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
- *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
+ *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain com.aoapps.html.any.AnyFRAME &lt;frame&gt;},
+ *              {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
  *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
  *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
  *
@@ -78,8 +76,8 @@ public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<
    * @since HTML 5
    *
    * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
-   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
-   *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain com.aoapps.html.any.AnyFRAME &lt;frame&gt;},
+   *              {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
    */
@@ -88,8 +86,8 @@ public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<
   default E onload(Object onload) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onload");
-    return Attributes.Event.attribute(element, "onload", onload);
+    return Attributes.Event.attribute(element, "onload", onload, Onload.onload::normalize,
+        value -> Attributes.validateInHtml5(element, "onload"));
   }
 
   /**
@@ -108,8 +106,8 @@ public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<
    * @see #onload(java.lang.Object)
    *
    * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
-   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
-   *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain com.aoapps.html.any.AnyFRAME &lt;frame&gt;},
+   *              {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
    */
@@ -134,8 +132,8 @@ public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<
    * @see #onload(java.lang.Object)
    *
    * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
-   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain AnyFRAME &lt;frame&gt;},
-   *              {@linkplain AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain com.aoapps.html.any.AnyFRAME &lt;frame&gt;},
+   *              {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;}, {@linkplain AnyIMG &lt;img&gt;},
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;}, {@linkplain AnyOBJECT &lt;object&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
    */

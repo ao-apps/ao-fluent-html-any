@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -46,6 +47,34 @@ import java.io.IOException;
 public interface Onmousemove<E extends Element<?, ?, E> & Onmousemove<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onmousemove}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmousemove">8.1.7.2.1 IDL definitions / onmousemove</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousemove">GlobalEventHandlers.onmousemove</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmousemove.asp">onmousemove Event</a>.</li>
+   * </ul>
+   */
+  public static final class onmousemove {
+    /** Make no instances. */
+    private onmousemove() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onmousemove attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onmousemove) throws IOException {
+      return Coercion.trimNullIfEmpty(onmousemove);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmousemove">3.2.6 Global attributes / onmousemove</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmousemove">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmousemove</a>.</li>
@@ -58,7 +87,7 @@ public interface Onmousemove<E extends Element<?, ?, E> & Onmousemove<E>> {
   default E onmousemove(Object onmousemove) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Event.attribute(element, "onmousemove", onmousemove);
+    return Attributes.Event.attribute(element, "onmousemove", onmousemove, Onmousemove.onmousemove::normalize);
   }
 
   /**

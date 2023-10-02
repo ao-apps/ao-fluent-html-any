@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.function.FunctionE;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -54,7 +55,8 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
     @SuppressWarnings("unchecked")
     E element = (E) this;
     // TODO: Validate attribute name by doctype: https://dev.w3.org/html5/html-author/#attributes (XmlUtils could help)
-    return Attributes.Text.attribute(element, name, MarkupType.NONE, value, false, false, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, name, MarkupType.NONE, value, FunctionE.identity(),
+        textInXhtmlAttributeEncoder);
   }
 
   /**

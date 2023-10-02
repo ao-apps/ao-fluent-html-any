@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -50,6 +51,35 @@ import java.io.IOException;
 public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Accesskey}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/accessKey">HTMLElement.accessKey</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_accesskey.asp">HTML accesskey Attributes</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class accesskey {
+    /** Make no instances. */
+    private accesskey() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an accesskey attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object accesskey) throws IOException {
+      return Coercion.trimNullIfEmpty(accesskey);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>
@@ -63,8 +93,8 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
   default E accesskey(Object accesskey) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "accesskey");
-    return Attributes.Text.attribute(element, "accesskey", MarkupType.NONE, accesskey, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "accesskey", MarkupType.NONE, accesskey, Accesskey.accesskey::normalize,
+        value -> Attributes.validateInHtml5(element, "accesskey"), textInXhtmlAttributeEncoder);
   }
 
   /**

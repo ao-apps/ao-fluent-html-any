@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -70,8 +70,8 @@ public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexp
   default E onemptied(Object onemptied) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onemptied");
-    return Attributes.Event.attribute(element, "onemptied", onemptied);
+    return Attributes.Event.attribute(element, "onemptied", onemptied, Onemptied.onemptied::normalize,
+        value -> Attributes.validateInHtml5(element, "onemptied"));
   }
 
   /**

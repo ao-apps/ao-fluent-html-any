@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,7 @@ import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -51,6 +52,33 @@ public interface Formenctype<
     > {
 
   /**
+   * <p>
+   * Utility class for working with {@link Formenctype}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formenctype">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class formenctype {
+    /** Make no instances. */
+    private formenctype() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a formenctype attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String formenctype) {
+      return Strings.trimNullIfEmpty(formenctype);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formenctype">4.10.18.6 Form submission attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
@@ -62,8 +90,8 @@ public interface Formenctype<
   default E formenctype(String formenctype) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "formenctype");
-    return Attributes.String.attribute(element, "formenctype", MarkupType.NONE, formenctype, true, true);
+    return Attributes.String.attribute(element, "formenctype", MarkupType.NONE, formenctype,
+        Formenctype.formenctype::normalize, value -> Attributes.validateInHtml5(element, "formenctype"));
   }
 
   /**

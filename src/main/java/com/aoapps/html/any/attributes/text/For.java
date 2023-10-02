@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -42,6 +43,31 @@ import java.io.IOException;
 public interface For<E extends Element<?, ?, E> & For<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link For}.
+   * </p>
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.
+   * </p>
+   */
+  // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
+  public static final class forAttr {
+    /** Make no instances. */
+    private forAttr() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a for attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object forAttr) throws IOException {
+      return Coercion.trimNullIfEmpty(forAttr);
+    }
+  }
+
+  /**
    * See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.
    */
   // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
@@ -49,7 +75,8 @@ public interface For<E extends Element<?, ?, E> & For<E>> {
   default E forAttr(Object forAttr) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "for", MarkupType.NONE, forAttr, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "for", MarkupType.NONE, forAttr, For.forAttr::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -40,6 +40,35 @@ import java.io.IOException;
 public interface Usemap<E extends Element<?, ?, E> & Usemap<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Usemap}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_usemap.asp">HTML usemap Attribute</a>.
+   * </p>
+   */
+  public static final class usemap {
+    /** Make no instances. */
+    private usemap() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a usename attribute.
+     * First, trims to {@code null}.  Second prefixes {@code '#'} if not already present.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String usemap) {
+      usemap = Strings.trimNullIfEmpty(usemap);
+      if (usemap != null && usemap.charAt(0) != '#') {
+        usemap = '#' + usemap;
+      }
+      return usemap;
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/att_usemap.asp">HTML usemap Attribute</a>.
    * <p>
    * Automatically prefixes '#' to any non-null and non-empty (after trimming)
@@ -50,22 +79,7 @@ public interface Usemap<E extends Element<?, ?, E> & Usemap<E>> {
   default E usemap(String usemap) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    usemap = Strings.trimNullIfEmpty(usemap);
-    if (usemap != null) {
-      if (!usemap.startsWith("#")) {
-        usemap = '#' + usemap;
-      }
-      return Attributes.String.attribute(
-          element,
-          "usemap",
-          MarkupType.NONE,
-          usemap,
-          false, // already trimmed
-          false  // already nullIfEmpty
-      );
-    } else {
-      return element;
-    }
+    return Attributes.String.attribute(element, "usemap", MarkupType.NONE, usemap, Usemap.usemap::normalize);
   }
 
   /**

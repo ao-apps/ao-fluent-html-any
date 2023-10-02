@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -47,6 +48,36 @@ import java.io.IOException;
 // Matches OnseekingUnexpected
 @SuppressWarnings("deprecation")
 public interface Onseeking<E extends Element<?, ?, E> & Onseeking<E>> extends OnseekingUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Onseeking}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onseeking">3.2.6 Global attributes / onseeking</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onseeking">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onseeking</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onseeking">8.1.7.2.1 IDL definitions / onseeking</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onseeking">GlobalEventHandlers.onseeking</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onseeking.asp">onseeking Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class onseeking {
+    /** Make no instances. */
+    private onseeking() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onseeking attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onseeking) throws IOException {
+      return Coercion.trimNullIfEmpty(onseeking);
+    }
+  }
 
   /**
    * <ul>

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -46,6 +47,34 @@ import java.io.IOException;
 public interface Onclick<E extends Element<?, ?, E> & Onclick<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onclick}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onclick">3.2.6 Global attributes / onclick</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onclick</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onclick">8.1.7.2.1 IDL definitions / onclick</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onclick">GlobalEventHandlers.onclick</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onclick.asp">onclick Event</a>.</li>
+   * </ul>
+   */
+  public static final class onclick {
+    /** Make no instances. */
+    private onclick() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onclick attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onclick) throws IOException {
+      return Coercion.trimNullIfEmpty(onclick);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onclick">3.2.6 Global attributes / onclick</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onclick">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onclick</a>.</li>
@@ -58,7 +87,7 @@ public interface Onclick<E extends Element<?, ?, E> & Onclick<E>> {
   default E onclick(Object onclick) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Event.attribute(element, "onclick", onclick);
+    return Attributes.Event.attribute(element, "onclick", onclick, Onclick.onclick::normalize);
   }
 
   /**

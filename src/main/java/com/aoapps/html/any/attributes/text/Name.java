@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -42,16 +43,44 @@ import java.io.IOException;
 public interface Name<E extends Element<?, ?, E> & Name<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Name}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
+   * </p>
+   */
+  public static final class name {
+    /** Make no instances. */
+    private name() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a name attribute.
+     * <p>
+     * TODO: Review if trim-to-null is the best default.
+     * Maybe default to {@code false} and override where should be {@code true} instead.
+     * Any change to textarea/input name attribute would also need to be reflected in dirname attribute.
+     * </p>
+     *
+     * @see  Coercion#nullIfEmpty(java.lang.Object)
+     */
+    // Note: Dirname.dirname.normalize delegates to this method
+    public static Object normalize(Object name) throws IOException {
+      return Coercion.nullIfEmpty(name);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
    */
   @Attributes.Funnel
   default E name(Object name) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    // TODO: Review if trim-to-null is the best default.
-    //       Maybe default to "false" and override where should be true instead.
-    //       Any change to textarea/input name attribute would also need to be reflected in dirname attribute
-    return Attributes.Text.attribute(element, "name", MarkupType.NONE, name, false, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "name", MarkupType.NONE, name, Name.name::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -78,8 +78,8 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
   default E onchange(Object onchange) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onchange");
-    return Attributes.Event.attribute(element, "onchange", onchange);
+    return Attributes.Event.attribute(element, "onchange", onchange, Onchange.onchange::normalize,
+        value -> Attributes.validateInHtml5(element, "onchange"));
   }
 
   /**

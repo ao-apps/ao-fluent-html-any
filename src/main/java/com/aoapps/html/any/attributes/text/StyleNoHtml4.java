@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,8 +23,11 @@
 
 package com.aoapps.html.any.attributes.text;
 
+import static com.aoapps.encoding.StyleInXhtmlAttributeEncoder.styleInXhtmlAttributeEncoder;
+
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.StyleWritable;
+import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -64,8 +67,9 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
   default E style(Object style) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style");
-    return Style.super.style(style);
+    return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, Style.style::normalize,
+        value -> Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style"),
+        styleInXhtmlAttributeEncoder);
   }
 
   /**
@@ -84,8 +88,9 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
   default E style(Object ... style) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style");
-    return Style.super.style(style);
+    return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, ";", Style.style::normalize,
+        value -> Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "style"),
+        styleInXhtmlAttributeEncoder);
   }
 
   /**

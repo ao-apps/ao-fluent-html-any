@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,7 @@ import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.GlobalAttributes;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -51,6 +52,34 @@ import java.util.function.Function;
 // Matches AutocapitalizeUnexpected
 @SuppressWarnings("deprecation")
 public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> extends AutocapitalizeUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Autocapitalize}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class autocapitalize {
+    /** Make no instances. */
+    private autocapitalize() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an autocapitalize attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String autocapitalize) {
+      return Strings.trimNullIfEmpty(autocapitalize);
+    }
+  }
 
   /**
    * <ul>

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -41,6 +42,32 @@ import java.io.IOException;
 public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onstorage}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  public static final class onstorage {
+    /** Make no instances. */
+    private onstorage() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onstorage attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onstorage) throws IOException {
+      return Coercion.trimNullIfEmpty(onstorage);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/ev_onstorage.asp">HTML onstorage Event Attribute</a>.
    *
    * @since HTML 5
@@ -49,8 +76,8 @@ public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
   default E onstorage(Object onstorage) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onstorage");
-    return Attributes.Event.attribute(element, "onstorage", onstorage);
+    return Attributes.Event.attribute(element, "onstorage", onstorage, Onstorage.onstorage::normalize,
+        value -> Attributes.validateInHtml5(element, "onstorage"));
   }
 
   /**

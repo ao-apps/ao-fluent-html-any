@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -69,8 +69,8 @@ public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpec
   default E ontoggle(Object ontoggle) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "ontoggle");
-    return Attributes.Event.attribute(element, "ontoggle", ontoggle);
+    return Attributes.Event.attribute(element, "ontoggle", ontoggle, Ontoggle.ontoggle::normalize,
+        value -> Attributes.validateInHtml5(element, "ontoggle"));
   }
 
   /**

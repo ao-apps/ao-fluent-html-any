@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,7 +26,6 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyAUDIO;
 import com.aoapps.html.any.AnyBODY;
-import com.aoapps.html.any.AnyFRAMESET;
 import com.aoapps.html.any.AnyIMG;
 import com.aoapps.html.any.AnyINPUT;
 import com.aoapps.html.any.AnyLINK;
@@ -54,7 +53,7 @@ import java.io.IOException;
  * @since HTML 5
  *
  * @deprecated  Although the onerror attribute is global, it is only expected on
- *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
+ *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;},
  *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
  *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
  *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -77,7 +76,7 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
    * @since HTML 5
    *
    * @deprecated  Although the onerror attribute is global, it is only expected on
-   *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
+   *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;},
    *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
    *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -87,8 +86,8 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
   default E onerror(Object onerror) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onerror");
-    return Attributes.Event.attribute(element, "onerror", onerror);
+    return Attributes.Event.attribute(element, "onerror", onerror, Onerror.onerror::normalize,
+        value -> Attributes.validateInHtml5(element, "onerror"));
   }
 
   /**
@@ -107,7 +106,7 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
    * @see #onerror(java.lang.Object)
    *
    * @deprecated  Although the onerror attribute is global, it is only expected on
-   *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
+   *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;},
    *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
    *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -133,7 +132,7 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
    * @see #onerror(java.lang.Object)
    *
    * @deprecated  Although the onerror attribute is global, it is only expected on
-   *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;},
+   *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;},
    *              {@linkplain AnyIMG &lt;img&gt;}, {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnyLINK &lt;link&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
    *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -47,6 +48,36 @@ import java.io.IOException;
 // Matches OncanplaythroughUnexpected
 @SuppressWarnings("deprecation")
 public interface Oncanplaythrough<E extends Element<?, ?, E> & Oncanplaythrough<E>> extends OncanplaythroughUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Oncanplaythrough}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oncanplaythrough">3.2.6 Global attributes / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oncanplaythrough">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oncanplaythrough">8.1.7.2.1 IDL definitions / oncanplaythrough</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oncanplaythrough">GlobalEventHandlers.oncanplaythrough</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oncanplaythrough.asp">oncanplaythrough Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class oncanplaythrough {
+    /** Make no instances. */
+    private oncanplaythrough() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an oncanplaythrough attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object oncanplaythrough) throws IOException {
+      return Coercion.trimNullIfEmpty(oncanplaythrough);
+    }
+  }
 
   /**
    * <ul>

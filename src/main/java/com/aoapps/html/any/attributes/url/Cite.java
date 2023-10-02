@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,6 +25,7 @@ package com.aoapps.html.any.attributes.url;
 
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -42,6 +43,32 @@ import java.io.IOException;
 public interface Cite<E extends Element<?, ?, E> & Cite<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Cite}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite">4.4.4 The blockquote element / cite</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-q-cite">4.5.7 The q element / cite</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/edits.html#attr-mod-cite">4.7.3 Attributes common to ins and del elements / cite</a>.</li>
+   * </ul>
+   */
+  public static final class cite {
+    /** Make no instances. */
+    private cite() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a cite attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String cite) {
+      return Strings.trimNullIfEmpty(cite);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#attr-blockquote-cite">4.4.4 The blockquote element / cite</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#attr-q-cite">4.5.7 The q element / cite</a>.</li>
@@ -52,7 +79,7 @@ public interface Cite<E extends Element<?, ?, E> & Cite<E>> {
   default E cite(String cite) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Url.attribute(element, "cite", cite);
+    return Attributes.Url.attribute(element, "cite", cite, Cite.cite::normalize);
   }
 
   /**

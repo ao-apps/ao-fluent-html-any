@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -72,8 +72,8 @@ public interface OnseekingUnexpected<E extends Element<?, ?, E> & OnseekingUnexp
   default E onseeking(Object onseeking) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onseeking");
-    return Attributes.Event.attribute(element, "onseeking", onseeking);
+    return Attributes.Event.attribute(element, "onseeking", onseeking, Onseeking.onseeking::normalize,
+        value -> Attributes.validateInHtml5(element, "onseeking"));
   }
 
   /**

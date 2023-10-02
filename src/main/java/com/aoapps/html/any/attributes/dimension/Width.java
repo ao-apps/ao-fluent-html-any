@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.dimension;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -38,6 +39,36 @@ import java.io.IOException;
  */
 // Matches WidthHtml4Only
 public interface Width<E extends Element<?, ?, E> & Width<E>> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Width}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
+   * </p>
+   *
+   * @deprecated  In HTML 4.01, the width could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
+   */
+  @Deprecated
+  public static final class width {
+    /** Make no instances. */
+    private width() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a width attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     *
+     * @deprecated  In HTML 4.01, the width could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
+     */
+    @Deprecated
+    public static String normalize(String pixelsOrPercent) {
+      return Strings.trimNullIfEmpty(pixelsOrPercent);
+    }
+  }
 
   /**
    * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
@@ -81,7 +112,7 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
   default E width(String pixelsOrPercent) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Dimension.attribute(element, "width", pixelsOrPercent);
+    return Attributes.Dimension.attribute(element, "width", pixelsOrPercent, Width.width::normalize);
   }
 
   /**

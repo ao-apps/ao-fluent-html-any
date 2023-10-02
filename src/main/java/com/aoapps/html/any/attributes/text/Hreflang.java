@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,6 +30,7 @@ import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.Locale;
@@ -44,13 +45,39 @@ import java.util.Locale;
 public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Hreflang}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
+   * </p>
+   */
+  public static final class hreflang {
+    /** Make no instances. */
+    private hreflang() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an hreflang attribute.
+     *
+     * @see  Locale#toLanguageTag()
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object hreflang) throws IOException {
+      return (hreflang instanceof Locale) ? ((Locale) hreflang).toLanguageTag() : Coercion.trimNullIfEmpty(hreflang);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
    */
   @Attributes.Funnel
   default E hreflang(Object hreflang) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "hreflang", MarkupType.NONE, hreflang, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "hreflang", MarkupType.NONE, hreflang, Hreflang.hreflang::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**
@@ -71,7 +98,7 @@ public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
    * @see #hreflang(java.lang.Object)
    */
   default E hreflang(Locale hreflang) throws IOException {
-    return hreflang((hreflang == null) ? null : hreflang.toLanguageTag());
+    return hreflang((Object) hreflang);
   }
 
   /**

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,7 @@ import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -51,6 +52,33 @@ public interface Formtarget<
     > {
 
   /**
+   * <p>
+   * Utility class for working with {@link Formtarget}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class formtarget {
+    /** Make no instances. */
+    private formtarget() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a formtarget attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String formtarget) {
+      return Strings.trimNullIfEmpty(formtarget);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formtarget">4.10.18.6 Form submission attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-target">&lt;form&gt;: The Form element / target</a>.</li>
@@ -62,8 +90,8 @@ public interface Formtarget<
   default E formtarget(String formtarget) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "formtarget");
-    return Attributes.String.attribute(element, "formtarget", MarkupType.NONE, formtarget, true, true);
+    return Attributes.String.attribute(element, "formtarget", MarkupType.NONE, formtarget,
+        Formtarget.formtarget::normalize, value -> Attributes.validateInHtml5(element, "formtarget"));
   }
 
   /**

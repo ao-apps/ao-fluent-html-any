@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,37 @@ import java.io.IOException;
 // Matches OninvalidUnexpected
 @SuppressWarnings("deprecation")
 public interface Oninvalid<E extends Element<?, ?, E> & Oninvalid<E>> extends OninvalidUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Oninvalid}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninvalid">3.2.6 Global attributes / oninvalid</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninvalid">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninvalid</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninvalid">8.1.7.2.1 IDL definitions / oninvalid</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninvalid">GlobalEventHandlers.oninvalid</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/invalid_event">HTMLInputElement: invalid event</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oninvalid.asp">oninvalid Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class oninvalid {
+    /** Make no instances. */
+    private oninvalid() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an oninvalid attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object oninvalid) throws IOException {
+      return Coercion.trimNullIfEmpty(oninvalid);
+    }
+  }
 
   /**
    * <ul>

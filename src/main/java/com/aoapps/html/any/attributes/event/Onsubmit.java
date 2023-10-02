@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -47,6 +48,36 @@ import java.io.IOException;
 public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends OnsubmitUnexpected<E> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onsubmit}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsubmit">8.1.7.2.1 IDL definitions / onsubmit</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsubmit">GlobalEventHandlers.onsubmit</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onsubmit.asp">onsubmit Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class onsubmit {
+    /** Make no instances. */
+    private onsubmit() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onsubmit attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onsubmit) throws IOException {
+      return Coercion.trimNullIfEmpty(onsubmit);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>
@@ -61,7 +92,7 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends Onsu
     // Not calling super: overridden to support HTML 4
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Event.attribute(element, "onsubmit", onsubmit);
+    return Attributes.Event.attribute(element, "onsubmit", onsubmit, Onsubmit.onsubmit::normalize);
   }
 
   /**

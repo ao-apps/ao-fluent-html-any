@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -42,13 +43,38 @@ import java.io.IOException;
 public interface Type<E extends Element<?, ?, E> & Type<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Type}.
+   * </p>
+   * <p>
+   * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-type">4.8.7 The object element / type</a>.
+   * </p>
+   */
+  public static final class type {
+    /** Make no instances. */
+    private type() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a type attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object type) throws IOException {
+      return Coercion.trimNullIfEmpty(type);
+    }
+  }
+
+  /**
    * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#attr-object-type">4.8.7 The object element / type</a>.
    */
   @Attributes.Funnel
   default E type(Object type) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "type", MarkupType.NONE, type, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "type", MarkupType.NONE, type, Type.type::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**

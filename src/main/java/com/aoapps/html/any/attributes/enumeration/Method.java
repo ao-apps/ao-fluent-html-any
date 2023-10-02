@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,7 @@ import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -50,6 +51,32 @@ public interface Method<
     > {
 
   /**
+   * <p>
+   * Utility class for working with {@link Method}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
+   * </ul>
+   */
+  public static final class method {
+    /** Make no instances. */
+    private method() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a method attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String method) {
+      return Strings.trimNullIfEmpty(method);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-method">4.10.18.6 Form submission attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
@@ -60,7 +87,7 @@ public interface Method<
   default E method(String method) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.String.attribute(element, "method", MarkupType.NONE, method, true, true);
+    return Attributes.String.attribute(element, "method", MarkupType.NONE, method, Method.method::normalize);
   }
 
   /**

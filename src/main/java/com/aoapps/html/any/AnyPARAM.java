@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any;
 import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
 
 import com.aoapps.hodgepodge.i18n.MarkupType;
+import com.aoapps.lang.function.FunctionE;
 import java.io.IOException;
 import java.io.Writer;
 
@@ -115,6 +116,7 @@ public abstract class AnyPARAM<
     // Overridden to not trim-to-null
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "name", MarkupType.NONE, name, false, false, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "name", MarkupType.NONE, name, FunctionE.identity(),
+        textInXhtmlAttributeEncoder);
   }
 }

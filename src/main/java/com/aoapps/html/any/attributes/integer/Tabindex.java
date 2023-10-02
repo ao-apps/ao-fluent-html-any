@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -67,8 +67,8 @@ public interface Tabindex<E extends Element<?, ?, E> & Tabindex<E>> {
   default E tabindex(int tabindex) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "tabindex");
-    return Attributes.Integer.attribute(element, "tabindex", tabindex);
+    return Attributes.Integer.attribute(element, "tabindex", tabindex,
+        value -> Attributes.validateInHtml5(element, "tabindex"));
   }
 
   /**
@@ -89,8 +89,8 @@ public interface Tabindex<E extends Element<?, ?, E> & Tabindex<E>> {
   default E tabindex(Integer tabindex) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "tabindex");
-    return Attributes.Integer.attribute(element, "tabindex", tabindex);
+    return Attributes.Integer.attribute(element, "tabindex", tabindex,
+        value -> Attributes.validateInHtml5(element, "tabindex"));
   }
 
   /**

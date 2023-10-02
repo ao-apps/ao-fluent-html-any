@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -41,6 +42,32 @@ import java.io.IOException;
 public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onafterprint}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/ev_onafterprint.asp">HTML onafterprint Event Attribute</a>.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  public static final class onafterprint {
+    /** Make no instances. */
+    private onafterprint() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onafterprint attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onafterprint) throws IOException {
+      return Coercion.trimNullIfEmpty(onafterprint);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/ev_onafterprint.asp">HTML onafterprint Event Attribute</a>.
    *
    * @since HTML 5
@@ -49,8 +76,8 @@ public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
   default E onafterprint(Object onafterprint) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onafterprint");
-    return Attributes.Event.attribute(element, "onafterprint", onafterprint);
+    return Attributes.Event.attribute(element, "onafterprint", onafterprint, Onafterprint.onafterprint::normalize,
+        value -> Attributes.validateInHtml5(element, "onafterprint"));
   }
 
   /**

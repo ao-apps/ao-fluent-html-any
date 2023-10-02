@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -46,6 +47,35 @@ import java.io.IOException;
 // Matches OntoggleUnexpected
 @SuppressWarnings("deprecation")
 public interface Ontoggle<E extends Element<?, ?, E> & Ontoggle<E>> extends OntoggleUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Ontoggle}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontoggle">3.2.6 Global attributes / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontoggle">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontoggle</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontoggle">8.1.7.2.1 IDL definitions / ontoggle</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontoggle.asp">ontoggle Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class ontoggle {
+    /** Make no instances. */
+    private ontoggle() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an ontoggle attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object ontoggle) throws IOException {
+      return Coercion.trimNullIfEmpty(ontoggle);
+    }
+  }
 
   /**
    * <ul>

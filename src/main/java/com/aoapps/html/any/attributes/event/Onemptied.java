@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -46,6 +47,35 @@ import java.io.IOException;
 // Matches OnemptiedUnexpected
 @SuppressWarnings("deprecation")
 public interface Onemptied<E extends Element<?, ?, E> & Onemptied<E>> extends OnemptiedUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Onemptied}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onemptied">3.2.6 Global attributes / onemptied</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onemptied">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onemptied</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onemptied">8.1.7.2.1 IDL definitions / onemptied</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onemptied">GlobalEventHandlers.onemptied</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class onemptied {
+    /** Make no instances. */
+    private onemptied() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onemptied attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onemptied) throws IOException {
+      return Coercion.trimNullIfEmpty(onemptied);
+    }
+  }
 
   /**
    * <ul>

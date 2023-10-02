@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -48,8 +48,8 @@ public interface Async<E extends Element<?, ?, E> & Async<E>> {
   default E async(boolean async) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "async");
-    return Attributes.Boolean.attribute(element, "async", async);
+    return Attributes.Boolean.attribute(element, "async", async,
+        value -> Attributes.validateInHtml5(element, "async"));
   }
 
   /**

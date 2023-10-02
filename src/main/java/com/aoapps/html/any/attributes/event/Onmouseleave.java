@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,36 @@ import java.io.IOException;
 public interface Onmouseleave<E extends Element<?, ?, E> & Onmouseleave<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onmouseleave}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseleave">8.1.7.2.1 IDL definitions / onmouseleave</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseleave">GlobalEventHandlers.onmouseleave</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseleave.asp">onmouseleave Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class onmouseleave {
+    /** Make no instances. */
+    private onmouseleave() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onmouseleave attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onmouseleave) throws IOException {
+      return Coercion.trimNullIfEmpty(onmouseleave);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseleave">3.2.6 Global attributes / onmouseleave</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseleave</a>.</li>
@@ -62,8 +93,8 @@ public interface Onmouseleave<E extends Element<?, ?, E> & Onmouseleave<E>> {
   default E onmouseleave(Object onmouseleave) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onmouseleave");
-    return Attributes.Event.attribute(element, "onmouseleave", onmouseleave);
+    return Attributes.Event.attribute(element, "onmouseleave", onmouseleave, Onmouseleave.onmouseleave::normalize,
+        value -> Attributes.validateInHtml5(element, "onmouseleave"));
   }
 
   /**

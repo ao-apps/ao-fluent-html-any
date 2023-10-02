@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,35 @@ import java.io.IOException;
 public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> extends OnchangeUnexpected<E> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onchange}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onchange">3.2.6 Global attributes / onchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onchange</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onchange">8.1.7.2.1 IDL definitions / onchange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onchange">GlobalEventHandlers.onchange</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event">HTMLElement: change event</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onchange.asp">onchange Event</a>.</li>
+   * </ul>
+   */
+  public static final class onchange {
+    /** Make no instances. */
+    private onchange() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onchange attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onchange) throws IOException {
+      return Coercion.trimNullIfEmpty(onchange);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onchange">3.2.6 Global attributes / onchange</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onchange">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onchange</a>.</li>
@@ -63,7 +93,7 @@ public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> extends Onch
     // Not calling super: overridden to support HTML 4
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Event.attribute(element, "onchange", onchange);
+    return Attributes.Event.attribute(element, "onchange", onchange, Onchange.onchange::normalize);
   }
 
   /**

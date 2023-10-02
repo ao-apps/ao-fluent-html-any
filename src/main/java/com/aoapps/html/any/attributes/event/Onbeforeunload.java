@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -41,6 +42,32 @@ import java.io.IOException;
 public interface Onbeforeunload<E extends Element<?, ?, E> & Onbeforeunload<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onbeforeunload}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/ev_onbeforeunload.asp">HTML onbeforeunload Event Attribute</a>.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  public static final class onbeforeunload {
+    /** Make no instances. */
+    private onbeforeunload() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onbeforeunload attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onbeforeunload) throws IOException {
+      return Coercion.trimNullIfEmpty(onbeforeunload);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/ev_onbeforeunload.asp">HTML onbeforeunload Event Attribute</a>.
    *
    * @since HTML 5
@@ -49,8 +76,8 @@ public interface Onbeforeunload<E extends Element<?, ?, E> & Onbeforeunload<E>> 
   default E onbeforeunload(Object onbeforeunload) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onbeforeunload");
-    return Attributes.Event.attribute(element, "onbeforeunload", onbeforeunload);
+    return Attributes.Event.attribute(element, "onbeforeunload", onbeforeunload,
+        Onbeforeunload.onbeforeunload::normalize, value -> Attributes.validateInHtml5(element, "onbeforeunload"));
   }
 
   /**

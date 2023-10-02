@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -30,6 +30,7 @@ import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.Locale;
@@ -51,6 +52,33 @@ import java.util.Locale;
 public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Lang}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang">HTMLElement.lang</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
+   * </ul>
+   */
+  public static final class lang {
+    /** Make no instances. */
+    private lang() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a lang attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object lang) throws IOException {
+      return Coercion.trimNullIfEmpty(lang);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>
@@ -62,7 +90,8 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
   default E lang(Object lang) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "lang", MarkupType.NONE, lang, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "lang", MarkupType.NONE, lang, Lang.lang::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**

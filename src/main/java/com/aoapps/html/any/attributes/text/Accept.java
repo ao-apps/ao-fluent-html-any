@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -42,13 +43,38 @@ import java.io.IOException;
 public interface Accept<E extends Element<?, ?, E> & Accept<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Accept}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_accept.asp">HTML accept Attribute</a>.
+   * </p>
+   */
+  public static final class accept {
+    /** Make no instances. */
+    private accept() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an accept attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object accept) throws IOException {
+      return Coercion.trimNullIfEmpty(accept);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/att_accept.asp">HTML accept Attribute</a>.
    */
   @Attributes.Funnel
   default E accept(Object accept) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "accept", MarkupType.NONE, accept, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "accept", MarkupType.NONE, accept, Accept.accept::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,36 @@ import java.io.IOException;
 public interface Ondrag<E extends Element<?, ?, E> & Ondrag<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Ondrag}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrag">3.2.6 Global attributes / ondrag</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrag">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrag</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondrag">8.1.7.2.1 IDL definitions / ondrag</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrag">GlobalEventHandlers.ondrag</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondrag.asp">ondrag Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class ondrag {
+    /** Make no instances. */
+    private ondrag() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an ondrag attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object ondrag) throws IOException {
+      return Coercion.trimNullIfEmpty(ondrag);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrag">3.2.6 Global attributes / ondrag</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrag">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrag</a>.</li>
@@ -62,8 +93,8 @@ public interface Ondrag<E extends Element<?, ?, E> & Ondrag<E>> {
   default E ondrag(Object ondrag) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "ondrag");
-    return Attributes.Event.attribute(element, "ondrag", ondrag);
+    return Attributes.Event.attribute(element, "ondrag", ondrag, Ondrag.ondrag::normalize,
+        value -> Attributes.validateInHtml5(element, "ondrag"));
   }
 
   /**

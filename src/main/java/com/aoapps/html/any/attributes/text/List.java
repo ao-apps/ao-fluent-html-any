@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,34 @@ import java.io.IOException;
 public interface List<E extends Element<?, ?, E> & List<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link List}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_list.asp">HTML list Attribute</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_input_list.asp">HTML input list Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdeflist">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class list {
+    /** Make no instances. */
+    private list() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a list attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object list) throws IOException {
+      return Coercion.trimNullIfEmpty(list);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://www.w3schools.com/tags/att_list.asp">HTML list Attribute</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/att_input_list.asp">HTML input list Attribute</a>.</li>
@@ -60,8 +89,8 @@ public interface List<E extends Element<?, ?, E> & List<E>> {
   default E list(Object list) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "list");
-    return Attributes.Text.attribute(element, "list", MarkupType.NONE, list, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "list", MarkupType.NONE, list, List.list::normalize,
+        value -> Attributes.validateInHtml5(element, "list"), textInXhtmlAttributeEncoder);
   }
 
   /**

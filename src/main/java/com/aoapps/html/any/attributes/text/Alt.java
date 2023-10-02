@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -42,13 +43,38 @@ import java.io.IOException;
 public interface Alt<E extends Element<?, ?, E> & Alt<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Alt}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_alt.asp">HTML alt Attribute</a>.
+   * </p>
+   */
+  public static final class alt {
+    /** Make no instances. */
+    private alt() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an alt attribute.
+     *
+     * @see  Coercion#trim(java.lang.Object)
+     */
+    public static Object normalize(Object alt) throws IOException {
+      return Coercion.trim(alt);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/att_alt.asp">HTML alt Attribute</a>.
    */
   @Attributes.Funnel
   default E alt(Object alt) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Text.attribute(element, "alt", MarkupType.TEXT, alt, true, false, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "alt", MarkupType.TEXT, alt, Alt.alt::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**

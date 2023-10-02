@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -42,6 +43,30 @@ import java.io.IOException;
 public interface Content<E extends Element<?, ?, E> & Content<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Content}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_content.asp">HTML content Attribute</a>.
+   * </p>
+   */
+  public static final class content {
+    /** Make no instances. */
+    private content() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a content attribute.
+     *
+     * @see  Coercion#nullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object content) throws IOException {
+      return Coercion.nullIfEmpty(content);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/att_content.asp">HTML content Attribute</a>.
    */
   @Attributes.Funnel
@@ -49,7 +74,8 @@ public interface Content<E extends Element<?, ?, E> & Content<E>> {
     @SuppressWarnings("unchecked")
     E element = (E) this;
     // TODO: Might be able to perform markup for some types of content (keywords, description, ...)?
-    return Attributes.Text.attribute(element, "content", MarkupType.NONE, content, false, false, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "content", MarkupType.NONE, content, Content.content::normalize,
+        textInXhtmlAttributeEncoder);
   }
 
   /**

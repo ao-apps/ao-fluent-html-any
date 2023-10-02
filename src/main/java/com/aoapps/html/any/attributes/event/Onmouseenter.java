@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,36 @@ import java.io.IOException;
 public interface Onmouseenter<E extends Element<?, ?, E> & Onmouseenter<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onmouseenter}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseenter">3.2.6 Global attributes / onmouseenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onmouseenter">8.1.7.2.1 IDL definitions / onmouseenter</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmouseenter">GlobalEventHandlers.onmouseenter</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onmouseenter.asp">onmouseenter Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class onmouseenter {
+    /** Make no instances. */
+    private onmouseenter() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onmouseenter attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onmouseenter) throws IOException {
+      return Coercion.trimNullIfEmpty(onmouseenter);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onmouseenter">3.2.6 Global attributes / onmouseenter</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onmouseenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onmouseenter</a>.</li>
@@ -62,8 +93,8 @@ public interface Onmouseenter<E extends Element<?, ?, E> & Onmouseenter<E>> {
   default E onmouseenter(Object onmouseenter) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onmouseenter");
-    return Attributes.Event.attribute(element, "onmouseenter", onmouseenter);
+    return Attributes.Event.attribute(element, "onmouseenter", onmouseenter, Onmouseenter.onmouseenter::normalize,
+        value -> Attributes.validateInHtml5(element, "onmouseenter"));
   }
 
   /**

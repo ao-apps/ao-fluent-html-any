@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -53,8 +53,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
   default E height(int pixels) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "height");
-    return Height.super.height(pixels);
+    return Attributes.Integer.attribute(element, "height", pixels,
+        value -> Attributes.validateInHtml5(element, "height"));
   }
 
   /**
@@ -70,8 +70,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
   default E height(Integer pixels) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "height");
-    return Height.super.height(pixels);
+    return Attributes.Integer.attribute(element, "height", pixels,
+        value -> Attributes.validateInHtml5(element, "height"));
   }
 
   /**

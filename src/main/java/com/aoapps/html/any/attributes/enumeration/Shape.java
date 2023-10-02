@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,7 @@ import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -46,13 +47,37 @@ public interface Shape<
     > {
 
   /**
+   * <p>
+   * Utility class for working with {@link Shape}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
+   * </p>
+   */
+  public static final class shape {
+    /** Make no instances. */
+    private shape() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a shape attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String shape) {
+      return Strings.trimNullIfEmpty(shape);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
    */
   @Attributes.Funnel
   default E shape(String shape) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.String.attribute(element, "shape", MarkupType.NONE, shape, true, true);
+    return Attributes.String.attribute(element, "shape", MarkupType.NONE, shape, Shape.shape::normalize);
   }
 
   /**

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,36 @@ import java.io.IOException;
 public interface Ondragstart<E extends Element<?, ?, E> & Ondragstart<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Ondragstart}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragstart">3.2.6 Global attributes / ondragstart</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragstart">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragstart</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragstart">8.1.7.2.1 IDL definitions / ondragstart</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragstart">GlobalEventHandlers.ondragstart</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondragstart.asp">ondragstart Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class ondragstart {
+    /** Make no instances. */
+    private ondragstart() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an ondragstart attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object ondragstart) throws IOException {
+      return Coercion.trimNullIfEmpty(ondragstart);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragstart">3.2.6 Global attributes / ondragstart</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragstart">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragstart</a>.</li>
@@ -62,8 +93,8 @@ public interface Ondragstart<E extends Element<?, ?, E> & Ondragstart<E>> {
   default E ondragstart(Object ondragstart) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "ondragstart");
-    return Attributes.Event.attribute(element, "ondragstart", ondragstart);
+    return Attributes.Event.attribute(element, "ondragstart", ondragstart, Ondragstart.ondragstart::normalize,
+        value -> Attributes.validateInHtml5(element, "ondragstart"));
   }
 
   /**

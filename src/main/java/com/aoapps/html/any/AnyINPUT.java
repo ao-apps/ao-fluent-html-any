@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,6 +32,7 @@ import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.LocalizedIllegalStateException;
 import com.aoapps.lang.LocalizedUnsupportedOperationException;
 import com.aoapps.lang.Strings;
+import com.aoapps.lang.function.FunctionE;
 import com.aoapps.lang.io.LocalizedUnsupportedEncodingException;
 import java.io.IOException;
 import java.io.Writer;
@@ -499,8 +500,7 @@ public abstract class AnyINPUT<
         // Allow text markup from translations
         (typeEnum == null) ? null : typeEnum.getMarkupType(),
         value,
-        false,
-        false,
+        FunctionE.identity(),
         textInXhtmlAttributeEncoder
       );
     }
@@ -548,8 +548,7 @@ public abstract class AnyINPUT<
         // Allow text markup from translations
         Dynamic.Type.BUTTON.getMarkupType(),
         value,
-        false,
-        false,
+        FunctionE.identity(),
         textInXhtmlAttributeEncoder
       );
     }
@@ -1588,8 +1587,7 @@ public abstract class AnyINPUT<
         // Allow text markup from translations
         Dynamic.Type.RESET.getMarkupType(),
         value,
-        false,
-        false,
+        FunctionE.identity(),
         textInXhtmlAttributeEncoder
       );
     }
@@ -1781,8 +1779,7 @@ public abstract class AnyINPUT<
         // Allow text markup from translations
         Dynamic.Type.SUBMIT.getMarkupType(),
         value,
-        false,
-        false,
+        FunctionE.identity(),
         textInXhtmlAttributeEncoder
       );
     }

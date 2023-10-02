@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -39,13 +40,39 @@ import java.io.IOException;
 public interface Onunload<E extends Element<?, ?, E> & Onunload<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onunload}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/ev_onunload.asp">HTML onunload Event Attribute</a>.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  public static final class onunload {
+    /** Make no instances. */
+    private onunload() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onunload attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onunload) throws IOException {
+      return Coercion.trimNullIfEmpty(onunload);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/ev_onunload.asp">HTML onunload Event Attribute</a>.
    */
   @Attributes.Funnel
   default E onunload(Object onunload) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Event.attribute(element, "onunload", onunload);
+    return Attributes.Event.attribute(element, "onunload", onunload, Onunload.onunload::normalize);
   }
 
   /**

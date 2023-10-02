@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -47,6 +48,36 @@ import java.io.IOException;
 // Matches OnloadstartUnexpected
 @SuppressWarnings("deprecation")
 public interface Onloadstart<E extends Element<?, ?, E> & Onloadstart<E>> extends OnloadstartUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Onloadstart}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onloadstart">3.2.6 Global attributes / onloadstart</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onloadstart">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onloadstart</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onloadstart">8.1.7.2.1 IDL definitions / onloadstart</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onloadstart">GlobalEventHandlers.onloadstart</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onloadstart.asp">onloadstart Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class onloadstart {
+    /** Make no instances. */
+    private onloadstart() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onloadstart attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onloadstart) throws IOException {
+      return Coercion.trimNullIfEmpty(onloadstart);
+    }
+  }
 
   /**
    * <ul>

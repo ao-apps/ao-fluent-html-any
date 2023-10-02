@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,6 +25,7 @@ package com.aoapps.html.any.attributes.url;
 
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -45,6 +46,35 @@ import java.io.IOException;
 public interface Formaction<E extends Element<?, ?, E> & Formaction<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Formaction}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formaction">&lt;button&gt;: The Button element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formaction">&lt;input type="submit"&gt;</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/image#formaction">&lt;input type="image"&gt;</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_formaction.asp">HTML formaction Attribute</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class formaction {
+    /** Make no instances. */
+    private formaction() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a formaction attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String formaction) {
+      return Strings.trimNullIfEmpty(formaction);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formaction">&lt;button&gt;: The Button element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formaction">&lt;input type="submit"&gt;</a>.</li>
@@ -58,8 +88,8 @@ public interface Formaction<E extends Element<?, ?, E> & Formaction<E>> {
   default E formaction(String formaction) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "formaction");
-    return Attributes.Url.attribute(element, "formaction", formaction);
+    return Attributes.Url.attribute(element, "formaction", formaction, Formaction.formaction::normalize,
+        value -> Attributes.validateInHtml5(element, "formaction"));
   }
 
   /**

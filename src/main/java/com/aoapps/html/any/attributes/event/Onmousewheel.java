@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -45,6 +46,37 @@ import java.io.IOException;
 public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onmousewheel}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
+   * </ul>
+   *
+   * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute in HTML5.
+   */
+  @Deprecated
+  public static final class onmousewheel {
+    /** Make no instances. */
+    private onmousewheel() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onmousewheel attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     *
+     * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute in HTML5.
+     */
+    @Deprecated
+    public static Object normalize(Object onmousewheel) throws IOException {
+      return Coercion.trimNullIfEmpty(onmousewheel);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>
@@ -57,7 +89,7 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
   default E onmousewheel(Object onmousewheel) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Event.attribute(element, "onmousewheel", onmousewheel);
+    return Attributes.Event.attribute(element, "onmousewheel", onmousewheel, Onmousewheel.onmousewheel::normalize);
   }
 
   /**

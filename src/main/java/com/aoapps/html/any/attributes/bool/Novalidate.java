@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -56,8 +56,8 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
   default E novalidate(boolean novalidate) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "novalidate");
-    return Attributes.Boolean.attribute(element, "novalidate", novalidate);
+    return Attributes.Boolean.attribute(element, "novalidate", novalidate,
+        value -> Attributes.validateInHtml5(element, "novalidate"));
   }
 
   /**

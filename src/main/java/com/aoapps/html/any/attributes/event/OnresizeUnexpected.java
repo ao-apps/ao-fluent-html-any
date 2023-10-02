@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,7 +25,6 @@ package com.aoapps.html.any.attributes.event;
 
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.AnyBODY;
-import com.aoapps.html.any.AnyFRAMESET;
 import com.aoapps.html.any.AnyVIDEO;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
@@ -46,7 +45,7 @@ import java.io.IOException;
  * @since HTML 5
  *
  * @deprecated  Although the onresize attribute is global, it is only expected on
- *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+ *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
  *
  * @author  AO Industries, Inc.
  */
@@ -66,15 +65,15 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
    * @since HTML 5
    *
    * @deprecated  Although the onresize attribute is global, it is only expected on
-   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
   @Deprecated
   @Attributes.Funnel
   default E onresize(Object onresize) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "onresize");
-    return Attributes.Event.attribute(element, "onresize", onresize);
+    return Attributes.Event.attribute(element, "onresize", onresize, Onresize.onresize::normalize,
+        value -> Attributes.validateInHtml5(element, "onresize"));
   }
 
   /**
@@ -93,7 +92,7 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
    * @see #onresize(java.lang.Object)
    *
    * @deprecated  Although the onresize attribute is global, it is only expected on
-   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
   @Deprecated
   default <Ex extends Throwable> E onresize(IOSupplierE<?, Ex> onresize) throws IOException, Ex {
@@ -116,7 +115,7 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
    * @see #onresize(java.lang.Object)
    *
    * @deprecated  Although the onresize attribute is global, it is only expected on
-   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
+   *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
   @Deprecated
   default <Ex extends Throwable> E onresize(JavaScriptWritable<Ex> onresize) throws IOException, Ex {

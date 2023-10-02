@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -73,8 +73,8 @@ public interface OninvalidUnexpected<E extends Element<?, ?, E> & OninvalidUnexp
   default E oninvalid(Object oninvalid) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "oninvalid");
-    return Attributes.Event.attribute(element, "oninvalid", oninvalid);
+    return Attributes.Event.attribute(element, "oninvalid", oninvalid, Oninvalid.oninvalid::normalize,
+        value -> Attributes.validateInHtml5(element, "oninvalid"));
   }
 
   /**

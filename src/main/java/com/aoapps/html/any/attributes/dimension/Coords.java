@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -51,6 +51,31 @@ import java.util.Objects;
 public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Coords}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area#attr-coords">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_coords.asp">HTML coords Attribute</a>.</li>
+   * </ul>
+   */
+  public static final class coords {
+    /** Make no instances. */
+    private coords() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a coords attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String coords) {
+      return Strings.trimNullIfEmpty(coords);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/area#attr-coords">&lt;area&gt; - HTML: Hypertext Markup Language</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/att_coords.asp">HTML coords Attribute</a>.</li>
@@ -61,7 +86,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
   default E coords(String coords) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Dimension.attribute(element, "coords", coords);
+    return Attributes.Dimension.attribute(element, "coords", coords, Coords.coords::normalize);
   }
 
   /**

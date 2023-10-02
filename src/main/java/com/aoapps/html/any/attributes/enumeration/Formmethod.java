@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,7 @@ import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 import java.util.function.Function;
@@ -51,6 +52,33 @@ public interface Formmethod<
     > {
 
   /**
+   * <p>
+   * Utility class for working with {@link Formmethod}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formmethod">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class formmethod {
+    /** Make no instances. */
+    private formmethod() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a formmethod attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String formmethod) {
+      return Strings.trimNullIfEmpty(formmethod);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-formmethod">4.10.18.6 Form submission attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-method">&lt;form&gt;: The Form element / method</a>.</li>
@@ -62,8 +90,8 @@ public interface Formmethod<
   default E formmethod(String formmethod) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "formmethod");
-    return Attributes.String.attribute(element, "formmethod", MarkupType.NONE, formmethod, true, true);
+    return Attributes.String.attribute(element, "formmethod", MarkupType.NONE, formmethod,
+        Formmethod.formmethod::normalize, value -> Attributes.validateInHtml5(element, "formmethod"));
   }
 
   /**

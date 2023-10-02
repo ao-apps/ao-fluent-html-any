@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -56,6 +56,34 @@ public interface Autocomplete<
     > {
 
   /**
+   * <p>
+   * Utility class for working with {@link Autocomplete}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class autocomplete {
+    /** Make no instances. */
+    private autocomplete() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an autocomplete attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String autocomplete) {
+      return Strings.trimNullIfEmpty(autocomplete);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://www.w3schools.com/tags/att_autocomplete.asp">HTML autocomplete Attribute</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefautocomplete">&lt;input&gt;: The Input (Form Input) element</a>.</li>
@@ -68,8 +96,8 @@ public interface Autocomplete<
   default E autocomplete(String autocomplete) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "autocomplete");
-    return Attributes.String.attribute(element, "autocomplete", MarkupType.NONE, autocomplete, true, true);
+    return Attributes.String.attribute(element, "autocomplete", MarkupType.NONE, autocomplete,
+        Autocomplete.autocomplete::normalize, value -> Attributes.validateInHtml5(element, "autocomplete"));
   }
 
   /**

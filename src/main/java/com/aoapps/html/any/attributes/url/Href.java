@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,6 +25,7 @@ package com.aoapps.html.any.attributes.url;
 
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -38,13 +39,37 @@ import java.io.IOException;
 public interface Href<E extends Element<?, ?, E> & Href<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Href}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_href.asp">HTML href Attribute</a>.
+   * </p>
+   */
+  public static final class href {
+    /** Make no instances. */
+    private href() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an href attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String href) {
+      return Strings.trimNullIfEmpty(href);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/att_href.asp">HTML href Attribute</a>.
    */
   @Attributes.Funnel
   default E href(String href) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Url.attribute(element, "href", href);
+    return Attributes.Url.attribute(element, "href", href, Href.href::normalize);
   }
 
   /**

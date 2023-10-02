@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,37 @@ import java.io.IOException;
 // Matches OninputUnexpected
 @SuppressWarnings("deprecation")
 public interface Oninput<E extends Element<?, ?, E> & Oninput<E>> extends OninputUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Oninput}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-oninput">3.2.6 Global attributes / oninput</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-oninput">8.1.7.2 Event handlers on elements, Document objects, and Window objects / oninput</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-oninput">8.1.7.2.1 IDL definitions / oninput</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/oninput">GlobalEventHandlers.oninput</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event">HTMLElement: input event</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_oninput.asp">oninput Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class oninput {
+    /** Make no instances. */
+    private oninput() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an oninput attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object oninput) throws IOException {
+      return Coercion.trimNullIfEmpty(oninput);
+    }
+  }
 
   /**
    * <ul>

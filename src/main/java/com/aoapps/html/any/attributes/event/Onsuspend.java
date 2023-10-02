@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -47,6 +48,36 @@ import java.io.IOException;
 // Matches OnsuspendUnexpected
 @SuppressWarnings("deprecation")
 public interface Onsuspend<E extends Element<?, ?, E> & Onsuspend<E>> extends OnsuspendUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Onsuspend}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsuspend">3.2.6 Global attributes / onsuspend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsuspend">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsuspend</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onsuspend">8.1.7.2.1 IDL definitions / onsuspend</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onsuspend">GlobalEventHandlers.onsuspend</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onsuspend.asp">onsuspend Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class onsuspend {
+    /** Make no instances. */
+    private onsuspend() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onsuspend attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onsuspend) throws IOException {
+      return Coercion.trimNullIfEmpty(onsuspend);
+    }
+  }
 
   /**
    * <ul>

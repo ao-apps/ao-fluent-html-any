@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -83,7 +83,6 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
      * @see  java.lang.String#toLowerCase(java.util.Locale)
      * @see  Locale#ROOT
      */
-    // TODO: Normalize other attributes the same way
     public static String normalize(String dir) {
       dir = Strings.trimNullIfEmpty(dir);
       if (dir != null) {
@@ -130,12 +129,9 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
         element,
         "dir",
         MarkupType.NONE,
-        Attributes.validate(
-            Dir.dir.normalize(dir),
-            Dir.dir::validate
-        ),
-        false,
-        false
+        dir,
+        Dir.dir::normalize,
+        Dir.dir::validate
     );
   }
 

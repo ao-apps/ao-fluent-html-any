@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -47,6 +48,36 @@ import java.io.IOException;
 // Matches OntimeupdateUnexpected
 @SuppressWarnings("deprecation")
 public interface Ontimeupdate<E extends Element<?, ?, E> & Ontimeupdate<E>> extends OntimeupdateUnexpected<E> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Ontimeupdate}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ontimeupdate">3.2.6 Global attributes / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ontimeupdate">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ontimeupdate</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ontimeupdate">8.1.7.2.1 IDL definitions / ontimeupdate</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ontimeupdate">GlobalEventHandlers.ontimeupdate</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ontimeupdate.asp">ontimeupdate Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class ontimeupdate {
+    /** Make no instances. */
+    private ontimeupdate() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an ontimeupdate attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object ontimeupdate) throws IOException {
+      return Coercion.trimNullIfEmpty(ontimeupdate);
+    }
+  }
 
   /**
    * <ul>

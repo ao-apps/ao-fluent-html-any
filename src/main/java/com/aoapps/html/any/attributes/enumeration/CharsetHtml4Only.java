@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -70,7 +70,7 @@ public interface CharsetHtml4Only<
     // Not calling super: overridden to support HTML 4
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, true, true);
+    return Attributes.String.attribute(element, "charset", MarkupType.NONE, charset, Charset.charset::normalize);
   }
 
   /**

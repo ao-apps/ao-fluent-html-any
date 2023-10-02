@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -44,6 +45,32 @@ import java.io.IOException;
 public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Placeholder}.
+   * </p>
+   * <p>
+   * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
+   * </p>
+   *
+   * @since HTML 5
+   */
+  public static final class placeholder {
+    /** Make no instances. */
+    private placeholder() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a placeholder attribute.
+     *
+     * @see  Coercion#nullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object placeholder) throws IOException {
+      return Coercion.nullIfEmpty(placeholder);
+    }
+  }
+
+  /**
    * See <a href="https://www.w3schools.com/tags/att_placeholder.asp">HTML placeholder Attribute</a>.
    *
    * @since HTML 5
@@ -52,8 +79,9 @@ public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
   default E placeholder(Object placeholder) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "placeholder");
-    return Attributes.Text.attribute(element, "placeholder", MarkupType.TEXT, placeholder, false, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "placeholder", MarkupType.TEXT, placeholder,
+        Placeholder.placeholder::normalize, value -> Attributes.validateInHtml5(element, "placeholder"),
+        textInXhtmlAttributeEncoder);
   }
 
   /**

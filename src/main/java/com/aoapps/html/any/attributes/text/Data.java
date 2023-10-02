@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -32,6 +32,7 @@ import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.LocalizedIllegalArgumentException;
+import com.aoapps.lang.function.FunctionE;
 import com.aoapps.lang.io.function.IOSupplierE;
 import com.aoapps.lang.validation.InvalidResult;
 import com.aoapps.lang.validation.ValidResult;
@@ -216,14 +217,13 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
     @SuppressWarnings("unchecked")
     E element = (E) this;
     validate(attrName, data::validate);
-    Attributes.onlySupportedInHtml5(element, attrName);
     return Attributes.Text.attribute(
         element,
         attrName,
         MarkupType.NONE,
         value,
-        false,
-        false,
+        FunctionE.identity(),
+        v -> Attributes.validateInHtml5(element, attrName),
         textInXhtmlAttributeEncoder
     );
   }

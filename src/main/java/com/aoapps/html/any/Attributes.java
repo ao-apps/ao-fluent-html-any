@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,9 +39,12 @@ import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.LocalizedUnsupportedOperationException;
+import com.aoapps.lang.Strings;
+import com.aoapps.lang.function.FunctionE;
 import com.aoapps.lang.i18n.Resources;
 import com.aoapps.lang.io.function.IOSupplierE;
 import com.aoapps.lang.validation.InvalidResult;
+import com.aoapps.lang.validation.ValidResult;
 import com.aoapps.lang.validation.ValidationResult;
 import java.io.IOException;
 import java.io.Writer;
@@ -50,7 +53,6 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.ResourceBundle;
-import java.util.function.Function;
 
 /**
  * See <a href="https://www.w3schools.com/tags/ref_attributes.asp">HTML Attributes</a>.
@@ -102,34 +104,60 @@ public final class Attributes {
    *
    * @return  The value when valid
    * @throws  IllegalArgumentException  When invalid, supporting {@link LocalizedIllegalArgumentException} when
-   *                                    validationResult is a {@link InvalidResult}
+   *                                    validationResult is an {@link InvalidResult}
    */
-  public static <T> T validate(T value, ValidationResult validationResult) throws IllegalArgumentException {
+  public static <T, Ex extends Throwable> T validate(T value, ValidationResult validationResult)
+      throws IllegalArgumentException, Ex {
     if (validationResult.isValid()) {
       return value;
+    } else if (validationResult instanceof InvalidResult) {
+      InvalidResult invalidResult = (InvalidResult) validationResult;
+      throw new LocalizedIllegalArgumentException(
+          invalidResult.getResources(),
+          invalidResult.getKey(),
+          invalidResult.getArgs()
+      );
     } else {
-      if (validationResult instanceof InvalidResult) {
-        InvalidResult invalidResult = (InvalidResult) validationResult;
-        throw new LocalizedIllegalArgumentException(
-            invalidResult.getResources(),
-            invalidResult.getKey(),
-            invalidResult.getArgs()
-        );
-      } else {
-        throw new IllegalArgumentException(validationResult.toString());
-      }
+      throw new IllegalArgumentException(validationResult.toString());
     }
   }
 
   /**
    * Validates a value using the provided validator.
    *
+   * @param  validator  When {@code null}, no validation is performed.
+   *
    * @return  The value when valid
    * @throws  IllegalArgumentException  When invalid, supporting {@link LocalizedIllegalArgumentException} when
-   *                                    validationResult is a {@link InvalidResult}
+   *                                    validationResult is an {@link InvalidResult}
    */
-  public static <T> T validate(T value, Function<? super T, ValidationResult> validator) throws IllegalArgumentException {
-    return validate(value, validator.apply(value));
+  public static <T, Ex extends Throwable> T validate(T value, FunctionE<? super T, ValidationResult, Ex> validator)
+      throws IllegalArgumentException, Ex {
+    return (validator == null) ? value : validate(value, validator.apply(value));
+  }
+
+  /**
+   * Validates that the document type is HTML 5 for the given attribute.
+   */
+  public static ValidationResult validateInHtml5(AnyDocument<?> document, java.lang.String attrName) {
+    Doctype doctype = document.encodingContext.getDoctype();
+    if (doctype != Doctype.HTML5) {
+      return new InvalidResult(
+          RESOURCES,
+          "onlySupportedInHtml5",
+          doctype,
+          attrName
+      );
+    } else {
+      return ValidResult.getInstance();
+    }
+  }
+
+  /**
+   * Validates that the document type is HTML 5 for the given attribute.
+   */
+  public static ValidationResult validateInHtml5(Element<?, ?, ?> element, java.lang.String attrName) {
+    return validateInHtml5(element.getDocument(), attrName);
   }
 
   /**
@@ -150,29 +178,22 @@ public final class Attributes {
   }
 
   /**
-   * Enforces that the document type is HTML 5 for the given attribute.
-   *
-   * @throws  UnsupportedOperationException when {@link EncodingContext#getDoctype()} is not {@link Doctype#HTML5}.
-   */
-  public static void onlySupportedInHtml5(Element<?, ?, ?> element, java.lang.String attrName) throws UnsupportedOperationException {
-    onlySupportedInHtml5(element.getDocument(), attrName);
-  }
-
-  /**
    * Enforces that the document type is correct for the given global attribute.
    *
    * @throws  UnsupportedOperationException when {@link EncodingContext#getDoctype()} is not {@link Doctype#HTML5}.
    */
-  public static void invalidGlobalAttributeForDoctype(Element<?, ?, ?> element, Doctype requiredDoctype, java.lang.String attrName) throws UnsupportedOperationException {
+  public static ValidationResult invalidGlobalAttributeForDoctype(Element<?, ?, ?> element, Doctype requiredDoctype, java.lang.String attrName) {
     Doctype doctype = element.getDocument().encodingContext.getDoctype();
     if (doctype != requiredDoctype) {
-      throw new LocalizedUnsupportedOperationException(
+      return new InvalidResult(
           RESOURCES,
           "invalidGlobalAttributeForDoctype",
           doctype,
           requiredDoctype,
           attrName
       );
+    } else {
+      return ValidResult.getInstance();
     }
   }
 
@@ -189,10 +210,18 @@ public final class Attributes {
     }
 
     /**
-     * @param  <E>  This element type
+     * @param  <E>        This element type
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
      */
-    public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, boolean value) throws IOException {
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        boolean value,
+        FunctionE<? super java.lang.Boolean, ValidationResult, Ex> validator
+    ) throws IOException, Ex {
       if (value) {
+        validate(value, validator);
         AnyDocument<?> document = element.document;
         @SuppressWarnings("deprecation")
         Writer unsafe = document.getRawUnsafe(null);
@@ -214,6 +243,17 @@ public final class Attributes {
       }
       return element;
     }
+
+    /**
+     * @param  <E>  This element type
+     */
+    public static <E extends Element<?, ?, E>> E attribute(
+        E element,
+        java.lang.String name,
+        boolean value
+    ) throws IOException {
+      return attribute(element, name, value, null);
+    }
   }
 
   /**
@@ -232,17 +272,71 @@ public final class Attributes {
     }
 
     /**
-     * @param  <E>  This element type
+     * @param  <E>        This element type
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
      */
-    public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, int pixels) throws IOException {
-      return Integer.attribute(element, name, pixels);
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        int pixels,
+        FunctionE<? super java.lang.Integer, ValidationResult, Ex> validator
+    ) throws IOException, Ex {
+      return Integer.attribute(element, name, pixels, validator);
     }
 
     /**
      * @param  <E>  This element type
      */
-    public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, java.lang.Integer pixels) throws IOException {
+    public static <E extends Element<?, ?, E>> E attribute(
+        E element,
+        java.lang.String name,
+        int pixels
+    ) throws IOException {
       return Integer.attribute(element, name, pixels);
+    }
+
+    /**
+     * @param  <E>        This element type
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
+     */
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        java.lang.Integer pixels,
+        FunctionE<? super java.lang.Integer, ValidationResult, Ex> validator
+    ) throws IOException, Ex {
+      return Integer.attribute(element, name, pixels, validator);
+    }
+
+    /**
+     * @param  <E>  This element type
+     */
+    public static <E extends Element<?, ?, E>> E attribute(
+        E element,
+        java.lang.String name,
+        java.lang.Integer pixels
+    ) throws IOException {
+      return Integer.attribute(element, name, pixels);
+    }
+
+    /**
+     * @param  <E>        This element type
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
+     *
+     * @deprecated  In HTML 4.01, the value could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
+     */
+    @Deprecated
+    public static <E extends Element<?, ?, E>, Ex1 extends Throwable, Ex2 extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        java.lang.String pixelsOrPercent,
+        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex1> normalizer,
+        FunctionE<? super java.lang.String, ValidationResult, Ex2> validator
+    ) throws IOException, Ex1, Ex2 {
+      return String.attribute(element, name, MarkupType.NONE, pixelsOrPercent, normalizer, validator);
     }
 
     /**
@@ -251,8 +345,13 @@ public final class Attributes {
      * @deprecated  In HTML 4.01, the value could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
      */
     @Deprecated
-    public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, java.lang.String pixelsOrPercent) throws IOException {
-      return String.attribute(element, name, MarkupType.NONE, pixelsOrPercent, true, true);
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        java.lang.String pixelsOrPercent,
+        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex> normalizer
+    ) throws IOException, Ex {
+      return String.attribute(element, name, MarkupType.NONE, pixelsOrPercent, normalizer);
     }
   }
 
@@ -269,12 +368,31 @@ public final class Attributes {
     }
 
     /**
+     * @param  <E>        This element type
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
+     */
+    public static <E extends Element<?, ?, E>, Ex1 extends Throwable, Ex2 extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        Object script,
+        FunctionE<? super Object, ? extends Object, Ex1> normalizer,
+        FunctionE<? super Object, ValidationResult, Ex2> validator
+    ) throws IOException, Ex1, Ex2 {
+      return Attributes.Text.attribute(element, name, MarkupType.JAVASCRIPT, script, normalizer, validator,
+          javascriptInXhtmlAttributeEncoder);
+    }
+
+    /**
      * @param  <E>  This element type
      */
-    public static <
-        E extends Element<?, ?, E>
-        > E attribute(E element, java.lang.String name, Object script) throws IOException {
-      return Attributes.Text.attribute(element, name, MarkupType.JAVASCRIPT, script, true, true, javascriptInXhtmlAttributeEncoder);
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        Object script,
+        FunctionE<? super Object, ? extends Object, Ex> normalizer
+    ) throws IOException, Ex {
+      return attribute(element, name, script, normalizer, null);
     }
   }
 
@@ -291,9 +409,17 @@ public final class Attributes {
     }
 
     /**
-     * @param  <E>  This element type
+     * @param  <E>        This element type
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
      */
-    public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, int value) throws IOException {
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        int value,
+        FunctionE<? super java.lang.Integer, ValidationResult, Ex> validator
+    ) throws IOException, Ex {
+      validate(value, validator);
       AnyDocument<?> document = element.document;
       @SuppressWarnings("deprecation")
       Writer unsafe = document.getRawUnsafe(null);
@@ -313,12 +439,41 @@ public final class Attributes {
     /**
      * @param  <E>  This element type
      */
-    public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, java.lang.Integer value) throws IOException {
+    public static <E extends Element<?, ?, E>> E attribute(
+        E element,
+        java.lang.String name,
+        int value
+    ) throws IOException {
+      return attribute(element, name, value, null);
+    }
+
+    /**
+     * @param  <E>        This element type
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
+     */
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        java.lang.Integer value,
+        FunctionE<? super java.lang.Integer, ValidationResult, Ex> validator
+    ) throws IOException, Ex {
       if (value != null) {
-        return attribute(element, name, value.intValue());
+        return attribute(element, name, value.intValue(), validator);
       } else {
         return element;
       }
+    }
+
+    /**
+     * @param  <E>  This element type
+     */
+    public static <E extends Element<?, ?, E>> E attribute(
+        E element,
+        java.lang.String name,
+        java.lang.Integer value
+    ) throws IOException {
+      return attribute(element, name, value, null);
     }
   }
 
@@ -333,18 +488,27 @@ public final class Attributes {
     }
 
     /**
-     * @param  <E>    This element type
-     * @param  value  If is {@link #NO_VALUE} (by identity), will write empty attribute.
+     * @param  <E>        This element type
+     * @param  value      If is {@link #NO_VALUE} (by identity), will write empty attribute.
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
      */
-    // TODO: Remove trim and nullIfEmpty once all attributes have normalize methods
     @SuppressWarnings("StringEquality")
-    public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, MarkupType markupType, java.lang.String value, boolean trim, boolean nullIfEmpty) throws IOException {
+    public static <E extends Element<?, ?, E>, Ex1 extends Throwable, Ex2 extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        MarkupType markupType,
+        java.lang.String value,
+        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex1> normalizer,
+        FunctionE<? super java.lang.String, ValidationResult, Ex2> validator
+    ) throws IOException, Ex1, Ex2 {
       if (value != null) {
         if (
             // Identity comparison for marker value
             value == NO_VALUE
         ) {
           // Empty attribute
+          validate(value, validator);
           AnyDocument<?> document = element.document;
           @SuppressWarnings("deprecation")
           Writer unsafe = document.getRawUnsafe(null);
@@ -356,10 +520,10 @@ public final class Attributes {
           }
           unsafe.write(name);
         } else {
-          if (trim) {
-            value = value.trim(); // TODO: These trims should all be from Strings?
-          }
-          if (!nullIfEmpty || !value.isEmpty()) {
+          value = normalizer.apply(value);
+          // value = value.trim(); // TODO: These trims should all be from Strings?
+          if (value != null) {
+            validate(value, validator);
             AnyDocument<?> document = element.document;
             @SuppressWarnings("deprecation")
             Writer unsafe = document.getRawUnsafe(null);
@@ -396,6 +560,20 @@ public final class Attributes {
       }
       return element;
     }
+
+    /**
+     * @param  <E>    This element type
+     * @param  value  If is {@link #NO_VALUE} (by identity), will write empty attribute.
+     */
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        MarkupType markupType,
+        java.lang.String value,
+        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex> normalizer
+    ) throws IOException, Ex {
+      return attribute(element, name, markupType, value, normalizer, null);
+    }
   }
 
   /**
@@ -411,18 +589,20 @@ public final class Attributes {
     }
 
     /**
-     * @param  <E>    This element type
-     * @param  value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
+     * @param  <E>        This element type
+     * @param  value      The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
      */
-    public static <E extends Element<?, ?, E>> E attribute(
+    public static <E extends Element<?, ?, E>, Ex1 extends Throwable, Ex2 extends Throwable> E attribute(
         E element,
         java.lang.String name,
         MarkupType markupType,
         Object value,
-        boolean trim,
-        boolean nullIfEmpty,
+        FunctionE<? super Object, ? extends Object, Ex1> normalizer,
+        FunctionE<? super Object, ValidationResult, Ex2> validator,
         MediaEncoder encoder
-    ) throws IOException {
+    ) throws IOException, Ex1, Ex2 {
       // TODO: Assert is valid attribute name by doctype
       while (value instanceof IOSupplierE<?, ?>) {
         @SuppressWarnings("unchecked")
@@ -431,6 +611,7 @@ public final class Attributes {
       }
       if (value != null) {
         if (value instanceof MediaWritable<?>) {
+          validate(value, validator);
           @SuppressWarnings("unchecked")
           final MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>) value;
           AnyDocument<?> document = element.document;
@@ -456,12 +637,27 @@ public final class Attributes {
               )
           );
           unsafe.append('"');
+        } else if (
+            // Identity comparison for marker value
+            value == NO_VALUE
+        ) {
+          // Empty attribute
+          validate(value, validator);
+          AnyDocument<?> document = element.document;
+          @SuppressWarnings("deprecation")
+          Writer unsafe = document.getRawUnsafe(null);
+          if (document.getAtnl()) {
+            document.autoIndent(unsafe, 1);
+            document.clearAtnl();
+          } else {
+            unsafe.append(' ');
+          }
+          unsafe.write(name);
+          // TODO: When serialization is XML, set equal to attribute name or empty?
         } else {
-          if (
-              // Identity comparison for marker value
-              value == NO_VALUE
-          ) {
-            // Empty attribute
+          value = normalizer.apply(value);
+          if (value != null) {
+            validate(value, validator);
             AnyDocument<?> document = element.document;
             @SuppressWarnings("deprecation")
             Writer unsafe = document.getRawUnsafe(null);
@@ -472,39 +668,16 @@ public final class Attributes {
               unsafe.append(' ');
             }
             unsafe.write(name);
-            // TODO: When serialization is XML, set equal to attribute name or empty?
-          } else {
-            if (trim) {
-              if (nullIfEmpty) {
-                value = Coercion.trimNullIfEmpty(value);
-              } else {
-                value = Coercion.trim(value);
-              }
-            } else if (nullIfEmpty) {
-              value = Coercion.nullIfEmpty(value);
-            }
-            if (value != null) {
-              AnyDocument<?> document = element.document;
-              @SuppressWarnings("deprecation")
-              Writer unsafe = document.getRawUnsafe(null);
-              if (document.getAtnl()) {
-                document.autoIndent(unsafe, 1);
-                document.clearAtnl();
-              } else {
-                unsafe.append(' ');
-              }
-              unsafe.write(name);
-              unsafe.write("=\"");
-              MarkupCoercion.write(
-                  value,
-                  markupType,
-                  true,
-                  encoder,
-                  false,
-                  unsafe
-              );
-              unsafe.append('"');
-            }
+            unsafe.write("=\"");
+            MarkupCoercion.write(
+                value,
+                markupType,
+                true,
+                encoder,
+                false,
+                unsafe
+            );
+            unsafe.append('"');
           }
         }
       }
@@ -512,22 +685,39 @@ public final class Attributes {
     }
 
     /**
+     * @param  <E>    This element type
+     * @param  value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
+     */
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        MarkupType markupType,
+        Object value,
+        FunctionE<? super Object, ? extends Object, Ex> normalizer,
+        MediaEncoder encoder
+    ) throws IOException, Ex {
+      return attribute(element, name, markupType, value, normalizer, null, encoder);
+    }
+
+    /**
      * @param  <E>        This element type
      * @param  values     The attribute values, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
      * @param  separator  The separator to use between non-null values.  Written directly (not through the encoder).
      *                    Not written when a value is {@link Attributes#NO_VALUE}.
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
      */
     @SuppressWarnings("AssignmentToForLoopParameter")
-    public static <E extends Element<?, ?, E>> E attribute(
+    public static <E extends Element<?, ?, E>, Ex1 extends Throwable, Ex2 extends Throwable> E attribute(
         E element,
         java.lang.String name,
         MarkupType markupType,
         Object[] values,
         java.lang.String separator,
-        boolean trim,
-        boolean nullIfEmpty,
+        FunctionE<? super Object, ? extends Object, Ex1> normalizer,
+        FunctionE<? super Object, ValidationResult, Ex2> validator,
         MediaEncoder encoder
-    ) throws IOException {
+    ) throws IOException, Ex1, Ex2 {
       if (values != null) {
         AnyDocument<?> document = element.document;
         @SuppressWarnings("deprecation")
@@ -543,6 +733,7 @@ public final class Attributes {
           }
           if (value != null) {
             if (value instanceof MediaWritable<?>) {
+              validate(value, validator);
               @SuppressWarnings("unchecked")
               MediaWritable<? extends RuntimeException> writer = (MediaWritable<? extends RuntimeException>) value;
               if (val) {
@@ -575,62 +766,54 @@ public final class Attributes {
                       null // Ignore close
                   )
               );
+            } else if (
+                // Identity comparison for marker value
+                value == NO_VALUE
+            ) {
+              // Empty attribute
+              validate(value, validator);
+              if (!attr) {
+                if (document.getAtnl()) {
+                  document.autoIndent(unsafe, 1);
+                  document.clearAtnl();
+                } else {
+                  unsafe.append(' ');
+                }
+                unsafe.write(name);
+                attr = true;
+              }
+              // TODO: When serialization is XML, set equal to attribute name or empty?
             } else {
-              if (
-                  // Identity comparison for marker value
-                  value == NO_VALUE
-              ) {
-                // Empty attribute
-                if (!attr) {
-                  if (document.getAtnl()) {
-                    document.autoIndent(unsafe, 1);
-                    document.clearAtnl();
-                  } else {
-                    unsafe.append(' ');
+              value = normalizer.apply(value);
+              if (value != null) {
+                validate(value, validator);
+                if (val) {
+                  assert attr;
+                  if (separator != null) {
+                    unsafe.write(separator);
                   }
-                  unsafe.write(name);
-                  attr = true;
-                }
-                // TODO: When serialization is XML, set equal to attribute name or empty?
-              } else {
-                if (trim) {
-                  if (nullIfEmpty) {
-                    value = Coercion.trimNullIfEmpty(value);
-                  } else {
-                    value = Coercion.trim(value);
-                  }
-                } else if (nullIfEmpty) {
-                  value = Coercion.nullIfEmpty(value);
-                }
-                if (value != null) {
-                  if (val) {
-                    assert attr;
-                    if (separator != null) {
-                      unsafe.write(separator);
+                } else {
+                  if (!attr) {
+                    if (document.getAtnl()) {
+                      document.autoIndent(unsafe, 1);
+                      document.clearAtnl();
+                    } else {
+                      unsafe.append(' ');
                     }
-                  } else {
-                    if (!attr) {
-                      if (document.getAtnl()) {
-                        document.autoIndent(unsafe, 1);
-                        document.clearAtnl();
-                      } else {
-                        unsafe.append(' ');
-                      }
-                      unsafe.write(name);
-                      attr = true;
-                    }
-                    unsafe.write("=\"");
-                    val = true;
+                    unsafe.write(name);
+                    attr = true;
                   }
-                  MarkupCoercion.write(
-                      value,
-                      markupType,
-                      true,
-                      encoder,
-                      false,
-                      unsafe
-                  );
+                  unsafe.write("=\"");
+                  val = true;
                 }
+                MarkupCoercion.write(
+                    value,
+                    markupType,
+                    true,
+                    encoder,
+                    false,
+                    unsafe
+                );
               }
             }
           }
@@ -641,6 +824,24 @@ public final class Attributes {
         }
       }
       return element;
+    }
+
+    /**
+     * @param  <E>        This element type
+     * @param  values     The attribute values, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
+     * @param  separator  The separator to use between non-null values.  Written directly (not through the encoder).
+     *                    Not written when a value is {@link Attributes#NO_VALUE}.
+     */
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        MarkupType markupType,
+        Object[] values,
+        java.lang.String separator,
+        FunctionE<? super Object, ? extends Object, Ex> normalizer,
+        MediaEncoder encoder
+    ) throws IOException, Ex {
+      return attribute(element, name, markupType, values, separator, normalizer, null, encoder);
     }
   }
 
@@ -658,26 +859,50 @@ public final class Attributes {
     }
 
     /**
-     * @param  <E>  This element type
+     * @param  <E>        This element type
+     * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
+     *                    Will not be called when the attribute will be skipped.
      */
-    public static <E extends Element<?, ?, E>> E attribute(E element, java.lang.String name, java.lang.String url) throws IOException {
+    public static <E extends Element<?, ?, E>, Ex1 extends Throwable, Ex2 extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        java.lang.String url,
+        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex1> normalizer,
+        FunctionE<? super java.lang.String, ValidationResult, Ex2> validator
+    ) throws IOException, Ex1, Ex2 {
       if (url != null) {
-        AnyDocument<?> document = element.document;
-        @SuppressWarnings("deprecation")
-        Writer unsafe = document.getRawUnsafe(null);
-        if (document.getAtnl()) {
-          document.autoIndent(unsafe, 1);
-          document.clearAtnl();
-        } else {
-          unsafe.append(' ');
+        url = normalizer.apply(url);
+        if (url != null) {
+          validate(url, validator);
+          AnyDocument<?> document = element.document;
+          @SuppressWarnings("deprecation")
+          Writer unsafe = document.getRawUnsafe(null);
+          if (document.getAtnl()) {
+            document.autoIndent(unsafe, 1);
+            document.clearAtnl();
+          } else {
+            unsafe.append(' ');
+          }
+          unsafe.write(name);
+          unsafe.write("=\"");
+          // TODO: UrlInXhtmlAttributeEncoder once RFC 3987 supported
+          textInXhtmlAttributeEncoder.write(url, unsafe);
+          unsafe.append('"');
         }
-        unsafe.write(name);
-        unsafe.write("=\"");
-        // TODO: UrlInXhtmlAttributeEncoder once RFC 3987 supported
-        textInXhtmlAttributeEncoder.write(url, unsafe);
-        unsafe.append('"');
       }
       return element;
+    }
+
+    /**
+     * @param  <E>  This element type
+     */
+    public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
+        E element,
+        java.lang.String name,
+        java.lang.String url,
+        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex> normalizer
+    ) throws IOException, Ex {
+      return attribute(element, name, url, normalizer, null);
     }
   }
 }

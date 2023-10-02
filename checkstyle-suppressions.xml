@@ -33,7 +33,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
   <!-- Using "Ex" for generic exceptions, since "E" is often "Element" -->
   <suppress
     checks="(InterfaceTypeParameterName|MethodTypeParameterName)"
-    message="'Ex'"
+    message="'(Ex|Ex1|Ex2)'"
   />
 
   <!-- Special Union_* types -->
@@ -113,7 +113,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
   <suppress
     checks="TypeName"
     files="[/\\]com[/\\]aoapps[/\\]html[/\\]any[/\\]attributes[/\\].*\.java$"
-    message="'[a-z]+'"
+    message="'([a-z]+|forAttr|httpEquiv)'"
   />
 
   <!-- Allow single-character members -->

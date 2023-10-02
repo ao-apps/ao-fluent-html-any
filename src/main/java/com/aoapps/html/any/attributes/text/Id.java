@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -29,6 +29,7 @@ import com.aoapps.encoding.TextWritable;
 import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -50,6 +51,32 @@ import java.io.IOException;
 public interface Id<E extends Element<?, ?, E> & Id<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Id}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_global_id.asp">id Attribute</a>.</li>
+   * </ul>
+   */
+  public static final class id {
+    /** Make no instances. */
+    private id() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an id attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object id) throws IOException {
+      return Coercion.trimNullIfEmpty(id);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-id-attribute">3.2.6 Global attributes / id</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id">Global attributes / id</a>.</li>
@@ -64,7 +91,7 @@ public interface Id<E extends Element<?, ?, E> & Id<E>> {
     @SuppressWarnings("unchecked")
     E element = (E) this;
     // TODO: Validate, with doctype-aware character constraints.  XmlUtils can help, or build into Doctype itself.
-    return Attributes.Text.attribute(element, "id", MarkupType.NONE, id, true, true, textInXhtmlAttributeEncoder);
+    return Attributes.Text.attribute(element, "id", MarkupType.NONE, id, Id.id::normalize, textInXhtmlAttributeEncoder);
   }
 
   /**

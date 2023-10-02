@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,36 @@ import java.io.IOException;
 public interface Ondrop<E extends Element<?, ?, E> & Ondrop<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Ondrop}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrop">3.2.6 Global attributes / ondrop</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrop">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrop</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondrop">8.1.7.2.1 IDL definitions / ondrop</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondrop">GlobalEventHandlers.ondrop</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondrop.asp">ondrop Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class ondrop {
+    /** Make no instances. */
+    private ondrop() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an ondrop attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object ondrop) throws IOException {
+      return Coercion.trimNullIfEmpty(ondrop);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondrop">3.2.6 Global attributes / ondrop</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondrop">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondrop</a>.</li>
@@ -62,8 +93,8 @@ public interface Ondrop<E extends Element<?, ?, E> & Ondrop<E>> {
   default E ondrop(Object ondrop) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "ondrop");
-    return Attributes.Event.attribute(element, "ondrop", ondrop);
+    return Attributes.Event.attribute(element, "ondrop", ondrop, Ondrop.ondrop::normalize,
+        value -> Attributes.validateInHtml5(element, "ondrop"));
   }
 
   /**

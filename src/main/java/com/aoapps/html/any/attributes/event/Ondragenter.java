@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -48,6 +49,36 @@ import java.io.IOException;
 public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Ondragenter}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragenter">3.2.6 Global attributes / ondragenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragenter</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-ondragenter">8.1.7.2.1 IDL definitions / ondragenter</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/ondragenter">GlobalEventHandlers.ondragenter</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_ondragenter.asp">ondragenter Event</a>.</li>
+   * </ul>
+   *
+   * @since HTML 5
+   */
+  public static final class ondragenter {
+    /** Make no instances. */
+    private ondragenter() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an ondragenter attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object ondragenter) throws IOException {
+      return Coercion.trimNullIfEmpty(ondragenter);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragenter">3.2.6 Global attributes / ondragenter</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragenter">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragenter</a>.</li>
@@ -62,8 +93,8 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
   default E ondragenter(Object ondragenter) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "ondragenter");
-    return Attributes.Event.attribute(element, "ondragenter", ondragenter);
+    return Attributes.Event.attribute(element, "ondragenter", ondragenter, Ondragenter.ondragenter::normalize,
+        value -> Attributes.validateInHtml5(element, "ondragenter"));
   }
 
   /**

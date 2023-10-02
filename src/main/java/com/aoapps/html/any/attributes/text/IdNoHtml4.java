@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,8 +23,11 @@
 
 package com.aoapps.html.any.attributes.text;
 
+import static com.aoapps.encoding.TextInXhtmlAttributeEncoder.textInXhtmlAttributeEncoder;
+
 import com.aoapps.encoding.Doctype;
 import com.aoapps.encoding.TextWritable;
+import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.lang.io.function.IOSupplierE;
@@ -63,8 +66,10 @@ public interface IdNoHtml4<E extends Element<?, ?, E> & IdNoHtml4<E>> extends Id
     // TODO: normalize, then only throw when non-empty/null.  Here and other attributes.
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "id");
-    return Id.super.id(id);
+    // TODO: Validate, with doctype-aware character constraints.  XmlUtils can help, or build into Doctype itself.
+    return Attributes.Text.attribute(element, "id", MarkupType.NONE, id, Id.id::normalize,
+        value -> Attributes.invalidGlobalAttributeForDoctype(element, Doctype.HTML5, "id"),
+        textInXhtmlAttributeEncoder);
   }
 
   /**

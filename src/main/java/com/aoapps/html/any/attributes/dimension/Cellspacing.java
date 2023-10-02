@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.dimension;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -40,6 +41,36 @@ import java.io.IOException;
  */
 @Deprecated
 public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
+
+  /**
+   * <p>
+   * Utility class for working with {@link Cellspacing}.
+   * </p>
+   * <p>
+   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
+   * </p>
+   *
+   * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
+   */
+  @Deprecated
+  public static final class cellspacing {
+    /** Make no instances. */
+    private cellspacing() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes a cellspacing attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     *
+     * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
+     */
+    @Deprecated
+    public static String normalize(String pixelsOrPercent) {
+      return Strings.trimNullIfEmpty(pixelsOrPercent);
+    }
+  }
 
   /**
    * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellspacing">&lt;table&gt;: The Table element / cellspacing</a>.
@@ -90,7 +121,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
   default E cellspacing(String pixelsOrPercent) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Dimension.attribute(element, "cellspacing", pixelsOrPercent);
+    return Attributes.Dimension.attribute(element, "cellspacing", pixelsOrPercent, Cellspacing.cellspacing::normalize);
   }
 
   /**

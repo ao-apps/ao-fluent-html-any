@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,6 +26,7 @@ package com.aoapps.html.any.attributes.event;
 import com.aoapps.encoding.JavaScriptWritable;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
+import com.aoapps.lang.Coercion;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
 
@@ -46,6 +47,34 @@ import java.io.IOException;
 public interface Onkeypress<E extends Element<?, ?, E> & Onkeypress<E>> {
 
   /**
+   * <p>
+   * Utility class for working with {@link Onkeypress}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeypress">3.2.6 Global attributes / onkeypress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeypress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeypress</a>.</li>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#idl-definitions:handler-onkeypress">8.1.7.2.1 IDL definitions / onkeypress</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onkeypress">GlobalEventHandlers.onkeypress</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/jsref/event_onkeypress.asp">onkeypress Event</a>.</li>
+   * </ul>
+   */
+  public static final class onkeypress {
+    /** Make no instances. */
+    private onkeypress() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an onkeypress attribute.
+     *
+     * @see  Coercion#trimNullIfEmpty(java.lang.Object)
+     */
+    public static Object normalize(Object onkeypress) throws IOException {
+      return Coercion.trimNullIfEmpty(onkeypress);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onkeypress">3.2.6 Global attributes / onkeypress</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onkeypress">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onkeypress</a>.</li>
@@ -58,7 +87,7 @@ public interface Onkeypress<E extends Element<?, ?, E> & Onkeypress<E>> {
   default E onkeypress(Object onkeypress) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.Event.attribute(element, "onkeypress", onkeypress);
+    return Attributes.Event.attribute(element, "onkeypress", onkeypress, Onkeypress.onkeypress::normalize);
   }
 
   /**

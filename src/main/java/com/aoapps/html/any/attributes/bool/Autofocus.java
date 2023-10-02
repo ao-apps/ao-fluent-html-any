@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -57,8 +57,8 @@ public interface Autofocus<E extends Element<?, ?, E> & Autofocus<E>> {
   default E autofocus(boolean autofocus) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    Attributes.onlySupportedInHtml5(element, "autofocus");
-    return Attributes.Boolean.attribute(element, "autofocus", autofocus);
+    return Attributes.Boolean.attribute(element, "autofocus", autofocus,
+        value -> Attributes.validateInHtml5(element, "autofocus"));
   }
 
   /**

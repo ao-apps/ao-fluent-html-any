@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -28,6 +28,7 @@ import com.aoapps.html.any.AnyDocument;
 import com.aoapps.html.any.Attributes;
 import com.aoapps.html.any.Element;
 import com.aoapps.html.any.Suppliers;
+import com.aoapps.lang.Strings;
 import com.aoapps.lang.io.ContentType;
 import com.aoapps.lang.io.function.IOSupplierE;
 import java.io.IOException;
@@ -51,6 +52,32 @@ public interface Enctype<
     > {
 
   /**
+   * <p>
+   * Utility class for working with {@link Enctype}.
+   * </p>
+   * <ul>
+   * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
+   * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
+   * <li>See <a href="https://www.w3schools.com/tags/att_enctype.asp">HTML enctype Attribute</a>.</li>
+   * </ul>
+   */
+  public static final class enctype {
+    /** Make no instances. */
+    private enctype() {
+      throw new AssertionError();
+    }
+
+    /**
+     * Normalizes an enctype attribute.
+     *
+     * @see  Strings#trimNullIfEmpty(java.lang.String)
+     */
+    public static String normalize(String enctype) {
+      return Strings.trimNullIfEmpty(enctype);
+    }
+  }
+
+  /**
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#attr-fs-enctype">4.10.18.6 Form submission attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#attr-enctype">&lt;form&gt;: The Form element / enctype</a>.</li>
@@ -61,7 +88,7 @@ public interface Enctype<
   default E enctype(String enctype) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
-    return Attributes.String.attribute(element, "enctype", MarkupType.NONE, enctype, true, true);
+    return Attributes.String.attribute(element, "enctype", MarkupType.NONE, enctype, Enctype.enctype::normalize);
   }
 
   /**
