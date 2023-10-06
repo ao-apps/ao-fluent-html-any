@@ -73,7 +73,7 @@ public interface Title<E extends Element<?, ?, E> & Title<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object title) throws IOException {
+    public static Object normalize(Object title) {
       return Coercion.trimNullIfEmpty(title);
     }
   }

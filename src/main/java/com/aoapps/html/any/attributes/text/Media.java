@@ -64,7 +64,7 @@ public interface Media<E extends Element<?, ?, E> & Media<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object media) throws IOException {
+    public static Object normalize(Object media) {
       return Coercion.trimNullIfEmpty(media);
     }
   }

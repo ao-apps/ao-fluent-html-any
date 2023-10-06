@@ -69,7 +69,7 @@ public interface Onfocus<E extends Element<?, ?, E> & Onfocus<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onfocus) throws IOException {
+    public static Object normalize(Object onfocus) {
       return Coercion.trimNullIfEmpty(onfocus);
     }
   }

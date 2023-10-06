@@ -74,7 +74,7 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object accesskey) throws IOException {
+    public static Object normalize(Object accesskey) {
       return Coercion.trimNullIfEmpty(accesskey);
     }
   }

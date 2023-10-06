@@ -61,7 +61,7 @@ public interface Content<E extends Element<?, ?, E> & Content<E>> {
      *
      * @see  Coercion#nullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object content) throws IOException {
+    public static Object normalize(Object content) {
       return Coercion.nullIfEmpty(content);
     }
   }

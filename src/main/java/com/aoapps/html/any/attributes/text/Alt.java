@@ -61,7 +61,7 @@ public interface Alt<E extends Element<?, ?, E> & Alt<E>> {
      *
      * @see  Coercion#trim(java.lang.Object)
      */
-    public static Object normalize(Object alt) throws IOException {
+    public static Object normalize(Object alt) {
       return Coercion.trim(alt);
     }
   }

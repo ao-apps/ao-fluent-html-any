@@ -69,7 +69,7 @@ public interface Onmouseup<E extends Element<?, ?, E> & Onmouseup<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onmouseup) throws IOException {
+    public static Object normalize(Object onmouseup) {
       return Coercion.trimNullIfEmpty(onmouseup);
     }
   }

@@ -73,7 +73,7 @@ public interface Onwheel<E extends Element<?, ?, E> & Onwheel<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onwheel) throws IOException {
+    public static Object normalize(Object onwheel) {
       return Coercion.trimNullIfEmpty(onwheel);
     }
   }

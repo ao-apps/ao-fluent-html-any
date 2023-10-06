@@ -69,7 +69,7 @@ public interface Onpaste<E extends Element<?, ?, E> & Onpaste<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onpaste) throws IOException {
+    public static Object normalize(Object onpaste) {
       return Coercion.trimNullIfEmpty(onpaste);
     }
   }

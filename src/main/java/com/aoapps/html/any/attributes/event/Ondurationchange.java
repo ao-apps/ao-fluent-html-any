@@ -74,7 +74,7 @@ public interface Ondurationchange<E extends Element<?, ?, E> & Ondurationchange<
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object ondurationchange) throws IOException {
+    public static Object normalize(Object ondurationchange) {
       return Coercion.trimNullIfEmpty(ondurationchange);
     }
   }

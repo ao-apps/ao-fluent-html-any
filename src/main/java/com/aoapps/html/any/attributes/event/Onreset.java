@@ -74,7 +74,7 @@ public interface Onreset<E extends Element<?, ?, E> & Onreset<E>> extends Onrese
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onreset) throws IOException {
+    public static Object normalize(Object onreset) {
       return Coercion.trimNullIfEmpty(onreset);
     }
   }

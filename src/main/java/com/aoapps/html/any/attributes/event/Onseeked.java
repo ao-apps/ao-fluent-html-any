@@ -74,7 +74,7 @@ public interface Onseeked<E extends Element<?, ?, E> & Onseeked<E>> extends Onse
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onseeked) throws IOException {
+    public static Object normalize(Object onseeked) {
       return Coercion.trimNullIfEmpty(onseeked);
     }
   }

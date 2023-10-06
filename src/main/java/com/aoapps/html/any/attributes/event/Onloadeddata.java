@@ -74,7 +74,7 @@ public interface Onloadeddata<E extends Element<?, ?, E> & Onloadeddata<E>> exte
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onloadeddata) throws IOException {
+    public static Object normalize(Object onloadeddata) {
       return Coercion.trimNullIfEmpty(onloadeddata);
     }
   }

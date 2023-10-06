@@ -72,7 +72,7 @@ public interface Onsecuritypolicyviolation<E extends Element<?, ?, E> & Onsecuri
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onsecuritypolicyviolation) throws IOException {
+    public static Object normalize(Object onsecuritypolicyviolation) {
       return Coercion.trimNullIfEmpty(onsecuritypolicyviolation);
     }
   }

@@ -74,7 +74,7 @@ public interface Oncanplaythrough<E extends Element<?, ?, E> & Oncanplaythrough<
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object oncanplaythrough) throws IOException {
+    public static Object normalize(Object oncanplaythrough) {
       return Coercion.trimNullIfEmpty(oncanplaythrough);
     }
   }

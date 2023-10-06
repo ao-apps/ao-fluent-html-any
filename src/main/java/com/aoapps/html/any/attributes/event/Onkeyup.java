@@ -69,7 +69,7 @@ public interface Onkeyup<E extends Element<?, ?, E> & Onkeyup<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onkeyup) throws IOException {
+    public static Object normalize(Object onkeyup) {
       return Coercion.trimNullIfEmpty(onkeyup);
     }
   }

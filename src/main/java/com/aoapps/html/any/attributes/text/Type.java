@@ -61,7 +61,7 @@ public interface Type<E extends Element<?, ?, E> & Type<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object type) throws IOException {
+    public static Object normalize(Object type) {
       return Coercion.trimNullIfEmpty(type);
     }
   }

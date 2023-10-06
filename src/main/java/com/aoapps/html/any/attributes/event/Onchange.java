@@ -72,7 +72,7 @@ public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> extends Onch
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onchange) throws IOException {
+    public static Object normalize(Object onchange) {
       return Coercion.trimNullIfEmpty(onchange);
     }
   }

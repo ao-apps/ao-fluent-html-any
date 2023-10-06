@@ -69,7 +69,7 @@ public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onscroll) throws IOException {
+    public static Object normalize(Object onscroll) {
       return Coercion.trimNullIfEmpty(onscroll);
     }
   }

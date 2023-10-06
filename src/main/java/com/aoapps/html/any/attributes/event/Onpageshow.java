@@ -62,7 +62,7 @@ public interface Onpageshow<E extends Element<?, ?, E> & Onpageshow<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onpageshow) throws IOException {
+    public static Object normalize(Object onpageshow) {
       return Coercion.trimNullIfEmpty(onpageshow);
     }
   }

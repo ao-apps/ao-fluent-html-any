@@ -74,7 +74,7 @@ public interface Ontimeupdate<E extends Element<?, ?, E> & Ontimeupdate<E>> exte
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object ontimeupdate) throws IOException {
+    public static Object normalize(Object ontimeupdate) {
       return Coercion.trimNullIfEmpty(ontimeupdate);
     }
   }

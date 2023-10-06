@@ -62,7 +62,7 @@ public interface Ononline<E extends Element<?, ?, E> & Ononline<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object ononline) throws IOException {
+    public static Object normalize(Object ononline) {
       return Coercion.trimNullIfEmpty(ononline);
     }
   }

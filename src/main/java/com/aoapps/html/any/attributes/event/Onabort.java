@@ -68,7 +68,7 @@ public interface Onabort<E extends Element<?, ?, E> & Onabort<E>> extends Onabor
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onabort) throws IOException {
+    public static Object normalize(Object onabort) {
       return Coercion.trimNullIfEmpty(onabort);
     }
   }

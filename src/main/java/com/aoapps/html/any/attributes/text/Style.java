@@ -73,7 +73,7 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object style) throws IOException {
+    public static Object normalize(Object style) {
       return Coercion.trimNullIfEmpty(style);
     }
   }

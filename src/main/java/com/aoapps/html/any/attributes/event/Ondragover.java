@@ -73,7 +73,7 @@ public interface Ondragover<E extends Element<?, ?, E> & Ondragover<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object ondragover) throws IOException {
+    public static Object normalize(Object ondragover) {
       return Coercion.trimNullIfEmpty(ondragover);
     }
   }

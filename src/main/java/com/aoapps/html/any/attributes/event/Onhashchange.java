@@ -62,7 +62,7 @@ public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onhashchange) throws IOException {
+    public static Object normalize(Object onhashchange) {
       return Coercion.trimNullIfEmpty(onhashchange);
     }
   }

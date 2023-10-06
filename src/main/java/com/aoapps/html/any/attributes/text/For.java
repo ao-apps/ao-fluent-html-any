@@ -62,7 +62,7 @@ public interface For<E extends Element<?, ?, E> & For<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object forAttr) throws IOException {
+    public static Object normalize(Object forAttr) {
       return Coercion.trimNullIfEmpty(forAttr);
     }
   }

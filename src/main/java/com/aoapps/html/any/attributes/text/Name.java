@@ -67,7 +67,7 @@ public interface Name<E extends Element<?, ?, E> & Name<E>> {
      * @see  Coercion#nullIfEmpty(java.lang.Object)
      */
     // Note: Dirname.dirname.normalize delegates to this method
-    public static Object normalize(Object name) throws IOException {
+    public static Object normalize(Object name) {
       return Coercion.nullIfEmpty(name);
     }
   }

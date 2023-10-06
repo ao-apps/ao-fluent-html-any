@@ -71,7 +71,7 @@ public interface List<E extends Element<?, ?, E> & List<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object list) throws IOException {
+    public static Object normalize(Object list) {
       return Coercion.trimNullIfEmpty(list);
     }
   }

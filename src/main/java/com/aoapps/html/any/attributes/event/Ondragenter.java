@@ -73,7 +73,7 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object ondragenter) throws IOException {
+    public static Object normalize(Object ondragenter) {
       return Coercion.trimNullIfEmpty(ondragenter);
     }
   }

@@ -62,7 +62,7 @@ public interface Onpopstate<E extends Element<?, ?, E> & Onpopstate<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onpopstate) throws IOException {
+    public static Object normalize(Object onpopstate) {
       return Coercion.trimNullIfEmpty(onpopstate);
     }
   }

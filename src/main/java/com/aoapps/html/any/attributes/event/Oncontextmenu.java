@@ -73,7 +73,7 @@ public interface Oncontextmenu<E extends Element<?, ?, E> & Oncontextmenu<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object oncontextmenu) throws IOException {
+    public static Object normalize(Object oncontextmenu) {
       return Coercion.trimNullIfEmpty(oncontextmenu);
     }
   }

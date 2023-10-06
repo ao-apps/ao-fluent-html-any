@@ -62,7 +62,7 @@ public interface Onpagehide<E extends Element<?, ?, E> & Onpagehide<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onpagehide) throws IOException {
+    public static Object normalize(Object onpagehide) {
       return Coercion.trimNullIfEmpty(onpagehide);
     }
   }

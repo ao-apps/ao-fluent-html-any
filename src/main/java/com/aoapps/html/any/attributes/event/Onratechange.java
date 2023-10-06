@@ -74,7 +74,7 @@ public interface Onratechange<E extends Element<?, ?, E> & Onratechange<E>> exte
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onratechange) throws IOException {
+    public static Object normalize(Object onratechange) {
       return Coercion.trimNullIfEmpty(onratechange);
     }
   }

@@ -74,7 +74,7 @@ public interface Onvolumechange<E extends Element<?, ?, E> & Onvolumechange<E>> 
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onvolumechange) throws IOException {
+    public static Object normalize(Object onvolumechange) {
       return Coercion.trimNullIfEmpty(onvolumechange);
     }
   }

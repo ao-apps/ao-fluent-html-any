@@ -73,7 +73,7 @@ public interface Ondragleave<E extends Element<?, ?, E> & Ondragleave<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object ondragleave) throws IOException {
+    public static Object normalize(Object ondragleave) {
       return Coercion.trimNullIfEmpty(ondragleave);
     }
   }

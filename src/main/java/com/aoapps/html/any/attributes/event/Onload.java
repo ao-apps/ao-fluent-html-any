@@ -70,7 +70,7 @@ public interface Onload<E extends Element<?, ?, E> & Onload<E>> extends OnloadUn
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onload) throws IOException {
+    public static Object normalize(Object onload) {
       return Coercion.trimNullIfEmpty(onload);
     }
   }

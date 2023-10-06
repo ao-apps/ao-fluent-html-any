@@ -69,7 +69,7 @@ public interface Oncopy<E extends Element<?, ?, E> & Oncopy<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object oncopy) throws IOException {
+    public static Object normalize(Object oncopy) {
       return Coercion.trimNullIfEmpty(oncopy);
     }
   }

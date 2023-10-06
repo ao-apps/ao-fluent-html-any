@@ -73,7 +73,7 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object lang) throws IOException {
+    public static Object normalize(Object lang) {
       return Coercion.trimNullIfEmpty(lang);
     }
   }

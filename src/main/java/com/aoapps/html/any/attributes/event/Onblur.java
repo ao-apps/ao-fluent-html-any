@@ -69,7 +69,7 @@ public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onblur) throws IOException {
+    public static Object normalize(Object onblur) {
       return Coercion.trimNullIfEmpty(onblur);
     }
   }

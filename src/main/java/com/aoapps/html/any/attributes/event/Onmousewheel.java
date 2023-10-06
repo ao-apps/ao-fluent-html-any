@@ -71,7 +71,7 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
      * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute in HTML5.
      */
     @Deprecated
-    public static Object normalize(Object onmousewheel) throws IOException {
+    public static Object normalize(Object onmousewheel) {
       return Coercion.trimNullIfEmpty(onmousewheel);
     }
   }

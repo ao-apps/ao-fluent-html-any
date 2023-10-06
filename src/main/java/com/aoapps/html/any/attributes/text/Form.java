@@ -69,7 +69,7 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object form) throws IOException {
+    public static Object normalize(Object form) {
       return Coercion.trimNullIfEmpty(form);
     }
   }

@@ -64,7 +64,7 @@ public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
      * @see  Locale#toLanguageTag()
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object hreflang) throws IOException {
+    public static Object normalize(Object hreflang) {
       return (hreflang instanceof Locale) ? ((Locale) hreflang).toLanguageTag() : Coercion.trimNullIfEmpty(hreflang);
     }
   }

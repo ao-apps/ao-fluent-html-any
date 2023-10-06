@@ -69,7 +69,7 @@ public interface Onclick<E extends Element<?, ?, E> & Onclick<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onclick) throws IOException {
+    public static Object normalize(Object onclick) {
       return Coercion.trimNullIfEmpty(onclick);
     }
   }

@@ -72,7 +72,7 @@ public interface Onslotchange<E extends Element<?, ?, E> & Onslotchange<E>> exte
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onslotchange) throws IOException {
+    public static Object normalize(Object onslotchange) {
       return Coercion.trimNullIfEmpty(onslotchange);
     }
   }

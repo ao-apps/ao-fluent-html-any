@@ -72,7 +72,7 @@ public interface Onemptied<E extends Element<?, ?, E> & Onemptied<E>> extends On
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onemptied) throws IOException {
+    public static Object normalize(Object onemptied) {
       return Coercion.trimNullIfEmpty(onemptied);
     }
   }

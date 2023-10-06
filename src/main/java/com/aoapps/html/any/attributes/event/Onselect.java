@@ -70,7 +70,7 @@ public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends Onse
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onselect) throws IOException {
+    public static Object normalize(Object onselect) {
       return Coercion.trimNullIfEmpty(onselect);
     }
   }

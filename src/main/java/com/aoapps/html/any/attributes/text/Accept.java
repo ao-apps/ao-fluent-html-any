@@ -61,7 +61,7 @@ public interface Accept<E extends Element<?, ?, E> & Accept<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object accept) throws IOException {
+    public static Object normalize(Object accept) {
       return Coercion.trimNullIfEmpty(accept);
     }
   }

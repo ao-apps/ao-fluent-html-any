@@ -69,7 +69,7 @@ public interface Oncut<E extends Element<?, ?, E> & Oncut<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object oncut) throws IOException {
+    public static Object normalize(Object oncut) {
       return Coercion.trimNullIfEmpty(oncut);
     }
   }

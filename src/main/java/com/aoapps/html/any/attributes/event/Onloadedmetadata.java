@@ -74,7 +74,7 @@ public interface Onloadedmetadata<E extends Element<?, ?, E> & Onloadedmetadata<
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onloadedmetadata) throws IOException {
+    public static Object normalize(Object onloadedmetadata) {
       return Coercion.trimNullIfEmpty(onloadedmetadata);
     }
   }

@@ -74,7 +74,7 @@ public interface Onerror<E extends Element<?, ?, E> & Onerror<E>> extends Onerro
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onerror) throws IOException {
+    public static Object normalize(Object onerror) {
       return Coercion.trimNullIfEmpty(onerror);
     }
   }

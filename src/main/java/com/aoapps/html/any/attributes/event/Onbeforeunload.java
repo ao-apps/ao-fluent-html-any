@@ -62,7 +62,7 @@ public interface Onbeforeunload<E extends Element<?, ?, E> & Onbeforeunload<E>> 
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onbeforeunload) throws IOException {
+    public static Object normalize(Object onbeforeunload) {
       return Coercion.trimNullIfEmpty(onbeforeunload);
     }
   }

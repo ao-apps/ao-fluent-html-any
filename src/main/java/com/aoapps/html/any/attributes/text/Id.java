@@ -71,7 +71,7 @@ public interface Id<E extends Element<?, ?, E> & Id<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object id) throws IOException {
+    public static Object normalize(Object id) {
       return Coercion.trimNullIfEmpty(id);
     }
   }

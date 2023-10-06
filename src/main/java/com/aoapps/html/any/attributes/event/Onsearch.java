@@ -65,7 +65,7 @@ public interface Onsearch<E extends Element<?, ?, E> & Onsearch<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onsearch) throws IOException {
+    public static Object normalize(Object onsearch) {
       return Coercion.trimNullIfEmpty(onsearch);
     }
   }

@@ -74,7 +74,7 @@ public interface Onpause<E extends Element<?, ?, E> & Onpause<E>> extends Onpaus
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onpause) throws IOException {
+    public static Object normalize(Object onpause) {
       return Coercion.trimNullIfEmpty(onpause);
     }
   }

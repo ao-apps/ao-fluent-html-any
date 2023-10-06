@@ -76,7 +76,7 @@ public interface Oninvalid<E extends Element<?, ?, E> & Oninvalid<E>> extends On
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object oninvalid) throws IOException {
+    public static Object normalize(Object oninvalid) {
       return Coercion.trimNullIfEmpty(oninvalid);
     }
   }

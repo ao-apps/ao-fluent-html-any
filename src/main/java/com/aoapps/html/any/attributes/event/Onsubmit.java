@@ -72,7 +72,7 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends Onsu
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onsubmit) throws IOException {
+    public static Object normalize(Object onsubmit) {
       return Coercion.trimNullIfEmpty(onsubmit);
     }
   }

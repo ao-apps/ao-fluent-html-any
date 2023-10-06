@@ -73,7 +73,7 @@ public interface Onmouseleave<E extends Element<?, ?, E> & Onmouseleave<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onmouseleave) throws IOException {
+    public static Object normalize(Object onmouseleave) {
       return Coercion.trimNullIfEmpty(onmouseleave);
     }
   }

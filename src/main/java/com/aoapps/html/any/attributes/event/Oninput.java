@@ -76,7 +76,7 @@ public interface Oninput<E extends Element<?, ?, E> & Oninput<E>> extends Oninpu
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object oninput) throws IOException {
+    public static Object normalize(Object oninput) {
       return Coercion.trimNullIfEmpty(oninput);
     }
   }

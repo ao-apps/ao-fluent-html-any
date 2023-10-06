@@ -74,7 +74,7 @@ public interface Onloadstart<E extends Element<?, ?, E> & Onloadstart<E>> extend
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onloadstart) throws IOException {
+    public static Object normalize(Object onloadstart) {
       return Coercion.trimNullIfEmpty(onloadstart);
     }
   }

@@ -65,7 +65,7 @@ public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
      *
      * @see  Coercion#nullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object placeholder) throws IOException {
+    public static Object normalize(Object placeholder) {
       return Coercion.nullIfEmpty(placeholder);
     }
   }

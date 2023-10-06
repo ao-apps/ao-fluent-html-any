@@ -62,7 +62,7 @@ public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onafterprint) throws IOException {
+    public static Object normalize(Object onafterprint) {
       return Coercion.trimNullIfEmpty(onafterprint);
     }
   }

@@ -74,7 +74,7 @@ public interface Onplay<E extends Element<?, ?, E> & Onplay<E>> extends OnplayUn
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onplay) throws IOException {
+    public static Object normalize(Object onplay) {
       return Coercion.trimNullIfEmpty(onplay);
     }
   }

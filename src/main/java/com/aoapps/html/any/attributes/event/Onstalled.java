@@ -74,7 +74,7 @@ public interface Onstalled<E extends Element<?, ?, E> & Onstalled<E>> extends On
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onstalled) throws IOException {
+    public static Object normalize(Object onstalled) {
       return Coercion.trimNullIfEmpty(onstalled);
     }
   }

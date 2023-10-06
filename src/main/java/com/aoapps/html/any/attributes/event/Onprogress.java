@@ -74,7 +74,7 @@ public interface Onprogress<E extends Element<?, ?, E> & Onprogress<E>> extends 
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onprogress) throws IOException {
+    public static Object normalize(Object onprogress) {
       return Coercion.trimNullIfEmpty(onprogress);
     }
   }

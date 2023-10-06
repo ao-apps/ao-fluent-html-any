@@ -74,7 +74,7 @@ public interface Onended<E extends Element<?, ?, E> & Onended<E>> extends Onende
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onended) throws IOException {
+    public static Object normalize(Object onended) {
       return Coercion.trimNullIfEmpty(onended);
     }
   }

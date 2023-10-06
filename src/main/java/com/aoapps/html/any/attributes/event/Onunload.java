@@ -60,7 +60,7 @@ public interface Onunload<E extends Element<?, ?, E> & Onunload<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onunload) throws IOException {
+    public static Object normalize(Object onunload) {
       return Coercion.trimNullIfEmpty(onunload);
     }
   }

@@ -74,7 +74,7 @@ public interface Onsuspend<E extends Element<?, ?, E> & Onsuspend<E>> extends On
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onsuspend) throws IOException {
+    public static Object normalize(Object onsuspend) {
       return Coercion.trimNullIfEmpty(onsuspend);
     }
   }

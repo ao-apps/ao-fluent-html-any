@@ -62,7 +62,7 @@ public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onstorage) throws IOException {
+    public static Object normalize(Object onstorage) {
       return Coercion.trimNullIfEmpty(onstorage);
     }
   }

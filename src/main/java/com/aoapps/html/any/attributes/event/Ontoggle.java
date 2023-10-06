@@ -72,7 +72,7 @@ public interface Ontoggle<E extends Element<?, ?, E> & Ontoggle<E>> extends Onto
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object ontoggle) throws IOException {
+    public static Object normalize(Object ontoggle) {
       return Coercion.trimNullIfEmpty(ontoggle);
     }
   }

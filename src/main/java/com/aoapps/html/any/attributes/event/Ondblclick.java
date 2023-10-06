@@ -69,7 +69,7 @@ public interface Ondblclick<E extends Element<?, ?, E> & Ondblclick<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object ondblclick) throws IOException {
+    public static Object normalize(Object ondblclick) {
       return Coercion.trimNullIfEmpty(ondblclick);
     }
   }

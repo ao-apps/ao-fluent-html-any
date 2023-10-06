@@ -74,7 +74,7 @@ public interface Onresize<E extends Element<?, ?, E> & Onresize<E>> extends Onre
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onresize) throws IOException {
+    public static Object normalize(Object onresize) {
       return Coercion.trimNullIfEmpty(onresize);
     }
   }

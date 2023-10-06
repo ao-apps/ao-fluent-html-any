@@ -62,7 +62,7 @@ public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onmessage) throws IOException {
+    public static Object normalize(Object onmessage) {
       return Coercion.trimNullIfEmpty(onmessage);
     }
   }

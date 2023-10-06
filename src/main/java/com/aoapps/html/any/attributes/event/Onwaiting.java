@@ -74,7 +74,7 @@ public interface Onwaiting<E extends Element<?, ?, E> & Onwaiting<E>> extends On
      *
      * @see  Coercion#trimNullIfEmpty(java.lang.Object)
      */
-    public static Object normalize(Object onwaiting) throws IOException {
+    public static Object normalize(Object onwaiting) {
       return Coercion.trimNullIfEmpty(onwaiting);
     }
   }
