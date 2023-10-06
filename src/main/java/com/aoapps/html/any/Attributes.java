@@ -39,7 +39,6 @@ import com.aoapps.hodgepodge.i18n.MarkupType;
 import com.aoapps.lang.Coercion;
 import com.aoapps.lang.LocalizedIllegalArgumentException;
 import com.aoapps.lang.LocalizedUnsupportedOperationException;
-import com.aoapps.lang.Strings;
 import com.aoapps.lang.function.FunctionE;
 import com.aoapps.lang.i18n.Resources;
 import com.aoapps.lang.io.function.IOSupplierE;
