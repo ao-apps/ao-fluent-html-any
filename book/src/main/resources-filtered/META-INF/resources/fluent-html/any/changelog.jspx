@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
-Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -37,9 +37,9 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2021-03-14T22:32:34-05:00"
-    dateModified="2023-10-02T00:34:59Z"
+    dateModified="2024-05-08T21:00:44Z"
   >
-    <c:set var="latestRelease" value="0.7.0" />
+    <c:set var="latestRelease" value="0.8.0" />
     <c:if test="${
       fn:endsWith('@{project.version}', '-SNAPSHOT')
       and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')
@@ -52,21 +52,30 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
         artifactId="@{documented.artifactId}"
         repository="@{nexusUrl}content/repositories/snapshots/"
         scmUrl="@{project.scm.url}"
-      >
-        <ul>
-          <li>
-            Added <code><ao:a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">crossorigin</ao:a></code> attribute to
-            <code><ao:a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><![CDATA[&lt;img&gt;]]></ao:a></code>
-            and <code><ao:a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element"><![CDATA[&lt;script&gt;]]></ao:a></code>.
-          </li>
-          <li>
-            Replaced <code>trim</code> / <code>nullIfEmpty</code> boolean flags with <code>normalizer</code> and
-            <code>validator</code> functions.
-          </li>
-          <li>URL attributes are now trimmed and attribute will not be added when trims to empty.</li>
-        </ul>
-      </changelog:release>
+      />
     </c:if>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.8.0"
+      datePublished="2024-05-08T21:00:44Z"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>
+          Added <code><ao:a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">crossorigin</ao:a></code> attribute to
+          <code><ao:a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><![CDATA[&lt;img&gt;]]></ao:a></code>
+          and <code><ao:a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element"><![CDATA[&lt;script&gt;]]></ao:a></code>.
+        </li>
+        <li>
+          Replaced <code>trim</code> / <code>nullIfEmpty</code> boolean flags with <code>normalizer</code> and
+          <code>validator</code> functions.
+        </li>
+        <li>URL attributes are now trimmed and attribute will not be added when trims to empty.</li>
+      </ul>
+    </changelog:release>
 
     <changelog:release
       projectName="@{documented.name}"
