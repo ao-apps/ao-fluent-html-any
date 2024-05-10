@@ -29,12 +29,12 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
     <relativePath>../../parent/pom.xml</relativePath>
   </parent>
 
-  <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any-book</artifactId><version>0.8.0-SNAPSHOT</version>
+  <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any-book</artifactId><version>0.8.0</version>
   <packaging>jar</packaging>
 
   <properties>
     <!-- Must be set to ${git.commit.time} for snapshots or ISO 8601 timestamp for releases. -->
-    <project.build.outputTimestamp>${git.commit.time}</project.build.outputTimestamp>
+    <project.build.outputTimestamp>2024-05-10T23:27:57Z</project.build.outputTimestamp>
     <module.name>com.aoapps.html.any.book</module.name>
     <subproject.subpath>book/</subproject.subpath>
     <!-- These values are copied from the project being documented -->
@@ -80,7 +80,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
     <connection>scm:git:git://github.com/ao-apps/ao-fluent-html-any.git</connection>
     <developerConnection>scm:git:git@github.com:ao-apps/ao-fluent-html-any.git</developerConnection>
     <url>https://github.com/ao-apps/ao-fluent-html-any</url>
-    <tag>HEAD</tag>
+    <tag>ao-fluent-html-any-book-0.8.0</tag>
   </scm>
 
   <issueManagement>
