@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
-Copyright (C) 2022, 2023  AO Industries, Inc.
+Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -72,7 +72,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
   <!-- elem(), elem__(), elem_c(), and elem__any() element methods -->
   <suppress
     checks="MethodName"
-    message="'[a-z]+(__|_c|__any)?'"
+    message="'[a-z]+[0-9]*(__|_c|__any)?'"
   />
 
   <!-- __() and _c() content methods -->
