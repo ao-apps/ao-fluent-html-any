@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -51,9 +51,8 @@ import java.io.IOException;
 public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Accesskey}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#the-accesskey-attribute">6.7.2 The accesskey attribute</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey">Global attributes / accesskey</a>.</li>

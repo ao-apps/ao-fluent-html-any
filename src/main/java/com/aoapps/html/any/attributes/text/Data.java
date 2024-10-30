@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -58,9 +58,8 @@ import java.io.IOException;
 public interface Data<E extends Element<?, ?, E> & Data<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Data} as data-* HTML attributes.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
@@ -84,9 +83,8 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
     public static final String ATTRIBUTE_PREFIX = "data-";
 
     /**
-     * <p>
      * Validates a data-* HTML attribute name.
-     * </p>
+     *
      * <ul>
      * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
      * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset">HTMLOrForeignElement.dataset - Web APIs | MDN</a>.</li>
@@ -143,13 +141,11 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
     }
 
     /**
-     * <p>
      * Converts a data-* HTML attribute name to a JavaScript dataset property name.
-     * </p>
-     * <p>
-     * This method is the simplest conversion implementation and does not
-     * perform full validation.
-     * </p>
+     *
+     * <p>This method is the simplest conversion implementation and does not
+     * perform full validation.</p>
+     *
      * <ul>
      * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset">HTMLOrForeignElement.dataset - Web APIs | MDN</a>.</li>
      * </ul>
@@ -198,10 +194,9 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
   }
 
   /**
-   * <p>
    * Data provided by HTML attribute name.  Name must begin with {@link data#ATTRIBUTE_PREFIX}, and must
    * conform to the rules defined in HTML.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
@@ -229,10 +224,9 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
   }
 
   /**
-   * <p>
    * Data provided by HTML attribute name.  Name must begin with {@link data#ATTRIBUTE_PREFIX}, and must
    * conform to the rules defined in HTML.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
@@ -250,10 +244,9 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
   }
 
   /**
-   * <p>
    * Data provided by HTML attribute name.  Name must begin with {@link data#ATTRIBUTE_PREFIX}, and must
    * conform to the rules defined in HTML.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
@@ -271,9 +264,8 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
   }
 
   /**
-   * <p>
    * Utility class for working with {@link Data} as JavaScript dataset property.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
@@ -292,9 +284,8 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
     }
 
     /**
-     * <p>
      * Validates a JavaScript dataset property name.
-     * </p>
+     *
      * <ul>
      * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset">HTMLOrForeignElement.dataset - Web APIs | MDN</a>.</li>
      * </ul>
@@ -331,13 +322,11 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
     }
 
     /**
-     * <p>
      * Converts a JavaScript dataset property name to a data-* HTML attribute name.
-     * </p>
-     * <p>
-     * This method is the simplest conversion implementation and does not
-     * perform full validation.
-     * </p>
+     *
+     * <p>This method is the simplest conversion implementation and does not
+     * perform full validation.</p>
+     *
      * <ul>
      * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset">HTMLOrForeignElement.dataset - Web APIs | MDN</a>.</li>
      * </ul>
@@ -384,9 +373,8 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
   }
 
   /**
-   * <p>
    * Data provided by JavaScript dataset property name.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
@@ -407,9 +395,8 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
   }
 
   /**
-   * <p>
    * Data provided by JavaScript dataset property name.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>
@@ -427,9 +414,8 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
   }
 
   /**
-   * <p>
    * Data provided by JavaScript dataset property name.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#embedding-custom-non-visible-data-with-the-data-%2A-attributes">3.2.6.6 Embedding custom non-visible data with the data-* attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-%2A">Global attributes / data-*</a>.</li>

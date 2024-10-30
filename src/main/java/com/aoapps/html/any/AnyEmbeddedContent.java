@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -65,9 +65,8 @@ public interface AnyEmbeddedContent<
   // <editor-fold defaultstate="collapsed" desc="PICTURE">
   /**
    * Opens a new picture element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element">4.8.1 The picture element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-picture-element">4.8.1 The picture element</a>.</p>
    *
    * @since HTML 5
    *

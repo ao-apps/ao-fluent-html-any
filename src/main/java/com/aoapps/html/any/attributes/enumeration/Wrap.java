@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -53,12 +53,9 @@ public interface Wrap<
     > {
 
   /**
-   * <p>
    * Utility class for working with {@link Wrap}.
-   * </p>
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.</p>
    */
   public static final class wrap {
 

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,9 +39,8 @@ import java.util.function.Function;
  * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>
  * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
  * </ul>
- * <p>
- * Note: Enum type cannot be parameterized because this is a {@linkplain GlobalAttributes global attribute}.
- * </p>
+ *
+ * <p>Note: Enum type cannot be parameterized because this is a {@linkplain GlobalAttributes global attribute}.</p>
  *
  * @param  <E>   This element type
  *
@@ -54,9 +53,8 @@ import java.util.function.Function;
 public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> extends AutocapitalizeUnexpected<E> {
 
   /**
-   * <p>
    * Utility class for working with {@link Autocapitalize}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/interaction.html#autocapitalization">6.8.6 Autocapitalization</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:attr-autocapitalize">3.2.6 Global attributes / autocapitalize</a>.</li>

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,12 +50,9 @@ public interface Align<
     > {
 
   /**
-   * <p>
    * Utility class for working with {@link Align}.
-   * </p>
-   * <p>
-   * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.</p>
    *
    * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
    */

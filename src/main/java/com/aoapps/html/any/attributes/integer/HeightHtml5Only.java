@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,9 +42,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
 
   /**
    * {@inheritDoc}
-   * <p>
-   * The height attribute is new in HTML5.
-   * </p>
+   *
+   * <p>The height attribute is new in HTML5.</p>
    *
    * @since HTML 5
    */
@@ -59,9 +58,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
 
   /**
    * {@inheritDoc}
-   * <p>
-   * The height attribute is new in HTML5.
-   * </p>
+   *
+   * <p>The height attribute is new in HTML5.</p>
    *
    * @since HTML 5
    */
@@ -76,9 +74,8 @@ public interface HeightHtml5Only<E extends Element<?, ?, E> & HeightHtml5Only<E>
 
   /**
    * {@inheritDoc}
-   * <p>
-   * The height attribute is new in HTML5.
-   * </p>
+   *
+   * <p>The height attribute is new in HTML5.</p>
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -48,9 +48,8 @@ import java.io.IOException;
 public interface Form<E extends Element<?, ?, E> & Form<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Form}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#association-of-controls-and-forms">4.10.17.3 Association of controls and forms</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/forms.html#form-associated-element">4.10.2 Categories</a>.</li>

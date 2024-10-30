@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -67,9 +67,8 @@ public abstract class Element<
   // <editor-fold desc="Whitespace - delegate to Document" defaultstate="collapsed">
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#nl()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#nl()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -84,9 +83,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#nli()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#nli()}.</p>
    */
   @Override
   public E nli() throws IOException {
@@ -98,9 +96,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#nli(int)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#nli(int)}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -115,9 +112,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#indent()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#indent()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -132,9 +128,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#indent(int)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#indent(int)}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -149,9 +144,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#getIndent()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#getIndent()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -163,9 +157,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#setIndent(boolean)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#setIndent(boolean)}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -180,9 +173,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#getDepth()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#getDepth()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -194,9 +186,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#setDepth(int)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#setDepth(int)}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -211,9 +202,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#incDepth()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#incDepth()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -228,9 +218,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#decDepth()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#decDepth()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -245,9 +234,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#sp()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#sp()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -262,9 +250,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#sp(int)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#sp(int)}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -282,9 +269,8 @@ public abstract class Element<
   // <editor-fold desc="DocumentWriter / Unsafe - delegate to Document" defaultstate="collapsed">
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#getRawUnsafe(java.lang.Boolean)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#getRawUnsafe(java.lang.Boolean)}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -296,9 +282,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#getRawUnsafe()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#getRawUnsafe()}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -310,9 +295,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#unsafe(char)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#unsafe(char)}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -327,9 +311,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#unsafe(char[])}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#unsafe(char[])}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -344,9 +327,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#unsafe(char[], int, int)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#unsafe(char[], int, int)}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -361,9 +343,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence)}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -378,9 +359,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence, int, int)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#unsafe(java.lang.CharSequence, int, int)}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -395,9 +375,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#unsafe(java.lang.Object)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#unsafe(java.lang.Object)}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -412,9 +391,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.function.IOSupplierE)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.function.IOSupplierE)}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -429,9 +407,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.Writable)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#unsafe(com.aoapps.lang.io.Writable)}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -446,9 +423,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#unsafe()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#unsafe()}.</p>
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
@@ -463,9 +439,8 @@ public abstract class Element<
   // <editor-fold desc="DocumentWriter / Automatic Newline and Indentation - delegate to Document" defaultstate="collapsed">
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#getAutonli()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#getAutonli()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -477,9 +452,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#setAutonli(boolean)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#setAutonli(boolean)}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -494,9 +468,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#getAtnl()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#getAtnl()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -508,9 +481,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#setAtnl()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#setAtnl()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -525,9 +497,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#setAtnl(boolean)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#setAtnl(boolean)}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -542,9 +513,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#clearAtnl()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#clearAtnl()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -559,9 +529,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#autoNl()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#autoNl()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -576,9 +545,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#autoNli()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#autoNli()}.</p>
    */
   @Override
   public E autoNli() throws IOException {
@@ -590,9 +558,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#autoNli(int)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#autoNli(int)}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -607,9 +574,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#autoIndent()}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#autoIndent()}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
@@ -624,9 +590,8 @@ public abstract class Element<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * Delegates to {@link AnyDocument#autoIndent(int)}.
-   * </p>
+   *
+   * <p>Delegates to {@link AnyDocument#autoIndent(int)}.</p>
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */

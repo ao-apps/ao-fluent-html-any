@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -208,9 +208,8 @@ public interface AnyContent<
   // <editor-fold defaultstate="collapsed" desc="FIGCAPTION">
   /**
    * Opens a new figcaption element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element">4.4.13 The figcaption element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figcaption-element">4.4.13 The figcaption element</a>.</p>
    *
    * @since HTML 5
    *
@@ -238,9 +237,8 @@ public interface AnyContent<
   // <editor-fold defaultstate="collapsed" desc="RT">
   /**
    * Opens a new rt element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element">4.5.11 The rt element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rt-element">4.5.11 The rt element</a>.</p>
    *
    * @since HTML 5
    *
@@ -256,9 +254,8 @@ public interface AnyContent<
   // <editor-fold defaultstate="collapsed" desc="RP">
   /**
    * Opens a new rp element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">4.5.12 The rp element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/text-level-semantics.html#the-rp-element">4.5.12 The rp element</a>.</p>
    *
    * @since HTML 5
    *
@@ -294,9 +291,8 @@ public interface AnyContent<
   // <editor-fold defaultstate="collapsed" desc="SOURCE">
   /**
    * Opens a new source element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element">4.8.2 The source element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-source-element">4.8.2 The source element</a>.</p>
    *
    * @since HTML 5
    *
@@ -319,9 +315,8 @@ public interface AnyContent<
   // <editor-fold defaultstate="collapsed" desc="TRACK">
   /**
    * Opens a new track element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/media.html#the-track-element">4.8.11 The track element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/media.html#the-track-element">4.8.11 The track element</a>.</p>
    *
    * @since HTML 5
    *
@@ -408,9 +403,8 @@ public interface AnyContent<
   // <editor-fold defaultstate="collapsed" desc="LEGEND">
   /**
    * Opens a new legend element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element">4.10.16 The legend element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-legend-element">4.10.16 The legend element</a>.</p>
    *
    * @deprecated  TODO: Implement legend
    */
@@ -425,9 +419,8 @@ public interface AnyContent<
   // <editor-fold defaultstate="collapsed" desc="SUMMARY">
   /**
    * Opens a new summary element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element">4.11.2 The summary element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-summary-element">4.11.2 The summary element</a>.</p>
    *
    * @since HTML 5
    *

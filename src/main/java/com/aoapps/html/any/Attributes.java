@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -74,10 +74,9 @@ public final class Attributes {
    * attribute (expected on {@link Serialization#SGML} only).
    * This distinguishes from a return value of {@code null}, which causes the
    * attribute to not be added at all.
-   * <p>
-   * In order to never conflict with an actual attribute value, this string is
-   * compared by identity, not by value.
-   * </p>
+   *
+   * <p>In order to never conflict with an actual attribute value, this string is
+   * compared by identity, not by value.</p>
    */
   @SuppressWarnings("RedundantStringConstructorCall")
   public static final java.lang.String NO_VALUE = new java.lang.String("<<<NO_VALUE>>>"); // Use string constructor to ensure unique instance for identity comparisons
@@ -87,10 +86,9 @@ public final class Attributes {
    * A funnel is one of the methods that directly implements the attribute.
    * Non-funnel methods must call directly, or indirectly, funnel methods.
    * All funnel methods must be marked with this annotation.
-   * <p>
-   * When implementations need to override behavior, such as recording values
-   * or checking preconditions, only the funnel methods need to be overridden.
-   * </p>
+   *
+   * <p>When implementations need to override behavior, such as recording values
+   * or checking preconditions, only the funnel methods need to be overridden.</p>
    */
   // TODO: Move to com.aoapps.html.any and use for Factory methods, too?
   @Retention(RetentionPolicy.SOURCE)
@@ -257,9 +255,8 @@ public final class Attributes {
 
   /**
    * See <a href="https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#percentages-and-dimensions">2.4.4.4 Percentages and lengths</a>.
-   * <p>
-   * Supports Integer length or percentage of parent (HTML 4-only).
-   * </p>
+   *
+   * <p>Supports Integer length or percentage of parent (HTML 4-only).</p>
    *
    * @see  com.aoapps.html.any.attributes.dimension
    */

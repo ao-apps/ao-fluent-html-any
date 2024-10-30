@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,14 +35,12 @@
  * <li>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">Mouse Events</a>.</li>
  * <li>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">Window Events</a>.</li>
  * </ul>
- * <p>
- * Per-attribute interfaces with default implementations.
- * </p>
- * <p>
- * Attributes are attached to elements by simply implementing the interface.  Thanks to the default methods on the
+ *
+ * <p>Per-attribute interfaces with default implementations.</p>
+ *
+ * <p>Attributes are attached to elements by simply implementing the interface.  Thanks to the default methods on the
  * interfaces, the element has a fully functional attribute with just the one-liner.  However, the elements still have
- * the option to override the attribute.
- * </p>
+ * the option to override the attribute.</p>
  *
  * @see  com.aoapps.html.any.Attributes.Event
  */

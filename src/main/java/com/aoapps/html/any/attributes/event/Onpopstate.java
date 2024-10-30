@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,12 +42,9 @@ import java.io.IOException;
 public interface Onpopstate<E extends Element<?, ?, E> & Onpopstate<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Onpopstate}.
-   * </p>
-   * <p>
-   * See <a href="https://www.w3schools.com/tags/ev_onpopstate.asp">HTML onpopstate Event Attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://www.w3schools.com/tags/ev_onpopstate.asp">HTML onpopstate Event Attribute</a>.</p>
    *
    * @since HTML 5
    */

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -356,9 +356,8 @@ public interface AnyPalpableContent<
   // <editor-fold defaultstate="collapsed" desc="FIELDSET">
   /**
    * Opens a new fieldset element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element">4.10.15 The fieldset element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element">4.10.15 The fieldset element</a>.</p>
    *
    * @deprecated  TODO: Implement fieldset
    */
@@ -372,9 +371,8 @@ public interface AnyPalpableContent<
   // <editor-fold defaultstate="collapsed" desc="FIGURE">
   /**
    * Opens a new figure element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">4.4.12 The figure element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/grouping-content.html#the-figure-element">4.4.12 The figure element</a>.</p>
    *
    * @since HTML 5
    *

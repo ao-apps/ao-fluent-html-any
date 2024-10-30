@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,9 +50,8 @@ import java.io.IOException;
 public interface Onplay<E extends Element<?, ?, E> & Onplay<E>> extends OnplayUnexpected<E> {
 
   /**
-   * <p>
    * Utility class for working with {@link Onplay}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onplay">3.2.6 Global attributes / onplay</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onplay">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onplay</a>.</li>

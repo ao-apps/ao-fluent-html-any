@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,12 +42,11 @@ import java.util.ResourceBundle;
 import java.util.function.Function;
 
 /**
- * <p>
  * This has the set of attributes common to all input types.  There are also
  * type-specific subclasses that add type-specific attributes.  Furthermore,
  * there is a {@link AnyINPUT.Dynamic} implementation that has all the input attributes,
  * supporting unanticipated or more dynamic configurations.
- * </p>
+ *
  * <ul>
  * <li>See <a href="https://html.spec.whatwg.org/multipage/input.html#the-input-element">4.10.5 The input element</a>.</li>
  * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">&lt;input&gt;: The Input (Form Input) element</a>.</li>
@@ -109,13 +108,10 @@ public abstract class AnyINPUT<
   protected abstract void openWriteType(Writer unsafe) throws IOException;
 
   /**
-   * <p>
    * The complete list of expected autocomplete values.  Specific input types may provide
    * a shorter list.
-   * </p>
-   * <p>
-   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.</p>
    *
    * @since HTML 5
    */
@@ -200,16 +196,14 @@ public abstract class AnyINPUT<
 
   /**
    * See <a href="https://www.w3schools.com/tags/tag_input.asp">HTML input tag</a>.
-   * <p>
-   * This implementation has all the input attributes,
-   * supporting unanticipated or more dynamic configurations.
-   * </p>
-   * <p>
-   * This does not limit attributes by type, and would allow mismatches where
+   *
+   * <p>This implementation has all the input attributes,
+   * supporting unanticipated or more dynamic configurations.</p>
+   *
+   * <p>This does not limit attributes by type, and would allow mismatches where
    * type-specific implementations may constrain the attributes and values.
    * Although there is less validation, doctype-specific checks are expected
-   * to remain, such as only allowing type="color" in {@link Doctype#HTML5}.
-   * </p>
+   * to remain, such as only allowing type="color" in {@link Doctype#HTML5}.</p>
    *
    * @param  <D>   This document type
    * @param  <PC>  The parent content model this element is within
@@ -616,11 +610,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -698,11 +691,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -782,11 +774,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -872,11 +863,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -1192,11 +1182,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -1277,11 +1266,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -1379,11 +1367,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -1498,11 +1485,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -1636,11 +1622,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -1823,11 +1808,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -1955,11 +1939,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -2043,11 +2026,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *
@@ -2132,11 +2114,10 @@ public abstract class AnyINPUT<
 
     /**
      * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete">The HTML autocomplete attribute</a>.
-     * <p>
-     * We're making our best guess which values are applicable.
+     *
+     * <p>We're making our best guess which values are applicable.
      * This is to give a nice short list in code assist.
-     * TODO: Find somewhere this relationship is defined (if there is any).
-     * </p>
+     * TODO: Find somewhere this relationship is defined (if there is any).</p>
      *
      * @since HTML 5
      *

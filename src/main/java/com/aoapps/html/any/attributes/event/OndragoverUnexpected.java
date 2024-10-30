@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -61,9 +61,8 @@ import java.io.IOException;
  *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
  *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
  *              or {@linkplain AnyWBR &lt;wbr&gt;}.
- *              <p>
- *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
- *              </p>
+ *
+ *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
  *
  * @author  AO Industries, Inc.
  */
@@ -88,9 +87,8 @@ public interface OndragoverUnexpected<E extends Element<?, ?, E> & OndragoverUne
    *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
    *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-   *              <p>
-   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-   *              </p>
+   *
+   *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
   @Deprecated
   @Override
@@ -120,9 +118,8 @@ public interface OndragoverUnexpected<E extends Element<?, ?, E> & OndragoverUne
    *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
    *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-   *              <p>
-   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-   *              </p>
+   *
+   *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
   @Deprecated
   @Override
@@ -151,9 +148,8 @@ public interface OndragoverUnexpected<E extends Element<?, ?, E> & OndragoverUne
    *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, {@linkplain AnyTITLE &lt;title&gt;},
    *              or {@linkplain AnyWBR &lt;wbr&gt;}.
-   *              <p>
-   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-   *              </p>
+   *
+   *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
   @Deprecated
   @Override

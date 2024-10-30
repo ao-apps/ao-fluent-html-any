@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,9 +43,8 @@ public interface Closeable<
   /**
    * Closes the content and ends the parent tag.
    * This is for use in try-with-resources, and simply calls {@link #__()}.
-   * <p>
-   * Note: Every implementation must be idempotent and only call {@link #__()} on the first call to {@link #close()}.
-   * </p>
+   *
+   * <p>Note: Every implementation must be idempotent and only call {@link #__()} on the first call to {@link #close()}.</p>
    *
    * @see  #__()
    */

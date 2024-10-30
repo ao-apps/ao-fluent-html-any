@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -59,12 +59,10 @@ import java.util.ResourceBundle;
 
 /**
  * Fluent Java DSL for high-performance HTML generation.
- * <p>
- * This class implements all content interfaces and supports all element types.
- * </p>
- * <p>
- * See also <a href="https://github.com/xmlet/HtmlFlow">HtmlFlow</a>.
- * </p>
+ *
+ * <p>This class implements all content interfaces and supports all element types.</p>
+ *
+ * <p>See also <a href="https://github.com/xmlet/HtmlFlow">HtmlFlow</a>.</p>
  *
  * @param  <D>   This document type
  *
@@ -84,14 +82,12 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
 
   /**
    * Writer for raw output.
-   * <p>
-   * Direct use of this output may throw-off the automatic newlines and indentation.  Please use any of the
-   * {@code unsafe(…)} methods.
-   * </p>
-   * <p>
-   * Already optimized via {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
-   * with {@code encoder = null}.
-   * </p>
+   *
+   * <p>Direct use of this output may throw-off the automatic newlines and indentation.  Please use any of the
+   * {@code unsafe(…)} methods.</p>
+   *
+   * <p>Already optimized via {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+   * with {@code encoder = null}.</p>
    *
    * @see  #unsafe()
    * @see  #getRawUnsafe()
@@ -108,10 +104,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   /**
    * @param  out  May be {@code null}, but must be set to a non-null value again before any additional writes.
    *              Not doing so may result in {@link IllegalStateException}.
-   *              <p>
-   *              Will be through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
-   *              with {@code encoder = null}.
-   *              </p>
+   *
+   *              <p>Will be through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+   *              with {@code encoder = null}.</p>
    *
    * @see  #setOut(java.io.Writer)
    */
@@ -125,10 +120,9 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @param  out  May be {@code null}, but must be set to a non-null value again before any additional writes.
    *              Not doing so may result in {@link IllegalStateException}.
-   *              <p>
-   *              Will be through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
-   *              with {@code encoder = null}.
-   *              </p>
+   *
+   *              <p>Will be through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
+   *              with {@code encoder = null}.</p>
    *
    * @see  #getRawUnsafe()
    * @see  #getRawUnsafe(java.lang.Boolean)

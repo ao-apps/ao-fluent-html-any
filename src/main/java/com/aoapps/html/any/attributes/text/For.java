@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,12 +43,9 @@ import java.io.IOException;
 public interface For<E extends Element<?, ?, E> & For<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link For}.
-   * </p>
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/forms.html#attr-label-for">4.10.4 The label element / for</a>.</p>
    */
   // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
   public static final class forAttr {

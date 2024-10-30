@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -204,22 +204,16 @@ public abstract class AnyLINK<
         UP("up"),
 
     /**
-     * <p>
      * To specify an icon for a single webpage or replace the website icon with a webpage-specific icon, add a link element to the webpage.
-     * </p>
-     * <p>
-     * See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.
-     * </p>
+     *
+     * <p>See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.</p>
      */
     APPLE_TOUCH_ICON("apple-touch-icon"),
 
     /**
-     * <p>
      * On iOS, similar to native applications, you can specify a launch screen image that is displayed while your web application launches.
-     * </p>
-     * <p>
-     * See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.
-     * </p>
+     *
+     * <p>See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.</p>
      */
     APPLE_TOUCH_STARTUP_IMAGE("apple-touch-startup-image");
 
@@ -332,9 +326,8 @@ public abstract class AnyLINK<
    * If the rel is {@link Rel#STYLESHEET}, the type is {@link Type#TEXT_CSS},
    * and the {@link Doctype} is {@link Doctype#HTML5}, skips writing
    * the type.
-   * <p>
-   * See <a href="https://www.w3schools.com/tags/att_link_type.asp">HTML link type Attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://www.w3schools.com/tags/att_link_type.asp">HTML link type Attribute</a>.</p>
    */
   public E type(String type) throws IOException {
     type = Strings.trimNullIfEmpty(type);
@@ -366,15 +359,13 @@ public abstract class AnyLINK<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * If the rel is {@link Rel#STYLESHEET}, a {@linkplain #type(java.lang.String) type}
+   *
+   * <p>If the rel is {@link Rel#STYLESHEET}, a {@linkplain #type(java.lang.String) type}
    * has not been written, and the {@link Doctype} is not {@link Doctype#HTML5},
-   * writes the default type {@link Type#TEXT_CSS} for backward compatibility.
-   * </p>
-   * <p>
-   * <a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
-   * "A link element must have either a rel attribute or an itemprop attribute, but not both".
-   * </p>
+   * writes the default type {@link Type#TEXT_CSS} for backward compatibility.</p>
+   *
+   * <p><a href="https://html.spec.whatwg.org/multipage/semantics.html#the-link-element">HTML Standard</a>:
+   * "A link element must have either a rel attribute or an itemprop attribute, but not both".</p>
    *
    * @return  The parent content model this element is within
    */

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -52,9 +52,8 @@ import java.util.Locale;
 public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Lang}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-lang-and-xml:lang-attributes">3.2.6.2 The lang and xml:lang attributes</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang">Global attributes / lang</a>.</li>

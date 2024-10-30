@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,9 +50,8 @@ import java.io.IOException;
 public interface Onstalled<E extends Element<?, ?, E> & Onstalled<E>> extends OnstalledUnexpected<E> {
 
   /**
-   * <p>
    * Utility class for working with {@link Onstalled}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onstalled">3.2.6 Global attributes / onstalled</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onstalled">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onstalled</a>.</li>

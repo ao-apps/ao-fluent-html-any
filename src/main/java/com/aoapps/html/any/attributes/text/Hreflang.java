@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -45,12 +45,9 @@ import java.util.Locale;
 public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Hreflang}.
-   * </p>
-   * <p>
-   * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.</p>
    */
   public static final class hreflang {
     /** Make no instances. */

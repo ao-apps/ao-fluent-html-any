@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -157,10 +157,9 @@ public abstract class AnyOPTION<
 
   /**
    * See <a href="https://www.w3schools.com/tags/att_option_value.asp">HTML option value Attribute</a>.
-   * <p>
-   * An empty value must still be specified for &lt;option&gt;, as it overrides the
-   * default behavior of using the tag's text content as the value.
-   * </p>
+   *
+   * <p>An empty value must still be specified for &lt;option&gt;, as it overrides the
+   * default behavior of using the tag's text content as the value.</p>
    */
   @Override
   public E value(Object value) throws IOException {

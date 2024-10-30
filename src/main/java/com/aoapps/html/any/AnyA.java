@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -85,11 +85,10 @@ public abstract class AnyA<
 
   /**
    * Ends attributes, writes a text body, then closes this element.
-   * <p>
-   * Since {@link AnyTextContent} is not a part of {@link AnyUnion_Interactive_Phrasing},
+   *
+   * <p>Since {@link AnyTextContent} is not a part of {@link AnyUnion_Interactive_Phrasing},
    * strictly speaking text is not allowed in all possible content models that can apply to <code>&lt;a&gt;</code>.
-   * However, since it is such a common operation, we've added it here.
-   * </p>
+   * However, since it is such a common operation, we've added it here.</p>
    *
    * @return  The parent content model this element is within
    *

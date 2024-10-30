@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -46,9 +46,8 @@ import java.io.IOException;
 public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Onmousewheel}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/GlobalEventHandlers/onmousewheel">GlobalEventHandlers.onmousewheel</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/att_onmousewheel.asp">HTML onmousewheel Attribute</a>.</li>

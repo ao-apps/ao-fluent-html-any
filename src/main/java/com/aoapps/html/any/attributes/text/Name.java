@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,12 +43,9 @@ import java.io.IOException;
 public interface Name<E extends Element<?, ?, E> & Name<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Name}.
-   * </p>
-   * <p>
-   * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.</p>
    */
   public static final class name {
     /** Make no instances. */
@@ -58,11 +55,10 @@ public interface Name<E extends Element<?, ?, E> & Name<E>> {
 
     /**
      * Normalizes a name attribute.
-     * <p>
-     * TODO: Review if trim-to-null is the best default.
+     *
+     * <p>TODO: Review if trim-to-null is the best default.
      * Maybe default to {@code false} and override where should be {@code true} instead.
-     * Any change to textarea/input name attribute would also need to be reflected in dirname attribute.
-     * </p>
+     * Any change to textarea/input name attribute would also need to be reflected in dirname attribute.</p>
      *
      * @see  Coercion#nullIfEmpty(java.lang.Object)
      */

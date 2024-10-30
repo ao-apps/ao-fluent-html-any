@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -75,9 +75,8 @@ public abstract class Void<
 
   /**
    * Called after the element is closed.
-   * <p>
-   * An common use is expected to be invoking {@link AnyDocument#autoNl(java.io.Writer)}.
-   * </p>
+   *
+   * <p>An common use is expected to be invoking {@link AnyDocument#autoNl(java.io.Writer)}.</p>
    */
   @SuppressWarnings("NoopMethodInAbstractClass")
   protected void doAfterElement(Writer unsafe) throws IOException {

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -41,12 +41,9 @@ import java.io.IOException;
 public interface Width<E extends Element<?, ?, E> & Width<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Width}.
-   * </p>
-   * <p>
-   * See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://www.w3schools.com/tags/att_width.asp">HTML width Attribute</a>.</p>
    *
    * @deprecated  In HTML 4.01, the width could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
    */

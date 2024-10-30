@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -23,24 +23,20 @@
 
 /**
  * See <a href="https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#keywords-and-enumerated-attributes">2.4.3 Keywords and enumerated attributes</a>.
- * <p>
- * Per-attribute interfaces with default implementations.
- * </p>
- * <p>
- * Attributes are attached to elements by simply implementing the interface.  Thanks to the default methods on the
+ *
+ * <p>Per-attribute interfaces with default implementations.</p>
+ *
+ * <p>Attributes are attached to elements by simply implementing the interface.  Thanks to the default methods on the
  * interfaces, the element has a fully functional attribute with just the one-liner.  However, the elements still have
- * the option to override the attribute.
- * </p>
- * <p>
- * Values may be provided either as a {@link java.lang.String} or an {@link java.lang.Enum},
+ * the option to override the attribute.</p>
+ *
+ * <p>Values may be provided either as a {@link java.lang.String} or an {@link java.lang.Enum},
  * with the {@link java.lang.Enum} representation preferred.  The {@link java.lang.String}
- * value is allowed for values that are not part of the enumeration.
- * </p>
- * <p>
- * When converting from {@link java.lang.Enum}, uses {@link java.util.function.Function}. giving the
+ * value is allowed for values that are not part of the enumeration.</p>
+ *
+ * <p>When converting from {@link java.lang.Enum}, uses {@link java.util.function.Function}. giving the
  * {@link com.aoapps.html.any.AnyDocument}.  This allows the enum to select values by
- * {@link com.aoapps.encoding.Serialization} and/or {@link com.aoapps.encoding.Doctype}, as-needed.
- * </p>
+ * {@link com.aoapps.encoding.Serialization} and/or {@link com.aoapps.encoding.Doctype}, as-needed.</p>
  *
  * @see  com.aoapps.html.any.Attributes
  */

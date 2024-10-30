@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -92,9 +92,8 @@ public interface AnyFlowContent<
   // <editor-fold defaultstate="collapsed" desc="DIALOG">
   /**
    * Opens a new dialog element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element">4.11.4 The dialog element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/interactive-elements.html#the-dialog-element">4.11.4 The dialog element</a>.</p>
    *
    * @since HTML 5
    *

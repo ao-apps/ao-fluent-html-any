@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -92,10 +92,9 @@ public interface DocumentWriter extends Whitespace {
   // <editor-fold desc="Unsafe - definition" defaultstate="collapsed">
   /**
    * Gets the current writer this document is writing to, which may be used for raw output.
-   * <p>
-   * Please prefer {@link #unsafe()}, which is compatible with try-with-resources blocks.
-   * The writer returned here is the real, underlying writer.
-   * </p>
+   *
+   * <p>Please prefer {@link #unsafe()}, which is compatible with try-with-resources blocks.
+   * The writer returned here is the real, underlying writer.</p>
    *
    * @param  endsNewline  Indicates whether the data that will be written will end in a {@link #NL}.
    *                      When non-null, will call {@link #setAtnl(boolean)} with the given value.
@@ -115,13 +114,11 @@ public interface DocumentWriter extends Whitespace {
 
   /**
    * Gets the current writer this document is writing to, which may be used for raw output.
-   * <p>
-   * Please prefer {@link #unsafe()}, which is compatible with try-with-resources blocks.
-   * The writer returned here is the real, underlying writer.
-   * </p>
-   * <p>
-   * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-   * </p>
+   *
+   * <p>Please prefer {@link #unsafe()}, which is compatible with try-with-resources blocks.
+   * The writer returned here is the real, underlying writer.</p>
+   *
+   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
    *
    * @return  The writer, already optimized via {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
    *          with {@code encoder = null}.
@@ -188,9 +185,8 @@ public interface DocumentWriter extends Whitespace {
 
   /**
    * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
-   * <p>
-   * When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-   * </p>
+   *
+   * <p>When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
    *
    * @return  {@code this} writer
    *
@@ -201,9 +197,8 @@ public interface DocumentWriter extends Whitespace {
 
   /**
    * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
-   * <p>
-   * When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-   * </p>
+   *
+   * <p>When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
@@ -216,9 +211,8 @@ public interface DocumentWriter extends Whitespace {
 
   /**
    * Performs raw output.
-   * <p>
-   * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-   * </p>
+   *
+   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
    *
    * @return  {@code this} writer
    *
@@ -230,9 +224,8 @@ public interface DocumentWriter extends Whitespace {
   /**
    * Performs raw output.
    * This is well suited for use in a try-with-resources block.
-   * <p>
-   * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-   * </p>
+   *
+   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
    *
    * @return  a writer for direct output, which will ignore any calls to {@link Writer#close()}
    *          to be safely used in a try-with-resources block.

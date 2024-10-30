@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -40,12 +40,9 @@ import java.io.IOException;
 public interface Usemap<E extends Element<?, ?, E> & Usemap<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Usemap}.
-   * </p>
-   * <p>
-   * See <a href="https://www.w3schools.com/tags/att_usemap.asp">HTML usemap Attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://www.w3schools.com/tags/att_usemap.asp">HTML usemap Attribute</a>.</p>
    */
   public static final class usemap {
     /** Make no instances. */
@@ -70,10 +67,9 @@ public interface Usemap<E extends Element<?, ?, E> & Usemap<E>> {
 
   /**
    * See <a href="https://www.w3schools.com/tags/att_usemap.asp">HTML usemap Attribute</a>.
-   * <p>
-   * Automatically prefixes '#' to any non-null and non-empty (after trimming)
-   * value that does not already begin with '#'.
-   * </p>
+   *
+   * <p>Automatically prefixes '#' to any non-null and non-empty (after trimming)
+   * value that does not already begin with '#'.</p>
    */
   @Attributes.Funnel
   default E usemap(String usemap) throws IOException {

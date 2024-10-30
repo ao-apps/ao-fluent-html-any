@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -44,12 +44,9 @@ import java.io.IOException;
 public interface Media<E extends Element<?, ?, E> & Media<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Media}.
-   * </p>
-   * <p>
-   * See <a href="https://www.w3schools.com/tags/att_media.asp">HTML media Attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://www.w3schools.com/tags/att_media.asp">HTML media Attribute</a>.</p>
    *
    * @since HTML 5
    */

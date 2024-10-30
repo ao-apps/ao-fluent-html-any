@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -407,12 +407,10 @@ public interface AnyTextContent<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-   * </p>
-   * <p>
-   * Supports translation markup type {@link MarkupType#XHTML}.
-   * </p>
+   *
+   * <p>When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   *
+   * <p>Supports translation markup type {@link MarkupType#XHTML}.</p>
    *
    * @return  This content model, which will be the parent content model of child elements
    */
@@ -427,12 +425,10 @@ public interface AnyTextContent<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-   * </p>
-   * <p>
-   * Supports translation markup type {@link MarkupType#XHTML}.
-   * </p>
+   *
+   * <p>When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   *
+   * <p>Supports translation markup type {@link MarkupType#XHTML}.</p>
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
@@ -449,9 +445,8 @@ public interface AnyTextContent<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-   * </p>
+   *
+   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
@@ -468,9 +463,8 @@ public interface AnyTextContent<
 
   /**
    * {@inheritDoc}
-   * <p>
-   * With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.
-   * </p>
+   *
+   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
   // TODO: __() method to end text?  Call it "ContentWriter"?

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -250,12 +250,9 @@ public abstract class AnyMETA<
     CONTENT_SECURITY_POLICY("content-security-policy"),
 
     /**
-     * <p>
      * Authors should specify the default scripting language for all scripts in a document.
-     * </p>
-     * <p>
-     * See <a href="https://www.w3.org/TR/REC-html40/interact/scripts.html#h-18.2.2.1">Scripts in HTML documents</a>.
-     * </p>
+     *
+     * <p>See <a href="https://www.w3.org/TR/REC-html40/interact/scripts.html#h-18.2.2.1">Scripts in HTML documents</a>.</p>
      *
      * @deprecated  This is no longer required as of HTML 5.
      */
@@ -263,12 +260,9 @@ public abstract class AnyMETA<
         CONTENT_SCRIPT_TYPE("content-script-type"),
 
     /**
-     * <p>
      * Authors must specify the style sheet language of style information associated with an HTML document.
-     * </p>
-     * <p>
-     * See <a href="https://www.w3.org/TR/html401/present/styles.html#h-14.2.1">Style Sheets in HTML documents</a>.
-     * </p>
+     *
+     * <p>See <a href="https://www.w3.org/TR/html401/present/styles.html#h-14.2.1">Style Sheets in HTML documents</a>.</p>
      *
      * @deprecated  This is no longer required as of HTML 5.
      */
@@ -291,11 +285,10 @@ public abstract class AnyMETA<
         CONTENT_TYPE("content-type"),
 
     /**
-     * <p>
      * The <a href="https://www.w3.org/TR/2010/WD-html-markup-20100624/meta.html#meta">meta</a> element with a
      * <code>http-equiv</code> attribute whose value is "<code>default-style</code>" represents a pragma directive
      * that specifies the document’s preferred stylesheet.
-     * </p>
+     *
      * <ul>
      * <li>See <a href="https://www.w3.org/TR/2010/WD-html-markup-20100624/meta.http-equiv.default-style.html">HTML5: meta http-equiv=default-style – “preferred stylesheet” pragma directive</a>.</li>
      * <li>See <a href="https://www.w3schools.com/tags/att_meta_http_equiv.asp">HTML meta http-equiv Attribute</a>.</li>
@@ -422,14 +415,11 @@ public abstract class AnyMETA<
     PUBLISHER("publisher"),
 
     /**
-     * <p>
      * The robots meta tag lets you utilize a granular, page-specific
      * approach to controlling how an individual page should be indexed
      * and served to users.
-     * </p>
-     * <p>
-     * See <a href="https://developers.google.com/search/reference/robots_meta_tag">Robots meta tag, data-nosnippet, and X-Robots-Tag specifications</a>.
-     * </p>
+     *
+     * <p>See <a href="https://developers.google.com/search/reference/robots_meta_tag">Robots meta tag, data-nosnippet, and X-Robots-Tag specifications</a>.</p>
      */
     ROBOTS("robots"),
 
@@ -446,20 +436,16 @@ public abstract class AnyMETA<
     VIEWPORT("viewport"),
 
     /**
-     * <p>
      * On iOS, you can specify a web application title for the launch icon.
-     * </p>
-     * <p>
-     * See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.
-     * </p>
+     *
+     * <p>See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.</p>
      */
     APPLE_MOBILE_WEB_APP_TITLE("apple-mobile-web-app-title"),
 
     /**
-     * <p>
      * On iOS, you can specify is capable as a web application with launch icon.
      * Use with caution.
-     * </p>
+     *
      * <ul>
      * <li>See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.</li>
      * <li>See <a href="https://medium.com/%40firt/dont-use-ios-web-app-meta-tag-irresponsibly-in-your-progressive-web-apps-85d70f4438cb">Don’t use iOS meta tags irresponsibly in your Progressive Web Apps</a>.</li>
@@ -468,12 +454,9 @@ public abstract class AnyMETA<
     APPLE_MOBILE_WEB_APP_CAPABLE("apple-mobile-web-app-capable"),
 
     /**
-     * <p>
      * On iOS, you can specify a web application status bar style.
-     * </p>
-     * <p>
-     * See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.
-     * </p>
+     *
+     * <p>See <a href="https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html">Configuring Web Applications</a>.</p>
      */
     APPLE_MOBILE_WEB_APP_STATUS_BAR_STYLE("apple-mobile-web-app-status-bar-style");
 

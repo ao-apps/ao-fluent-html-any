@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,12 +43,9 @@ import java.io.IOException;
 public interface Cellpadding<E extends Element<?, ?, E> & Cellpadding<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Cellpadding}.
-   * </p>
-   * <p>
-   * See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.
-   * </p>
+   *
+   * <p>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table#attr-cellpadding">&lt;table&gt;: The Table element / cellpadding</a>.</p>
    *
    * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
    */

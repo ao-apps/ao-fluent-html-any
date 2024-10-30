@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -137,11 +137,10 @@ public interface AnyUnion_Interactive_Phrasing<
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">&lt;a&gt;: The Anchor element</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/tag_a.asp">HTML a tag</a>.</li>
    * </ul>
-   * <p>
-   * Since {@link AnyTextContent} is not a part of {@link AnyUnion_Interactive_Phrasing},
+   *
+   * <p>Since {@link AnyTextContent} is not a part of {@link AnyUnion_Interactive_Phrasing},
    * strictly speaking text is not allowed in all possible content models that can apply to <code>&lt;a&gt;</code>.
-   * However, since it is such a common operation, we've added it here.
-   * </p>
+   * However, since it is such a common operation, we've added it here.</p>
    *
    * @return  This content model, which will be the parent content model of child elements
    *
@@ -178,15 +177,13 @@ public interface AnyUnion_Interactive_Phrasing<
    * @return  The content model of this element, which will be the parent content model of child elements.
    *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
    *          the tag.  This is well suited for use in a try-with-resources block.
-   *          <p>
-   *          Due to limitations in Java generics, this content model does not directly reflect the parent content
+   *
+   *          <p>Due to limitations in Java generics, this content model does not directly reflect the parent content
    *          model, despite this being a transparent content model.  Rather, it includes only the content model that
-   *          always applies to this element type.
-   *          </p>
-   *          <p><em>
-   *          For the full, context-aware content model, which will likely include more elements,
-   *          {@linkplain Transparent_c#pc() use the parent content model directly}.
-   *          </em></p>
+   *          always applies to this element type.</p>
+   *
+   *          <p><em>For the full, context-aware content model, which will likely include more elements,
+   *          {@linkplain Transparent_c#pc() use the parent content model directly}.</em></p>
    *
    * @see  Closeable#__()
    * @see  Closeable#close()
@@ -200,9 +197,8 @@ public interface AnyUnion_Interactive_Phrasing<
   // <editor-fold defaultstate="collapsed" desc="BUTTON">
   /**
    * Opens a new button element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element">4.10.6 The button element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-button-element">4.10.6 The button element</a>.</p>
    *
    * @deprecated  TODO: Implement button
    */

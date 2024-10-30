@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -65,9 +65,8 @@ public abstract class Normal<
   /**
    * Called after opening tag is completed, {@linkplain AnyDocument#incDepth() indentation depth is increased}
    * (if {@link #isContentIndented()}), and before the body is invoked.
-   * <p>
-   * An common use-case is to call {@link AnyDocument#autoNl()} to begin body on the next line.
-   * </p>
+   *
+   * <p>An common use-case is to call {@link AnyDocument#autoNl()} to begin body on the next line.</p>
    */
   @SuppressWarnings("NoopMethodInAbstractClass")
   protected void doBeforeBody(Writer unsafe) throws IOException {

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,9 +50,8 @@ import java.io.IOException;
 public interface Onresize<E extends Element<?, ?, E> & Onresize<E>> extends OnresizeUnexpected<E> {
 
   /**
-   * <p>
    * Utility class for working with {@link Onresize}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onresize">3.2.6 Global attributes / onresize</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onresize">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onresize</a>.</li>

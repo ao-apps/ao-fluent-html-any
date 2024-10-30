@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,9 +49,8 @@ import java.io.IOException;
  * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
  * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
  * </ul>
- * <p>
- * Note: Enum type cannot be parameterized because this is a {@linkplain GlobalAttributes global attribute}.
- * </p>
+ *
+ * <p>Note: Enum type cannot be parameterized because this is a {@linkplain GlobalAttributes global attribute}.</p>
  *
  * @param  <E>   This element type
  *
@@ -60,9 +59,8 @@ import java.io.IOException;
  *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
  *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
  *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
- *              <p>
- *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
- *              </p>
+ *
+ *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
  *
  * @author  AO Industries, Inc.
  */
@@ -83,9 +81,8 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
    *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
-   *              <p>
-   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-   *              </p>
+   *
+   *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
   @Deprecated
   @Override
@@ -111,9 +108,8 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
    *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
-   *              <p>
-   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-   *              </p>
+   *
+   *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
   @Deprecated
   @Override
@@ -137,9 +133,8 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
    *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
-   *              <p>
-   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-   *              </p>
+   *
+   *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
   @Deprecated
   @Override
@@ -164,9 +159,8 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *              {@linkplain AnyHEAD &lt;head&gt;}, {@linkplain AnyHTML &lt;html&gt;}, {@linkplain AnyIFRAME &lt;iframe&gt;},
    *              {@linkplain AnyINPUT.Hidden &lt;input type="hidden"&gt;}, {@linkplain AnyMETA &lt;meta&gt;}, {@linkplain AnyPARAM &lt;param&gt;},
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySTYLE &lt;style&gt;}, or {@linkplain AnyWBR &lt;wbr&gt;}.
-   *              <p>
-   *              See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.
-   *              </p>
+   *
+   *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
   @Deprecated
   @Override

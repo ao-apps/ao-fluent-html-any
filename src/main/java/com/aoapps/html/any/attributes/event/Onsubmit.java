@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -48,9 +48,8 @@ import java.io.IOException;
 public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends OnsubmitUnexpected<E> {
 
   /**
-   * <p>
    * Utility class for working with {@link Onsubmit}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-onsubmit">3.2.6 Global attributes / onsubmit</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-onsubmit">8.1.7.2 Event handlers on elements, Document objects, and Window objects / onsubmit</a>.</li>

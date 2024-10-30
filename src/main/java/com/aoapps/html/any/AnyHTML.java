@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -140,10 +140,9 @@ public abstract class AnyHTML<
   }
 
   /**
-   * <p>
    * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
    * {@link EncodingContext#getSerialization() } is {@link Serialization#XML}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
@@ -168,10 +167,9 @@ public abstract class AnyHTML<
   }
 
   /**
-   * <p>
    * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
    * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
@@ -190,10 +188,9 @@ public abstract class AnyHTML<
   }
 
   /**
-   * <p>
    * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
    * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>
@@ -210,10 +207,9 @@ public abstract class AnyHTML<
   }
 
   /**
-   * <p>
    * In addition to the default <code>lang="…"</code>, also adds <code>xml:lang="…"</code> when the
    * {@link EncodingContext#getSerialization()} is {@link Serialization#XML}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes#attr-xml:lang">Global attributes - HTML: HyperText Markup Language | MDN</a>.</li>
    * <li>See <a href="https://www.w3schools.com/tags/ref_language_codes.asp">HTML ISO Language Code Reference</a>.</li>

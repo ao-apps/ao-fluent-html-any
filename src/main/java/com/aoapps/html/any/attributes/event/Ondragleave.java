@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,9 +49,8 @@ import java.io.IOException;
 public interface Ondragleave<E extends Element<?, ?, E> & Ondragleave<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Ondragleave}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes:handler-ondragleave">3.2.6 Global attributes / ondragleave</a>.</li>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/webappapis.html#handler-ondragleave">8.1.7.2 Event handlers on elements, Document objects, and Window objects / ondragleave</a>.</li>

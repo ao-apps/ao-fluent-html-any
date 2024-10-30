@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -51,9 +51,8 @@ public interface AnyUnion_Embedded_Interactive<
   // <editor-fold defaultstate="collapsed" desc="AUDIO">
   /**
    * Opens a new audio element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">4.8.10 The audio element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/media.html#the-audio-element">4.8.10 The audio element</a>.</p>
    *
    * @since HTML 5
    *
@@ -69,9 +68,8 @@ public interface AnyUnion_Embedded_Interactive<
   // <editor-fold defaultstate="collapsed" desc="EMBED">
   /**
    * Opens a new embed element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-embed-element">4.8.6 The embed element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-embed-element">4.8.6 The embed element</a>.</p>
    *
    * @deprecated  TODO: Implement embed
    */
@@ -85,9 +83,8 @@ public interface AnyUnion_Embedded_Interactive<
   // <editor-fold defaultstate="collapsed" desc="IFRAME">
   /**
    * Opens a new iframe element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element">4.8.5 The iframe element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/iframe-embed-object.html#the-iframe-element">4.8.5 The iframe element</a>.</p>
    *
    * @deprecated  TODO: Implement iframe
    */
@@ -174,15 +171,13 @@ public interface AnyUnion_Embedded_Interactive<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    * @param  object  The content model of this element, which will be the parent content model of child elements.
-   *                 <p>
-   *                 Due to limitations in Java generics, this content model does not directly reflect the parent content
+   *
+   *                 <p>Due to limitations in Java generics, this content model does not directly reflect the parent content
    *                 model, despite this being a transparent content model.  Rather, it includes only the content model that
-   *                 always applies to this element type.
-   *                 </p>
-   *                 <p><em>
-   *                 For the full, context-aware content model, which will likely include more elements,
-   *                 {@linkplain AnyOBJECT__#pc() use the parent content model directly}.
-   *                 </em></p>
+   *                 always applies to this element type.</p>
+   *
+   *                 <p><em>For the full, context-aware content model, which will likely include more elements,
+   *                 {@linkplain AnyOBJECT__#pc() use the parent content model directly}.</em></p>
    *
    * @return  This content model, which will be the parent content model of child elements
    *
@@ -219,15 +214,13 @@ public interface AnyUnion_Embedded_Interactive<
    * @return  The content model of this element, which will be the parent content model of child elements.
    *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
    *          the tag.  This is well suited for use in a try-with-resources block.
-   *          <p>
-   *          Due to limitations in Java generics, this content model does not directly reflect the parent content
+   *
+   *          <p>Due to limitations in Java generics, this content model does not directly reflect the parent content
    *          model, despite this being a transparent content model.  Rather, it includes only the content model that
-   *          always applies to this element type.
-   *          </p>
-   *          <p><em>
-   *          For the full, context-aware content model, which will likely include more elements,
-   *          {@linkplain AnyOBJECT_c#pc() use the parent content model directly}.
-   *          </em></p>
+   *          always applies to this element type.</p>
+   *
+   *          <p><em>For the full, context-aware content model, which will likely include more elements,
+   *          {@linkplain AnyOBJECT_c#pc() use the parent content model directly}.</em></p>
    *
    * @see  Closeable#__()
    * @see  Closeable#close()
@@ -240,9 +233,8 @@ public interface AnyUnion_Embedded_Interactive<
   // <editor-fold defaultstate="collapsed" desc="VIDEO">
   /**
    * Opens a new video element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">4.8.9 The video element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/media.html#the-video-element">4.8.9 The video element</a>.</p>
    *
    * @since HTML 5
    *

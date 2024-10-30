@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -394,15 +394,13 @@ public interface AnyPhrasingContent<
    * @return  The content model of this element, which will be the parent content model of child elements.
    *          This must be {@linkplain Closeable#__() ended} or {@linkplain Closeable#close() closed} in order to end
    *          the tag.  This is well suited for use in a try-with-resources block.
-   *          <p>
-   *          Due to limitations in Java generics, this content model does not directly reflect the parent content
+   *
+   *          <p>Due to limitations in Java generics, this content model does not directly reflect the parent content
    *          model, despite this being a transparent content model.  Rather, it includes only the content model that
-   *          always applies to this element type.
-   *          </p>
-   *          <p><em>
-   *          For the full, context-aware content model, which will likely include more elements,
-   *          {@linkplain Transparent_c#pc() use the parent content model directly}.
-   *          </em></p>
+   *          always applies to this element type.</p>
+   *
+   *          <p><em>For the full, context-aware content model, which will likely include more elements,
+   *          {@linkplain Transparent_c#pc() use the parent content model directly}.</em></p>
    *
    * @see  Closeable#__()
    * @see  Closeable#close()
@@ -442,9 +440,8 @@ public interface AnyPhrasingContent<
   // <editor-fold defaultstate="collapsed" desc="SLOT">
   /**
    * Opens a new slot element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">4.12.4 The slot element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/scripting.html#the-slot-element">4.12.4 The slot element</a>.</p>
    *
    * @since HTML 5
    *

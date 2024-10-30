@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -46,9 +46,8 @@ import java.io.IOException;
 public interface Formaction<E extends Element<?, ?, E> & Formaction<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Formaction}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#attr-formaction">&lt;button&gt;: The Button element</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit#formaction">&lt;input type="submit"&gt;</a>.</li>

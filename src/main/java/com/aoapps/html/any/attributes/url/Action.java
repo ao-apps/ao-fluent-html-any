@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,12 +39,9 @@ import java.io.IOException;
 public interface Action<E extends Element<?, ?, E> & Action<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Action}.
-   * </p>
-   * <p>
-   * See <a href="https://www.w3schools.com/tags/att_action.asp">HTML action Attribute</a>.
-   * </p>
+   *
+   * <p>See <a href="https://www.w3schools.com/tags/att_action.asp">HTML action Attribute</a>.</p>
    */
   public static final class action {
     /** Make no instances. */

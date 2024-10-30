@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -47,9 +47,8 @@ import java.util.function.Function;
  * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dir">HTMLElement.dir</a>.</li>
  * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
  * </ul>
- * <p>
- * Note: Enum type cannot be parameterized because this is a {@linkplain GlobalAttributes global attribute}.
- * </p>
+ *
+ * <p>Note: Enum type cannot be parameterized because this is a {@linkplain GlobalAttributes global attribute}.</p>
  *
  * @param  <E>   This element type
  *
@@ -59,9 +58,8 @@ import java.util.function.Function;
 public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
 
   /**
-   * <p>
    * Utility class for working with {@link Dir}.
-   * </p>
+   *
    * <ul>
    * <li>See <a href="https://html.spec.whatwg.org/multipage/dom.html#the-dir-attribute">3.2.6.4 The dir attribute</a>.</li>
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/dir">Global attributes / dir</a>.</li>

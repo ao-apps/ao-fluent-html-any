@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -25,18 +25,15 @@ package com.aoapps.html.any;
 
 /**
  * A transparent element that can have textual content.
- * <p>
- * See <a href="https://html.spec.whatwg.org/multipage/dom.html#transparent-content-models">3.2.5.3 Transparent content models</a>.
- * </p>
- * <p>
- * Due to limitations in Java generics, this content model does not directly reflect the parent content
+ *
+ * <p>See <a href="https://html.spec.whatwg.org/multipage/dom.html#transparent-content-models">3.2.5.3 Transparent content models</a>.</p>
+ *
+ * <p>Due to limitations in Java generics, this content model does not directly reflect the parent content
  * model, despite this being a transparent content model.  Rather, it includes only the content model that
- * always applies to this element type.
- * </p>
- * <p><em>
- * For the full, context-aware content model, which will likely include more elements,
- * {@linkplain Transparent_c#pc() use the parent content model directly}.
- * </em></p>
+ * always applies to this element type.</p>
+ *
+ * <p><em>For the full, context-aware content model, which will likely include more elements,
+ * {@linkplain Transparent_c#pc() use the parent content model directly}.</em></p>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -820,9 +820,8 @@ public interface AnyHeadingContent<
   // <editor-fold defaultstate="collapsed" desc="HGROUP">
   /**
    * Opens a new hgroup element.
-   * <p>
-   * See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element">4.3.7 The hgroup element</a>.
-   * </p>
+   *
+   * <p>See <a href="https://html.spec.whatwg.org/multipage/sections.html#the-hgroup-element">4.3.7 The hgroup element</a>.</p>
    *
    * @since HTML 5
    *
