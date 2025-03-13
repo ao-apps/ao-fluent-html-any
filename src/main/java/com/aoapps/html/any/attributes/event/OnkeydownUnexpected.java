@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -65,7 +65,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onkeydown
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnkeydownUnexpected<E extends Element<?, ?, E> & OnkeydownUnexpected<E>> extends Onkeydown<E> {
 
   /**
@@ -86,7 +86,7 @@ public interface OnkeydownUnexpected<E extends Element<?, ?, E> & OnkeydownUnexp
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E onkeydown(Object onkeydown) throws IOException {
@@ -115,7 +115,7 @@ public interface OnkeydownUnexpected<E extends Element<?, ?, E> & OnkeydownUnexp
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E onkeydown(IOSupplierE<?, Ex> onkeydown) throws IOException, Ex {
     return Onkeydown.super.onkeydown(onkeydown);
@@ -143,7 +143,7 @@ public interface OnkeydownUnexpected<E extends Element<?, ?, E> & OnkeydownUnexp
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E onkeydown(JavaScriptWritable<Ex> onkeydown) throws IOException, Ex {
     return Onkeydown.super.onkeydown(onkeydown);

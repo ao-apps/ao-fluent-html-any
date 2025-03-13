@@ -74,7 +74,7 @@ public abstract class AnyCOL<
    *
    * @deprecated  The align attribute of &lt;col&gt; is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   public enum Align implements Function<AnyDocument<?>, String> {
 
     /**
@@ -124,7 +124,7 @@ public abstract class AnyCOL<
    *
    * @deprecated  The valign attribute of &lt;col&gt; is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   public enum Valign implements Function<AnyDocument<?>, String> {
 
     /**

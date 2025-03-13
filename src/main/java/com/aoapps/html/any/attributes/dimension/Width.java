@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -47,7 +47,7 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
    *
    * @deprecated  In HTML 4.01, the width could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   public static final class width {
     /** Make no instances. */
     private width() {
@@ -61,7 +61,7 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
      *
      * @deprecated  In HTML 4.01, the width could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
      */
-    @Deprecated
+    @Deprecated(forRemoval = false)
     public static String normalize(String pixelsOrPercent) {
       return Strings.trimNullIfEmpty(pixelsOrPercent);
     }
@@ -104,7 +104,7 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
    *
    * @deprecated  In HTML 4.01, the width could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E width(String pixelsOrPercent) throws IOException {
     @SuppressWarnings("unchecked")
@@ -121,7 +121,7 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
    *
    * @deprecated  In HTML 4.01, the width could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E width(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {
     return width((pixelsOrPercent == null) ? null : pixelsOrPercent.get());

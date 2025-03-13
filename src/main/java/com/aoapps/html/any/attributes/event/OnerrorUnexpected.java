@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -61,7 +61,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onerror
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpected<E>> {
 
   /**
@@ -81,7 +81,7 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
    *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onerror(Object onerror) throws IOException {
     @SuppressWarnings("unchecked")
@@ -111,7 +111,7 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
    *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onerror(IOSupplierE<?, Ex> onerror) throws IOException, Ex {
     return onerror((onerror == null) ? null : onerror.get());
   }
@@ -137,7 +137,7 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
    *              {@linkplain AnySCRIPT &lt;script&gt;}, {@linkplain AnySOURCE &lt;source&gt;}, {@linkplain AnySTYLE &lt;style&gt;},
    *              {@linkplain AnyTRACK &lt;track&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onerror(JavaScriptWritable<Ex> onerror) throws IOException, Ex {
     return onerror((Object) onerror);
   }

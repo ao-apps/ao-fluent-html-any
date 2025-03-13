@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,7 +37,7 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface Noshade<E extends Element<?, ?, E> & Noshade<E>> {
 
   /**
@@ -45,7 +45,7 @@ public interface Noshade<E extends Element<?, ?, E> & Noshade<E>> {
    *
    * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E noshade(boolean noshade) throws IOException {
     @SuppressWarnings("unchecked")
@@ -60,7 +60,7 @@ public interface Noshade<E extends Element<?, ?, E> & Noshade<E>> {
    *
    * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default E noshade(Boolean noshade) throws IOException {
     return noshade(noshade != null && noshade);
   }
@@ -74,7 +74,7 @@ public interface Noshade<E extends Element<?, ?, E> & Noshade<E>> {
    *
    * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E noshade(IOSupplierE<? extends Boolean, Ex> noshade) throws IOException, Ex {
     return noshade((noshade == null) ? null : noshade.get());
   }

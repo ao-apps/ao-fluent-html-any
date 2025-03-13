@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -1997,7 +1997,7 @@ public interface AnyUnion_Palpable_Phrasing<
    *
    * @deprecated  TODO: Implement ruby
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("ruby")
   default AnyRUBY ruby() throws IOException {
     throw new AssertionError("TODO: Implement ruby");
@@ -2682,7 +2682,7 @@ public interface AnyUnion_Palpable_Phrasing<
    *
    * @deprecated  TODO: Implement time
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("time")
   default AnyTIME time() throws IOException {
     throw new AssertionError("TODO: Implement time");

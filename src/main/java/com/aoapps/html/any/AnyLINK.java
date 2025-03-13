@@ -143,8 +143,8 @@ public abstract class AnyLINK<
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        ARCHIVES("archives"),
+    @Deprecated(forRemoval = true)
+    ARCHIVES("archives"),
     AUTHOR("author"), // w3schools, MDN only
     CANONICAL("canonical"), // MDN only
     DNS_PREFETCH("dns-prefetch"),
@@ -153,8 +153,8 @@ public abstract class AnyLINK<
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        FIRST("first"),
+    @Deprecated(forRemoval = true)
+    FIRST("first"),
     HELP("help"), // w3schools, MDN only
     ICON("icon"),
     IMPORT("import"), // MDN only
@@ -163,15 +163,15 @@ public abstract class AnyLINK<
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        INDEX("index"),
+    @Deprecated(forRemoval = true)
+    INDEX("index"),
     /**
      * MDN only.
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        LAST("last"),
+    @Deprecated(forRemoval = true)
+    LAST("last"),
     LICENSE("license"), // w3schools, MDN only
     MANIFEST("manifest"), // MDN only
     MODULEPRELOAD("modulepreload"),
@@ -189,16 +189,16 @@ public abstract class AnyLINK<
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        SIDEBAR("sidebar"),
+    @Deprecated(forRemoval = true)
+    SIDEBAR("sidebar"),
     STYLESHEET("stylesheet"),
     /**
      * MDN only.
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        UP("up"),
+    @Deprecated(forRemoval = true)
+    UP("up"),
 
     /**
      * To specify an icon for a single webpage or replace the website icon with a webpage-specific icon, add a link element to the webpage.

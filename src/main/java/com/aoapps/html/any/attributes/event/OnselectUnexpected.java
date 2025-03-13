@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,7 +50,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onselect
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnselectUnexpected<E extends Element<?, ?, E> & OnselectUnexpected<E>> {
 
   /**
@@ -67,7 +67,7 @@ public interface OnselectUnexpected<E extends Element<?, ?, E> & OnselectUnexpec
    * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onselect(Object onselect) throws IOException {
     @SuppressWarnings("unchecked")
@@ -94,7 +94,7 @@ public interface OnselectUnexpected<E extends Element<?, ?, E> & OnselectUnexpec
    * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onselect(IOSupplierE<?, Ex> onselect) throws IOException, Ex {
     return onselect((onselect == null) ? null : onselect.get());
   }
@@ -117,7 +117,7 @@ public interface OnselectUnexpected<E extends Element<?, ?, E> & OnselectUnexpec
    * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onselect(JavaScriptWritable<Ex> onselect) throws IOException, Ex {
     return onselect((Object) onselect);
   }

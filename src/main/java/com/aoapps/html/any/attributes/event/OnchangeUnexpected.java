@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -54,7 +54,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onchange
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpected<E>> {
 
   /**
@@ -73,7 +73,7 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;},
    *              {@linkplain AnyTEXTAREA &lt;textarea&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onchange(Object onchange) throws IOException {
     @SuppressWarnings("unchecked")
@@ -102,7 +102,7 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;},
    *              {@linkplain AnyTEXTAREA &lt;textarea&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onchange(IOSupplierE<?, Ex> onchange) throws IOException, Ex {
     return onchange((onchange == null) ? null : onchange.get());
   }
@@ -127,7 +127,7 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;},
    *              {@linkplain AnyTEXTAREA &lt;textarea&gt;}, and {@linkplain AnyTRACK &lt;track&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onchange(JavaScriptWritable<Ex> onchange) throws IOException, Ex {
     return onchange((Object) onchange);
   }

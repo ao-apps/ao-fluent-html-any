@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,7 +39,7 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
 
   /**
@@ -49,7 +49,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
    *
    * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   public static final class cellspacing {
     /** Make no instances. */
     private cellspacing() {
@@ -63,7 +63,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
      *
      * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
      */
-    @Deprecated
+    @Deprecated(forRemoval = false)
     public static String normalize(String pixelsOrPercent) {
       return Strings.trimNullIfEmpty(pixelsOrPercent);
     }
@@ -74,7 +74,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
    *
    * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E cellspacing(int pixels) throws IOException {
     @SuppressWarnings("unchecked")
@@ -87,7 +87,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
    *
    * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E cellspacing(Integer pixels) throws IOException {
     @SuppressWarnings("unchecked")
@@ -102,7 +102,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
    *
    * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E cellspacing(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
     return cellspacing((pixels == null) ? null : pixels.get());
@@ -113,7 +113,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
    *
    * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E cellspacing(String pixelsOrPercent) throws IOException {
     @SuppressWarnings("unchecked")
@@ -130,7 +130,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
    *
    * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E cellspacing(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {
     return cellspacing((pixelsOrPercent == null) ? null : pixelsOrPercent.get());

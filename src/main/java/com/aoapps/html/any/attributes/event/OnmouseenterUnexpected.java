@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -67,7 +67,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onmouseenter
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnmouseenterUnexpected<E extends Element<?, ?, E> & OnmouseenterUnexpected<E>> extends Onmouseenter<E> {
 
   /**
@@ -90,7 +90,7 @@ public interface OnmouseenterUnexpected<E extends Element<?, ?, E> & Onmouseente
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E onmouseenter(Object onmouseenter) throws IOException {
@@ -121,7 +121,7 @@ public interface OnmouseenterUnexpected<E extends Element<?, ?, E> & Onmouseente
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E onmouseenter(IOSupplierE<?, Ex> onmouseenter) throws IOException, Ex {
     return Onmouseenter.super.onmouseenter(onmouseenter);
@@ -151,7 +151,7 @@ public interface OnmouseenterUnexpected<E extends Element<?, ?, E> & Onmouseente
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E onmouseenter(JavaScriptWritable<Ex> onmouseenter) throws IOException, Ex {
     return Onmouseenter.super.onmouseenter(onmouseenter);

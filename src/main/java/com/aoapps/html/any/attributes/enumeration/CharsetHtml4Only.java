@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -47,7 +47,7 @@ import java.util.function.Function;
  * @author  AO Industries, Inc.
  */
 // Matches Charset
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface CharsetHtml4Only<
     E extends Element<?, ?, E> & CharsetHtml4Only<E, V>,
     V extends Enum<V> & Function<? super AnyDocument<?>, String>
@@ -63,7 +63,7 @@ public interface CharsetHtml4Only<
    *
    * @deprecated  Not supported in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E charset(String charset) throws IOException {
@@ -86,7 +86,7 @@ public interface CharsetHtml4Only<
    *
    * @deprecated  Not supported in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
@@ -104,7 +104,7 @@ public interface CharsetHtml4Only<
    *
    * @deprecated  Not supported in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default E charset(java.nio.charset.Charset charset) throws IOException {
     return Charset.super.charset(charset);
@@ -123,7 +123,7 @@ public interface CharsetHtml4Only<
    *
    * @deprecated  Not supported in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
@@ -141,7 +141,7 @@ public interface CharsetHtml4Only<
    *
    * @deprecated  Not supported in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default E charset(V charset) throws IOException {
     return Charset.super.charset(charset);
@@ -160,7 +160,7 @@ public interface CharsetHtml4Only<
    *
    * @deprecated  Not supported in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {

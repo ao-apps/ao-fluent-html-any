@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,7 +49,7 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
    *
    * @deprecated  Please implement specific attributes as-needed
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E attribute(String name, Object value) throws IOException {
     @SuppressWarnings("unchecked")
@@ -69,7 +69,7 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
    *
    * @deprecated  Please implement specific attributes as-needed
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E attribute(String name, IOSupplierE<?, Ex> value) throws IOException, Ex {
     return attribute(name, (value == null) ? null : value.get());
   }
@@ -83,7 +83,7 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
    *
    * @deprecated  Please implement specific attributes as-needed
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   // TODO: Just MediaWritable here?  How does this interact with the various types of MediaWriters?
   default <Ex extends Throwable> E attribute(String name, TextWritable<Ex> value) throws IOException, Ex {
     return attribute(name, (Object) value);

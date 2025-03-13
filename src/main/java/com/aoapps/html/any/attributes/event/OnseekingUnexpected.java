@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,7 +50,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onseeking
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnseekingUnexpected<E extends Element<?, ?, E> & OnseekingUnexpected<E>> {
 
   /**
@@ -67,7 +67,7 @@ public interface OnseekingUnexpected<E extends Element<?, ?, E> & OnseekingUnexp
    * @deprecated  Although the onseeking attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onseeking(Object onseeking) throws IOException {
     @SuppressWarnings("unchecked")
@@ -94,7 +94,7 @@ public interface OnseekingUnexpected<E extends Element<?, ?, E> & OnseekingUnexp
    * @deprecated  Although the onseeking attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onseeking(IOSupplierE<?, Ex> onseeking) throws IOException, Ex {
     return onseeking((onseeking == null) ? null : onseeking.get());
   }
@@ -117,7 +117,7 @@ public interface OnseekingUnexpected<E extends Element<?, ?, E> & OnseekingUnexp
    * @deprecated  Although the onseeking attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onseeking(JavaScriptWritable<Ex> onseeking) throws IOException, Ex {
     return onseeking((Object) onseeking);
   }

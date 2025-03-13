@@ -132,7 +132,7 @@ public abstract class AnyMETA<
    *
    * @deprecated  Please use {@link #charset()} for automatic charset.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E charset(String charset) throws IOException {
     return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
@@ -149,7 +149,7 @@ public abstract class AnyMETA<
    *
    * @deprecated  Please use {@link #charset()} for automatic charset.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   @Override
   public <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
@@ -165,7 +165,7 @@ public abstract class AnyMETA<
    *
    * @deprecated  Please use {@link #charset()} for automatic charset.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E charset(Charset charset) throws IOException {
     return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
@@ -182,7 +182,7 @@ public abstract class AnyMETA<
    *
    * @deprecated  Please use {@link #charset()} for automatic charset.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   @Override
   public <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
@@ -198,7 +198,7 @@ public abstract class AnyMETA<
    *
    * @deprecated  Please use {@link #charset()} for automatic charset.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E charset(com.aoapps.html.any.attributes.enumeration.Charset.Value charset) throws IOException {
     return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
@@ -215,7 +215,7 @@ public abstract class AnyMETA<
    *
    * @deprecated  Please use {@link #charset()} for automatic charset.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   @Override
   public <Ex extends Throwable> E charset(IOSupplierE<? extends com.aoapps.html.any.attributes.enumeration.Charset.Value, Ex> charset) throws IOException, Ex {
@@ -237,8 +237,8 @@ public abstract class AnyMETA<
      *
      * @deprecated  Do not use this value, as it is obsolete. Prefer the <code>lang</code> attribute on the &lt;html&gt; element.
      */
-    @Deprecated
-      CONTENT_LANGUAGE("content-language"),
+    @Deprecated(forRemoval = false)
+    CONTENT_LANGUAGE("content-language"),
 
     /**
      * Allows page authors to define a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">content policy</a> for the current page.
@@ -253,8 +253,8 @@ public abstract class AnyMETA<
      *
      * @deprecated  This is no longer required as of HTML 5.
      */
-    @Deprecated
-        CONTENT_SCRIPT_TYPE("content-script-type"),
+    @Deprecated(forRemoval = false)
+    CONTENT_SCRIPT_TYPE("content-script-type"),
 
     /**
      * Authors must specify the style sheet language of style information associated with an HTML document.
@@ -263,8 +263,8 @@ public abstract class AnyMETA<
      *
      * @deprecated  This is no longer required as of HTML 5.
      */
-    @Deprecated
-        CONTENT_STYLE_TYPE("content-style-type"),
+    @Deprecated(forRemoval = false)
+    CONTENT_STYLE_TYPE("content-style-type"),
 
     /**
      * Defines the <a href="https://developer.mozilla.org/en-US/docs/Glossary/MIME_type">MIME type</a> of the document, followed by its character encoding.
@@ -278,8 +278,8 @@ public abstract class AnyMETA<
      * @deprecated  Do not use this value, as it is obsolete. Use the {@link com.aoapps.html.any.attributes.enumeration.Charset charset}
      *              attribute on the {@link AnyMETA &lt;meta&gt;} element.
      */
-    @Deprecated
-        CONTENT_TYPE("content-type"),
+    @Deprecated(forRemoval = false)
+    CONTENT_TYPE("content-type"),
 
     /**
      * The <a href="https://www.w3.org/TR/2010/WD-html-markup-20100624/meta.html#meta">meta</a> element with a
@@ -319,8 +319,8 @@ public abstract class AnyMETA<
      *              <a href="https://www.fxsitecompat.dev/en-CA/docs/2019/setting-cookies-with-meta-http-equiv-is-no-longer-allowed/">Firefox 68</a>
      *              and <a href="https://www.chromestatus.com/feature/6170540112871424">Chrome 65</a>.
      */
-    @Deprecated
-        SET_COOKIE("set-cookie");
+    @Deprecated(forRemoval = false)
+    SET_COOKIE("set-cookie");
 
     private final String value;
 

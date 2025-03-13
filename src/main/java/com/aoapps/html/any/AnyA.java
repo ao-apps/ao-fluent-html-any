@@ -124,8 +124,8 @@ public abstract class AnyA<
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        ARCHIVES("archives"),
+    @Deprecated(forRemoval = true)
+    ARCHIVES("archives"),
     AUTHOR("author"), // w3schools, MDN only
     BOOKMARK("bookmark"),
     EXTERNAL("external"),
@@ -134,23 +134,23 @@ public abstract class AnyA<
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        FIRST("first"),
+    @Deprecated(forRemoval = true)
+    FIRST("first"),
     HELP("help"), // w3schools, MDN only
     /**
      * MDN only.
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        INDEX("index"),
+    @Deprecated(forRemoval = true)
+    INDEX("index"),
     /**
      * MDN only.
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        LAST("last"),
+    @Deprecated(forRemoval = true)
+    LAST("last"),
     LICENSE("license"), // w3schools, MDN only
     NEXT("next"),
     NOFOLLOW("nofollow"),
@@ -164,16 +164,16 @@ public abstract class AnyA<
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        SIDEBAR("sidebar"),
+    @Deprecated(forRemoval = true)
+    SIDEBAR("sidebar"),
     TAG("tag"),
     /**
      * MDN only.
      *
      * @deprecated MDN only
      */
-    @Deprecated
-        UP("up");
+    @Deprecated(forRemoval = true)
+    UP("up");
 
     private final String value;
 

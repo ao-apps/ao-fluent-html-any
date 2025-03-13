@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -351,7 +351,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException {
     Writer unsafe = optimized;
@@ -370,7 +370,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public Writer getRawUnsafe() throws IllegalStateException {
     return getRawUnsafe(false);
@@ -383,7 +383,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public D unsafe(char ch) throws IOException {
     return unsafe(getRawUnsafe(null), ch);
@@ -401,7 +401,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public D unsafe(char[] cbuf) throws IOException {
     if (cbuf != null) {
@@ -442,7 +442,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public D unsafe(char[] cbuf, int offset, int len) throws IOException {
     if (cbuf != null && len > 0) {
@@ -482,7 +482,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public D unsafe(CharSequence csq) throws IOException {
     if (csq != null) {
@@ -523,7 +523,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public D unsafe(CharSequence csq, int start, int end) throws IOException {
     if (csq != null && end > start) {
@@ -563,7 +563,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public D unsafe(Object unsafe) throws IOException {
     return unsafe(getRawUnsafe(null), unsafe);
@@ -636,7 +636,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public <Ex extends Throwable> D unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
     return unsafe(getRawUnsafe(null), unsafe);
@@ -653,7 +653,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public D unsafe(Writable unsafe) throws IOException {
     return unsafe(getRawUnsafe(null), unsafe);
@@ -687,7 +687,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public <W extends Writer & NoClose> W unsafe() throws IOException {
     return unsafe(getRawUnsafe(null));

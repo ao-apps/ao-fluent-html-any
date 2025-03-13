@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,7 +49,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onemptied
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexpected<E>> {
 
   /**
@@ -65,7 +65,7 @@ public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexp
    * @deprecated  Although the onemptied attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onemptied(Object onemptied) throws IOException {
     @SuppressWarnings("unchecked")
@@ -91,7 +91,7 @@ public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexp
    * @deprecated  Although the onemptied attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onemptied(IOSupplierE<?, Ex> onemptied) throws IOException, Ex {
     return onemptied((onemptied == null) ? null : onemptied.get());
   }
@@ -113,7 +113,7 @@ public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexp
    * @deprecated  Although the onemptied attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onemptied(JavaScriptWritable<Ex> onemptied) throws IOException, Ex {
     return onemptied((Object) onemptied);
   }

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -173,7 +173,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    * @deprecated  In HTML4, the values are numbers of pixels or percentages, if a percent sign (%) is appended;
    *              in HTML5, the values are numbers of CSS pixels.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default E coords(String left, String top, String right, String bottom) throws IOException {
     left = Strings.trimNullIfEmpty(left);
     top = Strings.trimNullIfEmpty(top);
@@ -254,7 +254,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    * @deprecated  In HTML4, the values are numbers of pixels or percentages, if a percent sign (%) is appended;
    *              in HTML5, the values are numbers of CSS pixels.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default E coords(String x, String y, String radius) throws IOException {
     x = Strings.trimNullIfEmpty(x);
     y = Strings.trimNullIfEmpty(y);

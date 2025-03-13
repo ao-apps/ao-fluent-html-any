@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -61,7 +61,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Autocapitalize
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & AutocapitalizeUnexpected<E>> {
 
   /**
@@ -81,7 +81,7 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
    *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
    *              </ul>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E autocapitalize(String autocapitalize) throws IOException {
     @SuppressWarnings("unchecked")
@@ -111,7 +111,7 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
    *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
    *              </ul>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E autocapitalize(Suppliers.String<Ex> autocapitalize) throws IOException, Ex {
     return autocapitalize((autocapitalize == null) ? null : autocapitalize.get());
@@ -136,7 +136,7 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
    *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
    *              </ul>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default E autocapitalize(Autocapitalize.Value autocapitalize) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
@@ -164,7 +164,7 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
    *              <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/autocapitalize">Global attributes / autocapitalize</a>.</li>
    *              </ul>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E autocapitalize(IOSupplierE<? extends Autocapitalize.Value, Ex> autocapitalize) throws IOException, Ex {
     return autocapitalize((autocapitalize == null) ? null : autocapitalize.get());

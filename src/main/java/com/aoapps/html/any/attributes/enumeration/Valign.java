@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,7 +43,7 @@ import java.util.function.Function;
  *
  * @author  AO Industries, Inc.
  */
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface Valign<
     E extends Element<?, ?, E> & Valign<E, V>,
     V extends Enum<V> & Function<? super AnyDocument<?>, String>
@@ -56,7 +56,7 @@ public interface Valign<
    *
    * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   public static final class valign {
     /** Make no instances. */
     private valign() {
@@ -70,7 +70,7 @@ public interface Valign<
      *
      * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
      */
-    @Deprecated
+    @Deprecated(forRemoval = false)
     public static String normalize(String valign) {
       return Strings.trimNullIfEmpty(valign);
     }
@@ -81,7 +81,7 @@ public interface Valign<
    *
    * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E valign(String valign) throws IOException {
     @SuppressWarnings("unchecked")
@@ -98,7 +98,7 @@ public interface Valign<
    *
    * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E valign(Suppliers.String<Ex> valign) throws IOException, Ex {
     return valign((valign == null) ? null : valign.get());
@@ -111,7 +111,7 @@ public interface Valign<
    *
    * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default E valign(V valign) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
@@ -127,7 +127,7 @@ public interface Valign<
    *
    * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E valign(IOSupplierE<? extends V, Ex> valign) throws IOException, Ex {
     return valign((valign == null) ? null : valign.get());

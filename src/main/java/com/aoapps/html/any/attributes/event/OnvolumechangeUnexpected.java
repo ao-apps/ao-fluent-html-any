@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,7 +50,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onvolumechange
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnvolumechangeUnexpected<E extends Element<?, ?, E> & OnvolumechangeUnexpected<E>> {
 
   /**
@@ -67,7 +67,7 @@ public interface OnvolumechangeUnexpected<E extends Element<?, ?, E> & Onvolumec
    * @deprecated  Although the onvolumechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onvolumechange(Object onvolumechange) throws IOException {
     @SuppressWarnings("unchecked")
@@ -94,7 +94,7 @@ public interface OnvolumechangeUnexpected<E extends Element<?, ?, E> & Onvolumec
    * @deprecated  Although the onvolumechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onvolumechange(IOSupplierE<?, Ex> onvolumechange) throws IOException, Ex {
     return onvolumechange((onvolumechange == null) ? null : onvolumechange.get());
   }
@@ -117,7 +117,7 @@ public interface OnvolumechangeUnexpected<E extends Element<?, ?, E> & Onvolumec
    * @deprecated  Although the onvolumechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onvolumechange(JavaScriptWritable<Ex> onvolumechange) throws IOException, Ex {
     return onvolumechange((Object) onvolumechange);
   }

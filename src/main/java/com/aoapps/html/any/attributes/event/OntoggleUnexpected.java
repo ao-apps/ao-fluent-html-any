@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -48,7 +48,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Ontoggle
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpected<E>> {
 
   /**
@@ -64,7 +64,7 @@ public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpec
    * @deprecated  Although the ontoggle attribute is global, it is only expected on
    *              {@linkplain AnyDETAILS &lt;details&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E ontoggle(Object ontoggle) throws IOException {
     @SuppressWarnings("unchecked")
@@ -90,7 +90,7 @@ public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpec
    * @deprecated  Although the ontoggle attribute is global, it is only expected on
    *              {@linkplain AnyDETAILS &lt;details&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E ontoggle(IOSupplierE<?, Ex> ontoggle) throws IOException, Ex {
     return ontoggle((ontoggle == null) ? null : ontoggle.get());
   }
@@ -112,7 +112,7 @@ public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpec
    * @deprecated  Although the ontoggle attribute is global, it is only expected on
    *              {@linkplain AnyDETAILS &lt;details&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E ontoggle(JavaScriptWritable<Ex> ontoggle) throws IOException, Ex {
     return ontoggle((Object) ontoggle);
   }

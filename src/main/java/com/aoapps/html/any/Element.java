@@ -72,7 +72,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E nl() throws IOException {
     document.nl();
@@ -101,7 +101,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E nli(int depthOffset) throws IOException {
     document.nli(depthOffset);
@@ -117,7 +117,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E indent() throws IOException {
     document.indent();
@@ -133,7 +133,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E indent(int depthOffset) throws IOException {
     document.indent(depthOffset);
@@ -149,7 +149,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public boolean getIndent() {
     return document.getIndent();
@@ -162,7 +162,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E setIndent(boolean indent) {
     document.setIndent(indent);
@@ -178,7 +178,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public int getDepth() {
     return document.getDepth();
@@ -191,7 +191,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E setDepth(int depth) {
     document.setDepth(depth);
@@ -207,7 +207,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E incDepth() {
     document.incDepth();
@@ -223,7 +223,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E decDepth() {
     document.decDepth();
@@ -239,7 +239,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E sp() throws IOException {
     document.sp();
@@ -255,7 +255,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E sp(int count) throws IOException {
     this.document.sp(count);
@@ -274,7 +274,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException {
     return document.getRawUnsafe(endsNewline);
@@ -287,7 +287,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public Writer getRawUnsafe() throws IllegalStateException {
     return document.getRawUnsafe();
@@ -300,7 +300,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E unsafe(char ch) throws IOException {
     document.unsafe(ch);
@@ -316,7 +316,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E unsafe(char[] cbuf) throws IOException {
     document.unsafe(cbuf);
@@ -332,7 +332,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E unsafe(char[] cbuf, int offset, int len) throws IOException {
     document.unsafe(cbuf, offset, len);
@@ -348,7 +348,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E unsafe(CharSequence csq) throws IOException {
     document.unsafe(csq);
@@ -364,7 +364,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E unsafe(CharSequence csq, int start, int end) throws IOException {
     document.unsafe(csq, start, end);
@@ -380,7 +380,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E unsafe(Object unsafe) throws IOException {
     document.unsafe(unsafe);
@@ -396,7 +396,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public <Ex extends Throwable> E unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
     document.unsafe(unsafe);
@@ -412,7 +412,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E unsafe(Writable unsafe) throws IOException {
     document.unsafe(unsafe);
@@ -428,7 +428,7 @@ public abstract class Element<
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public <W extends Writer & NoClose> W unsafe() throws IOException {
     return document.unsafe();
@@ -444,7 +444,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public boolean getAutonli() {
     return document.getAutonli();
@@ -457,7 +457,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E setAutonli(boolean autonli) {
     document.setAutonli(autonli);
@@ -473,7 +473,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public boolean getAtnl() {
     return document.getAtnl();
@@ -486,7 +486,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E setAtnl() {
     document.setAtnl();
@@ -502,7 +502,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E setAtnl(boolean atnl) {
     document.setAtnl(atnl);
@@ -518,7 +518,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E clearAtnl() {
     document.clearAtnl();
@@ -534,7 +534,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E autoNl() throws IOException {
     document.autoNl();
@@ -563,7 +563,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E autoNli(int depthOffset) throws IOException {
     document.autoNli(depthOffset);
@@ -579,7 +579,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E autoIndent() throws IOException {
     document.autoIndent();
@@ -595,7 +595,7 @@ public abstract class Element<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E autoIndent(int depthOffset) throws IOException {
     document.autoIndent(depthOffset);

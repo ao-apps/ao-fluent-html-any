@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -324,7 +324,7 @@ public final class Attributes {
      *
      * @deprecated  In HTML 4.01, the value could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
      */
-    @Deprecated
+    @Deprecated(forRemoval = false)
     public static <E extends Element<?, ?, E>, Ex1 extends Throwable, Ex2 extends Throwable> E attribute(
         E element,
         java.lang.String name,
@@ -340,7 +340,7 @@ public final class Attributes {
      *
      * @deprecated  In HTML 4.01, the value could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
      */
-    @Deprecated
+    @Deprecated(forRemoval = false)
     public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
         E element,
         java.lang.String name,

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,7 +49,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onsubmit
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpected<E>> {
 
   /**
@@ -66,7 +66,7 @@ public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpec
    * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onsubmit(Object onsubmit) throws IOException {
     @SuppressWarnings("unchecked")
@@ -93,7 +93,7 @@ public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpec
    * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onsubmit(IOSupplierE<?, Ex> onsubmit) throws IOException, Ex {
     return onsubmit((onsubmit == null) ? null : onsubmit.get());
   }
@@ -116,7 +116,7 @@ public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpec
    * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onsubmit(JavaScriptWritable<Ex> onsubmit) throws IOException, Ex {
     return onsubmit((Object) onsubmit);
   }

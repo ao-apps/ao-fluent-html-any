@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,7 +50,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onratechange
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnratechangeUnexpected<E extends Element<?, ?, E> & OnratechangeUnexpected<E>> {
 
   /**
@@ -67,7 +67,7 @@ public interface OnratechangeUnexpected<E extends Element<?, ?, E> & Onratechang
    * @deprecated  Although the onratechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onratechange(Object onratechange) throws IOException {
     @SuppressWarnings("unchecked")
@@ -94,7 +94,7 @@ public interface OnratechangeUnexpected<E extends Element<?, ?, E> & Onratechang
    * @deprecated  Although the onratechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onratechange(IOSupplierE<?, Ex> onratechange) throws IOException, Ex {
     return onratechange((onratechange == null) ? null : onratechange.get());
   }
@@ -117,7 +117,7 @@ public interface OnratechangeUnexpected<E extends Element<?, ?, E> & Onratechang
    * @deprecated  Although the onratechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onratechange(JavaScriptWritable<Ex> onratechange) throws IOException, Ex {
     return onratechange((Object) onratechange);
   }

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -104,7 +104,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ indent() throws IOException {
     getDocument().indent();
@@ -121,7 +121,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ indent(int depthOffset) throws IOException {
     getDocument().indent(depthOffset);
@@ -138,7 +138,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default boolean getIndent() {
     return getDocument().getIndent();
@@ -152,7 +152,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ setIndent(boolean indent) {
     getDocument().setIndent(indent);
@@ -169,7 +169,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default int getDepth() {
     return getDocument().getDepth();
@@ -183,7 +183,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ setDepth(int depth) {
     getDocument().setDepth(depth);
@@ -200,7 +200,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ incDepth() {
     getDocument().incDepth();
@@ -217,7 +217,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ decDepth() {
     getDocument().decDepth();
@@ -265,7 +265,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException {
     return getDocument().getRawUnsafe(endsNewline);
@@ -279,7 +279,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default Writer getRawUnsafe() throws IllegalStateException {
     return getDocument().getRawUnsafe();
@@ -293,7 +293,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ unsafe(char ch) throws IOException {
     getDocument().unsafe(ch);
@@ -310,7 +310,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ unsafe(char[] cbuf) throws IOException {
     getDocument().unsafe(cbuf);
@@ -327,7 +327,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ unsafe(char[] cbuf, int offset, int len) throws IOException {
     getDocument().unsafe(cbuf, offset, len);
@@ -344,7 +344,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ unsafe(CharSequence csq) throws IOException {
     getDocument().unsafe(csq);
@@ -361,7 +361,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ unsafe(CharSequence csq, int start, int end) throws IOException {
     getDocument().unsafe(csq, start, end);
@@ -378,7 +378,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ unsafe(Object unsafe) throws IOException {
     getDocument().unsafe(unsafe);
@@ -395,7 +395,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> __ unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex {
     getDocument().unsafe(unsafe);
@@ -412,7 +412,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ unsafe(Writable unsafe) throws IOException {
     getDocument().unsafe(unsafe);
@@ -429,7 +429,7 @@ public interface Content<
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <W extends Writer & NoClose> W unsafe() throws IOException {
     return getDocument().unsafe();
@@ -446,7 +446,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default boolean getAutonli() {
     return getDocument().getAutonli();
@@ -460,7 +460,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ setAutonli(boolean autonli) {
     getDocument().setAutonli(autonli);
@@ -477,7 +477,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default boolean getAtnl() {
     return getDocument().getAtnl();
@@ -491,7 +491,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ setAtnl() {
     getDocument().setAtnl();
@@ -508,7 +508,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ setAtnl(boolean atnl) {
     getDocument().setAtnl(atnl);
@@ -525,7 +525,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ clearAtnl() {
     getDocument().clearAtnl();
@@ -584,7 +584,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ autoIndent() throws IOException {
     getDocument().autoIndent();
@@ -601,7 +601,7 @@ public interface Content<
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ autoIndent(int depthOffset) throws IOException {
     getDocument().autoIndent(depthOffset);

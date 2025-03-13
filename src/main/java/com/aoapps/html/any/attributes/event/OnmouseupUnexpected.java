@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -65,7 +65,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onmouseup
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnmouseupUnexpected<E extends Element<?, ?, E> & OnmouseupUnexpected<E>> extends Onmouseup<E> {
 
   /**
@@ -86,7 +86,7 @@ public interface OnmouseupUnexpected<E extends Element<?, ?, E> & OnmouseupUnexp
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E onmouseup(Object onmouseup) throws IOException {
@@ -115,7 +115,7 @@ public interface OnmouseupUnexpected<E extends Element<?, ?, E> & OnmouseupUnexp
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E onmouseup(IOSupplierE<?, Ex> onmouseup) throws IOException, Ex {
     return Onmouseup.super.onmouseup(onmouseup);
@@ -143,7 +143,7 @@ public interface OnmouseupUnexpected<E extends Element<?, ?, E> & OnmouseupUnexp
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E onmouseup(JavaScriptWritable<Ex> onmouseup) throws IOException, Ex {
     return Onmouseup.super.onmouseup(onmouseup);

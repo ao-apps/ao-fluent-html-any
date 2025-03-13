@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -48,7 +48,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onslotchange
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnslotchangeUnexpected<E extends Element<?, ?, E> & OnslotchangeUnexpected<E>> {
 
   /**
@@ -64,7 +64,7 @@ public interface OnslotchangeUnexpected<E extends Element<?, ?, E> & Onslotchang
    * @deprecated  Although the onslotchange attribute is global, it is only expected on
    *              {@linkplain AnySLOT &lt;slot&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onslotchange(Object onslotchange) throws IOException {
     @SuppressWarnings("unchecked")
@@ -90,7 +90,7 @@ public interface OnslotchangeUnexpected<E extends Element<?, ?, E> & Onslotchang
    * @deprecated  Although the onslotchange attribute is global, it is only expected on
    *              {@linkplain AnySLOT &lt;slot&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onslotchange(IOSupplierE<?, Ex> onslotchange) throws IOException, Ex {
     return onslotchange((onslotchange == null) ? null : onslotchange.get());
   }
@@ -112,7 +112,7 @@ public interface OnslotchangeUnexpected<E extends Element<?, ?, E> & Onslotchang
    * @deprecated  Although the onslotchange attribute is global, it is only expected on
    *              {@linkplain AnySLOT &lt;slot&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onslotchange(JavaScriptWritable<Ex> onslotchange) throws IOException, Ex {
     return onslotchange((Object) onslotchange);
   }

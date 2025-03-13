@@ -1106,7 +1106,7 @@ public abstract class AnyINPUT<
      *
      * @deprecated  The align attribute of &lt;input&gt; is not supported in HTML5. Use CSS instead.
      */
-    @Deprecated
+    @Deprecated(forRemoval = false)
     public enum Align implements Function<AnyDocument<?>, String> {
 
       /**

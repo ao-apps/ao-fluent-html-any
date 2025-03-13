@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,7 +37,7 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface Border<E extends Element<?, ?, E> & Border<E>> {
 
   /**
@@ -45,7 +45,7 @@ public interface Border<E extends Element<?, ?, E> & Border<E>> {
    *
    * @deprecated  The border attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E border(int border) throws IOException {
     @SuppressWarnings("unchecked")
@@ -58,7 +58,7 @@ public interface Border<E extends Element<?, ?, E> & Border<E>> {
    *
    * @deprecated  The border attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E border(Integer border) throws IOException {
     @SuppressWarnings("unchecked")
@@ -73,7 +73,7 @@ public interface Border<E extends Element<?, ?, E> & Border<E>> {
    *
    * @deprecated  The border attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E border(IOSupplierE<? extends Integer, Ex> border) throws IOException, Ex {
     return border((border == null) ? null : border.get());

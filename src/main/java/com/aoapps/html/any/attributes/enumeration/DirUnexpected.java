@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -65,7 +65,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Dir
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> extends Dir<E> {
 
   /**
@@ -84,7 +84,7 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E dir(String dir) throws IOException {
@@ -111,7 +111,7 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
@@ -136,7 +136,7 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default E dir(Value dir) throws IOException {
     return Dir.super.dir(dir);
@@ -162,7 +162,7 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {

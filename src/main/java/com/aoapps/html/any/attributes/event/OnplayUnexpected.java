@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,7 +50,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onplay
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnplayUnexpected<E extends Element<?, ?, E> & OnplayUnexpected<E>> {
 
   /**
@@ -67,7 +67,7 @@ public interface OnplayUnexpected<E extends Element<?, ?, E> & OnplayUnexpected<
    * @deprecated  Although the onplay attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onplay(Object onplay) throws IOException {
     @SuppressWarnings("unchecked")
@@ -94,7 +94,7 @@ public interface OnplayUnexpected<E extends Element<?, ?, E> & OnplayUnexpected<
    * @deprecated  Although the onplay attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onplay(IOSupplierE<?, Ex> onplay) throws IOException, Ex {
     return onplay((onplay == null) ? null : onplay.get());
   }
@@ -117,7 +117,7 @@ public interface OnplayUnexpected<E extends Element<?, ?, E> & OnplayUnexpected<
    * @deprecated  Although the onplay attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onplay(JavaScriptWritable<Ex> onplay) throws IOException, Ex {
     return onplay((Object) onplay);
   }

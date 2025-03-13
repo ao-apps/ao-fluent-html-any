@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -39,7 +39,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Width
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> extends Width<E> {
 
   /**
@@ -47,7 +47,7 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
    *
    * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E width(int pixels) throws IOException {
@@ -59,7 +59,7 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
    *
    * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E width(Integer pixels) throws IOException {
@@ -73,7 +73,7 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
    *
    * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
@@ -85,7 +85,7 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
    *
    * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E width(String pixelsOrPercent) throws IOException {
@@ -101,7 +101,7 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
    *
    * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E width(Suppliers.String<Ex> pixelsOrPercent) throws IOException, Ex {

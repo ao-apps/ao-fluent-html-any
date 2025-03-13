@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -163,8 +163,8 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
      *
      * @deprecated  Please use {@link #NONE} as it is more descriptive
      */
-    @Deprecated
-      OFF("off"),
+    @Deprecated(forRemoval = false)
+    OFF("off"),
 
     /**
      * No autocapitalization is applied (all letters default to lowercase).
@@ -176,8 +176,8 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
      *
      * @deprecated  Please use {@link #SENTENCES} as it is more descriptive
      */
-    @Deprecated
-        ON("on"),
+    @Deprecated(forRemoval = false)
+    ON("on"),
 
     /**
      * The first letter of each sentence defaults to a capital letter; all other letters default to lowercase.

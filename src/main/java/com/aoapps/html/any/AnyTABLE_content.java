@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -403,7 +403,7 @@ public interface AnyTABLE_content<
    * @deprecated  For maximum compatibility with both {@link Serialization#SGML} and {@link Serialization#XML},
    *              it is recommended to always use <code>&lt;tbody&gt;</code>.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   //@Factory("tr")
   AnyTR<D, __, ?, ?, ?> tr() throws IOException;
@@ -416,7 +416,7 @@ public interface AnyTABLE_content<
    * @deprecated  For maximum compatibility with both {@link Serialization#SGML} and {@link Serialization#XML},
    *              it is recommended to always use <code>&lt;tbody&gt;</code>.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   //@Factory("tr")
   default <Ex extends Throwable> __ tr__(IORunnableE<Ex> tr) throws IOException, Ex {
@@ -431,7 +431,7 @@ public interface AnyTABLE_content<
    * @deprecated  For maximum compatibility with both {@link Serialization#SGML} and {@link Serialization#XML},
    *              it is recommended to always use <code>&lt;tbody&gt;</code>.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   //@Factory("tr")
   default <Ex extends Throwable> __ tr__any(IOConsumerE<? super AnyTR__<D, __, ? extends AnyTR__<D, __, ?>>, Ex> tr) throws IOException, Ex {
@@ -444,7 +444,7 @@ public interface AnyTABLE_content<
    * @deprecated  For maximum compatibility with both {@link Serialization#SGML} and {@link Serialization#XML},
    *              it is recommended to always use <code>&lt;tbody&gt;</code>.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   //@Factory("tr")
   default __ tr__() throws IOException {

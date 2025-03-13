@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,7 +49,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onreset
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnresetUnexpected<E extends Element<?, ?, E> & OnresetUnexpected<E>> {
 
   /**
@@ -66,7 +66,7 @@ public interface OnresetUnexpected<E extends Element<?, ?, E> & OnresetUnexpecte
    * @deprecated  Although the onreset attribute is global, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onreset(Object onreset) throws IOException {
     @SuppressWarnings("unchecked")
@@ -93,7 +93,7 @@ public interface OnresetUnexpected<E extends Element<?, ?, E> & OnresetUnexpecte
    * @deprecated  Although the onreset attribute is global, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onreset(IOSupplierE<?, Ex> onreset) throws IOException, Ex {
     return onreset((onreset == null) ? null : onreset.get());
   }
@@ -116,7 +116,7 @@ public interface OnresetUnexpected<E extends Element<?, ?, E> & OnresetUnexpecte
    * @deprecated  Although the onreset attribute is global, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onreset(JavaScriptWritable<Ex> onreset) throws IOException, Ex {
     return onreset((Object) onreset);
   }

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -67,7 +67,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Ondrag
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OndragUnexpected<E extends Element<?, ?, E> & OndragUnexpected<E>> extends Ondrag<E> {
 
   /**
@@ -90,7 +90,7 @@ public interface OndragUnexpected<E extends Element<?, ?, E> & OndragUnexpected<
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E ondrag(Object ondrag) throws IOException {
@@ -121,7 +121,7 @@ public interface OndragUnexpected<E extends Element<?, ?, E> & OndragUnexpected<
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E ondrag(IOSupplierE<?, Ex> ondrag) throws IOException, Ex {
     return Ondrag.super.ondrag(ondrag);
@@ -151,7 +151,7 @@ public interface OndragUnexpected<E extends Element<?, ?, E> & OndragUnexpected<
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E ondrag(JavaScriptWritable<Ex> ondrag) throws IOException, Ex {
     return Ondrag.super.ondrag(ondrag);

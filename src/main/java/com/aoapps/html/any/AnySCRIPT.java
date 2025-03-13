@@ -128,8 +128,8 @@ public abstract class AnySCRIPT<
      *
      * @deprecated  Use {@link #APPLICATION_JAVASCRIPT} in HTML 5.
      */
-    @Deprecated
-        TEXT_JAVASCRIPT(ContentType.JAVASCRIPT_OLD),
+    @Deprecated(forRemoval = false)
+    TEXT_JAVASCRIPT(ContentType.JAVASCRIPT_OLD),
 
     /**
      * A JSON object graph.

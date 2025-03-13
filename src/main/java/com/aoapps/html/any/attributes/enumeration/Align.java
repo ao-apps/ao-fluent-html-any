@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -43,7 +43,7 @@ import java.util.function.Function;
  *
  * @author  AO Industries, Inc.
  */
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface Align<
     E extends Element<?, ?, E> & Align<E, V>,
     V extends Enum<V> & Function<? super AnyDocument<?>, String>
@@ -56,7 +56,7 @@ public interface Align<
    *
    * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   public static final class align {
     /** Make no instances. */
     private align() {
@@ -70,7 +70,7 @@ public interface Align<
      *
      * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
      */
-    @Deprecated
+    @Deprecated(forRemoval = false)
     public static String normalize(String align) {
       return Strings.trimNullIfEmpty(align);
     }
@@ -81,7 +81,7 @@ public interface Align<
    *
    * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E align(String align) throws IOException {
     @SuppressWarnings("unchecked")
@@ -98,7 +98,7 @@ public interface Align<
    *
    * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E align(Suppliers.String<Ex> align) throws IOException, Ex {
     return align((align == null) ? null : align.get());
@@ -111,7 +111,7 @@ public interface Align<
    *
    * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default E align(V align) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
@@ -127,7 +127,7 @@ public interface Align<
    *
    * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E align(IOSupplierE<? extends V, Ex> align) throws IOException, Ex {
     return align((align == null) ? null : align.get());

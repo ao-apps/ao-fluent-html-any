@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -215,7 +215,7 @@ public interface AnyContent<
    *
    * @deprecated  TODO: Implement figcaption
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("figcaption")
   default AnyFIGCAPTION figcaption() throws IOException {
     throw new AssertionError("TODO: Implement figcaption");
@@ -244,7 +244,7 @@ public interface AnyContent<
    *
    * @deprecated  TODO: Implement rt
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("rt")
   default AnyRT rt() throws IOException {
     throw new AssertionError("TODO: Implement rt");
@@ -261,7 +261,7 @@ public interface AnyContent<
    *
    * @deprecated  TODO: Implement rp
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("rp")
   default AnyRP rp() throws IOException {
     throw new AssertionError("TODO: Implement rp");
@@ -298,7 +298,7 @@ public interface AnyContent<
    *
    * @deprecated  TODO: Implement source
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("source")
   default AnySOURCE source() throws IOException {
     throw new AssertionError("TODO: Implement source");
@@ -322,7 +322,7 @@ public interface AnyContent<
    *
    * @deprecated  TODO: Implement track
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("track")
   default AnyTRACK track() throws IOException {
     throw new AssertionError("TODO: Implement track");
@@ -408,7 +408,7 @@ public interface AnyContent<
    *
    * @deprecated  TODO: Implement legend
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("legend")
   default AnyLEGEND legend() throws IOException {
     throw new AssertionError("TODO: Implement legend");
@@ -426,7 +426,7 @@ public interface AnyContent<
    *
    * @deprecated  TODO: Implement summary
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("summary")
   default AnySUMMARY summary() throws IOException {
     throw new AssertionError("TODO: Implement summary");

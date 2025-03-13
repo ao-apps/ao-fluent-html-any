@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -58,7 +58,7 @@ public interface AnyUnion_Embedded_Interactive<
    *
    * @deprecated  TODO: Implement audio
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("audio")
   default AnyAUDIO audio() throws IOException {
     throw new AssertionError("TODO: Implement audio");
@@ -73,7 +73,7 @@ public interface AnyUnion_Embedded_Interactive<
    *
    * @deprecated  TODO: Implement embed
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("embed")
   default AnyEMBED embed() throws IOException {
     throw new AssertionError("TODO: Implement embed");
@@ -88,7 +88,7 @@ public interface AnyUnion_Embedded_Interactive<
    *
    * @deprecated  TODO: Implement iframe
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("iframe")
   default AnyIFRAME iframe() throws IOException {
     throw new AssertionError("TODO: Implement iframe");
@@ -240,7 +240,7 @@ public interface AnyUnion_Embedded_Interactive<
    *
    * @deprecated  TODO: Implement video
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("video")
   default AnyVIDEO video() throws IOException {
     throw new AssertionError("TODO: Implement video");

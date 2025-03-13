@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,7 +42,7 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
 
   /**
@@ -55,7 +55,7 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
    *
    * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   public static final class onmousewheel {
     /** Make no instances. */
     private onmousewheel() {
@@ -69,7 +69,7 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
      *
      * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute in HTML5.
      */
-    @Deprecated
+    @Deprecated(forRemoval = false)
     public static Object normalize(Object onmousewheel) {
       return Coercion.trimNullIfEmpty(onmousewheel);
     }
@@ -83,7 +83,7 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
    *
    * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(java.lang.Object) onwheel} attribute in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onmousewheel(Object onmousewheel) throws IOException {
     @SuppressWarnings("unchecked")
@@ -103,7 +103,7 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
    *
    * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.lang.io.function.IOSupplierE) onwheel} attribute in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onmousewheel(IOSupplierE<?, Ex> onmousewheel) throws IOException, Ex {
     return onmousewheel((onmousewheel == null) ? null : onmousewheel.get());
   }
@@ -120,7 +120,7 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
    *
    * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.encoding.JavaScriptWritable) onwheel} attribute in HTML5.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onmousewheel(JavaScriptWritable<Ex> onmousewheel) throws IOException, Ex {
     return onmousewheel((Object) onmousewheel);
   }

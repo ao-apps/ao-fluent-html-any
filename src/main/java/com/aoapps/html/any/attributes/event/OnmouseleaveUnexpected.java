@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -67,7 +67,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onmouseleave
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & OnmouseleaveUnexpected<E>> extends Onmouseleave<E> {
 
   /**
@@ -90,7 +90,7 @@ public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & Onmouseleav
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   @Attributes.Funnel
   default E onmouseleave(Object onmouseleave) throws IOException {
@@ -121,7 +121,7 @@ public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & Onmouseleav
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E onmouseleave(IOSupplierE<?, Ex> onmouseleave) throws IOException, Ex {
     return Onmouseleave.super.onmouseleave(onmouseleave);
@@ -151,7 +151,7 @@ public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & Onmouseleav
    *
    *              <p>See <a href="https://www.w3schools.com/tags/ref_eventattributes.asp">HTML Event Attributes</a>.</p>
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default <Ex extends Throwable> E onmouseleave(JavaScriptWritable<Ex> onmouseleave) throws IOException, Ex {
     return Onmouseleave.super.onmouseleave(onmouseleave);

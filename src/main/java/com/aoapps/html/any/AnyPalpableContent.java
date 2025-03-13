@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -361,7 +361,7 @@ public interface AnyPalpableContent<
    *
    * @deprecated  TODO: Implement fieldset
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("fieldset")
   default AnyFIELDSET fieldset() throws IOException {
     throw new AssertionError("TODO: Implement fieldset");
@@ -378,7 +378,7 @@ public interface AnyPalpableContent<
    *
    * @deprecated  TODO: Implement figure
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("figure")
   default AnyFIGURE figure() throws IOException {
     throw new AssertionError("TODO: Implement figure");

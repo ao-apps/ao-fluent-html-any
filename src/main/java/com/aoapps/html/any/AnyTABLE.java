@@ -91,7 +91,7 @@ public abstract class AnyTABLE<
    *
    * @deprecated  The align attribute of &lt;table&gt; is not supported in HTML5. Use CSS instead.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   public enum Align implements Function<AnyDocument<?>, String> {
 
     /**

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -109,7 +109,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   Writer getRawUnsafe(Boolean endsNewline) throws IllegalStateException;
 
   /**
@@ -130,7 +130,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   Writer getRawUnsafe() throws IllegalStateException;
 
   /**
@@ -140,7 +140,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   DocumentWriter unsafe(char ch) throws IOException;
 
   /**
@@ -150,7 +150,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   DocumentWriter unsafe(char[] cbuf) throws IOException;
 
   /**
@@ -160,7 +160,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   DocumentWriter unsafe(char[] cbuf, int offset, int len) throws IOException;
 
   /**
@@ -170,7 +170,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   DocumentWriter unsafe(CharSequence csq) throws IOException;
 
   /**
@@ -180,7 +180,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   DocumentWriter unsafe(CharSequence csq, int start, int end) throws IOException;
 
   /**
@@ -192,7 +192,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   DocumentWriter unsafe(Object unsafe) throws IOException;
 
   /**
@@ -206,7 +206,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   <Ex extends Throwable> DocumentWriter unsafe(IOSupplierE<?, Ex> unsafe) throws IOException, Ex;
 
   /**
@@ -218,7 +218,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   DocumentWriter unsafe(Writable unsafe) throws IOException;
 
   /**
@@ -232,7 +232,7 @@ public interface DocumentWriter extends Whitespace {
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   <W extends Writer & NoClose> W unsafe() throws IOException;
 
   // </editor-fold>

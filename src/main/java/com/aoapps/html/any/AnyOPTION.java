@@ -106,7 +106,7 @@ public abstract class AnyOPTION<
    *              effect of label can be attained through the value attribute and
    *              tag body anyway.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public E label(Object label) throws IOException {
     return com.aoapps.html.any.attributes.text.Label.super.label(label);
@@ -126,7 +126,7 @@ public abstract class AnyOPTION<
    *              effect of label can be attained through the value attribute and
    *              tag body anyway.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public <Ex extends Throwable> E label(IOSupplierE<?, Ex> label) throws IOException, Ex {
     return com.aoapps.html.any.attributes.text.Label.super.label(label);
@@ -146,7 +146,7 @@ public abstract class AnyOPTION<
    *              effect of label can be attained through the value attribute and
    *              tag body anyway.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   public <Ex extends Throwable> E label(TextWritable<Ex> label) throws IOException, Ex {
     return com.aoapps.html.any.attributes.text.Label.super.label(label);

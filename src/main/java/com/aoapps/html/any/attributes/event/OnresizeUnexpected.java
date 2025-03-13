@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -50,7 +50,7 @@ import java.io.IOException;
  * @author  AO Industries, Inc.
  */
 // Matches Onresize
-@Deprecated
+@Deprecated(forRemoval = false)
 public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpected<E>> {
 
   /**
@@ -67,7 +67,7 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
    * @deprecated  Although the onresize attribute is global, it is only expected on
    *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Attributes.Funnel
   default E onresize(Object onresize) throws IOException {
     @SuppressWarnings("unchecked")
@@ -94,7 +94,7 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
    * @deprecated  Although the onresize attribute is global, it is only expected on
    *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onresize(IOSupplierE<?, Ex> onresize) throws IOException, Ex {
     return onresize((onresize == null) ? null : onresize.get());
   }
@@ -117,7 +117,7 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
    * @deprecated  Although the onresize attribute is global, it is only expected on
    *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   default <Ex extends Throwable> E onresize(JavaScriptWritable<Ex> onresize) throws IOException, Ex {
     return onresize((Object) onresize);
   }

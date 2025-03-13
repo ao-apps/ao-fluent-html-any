@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -99,7 +99,7 @@ public interface AnyFlowContent<
    *
    * @deprecated  TODO: Implement dialog
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("dialog")
   default AnyDIALOG dialog() throws IOException {
     throw new AssertionError("TODO: Implement dialog");

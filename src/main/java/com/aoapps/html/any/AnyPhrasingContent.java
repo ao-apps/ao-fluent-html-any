@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -447,7 +447,7 @@ public interface AnyPhrasingContent<
    *
    * @deprecated  TODO: Implement slot
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Factory("slot")
   default AnySLOT slot() throws IOException {
     throw new AssertionError("TODO: Implement slot");

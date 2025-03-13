@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -78,7 +78,7 @@ public interface AnyTextContent<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ indent() throws IOException {
     Content.super.indent();
@@ -92,7 +92,7 @@ public interface AnyTextContent<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ indent(int depthOffset) throws IOException {
     Content.super.indent(depthOffset);
@@ -106,7 +106,7 @@ public interface AnyTextContent<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ setIndent(boolean indent) {
     Content.super.setIndent(indent);
@@ -120,7 +120,7 @@ public interface AnyTextContent<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ setDepth(int depth) {
     Content.super.setDepth(depth);
@@ -134,7 +134,7 @@ public interface AnyTextContent<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ incDepth() {
     Content.super.incDepth();
@@ -148,7 +148,7 @@ public interface AnyTextContent<
    *
    * @deprecated  Deprecated to keep out of the way in code assist, since this not expected to be used normally.
    */
-  @Deprecated
+  @Deprecated(forRemoval = false)
   @Override
   default __ decDepth() {
     Content.super.decDepth();
