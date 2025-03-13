@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2021, 2022, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -608,9 +608,6 @@ public abstract class Element<
 
   /**
    * Writes the beginning of the opening tag.
-   *
-   * @return  The element instance to use.
-   *          This may substitute the element with a different instance, when appropriate.
    */
-  protected abstract E writeOpen(Writer unsafe) throws IOException;
+  protected abstract void writeOpen(Writer unsafe) throws IOException;
 }

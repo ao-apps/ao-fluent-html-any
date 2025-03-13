@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -98,11 +98,9 @@ public abstract class AnyINPUT<
   }
 
   @Override
-  protected E writeOpen(Writer unsafe) throws IOException {
+  protected void writeOpen(Writer unsafe) throws IOException {
     document.autoIndent(unsafe).unsafe(unsafe, "<input", false);
     openWriteType(unsafe);
-    @SuppressWarnings("unchecked") E element = (E) this;
-    return element;
   }
 
   protected abstract void openWriteType(Writer unsafe) throws IOException;
@@ -431,7 +429,8 @@ public abstract class AnyINPUT<
         encodeTextInXhtmlAttribute(type, unsafe);
         unsafe.append('"');
       }
-      @SuppressWarnings("unchecked") E element = (E) this;
+      @SuppressWarnings("unchecked")
+      E element = (E) this;
       return element;
     }
 
@@ -475,7 +474,8 @@ public abstract class AnyINPUT<
         unsafe.write(type.value); // No encoding, is a known safe value.  TODO: Assert this above in static initializer?
         unsafe.append('"');
       }
-      @SuppressWarnings("unchecked") E element = (E) this;
+      @SuppressWarnings("unchecked")
+      E element = (E) this;
       return element;
     }
 
@@ -487,7 +487,8 @@ public abstract class AnyINPUT<
       assert this.type == null || this.type.equals(this.type.toLowerCase(Locale.ROOT));
       assert this.type == null || this.type.equals(this.type.trim());
       Type typeEnum = Type.byLowerValue.get(this.type);
-      @SuppressWarnings("unchecked") E element = (E) this;
+      @SuppressWarnings("unchecked")
+      E element = (E) this;
       return Attributes.Text.attribute(
         element,
         "value",
@@ -535,7 +536,8 @@ public abstract class AnyINPUT<
      */
     @Override
     public E value(Object value) throws IOException {
-      @SuppressWarnings("unchecked") E element = (E) this;
+      @SuppressWarnings("unchecked")
+      E element = (E) this;
       return Attributes.Text.attribute(
         element,
         "value",
@@ -1566,7 +1568,8 @@ public abstract class AnyINPUT<
      */
     @Override
     public E value(Object value) throws IOException {
-      @SuppressWarnings("unchecked") E element = (E) this;
+      @SuppressWarnings("unchecked")
+      E element = (E) this;
       return Attributes.Text.attribute(
         element,
         "value",
@@ -1757,7 +1760,8 @@ public abstract class AnyINPUT<
      */
     @Override
     public E value(Object value) throws IOException {
-      @SuppressWarnings("unchecked") E element = (E) this;
+      @SuppressWarnings("unchecked")
+      E element = (E) this;
       return Attributes.Text.attribute(
         element,
         "value",

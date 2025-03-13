@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -164,13 +164,10 @@ public abstract class AnySTYLE<
   }
 
   @Override
-  protected E writeOpen(Writer unsafe) throws IOException {
+  protected void writeOpen(Writer unsafe) throws IOException {
     document.autoNli(unsafe).unsafe(unsafe, "<style", false);
     E s = type();
     assert s == this;
-    @SuppressWarnings("unchecked")
-    E element = (E) this;
-    return element;
   }
 
   /**
