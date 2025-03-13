@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -149,7 +149,7 @@ public interface Wrap<
    * @see #wrap(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E wrap(IOSupplierE<? extends V, Ex> wrap) throws IOException, Ex {
+  default <Ex extends Throwable> E wrap(IOSupplierE<V, Ex> wrap) throws IOException, Ex {
     return wrap((wrap == null) ? null : wrap.get());
   }
 

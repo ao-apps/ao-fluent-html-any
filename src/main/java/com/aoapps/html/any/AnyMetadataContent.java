@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -158,7 +158,7 @@ public interface AnyMetadataContent<
    * @param  <Ex>  An arbitrary exception type that may be thrown
    */
   @Factory("style")
-  <Ex extends Throwable> AnySTYLE<D, __, ?> style(IOSupplierE<? extends AnySTYLE.Type, Ex> type) throws IOException, Ex;
+  <Ex extends Throwable> AnySTYLE<D, __, ?> style(IOSupplierE<AnySTYLE.Type, Ex> type) throws IOException, Ex;
 
   // TODO: style__() - go directly to out, since no attributes? Lambda versions, too
   // TODO: A version called HtmlWriter that extends ChainWriter to avoid all this passing of appendables?

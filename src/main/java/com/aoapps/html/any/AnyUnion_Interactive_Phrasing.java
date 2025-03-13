@@ -91,7 +91,7 @@ public interface AnyUnion_Interactive_Phrasing<
    * @param  <Ex>  An arbitrary exception type that may be thrown
    */
   @Factory("a")
-  default <Ex extends Throwable> AnyA<D, __, ?, ?> a(IOSupplierE<? extends String, Ex> href) throws IOException, Ex {
+  default <Ex extends Throwable> AnyA<D, __, ?, ?> a(IOSupplierE<String, Ex> href) throws IOException, Ex {
     return a().href(href);
   }
 
@@ -290,7 +290,7 @@ public interface AnyUnion_Interactive_Phrasing<
      * @param  <Ex>  An arbitrary exception type that may be thrown
      */
     // TODO: Move these type Input.type only?
-    public <Ex extends Throwable> AnyINPUT.Dynamic<D, __, ?> dynamic(IOSupplierE<? extends AnyINPUT.Dynamic.Type, Ex> type) throws IOException, Ex {
+    public <Ex extends Throwable> AnyINPUT.Dynamic<D, __, ?> dynamic(IOSupplierE<AnyINPUT.Dynamic.Type, Ex> type) throws IOException, Ex {
       return dynamic((type == null) ? null : type.get());
     }
 

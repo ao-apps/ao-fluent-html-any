@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -64,7 +64,7 @@ public interface Span<E extends Element<?, ?, E> & Span<E>> {
    *
    * @see #span(java.lang.Integer)
    */
-  default <Ex extends Throwable> E span(IOSupplierE<? extends Integer, Ex> span) throws IOException, Ex {
+  default <Ex extends Throwable> E span(IOSupplierE<Integer, Ex> span) throws IOException, Ex {
     return span((span == null) ? null : span.get());
   }
 }

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -68,7 +68,7 @@ public interface Cols<E extends Element<?, ?, E> & Cols<E>> {
    *
    * @see #cols(java.lang.Integer)
    */
-  default <Ex extends Throwable> E cols(IOSupplierE<? extends Integer, Ex> cols) throws IOException, Ex {
+  default <Ex extends Throwable> E cols(IOSupplierE<Integer, Ex> cols) throws IOException, Ex {
     return cols((cols == null) ? null : cols.get());
   }
 }

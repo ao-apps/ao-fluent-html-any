@@ -104,7 +104,7 @@ public interface Cellpadding<E extends Element<?, ?, E> & Cellpadding<E>> {
    */
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E cellpadding(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+  default <Ex extends Throwable> E cellpadding(IOSupplierE<Integer, Ex> pixels) throws IOException, Ex {
     return cellpadding((pixels == null) ? null : pixels.get());
   }
 

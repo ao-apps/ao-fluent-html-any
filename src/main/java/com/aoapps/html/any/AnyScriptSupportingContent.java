@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -117,7 +117,7 @@ public interface AnyScriptSupportingContent<
    * @param  <Ex>  An arbitrary exception type that may be thrown
    */
   @Factory("script")
-  <Ex extends Throwable> AnySCRIPT<D, __, ?> script(IOSupplierE<? extends AnySCRIPT.Type, Ex> type) throws IOException, Ex;
+  <Ex extends Throwable> AnySCRIPT<D, __, ?> script(IOSupplierE<AnySCRIPT.Type, Ex> type) throws IOException, Ex;
   // </editor-fold>
   // Inherited: TEMPLATE
 }

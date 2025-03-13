@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -63,7 +63,7 @@ public interface Disabled<E extends Element<?, ?, E> & Disabled<E>> {
    *
    * @see #disabled(java.lang.Boolean)
    */
-  default <Ex extends Throwable> E disabled(IOSupplierE<? extends Boolean, Ex> disabled) throws IOException, Ex {
+  default <Ex extends Throwable> E disabled(IOSupplierE<Boolean, Ex> disabled) throws IOException, Ex {
     return disabled((disabled == null) ? null : disabled.get());
   }
 }

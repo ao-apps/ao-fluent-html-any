@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -105,7 +105,7 @@ public interface Formaction<E extends Element<?, ?, E> & Formaction<E>> {
    *
    * @see #formaction(java.lang.String)
    */
-  default <Ex extends Throwable> E formaction(IOSupplierE<? extends String, Ex> formaction) throws IOException, Ex {
+  default <Ex extends Throwable> E formaction(IOSupplierE<String, Ex> formaction) throws IOException, Ex {
     return formaction((formaction == null) ? null : formaction.get());
   }
 }

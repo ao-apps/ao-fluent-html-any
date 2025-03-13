@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -92,7 +92,7 @@ public interface Formnovalidate<E extends Element<?, ?, E> & Formnovalidate<E>> 
    *
    * @see #formnovalidate(java.lang.Boolean)
    */
-  default <Ex extends Throwable> E formnovalidate(IOSupplierE<? extends Boolean, Ex> formnovalidate) throws IOException, Ex {
+  default <Ex extends Throwable> E formnovalidate(IOSupplierE<Boolean, Ex> formnovalidate) throws IOException, Ex {
     return formnovalidate((formnovalidate == null) ? null : formnovalidate.get());
   }
 }

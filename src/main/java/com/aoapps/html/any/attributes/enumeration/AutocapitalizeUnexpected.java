@@ -166,7 +166,7 @@ public interface AutocapitalizeUnexpected<E extends Element<?, ?, E> & Autocapit
    */
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E autocapitalize(IOSupplierE<? extends Autocapitalize.Value, Ex> autocapitalize) throws IOException, Ex {
+  default <Ex extends Throwable> E autocapitalize(IOSupplierE<Autocapitalize.Value, Ex> autocapitalize) throws IOException, Ex {
     return autocapitalize((autocapitalize == null) ? null : autocapitalize.get());
   }
 }

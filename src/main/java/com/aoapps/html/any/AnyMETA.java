@@ -218,7 +218,7 @@ public abstract class AnyMETA<
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
   @Override
-  public <Ex extends Throwable> E charset(IOSupplierE<? extends com.aoapps.html.any.attributes.enumeration.Charset.Value, Ex> charset) throws IOException, Ex {
+  public <Ex extends Throwable> E charset(IOSupplierE<com.aoapps.html.any.attributes.enumeration.Charset.Value, Ex> charset) throws IOException, Ex {
     return com.aoapps.html.any.attributes.enumeration.Charset.super.charset(charset);
   }
 

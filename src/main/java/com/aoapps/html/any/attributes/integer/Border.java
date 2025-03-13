@@ -75,7 +75,7 @@ public interface Border<E extends Element<?, ?, E> & Border<E>> {
    */
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E border(IOSupplierE<? extends Integer, Ex> border) throws IOException, Ex {
+  default <Ex extends Throwable> E border(IOSupplierE<Integer, Ex> border) throws IOException, Ex {
     return border((border == null) ? null : border.get());
   }
 }

@@ -99,7 +99,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    * @see #coords(java.lang.String)
    */
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E coords(IOSupplierE<? extends String, Ex> coords) throws IOException, Ex {
+  default <Ex extends Throwable> E coords(IOSupplierE<String, Ex> coords) throws IOException, Ex {
     return coords((coords == null) ? null : coords.get());
   }
 

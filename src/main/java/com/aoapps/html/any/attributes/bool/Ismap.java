@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -63,7 +63,7 @@ public interface Ismap<E extends Element<?, ?, E> & Ismap<E>> {
    *
    * @see #ismap(java.lang.Boolean)
    */
-  default <Ex extends Throwable> E ismap(IOSupplierE<? extends Boolean, Ex> ismap) throws IOException, Ex {
+  default <Ex extends Throwable> E ismap(IOSupplierE<Boolean, Ex> ismap) throws IOException, Ex {
     return ismap((ismap == null) ? null : ismap.get());
   }
 }

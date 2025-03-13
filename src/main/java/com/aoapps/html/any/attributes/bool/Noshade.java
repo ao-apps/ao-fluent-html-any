@@ -75,7 +75,7 @@ public interface Noshade<E extends Element<?, ?, E> & Noshade<E>> {
    * @deprecated  The noshade attribute of <code>&lt;hr&gt;</code> is not supported in HTML5. Use CSS instead.
    */
   @Deprecated(forRemoval = false)
-  default <Ex extends Throwable> E noshade(IOSupplierE<? extends Boolean, Ex> noshade) throws IOException, Ex {
+  default <Ex extends Throwable> E noshade(IOSupplierE<Boolean, Ex> noshade) throws IOException, Ex {
     return noshade((noshade == null) ? null : noshade.get());
   }
 }

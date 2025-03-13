@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -66,7 +66,7 @@ public interface Readonly<E extends Element<?, ?, E> & Readonly<E>> {
    *
    * @see #readonly(java.lang.Boolean)
    */
-  default <Ex extends Throwable> E readonly(IOSupplierE<? extends Boolean, Ex> readonly) throws IOException, Ex {
+  default <Ex extends Throwable> E readonly(IOSupplierE<Boolean, Ex> readonly) throws IOException, Ex {
     return readonly((readonly == null) ? null : readonly.get());
   }
 }

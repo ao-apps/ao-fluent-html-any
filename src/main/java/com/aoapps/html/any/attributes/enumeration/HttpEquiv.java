@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -131,7 +131,7 @@ public interface HttpEquiv<
    * @see #httpEquiv(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E httpEquiv(IOSupplierE<? extends V, Ex> httpEquiv) throws IOException, Ex {
+  default <Ex extends Throwable> E httpEquiv(IOSupplierE<V, Ex> httpEquiv) throws IOException, Ex {
     return httpEquiv((httpEquiv == null) ? null : httpEquiv.get());
   }
 }

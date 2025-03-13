@@ -129,7 +129,7 @@ public interface AnyUnion_Embedded_Interactive<
    * @param  <Ex>  An arbitrary exception type that may be thrown
    */
   @Factory("img")
-  <Ex extends Throwable> AnyIMG<D, __, ?> img(IOSupplierE<? extends String, Ex> src) throws IOException, Ex;
+  <Ex extends Throwable> AnyIMG<D, __, ?> img(IOSupplierE<String, Ex> src) throws IOException, Ex;
 
   // </editor-fold>
   // <editor-fold defaultstate="collapsed" desc="OBJECT">

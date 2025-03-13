@@ -95,7 +95,7 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
    * @see #width(java.lang.Integer)
    */
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+  default <Ex extends Throwable> E width(IOSupplierE<Integer, Ex> pixels) throws IOException, Ex {
     return width((pixels == null) ? null : pixels.get());
   }
 

@@ -129,7 +129,7 @@ public interface Valign<
    */
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E valign(IOSupplierE<? extends V, Ex> valign) throws IOException, Ex {
+  default <Ex extends Throwable> E valign(IOSupplierE<V, Ex> valign) throws IOException, Ex {
     return valign((valign == null) ? null : valign.get());
   }
 }

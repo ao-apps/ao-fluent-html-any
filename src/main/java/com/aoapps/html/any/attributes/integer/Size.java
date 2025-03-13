@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -65,7 +65,7 @@ public interface Size<E extends Element<?, ?, E> & Size<E>> {
    *
    * @see #size(java.lang.Integer)
    */
-  default <Ex extends Throwable> E size(IOSupplierE<? extends Integer, Ex> size) throws IOException, Ex {
+  default <Ex extends Throwable> E size(IOSupplierE<Integer, Ex> size) throws IOException, Ex {
     return size((size == null) ? null : size.get());
   }
 }

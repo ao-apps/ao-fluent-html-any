@@ -129,7 +129,7 @@ public interface Align<
    */
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E align(IOSupplierE<? extends V, Ex> align) throws IOException, Ex {
+  default <Ex extends Throwable> E align(IOSupplierE<V, Ex> align) throws IOException, Ex {
     return align((align == null) ? null : align.get());
   }
 }

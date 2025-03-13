@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -92,7 +92,7 @@ public interface Cite<E extends Element<?, ?, E> & Cite<E>> {
    *
    * @see #cite(java.lang.String)
    */
-  default <Ex extends Throwable> E cite(IOSupplierE<? extends String, Ex> cite) throws IOException, Ex {
+  default <Ex extends Throwable> E cite(IOSupplierE<String, Ex> cite) throws IOException, Ex {
     return cite((cite == null) ? null : cite.get());
   }
 }

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -72,7 +72,7 @@ public interface Async<E extends Element<?, ?, E> & Async<E>> {
    *
    * @see #async(java.lang.Boolean)
    */
-  default <Ex extends Throwable> E async(IOSupplierE<? extends Boolean, Ex> async) throws IOException, Ex {
+  default <Ex extends Throwable> E async(IOSupplierE<Boolean, Ex> async) throws IOException, Ex {
     return async((async == null) ? null : async.get());
   }
 }

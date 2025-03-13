@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -76,7 +76,7 @@ public interface Action<E extends Element<?, ?, E> & Action<E>> {
    *
    * @see #action(java.lang.String)
    */
-  default <Ex extends Throwable> E action(IOSupplierE<? extends String, Ex> action) throws IOException, Ex {
+  default <Ex extends Throwable> E action(IOSupplierE<String, Ex> action) throws IOException, Ex {
     return action((action == null) ? null : action.get());
   }
 }

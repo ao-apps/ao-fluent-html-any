@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -76,7 +76,7 @@ public interface Src<E extends Element<?, ?, E> & Src<E>> {
    *
    * @see #src(java.lang.String)
    */
-  default <Ex extends Throwable> E src(IOSupplierE<? extends String, Ex> src) throws IOException, Ex {
+  default <Ex extends Throwable> E src(IOSupplierE<String, Ex> src) throws IOException, Ex {
     return src((src == null) ? null : src.get());
   }
 }

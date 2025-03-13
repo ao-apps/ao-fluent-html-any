@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -72,7 +72,7 @@ public interface Multiple<E extends Element<?, ?, E> & Multiple<E>> {
    *
    * @see #multiple(java.lang.Boolean)
    */
-  default <Ex extends Throwable> E multiple(IOSupplierE<? extends Boolean, Ex> multiple) throws IOException, Ex {
+  default <Ex extends Throwable> E multiple(IOSupplierE<Boolean, Ex> multiple) throws IOException, Ex {
     return multiple((multiple == null) ? null : multiple.get());
   }
 }

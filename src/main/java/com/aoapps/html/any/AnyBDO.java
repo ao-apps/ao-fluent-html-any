@@ -140,7 +140,7 @@ public abstract class AnyBDO<
    * @param  <Ex>  An arbitrary exception type that may be thrown
    */
   @Override
-  public <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
+  public <Ex extends Throwable> E dir(IOSupplierE<Value, Ex> dir) throws IOException, Ex {
     return super.dir(dir);
   }
 }

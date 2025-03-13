@@ -104,7 +104,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
    */
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E cellspacing(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+  default <Ex extends Throwable> E cellspacing(IOSupplierE<Integer, Ex> pixels) throws IOException, Ex {
     return cellspacing((pixels == null) ? null : pixels.get());
   }
 

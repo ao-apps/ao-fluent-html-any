@@ -313,7 +313,7 @@ public abstract class AnyLINK<
    * @see #rel(com.aoapps.html.AnyLINK.Rel)
    */
   @Override
-  public <Ex extends Throwable> E rel(IOSupplierE<? extends Rel, Ex> rel) throws IOException, Ex {
+  public <Ex extends Throwable> E rel(IOSupplierE<Rel, Ex> rel) throws IOException, Ex {
     return com.aoapps.html.any.attributes.enumeration.Rel.super.rel(rel);
   }
 

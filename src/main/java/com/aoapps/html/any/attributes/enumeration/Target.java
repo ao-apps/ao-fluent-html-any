@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -132,7 +132,7 @@ public interface Target<
    * @see #target(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E target(IOSupplierE<? extends V, Ex> target) throws IOException, Ex {
+  default <Ex extends Throwable> E target(IOSupplierE<V, Ex> target) throws IOException, Ex {
     return target((target == null) ? null : target.get());
   }
 

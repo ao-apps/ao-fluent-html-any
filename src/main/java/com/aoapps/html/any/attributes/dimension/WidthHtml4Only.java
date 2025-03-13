@@ -76,7 +76,7 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
   @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E width(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+  default <Ex extends Throwable> E width(IOSupplierE<Integer, Ex> pixels) throws IOException, Ex {
     return Width.super.width(pixels);
   }
 

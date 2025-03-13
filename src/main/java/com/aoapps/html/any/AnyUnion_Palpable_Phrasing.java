@@ -421,7 +421,7 @@ public interface AnyUnion_Palpable_Phrasing<
    * @param  dir  <em>The <code>auto</code> value must not be specified.</em>
    */
   @Factory("bdo")
-  <Ex extends Throwable> AnyBDO<D, __, ?, ?, ?> bdo(IOSupplierE<? extends Dir.Value, Ex> dir) throws IOException, Ex;
+  <Ex extends Throwable> AnyBDO<D, __, ?, ?, ?> bdo(IOSupplierE<Dir.Value, Ex> dir) throws IOException, Ex;
 
   /**
    * Creates a bdo element with the given dir attribute and the given body.
@@ -1365,7 +1365,7 @@ public interface AnyUnion_Palpable_Phrasing<
    * @param  <Ex>  An arbitrary exception type that may be thrown
    */
   @Factory("map")
-  default <Ex extends Throwable> AnyMAP<D, __, ?, ?> map(IOSupplierE<? extends String, Ex> name) throws IOException, Ex {
+  default <Ex extends Throwable> AnyMAP<D, __, ?, ?> map(IOSupplierE<String, Ex> name) throws IOException, Ex {
     return map().name(name);
   }
 

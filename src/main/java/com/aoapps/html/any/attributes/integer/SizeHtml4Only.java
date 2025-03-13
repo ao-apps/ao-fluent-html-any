@@ -76,7 +76,7 @@ public interface SizeHtml4Only<E extends Element<?, ?, E> & SizeHtml4Only<E>> ex
    */
   @Deprecated(forRemoval = false)
   @Override
-  default <Ex extends Throwable> E size(IOSupplierE<? extends Integer, Ex> size) throws IOException, Ex {
+  default <Ex extends Throwable> E size(IOSupplierE<Integer, Ex> size) throws IOException, Ex {
     return Size.super.size(size);
   }
 }

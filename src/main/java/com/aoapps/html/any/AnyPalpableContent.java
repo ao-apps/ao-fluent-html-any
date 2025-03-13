@@ -526,7 +526,7 @@ public interface AnyPalpableContent<
    * @param  <Ex>  An arbitrary exception type that may be thrown
    */
   @Factory("form")
-  <Ex extends Throwable> AnyFORM<D, __, ?, ?, ?> form(IOSupplierE<? extends String, Ex> action) throws IOException, Ex;
+  <Ex extends Throwable> AnyFORM<D, __, ?, ?, ?> form(IOSupplierE<String, Ex> action) throws IOException, Ex;
 
   /**
    * Creates a form element with no attributes and the given body.

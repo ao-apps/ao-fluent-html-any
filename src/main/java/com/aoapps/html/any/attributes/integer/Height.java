@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -65,7 +65,7 @@ public interface Height<E extends Element<?, ?, E> & Height<E>> {
    *
    * @see #height(java.lang.Integer)
    */
-  default <Ex extends Throwable> E height(IOSupplierE<? extends Integer, Ex> pixels) throws IOException, Ex {
+  default <Ex extends Throwable> E height(IOSupplierE<Integer, Ex> pixels) throws IOException, Ex {
     return height((pixels == null) ? null : pixels.get());
   }
 }

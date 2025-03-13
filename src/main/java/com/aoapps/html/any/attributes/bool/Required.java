@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -84,7 +84,7 @@ public interface Required<E extends Element<?, ?, E> & Required<E>> {
    *
    * @see #required(java.lang.Boolean)
    */
-  default <Ex extends Throwable> E required(IOSupplierE<? extends Boolean, Ex> required) throws IOException, Ex {
+  default <Ex extends Throwable> E required(IOSupplierE<Boolean, Ex> required) throws IOException, Ex {
     return required((required == null) ? null : required.get());
   }
 }

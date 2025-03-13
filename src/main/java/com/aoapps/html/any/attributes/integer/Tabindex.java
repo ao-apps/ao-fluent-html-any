@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -111,7 +111,7 @@ public interface Tabindex<E extends Element<?, ?, E> & Tabindex<E>> {
    *
    * @see #tabindex(java.lang.Integer)
    */
-  default <Ex extends Throwable> E tabindex(IOSupplierE<? extends Integer, Ex> tabindex) throws IOException, Ex {
+  default <Ex extends Throwable> E tabindex(IOSupplierE<Integer, Ex> tabindex) throws IOException, Ex {
     return tabindex((tabindex == null) ? null : tabindex.get());
   }
 }

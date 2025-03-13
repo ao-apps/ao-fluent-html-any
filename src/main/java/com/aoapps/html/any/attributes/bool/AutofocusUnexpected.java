@@ -142,7 +142,7 @@ public interface AutofocusUnexpected<E extends Element<?, ?, E> & AutofocusUnexp
    */
   @Deprecated(forRemoval = false)
   @Override
-  default <Ex extends Throwable> E autofocus(IOSupplierE<? extends Boolean, Ex> autofocus) throws IOException, Ex {
+  default <Ex extends Throwable> E autofocus(IOSupplierE<Boolean, Ex> autofocus) throws IOException, Ex {
     return Autofocus.super.autofocus(autofocus);
   }
 }

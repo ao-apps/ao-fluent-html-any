@@ -163,7 +163,7 @@ public interface CharsetHtml4Only<
   @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E charset(IOSupplierE<? extends V, Ex> charset) throws IOException, Ex {
+  default <Ex extends Throwable> E charset(IOSupplierE<V, Ex> charset) throws IOException, Ex {
     return Charset.super.charset(charset);
   }
 }

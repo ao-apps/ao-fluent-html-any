@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -63,7 +63,7 @@ public interface Checked<E extends Element<?, ?, E> & Checked<E>> {
    *
    * @see #checked(java.lang.Boolean)
    */
-  default <Ex extends Throwable> E checked(IOSupplierE<? extends Boolean, Ex> checked) throws IOException, Ex {
+  default <Ex extends Throwable> E checked(IOSupplierE<Boolean, Ex> checked) throws IOException, Ex {
     return checked((checked == null) ? null : checked.get());
   }
 }

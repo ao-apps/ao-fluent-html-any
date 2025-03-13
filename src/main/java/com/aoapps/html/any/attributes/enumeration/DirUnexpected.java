@@ -165,7 +165,7 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
   @Deprecated(forRemoval = false)
   @Override
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
+  default <Ex extends Throwable> E dir(IOSupplierE<Value, Ex> dir) throws IOException, Ex {
     return Dir.super.dir(dir);
   }
 }

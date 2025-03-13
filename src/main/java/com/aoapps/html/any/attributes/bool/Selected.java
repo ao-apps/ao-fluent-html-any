@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -63,7 +63,7 @@ public interface Selected<E extends Element<?, ?, E> & Selected<E>> {
    *
    * @see #selected(java.lang.Boolean)
    */
-  default <Ex extends Throwable> E selected(IOSupplierE<? extends Boolean, Ex> selected) throws IOException, Ex {
+  default <Ex extends Throwable> E selected(IOSupplierE<Boolean, Ex> selected) throws IOException, Ex {
     return selected((selected == null) ? null : selected.get());
   }
 }

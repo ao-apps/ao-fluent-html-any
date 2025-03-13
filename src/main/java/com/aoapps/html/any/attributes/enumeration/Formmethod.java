@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -139,7 +139,7 @@ public interface Formmethod<
    * @see #formmethod(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E formmethod(IOSupplierE<? extends V, Ex> formmethod) throws IOException, Ex {
+  default <Ex extends Throwable> E formmethod(IOSupplierE<V, Ex> formmethod) throws IOException, Ex {
     return formmethod((formmethod == null) ? null : formmethod.get());
   }
 }

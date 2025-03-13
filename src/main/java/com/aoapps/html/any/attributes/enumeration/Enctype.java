@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -133,7 +133,7 @@ public interface Enctype<
    * @see #enctype(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E enctype(IOSupplierE<? extends V, Ex> enctype) throws IOException, Ex {
+  default <Ex extends Throwable> E enctype(IOSupplierE<V, Ex> enctype) throws IOException, Ex {
     return enctype((enctype == null) ? null : enctype.get());
   }
 

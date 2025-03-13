@@ -144,7 +144,7 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
    */
   @Override
   @SuppressWarnings("overloads")
-  default <Ex extends Throwable> E autocapitalize(IOSupplierE<? extends Value, Ex> autocapitalize) throws IOException, Ex {
+  default <Ex extends Throwable> E autocapitalize(IOSupplierE<Value, Ex> autocapitalize) throws IOException, Ex {
     return AutocapitalizeUnexpected.super.autocapitalize(autocapitalize);
   }
 

@@ -134,7 +134,7 @@ public abstract class AnyBDI<
    * @since HTML 5
    */
   @Override
-  public <Ex extends Throwable> E dir(IOSupplierE<? extends Value, Ex> dir) throws IOException, Ex {
+  public <Ex extends Throwable> E dir(IOSupplierE<Value, Ex> dir) throws IOException, Ex {
     return super.dir(dir);
   }
 }

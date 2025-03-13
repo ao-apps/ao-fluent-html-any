@@ -329,7 +329,7 @@ public final class Attributes {
         E element,
         java.lang.String name,
         java.lang.String pixelsOrPercent,
-        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex1> normalizer,
+        FunctionE<? super java.lang.String, java.lang.String, Ex1> normalizer,
         FunctionE<? super java.lang.String, ValidationResult, Ex2> validator
     ) throws IOException, Ex1, Ex2 {
       return String.attribute(element, name, MarkupType.NONE, pixelsOrPercent, normalizer, validator);
@@ -345,7 +345,7 @@ public final class Attributes {
         E element,
         java.lang.String name,
         java.lang.String pixelsOrPercent,
-        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex> normalizer
+        FunctionE<? super java.lang.String, java.lang.String, Ex> normalizer
     ) throws IOException, Ex {
       return String.attribute(element, name, MarkupType.NONE, pixelsOrPercent, normalizer);
     }
@@ -495,7 +495,7 @@ public final class Attributes {
         java.lang.String name,
         MarkupType markupType,
         java.lang.String value,
-        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex1> normalizer,
+        FunctionE<? super java.lang.String, java.lang.String, Ex1> normalizer,
         FunctionE<? super java.lang.String, ValidationResult, Ex2> validator
     ) throws IOException, Ex1, Ex2 {
       if (value != null) {
@@ -566,7 +566,7 @@ public final class Attributes {
         java.lang.String name,
         MarkupType markupType,
         java.lang.String value,
-        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex> normalizer
+        FunctionE<? super java.lang.String, java.lang.String, Ex> normalizer
     ) throws IOException, Ex {
       return attribute(element, name, markupType, value, normalizer, null);
     }
@@ -863,7 +863,7 @@ public final class Attributes {
         E element,
         java.lang.String name,
         java.lang.String url,
-        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex1> normalizer,
+        FunctionE<? super java.lang.String, java.lang.String, Ex1> normalizer,
         FunctionE<? super java.lang.String, ValidationResult, Ex2> validator
     ) throws IOException, Ex1, Ex2 {
       if (url != null) {
@@ -896,7 +896,7 @@ public final class Attributes {
         E element,
         java.lang.String name,
         java.lang.String url,
-        FunctionE<? super java.lang.String, ? extends java.lang.String, Ex> normalizer
+        FunctionE<? super java.lang.String, java.lang.String, Ex> normalizer
     ) throws IOException, Ex {
       return attribute(element, name, url, normalizer, null);
     }
