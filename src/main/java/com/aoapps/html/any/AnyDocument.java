@@ -1306,13 +1306,13 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   @Override
   public MediaWriter encode(MediaType contentType) throws IOException {
     MediaEncoder encoder;
-      {
-        MediaEncoder myEncoder = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
-        if (myEncoder == null) {
-          myEncoder = new ValidateOnlyEncoder(xhtmlValidator);
-        }
-        encoder = myEncoder;
+    {
+      MediaEncoder myEncoder = MediaEncoder.getInstance(encodingContext, contentType, MediaType.XHTML);
+      if (myEncoder == null) {
+        myEncoder = new ValidateOnlyEncoder(xhtmlValidator);
       }
+      encoder = myEncoder;
+    }
     Writer encoderOptimized = Coercion.optimize(getRawUnsafe(null), encoder);
     encoder.writePrefixTo(encoderOptimized);
     return contentType.newMediaWriter(
