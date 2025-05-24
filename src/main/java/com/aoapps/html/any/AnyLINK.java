@@ -336,7 +336,7 @@ public abstract class AnyLINK<
                 && rel != null
                 && rel.equalsIgnoreCase(Rel.STYLESHEET.toString())
                 && ContentType.CSS.equalsIgnoreCase(type)
-        )
+          )
     ) {
       Writer unsafe = document.getRawUnsafe(null);
       if (document.getAtnl()) {
