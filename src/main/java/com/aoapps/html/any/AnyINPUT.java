@@ -85,10 +85,10 @@ public abstract class AnyINPUT<
     Doctype doctype = document.encodingContext.getDoctype();
     if (doctype != Doctype.HTML5) {
       throw new LocalizedUnsupportedOperationException(
-        RESOURCES,
-        "typeOnlySupportedInHtml5",
-        doctype,
-        type.getValue()
+          RESOURCES,
+          "typeOnlySupportedInHtml5",
+          doctype,
+          type.getValue()
       );
     }
   }
@@ -455,11 +455,11 @@ public abstract class AnyINPUT<
         Doctype doctype = document.encodingContext.getDoctype();
         if (requiredDoctype != null && doctype != requiredDoctype) {
           throw new LocalizedUnsupportedEncodingException(
-            RESOURCES,
-            "typeRequiresDoctype",
-            type.value,
-            requiredDoctype,
-            doctype
+              RESOURCES,
+              "typeRequiresDoctype",
+              type.value,
+              requiredDoctype,
+              doctype
           );
         }
         this.type = type.value;
