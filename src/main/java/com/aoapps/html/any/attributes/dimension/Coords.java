@@ -274,7 +274,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    * <li>See <a href="https://www.w3schools.com/tags/att_coords.asp">HTML coords Attribute</a>.</li>
    * </ul>
    */
-  default E coords(Point ... poly) throws IOException {
+  default E coords(Point... poly) throws IOException {
     StringBuilder sb = new StringBuilder();
     if (poly != null) {
       for (Point p : poly) {

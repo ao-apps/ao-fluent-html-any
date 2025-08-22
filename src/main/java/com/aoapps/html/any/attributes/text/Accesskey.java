@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -106,7 +106,7 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
    *
    * @since HTML 5
    */
-  default E accesskey(int ... codePoints) throws IOException {
+  default E accesskey(int... codePoints) throws IOException {
     if (codePoints != null && codePoints.length > 0) {
       // Default size optimized for Unicode BMP
       StringBuilder accesskey = new StringBuilder(codePoints.length * 2 - 1);

@@ -145,7 +145,7 @@ public interface AccesskeyUnexpected<E extends Element<?, ?, E> & AccesskeyUnexp
    */
   @Deprecated(forRemoval = false)
   @Override
-  default E accesskey(int ... codePoints) throws IOException {
+  default E accesskey(int... codePoints) throws IOException {
     return Accesskey.super.accesskey(codePoints);
   }
 

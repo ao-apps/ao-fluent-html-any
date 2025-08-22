@@ -695,10 +695,10 @@ public interface AnyHeadingContent<
   //      __,
   //      ? extends H__<__, ?>,
   //      ? extends H_c<__, ?>
-  ////      ? extends H__<__, ? extends H__<__, ?>>,
-  ////      ? extends H_c<__, ? extends H_c<__, ?>>
-  ////      ? extends H__<__, ? extends H__<__, ? extends H__<__, ?>>>, // TODO: This nesting could go forever without self-referential generics
-  ////      ? extends H_c<__, ? extends H_c<__, ? extends H_c<__, ?>>>  // TODO: This nesting could go forever without self-referential generics
+  // //      ? extends H__<__, ? extends H__<__, ?>>,
+  // //      ? extends H_c<__, ? extends H_c<__, ?>>
+  // //      ? extends H__<__, ? extends H__<__, ? extends H__<__, ?>>>, // TODO: This nesting could go forever without self-referential generics
+  // //      ? extends H_c<__, ? extends H_c<__, ? extends H_c<__, ?>>>  // TODO: This nesting could go forever without self-referential generics
   //    >
   //  > H h(int rank) throws IOException {
   //    switch (rank) {

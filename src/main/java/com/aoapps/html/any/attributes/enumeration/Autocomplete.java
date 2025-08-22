@@ -162,7 +162,7 @@ public interface Autocomplete<
    * @since HTML 5
    */
   @Attributes.Funnel
-  default E autocomplete(String ... autocomplete) throws IOException {
+  default E autocomplete(String... autocomplete) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
     AnyDocument<?> document = element.getDocument();
@@ -210,7 +210,7 @@ public interface Autocomplete<
    */
   @Attributes.Funnel
   @SuppressWarnings({"unchecked", "deprecation"}) // generic varargs
-  default E autocomplete(V ... autocomplete) throws IOException {
+  default E autocomplete(V... autocomplete) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
     AnyDocument<?> document = element.getDocument();

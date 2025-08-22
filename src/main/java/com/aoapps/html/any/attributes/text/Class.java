@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -106,7 +106,7 @@ public interface Class<E extends Element<?, ?, E> & Class<E>> {
    * @param  clazz  Multiple classes will be space-separated.
    */
   @Attributes.Funnel
-  default E clazz(Object ... clazz) throws IOException {
+  default E clazz(Object... clazz) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
     return Attributes.Text.attribute(element, "class", MarkupType.NONE, clazz, " ", Class.clazz::normalize,

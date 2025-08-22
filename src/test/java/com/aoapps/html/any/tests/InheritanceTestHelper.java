@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,7 +49,7 @@ public final class InheritanceTestHelper {
       Predicate<? super Class<? extends C>> filter,
       Class<? extends C>[] all,
       Class<? extends C> clazz,
-      Class<? extends C> ... expected
+      Class<? extends C>... expected
   ) {
     // Check parameters
     for (Class<? extends C> iface : expected) {
@@ -106,7 +106,7 @@ public final class InheritanceTestHelper {
     for (Class<?> iface : clazz.getInterfaces()) {
       if (testFromClazz.isAssignableFrom(iface)) {
         Class<? extends C> contentIface = iface.asSubclass(testFromClazz);
-        //System.out.println("Direct interface: " + contentIface);
+        // System.out.println("Direct interface: " + contentIface);
         Assert.assertFalse(
             clazz.getSimpleName() + " may not both directly implement and inherit " + contentIface.getSimpleName() + " - comment-out direct implements to be inherited-only.",
             inherited.contains(contentIface)

@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -221,7 +221,7 @@ public final class FactoryTestHelper {
     factoryNames.addAll(factories);
   }
 
-  public static void testFactories(Class<? extends Content> clazz, String ... expected) throws IOException {
+  public static void testFactories(Class<? extends Content> clazz, String... expected) throws IOException {
     String[] all = getAllFactories();
     Set<String> allSet = new HashSet<>(Arrays.asList(all));
     // Check parameters

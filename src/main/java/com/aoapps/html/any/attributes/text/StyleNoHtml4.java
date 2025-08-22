@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -85,7 +85,7 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
    */
   @Override
   @Attributes.Funnel
-  default E style(Object ... style) throws IOException {
+  default E style(Object... style) throws IOException {
     @SuppressWarnings("unchecked")
     E element = (E) this;
     return Attributes.Text.attribute(element, "style", MarkupType.CSS, style, ";", Style.style::normalize,

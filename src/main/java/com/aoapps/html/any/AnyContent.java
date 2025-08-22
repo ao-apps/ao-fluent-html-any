@@ -347,7 +347,7 @@ public interface AnyContent<
    */
   @Override
   @SuppressWarnings("deprecation")
-  //@Factory("tr")
+  // @Factory("tr")
   AnyTR<D, __, ?, ?, ?> tr() throws IOException;
 
   /**
@@ -357,7 +357,7 @@ public interface AnyContent<
    */
   @Override
   @SuppressWarnings("deprecation")
-  //@Factory("tr")
+  // @Factory("tr")
   default <Ex extends Throwable> __ tr__(IORunnableE<Ex> tr) throws IOException, Ex {
     return AnyTABLE_content.super.tr__(tr);
   }
@@ -369,7 +369,7 @@ public interface AnyContent<
    */
   @Override
   @SuppressWarnings("deprecation")
-  //@Factory("tr")
+  // @Factory("tr")
   default <Ex extends Throwable> __ tr__any(IOConsumerE<? super AnyTR__<D, __, ? extends AnyTR__<D, __, ?>>, Ex> tr) throws IOException, Ex {
     return AnyTABLE_content.super.tr__any(tr);
   }
@@ -379,7 +379,7 @@ public interface AnyContent<
    */
   @Override
   @SuppressWarnings("deprecation")
-  //@Factory("tr")
+  // @Factory("tr")
   default __ tr__() throws IOException {
     return AnyTABLE_content.super.tr__();
   }
