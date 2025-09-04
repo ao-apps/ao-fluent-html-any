@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -37,5 +37,5 @@ package com.aoapps.html.any;
 // TODO: implements Ontoggle<E>
 public abstract class AnyDETAILS {
   // TODO: Content: One summary element (AnySUMMARY) followed by flow content (AnyFlowContent).
-  // TODO
+  // TODO: Implement
 }

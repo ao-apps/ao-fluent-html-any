@@ -48,5 +48,5 @@ package com.aoapps.html.any;
 // TODO: implements Onresize<E>
 @Deprecated(forRemoval = false)
 public abstract class AnyFRAMESET {
-  // TODO
+  // TODO: Implement
 }

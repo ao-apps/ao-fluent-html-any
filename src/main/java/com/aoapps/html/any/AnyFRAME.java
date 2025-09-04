@@ -42,5 +42,5 @@ package com.aoapps.html.any;
 // TODO: implements Onload<E>
 @Deprecated(forRemoval = false)
 public abstract class AnyFRAME {
-  // TODO
+  // TODO: Implement
 }
