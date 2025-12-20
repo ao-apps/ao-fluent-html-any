@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
+Copyright (C) 2021, 2022, 2023, 2024, 2025  AO Industries, Inc.
+    support@aoindustries.com
+    7262 Bull Pen Cir
+    Mobile, AL 36695
+
+This file is part of ao-fluent-html-any.
+
+ao-fluent-html-any is free software: you can redistribute it and/or modify
+it under the terms of the GNU Lesser General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+ao-fluent-html-any is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public License
+along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
+-->
+<jsp:root
+  xmlns:ao="https://oss.aoapps.com/taglib/"
+  xmlns:c="http://java.sun.com/jsp/jstl/core"
+  xmlns:changelog="https://semanticcms.com/changelog/taglib/"
+  xmlns:core="https://semanticcms.com/core/taglib/"
+  xmlns:fn="http://java.sun.com/jsp/jstl/functions"
+  xmlns:jsp="http://java.sun.com/JSP/Page"
+  version="2.1"
+>
+  <jsp:directive.page language="java" pageEncoding="UTF-8" />
+  <jsp:directive.page session="false" />
+  <core:page
+    title="@{documented.name} Changelog"
+    shortTitle="Changelog"
+    tocLevels="1"
+    datePublished="2021-03-14T22:32:34-05:00"
+    dateModified="2025-07-02T23:05:45Z"
+  >
+    <c:set var="latestRelease" value="0.8.0" />
+    <c:if test="${
+      fn:endsWith('@{project.version}', '-SNAPSHOT')
+      and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')
+      and '@{project.version}' != (latestRelease.concat('-SNAPSHOT'))
+    }">
+      <changelog:release
+        projectName="@{documented.name}"
+        version="@{project.version}"
+        groupId="@{project.groupId}"
+        artifactId="@{documented.artifactId}"
+        scmUrl="@{project.scm.url}"
+      >
+        <ul>
+          <li>Updated to <ao:a href="https://checkstyle.org/releasenotes.html#Release_10.21.1">Checkstyle 10.21.1</ao:a>.</li>
+          <li>Minimum Java version changed from 1.8 to 11.</li>
+          <li>Internal implementation changes to reduce the number of casts.</li>
+        </ul>
+      </changelog:release>
+    </c:if>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.8.0"
+      datePublished="2024-05-08T21:00:44Z"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>
+          Added <code><ao:a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin">crossorigin</ao:a></code> attribute to
+          <code><ao:a href="https://html.spec.whatwg.org/multipage/embedded-content.html#the-img-element"><![CDATA[&lt;img&gt;]]></ao:a></code>
+          and <code><ao:a href="https://html.spec.whatwg.org/multipage/scripting.html#the-script-element"><![CDATA[&lt;script&gt;]]></ao:a></code>.
+        </li>
+        <li>
+          Replaced <code>trim</code> / <code>nullIfEmpty</code> boolean flags with <code>normalizer</code> and
+          <code>validator</code> functions.
+        </li>
+        <li>URL attributes are now trimmed and attribute will not be added when trims to empty.</li>
+      </ul>
+    </changelog:release>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.7.0"
+      datePublished="2022-05-13T23:12:42-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Added <code><ao:a href="https://www.w3schools.com/tags/att_global_tabindex.asp">tabindex</ao:a></code> attribute to remaining elements.</li>
+        <li>
+          The <code><ao:a href="https://html.spec.whatwg.org/multipage/interaction.html#attr-fe-autofocus">autofocus</ao:a></code>
+          attribute is now a <ao:a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes">global attribute</ao:a>.
+        </li>
+        <li>Implemented <code><ao:a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-textarea-element"><![CDATA[&lt;textarea&gt;]]></ao:a></code>.</li>
+        <li>
+          Changed <code><ao:a href="https://html.spec.whatwg.org/multipage/form-elements.html#the-option-element"><![CDATA[&lt;option&gt;]]></ao:a></code>
+          and <code><ao:a href="https://html.spec.whatwg.org/multipage/semantics.html#the-title-element"><![CDATA[&lt;title&gt;]]></ao:a></code>
+          from <code>MediaWritable</code> to <code>TextContent</code>.
+        </li>
+        <li>
+          Moved all event attributes to a single package <code>com.aoapps.html.any.attributes.event</code>.
+          Although the <ao:a href="https://www.w3schools.com/tags/ref_eventattributes.asp">event categories provided by w3schools</ao:a>
+          are conceptually helpful, they are not part of <ao:a href="https://html.spec.whatwg.org/multipage/">the HTML specification</ao:a>.
+        </li>
+        <li>Implemented many more <ao:a href="https://html.spec.whatwg.org/multipage/dom.html#global-attributes">global attributes</ao:a>.</li>
+        <li>Added very thorough doctype checks for all HTML 5 elements and attributes.</li>
+        <li>Annotated javadocs <code>@since HTML 5</code> for all HTML 5 elements and attributes.</li>
+        <li>
+          Moved all attributes from <code>com.aoapps.html.any.attributes.String</code> to
+          <code>com.aoapps.html.any.attributes.text</code>, making them now streamable.
+        </li>
+        <li>Implemented more <ao:a href="https://html.spec.whatwg.org/multipage/#toc-semantics">elements</ao:a>.</li>
+        <li>Added support for <code>java.nio.charset.Charset</code>.</li>
+        <li>
+          Removed self-referential generics that were emulating self-types.  Instead, manually overloading
+          all methods.  Although a bit tedious in the implementation, this cleans-up the API by removing
+          unnecessary type parameter.
+        </li>
+        <li>Removed <code>DocumentMediaWriter</code>.</li>
+        <li>
+          Made <code>AnyDocument.out</code> private and deprecated the <code>unsafe(…)</code> methods.
+          The <code>unsafe(…)</code> methods will remain, but their use is discouraged as it can be dangerous.
+          Renamed <code>getUnsafe()</code> to <code>getRawUnsafe()</code>.
+        </li>
+        <li>Optimized <code>AnyDocument.out</code> via <code>Coercion.optimize(Writer, null)</code>.</li>
+        <li>
+          Indentation changed from tab to two-space for consistency with the new
+          <core:link book="/checkstyle-config" page="/index.jspx" /> project, which itself is based on
+          <ao:a href="https://google.github.io/styleguide/javaguide.html">Google Java Style Guide</ao:a>.
+        </li>
+        <li>Performed <ao:a href="https://checkstyle.org/">Checkstyle</ao:a> clean-up.</li>
+      </ul>
+    </changelog:release>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.6.1"
+      datePublished="2022-03-01T07:59:11-06:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Fixed bug in <code>DocumentMediaWriter.text()</code> that incorrectly encoded suffix.</li>
+      </ul>
+    </changelog:release>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.6.0"
+      datePublished="2022-02-15T19:37:59-06:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Renamed static test helper classes since does not directly provide unit tests.</li>
+      </ul>
+    </changelog:release>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.5.3"
+      datePublished="2021-09-21T18:19:36-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>value attributes no longer convert empty string to null, and thus <code>value=""</code> now works as expected.</li>
+      </ul>
+    </changelog:release>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.5.2"
+      datePublished="2021-09-04T01:08:29-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Added onchange attribute to <code><![CDATA[&lt;select&gt;]]></code>.</li>
+      </ul>
+    </changelog:release>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.5.1"
+      datePublished="2021-08-22T10:54:56-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Fixed NPE in streaming text encoding in <code>MediaWriter</code>.</li>
+      </ul>
+    </changelog:release>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.5.0"
+      datePublished="2021-07-05T11:20:52-05:00"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Now supports Java 9+ modules with included <code>module-info.class</code>.</li>
+        <li>Maven artifact relocated from <code>com.aoindustries:ao-fluent-html-any</code> to <code>com.aoapps:ao-fluent-html-any</code>.</li>
+        <li>Package renamed from <code>com.aoindustries.html.any</code> to <code>com.aoapps.html.any</code>.</li>
+      </ul>
+    </changelog:release>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.4.0"
+      datePublished="2021-03-17T06:46:16-05:00"
+      groupId="com.aoindustries"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Split base abstract classes and interfaces into this new sub-project.</li>
+      </ul>
+    </changelog:release>
+  </core:page>
+</jsp:root>
