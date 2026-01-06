@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2024, 2025  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2024, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -36,6 +36,14 @@ import java.io.IOException;
  *
  * @author  AO Industries, Inc.
  */
+// TODO: Should there be *_c variants of all these content types, which would extend {@link Closeable}?
+// As-is, when wanting to work with an more abstract content type model between two different possible contexts, such
+// as code that must handle either DIV or HEADER for HTML version compatibility, there is no parent interface that
+// is both {@link Content} and {@link Closeable}.  This requires putting things into two different variables, one
+// for the content model and another for closeable.  Adding *_c variants to all the content models could resolve this.
+// This is an edge case, so not high priority, but does indicate a missing factor in the interface hierarchy.
+// Should this be resolved, various implementations of "HomePageLayout.java" could be slightly simplified.
+// It is also worth tn
 public interface AnyFlowContent<
     D  extends AnyDocument<D>,
     __ extends AnyFlowContent<D, __>
