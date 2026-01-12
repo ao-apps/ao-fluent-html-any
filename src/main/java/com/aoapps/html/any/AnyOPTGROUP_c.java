@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2026  AO Industries, Inc.
+ * Copyright (C) 2021, 2022  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,7 +42,7 @@ public abstract class AnyOPTGROUP_c<
     _c extends AnyOPTGROUP_c<D, PC, _c>
     >
     extends Normal_c<D, PC, _c>
-    implements AnyOPTGROUP_content_c<D, PC, _c> {
+    implements AnyOPTGROUP_content<D, _c> {
 
   protected AnyOPTGROUP_c(AnyOPTGROUP<D, PC, ?, ?, _c> element) {
     super(element);
