@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -41,7 +41,7 @@ public abstract class Normal_c<
     PC extends Content<D, PC>,
     _c extends Normal_c<D, PC, _c>
     >
-    implements Content<D, _c>, Closeable<D, PC> {
+    implements Content_c<D, PC, _c> {
 
   protected final Normal<D, PC, ?, ?, _c> element;
   protected final AtomicBoolean closed = new AtomicBoolean();

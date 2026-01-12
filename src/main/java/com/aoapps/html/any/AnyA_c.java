@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -44,7 +44,7 @@ public abstract class AnyA_c<
     _c extends AnyA_c<D, PC, _c>
     >
     extends Transparent_c<D, PC, _c>
-    implements AnyUnion_Interactive_Phrasing<D, _c> {
+    implements AnyUnion_Interactive_Phrasing_c<D, PC, _c> {
 
   protected AnyA_c(AnyA<D, PC, ?, _c> element) {
     super(element);

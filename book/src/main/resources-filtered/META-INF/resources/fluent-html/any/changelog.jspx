@@ -37,7 +37,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2021-03-14T22:32:34-05:00"
-    dateModified="2025-07-02T23:05:45Z"
+    dateModified="2026-01-12T01:51:07Z"
   >
     <c:set var="latestRelease" value="0.8.0" />
     <c:if test="${
@@ -56,7 +56,12 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
           <li>Updated to <ao:a href="https://checkstyle.org/releasenotes.html#Release_10.21.1">Checkstyle 10.21.1</ao:a>.</li>
           <li>Minimum Java version changed from 1.8 to 11.</li>
           <li>Internal implementation changes to reduce the number of casts.</li>
+          <li>
+            New set of <code>*_c</code> content types that are <code>Closeable</code>.
+            These extend the non-closeable interfaces and precisely match their interface hierarchy.
+          </li>
         </ul>
+        <!-- Java 17: Use sealed interfaces -->
       </changelog:release>
     </c:if>
 

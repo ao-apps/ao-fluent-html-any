@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2022  AO Industries, Inc.
+ * Copyright (C) 2022, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,7 +42,7 @@ public abstract class AnyOPTION_c<
     _c extends AnyOPTION_c<D, PC, _c>
     >
     extends NormalText_c<D, PC, _c>
-    implements AnyTextContent<D, _c> {
+    implements AnyTextContent_c<D, PC, _c> {
 
   protected AnyOPTION_c(AnyOPTION<D, PC, ?, ?, _c> element) {
     super(element);
