@@ -109,7 +109,7 @@ public interface Oncontextmenu<E extends Element<?, ?, E> & Oncontextmenu<E>> {
    *
    * @since HTML 5
    *
-   * @see #oncontextmenu(java.lang.Object)
+   * @see Oncontextmenu#oncontextmenu(java.lang.Object)
    */
   default <Ex extends Throwable> E oncontextmenu(IOSupplierE<?, Ex> oncontextmenu) throws IOException, Ex {
     return oncontextmenu((oncontextmenu == null) ? null : oncontextmenu.get());
@@ -128,7 +128,7 @@ public interface Oncontextmenu<E extends Element<?, ?, E> & Oncontextmenu<E>> {
    *
    * @since HTML 5
    *
-   * @see #oncontextmenu(java.lang.Object)
+   * @see Oncontextmenu#oncontextmenu(java.lang.Object)
    */
   default <Ex extends Throwable> E oncontextmenu(JavaScriptWritable<Ex> oncontextmenu) throws IOException, Ex {
     return oncontextmenu((Object) oncontextmenu);

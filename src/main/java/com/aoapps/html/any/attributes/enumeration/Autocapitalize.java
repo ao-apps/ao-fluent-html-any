@@ -105,7 +105,7 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
    *
    * @since HTML 5
    *
-   * @see #autocapitalize(java.lang.String)
+   * @see Autocapitalize#autocapitalize(java.lang.String)
    */
   @Override
   @SuppressWarnings("overloads")
@@ -122,7 +122,7 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
    *
    * @since HTML 5
    *
-   * @see #autocapitalize(java.lang.String)
+   * @see Autocapitalize#autocapitalize(java.lang.String)
    */
   @Override
   default E autocapitalize(Value autocapitalize) throws IOException {
@@ -140,7 +140,7 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
    *
    * @since HTML 5
    *
-   * @see #autocapitalize(com.aoapps.html.any.attributes.enumeration.Autocapitalize.Value)
+   * @see Autocapitalize#autocapitalize(com.aoapps.html.any.attributes.enumeration.Autocapitalize.Value)
    */
   @Override
   @SuppressWarnings("overloads")
@@ -161,7 +161,7 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
     /**
      * No autocapitalization is applied (all letters default to lowercase).
      *
-     * @deprecated  Please use {@link #NONE} as it is more descriptive
+     * @deprecated  Please use {@link Value#NONE} as it is more descriptive
      */
     @Deprecated(forRemoval = false)
     OFF("off"),
@@ -174,7 +174,7 @@ public interface Autocapitalize<E extends Element<?, ?, E> & Autocapitalize<E>> 
     /**
      * The first letter of each sentence defaults to a capital letter; all other letters default to lowercase.
      *
-     * @deprecated  Please use {@link #SENTENCES} as it is more descriptive
+     * @deprecated  Please use {@link Value#SENTENCES} as it is more descriptive
      */
     @Deprecated(forRemoval = false)
     ON("on"),

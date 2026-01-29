@@ -53,7 +53,7 @@ public interface Readonly<E extends Element<?, ?, E> & Readonly<E>> {
   /**
    * See <a href="https://www.w3schools.com/tags/att_readonly.asp">HTML readonly Attribute</a>.
    *
-   * @see #readonly(boolean)
+   * @see Readonly#readonly(boolean)
    */
   default E readonly(Boolean readonly) throws IOException {
     return readonly(readonly != null && readonly);
@@ -64,7 +64,7 @@ public interface Readonly<E extends Element<?, ?, E> & Readonly<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #readonly(java.lang.Boolean)
+   * @see Readonly#readonly(java.lang.Boolean)
    */
   default <Ex extends Throwable> E readonly(IOSupplierE<Boolean, Ex> readonly) throws IOException, Ex {
     return readonly((readonly == null) ? null : readonly.get());

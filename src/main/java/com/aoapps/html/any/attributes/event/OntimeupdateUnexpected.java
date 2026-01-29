@@ -89,7 +89,7 @@ public interface OntimeupdateUnexpected<E extends Element<?, ?, E> & Ontimeupdat
    *
    * @since HTML 5
    *
-   * @see #ontimeupdate(java.lang.Object)
+   * @see OntimeupdateUnexpected#ontimeupdate(java.lang.Object)
    *
    * @deprecated  Although the ontimeupdate attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OntimeupdateUnexpected<E extends Element<?, ?, E> & Ontimeupdat
    *
    * @since HTML 5
    *
-   * @see #ontimeupdate(java.lang.Object)
+   * @see OntimeupdateUnexpected#ontimeupdate(java.lang.Object)
    *
    * @deprecated  Although the ontimeupdate attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

@@ -100,7 +100,7 @@ public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onscroll(java.lang.Object)
+   * @see Onscroll#onscroll(java.lang.Object)
    */
   default <Ex extends Throwable> E onscroll(IOSupplierE<?, Ex> onscroll) throws IOException, Ex {
     return onscroll((onscroll == null) ? null : onscroll.get());
@@ -117,7 +117,7 @@ public interface Onscroll<E extends Element<?, ?, E> & Onscroll<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onscroll(java.lang.Object)
+   * @see Onscroll#onscroll(java.lang.Object)
    */
   default <Ex extends Throwable> E onscroll(JavaScriptWritable<Ex> onscroll) throws IOException, Ex {
     return onscroll((Object) onscroll);

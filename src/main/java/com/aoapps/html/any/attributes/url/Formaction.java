@@ -103,7 +103,7 @@ public interface Formaction<E extends Element<?, ?, E> & Formaction<E>> {
    *
    * @since HTML 5
    *
-   * @see #formaction(java.lang.String)
+   * @see Formaction#formaction(java.lang.String)
    */
   default <Ex extends Throwable> E formaction(IOSupplierE<String, Ex> formaction) throws IOException, Ex {
     return formaction((formaction == null) ? null : formaction.get());

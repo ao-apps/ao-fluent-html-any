@@ -103,7 +103,7 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onerror(java.lang.Object)
+   * @see OnerrorUnexpected#onerror(java.lang.Object)
    *
    * @deprecated  Although the onerror attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;},
@@ -129,7 +129,7 @@ public interface OnerrorUnexpected<E extends Element<?, ?, E> & OnerrorUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onerror(java.lang.Object)
+   * @see OnerrorUnexpected#onerror(java.lang.Object)
    *
    * @deprecated  Although the onerror attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;},

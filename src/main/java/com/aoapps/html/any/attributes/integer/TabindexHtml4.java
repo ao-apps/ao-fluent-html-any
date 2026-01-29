@@ -100,7 +100,7 @@ public interface TabindexHtml4<E extends Element<?, ?, E> & TabindexHtml4<E>> ex
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #tabindex(java.lang.Integer)
+   * @see TabindexHtml4#tabindex(java.lang.Integer)
    */
   @Override
   default <Ex extends Throwable> E tabindex(IOSupplierE<Integer, Ex> tabindex) throws IOException, Ex {

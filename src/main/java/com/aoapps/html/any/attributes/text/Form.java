@@ -99,7 +99,7 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
    *
    * @since HTML 5
    *
-   * @see #form(java.lang.Object)
+   * @see Form#form(java.lang.Object)
    */
   default <Ex extends Throwable> E form(IOSupplierE<?, Ex> form) throws IOException, Ex {
     return form((form == null) ? null : form.get());
@@ -115,7 +115,7 @@ public interface Form<E extends Element<?, ?, E> & Form<E>> {
    *
    * @since HTML 5
    *
-   * @see #form(java.lang.Object)
+   * @see Form#form(java.lang.Object)
    */
   default <Ex extends Throwable> E form(TextWritable<Ex> form) throws IOException, Ex {
     return form((Object) form);

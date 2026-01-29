@@ -92,7 +92,7 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #width(java.lang.Integer)
+   * @see Width#width(java.lang.Integer)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E width(IOSupplierE<Integer, Ex> pixels) throws IOException, Ex {
@@ -117,7 +117,7 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #width(java.lang.String)
+   * @see Width#width(java.lang.String)
    *
    * @deprecated  In HTML 4.01, the width could be defined in pixels or in % of the containing element. In HTML5, the value must be in pixels.
    */

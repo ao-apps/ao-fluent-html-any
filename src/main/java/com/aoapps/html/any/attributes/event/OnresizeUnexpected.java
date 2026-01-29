@@ -89,7 +89,7 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
    *
    * @since HTML 5
    *
-   * @see #onresize(java.lang.Object)
+   * @see OnresizeUnexpected#onresize(java.lang.Object)
    *
    * @deprecated  Although the onresize attribute is global, it is only expected on
    *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnresizeUnexpected<E extends Element<?, ?, E> & OnresizeUnexpec
    *
    * @since HTML 5
    *
-   * @see #onresize(java.lang.Object)
+   * @see OnresizeUnexpected#onresize(java.lang.Object)
    *
    * @deprecated  Although the onresize attribute is global, it is only expected on
    *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain com.aoapps.html.any.AnyFRAMESET &lt;frameset&gt;}, and {@linkplain AnyVIDEO &lt;video&gt;}.

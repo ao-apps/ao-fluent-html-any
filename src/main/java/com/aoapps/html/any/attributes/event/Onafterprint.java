@@ -84,7 +84,7 @@ public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
    *
    * @since HTML 5
    *
-   * @see #onafterprint(java.lang.Object)
+   * @see Onafterprint#onafterprint(java.lang.Object)
    */
   default <Ex extends Throwable> E onafterprint(IOSupplierE<?, Ex> onafterprint) throws IOException, Ex {
     return onafterprint((onafterprint == null) ? null : onafterprint.get());
@@ -97,7 +97,7 @@ public interface Onafterprint<E extends Element<?, ?, E> & Onafterprint<E>> {
    *
    * @since HTML 5
    *
-   * @see #onafterprint(java.lang.Object)
+   * @see Onafterprint#onafterprint(java.lang.Object)
    */
   default <Ex extends Throwable> E onafterprint(JavaScriptWritable<Ex> onafterprint) throws IOException, Ex {
     return onafterprint((Object) onafterprint);

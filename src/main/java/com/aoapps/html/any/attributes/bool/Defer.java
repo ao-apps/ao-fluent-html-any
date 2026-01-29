@@ -50,7 +50,7 @@ public interface Defer<E extends Element<?, ?, E> & Defer<E>> {
   /**
    * See <a href="https://www.w3schools.com/tags/att_defer.asp">HTML defer Attribute</a>.
    *
-   * @see #defer(boolean)
+   * @see Defer#defer(boolean)
    */
   default E defer(Boolean defer) throws IOException {
     return defer(defer != null && defer);
@@ -61,7 +61,7 @@ public interface Defer<E extends Element<?, ?, E> & Defer<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #defer(java.lang.Boolean)
+   * @see Defer#defer(java.lang.Boolean)
    */
   default <Ex extends Throwable> E defer(IOSupplierE<Boolean, Ex> defer) throws IOException, Ex {
     return defer((defer == null) ? null : defer.get());

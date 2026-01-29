@@ -108,7 +108,7 @@ public interface Onresize<E extends Element<?, ?, E> & Onresize<E>> extends Onre
    *
    * @since HTML 5
    *
-   * @see #onresize(java.lang.Object)
+   * @see Onresize#onresize(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onresize(IOSupplierE<?, Ex> onresize) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onresize<E extends Element<?, ?, E> & Onresize<E>> extends Onre
    *
    * @since HTML 5
    *
-   * @see #onresize(java.lang.Object)
+   * @see Onresize#onresize(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onresize(JavaScriptWritable<Ex> onresize) throws IOException, Ex {

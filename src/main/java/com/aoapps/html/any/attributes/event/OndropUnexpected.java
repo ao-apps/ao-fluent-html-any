@@ -110,7 +110,7 @@ public interface OndropUnexpected<E extends Element<?, ?, E> & OndropUnexpected<
    *
    * @since HTML 5
    *
-   * @see #ondrop(java.lang.Object)
+   * @see OndropUnexpected#ondrop(java.lang.Object)
    *
    * @deprecated  Although the ondrop attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OndropUnexpected<E extends Element<?, ?, E> & OndropUnexpected<
    *
    * @since HTML 5
    *
-   * @see #ondrop(java.lang.Object)
+   * @see OndropUnexpected#ondrop(java.lang.Object)
    *
    * @deprecated  Although the ondrop attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

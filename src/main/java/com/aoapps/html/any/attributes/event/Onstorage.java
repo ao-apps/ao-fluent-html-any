@@ -84,7 +84,7 @@ public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
    *
    * @since HTML 5
    *
-   * @see #onstorage(java.lang.Object)
+   * @see Onstorage#onstorage(java.lang.Object)
    */
   default <Ex extends Throwable> E onstorage(IOSupplierE<?, Ex> onstorage) throws IOException, Ex {
     return onstorage((onstorage == null) ? null : onstorage.get());
@@ -97,7 +97,7 @@ public interface Onstorage<E extends Element<?, ?, E> & Onstorage<E>> {
    *
    * @since HTML 5
    *
-   * @see #onstorage(java.lang.Object)
+   * @see Onstorage#onstorage(java.lang.Object)
    */
   default <Ex extends Throwable> E onstorage(JavaScriptWritable<Ex> onstorage) throws IOException, Ex {
     return onstorage((Object) onstorage);

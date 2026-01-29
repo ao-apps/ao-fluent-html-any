@@ -58,7 +58,7 @@ public interface Label<E extends Element<?, ?, E> & Label<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #label(java.lang.Object)
+   * @see Label#label(java.lang.Object)
    */
   default <Ex extends Throwable> E label(IOSupplierE<?, Ex> label) throws IOException, Ex {
     return label((label == null) ? null : label.get());
@@ -69,7 +69,7 @@ public interface Label<E extends Element<?, ?, E> & Label<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #label(java.lang.Object)
+   * @see Label#label(java.lang.Object)
    */
   default <Ex extends Throwable> E label(TextWritable<Ex> label) throws IOException, Ex {
     return label((Object) label);

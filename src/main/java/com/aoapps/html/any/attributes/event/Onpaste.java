@@ -100,7 +100,7 @@ public interface Onpaste<E extends Element<?, ?, E> & Onpaste<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onpaste(java.lang.Object)
+   * @see Onpaste#onpaste(java.lang.Object)
    */
   default <Ex extends Throwable> E onpaste(IOSupplierE<?, Ex> onpaste) throws IOException, Ex {
     return onpaste((onpaste == null) ? null : onpaste.get());
@@ -117,7 +117,7 @@ public interface Onpaste<E extends Element<?, ?, E> & Onpaste<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onpaste(java.lang.Object)
+   * @see Onpaste#onpaste(java.lang.Object)
    */
   default <Ex extends Throwable> E onpaste(JavaScriptWritable<Ex> onpaste) throws IOException, Ex {
     return onpaste((Object) onpaste);

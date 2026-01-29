@@ -72,7 +72,7 @@ public interface Formnovalidate<E extends Element<?, ?, E> & Formnovalidate<E>> 
    *
    * @since HTML 5
    *
-   * @see #formnovalidate(boolean)
+   * @see Formnovalidate#formnovalidate(boolean)
    */
   default E formnovalidate(Boolean formnovalidate) throws IOException {
     return formnovalidate(formnovalidate != null && formnovalidate);
@@ -90,7 +90,7 @@ public interface Formnovalidate<E extends Element<?, ?, E> & Formnovalidate<E>> 
    *
    * @since HTML 5
    *
-   * @see #formnovalidate(java.lang.Boolean)
+   * @see Formnovalidate#formnovalidate(java.lang.Boolean)
    */
   default <Ex extends Throwable> E formnovalidate(IOSupplierE<Boolean, Ex> formnovalidate) throws IOException, Ex {
     return formnovalidate((formnovalidate == null) ? null : formnovalidate.get());

@@ -485,7 +485,7 @@ public final class Attributes {
 
     /**
      * @param  <E>        This element type
-     * @param  value      If is {@link #NO_VALUE} (by identity), will write empty attribute.
+     * @param  value      If is {@link String#NO_VALUE} (by identity), will write empty attribute.
      * @param  validator  Optional validator, which gets the attribute value only when attribute will be actually written.
      *                    Will not be called when the attribute will be skipped.
      */
@@ -559,7 +559,7 @@ public final class Attributes {
 
     /**
      * @param  <E>    This element type
-     * @param  value  If is {@link #NO_VALUE} (by identity), will write empty attribute.
+     * @param  value  If is {@link String#NO_VALUE} (by identity), will write empty attribute.
      */
     public static <E extends Element<?, ?, E>, Ex extends Throwable> E attribute(
         E element,

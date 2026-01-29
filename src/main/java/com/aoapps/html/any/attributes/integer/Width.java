@@ -63,7 +63,7 @@ public interface Width<E extends Element<?, ?, E> & Width<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #width(java.lang.Integer)
+   * @see Width#width(java.lang.Integer)
    */
   default <Ex extends Throwable> E width(IOSupplierE<Integer, Ex> pixels) throws IOException, Ex {
     return width((pixels == null) ? null : pixels.get());

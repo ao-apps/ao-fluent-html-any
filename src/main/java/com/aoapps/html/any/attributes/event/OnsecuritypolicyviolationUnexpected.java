@@ -87,7 +87,7 @@ public interface OnsecuritypolicyviolationUnexpected<E extends Element<?, ?, E> 
    *
    * @since HTML 5
    *
-   * @see #onsecuritypolicyviolation(java.lang.Object)
+   * @see OnsecuritypolicyviolationUnexpected#onsecuritypolicyviolation(java.lang.Object)
    *
    * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
    *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.
@@ -109,7 +109,7 @@ public interface OnsecuritypolicyviolationUnexpected<E extends Element<?, ?, E> 
    *
    * @since HTML 5
    *
-   * @see #onsecuritypolicyviolation(java.lang.Object)
+   * @see OnsecuritypolicyviolationUnexpected#onsecuritypolicyviolation(java.lang.Object)
    *
    * @deprecated  Although the onsecuritypolicyviolation attribute is global, it is only expected on
    *              {@linkplain AnyBODY &lt;body&gt;} and {@linkplain AnyHTML &lt;html&gt;}.

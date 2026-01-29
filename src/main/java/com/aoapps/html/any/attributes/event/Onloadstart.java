@@ -108,7 +108,7 @@ public interface Onloadstart<E extends Element<?, ?, E> & Onloadstart<E>> extend
    *
    * @since HTML 5
    *
-   * @see #onloadstart(java.lang.Object)
+   * @see Onloadstart#onloadstart(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onloadstart(IOSupplierE<?, Ex> onloadstart) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onloadstart<E extends Element<?, ?, E> & Onloadstart<E>> extend
    *
    * @since HTML 5
    *
-   * @see #onloadstart(java.lang.Object)
+   * @see Onloadstart#onloadstart(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onloadstart(JavaScriptWritable<Ex> onloadstart) throws IOException, Ex {

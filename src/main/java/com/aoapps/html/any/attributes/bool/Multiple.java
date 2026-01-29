@@ -57,7 +57,7 @@ public interface Multiple<E extends Element<?, ?, E> & Multiple<E>> {
    *
    * @since HTML 5
    *
-   * @see #multiple(boolean)
+   * @see Multiple#multiple(boolean)
    */
   default E multiple(Boolean multiple) throws IOException {
     return multiple(multiple != null && multiple);
@@ -70,7 +70,7 @@ public interface Multiple<E extends Element<?, ?, E> & Multiple<E>> {
    *
    * @since HTML 5
    *
-   * @see #multiple(java.lang.Boolean)
+   * @see Multiple#multiple(java.lang.Boolean)
    */
   default <Ex extends Throwable> E multiple(IOSupplierE<Boolean, Ex> multiple) throws IOException, Ex {
     return multiple((multiple == null) ? null : multiple.get());

@@ -65,7 +65,7 @@ public interface Maxlength<E extends Element<?, ?, E> & Maxlength<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #maxlength(java.lang.Integer)
+   * @see Maxlength#maxlength(java.lang.Integer)
    */
   default <Ex extends Throwable> E maxlength(IOSupplierE<Integer, Ex> maxlength) throws IOException, Ex {
     return maxlength((maxlength == null) ? null : maxlength.get());

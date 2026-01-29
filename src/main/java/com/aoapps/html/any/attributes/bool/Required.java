@@ -66,7 +66,7 @@ public interface Required<E extends Element<?, ?, E> & Required<E>> {
    *
    * @since HTML 5
    *
-   * @see #required(boolean)
+   * @see Required#required(boolean)
    */
   default E required(Boolean required) throws IOException {
     return required(required != null && required);
@@ -82,7 +82,7 @@ public interface Required<E extends Element<?, ?, E> & Required<E>> {
    *
    * @since HTML 5
    *
-   * @see #required(java.lang.Boolean)
+   * @see Required#required(java.lang.Boolean)
    */
   default <Ex extends Throwable> E required(IOSupplierE<Boolean, Ex> required) throws IOException, Ex {
     return required((required == null) ? null : required.get());

@@ -83,7 +83,7 @@ public interface Usemap<E extends Element<?, ?, E> & Usemap<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #usemap(java.lang.String)
+   * @see Usemap#usemap(java.lang.String)
    */
   default <Ex extends Throwable> E usemap(IOSupplierE<String, Ex> usemap) throws IOException, Ex {
     return usemap((usemap == null) ? null : usemap.get());

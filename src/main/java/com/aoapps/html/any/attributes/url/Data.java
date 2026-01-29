@@ -74,7 +74,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #data(java.lang.String)
+   * @see Data#data(java.lang.String)
    */
   default <Ex extends Throwable> E data(IOSupplierE<String, Ex> data) throws IOException, Ex {
     return data((data == null) ? null : data.get());

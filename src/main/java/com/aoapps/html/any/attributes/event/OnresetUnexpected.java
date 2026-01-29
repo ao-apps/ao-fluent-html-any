@@ -88,7 +88,7 @@ public interface OnresetUnexpected<E extends Element<?, ?, E> & OnresetUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onreset(java.lang.Object)
+   * @see OnresetUnexpected#onreset(java.lang.Object)
    *
    * @deprecated  Although the onreset attribute is global, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.
@@ -111,7 +111,7 @@ public interface OnresetUnexpected<E extends Element<?, ?, E> & OnresetUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onreset(java.lang.Object)
+   * @see OnresetUnexpected#onreset(java.lang.Object)
    *
    * @deprecated  Although the onreset attribute is global, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.

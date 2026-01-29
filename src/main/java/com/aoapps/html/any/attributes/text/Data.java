@@ -150,7 +150,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
      * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset">HTMLOrForeignElement.dataset - Web APIs | MDN</a>.</li>
      * </ul>
      *
-     * @see  #validate(java.lang.String)
+     * @see  data#validate(java.lang.String)
      */
     public static String toJsName(String attrName) {
       String jsName = toJsNameNoAssert(attrName);
@@ -159,7 +159,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
     }
 
     /**
-     * Implementation of {@link #toJsName(java.lang.String)} without assertions.
+     * Implementation of {@link data#toJsName(java.lang.String)} without assertions.
      * Used to avoid infinite recursion when assertions are enabled.
      */
     private static String toJsNameNoAssert(String attrName) {
@@ -331,7 +331,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
      * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLOrForeignElement/dataset">HTMLOrForeignElement.dataset - Web APIs | MDN</a>.</li>
      * </ul>
      *
-     * @see  #validate(java.lang.String)
+     * @see  dataset#validate(java.lang.String)
      */
     public static String toAttrName(String jsName) {
       String attrName = toAttrNameNoAssert(jsName);
@@ -340,7 +340,7 @@ public interface Data<E extends Element<?, ?, E> & Data<E>> {
     }
 
     /**
-     * Implementation of {@link #toAttrName(java.lang.String)} without assertions.
+     * Implementation of {@link dataset#toAttrName(java.lang.String)} without assertions.
      * Used to avoid infinite recursion when assertions are enabled.
      */
     private static String toAttrNameNoAssert(String jsName) {

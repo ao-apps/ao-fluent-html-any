@@ -91,7 +91,7 @@ public interface OninvalidUnexpected<E extends Element<?, ?, E> & OninvalidUnexp
    *
    * @since HTML 5
    *
-   * @see #oninvalid(java.lang.Object)
+   * @see OninvalidUnexpected#oninvalid(java.lang.Object)
    *
    * @deprecated  Although the oninvalid attribute is global, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;}.
@@ -115,7 +115,7 @@ public interface OninvalidUnexpected<E extends Element<?, ?, E> & OninvalidUnexp
    *
    * @since HTML 5
    *
-   * @see #oninvalid(java.lang.Object)
+   * @see OninvalidUnexpected#oninvalid(java.lang.Object)
    *
    * @deprecated  Although the oninvalid attribute is global, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;}.

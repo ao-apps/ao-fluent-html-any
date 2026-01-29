@@ -81,7 +81,7 @@ public interface For<E extends Element<?, ?, E> & For<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #forAttr(java.lang.Object)
+   * @see For#forAttr(java.lang.Object)
    */
   // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
   default <Ex extends Throwable> E forAttr(IOSupplierE<?, Ex> forAttr) throws IOException, Ex {
@@ -93,7 +93,7 @@ public interface For<E extends Element<?, ?, E> & For<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #forAttr(java.lang.Object)
+   * @see For#forAttr(java.lang.Object)
    */
   // "for" is keyword, so named "forAttr", despite not typically using "Attr" suffix
   default <Ex extends Throwable> E forAttr(TextWritable<Ex> forAttr) throws IOException, Ex {

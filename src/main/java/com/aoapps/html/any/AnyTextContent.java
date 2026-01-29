@@ -408,7 +408,7 @@ public interface AnyTextContent<
   /**
    * {@inheritDoc}
    *
-   * <p>When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   * <p>When no knowledge of what will be written, calls {@link AnyTextContent#clearAtnl()} to be safe.</p>
    *
    * <p>Supports translation markup type {@link MarkupType#XHTML}.</p>
    *
@@ -426,7 +426,7 @@ public interface AnyTextContent<
   /**
    * {@inheritDoc}
    *
-   * <p>When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   * <p>When no knowledge of what will be written, calls {@link AnyTextContent#clearAtnl()} to be safe.</p>
    *
    * <p>Supports translation markup type {@link MarkupType#XHTML}.</p>
    *
@@ -446,7 +446,7 @@ public interface AnyTextContent<
   /**
    * {@inheritDoc}
    *
-   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   * <p>With no knowledge of what will be written, calls {@link AnyTextContent#clearAtnl()} to be safe.</p>
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
@@ -464,7 +464,7 @@ public interface AnyTextContent<
   /**
    * {@inheritDoc}
    *
-   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   * <p>With no knowledge of what will be written, calls {@link AnyTextContent#clearAtnl()} to be safe.</p>
    */
   // Note: Must be implemented in AnyDocument to avoid infinite recursion
   // TODO: __() method to end text?  Call it "ContentWriter"?

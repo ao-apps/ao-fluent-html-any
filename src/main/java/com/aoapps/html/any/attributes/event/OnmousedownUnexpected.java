@@ -104,7 +104,7 @@ public interface OnmousedownUnexpected<E extends Element<?, ?, E> & OnmousedownU
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmousedown(java.lang.Object)
+   * @see OnmousedownUnexpected#onmousedown(java.lang.Object)
    *
    * @deprecated  Although the onmousedown attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnmousedownUnexpected<E extends Element<?, ?, E> & OnmousedownU
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmousedown(java.lang.Object)
+   * @see OnmousedownUnexpected#onmousedown(java.lang.Object)
    *
    * @deprecated  Although the onmousedown attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

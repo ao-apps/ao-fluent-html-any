@@ -70,7 +70,7 @@ public interface SizeHtml4Only<E extends Element<?, ?, E> & SizeHtml4Only<E>> ex
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #size(java.lang.Integer)
+   * @see SizeHtml4Only#size(java.lang.Integer)
    *
    * @deprecated  Not supported in HTML5.
    */

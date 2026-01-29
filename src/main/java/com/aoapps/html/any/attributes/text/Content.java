@@ -80,7 +80,7 @@ public interface Content<E extends Element<?, ?, E> & Content<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #content(java.lang.Object)
+   * @see Content#content(java.lang.Object)
    */
   default <Ex extends Throwable> E content(IOSupplierE<?, Ex> content) throws IOException, Ex {
     return content((content == null) ? null : content.get());
@@ -91,7 +91,7 @@ public interface Content<E extends Element<?, ?, E> & Content<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #content(java.lang.Object)
+   * @see Content#content(java.lang.Object)
    */
   default <Ex extends Throwable> E content(TextWritable<Ex> content) throws IOException, Ex {
     return content((Object) content);

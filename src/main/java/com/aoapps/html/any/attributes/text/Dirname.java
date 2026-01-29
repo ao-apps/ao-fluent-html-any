@@ -96,7 +96,7 @@ public interface Dirname<E extends Element<?, ?, E> & Dirname<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #dirname(java.lang.Object)
+   * @see Dirname#dirname(java.lang.Object)
    */
   default <Ex extends Throwable> E dirname(IOSupplierE<?, Ex> dirname) throws IOException, Ex {
     return dirname((dirname == null) ? null : dirname.get());
@@ -111,7 +111,7 @@ public interface Dirname<E extends Element<?, ?, E> & Dirname<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #dirname(java.lang.Object)
+   * @see Dirname#dirname(java.lang.Object)
    */
   default <Ex extends Throwable> E dirname(TextWritable<Ex> dirname) throws IOException, Ex {
     return dirname((Object) dirname);

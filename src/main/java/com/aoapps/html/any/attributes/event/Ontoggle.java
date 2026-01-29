@@ -104,7 +104,7 @@ public interface Ontoggle<E extends Element<?, ?, E> & Ontoggle<E>> extends Onto
    *
    * @since HTML 5
    *
-   * @see #ontoggle(java.lang.Object)
+   * @see Ontoggle#ontoggle(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E ontoggle(IOSupplierE<?, Ex> ontoggle) throws IOException, Ex {
@@ -123,7 +123,7 @@ public interface Ontoggle<E extends Element<?, ?, E> & Ontoggle<E>> extends Onto
    *
    * @since HTML 5
    *
-   * @see #ontoggle(java.lang.Object)
+   * @see Ontoggle#ontoggle(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E ontoggle(JavaScriptWritable<Ex> ontoggle) throws IOException, Ex {

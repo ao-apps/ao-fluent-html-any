@@ -126,7 +126,7 @@ public interface Cellspacing<E extends Element<?, ?, E> & Cellspacing<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #cellspacing(java.lang.String)
+   * @see Cellspacing#cellspacing(java.lang.String)
    *
    * @deprecated  The cellspacing attribute is not supported in HTML5. Use CSS instead.
    */

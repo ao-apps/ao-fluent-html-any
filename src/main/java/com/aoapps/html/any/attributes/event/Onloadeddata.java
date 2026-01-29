@@ -108,7 +108,7 @@ public interface Onloadeddata<E extends Element<?, ?, E> & Onloadeddata<E>> exte
    *
    * @since HTML 5
    *
-   * @see #onloadeddata(java.lang.Object)
+   * @see Onloadeddata#onloadeddata(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onloadeddata(IOSupplierE<?, Ex> onloadeddata) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onloadeddata<E extends Element<?, ?, E> & Onloadeddata<E>> exte
    *
    * @since HTML 5
    *
-   * @see #onloadeddata(java.lang.Object)
+   * @see Onloadeddata#onloadeddata(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onloadeddata(JavaScriptWritable<Ex> onloadeddata) throws IOException, Ex {

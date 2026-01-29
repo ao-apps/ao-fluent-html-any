@@ -105,7 +105,7 @@ public interface Id<E extends Element<?, ?, E> & Id<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #id(java.lang.Object)
+   * @see Id#id(java.lang.Object)
    */
   default <Ex extends Throwable> E id(IOSupplierE<?, Ex> id) throws IOException, Ex {
     return id((id == null) ? null : id.get());
@@ -123,7 +123,7 @@ public interface Id<E extends Element<?, ?, E> & Id<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #id(java.lang.Object)
+   * @see Id#id(java.lang.Object)
    */
   default <Ex extends Throwable> E id(TextWritable<Ex> id) throws IOException, Ex {
     return id((Object) id);

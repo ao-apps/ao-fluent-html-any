@@ -89,7 +89,7 @@ public interface OnratechangeUnexpected<E extends Element<?, ?, E> & Onratechang
    *
    * @since HTML 5
    *
-   * @see #onratechange(java.lang.Object)
+   * @see OnratechangeUnexpected#onratechange(java.lang.Object)
    *
    * @deprecated  Although the onratechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnratechangeUnexpected<E extends Element<?, ?, E> & Onratechang
    *
    * @since HTML 5
    *
-   * @see #onratechange(java.lang.Object)
+   * @see OnratechangeUnexpected#onratechange(java.lang.Object)
    *
    * @deprecated  Although the onratechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

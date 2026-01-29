@@ -112,7 +112,7 @@ public interface Oninput<E extends Element<?, ?, E> & Oninput<E>> extends Oninpu
    *
    * @since HTML 5
    *
-   * @see #oninput(java.lang.Object)
+   * @see Oninput#oninput(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E oninput(IOSupplierE<?, Ex> oninput) throws IOException, Ex {
@@ -133,7 +133,7 @@ public interface Oninput<E extends Element<?, ?, E> & Oninput<E>> extends Oninpu
    *
    * @since HTML 5
    *
-   * @see #oninput(java.lang.Object)
+   * @see Oninput#oninput(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E oninput(JavaScriptWritable<Ex> oninput) throws IOException, Ex {

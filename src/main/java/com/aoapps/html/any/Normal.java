@@ -64,7 +64,7 @@ public abstract class Normal<
 
   /**
    * Called after opening tag is completed, {@linkplain AnyDocument#incDepth() indentation depth is increased}
-   * (if {@link #isContentIndented()}), and before the body is invoked.
+   * (if {@link Normal#isContentIndented()}), and before the body is invoked.
    *
    * <p>An common use-case is to call {@link AnyDocument#autoNl()} to begin body on the next line.</p>
    */
@@ -116,7 +116,7 @@ public abstract class Normal<
    *
    * @return  The parent content model this element is within
    *
-   * @see  #new__()
+   * @see  Normal#new__()
    */
   public <Ex extends Throwable> PC __(IOConsumerE<? super __, Ex> body) throws IOException, Ex {
     @SuppressWarnings("deprecation")
@@ -159,7 +159,7 @@ public abstract class Normal<
    *
    * @see  Closeable#__()
    * @see  Closeable#close()
-   * @see  #new_c()
+   * @see  Normal#new_c()
    */
   public _c _c() throws IOException {
     @SuppressWarnings("deprecation")
@@ -175,14 +175,14 @@ public abstract class Normal<
   /**
    * Creates a new instance of uncloseable content.
    *
-   * @see  #__(com.aoapps.lang.io.function.IOConsumerE)
+   * @see  Normal#__(com.aoapps.lang.io.function.IOConsumerE)
    */
   protected abstract __ new__();
 
   /**
    * Creates a new instance of closeable content.
    *
-   * @see  #_c()
+   * @see  Normal#_c()
    */
   protected abstract _c new_c();
 }

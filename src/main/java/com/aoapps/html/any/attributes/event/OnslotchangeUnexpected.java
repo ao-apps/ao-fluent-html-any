@@ -85,7 +85,7 @@ public interface OnslotchangeUnexpected<E extends Element<?, ?, E> & Onslotchang
    *
    * @since HTML 5
    *
-   * @see #onslotchange(java.lang.Object)
+   * @see OnslotchangeUnexpected#onslotchange(java.lang.Object)
    *
    * @deprecated  Although the onslotchange attribute is global, it is only expected on
    *              {@linkplain AnySLOT &lt;slot&gt;}.
@@ -107,7 +107,7 @@ public interface OnslotchangeUnexpected<E extends Element<?, ?, E> & Onslotchang
    *
    * @since HTML 5
    *
-   * @see #onslotchange(java.lang.Object)
+   * @see OnslotchangeUnexpected#onslotchange(java.lang.Object)
    *
    * @deprecated  Although the onslotchange attribute is global, it is only expected on
    *              {@linkplain AnySLOT &lt;slot&gt;}.

@@ -104,7 +104,7 @@ public interface OnscrollUnexpected<E extends Element<?, ?, E> & OnscrollUnexpec
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onscroll(java.lang.Object)
+   * @see OnscrollUnexpected#onscroll(java.lang.Object)
    *
    * @deprecated  Although the onscroll attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnscrollUnexpected<E extends Element<?, ?, E> & OnscrollUnexpec
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onscroll(java.lang.Object)
+   * @see OnscrollUnexpected#onscroll(java.lang.Object)
    *
    * @deprecated  Although the onscroll attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

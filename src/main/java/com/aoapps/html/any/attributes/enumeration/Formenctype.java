@@ -103,7 +103,7 @@ public interface Formenctype<
    *
    * @since HTML 5
    *
-   * @see #formenctype(java.lang.String)
+   * @see Formenctype#formenctype(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E formenctype(Suppliers.String<Ex> formenctype) throws IOException, Ex {
@@ -118,7 +118,7 @@ public interface Formenctype<
    *
    * @since HTML 5
    *
-   * @see #formenctype(java.lang.String)
+   * @see Formenctype#formenctype(java.lang.String)
    */
   default E formenctype(V formenctype) throws IOException {
     @SuppressWarnings("unchecked")
@@ -136,7 +136,7 @@ public interface Formenctype<
    *
    * @since HTML 5
    *
-   * @see #formenctype(java.lang.Enum)
+   * @see Formenctype#formenctype(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E formenctype(IOSupplierE<V, Ex> formenctype) throws IOException, Ex {

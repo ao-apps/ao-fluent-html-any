@@ -86,7 +86,7 @@ public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexp
    *
    * @since HTML 5
    *
-   * @see #onemptied(java.lang.Object)
+   * @see OnemptiedUnexpected#onemptied(java.lang.Object)
    *
    * @deprecated  Although the onemptied attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -108,7 +108,7 @@ public interface OnemptiedUnexpected<E extends Element<?, ?, E> & OnemptiedUnexp
    *
    * @since HTML 5
    *
-   * @see #onemptied(java.lang.Object)
+   * @see OnemptiedUnexpected#onemptied(java.lang.Object)
    *
    * @deprecated  Although the onemptied attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

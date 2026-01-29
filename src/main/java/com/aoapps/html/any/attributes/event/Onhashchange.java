@@ -84,7 +84,7 @@ public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
    *
    * @since HTML 5
    *
-   * @see #onhashchange(java.lang.Object)
+   * @see Onhashchange#onhashchange(java.lang.Object)
    */
   default <Ex extends Throwable> E onhashchange(IOSupplierE<?, Ex> onhashchange) throws IOException, Ex {
     return onhashchange((onhashchange == null) ? null : onhashchange.get());
@@ -97,7 +97,7 @@ public interface Onhashchange<E extends Element<?, ?, E> & Onhashchange<E>> {
    *
    * @since HTML 5
    *
-   * @see #onhashchange(java.lang.Object)
+   * @see Onhashchange#onhashchange(java.lang.Object)
    */
   default <Ex extends Throwable> E onhashchange(JavaScriptWritable<Ex> onhashchange) throws IOException, Ex {
     return onhashchange((Object) onhashchange);

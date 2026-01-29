@@ -110,7 +110,7 @@ public interface Autocomplete<
    *
    * @since HTML 5
    *
-   * @see #autocomplete(java.lang.String)
+   * @see Autocomplete#autocomplete(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E autocomplete(Suppliers.String<Ex> autocomplete) throws IOException, Ex {
@@ -126,7 +126,7 @@ public interface Autocomplete<
    *
    * @since HTML 5
    *
-   * @see #autocomplete(java.lang.String)
+   * @see Autocomplete#autocomplete(java.lang.String)
    */
   default E autocomplete(V autocomplete) throws IOException {
     @SuppressWarnings("unchecked")
@@ -145,7 +145,7 @@ public interface Autocomplete<
    *
    * @since HTML 5
    *
-   * @see #autocomplete(java.lang.Enum)
+   * @see Autocomplete#autocomplete(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E autocomplete(IOSupplierE<V, Ex> autocomplete) throws IOException, Ex {

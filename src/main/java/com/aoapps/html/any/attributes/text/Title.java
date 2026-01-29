@@ -109,7 +109,7 @@ public interface Title<E extends Element<?, ?, E> & Title<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #title(java.lang.Object)
+   * @see Title#title(java.lang.Object)
    */
   default <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
     return title((title == null) ? null : title.get());
@@ -128,7 +128,7 @@ public interface Title<E extends Element<?, ?, E> & Title<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #title(java.lang.Object)
+   * @see Title#title(java.lang.Object)
    */
   default <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {
     return title((Object) title);

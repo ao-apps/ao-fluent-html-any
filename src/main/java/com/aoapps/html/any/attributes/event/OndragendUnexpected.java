@@ -110,7 +110,7 @@ public interface OndragendUnexpected<E extends Element<?, ?, E> & OndragendUnexp
    *
    * @since HTML 5
    *
-   * @see #ondragend(java.lang.Object)
+   * @see OndragendUnexpected#ondragend(java.lang.Object)
    *
    * @deprecated  Although the ondragend attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OndragendUnexpected<E extends Element<?, ?, E> & OndragendUnexp
    *
    * @since HTML 5
    *
-   * @see #ondragend(java.lang.Object)
+   * @see OndragendUnexpected#ondragend(java.lang.Object)
    *
    * @deprecated  Although the ondragend attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

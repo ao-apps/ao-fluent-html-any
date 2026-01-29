@@ -89,7 +89,7 @@ public interface OnvolumechangeUnexpected<E extends Element<?, ?, E> & Onvolumec
    *
    * @since HTML 5
    *
-   * @see #onvolumechange(java.lang.Object)
+   * @see OnvolumechangeUnexpected#onvolumechange(java.lang.Object)
    *
    * @deprecated  Although the onvolumechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnvolumechangeUnexpected<E extends Element<?, ?, E> & Onvolumec
    *
    * @since HTML 5
    *
-   * @see #onvolumechange(java.lang.Object)
+   * @see OnvolumechangeUnexpected#onvolumechange(java.lang.Object)
    *
    * @deprecated  Although the onvolumechange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

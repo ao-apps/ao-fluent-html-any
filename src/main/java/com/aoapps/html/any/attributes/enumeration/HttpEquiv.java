@@ -111,7 +111,7 @@ public interface HttpEquiv<
    * <li>See <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta#attr-http-equiv">&lt;meta&gt;: The metadata element / http-equiv</a>.</li>
    * </ul>
    *
-   * @see #httpEquiv(java.lang.String)
+   * @see HttpEquiv#httpEquiv(java.lang.String)
    */
   default E httpEquiv(V httpEquiv) throws IOException {
     @SuppressWarnings("unchecked")
@@ -128,7 +128,7 @@ public interface HttpEquiv<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #httpEquiv(java.lang.Enum)
+   * @see HttpEquiv#httpEquiv(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E httpEquiv(IOSupplierE<V, Ex> httpEquiv) throws IOException, Ex {

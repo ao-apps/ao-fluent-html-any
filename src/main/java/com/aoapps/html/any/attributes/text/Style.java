@@ -130,7 +130,7 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #style(java.lang.Object)
+   * @see Style#style(java.lang.Object)
    */
   default <Ex extends Throwable> E style(IOSupplierE<?, Ex> style) throws IOException, Ex {
     return style((style == null) ? null : style.get());
@@ -149,7 +149,7 @@ public interface Style<E extends Element<?, ?, E> & Style<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #style(java.lang.Object)
+   * @see Style#style(java.lang.Object)
    */
   default <Ex extends Throwable> E style(StyleWritable<Ex> style) throws IOException, Ex {
     return style((Object) style);

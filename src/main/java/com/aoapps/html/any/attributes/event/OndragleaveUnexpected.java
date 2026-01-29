@@ -110,7 +110,7 @@ public interface OndragleaveUnexpected<E extends Element<?, ?, E> & OndragleaveU
    *
    * @since HTML 5
    *
-   * @see #ondragleave(java.lang.Object)
+   * @see OndragleaveUnexpected#ondragleave(java.lang.Object)
    *
    * @deprecated  Although the ondragleave attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OndragleaveUnexpected<E extends Element<?, ?, E> & OndragleaveU
    *
    * @since HTML 5
    *
-   * @see #ondragleave(java.lang.Object)
+   * @see OndragleaveUnexpected#ondragleave(java.lang.Object)
    *
    * @deprecated  Although the ondragleave attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

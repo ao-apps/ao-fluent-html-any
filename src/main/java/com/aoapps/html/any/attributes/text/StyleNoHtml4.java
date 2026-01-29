@@ -106,7 +106,7 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #style(java.lang.Object)
+   * @see StyleNoHtml4#style(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E style(IOSupplierE<?, Ex> style) throws IOException, Ex {
@@ -126,7 +126,7 @@ public interface StyleNoHtml4<E extends Element<?, ?, E> & StyleNoHtml4<E>> exte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #style(java.lang.Object)
+   * @see StyleNoHtml4#style(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E style(StyleWritable<Ex> style) throws IOException, Ex {

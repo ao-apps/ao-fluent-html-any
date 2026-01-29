@@ -108,7 +108,7 @@ public interface Ondurationchange<E extends Element<?, ?, E> & Ondurationchange<
    *
    * @since HTML 5
    *
-   * @see #ondurationchange(java.lang.Object)
+   * @see Ondurationchange#ondurationchange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E ondurationchange(IOSupplierE<?, Ex> ondurationchange) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Ondurationchange<E extends Element<?, ?, E> & Ondurationchange<
    *
    * @since HTML 5
    *
-   * @see #ondurationchange(java.lang.Object)
+   * @see Ondurationchange#ondurationchange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E ondurationchange(JavaScriptWritable<Ex> ondurationchange) throws IOException, Ex {

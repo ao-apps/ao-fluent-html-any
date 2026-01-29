@@ -74,7 +74,7 @@ public interface Action<E extends Element<?, ?, E> & Action<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #action(java.lang.String)
+   * @see Action#action(java.lang.String)
    */
   default <Ex extends Throwable> E action(IOSupplierE<String, Ex> action) throws IOException, Ex {
     return action((action == null) ? null : action.get());

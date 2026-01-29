@@ -109,7 +109,7 @@ public interface Tabindex<E extends Element<?, ?, E> & Tabindex<E>> {
    *
    * @since HTML 5
    *
-   * @see #tabindex(java.lang.Integer)
+   * @see Tabindex#tabindex(java.lang.Integer)
    */
   default <Ex extends Throwable> E tabindex(IOSupplierE<Integer, Ex> tabindex) throws IOException, Ex {
     return tabindex((tabindex == null) ? null : tabindex.get());

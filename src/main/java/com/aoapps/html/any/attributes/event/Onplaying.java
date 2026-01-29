@@ -108,7 +108,7 @@ public interface Onplaying<E extends Element<?, ?, E> & Onplaying<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onplaying(java.lang.Object)
+   * @see Onplaying#onplaying(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onplaying(IOSupplierE<?, Ex> onplaying) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onplaying<E extends Element<?, ?, E> & Onplaying<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onplaying(java.lang.Object)
+   * @see Onplaying#onplaying(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onplaying(JavaScriptWritable<Ex> onplaying) throws IOException, Ex {

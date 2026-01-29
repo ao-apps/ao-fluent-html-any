@@ -176,7 +176,7 @@ public abstract class AnyHTML<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see  #lang(java.lang.Object)
+   * @see  AnyHTML#lang(java.lang.Object)
    * @see  AnyDocument#encodingContext
    */
   @Override
@@ -195,7 +195,7 @@ public abstract class AnyHTML<
    * <hr>
    * {@inheritDoc}
    *
-   * @see  #lang(java.lang.Object)
+   * @see  AnyHTML#lang(java.lang.Object)
    * @see  AnyDocument#encodingContext
    */
   @Override
@@ -216,7 +216,7 @@ public abstract class AnyHTML<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see  #lang(java.util.Locale)
+   * @see  AnyHTML#lang(java.util.Locale)
    * @see  AnyDocument#encodingContext
    */
   @Override

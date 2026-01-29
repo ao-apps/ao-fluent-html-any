@@ -108,7 +108,7 @@ public interface Onseeking<E extends Element<?, ?, E> & Onseeking<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onseeking(java.lang.Object)
+   * @see Onseeking#onseeking(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onseeking(IOSupplierE<?, Ex> onseeking) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onseeking<E extends Element<?, ?, E> & Onseeking<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onseeking(java.lang.Object)
+   * @see Onseeking#onseeking(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onseeking(JavaScriptWritable<Ex> onseeking) throws IOException, Ex {

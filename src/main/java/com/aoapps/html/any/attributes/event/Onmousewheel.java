@@ -99,7 +99,7 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmousewheel(java.lang.Object)
+   * @see Onmousewheel#onmousewheel(java.lang.Object)
    *
    * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.lang.io.function.IOSupplierE) onwheel} attribute in HTML5.
    */
@@ -116,7 +116,7 @@ public interface Onmousewheel<E extends Element<?, ?, E> & Onmousewheel<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmousewheel(java.lang.Object)
+   * @see Onmousewheel#onmousewheel(java.lang.Object)
    *
    * @deprecated  The onmousewheel attribute is deprecated, you should use the {@linkplain Onwheel#onwheel(com.aoapps.encoding.JavaScriptWritable) onwheel} attribute in HTML5.
    */

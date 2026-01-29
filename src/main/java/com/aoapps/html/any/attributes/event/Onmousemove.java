@@ -100,7 +100,7 @@ public interface Onmousemove<E extends Element<?, ?, E> & Onmousemove<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmousemove(java.lang.Object)
+   * @see Onmousemove#onmousemove(java.lang.Object)
    */
   default <Ex extends Throwable> E onmousemove(IOSupplierE<?, Ex> onmousemove) throws IOException, Ex {
     return onmousemove((onmousemove == null) ? null : onmousemove.get());
@@ -117,7 +117,7 @@ public interface Onmousemove<E extends Element<?, ?, E> & Onmousemove<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmousemove(java.lang.Object)
+   * @see Onmousemove#onmousemove(java.lang.Object)
    */
   default <Ex extends Throwable> E onmousemove(JavaScriptWritable<Ex> onmousemove) throws IOException, Ex {
     return onmousemove((Object) onmousemove);

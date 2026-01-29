@@ -50,7 +50,7 @@ public interface Disabled<E extends Element<?, ?, E> & Disabled<E>> {
   /**
    * See <a href="https://www.w3schools.com/tags/att_disabled.asp">HTML disabled Attribute</a>.
    *
-   * @see #disabled(boolean)
+   * @see Disabled#disabled(boolean)
    */
   default E disabled(Boolean disabled) throws IOException {
     return disabled(disabled != null && disabled);
@@ -61,7 +61,7 @@ public interface Disabled<E extends Element<?, ?, E> & Disabled<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #disabled(java.lang.Boolean)
+   * @see Disabled#disabled(java.lang.Boolean)
    */
   default <Ex extends Throwable> E disabled(IOSupplierE<Boolean, Ex> disabled) throws IOException, Ex {
     return disabled((disabled == null) ? null : disabled.get());

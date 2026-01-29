@@ -58,7 +58,7 @@ public interface Value<E extends Element<?, ?, E> & Value<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #value(java.lang.Object)
+   * @see Value#value(java.lang.Object)
    */
   default <Ex extends Throwable> E value(IOSupplierE<?, Ex> value) throws IOException, Ex {
     return value((value == null) ? null : value.get());
@@ -69,7 +69,7 @@ public interface Value<E extends Element<?, ?, E> & Value<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #value(java.lang.Object)
+   * @see Value#value(java.lang.Object)
    */
   default <Ex extends Throwable> E value(TextWritable<Ex> value) throws IOException, Ex {
     return value((Object) value);

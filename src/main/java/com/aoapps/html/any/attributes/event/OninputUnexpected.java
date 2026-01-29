@@ -93,7 +93,7 @@ public interface OninputUnexpected<E extends Element<?, ?, E> & OninputUnexpecte
    *
    * @since HTML 5
    *
-   * @see #oninput(java.lang.Object)
+   * @see OninputUnexpected#oninput(java.lang.Object)
    *
    * @deprecated  Although the oninput attribute is global, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
@@ -117,7 +117,7 @@ public interface OninputUnexpected<E extends Element<?, ?, E> & OninputUnexpecte
    *
    * @since HTML 5
    *
-   * @see #oninput(java.lang.Object)
+   * @see OninputUnexpected#oninput(java.lang.Object)
    *
    * @deprecated  Although the oninput attribute is global, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;}, and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.

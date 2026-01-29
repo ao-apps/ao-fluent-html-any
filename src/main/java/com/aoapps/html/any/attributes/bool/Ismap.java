@@ -50,7 +50,7 @@ public interface Ismap<E extends Element<?, ?, E> & Ismap<E>> {
   /**
    * See <a href="https://www.w3schools.com/tags/att_ismap.asp">HTML ismap Attribute</a>.
    *
-   * @see #ismap(boolean)
+   * @see Ismap#ismap(boolean)
    */
   default E ismap(Boolean ismap) throws IOException {
     return ismap(ismap != null && ismap);
@@ -61,7 +61,7 @@ public interface Ismap<E extends Element<?, ?, E> & Ismap<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #ismap(java.lang.Boolean)
+   * @see Ismap#ismap(java.lang.Boolean)
    */
   default <Ex extends Throwable> E ismap(IOSupplierE<Boolean, Ex> ismap) throws IOException, Ex {
     return ismap((ismap == null) ? null : ismap.get());

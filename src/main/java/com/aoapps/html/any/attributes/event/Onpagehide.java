@@ -84,7 +84,7 @@ public interface Onpagehide<E extends Element<?, ?, E> & Onpagehide<E>> {
    *
    * @since HTML 5
    *
-   * @see #onpagehide(java.lang.Object)
+   * @see Onpagehide#onpagehide(java.lang.Object)
    */
   default <Ex extends Throwable> E onpagehide(IOSupplierE<?, Ex> onpagehide) throws IOException, Ex {
     return onpagehide((onpagehide == null) ? null : onpagehide.get());
@@ -97,7 +97,7 @@ public interface Onpagehide<E extends Element<?, ?, E> & Onpagehide<E>> {
    *
    * @since HTML 5
    *
-   * @see #onpagehide(java.lang.Object)
+   * @see Onpagehide#onpagehide(java.lang.Object)
    */
   default <Ex extends Throwable> E onpagehide(JavaScriptWritable<Ex> onpagehide) throws IOException, Ex {
     return onpagehide((Object) onpagehide);

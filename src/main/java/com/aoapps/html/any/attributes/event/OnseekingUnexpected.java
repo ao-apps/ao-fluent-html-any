@@ -89,7 +89,7 @@ public interface OnseekingUnexpected<E extends Element<?, ?, E> & OnseekingUnexp
    *
    * @since HTML 5
    *
-   * @see #onseeking(java.lang.Object)
+   * @see OnseekingUnexpected#onseeking(java.lang.Object)
    *
    * @deprecated  Although the onseeking attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnseekingUnexpected<E extends Element<?, ?, E> & OnseekingUnexp
    *
    * @since HTML 5
    *
-   * @see #onseeking(java.lang.Object)
+   * @see OnseekingUnexpected#onseeking(java.lang.Object)
    *
    * @deprecated  Although the onseeking attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

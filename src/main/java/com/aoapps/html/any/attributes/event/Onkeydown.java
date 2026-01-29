@@ -100,7 +100,7 @@ public interface Onkeydown<E extends Element<?, ?, E> & Onkeydown<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeydown(java.lang.Object)
+   * @see Onkeydown#onkeydown(java.lang.Object)
    */
   default <Ex extends Throwable> E onkeydown(IOSupplierE<?, Ex> onkeydown) throws IOException, Ex {
     return onkeydown((onkeydown == null) ? null : onkeydown.get());
@@ -117,7 +117,7 @@ public interface Onkeydown<E extends Element<?, ?, E> & Onkeydown<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeydown(java.lang.Object)
+   * @see Onkeydown#onkeydown(java.lang.Object)
    */
   default <Ex extends Throwable> E onkeydown(JavaScriptWritable<Ex> onkeydown) throws IOException, Ex {
     return onkeydown((Object) onkeydown);

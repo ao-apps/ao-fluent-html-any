@@ -103,7 +103,7 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #lang(java.lang.Object)
+   * @see Lang#lang(java.lang.Object)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E lang(IOSupplierE<?, Ex> lang) throws IOException, Ex {
@@ -118,7 +118,7 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
    * <li>See <a href="https://www.w3schools.com/tags/att_global_lang.asp">HTML lang Attribute</a>.</li>
    * </ul>
    *
-   * @see #lang(java.lang.Object)
+   * @see Lang#lang(java.lang.Object)
    */
   default E lang(Locale lang) throws IOException {
     return lang((lang == null) ? null : lang.toLanguageTag());
@@ -134,7 +134,7 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #lang(java.util.Locale)
+   * @see Lang#lang(java.util.Locale)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E lang(Suppliers.Locale<Ex> lang) throws IOException, Ex {
@@ -151,7 +151,7 @@ public interface Lang<E extends Element<?, ?, E> & Lang<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #lang(java.lang.Object)
+   * @see Lang#lang(java.lang.Object)
    */
   default <Ex extends Throwable> E lang(TextWritable<Ex> lang) throws IOException, Ex {
     return lang((Object) lang);

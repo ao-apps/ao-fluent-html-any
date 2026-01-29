@@ -111,7 +111,7 @@ public interface Capture<
    *
    * @since HTML 5
    *
-   * @see #capture(java.lang.String)
+   * @see Capture#capture(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E capture(Suppliers.String<Ex> capture) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Capture<
    *
    * @since HTML 5
    *
-   * @see #capture(java.lang.String)
+   * @see Capture#capture(java.lang.String)
    */
   default E capture(V capture) throws IOException {
     @SuppressWarnings("unchecked")
@@ -148,7 +148,7 @@ public interface Capture<
    *
    * @since HTML 5
    *
-   * @see #capture(java.lang.Enum)
+   * @see Capture#capture(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E capture(IOSupplierE<V, Ex> capture) throws IOException, Ex {

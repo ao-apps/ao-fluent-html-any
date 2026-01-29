@@ -108,7 +108,7 @@ public interface Onreset<E extends Element<?, ?, E> & Onreset<E>> extends Onrese
    *
    * @since HTML 5
    *
-   * @see #onreset(java.lang.Object)
+   * @see Onreset#onreset(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onreset(IOSupplierE<?, Ex> onreset) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onreset<E extends Element<?, ?, E> & Onreset<E>> extends Onrese
    *
    * @since HTML 5
    *
-   * @see #onreset(java.lang.Object)
+   * @see Onreset#onreset(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onreset(JavaScriptWritable<Ex> onreset) throws IOException, Ex {

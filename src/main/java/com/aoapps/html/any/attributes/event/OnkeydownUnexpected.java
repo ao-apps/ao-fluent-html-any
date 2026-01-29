@@ -104,7 +104,7 @@ public interface OnkeydownUnexpected<E extends Element<?, ?, E> & OnkeydownUnexp
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeydown(java.lang.Object)
+   * @see OnkeydownUnexpected#onkeydown(java.lang.Object)
    *
    * @deprecated  Although the onkeydown attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnkeydownUnexpected<E extends Element<?, ?, E> & OnkeydownUnexp
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeydown(java.lang.Object)
+   * @see OnkeydownUnexpected#onkeydown(java.lang.Object)
    *
    * @deprecated  Although the onkeydown attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

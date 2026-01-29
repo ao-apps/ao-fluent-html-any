@@ -108,7 +108,7 @@ public interface Onsuspend<E extends Element<?, ?, E> & Onsuspend<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onsuspend(java.lang.Object)
+   * @see Onsuspend#onsuspend(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onsuspend(IOSupplierE<?, Ex> onsuspend) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onsuspend<E extends Element<?, ?, E> & Onsuspend<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onsuspend(java.lang.Object)
+   * @see Onsuspend#onsuspend(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onsuspend(JavaScriptWritable<Ex> onsuspend) throws IOException, Ex {

@@ -104,7 +104,7 @@ public interface OncopyUnexpected<E extends Element<?, ?, E> & OncopyUnexpected<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #oncopy(java.lang.Object)
+   * @see OncopyUnexpected#oncopy(java.lang.Object)
    *
    * @deprecated  Although the oncopy attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OncopyUnexpected<E extends Element<?, ?, E> & OncopyUnexpected<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #oncopy(java.lang.Object)
+   * @see OncopyUnexpected#oncopy(java.lang.Object)
    *
    * @deprecated  Although the oncopy attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

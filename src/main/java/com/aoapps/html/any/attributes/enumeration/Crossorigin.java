@@ -88,7 +88,7 @@ public interface Crossorigin<E extends Element<?, ?, E> & Crossorigin<E>> {
    *
    * @since HTML 5
    *
-   * @see #crossorigin(java.lang.String)
+   * @see Crossorigin#crossorigin(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E crossorigin(Suppliers.String<Ex> crossorigin) throws IOException, Ex {
@@ -100,7 +100,7 @@ public interface Crossorigin<E extends Element<?, ?, E> & Crossorigin<E>> {
    *
    * @since HTML 5
    *
-   * @see #crossorigin(java.lang.String)
+   * @see Crossorigin#crossorigin(java.lang.String)
    */
   default E crossorigin(Value crossorigin) throws IOException {
     @SuppressWarnings("unchecked")
@@ -115,7 +115,7 @@ public interface Crossorigin<E extends Element<?, ?, E> & Crossorigin<E>> {
    *
    * @since HTML 5
    *
-   * @see #crossorigin(com.aoapps.html.any.attributes.enumeration.Crossorigin.Value)
+   * @see Crossorigin#crossorigin(com.aoapps.html.any.attributes.enumeration.Crossorigin.Value)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E crossorigin(IOSupplierE<Value, Ex> crossorigin) throws IOException, Ex {

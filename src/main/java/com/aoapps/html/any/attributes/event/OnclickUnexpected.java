@@ -104,7 +104,7 @@ public interface OnclickUnexpected<E extends Element<?, ?, E> & OnclickUnexpecte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onclick(java.lang.Object)
+   * @see OnclickUnexpected#onclick(java.lang.Object)
    *
    * @deprecated  Although the onclick attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnclickUnexpected<E extends Element<?, ?, E> & OnclickUnexpecte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onclick(java.lang.Object)
+   * @see OnclickUnexpected#onclick(java.lang.Object)
    *
    * @deprecated  Although the onclick attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

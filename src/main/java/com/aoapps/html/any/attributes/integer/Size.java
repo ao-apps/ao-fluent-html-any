@@ -63,7 +63,7 @@ public interface Size<E extends Element<?, ?, E> & Size<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #size(java.lang.Integer)
+   * @see Size#size(java.lang.Integer)
    */
   default <Ex extends Throwable> E size(IOSupplierE<Integer, Ex> size) throws IOException, Ex {
     return size((size == null) ? null : size.get());

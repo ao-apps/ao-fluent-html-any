@@ -94,7 +94,7 @@ public interface Valign<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #valign(java.lang.String)
+   * @see Valign#valign(java.lang.String)
    *
    * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
    */
@@ -107,7 +107,7 @@ public interface Valign<
   /**
    * See <a href="https://www.w3resource.com/html/attributes/html-valign-attribute.php">HTML valign attribute</a>.
    *
-   * @see #valign(java.lang.String)
+   * @see Valign#valign(java.lang.String)
    *
    * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
    */
@@ -123,7 +123,7 @@ public interface Valign<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #valign(java.lang.Enum)
+   * @see Valign#valign(java.lang.Enum)
    *
    * @deprecated  The valign attribute is not supported in HTML5. Use CSS instead.
    */

@@ -73,7 +73,7 @@ public interface Colspan<E extends Element<?, ?, E> & Colspan<E>> {
    * @param  <Ex>  An arbitrary exception type that may be thrown
    * @param  colspan  Will not write the attribute when is {@code null} or {@code 1}.
    *
-   * @see #colspan(java.lang.Integer)
+   * @see Colspan#colspan(java.lang.Integer)
    */
   default <Ex extends Throwable> E colspan(IOSupplierE<Integer, Ex> colspan) throws IOException, Ex {
     return colspan((colspan == null) ? null : colspan.get());

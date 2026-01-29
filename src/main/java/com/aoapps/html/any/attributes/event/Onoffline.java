@@ -84,7 +84,7 @@ public interface Onoffline<E extends Element<?, ?, E> & Onoffline<E>> {
    *
    * @since HTML 5
    *
-   * @see #onoffline(java.lang.Object)
+   * @see Onoffline#onoffline(java.lang.Object)
    */
   default <Ex extends Throwable> E onoffline(IOSupplierE<?, Ex> onoffline) throws IOException, Ex {
     return onoffline((onoffline == null) ? null : onoffline.get());
@@ -97,7 +97,7 @@ public interface Onoffline<E extends Element<?, ?, E> & Onoffline<E>> {
    *
    * @since HTML 5
    *
-   * @see #onoffline(java.lang.Object)
+   * @see Onoffline#onoffline(java.lang.Object)
    */
   default <Ex extends Throwable> E onoffline(JavaScriptWritable<Ex> onoffline) throws IOException, Ex {
     return onoffline((Object) onoffline);

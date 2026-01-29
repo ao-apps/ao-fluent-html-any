@@ -109,7 +109,7 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondragenter(java.lang.Object)
+   * @see Ondragenter#ondragenter(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragenter(IOSupplierE<?, Ex> ondragenter) throws IOException, Ex {
     return ondragenter((ondragenter == null) ? null : ondragenter.get());
@@ -128,7 +128,7 @@ public interface Ondragenter<E extends Element<?, ?, E> & Ondragenter<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondragenter(java.lang.Object)
+   * @see Ondragenter#ondragenter(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragenter(JavaScriptWritable<Ex> ondragenter) throws IOException, Ex {
     return ondragenter((Object) ondragenter);

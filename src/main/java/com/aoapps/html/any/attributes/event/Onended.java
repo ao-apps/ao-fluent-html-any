@@ -108,7 +108,7 @@ public interface Onended<E extends Element<?, ?, E> & Onended<E>> extends Onende
    *
    * @since HTML 5
    *
-   * @see #onended(java.lang.Object)
+   * @see Onended#onended(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onended(IOSupplierE<?, Ex> onended) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onended<E extends Element<?, ?, E> & Onended<E>> extends Onende
    *
    * @since HTML 5
    *
-   * @see #onended(java.lang.Object)
+   * @see Onended#onended(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onended(JavaScriptWritable<Ex> onended) throws IOException, Ex {

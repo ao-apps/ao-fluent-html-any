@@ -72,7 +72,7 @@ public interface AnyUnion_Metadata_Phrasing<
    * <li>See <a href="https://www.w3schools.com/tags/tag_link.asp">HTML link tag</a>.</li>
    * </ul>
    *
-   * @see #link()
+   * @see AnyUnion_Metadata_Phrasing#link()
    * @see AnyLINK#rel(java.lang.Enum)
    */
   @Factory("link")

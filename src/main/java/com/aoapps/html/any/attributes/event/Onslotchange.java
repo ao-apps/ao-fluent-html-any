@@ -104,7 +104,7 @@ public interface Onslotchange<E extends Element<?, ?, E> & Onslotchange<E>> exte
    *
    * @since HTML 5
    *
-   * @see #onslotchange(java.lang.Object)
+   * @see Onslotchange#onslotchange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onslotchange(IOSupplierE<?, Ex> onslotchange) throws IOException, Ex {
@@ -123,7 +123,7 @@ public interface Onslotchange<E extends Element<?, ?, E> & Onslotchange<E>> exte
    *
    * @since HTML 5
    *
-   * @see #onslotchange(java.lang.Object)
+   * @see Onslotchange#onslotchange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onslotchange(JavaScriptWritable<Ex> onslotchange) throws IOException, Ex {

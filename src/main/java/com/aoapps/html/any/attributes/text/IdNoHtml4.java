@@ -84,7 +84,7 @@ public interface IdNoHtml4<E extends Element<?, ?, E> & IdNoHtml4<E>> extends Id
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #id(java.lang.Object)
+   * @see IdNoHtml4#id(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E id(IOSupplierE<?, Ex> id) throws IOException, Ex {
@@ -103,7 +103,7 @@ public interface IdNoHtml4<E extends Element<?, ?, E> & IdNoHtml4<E>> extends Id
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #id(java.lang.Object)
+   * @see IdNoHtml4#id(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E id(TextWritable<Ex> id) throws IOException, Ex {

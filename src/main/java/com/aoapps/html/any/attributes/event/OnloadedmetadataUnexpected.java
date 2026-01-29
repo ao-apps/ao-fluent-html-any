@@ -89,7 +89,7 @@ public interface OnloadedmetadataUnexpected<E extends Element<?, ?, E> & Onloade
    *
    * @since HTML 5
    *
-   * @see #onloadedmetadata(java.lang.Object)
+   * @see OnloadedmetadataUnexpected#onloadedmetadata(java.lang.Object)
    *
    * @deprecated  Although the onloadedmetadata attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnloadedmetadataUnexpected<E extends Element<?, ?, E> & Onloade
    *
    * @since HTML 5
    *
-   * @see #onloadedmetadata(java.lang.Object)
+   * @see OnloadedmetadataUnexpected#onloadedmetadata(java.lang.Object)
    *
    * @deprecated  Although the onloadedmetadata attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

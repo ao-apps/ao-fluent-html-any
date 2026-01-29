@@ -110,7 +110,7 @@ public interface OnwheelUnexpected<E extends Element<?, ?, E> & OnwheelUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onwheel(java.lang.Object)
+   * @see OnwheelUnexpected#onwheel(java.lang.Object)
    *
    * @deprecated  Although the onwheel attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OnwheelUnexpected<E extends Element<?, ?, E> & OnwheelUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onwheel(java.lang.Object)
+   * @see OnwheelUnexpected#onwheel(java.lang.Object)
    *
    * @deprecated  Although the onwheel attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

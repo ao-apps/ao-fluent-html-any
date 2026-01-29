@@ -45,11 +45,11 @@ public interface Closeable<
 
   /**
    * Closes the content and ends the parent tag.
-   * This is for use in try-with-resources, and simply calls {@link #__()}.
+   * This is for use in try-with-resources, and simply calls {@link Closeable#__()}.
    *
-   * <p>Note: Every implementation must be idempotent and only call {@link #__()} on the first call to {@link #close()}.</p>
+   * <p>Note: Every implementation must be idempotent and only call {@link Closeable#__()} on the first call to {@link Closeable#close()}.</p>
    *
-   * @see  #__()
+   * @see  Closeable#__()
    */
   @Override
   void close() throws IOException;
@@ -59,7 +59,7 @@ public interface Closeable<
    *
    * @return  The parent content model this element is within
    *
-   * @see  #close()
+   * @see  Closeable#close()
    */
   PC __() throws IOException;
 }

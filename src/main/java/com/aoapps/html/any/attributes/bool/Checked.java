@@ -50,7 +50,7 @@ public interface Checked<E extends Element<?, ?, E> & Checked<E>> {
   /**
    * See <a href="https://www.w3schools.com/tags/att_checked.asp">HTML checked Attribute</a>.
    *
-   * @see #checked(boolean)
+   * @see Checked#checked(boolean)
    */
   default E checked(Boolean checked) throws IOException {
     return checked(checked != null && checked);
@@ -61,7 +61,7 @@ public interface Checked<E extends Element<?, ?, E> & Checked<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #checked(java.lang.Boolean)
+   * @see Checked#checked(java.lang.Boolean)
    */
   default <Ex extends Throwable> E checked(IOSupplierE<Boolean, Ex> checked) throws IOException, Ex {
     return checked((checked == null) ? null : checked.get());

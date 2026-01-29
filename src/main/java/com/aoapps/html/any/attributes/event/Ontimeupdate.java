@@ -108,7 +108,7 @@ public interface Ontimeupdate<E extends Element<?, ?, E> & Ontimeupdate<E>> exte
    *
    * @since HTML 5
    *
-   * @see #ontimeupdate(java.lang.Object)
+   * @see Ontimeupdate#ontimeupdate(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E ontimeupdate(IOSupplierE<?, Ex> ontimeupdate) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Ontimeupdate<E extends Element<?, ?, E> & Ontimeupdate<E>> exte
    *
    * @since HTML 5
    *
-   * @see #ontimeupdate(java.lang.Object)
+   * @see Ontimeupdate#ontimeupdate(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E ontimeupdate(JavaScriptWritable<Ex> ontimeupdate) throws IOException, Ex {

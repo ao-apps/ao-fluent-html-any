@@ -102,7 +102,7 @@ public interface ClassNoHtml4<E extends Element<?, ?, E> & ClassNoHtml4<E>> exte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #clazz(java.lang.Object)
+   * @see ClassNoHtml4#clazz(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E clazz(IOSupplierE<?, Ex> clazz) throws IOException, Ex {
@@ -121,7 +121,7 @@ public interface ClassNoHtml4<E extends Element<?, ?, E> & ClassNoHtml4<E>> exte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #clazz(java.lang.Object)
+   * @see ClassNoHtml4#clazz(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E clazz(TextWritable<Ex> clazz) throws IOException, Ex {

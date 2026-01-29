@@ -94,7 +94,7 @@ public interface Align<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #align(java.lang.String)
+   * @see Align#align(java.lang.String)
    *
    * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
    */
@@ -107,7 +107,7 @@ public interface Align<
   /**
    * See <a href="https://www.w3resource.com/html/attributes/html-align-attribute.php">HTML align attribute</a>.
    *
-   * @see #align(java.lang.String)
+   * @see Align#align(java.lang.String)
    *
    * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
    */
@@ -123,7 +123,7 @@ public interface Align<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #align(java.lang.Enum)
+   * @see Align#align(java.lang.Enum)
    *
    * @deprecated  The align attribute is not supported in HTML5. Use CSS instead.
    */

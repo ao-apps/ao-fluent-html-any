@@ -84,7 +84,7 @@ public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
    *
    * @since HTML 5
    *
-   * @see #onmessage(java.lang.Object)
+   * @see Onmessage#onmessage(java.lang.Object)
    */
   default <Ex extends Throwable> E onmessage(IOSupplierE<?, Ex> onmessage) throws IOException, Ex {
     return onmessage((onmessage == null) ? null : onmessage.get());
@@ -97,7 +97,7 @@ public interface Onmessage<E extends Element<?, ?, E> & Onmessage<E>> {
    *
    * @since HTML 5
    *
-   * @see #onmessage(java.lang.Object)
+   * @see Onmessage#onmessage(java.lang.Object)
    */
   default <Ex extends Throwable> E onmessage(JavaScriptWritable<Ex> onmessage) throws IOException, Ex {
     return onmessage((Object) onmessage);

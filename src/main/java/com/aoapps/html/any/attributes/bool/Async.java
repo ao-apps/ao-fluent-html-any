@@ -57,7 +57,7 @@ public interface Async<E extends Element<?, ?, E> & Async<E>> {
    *
    * @since HTML 5
    *
-   * @see #async(boolean)
+   * @see Async#async(boolean)
    */
   default E async(Boolean async) throws IOException {
     return async(async != null && async);
@@ -70,7 +70,7 @@ public interface Async<E extends Element<?, ?, E> & Async<E>> {
    *
    * @since HTML 5
    *
-   * @see #async(java.lang.Boolean)
+   * @see Async#async(java.lang.Boolean)
    */
   default <Ex extends Throwable> E async(IOSupplierE<Boolean, Ex> async) throws IOException, Ex {
     return async((async == null) ? null : async.get());

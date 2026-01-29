@@ -108,7 +108,7 @@ public interface Onstalled<E extends Element<?, ?, E> & Onstalled<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onstalled(java.lang.Object)
+   * @see Onstalled#onstalled(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onstalled(IOSupplierE<?, Ex> onstalled) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onstalled<E extends Element<?, ?, E> & Onstalled<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onstalled(java.lang.Object)
+   * @see Onstalled#onstalled(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onstalled(JavaScriptWritable<Ex> onstalled) throws IOException, Ex {

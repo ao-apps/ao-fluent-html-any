@@ -103,7 +103,7 @@ public interface Onload<E extends Element<?, ?, E> & Onload<E>> extends OnloadUn
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onload(java.lang.Object)
+   * @see Onload#onload(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onload(IOSupplierE<?, Ex> onload) throws IOException, Ex {
@@ -121,7 +121,7 @@ public interface Onload<E extends Element<?, ?, E> & Onload<E>> extends OnloadUn
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onload(java.lang.Object)
+   * @see Onload#onload(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onload(JavaScriptWritable<Ex> onload) throws IOException, Ex {

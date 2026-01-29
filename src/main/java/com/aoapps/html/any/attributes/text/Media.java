@@ -82,7 +82,7 @@ public interface Media<E extends Element<?, ?, E> & Media<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #media(java.lang.Object)
+   * @see Media#media(java.lang.Object)
    */
   default <Ex extends Throwable> E media(IOSupplierE<?, Ex> media) throws IOException, Ex {
     return media((media == null) ? null : media.get());
@@ -93,7 +93,7 @@ public interface Media<E extends Element<?, ?, E> & Media<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #media(java.lang.Object)
+   * @see Media#media(java.lang.Object)
    */
   default <Ex extends Throwable> E media(TextWritable<Ex> media) throws IOException, Ex {
     return media((Object) media);

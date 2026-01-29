@@ -84,7 +84,7 @@ public interface Ononline<E extends Element<?, ?, E> & Ononline<E>> {
    *
    * @since HTML 5
    *
-   * @see #ononline(java.lang.Object)
+   * @see Ononline#ononline(java.lang.Object)
    */
   default <Ex extends Throwable> E ononline(IOSupplierE<?, Ex> ononline) throws IOException, Ex {
     return ononline((ononline == null) ? null : ononline.get());
@@ -97,7 +97,7 @@ public interface Ononline<E extends Element<?, ?, E> & Ononline<E>> {
    *
    * @since HTML 5
    *
-   * @see #ononline(java.lang.Object)
+   * @see Ononline#ononline(java.lang.Object)
    */
   default <Ex extends Throwable> E ononline(JavaScriptWritable<Ex> ononline) throws IOException, Ex {
     return ononline((Object) ononline);

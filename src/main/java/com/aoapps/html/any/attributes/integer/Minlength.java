@@ -72,7 +72,7 @@ public interface Minlength<E extends Element<?, ?, E> & Minlength<E>> {
    *
    * @since HTML 5
    *
-   * @see #minlength(java.lang.Integer)
+   * @see Minlength#minlength(java.lang.Integer)
    */
   default <Ex extends Throwable> E minlength(IOSupplierE<Integer, Ex> minlength) throws IOException, Ex {
     return minlength((minlength == null) ? null : minlength.get());

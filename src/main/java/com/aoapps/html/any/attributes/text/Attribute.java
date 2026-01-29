@@ -65,7 +65,7 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
    * @param  <Ex>  An arbitrary exception type that may be thrown
    * @param value  The attribute value, {@link Attributes#NO_VALUE} (by identity, not value) for an empty attribute, {@code null} for no attribute.
    *
-   * @see #attribute(java.lang.String, java.lang.Object)
+   * @see Attribute#attribute(java.lang.String, java.lang.Object)
    *
    * @deprecated  Please implement specific attributes as-needed
    */
@@ -79,7 +79,7 @@ public interface Attribute<E extends Element<?, ?, E> & Attribute<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #attribute(java.lang.String, java.lang.Object)
+   * @see Attribute#attribute(java.lang.String, java.lang.Object)
    *
    * @deprecated  Please implement specific attributes as-needed
    */

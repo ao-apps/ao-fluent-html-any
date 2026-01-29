@@ -91,9 +91,9 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
 
     /**
      * Validates a dir attribute.
-     * The value should already be {@linkplain #normalize(java.lang.String) normalized}.
+     * The value should already be {@linkplain dir#normalize(java.lang.String) normalized}.
      *
-     * @see #normalize(java.lang.String)
+     * @see dir#normalize(java.lang.String)
      */
     public static ValidationResult validate(String dir) {
       if (
@@ -143,7 +143,7 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #dir(java.lang.String)
+   * @see Dir#dir(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E dir(Suppliers.String<Ex> dir) throws IOException, Ex {
@@ -158,7 +158,7 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
    * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
    * </ul>
    *
-   * @see #dir(java.lang.String)
+   * @see Dir#dir(java.lang.String)
    */
   default E dir(Value dir) throws IOException {
     @SuppressWarnings("unchecked")
@@ -176,7 +176,7 @@ public interface Dir<E extends Element<?, ?, E> & Dir<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #dir(com.aoapps.html.any.attributes.enumeration.Dir.Value)
+   * @see Dir#dir(com.aoapps.html.any.attributes.enumeration.Dir.Value)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E dir(IOSupplierE<Value, Ex> dir) throws IOException, Ex {

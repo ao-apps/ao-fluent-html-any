@@ -90,7 +90,7 @@ public interface Cite<E extends Element<?, ?, E> & Cite<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #cite(java.lang.String)
+   * @see Cite#cite(java.lang.String)
    */
   default <Ex extends Throwable> E cite(IOSupplierE<String, Ex> cite) throws IOException, Ex {
     return cite((cite == null) ? null : cite.get());

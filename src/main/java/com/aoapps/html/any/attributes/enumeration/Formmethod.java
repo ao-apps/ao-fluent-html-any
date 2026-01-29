@@ -103,7 +103,7 @@ public interface Formmethod<
    *
    * @since HTML 5
    *
-   * @see #formmethod(java.lang.String)
+   * @see Formmethod#formmethod(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E formmethod(Suppliers.String<Ex> formmethod) throws IOException, Ex {
@@ -118,7 +118,7 @@ public interface Formmethod<
    *
    * @since HTML 5
    *
-   * @see #formmethod(java.lang.String)
+   * @see Formmethod#formmethod(java.lang.String)
    */
   default E formmethod(V formmethod) throws IOException {
     @SuppressWarnings("unchecked")
@@ -136,7 +136,7 @@ public interface Formmethod<
    *
    * @since HTML 5
    *
-   * @see #formmethod(java.lang.Enum)
+   * @see Formmethod#formmethod(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E formmethod(IOSupplierE<V, Ex> formmethod) throws IOException, Ex {

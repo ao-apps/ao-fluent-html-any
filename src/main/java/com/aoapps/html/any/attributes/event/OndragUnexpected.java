@@ -110,7 +110,7 @@ public interface OndragUnexpected<E extends Element<?, ?, E> & OndragUnexpected<
    *
    * @since HTML 5
    *
-   * @see #ondrag(java.lang.Object)
+   * @see OndragUnexpected#ondrag(java.lang.Object)
    *
    * @deprecated  Although the ondrag attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OndragUnexpected<E extends Element<?, ?, E> & OndragUnexpected<
    *
    * @since HTML 5
    *
-   * @see #ondrag(java.lang.Object)
+   * @see OndragUnexpected#ondrag(java.lang.Object)
    *
    * @deprecated  Although the ondrag attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

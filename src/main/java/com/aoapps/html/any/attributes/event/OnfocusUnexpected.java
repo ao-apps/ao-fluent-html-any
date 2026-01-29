@@ -104,7 +104,7 @@ public interface OnfocusUnexpected<E extends Element<?, ?, E> & OnfocusUnexpecte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onfocus(java.lang.Object)
+   * @see OnfocusUnexpected#onfocus(java.lang.Object)
    *
    * @deprecated  Although the onfocus attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnfocusUnexpected<E extends Element<?, ?, E> & OnfocusUnexpecte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onfocus(java.lang.Object)
+   * @see OnfocusUnexpected#onfocus(java.lang.Object)
    *
    * @deprecated  Although the onfocus attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

@@ -97,7 +97,7 @@ public interface WidthHtml4Only<E extends Element<?, ?, E> & WidthHtml4Only<E>> 
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #width(java.lang.String)
+   * @see WidthHtml4Only#width(java.lang.String)
    *
    * @deprecated  The width attribute is not supported in HTML5. Use CSS instead.
    */

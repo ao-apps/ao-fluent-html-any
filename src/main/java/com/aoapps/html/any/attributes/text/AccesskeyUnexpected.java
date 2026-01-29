@@ -107,7 +107,7 @@ public interface AccesskeyUnexpected<E extends Element<?, ?, E> & AccesskeyUnexp
    *
    * @since HTML 5
    *
-   * @see #accesskey(java.lang.Object)
+   * @see AccesskeyUnexpected#accesskey(java.lang.Object)
    *
    * @deprecated  Although the accesskey attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -161,7 +161,7 @@ public interface AccesskeyUnexpected<E extends Element<?, ?, E> & AccesskeyUnexp
    *
    * @since HTML 5
    *
-   * @see #accesskey(java.lang.Object)
+   * @see AccesskeyUnexpected#accesskey(java.lang.Object)
    *
    * @deprecated  Although the accesskey attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

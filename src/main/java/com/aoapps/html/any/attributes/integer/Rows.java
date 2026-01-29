@@ -66,7 +66,7 @@ public interface Rows<E extends Element<?, ?, E> & Rows<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #rows(java.lang.Integer)
+   * @see Rows#rows(java.lang.Integer)
    */
   default <Ex extends Throwable> E rows(IOSupplierE<Integer, Ex> rows) throws IOException, Ex {
     return rows((rows == null) ? null : rows.get());

@@ -88,7 +88,7 @@ public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
    *
    * @since HTML 5
    *
-   * @see #placeholder(java.lang.Object)
+   * @see Placeholder#placeholder(java.lang.Object)
    */
   default <Ex extends Throwable> E placeholder(IOSupplierE<?, Ex> placeholder) throws IOException, Ex {
     return placeholder((placeholder == null) ? null : placeholder.get());
@@ -101,7 +101,7 @@ public interface Placeholder<E extends Element<?, ?, E> & Placeholder<E>> {
    *
    * @since HTML 5
    *
-   * @see #placeholder(java.lang.Object)
+   * @see Placeholder#placeholder(java.lang.Object)
    */
   default <Ex extends Throwable> E placeholder(TextWritable<Ex> placeholder) throws IOException, Ex {
     return placeholder((Object) placeholder);

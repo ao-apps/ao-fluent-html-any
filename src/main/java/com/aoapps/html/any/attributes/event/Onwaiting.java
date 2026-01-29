@@ -108,7 +108,7 @@ public interface Onwaiting<E extends Element<?, ?, E> & Onwaiting<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onwaiting(java.lang.Object)
+   * @see Onwaiting#onwaiting(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onwaiting(IOSupplierE<?, Ex> onwaiting) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onwaiting<E extends Element<?, ?, E> & Onwaiting<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onwaiting(java.lang.Object)
+   * @see Onwaiting#onwaiting(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onwaiting(JavaScriptWritable<Ex> onwaiting) throws IOException, Ex {

@@ -110,7 +110,7 @@ public interface OndragoverUnexpected<E extends Element<?, ?, E> & OndragoverUne
    *
    * @since HTML 5
    *
-   * @see #ondragover(java.lang.Object)
+   * @see OndragoverUnexpected#ondragover(java.lang.Object)
    *
    * @deprecated  Although the ondragover attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OndragoverUnexpected<E extends Element<?, ?, E> & OndragoverUne
    *
    * @since HTML 5
    *
-   * @see #ondragover(java.lang.Object)
+   * @see OndragoverUnexpected#ondragover(java.lang.Object)
    *
    * @deprecated  Although the ondragover attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

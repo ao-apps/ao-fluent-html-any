@@ -82,7 +82,7 @@ public interface Type<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #type(java.lang.String)
+   * @see Type#type(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E type(Suppliers.String<Ex> type) throws IOException, Ex {
@@ -92,7 +92,7 @@ public interface Type<
   /**
    * See <a href="https://www.w3schools.com/tags/att_type.asp">HTML type Attribute</a>.
    *
-   * @see #type(java.lang.String)
+   * @see Type#type(java.lang.String)
    */
   default E type(V type) throws IOException {
     @SuppressWarnings("unchecked")
@@ -105,7 +105,7 @@ public interface Type<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #type(java.lang.Enum)
+   * @see Type#type(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E type(IOSupplierE<V, Ex> type) throws IOException, Ex {

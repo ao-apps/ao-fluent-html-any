@@ -89,7 +89,7 @@ public interface OnwaitingUnexpected<E extends Element<?, ?, E> & OnwaitingUnexp
    *
    * @since HTML 5
    *
-   * @see #onwaiting(java.lang.Object)
+   * @see OnwaitingUnexpected#onwaiting(java.lang.Object)
    *
    * @deprecated  Although the onwaiting attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnwaitingUnexpected<E extends Element<?, ?, E> & OnwaitingUnexp
    *
    * @since HTML 5
    *
-   * @see #onwaiting(java.lang.Object)
+   * @see OnwaitingUnexpected#onwaiting(java.lang.Object)
    *
    * @deprecated  Although the onwaiting attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

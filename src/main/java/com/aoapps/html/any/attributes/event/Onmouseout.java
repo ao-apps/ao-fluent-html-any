@@ -100,7 +100,7 @@ public interface Onmouseout<E extends Element<?, ?, E> & Onmouseout<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmouseout(java.lang.Object)
+   * @see Onmouseout#onmouseout(java.lang.Object)
    */
   default <Ex extends Throwable> E onmouseout(IOSupplierE<?, Ex> onmouseout) throws IOException, Ex {
     return onmouseout((onmouseout == null) ? null : onmouseout.get());
@@ -117,7 +117,7 @@ public interface Onmouseout<E extends Element<?, ?, E> & Onmouseout<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmouseout(java.lang.Object)
+   * @see Onmouseout#onmouseout(java.lang.Object)
    */
   default <Ex extends Throwable> E onmouseout(JavaScriptWritable<Ex> onmouseout) throws IOException, Ex {
     return onmouseout((Object) onmouseout);

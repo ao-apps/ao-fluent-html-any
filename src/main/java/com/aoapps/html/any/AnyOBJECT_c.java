@@ -35,13 +35,13 @@ package com.aoapps.html.any;
  * always applies to this element type.</p>
  *
  * <p><em>For the full, context-aware content model, which will likely include more elements,
- * {@linkplain #pc() use the parent content model directly}.</em></p>
+ * {@linkplain AnyOBJECT_c#pc() use the parent content model directly}.</em></p>
  *
  * @param  <D>   This document type
  * @param  <PC>  The parent content model this element is within
  * @param  <_c>  This content model as {@link Closeable}, which will be the parent content model of child elements
  *
- * @see  #pc()
+ * @see  AnyOBJECT_c#pc()
  *
  * @author  AO Industries, Inc.
  */

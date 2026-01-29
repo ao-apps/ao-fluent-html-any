@@ -110,7 +110,7 @@ public interface OndragstartUnexpected<E extends Element<?, ?, E> & OndragstartU
    *
    * @since HTML 5
    *
-   * @see #ondragstart(java.lang.Object)
+   * @see OndragstartUnexpected#ondragstart(java.lang.Object)
    *
    * @deprecated  Although the ondragstart attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OndragstartUnexpected<E extends Element<?, ?, E> & OndragstartU
    *
    * @since HTML 5
    *
-   * @see #ondragstart(java.lang.Object)
+   * @see OndragstartUnexpected#ondragstart(java.lang.Object)
    *
    * @deprecated  Although the ondragstart attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

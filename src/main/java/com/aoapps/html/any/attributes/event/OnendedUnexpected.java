@@ -89,7 +89,7 @@ public interface OnendedUnexpected<E extends Element<?, ?, E> & OnendedUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onended(java.lang.Object)
+   * @see OnendedUnexpected#onended(java.lang.Object)
    *
    * @deprecated  Although the onended attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnendedUnexpected<E extends Element<?, ?, E> & OnendedUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onended(java.lang.Object)
+   * @see OnendedUnexpected#onended(java.lang.Object)
    *
    * @deprecated  Although the onended attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

@@ -89,7 +89,7 @@ public interface OndurationchangeUnexpected<E extends Element<?, ?, E> & Ondurat
    *
    * @since HTML 5
    *
-   * @see #ondurationchange(java.lang.Object)
+   * @see OndurationchangeUnexpected#ondurationchange(java.lang.Object)
    *
    * @deprecated  Although the ondurationchange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OndurationchangeUnexpected<E extends Element<?, ?, E> & Ondurat
    *
    * @since HTML 5
    *
-   * @see #ondurationchange(java.lang.Object)
+   * @see OndurationchangeUnexpected#ondurationchange(java.lang.Object)
    *
    * @deprecated  Although the ondurationchange attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

@@ -105,7 +105,7 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends Onsu
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onsubmit(java.lang.Object)
+   * @see Onsubmit#onsubmit(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onsubmit(IOSupplierE<?, Ex> onsubmit) throws IOException, Ex {
@@ -123,7 +123,7 @@ public interface Onsubmit<E extends Element<?, ?, E> & Onsubmit<E>> extends Onsu
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onsubmit(java.lang.Object)
+   * @see Onsubmit#onsubmit(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onsubmit(JavaScriptWritable<Ex> onsubmit) throws IOException, Ex {

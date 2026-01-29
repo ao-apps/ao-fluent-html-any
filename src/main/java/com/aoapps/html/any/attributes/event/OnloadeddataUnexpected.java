@@ -89,7 +89,7 @@ public interface OnloadeddataUnexpected<E extends Element<?, ?, E> & Onloadeddat
    *
    * @since HTML 5
    *
-   * @see #onloadeddata(java.lang.Object)
+   * @see OnloadeddataUnexpected#onloadeddata(java.lang.Object)
    *
    * @deprecated  Although the onloadeddata attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnloadeddataUnexpected<E extends Element<?, ?, E> & Onloadeddat
    *
    * @since HTML 5
    *
-   * @see #onloadeddata(java.lang.Object)
+   * @see OnloadeddataUnexpected#onloadeddata(java.lang.Object)
    *
    * @deprecated  Although the onloadeddata attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

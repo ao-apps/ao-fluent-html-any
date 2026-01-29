@@ -108,7 +108,7 @@ public interface Onpause<E extends Element<?, ?, E> & Onpause<E>> extends Onpaus
    *
    * @since HTML 5
    *
-   * @see #onpause(java.lang.Object)
+   * @see Onpause#onpause(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onpause(IOSupplierE<?, Ex> onpause) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onpause<E extends Element<?, ?, E> & Onpause<E>> extends Onpaus
    *
    * @since HTML 5
    *
-   * @see #onpause(java.lang.Object)
+   * @see Onpause#onpause(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onpause(JavaScriptWritable<Ex> onpause) throws IOException, Ex {

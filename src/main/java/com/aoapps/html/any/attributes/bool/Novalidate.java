@@ -69,7 +69,7 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
    *
    * @since HTML 5
    *
-   * @see #novalidate(boolean)
+   * @see Novalidate#novalidate(boolean)
    */
   default E novalidate(Boolean novalidate) throws IOException {
     return novalidate(novalidate != null && novalidate);
@@ -86,7 +86,7 @@ public interface Novalidate<E extends Element<?, ?, E> & Novalidate<E>> {
    *
    * @since HTML 5
    *
-   * @see #novalidate(java.lang.Boolean)
+   * @see Novalidate#novalidate(java.lang.Boolean)
    */
   default <Ex extends Throwable> E novalidate(IOSupplierE<Boolean, Ex> novalidate) throws IOException, Ex {
     return novalidate((novalidate == null) ? null : novalidate.get());

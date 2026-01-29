@@ -100,7 +100,7 @@ public interface Ondblclick<E extends Element<?, ?, E> & Ondblclick<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #ondblclick(java.lang.Object)
+   * @see Ondblclick#ondblclick(java.lang.Object)
    */
   default <Ex extends Throwable> E ondblclick(IOSupplierE<?, Ex> ondblclick) throws IOException, Ex {
     return ondblclick((ondblclick == null) ? null : ondblclick.get());
@@ -117,7 +117,7 @@ public interface Ondblclick<E extends Element<?, ?, E> & Ondblclick<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #ondblclick(java.lang.Object)
+   * @see Ondblclick#ondblclick(java.lang.Object)
    */
   default <Ex extends Throwable> E ondblclick(JavaScriptWritable<Ex> ondblclick) throws IOException, Ex {
     return ondblclick((Object) ondblclick);

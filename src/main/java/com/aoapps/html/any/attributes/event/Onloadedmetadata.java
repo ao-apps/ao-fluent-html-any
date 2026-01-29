@@ -108,7 +108,7 @@ public interface Onloadedmetadata<E extends Element<?, ?, E> & Onloadedmetadata<
    *
    * @since HTML 5
    *
-   * @see #onloadedmetadata(java.lang.Object)
+   * @see Onloadedmetadata#onloadedmetadata(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onloadedmetadata(IOSupplierE<?, Ex> onloadedmetadata) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onloadedmetadata<E extends Element<?, ?, E> & Onloadedmetadata<
    *
    * @since HTML 5
    *
-   * @see #onloadedmetadata(java.lang.Object)
+   * @see Onloadedmetadata#onloadedmetadata(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onloadedmetadata(JavaScriptWritable<Ex> onloadedmetadata) throws IOException, Ex {

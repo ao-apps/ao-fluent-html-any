@@ -109,7 +109,7 @@ public interface Ondrag<E extends Element<?, ?, E> & Ondrag<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondrag(java.lang.Object)
+   * @see Ondrag#ondrag(java.lang.Object)
    */
   default <Ex extends Throwable> E ondrag(IOSupplierE<?, Ex> ondrag) throws IOException, Ex {
     return ondrag((ondrag == null) ? null : ondrag.get());
@@ -128,7 +128,7 @@ public interface Ondrag<E extends Element<?, ?, E> & Ondrag<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondrag(java.lang.Object)
+   * @see Ondrag#ondrag(java.lang.Object)
    */
   default <Ex extends Throwable> E ondrag(JavaScriptWritable<Ex> ondrag) throws IOException, Ex {
     return ondrag((Object) ondrag);

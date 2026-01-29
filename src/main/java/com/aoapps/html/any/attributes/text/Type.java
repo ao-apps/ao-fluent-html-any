@@ -79,7 +79,7 @@ public interface Type<E extends Element<?, ?, E> & Type<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #type(java.lang.Object)
+   * @see Type#type(java.lang.Object)
    */
   default <Ex extends Throwable> E type(IOSupplierE<?, Ex> type) throws IOException, Ex {
     return type((type == null) ? null : type.get());
@@ -90,7 +90,7 @@ public interface Type<E extends Element<?, ?, E> & Type<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #type(java.lang.Object)
+   * @see Type#type(java.lang.Object)
    */
   default <Ex extends Throwable> E type(TextWritable<Ex> type) throws IOException, Ex {
     return type((Object) type);

@@ -109,7 +109,7 @@ public interface Ondragend<E extends Element<?, ?, E> & Ondragend<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondragend(java.lang.Object)
+   * @see Ondragend#ondragend(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragend(IOSupplierE<?, Ex> ondragend) throws IOException, Ex {
     return ondragend((ondragend == null) ? null : ondragend.get());
@@ -128,7 +128,7 @@ public interface Ondragend<E extends Element<?, ?, E> & Ondragend<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondragend(java.lang.Object)
+   * @see Ondragend#ondragend(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragend(JavaScriptWritable<Ex> ondragend) throws IOException, Ex {
     return ondragend((Object) ondragend);

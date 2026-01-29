@@ -104,7 +104,7 @@ public interface OnkeyupUnexpected<E extends Element<?, ?, E> & OnkeyupUnexpecte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeyup(java.lang.Object)
+   * @see OnkeyupUnexpected#onkeyup(java.lang.Object)
    *
    * @deprecated  Although the onkeyup attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnkeyupUnexpected<E extends Element<?, ?, E> & OnkeyupUnexpecte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeyup(java.lang.Object)
+   * @see OnkeyupUnexpected#onkeyup(java.lang.Object)
    *
    * @deprecated  Although the onkeyup attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

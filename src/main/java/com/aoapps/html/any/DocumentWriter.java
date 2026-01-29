@@ -93,18 +93,18 @@ public interface DocumentWriter extends Whitespace {
   /**
    * Gets the current writer this document is writing to, which may be used for raw output.
    *
-   * <p>Please prefer {@link #unsafe()}, which is compatible with try-with-resources blocks.
+   * <p>Please prefer {@link DocumentWriter#unsafe()}, which is compatible with try-with-resources blocks.
    * The writer returned here is the real, underlying writer.</p>
    *
-   * @param  endsNewline  Indicates whether the data that will be written will end in a {@link #NL}.
-   *                      When non-null, will call {@link #setAtnl(boolean)} with the given value.
+   * @param  endsNewline  Indicates whether the data that will be written will end in a {@link DocumentWriter#NL}.
+   *                      When non-null, will call {@link DocumentWriter#setAtnl(boolean)} with the given value.
    *
    * @return  The writer, already optimized via {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
    *          with {@code encoder = null}.
    *
    * @throws  IllegalStateException  when output has been set to {@code null}.
    *
-   * @see  #getRawUnsafe()
+   * @see  DocumentWriter#getRawUnsafe()
    * @see  AnyDocument#setOut(java.io.Writer)
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
@@ -115,17 +115,17 @@ public interface DocumentWriter extends Whitespace {
   /**
    * Gets the current writer this document is writing to, which may be used for raw output.
    *
-   * <p>Please prefer {@link #unsafe()}, which is compatible with try-with-resources blocks.
+   * <p>Please prefer {@link DocumentWriter#unsafe()}, which is compatible with try-with-resources blocks.
    * The writer returned here is the real, underlying writer.</p>
    *
-   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   * <p>With no knowledge of what will be written, calls {@link DocumentWriter#clearAtnl()} to be safe.</p>
    *
    * @return  The writer, already optimized via {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
    *          with {@code encoder = null}.
    *
    * @throws  IllegalStateException  when output has been set to {@code null}.
    *
-   * @see  #getRawUnsafe(java.lang.Boolean)
+   * @see  DocumentWriter#getRawUnsafe(java.lang.Boolean)
    * @see  AnyDocument#setOut(java.io.Writer)
    *
    * @deprecated  This method will remain, but its use is discouraged as it can be dangerous
@@ -134,7 +134,7 @@ public interface DocumentWriter extends Whitespace {
   Writer getRawUnsafe() throws IllegalStateException;
 
   /**
-   * Performs raw output of a single character, automatically determining {@link #setAtnl(boolean)}.
+   * Performs raw output of a single character, automatically determining {@link DocumentWriter#setAtnl(boolean)}.
    *
    * @return  {@code this} writer
    *
@@ -144,7 +144,7 @@ public interface DocumentWriter extends Whitespace {
   DocumentWriter unsafe(char ch) throws IOException;
 
   /**
-   * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
+   * Performs raw output, automatically determining {@link DocumentWriter#setAtnl(boolean)}.
    *
    * @return  {@code this} writer
    *
@@ -154,7 +154,7 @@ public interface DocumentWriter extends Whitespace {
   DocumentWriter unsafe(char[] cbuf) throws IOException;
 
   /**
-   * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
+   * Performs raw output, automatically determining {@link DocumentWriter#setAtnl(boolean)}.
    *
    * @return  {@code this} writer
    *
@@ -164,7 +164,7 @@ public interface DocumentWriter extends Whitespace {
   DocumentWriter unsafe(char[] cbuf, int offset, int len) throws IOException;
 
   /**
-   * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
+   * Performs raw output, automatically determining {@link DocumentWriter#setAtnl(boolean)}.
    *
    * @return  {@code this} writer
    *
@@ -174,7 +174,7 @@ public interface DocumentWriter extends Whitespace {
   DocumentWriter unsafe(CharSequence csq) throws IOException;
 
   /**
-   * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
+   * Performs raw output, automatically determining {@link DocumentWriter#setAtnl(boolean)}.
    *
    * @return  {@code this} writer
    *
@@ -184,9 +184,9 @@ public interface DocumentWriter extends Whitespace {
   DocumentWriter unsafe(CharSequence csq, int start, int end) throws IOException;
 
   /**
-   * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
+   * Performs raw output, automatically determining {@link DocumentWriter#setAtnl(boolean)}.
    *
-   * <p>When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   * <p>When no knowledge of what will be written, calls {@link DocumentWriter#clearAtnl()} to be safe.</p>
    *
    * @return  {@code this} writer
    *
@@ -196,9 +196,9 @@ public interface DocumentWriter extends Whitespace {
   DocumentWriter unsafe(Object unsafe) throws IOException;
 
   /**
-   * Performs raw output, automatically determining {@link #setAtnl(boolean)}.
+   * Performs raw output, automatically determining {@link DocumentWriter#setAtnl(boolean)}.
    *
-   * <p>When no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   * <p>When no knowledge of what will be written, calls {@link DocumentWriter#clearAtnl()} to be safe.</p>
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
@@ -212,7 +212,7 @@ public interface DocumentWriter extends Whitespace {
   /**
    * Performs raw output.
    *
-   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   * <p>With no knowledge of what will be written, calls {@link DocumentWriter#clearAtnl()} to be safe.</p>
    *
    * @return  {@code this} writer
    *
@@ -225,7 +225,7 @@ public interface DocumentWriter extends Whitespace {
    * Performs raw output.
    * This is well suited for use in a try-with-resources block.
    *
-   * <p>With no knowledge of what will be written, calls {@link #clearAtnl()} to be safe.</p>
+   * <p>With no knowledge of what will be written, calls {@link DocumentWriter#clearAtnl()} to be safe.</p>
    *
    * @return  a writer for direct output, which will ignore any calls to {@link Writer#close()}
    *          to be safely used in a try-with-resources block.
@@ -239,13 +239,13 @@ public interface DocumentWriter extends Whitespace {
 
   // <editor-fold desc="Automatic Newline and Indentation - definition" defaultstate="collapsed">
   /**
-   * Gets if automatic newline (and indentation when {@linkplain #getIndent() enabled}) is currently enabled,
+   * Gets if automatic newline (and indentation when {@linkplain DocumentWriter#getIndent() enabled}) is currently enabled,
    * off by default.
    */
   boolean getAutonli();
 
   /**
-   * Enables or disabled automatic newline (and indentation when {@linkplain #getIndent() enabled}).
+   * Enables or disabled automatic newline (and indentation when {@linkplain DocumentWriter#getIndent() enabled}).
    *
    * @return  {@code this} writer
    */
@@ -279,23 +279,23 @@ public interface DocumentWriter extends Whitespace {
 
   /**
    * Performs automatic newline when
-   * {@link #getAutonli()} and not {@link #getAtnl()}.
+   * {@link DocumentWriter#getAutonli()} and not {@link DocumentWriter#getAtnl()}.
    *
    * @return  {@code this} writer
    */
   DocumentWriter autoNl() throws IOException;
 
   /**
-   * Performs automatic newline when {@link #getAutonli()} and not {@link #getAtnl()},
-   * followed by automatic indentation when {@linkplain #getIndent() enabled}.
+   * Performs automatic newline when {@link DocumentWriter#getAutonli()} and not {@link DocumentWriter#getAtnl()},
+   * followed by automatic indentation when {@linkplain DocumentWriter#getIndent() enabled}.
    *
    * @return  {@code this} writer
    */
   DocumentWriter autoNli() throws IOException;
 
   /**
-   * Performs automatic newline when {@link #getAutonli()} and not {@link #getAtnl()},
-   * followed by automatic indentation with a depth offset when {@linkplain #getIndent() enabled}.
+   * Performs automatic newline when {@link DocumentWriter#getAutonli()} and not {@link DocumentWriter#getAtnl()},
+   * followed by automatic indentation with a depth offset when {@linkplain DocumentWriter#getIndent() enabled}.
    *
    * @param  depthOffset  A value added to the current indentation depth.
    *                      For example, pass {@code -1} when performing a newline before a closing tag or ending curly brace.
@@ -306,7 +306,7 @@ public interface DocumentWriter extends Whitespace {
 
   /**
    * Performs automatic indentation when
-   * {@link #getAutonli()}, {@link #getIndent()}, and {@link #getAtnl()}.
+   * {@link DocumentWriter#getAutonli()}, {@link DocumentWriter#getIndent()}, and {@link DocumentWriter#getAtnl()}.
    *
    * @return  {@code this} writer
    */
@@ -314,7 +314,7 @@ public interface DocumentWriter extends Whitespace {
 
   /**
    * Performs automatic indentation with a depth offset when
-   * {@link #getAutonli()}, {@link #getIndent()}, and {@link #getAtnl()}.
+   * {@link DocumentWriter#getAutonli()}, {@link DocumentWriter#getIndent()}, and {@link DocumentWriter#getAtnl()}.
    *
    * @param  depthOffset  A value added to the current indentation depth.
    *                      For example, pass {@code -1} when performing a newline before a closing tag or ending curly brace.

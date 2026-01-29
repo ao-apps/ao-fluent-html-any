@@ -89,10 +89,10 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    * <p>Already optimized via {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
    * with {@code encoder = null}.</p>
    *
-   * @see  #unsafe()
-   * @see  #getRawUnsafe()
-   * @see  #getRawUnsafe(java.lang.Boolean)
-   * @see  #setOut(java.io.Writer)
+   * @see  AnyDocument#unsafe()
+   * @see  AnyDocument#getRawUnsafe()
+   * @see  AnyDocument#getRawUnsafe(java.lang.Boolean)
+   * @see  AnyDocument#setOut(java.io.Writer)
    */
   // TODO: Wrap this writer in XhtmlValidator if is not already validating XHTML?
   //       If wrapping, consider uses of this losing access to this wrapping, such as optimizations done by MediaValidator
@@ -108,7 +108,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *              <p>Will be through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
    *              with {@code encoder = null}.</p>
    *
-   * @see  #setOut(java.io.Writer)
+   * @see  AnyDocument#setOut(java.io.Writer)
    */
   protected AnyDocument(EncodingContext encodingContext, Writer out) {
     this.encodingContext = encodingContext;
@@ -124,8 +124,8 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    *              <p>Will be through {@link Coercion#optimize(java.io.Writer, com.aoapps.lang.io.Encoder)}
    *              with {@code encoder = null}.</p>
    *
-   * @see  #getRawUnsafe()
-   * @see  #getRawUnsafe(java.lang.Boolean)
+   * @see  AnyDocument#getRawUnsafe()
+   * @see  AnyDocument#getRawUnsafe(java.lang.Boolean)
    */
   public void setOut(Writer out) {
     this.optimized = (out == null) ? null : Coercion.optimize(out, null);
@@ -423,7 +423,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    * Performs raw output of a non-empty array.
    *
    * @param  endsNewline  Declares the array ends in a newline.
-   *                      Calls {@link #setAtnl(boolean)} after the write.
+   *                      Calls {@link AnyDocument#setAtnl(boolean)} after the write.
    *                      This is an optimization that is verified when assertions are enabled.
    *
    * @return  {@code this} document
@@ -463,7 +463,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    * Performs raw output of a non-empty array.
    *
    * @param  endsNewline  Declares the array ends in a newline.
-   *                      Calls {@link #setAtnl(boolean)} after the write.
+   *                      Calls {@link AnyDocument#setAtnl(boolean)} after the write.
    *                      This is an optimization that is verified when assertions are enabled.
    *
    * @return  {@code this} document
@@ -504,7 +504,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    * Performs raw output of a non-empty sequence.
    *
    * @param  endsNewline  Declares the sequence ends in a newline.
-   *                      Calls {@link #setAtnl(boolean)} after the write.
+   *                      Calls {@link AnyDocument#setAtnl(boolean)} after the write.
    *                      This is an optimization that is verified when assertions are enabled.
    *
    * @return  {@code this} document
@@ -544,7 +544,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
    * Performs raw output of a non-empty sequence.
    *
    * @param  endsNewline  Declares the sequence ends in a newline.
-   *                      Calls {@link #setAtnl(boolean)} after the write.
+   *                      Calls {@link AnyDocument#setAtnl(boolean)} after the write.
    *                      This is an optimization that is verified when assertions are enabled.
    *
    * @return  {@code this} document
@@ -694,7 +694,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   }
 
   /**
-   * Calls {@link #clearAtnl()} then wraps the given writer via {@link NoCloseMediaValidator#wrap(java.io.Writer)}
+   * Calls {@link AnyDocument#clearAtnl()} then wraps the given writer via {@link NoCloseMediaValidator#wrap(java.io.Writer)}
    * to ignore against calls to {@link Writer#close()}.
    */
   <W extends Writer & NoClose> W unsafe(Writer unsafe) {
@@ -1703,7 +1703,7 @@ public abstract class AnyDocument<D extends AnyDocument<D>> implements AnyConten
   /**
    * Writes the XML declaration, if needed, using the character encoding of the encoding context.
    *
-   * @see  #encodingContext
+   * @see  AnyDocument#encodingContext
    * @see  EncodingContext#getCharacterEncoding()
    * @see  Doctype#xmlDeclaration(com.aoapps.encoding.Serialization, java.nio.charset.Charset, java.lang.Appendable)
    */

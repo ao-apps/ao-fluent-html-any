@@ -103,7 +103,7 @@ public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<
    *
    * @since HTML 5
    *
-   * @see #onload(java.lang.Object)
+   * @see OnloadUnexpected#onload(java.lang.Object)
    *
    * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain com.aoapps.html.any.AnyFRAME &lt;frame&gt;},
@@ -129,7 +129,7 @@ public interface OnloadUnexpected<E extends Element<?, ?, E> & OnloadUnexpected<
    *
    * @since HTML 5
    *
-   * @see #onload(java.lang.Object)
+   * @see OnloadUnexpected#onload(java.lang.Object)
    *
    * @deprecated  Although the onload attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyBODY &lt;body&gt;}, {@linkplain AnyEMBED &lt;embed&gt;}, {@linkplain com.aoapps.html.any.AnyFRAME &lt;frame&gt;},

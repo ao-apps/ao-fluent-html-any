@@ -89,7 +89,7 @@ public interface OnsuspendUnexpected<E extends Element<?, ?, E> & OnsuspendUnexp
    *
    * @since HTML 5
    *
-   * @see #onsuspend(java.lang.Object)
+   * @see OnsuspendUnexpected#onsuspend(java.lang.Object)
    *
    * @deprecated  Although the onsuspend attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnsuspendUnexpected<E extends Element<?, ?, E> & OnsuspendUnexp
    *
    * @since HTML 5
    *
-   * @see #onsuspend(java.lang.Object)
+   * @see OnsuspendUnexpected#onsuspend(java.lang.Object)
    *
    * @deprecated  Although the onsuspend attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

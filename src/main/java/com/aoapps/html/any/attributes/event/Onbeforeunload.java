@@ -84,7 +84,7 @@ public interface Onbeforeunload<E extends Element<?, ?, E> & Onbeforeunload<E>> 
    *
    * @since HTML 5
    *
-   * @see #onbeforeunload(java.lang.Object)
+   * @see Onbeforeunload#onbeforeunload(java.lang.Object)
    */
   default <Ex extends Throwable> E onbeforeunload(IOSupplierE<?, Ex> onbeforeunload) throws IOException, Ex {
     return onbeforeunload((onbeforeunload == null) ? null : onbeforeunload.get());
@@ -97,7 +97,7 @@ public interface Onbeforeunload<E extends Element<?, ?, E> & Onbeforeunload<E>> 
    *
    * @since HTML 5
    *
-   * @see #onbeforeunload(java.lang.Object)
+   * @see Onbeforeunload#onbeforeunload(java.lang.Object)
    */
   default <Ex extends Throwable> E onbeforeunload(JavaScriptWritable<Ex> onbeforeunload) throws IOException, Ex {
     return onbeforeunload((Object) onbeforeunload);

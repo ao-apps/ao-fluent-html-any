@@ -104,7 +104,7 @@ public interface OndblclickUnexpected<E extends Element<?, ?, E> & OndblclickUne
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #ondblclick(java.lang.Object)
+   * @see OndblclickUnexpected#ondblclick(java.lang.Object)
    *
    * @deprecated  Although the ondblclick attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OndblclickUnexpected<E extends Element<?, ?, E> & OndblclickUne
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #ondblclick(java.lang.Object)
+   * @see OndblclickUnexpected#ondblclick(java.lang.Object)
    *
    * @deprecated  Although the ondblclick attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

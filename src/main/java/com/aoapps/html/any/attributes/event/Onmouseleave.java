@@ -109,7 +109,7 @@ public interface Onmouseleave<E extends Element<?, ?, E> & Onmouseleave<E>> {
    *
    * @since HTML 5
    *
-   * @see #onmouseleave(java.lang.Object)
+   * @see Onmouseleave#onmouseleave(java.lang.Object)
    */
   default <Ex extends Throwable> E onmouseleave(IOSupplierE<?, Ex> onmouseleave) throws IOException, Ex {
     return onmouseleave((onmouseleave == null) ? null : onmouseleave.get());
@@ -128,7 +128,7 @@ public interface Onmouseleave<E extends Element<?, ?, E> & Onmouseleave<E>> {
    *
    * @since HTML 5
    *
-   * @see #onmouseleave(java.lang.Object)
+   * @see Onmouseleave#onmouseleave(java.lang.Object)
    */
   default <Ex extends Throwable> E onmouseleave(JavaScriptWritable<Ex> onmouseleave) throws IOException, Ex {
     return onmouseleave((Object) onmouseleave);

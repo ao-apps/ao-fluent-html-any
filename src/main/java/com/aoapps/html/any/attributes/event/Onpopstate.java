@@ -84,7 +84,7 @@ public interface Onpopstate<E extends Element<?, ?, E> & Onpopstate<E>> {
    *
    * @since HTML 5
    *
-   * @see #onpopstate(java.lang.Object)
+   * @see Onpopstate#onpopstate(java.lang.Object)
    */
   default <Ex extends Throwable> E onpopstate(IOSupplierE<?, Ex> onpopstate) throws IOException, Ex {
     return onpopstate((onpopstate == null) ? null : onpopstate.get());
@@ -97,7 +97,7 @@ public interface Onpopstate<E extends Element<?, ?, E> & Onpopstate<E>> {
    *
    * @since HTML 5
    *
-   * @see #onpopstate(java.lang.Object)
+   * @see Onpopstate#onpopstate(java.lang.Object)
    */
   default <Ex extends Throwable> E onpopstate(JavaScriptWritable<Ex> onpopstate) throws IOException, Ex {
     return onpopstate((Object) onpopstate);

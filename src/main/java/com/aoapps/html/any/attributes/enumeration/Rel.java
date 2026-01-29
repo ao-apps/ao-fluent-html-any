@@ -82,7 +82,7 @@ public interface Rel<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #rel(java.lang.String)
+   * @see Rel#rel(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E rel(Suppliers.String<Ex> rel) throws IOException, Ex {
@@ -92,7 +92,7 @@ public interface Rel<
   /**
    * See <a href="https://www.w3schools.com/tags/att_rel.asp">HTML rel Attribute</a>.
    *
-   * @see #rel(java.lang.String)
+   * @see Rel#rel(java.lang.String)
    */
   default E rel(V rel) throws IOException {
     @SuppressWarnings("unchecked")
@@ -105,7 +105,7 @@ public interface Rel<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #rel(java.lang.Enum)
+   * @see Rel#rel(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E rel(IOSupplierE<V, Ex> rel) throws IOException, Ex {

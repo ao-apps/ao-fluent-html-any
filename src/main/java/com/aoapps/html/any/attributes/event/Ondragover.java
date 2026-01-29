@@ -109,7 +109,7 @@ public interface Ondragover<E extends Element<?, ?, E> & Ondragover<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondragover(java.lang.Object)
+   * @see Ondragover#ondragover(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragover(IOSupplierE<?, Ex> ondragover) throws IOException, Ex {
     return ondragover((ondragover == null) ? null : ondragover.get());
@@ -128,7 +128,7 @@ public interface Ondragover<E extends Element<?, ?, E> & Ondragover<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondragover(java.lang.Object)
+   * @see Ondragover#ondragover(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragover(JavaScriptWritable<Ex> ondragover) throws IOException, Ex {
     return ondragover((Object) ondragover);

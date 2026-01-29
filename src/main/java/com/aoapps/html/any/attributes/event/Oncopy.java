@@ -100,7 +100,7 @@ public interface Oncopy<E extends Element<?, ?, E> & Oncopy<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #oncopy(java.lang.Object)
+   * @see Oncopy#oncopy(java.lang.Object)
    */
   default <Ex extends Throwable> E oncopy(IOSupplierE<?, Ex> oncopy) throws IOException, Ex {
     return oncopy((oncopy == null) ? null : oncopy.get());
@@ -117,7 +117,7 @@ public interface Oncopy<E extends Element<?, ?, E> & Oncopy<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #oncopy(java.lang.Object)
+   * @see Oncopy#oncopy(java.lang.Object)
    */
   default <Ex extends Throwable> E oncopy(JavaScriptWritable<Ex> oncopy) throws IOException, Ex {
     return oncopy((Object) oncopy);

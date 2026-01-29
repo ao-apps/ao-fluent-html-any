@@ -144,7 +144,7 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
    *
    * @since HTML 5
    *
-   * @see #accesskey(java.lang.Object)
+   * @see Accesskey#accesskey(java.lang.Object)
    */
   default <Ex extends Throwable> E accesskey(IOSupplierE<?, Ex> accesskey) throws IOException, Ex {
     return accesskey((accesskey == null) ? null : accesskey.get());
@@ -162,7 +162,7 @@ public interface Accesskey<E extends Element<?, ?, E> & Accesskey<E>> {
    *
    * @since HTML 5
    *
-   * @see #accesskey(java.lang.Object)
+   * @see Accesskey#accesskey(java.lang.Object)
    */
   default <Ex extends Throwable> E accesskey(TextWritable<Ex> accesskey) throws IOException, Ex {
     return accesskey((Object) accesskey);

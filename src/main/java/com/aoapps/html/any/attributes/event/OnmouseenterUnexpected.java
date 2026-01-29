@@ -110,7 +110,7 @@ public interface OnmouseenterUnexpected<E extends Element<?, ?, E> & Onmouseente
    *
    * @since HTML 5
    *
-   * @see #onmouseenter(java.lang.Object)
+   * @see OnmouseenterUnexpected#onmouseenter(java.lang.Object)
    *
    * @deprecated  Although the onmouseenter attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OnmouseenterUnexpected<E extends Element<?, ?, E> & Onmouseente
    *
    * @since HTML 5
    *
-   * @see #onmouseenter(java.lang.Object)
+   * @see OnmouseenterUnexpected#onmouseenter(java.lang.Object)
    *
    * @deprecated  Although the onmouseenter attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

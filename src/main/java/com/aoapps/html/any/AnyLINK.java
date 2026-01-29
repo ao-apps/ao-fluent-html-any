@@ -278,7 +278,7 @@ public abstract class AnyLINK<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #rel(java.lang.String)
+   * @see AnyLINK#rel(java.lang.String)
    */
   @Override
   public <Ex extends Throwable> E rel(Suppliers.String<Ex> rel) throws IOException, Ex {
@@ -293,7 +293,7 @@ public abstract class AnyLINK<
    * <li>See <a href="https://www.w3schools.com/tags/att_link_rel.asp">HTML link rel Attribute</a>.</li>
    * </ul>
    *
-   * @see #rel(java.lang.String)
+   * @see AnyLINK#rel(java.lang.String)
    */
   @Override
   public E rel(Rel rel) throws IOException {
@@ -310,7 +310,7 @@ public abstract class AnyLINK<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #rel(com.aoapps.html.AnyLINK.Rel)
+   * @see AnyLINK#rel(com.aoapps.html.AnyLINK.Rel)
    */
   @Override
   public <Ex extends Throwable> E rel(IOSupplierE<Rel, Ex> rel) throws IOException, Ex {
@@ -357,7 +357,7 @@ public abstract class AnyLINK<
   /**
    * {@inheritDoc}
    *
-   * <p>If the rel is {@link Rel#STYLESHEET}, a {@linkplain #type(java.lang.String) type}
+   * <p>If the rel is {@link Rel#STYLESHEET}, a {@linkplain AnyLINK#type(java.lang.String) type}
    * has not been written, and the {@link Doctype} is not {@link Doctype#HTML5},
    * writes the default type {@link Type#TEXT_CSS} for backward compatibility.</p>
    *

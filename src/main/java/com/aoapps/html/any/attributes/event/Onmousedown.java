@@ -100,7 +100,7 @@ public interface Onmousedown<E extends Element<?, ?, E> & Onmousedown<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmousedown(java.lang.Object)
+   * @see Onmousedown#onmousedown(java.lang.Object)
    */
   default <Ex extends Throwable> E onmousedown(IOSupplierE<?, Ex> onmousedown) throws IOException, Ex {
     return onmousedown((onmousedown == null) ? null : onmousedown.get());
@@ -117,7 +117,7 @@ public interface Onmousedown<E extends Element<?, ?, E> & Onmousedown<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmousedown(java.lang.Object)
+   * @see Onmousedown#onmousedown(java.lang.Object)
    */
   default <Ex extends Throwable> E onmousedown(JavaScriptWritable<Ex> onmousedown) throws IOException, Ex {
     return onmousedown((Object) onmousedown);

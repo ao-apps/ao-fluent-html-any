@@ -104,7 +104,7 @@ public interface OnpasteUnexpected<E extends Element<?, ?, E> & OnpasteUnexpecte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onpaste(java.lang.Object)
+   * @see OnpasteUnexpected#onpaste(java.lang.Object)
    *
    * @deprecated  Although the onpaste attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnpasteUnexpected<E extends Element<?, ?, E> & OnpasteUnexpecte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onpaste(java.lang.Object)
+   * @see OnpasteUnexpected#onpaste(java.lang.Object)
    *
    * @deprecated  Although the onpaste attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

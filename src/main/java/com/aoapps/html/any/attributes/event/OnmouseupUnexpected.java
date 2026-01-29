@@ -104,7 +104,7 @@ public interface OnmouseupUnexpected<E extends Element<?, ?, E> & OnmouseupUnexp
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmouseup(java.lang.Object)
+   * @see OnmouseupUnexpected#onmouseup(java.lang.Object)
    *
    * @deprecated  Although the onmouseup attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnmouseupUnexpected<E extends Element<?, ?, E> & OnmouseupUnexp
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmouseup(java.lang.Object)
+   * @see OnmouseupUnexpected#onmouseup(java.lang.Object)
    *
    * @deprecated  Although the onmouseup attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

@@ -68,7 +68,7 @@ public interface Autofocus<E extends Element<?, ?, E> & Autofocus<E>> {
    * <li>See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.</li>
    * </ul>
    *
-   * @see #autofocus(boolean)
+   * @see Autofocus#autofocus(boolean)
    *
    * @since HTML 5
    */
@@ -87,7 +87,7 @@ public interface Autofocus<E extends Element<?, ?, E> & Autofocus<E>> {
    *
    * @since HTML 5
    *
-   * @see #autofocus(java.lang.Boolean)
+   * @see Autofocus#autofocus(java.lang.Boolean)
    */
   default <Ex extends Throwable> E autofocus(IOSupplierE<Boolean, Ex> autofocus) throws IOException, Ex {
     return autofocus((autofocus == null) ? null : autofocus.get());

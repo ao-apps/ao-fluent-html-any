@@ -77,7 +77,7 @@ public interface Onunload<E extends Element<?, ?, E> & Onunload<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onunload(java.lang.Object)
+   * @see Onunload#onunload(java.lang.Object)
    */
   default <Ex extends Throwable> E onunload(IOSupplierE<?, Ex> onunload) throws IOException, Ex {
     return onunload((onunload == null) ? null : onunload.get());
@@ -88,7 +88,7 @@ public interface Onunload<E extends Element<?, ?, E> & Onunload<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onunload(java.lang.Object)
+   * @see Onunload#onunload(java.lang.Object)
    */
   default <Ex extends Throwable> E onunload(JavaScriptWritable<Ex> onunload) throws IOException, Ex {
     return onunload((Object) onunload);

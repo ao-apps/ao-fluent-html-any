@@ -109,7 +109,7 @@ public interface Ondrop<E extends Element<?, ?, E> & Ondrop<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondrop(java.lang.Object)
+   * @see Ondrop#ondrop(java.lang.Object)
    */
   default <Ex extends Throwable> E ondrop(IOSupplierE<?, Ex> ondrop) throws IOException, Ex {
     return ondrop((ondrop == null) ? null : ondrop.get());
@@ -128,7 +128,7 @@ public interface Ondrop<E extends Element<?, ?, E> & Ondrop<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondrop(java.lang.Object)
+   * @see Ondrop#ondrop(java.lang.Object)
    */
   default <Ex extends Throwable> E ondrop(JavaScriptWritable<Ex> ondrop) throws IOException, Ex {
     return ondrop((Object) ondrop);

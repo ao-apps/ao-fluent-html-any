@@ -82,7 +82,7 @@ public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #hreflang(java.lang.Object)
+   * @see Hreflang#hreflang(java.lang.Object)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E hreflang(IOSupplierE<?, Ex> hreflang) throws IOException, Ex {
@@ -92,7 +92,7 @@ public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
   /**
    * See <a href="https://www.w3schools.com/tags/att_hreflang.asp">HTML hreflang Attribute</a>.
    *
-   * @see #hreflang(java.lang.Object)
+   * @see Hreflang#hreflang(java.lang.Object)
    */
   default E hreflang(Locale hreflang) throws IOException {
     return hreflang((Object) hreflang);
@@ -103,7 +103,7 @@ public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #hreflang(java.util.Locale)
+   * @see Hreflang#hreflang(java.util.Locale)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E hreflang(Suppliers.Locale<Ex> hreflang) throws IOException, Ex {
@@ -115,7 +115,7 @@ public interface Hreflang<E extends Element<?, ?, E> & Hreflang<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #hreflang(java.lang.Object)
+   * @see Hreflang#hreflang(java.lang.Object)
    */
   default <Ex extends Throwable> E hreflang(TextWritable<Ex> hreflang) throws IOException, Ex {
     return hreflang((Object) hreflang);

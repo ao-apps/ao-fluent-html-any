@@ -89,7 +89,7 @@ public interface OnloadstartUnexpected<E extends Element<?, ?, E> & OnloadstartU
    *
    * @since HTML 5
    *
-   * @see #onloadstart(java.lang.Object)
+   * @see OnloadstartUnexpected#onloadstart(java.lang.Object)
    *
    * @deprecated  Although the onloadstart attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnloadstartUnexpected<E extends Element<?, ?, E> & OnloadstartU
    *
    * @since HTML 5
    *
-   * @see #onloadstart(java.lang.Object)
+   * @see OnloadstartUnexpected#onloadstart(java.lang.Object)
    *
    * @deprecated  Although the onloadstart attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

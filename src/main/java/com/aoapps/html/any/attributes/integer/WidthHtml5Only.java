@@ -83,7 +83,7 @@ public interface WidthHtml5Only<E extends Element<?, ?, E> & WidthHtml5Only<E>> 
    *
    * @since HTML 5
    *
-   * @see #width(java.lang.Integer)
+   * @see WidthHtml5Only#width(java.lang.Integer)
    */
   @Override
   default <Ex extends Throwable> E width(IOSupplierE<Integer, Ex> pixels) throws IOException, Ex {

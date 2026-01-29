@@ -104,7 +104,7 @@ public interface Onsecuritypolicyviolation<E extends Element<?, ?, E> & Onsecuri
    *
    * @since HTML 5
    *
-   * @see #onsecuritypolicyviolation(java.lang.Object)
+   * @see Onsecuritypolicyviolation#onsecuritypolicyviolation(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onsecuritypolicyviolation(IOSupplierE<?, Ex> onsecuritypolicyviolation) throws IOException, Ex {
@@ -123,7 +123,7 @@ public interface Onsecuritypolicyviolation<E extends Element<?, ?, E> & Onsecuri
    *
    * @since HTML 5
    *
-   * @see #onsecuritypolicyviolation(java.lang.Object)
+   * @see Onsecuritypolicyviolation#onsecuritypolicyviolation(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onsecuritypolicyviolation(JavaScriptWritable<Ex> onsecuritypolicyviolation) throws IOException, Ex {

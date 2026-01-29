@@ -101,7 +101,7 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #dir(java.lang.String)
+   * @see DirUnexpected#dir(java.lang.String)
    *
    * @deprecated  Although the dir attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -126,7 +126,7 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    * <li>See <a href="https://www.w3schools.com/tags/att_global_dir.asp">HTML dir Attribute</a>.</li>
    * </ul>
    *
-   * @see #dir(java.lang.String)
+   * @see DirUnexpected#dir(java.lang.String)
    *
    * @deprecated  Although the dir attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -152,7 +152,7 @@ public interface DirUnexpected<E extends Element<?, ?, E> & DirUnexpected<E>> ex
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #dir(com.aoapps.html.any.attributes.enumeration.Dir.Value)
+   * @see DirUnexpected#dir(com.aoapps.html.any.attributes.enumeration.Dir.Value)
    *
    * @deprecated  Although the dir attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

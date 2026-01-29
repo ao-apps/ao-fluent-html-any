@@ -74,7 +74,7 @@ public interface Href<E extends Element<?, ?, E> & Href<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #href(java.lang.String)
+   * @see Href#href(java.lang.String)
    */
   default <Ex extends Throwable> E href(IOSupplierE<String, Ex> href) throws IOException, Ex {
     return href((href == null) ? null : href.get());

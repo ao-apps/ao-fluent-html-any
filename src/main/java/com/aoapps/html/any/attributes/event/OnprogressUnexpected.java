@@ -89,7 +89,7 @@ public interface OnprogressUnexpected<E extends Element<?, ?, E> & OnprogressUne
    *
    * @since HTML 5
    *
-   * @see #onprogress(java.lang.Object)
+   * @see OnprogressUnexpected#onprogress(java.lang.Object)
    *
    * @deprecated  Although the onprogress attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnprogressUnexpected<E extends Element<?, ?, E> & OnprogressUne
    *
    * @since HTML 5
    *
-   * @see #onprogress(java.lang.Object)
+   * @see OnprogressUnexpected#onprogress(java.lang.Object)
    *
    * @deprecated  Although the onprogress attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

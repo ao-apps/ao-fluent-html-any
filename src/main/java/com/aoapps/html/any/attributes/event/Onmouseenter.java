@@ -109,7 +109,7 @@ public interface Onmouseenter<E extends Element<?, ?, E> & Onmouseenter<E>> {
    *
    * @since HTML 5
    *
-   * @see #onmouseenter(java.lang.Object)
+   * @see Onmouseenter#onmouseenter(java.lang.Object)
    */
   default <Ex extends Throwable> E onmouseenter(IOSupplierE<?, Ex> onmouseenter) throws IOException, Ex {
     return onmouseenter((onmouseenter == null) ? null : onmouseenter.get());
@@ -128,7 +128,7 @@ public interface Onmouseenter<E extends Element<?, ?, E> & Onmouseenter<E>> {
    *
    * @since HTML 5
    *
-   * @see #onmouseenter(java.lang.Object)
+   * @see Onmouseenter#onmouseenter(java.lang.Object)
    */
   default <Ex extends Throwable> E onmouseenter(JavaScriptWritable<Ex> onmouseenter) throws IOException, Ex {
     return onmouseenter((Object) onmouseenter);

@@ -50,7 +50,7 @@ public interface Selected<E extends Element<?, ?, E> & Selected<E>> {
   /**
    * See <a href="https://www.w3schools.com/tags/att_selected.asp">HTML selected Attribute</a>.
    *
-   * @see #selected(boolean)
+   * @see Selected#selected(boolean)
    */
   default E selected(Boolean selected) throws IOException {
     return selected(selected != null && selected);
@@ -61,7 +61,7 @@ public interface Selected<E extends Element<?, ?, E> & Selected<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #selected(java.lang.Boolean)
+   * @see Selected#selected(java.lang.Boolean)
    */
   default <Ex extends Throwable> E selected(IOSupplierE<Boolean, Ex> selected) throws IOException, Ex {
     return selected((selected == null) ? null : selected.get());

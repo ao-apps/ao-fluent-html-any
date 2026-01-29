@@ -98,7 +98,7 @@ public interface Method<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #method(java.lang.String)
+   * @see Method#method(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E method(Suppliers.String<Ex> method) throws IOException, Ex {
@@ -112,7 +112,7 @@ public interface Method<
    * <li>See <a href="https://www.w3schools.com/tags/att_method.asp">HTML method Attribute</a>.</li>
    * </ul>
    *
-   * @see #method(java.lang.String)
+   * @see Method#method(java.lang.String)
    */
   default E method(V method) throws IOException {
     @SuppressWarnings("unchecked")
@@ -129,7 +129,7 @@ public interface Method<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #method(java.lang.Enum)
+   * @see Method#method(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E method(IOSupplierE<V, Ex> method) throws IOException, Ex {

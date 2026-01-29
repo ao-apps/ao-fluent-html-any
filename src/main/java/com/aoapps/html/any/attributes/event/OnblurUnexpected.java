@@ -104,7 +104,7 @@ public interface OnblurUnexpected<E extends Element<?, ?, E> & OnblurUnexpected<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onblur(java.lang.Object)
+   * @see OnblurUnexpected#onblur(java.lang.Object)
    *
    * @deprecated  Although the onblur attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnblurUnexpected<E extends Element<?, ?, E> & OnblurUnexpected<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onblur(java.lang.Object)
+   * @see OnblurUnexpected#onblur(java.lang.Object)
    *
    * @deprecated  Although the onblur attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

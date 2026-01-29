@@ -100,7 +100,7 @@ public interface Onclick<E extends Element<?, ?, E> & Onclick<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onclick(java.lang.Object)
+   * @see Onclick#onclick(java.lang.Object)
    */
   default <Ex extends Throwable> E onclick(IOSupplierE<?, Ex> onclick) throws IOException, Ex {
     return onclick((onclick == null) ? null : onclick.get());
@@ -117,7 +117,7 @@ public interface Onclick<E extends Element<?, ?, E> & Onclick<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onclick(java.lang.Object)
+   * @see Onclick#onclick(java.lang.Object)
    */
   default <Ex extends Throwable> E onclick(JavaScriptWritable<Ex> onclick) throws IOException, Ex {
     return onclick((Object) onclick);

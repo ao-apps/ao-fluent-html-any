@@ -89,7 +89,7 @@ public interface OnpauseUnexpected<E extends Element<?, ?, E> & OnpauseUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onpause(java.lang.Object)
+   * @see OnpauseUnexpected#onpause(java.lang.Object)
    *
    * @deprecated  Although the onpause attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnpauseUnexpected<E extends Element<?, ?, E> & OnpauseUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onpause(java.lang.Object)
+   * @see OnpauseUnexpected#onpause(java.lang.Object)
    *
    * @deprecated  Although the onpause attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

@@ -108,7 +108,7 @@ public interface Onprogress<E extends Element<?, ?, E> & Onprogress<E>> extends 
    *
    * @since HTML 5
    *
-   * @see #onprogress(java.lang.Object)
+   * @see Onprogress#onprogress(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onprogress(IOSupplierE<?, Ex> onprogress) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onprogress<E extends Element<?, ?, E> & Onprogress<E>> extends 
    *
    * @since HTML 5
    *
-   * @see #onprogress(java.lang.Object)
+   * @see Onprogress#onprogress(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onprogress(JavaScriptWritable<Ex> onprogress) throws IOException, Ex {

@@ -108,7 +108,7 @@ public interface Onratechange<E extends Element<?, ?, E> & Onratechange<E>> exte
    *
    * @since HTML 5
    *
-   * @see #onratechange(java.lang.Object)
+   * @see Onratechange#onratechange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onratechange(IOSupplierE<?, Ex> onratechange) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onratechange<E extends Element<?, ?, E> & Onratechange<E>> exte
    *
    * @since HTML 5
    *
-   * @see #onratechange(java.lang.Object)
+   * @see Onratechange#onratechange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onratechange(JavaScriptWritable<Ex> onratechange) throws IOException, Ex {

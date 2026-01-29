@@ -99,7 +99,7 @@ public interface AutofocusUnexpected<E extends Element<?, ?, E> & AutofocusUnexp
    * <li>See <a href="https://www.w3schools.com/tags/att_autofocus.asp">HTML autofocus Attribute</a>.</li>
    * </ul>
    *
-   * @see #autofocus(boolean)
+   * @see AutofocusUnexpected#autofocus(boolean)
    *
    * @since HTML 5
    *
@@ -129,7 +129,7 @@ public interface AutofocusUnexpected<E extends Element<?, ?, E> & AutofocusUnexp
    *
    * @since HTML 5
    *
-   * @see #autofocus(java.lang.Boolean)
+   * @see AutofocusUnexpected#autofocus(java.lang.Boolean)
    *
    * @deprecated  Although the autofocus attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

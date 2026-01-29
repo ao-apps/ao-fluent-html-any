@@ -126,7 +126,7 @@ public abstract class AnySCRIPT<
     /**
      * The default type for XHTML 1.0 / HTML 4.
      *
-     * @deprecated  Use {@link #APPLICATION_JAVASCRIPT} in HTML 5.
+     * @deprecated  Use {@link Type#APPLICATION_JAVASCRIPT} in HTML 5.
      */
     @Deprecated(forRemoval = false)
     TEXT_JAVASCRIPT(ContentType.JAVASCRIPT_OLD),
@@ -350,7 +350,7 @@ public abstract class AnySCRIPT<
 
   /**
    * Writes the script, automatically closing the script via
-   * {@link #__()} on {@link JavaScriptWriter#close()}.
+   * {@link AnySCRIPT#__()} on {@link JavaScriptWriter#close()}.
    * This is well suited for use in a try-with-resources block.
    */
   // TODO: __() method to end text?  Call it "ContentWriter"?

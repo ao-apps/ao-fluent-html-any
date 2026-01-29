@@ -66,7 +66,7 @@ public interface Cols<E extends Element<?, ?, E> & Cols<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #cols(java.lang.Integer)
+   * @see Cols#cols(java.lang.Integer)
    */
   default <Ex extends Throwable> E cols(IOSupplierE<Integer, Ex> cols) throws IOException, Ex {
     return cols((cols == null) ? null : cols.get());

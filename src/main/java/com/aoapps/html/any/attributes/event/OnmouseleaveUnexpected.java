@@ -110,7 +110,7 @@ public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & Onmouseleav
    *
    * @since HTML 5
    *
-   * @see #onmouseleave(java.lang.Object)
+   * @see OnmouseleaveUnexpected#onmouseleave(java.lang.Object)
    *
    * @deprecated  Although the onmouseleave attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OnmouseleaveUnexpected<E extends Element<?, ?, E> & Onmouseleav
    *
    * @since HTML 5
    *
-   * @see #onmouseleave(java.lang.Object)
+   * @see OnmouseleaveUnexpected#onmouseleave(java.lang.Object)
    *
    * @deprecated  Although the onmouseleave attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

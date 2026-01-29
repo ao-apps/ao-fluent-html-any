@@ -87,7 +87,7 @@ public interface Onsearch<E extends Element<?, ?, E> & Onsearch<E>> {
    *
    * @since HTML 5
    *
-   * @see #onsearch(java.lang.Object)
+   * @see Onsearch#onsearch(java.lang.Object)
    */
   default <Ex extends Throwable> E onsearch(IOSupplierE<?, Ex> onsearch) throws IOException, Ex {
     return onsearch((onsearch == null) ? null : onsearch.get());
@@ -100,7 +100,7 @@ public interface Onsearch<E extends Element<?, ?, E> & Onsearch<E>> {
    *
    * @since HTML 5
    *
-   * @see #onsearch(java.lang.Object)
+   * @see Onsearch#onsearch(java.lang.Object)
    */
   default <Ex extends Throwable> E onsearch(JavaScriptWritable<Ex> onsearch) throws IOException, Ex {
     return onsearch((Object) onsearch);

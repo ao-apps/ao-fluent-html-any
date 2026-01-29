@@ -100,7 +100,7 @@ public interface Oncut<E extends Element<?, ?, E> & Oncut<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #oncut(java.lang.Object)
+   * @see Oncut#oncut(java.lang.Object)
    */
   default <Ex extends Throwable> E oncut(IOSupplierE<?, Ex> oncut) throws IOException, Ex {
     return oncut((oncut == null) ? null : oncut.get());
@@ -117,7 +117,7 @@ public interface Oncut<E extends Element<?, ?, E> & Oncut<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #oncut(java.lang.Object)
+   * @see Oncut#oncut(java.lang.Object)
    */
   default <Ex extends Throwable> E oncut(JavaScriptWritable<Ex> oncut) throws IOException, Ex {
     return oncut((Object) oncut);

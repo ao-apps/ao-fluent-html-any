@@ -108,7 +108,7 @@ public interface Onvolumechange<E extends Element<?, ?, E> & Onvolumechange<E>> 
    *
    * @since HTML 5
    *
-   * @see #onvolumechange(java.lang.Object)
+   * @see Onvolumechange#onvolumechange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onvolumechange(IOSupplierE<?, Ex> onvolumechange) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onvolumechange<E extends Element<?, ?, E> & Onvolumechange<E>> 
    *
    * @since HTML 5
    *
-   * @see #onvolumechange(java.lang.Object)
+   * @see Onvolumechange#onvolumechange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onvolumechange(JavaScriptWritable<Ex> onvolumechange) throws IOException, Ex {

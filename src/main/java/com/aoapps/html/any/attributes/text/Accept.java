@@ -79,7 +79,7 @@ public interface Accept<E extends Element<?, ?, E> & Accept<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #accept(java.lang.Object)
+   * @see Accept#accept(java.lang.Object)
    */
   default <Ex extends Throwable> E accept(IOSupplierE<?, Ex> accept) throws IOException, Ex {
     return accept((accept == null) ? null : accept.get());
@@ -90,7 +90,7 @@ public interface Accept<E extends Element<?, ?, E> & Accept<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #accept(java.lang.Object)
+   * @see Accept#accept(java.lang.Object)
    */
   default <Ex extends Throwable> E accept(TextWritable<Ex> accept) throws IOException, Ex {
     return accept((Object) accept);

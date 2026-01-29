@@ -104,7 +104,7 @@ public interface OnmouseoutUnexpected<E extends Element<?, ?, E> & OnmouseoutUne
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmouseout(java.lang.Object)
+   * @see OnmouseoutUnexpected#onmouseout(java.lang.Object)
    *
    * @deprecated  Although the onmouseout attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnmouseoutUnexpected<E extends Element<?, ?, E> & OnmouseoutUne
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onmouseout(java.lang.Object)
+   * @see OnmouseoutUnexpected#onmouseout(java.lang.Object)
    *
    * @deprecated  Although the onmouseout attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

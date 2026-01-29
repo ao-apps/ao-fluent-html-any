@@ -62,7 +62,7 @@ public interface Span<E extends Element<?, ?, E> & Span<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #span(java.lang.Integer)
+   * @see Span#span(java.lang.Integer)
    */
   default <Ex extends Throwable> E span(IOSupplierE<Integer, Ex> span) throws IOException, Ex {
     return span((span == null) ? null : span.get());

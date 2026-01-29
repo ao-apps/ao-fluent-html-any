@@ -74,7 +74,7 @@ public interface Src<E extends Element<?, ?, E> & Src<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #src(java.lang.String)
+   * @see Src#src(java.lang.String)
    */
   default <Ex extends Throwable> E src(IOSupplierE<String, Ex> src) throws IOException, Ex {
     return src((src == null) ? null : src.get());

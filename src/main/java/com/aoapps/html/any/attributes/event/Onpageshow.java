@@ -84,7 +84,7 @@ public interface Onpageshow<E extends Element<?, ?, E> & Onpageshow<E>> {
    *
    * @since HTML 5
    *
-   * @see #onpageshow(java.lang.Object)
+   * @see Onpageshow#onpageshow(java.lang.Object)
    */
   default <Ex extends Throwable> E onpageshow(IOSupplierE<?, Ex> onpageshow) throws IOException, Ex {
     return onpageshow((onpageshow == null) ? null : onpageshow.get());
@@ -97,7 +97,7 @@ public interface Onpageshow<E extends Element<?, ?, E> & Onpageshow<E>> {
    *
    * @since HTML 5
    *
-   * @see #onpageshow(java.lang.Object)
+   * @see Onpageshow#onpageshow(java.lang.Object)
    */
   default <Ex extends Throwable> E onpageshow(JavaScriptWritable<Ex> onpageshow) throws IOException, Ex {
     return onpageshow((Object) onpageshow);

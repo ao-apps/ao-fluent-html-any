@@ -100,7 +100,7 @@ public interface Onkeyup<E extends Element<?, ?, E> & Onkeyup<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeyup(java.lang.Object)
+   * @see Onkeyup#onkeyup(java.lang.Object)
    */
   default <Ex extends Throwable> E onkeyup(IOSupplierE<?, Ex> onkeyup) throws IOException, Ex {
     return onkeyup((onkeyup == null) ? null : onkeyup.get());
@@ -117,7 +117,7 @@ public interface Onkeyup<E extends Element<?, ?, E> & Onkeyup<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeyup(java.lang.Object)
+   * @see Onkeyup#onkeyup(java.lang.Object)
    */
   default <Ex extends Throwable> E onkeyup(JavaScriptWritable<Ex> onkeyup) throws IOException, Ex {
     return onkeyup((Object) onkeyup);

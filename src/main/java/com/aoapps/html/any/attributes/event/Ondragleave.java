@@ -109,7 +109,7 @@ public interface Ondragleave<E extends Element<?, ?, E> & Ondragleave<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondragleave(java.lang.Object)
+   * @see Ondragleave#ondragleave(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragleave(IOSupplierE<?, Ex> ondragleave) throws IOException, Ex {
     return ondragleave((ondragleave == null) ? null : ondragleave.get());
@@ -128,7 +128,7 @@ public interface Ondragleave<E extends Element<?, ?, E> & Ondragleave<E>> {
    *
    * @since HTML 5
    *
-   * @see #ondragleave(java.lang.Object)
+   * @see Ondragleave#ondragleave(java.lang.Object)
    */
   default <Ex extends Throwable> E ondragleave(JavaScriptWritable<Ex> ondragleave) throws IOException, Ex {
     return ondragleave((Object) ondragleave);

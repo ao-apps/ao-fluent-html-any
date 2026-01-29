@@ -96,7 +96,7 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
    *
    * @since HTML 5
    *
-   * @see #onchange(java.lang.Object)
+   * @see OnchangeUnexpected#onchange(java.lang.Object)
    *
    * @deprecated  Although the onchange attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;},
@@ -121,7 +121,7 @@ public interface OnchangeUnexpected<E extends Element<?, ?, E> & OnchangeUnexpec
    *
    * @since HTML 5
    *
-   * @see #onchange(java.lang.Object)
+   * @see OnchangeUnexpected#onchange(java.lang.Object)
    *
    * @deprecated  Although the onchange attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;}, {@linkplain AnySELECT &lt;select&gt;},

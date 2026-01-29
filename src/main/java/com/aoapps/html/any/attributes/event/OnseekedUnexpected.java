@@ -89,7 +89,7 @@ public interface OnseekedUnexpected<E extends Element<?, ?, E> & OnseekedUnexpec
    *
    * @since HTML 5
    *
-   * @see #onseeked(java.lang.Object)
+   * @see OnseekedUnexpected#onseeked(java.lang.Object)
    *
    * @deprecated  Although the onseeked attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OnseekedUnexpected<E extends Element<?, ?, E> & OnseekedUnexpec
    *
    * @since HTML 5
    *
-   * @see #onseeked(java.lang.Object)
+   * @see OnseekedUnexpected#onseeked(java.lang.Object)
    *
    * @deprecated  Although the onseeked attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

@@ -103,7 +103,7 @@ public interface Formtarget<
    *
    * @since HTML 5
    *
-   * @see #formtarget(java.lang.String)
+   * @see Formtarget#formtarget(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E formtarget(Suppliers.String<Ex> formtarget) throws IOException, Ex {
@@ -118,7 +118,7 @@ public interface Formtarget<
    *
    * @since HTML 5
    *
-   * @see #formtarget(java.lang.String)
+   * @see Formtarget#formtarget(java.lang.String)
    */
   default E formtarget(V formtarget) throws IOException {
     @SuppressWarnings("unchecked")
@@ -136,7 +136,7 @@ public interface Formtarget<
    *
    * @since HTML 5
    *
-   * @see #formtarget(java.lang.Enum)
+   * @see Formtarget#formtarget(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E formtarget(IOSupplierE<V, Ex> formtarget) throws IOException, Ex {

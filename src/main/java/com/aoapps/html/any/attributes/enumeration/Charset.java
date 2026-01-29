@@ -108,7 +108,7 @@ public interface Charset<
    *
    * @since HTML 5
    *
-   * @see #charset(java.lang.String)
+   * @see Charset#charset(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E charset(Suppliers.String<Ex> charset) throws IOException, Ex {
@@ -124,7 +124,7 @@ public interface Charset<
    *
    * @since HTML 5
    *
-   * @see #charset(java.lang.String)
+   * @see Charset#charset(java.lang.String)
    */
   default E charset(java.nio.charset.Charset charset) throws IOException {
     return charset((charset == null) ? null : charset.name());
@@ -141,7 +141,7 @@ public interface Charset<
    *
    * @since HTML 5
    *
-   * @see #charset(java.nio.charset.Charset)
+   * @see Charset#charset(java.nio.charset.Charset)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E charset(Suppliers.Charset<Ex> charset) throws IOException, Ex {
@@ -157,7 +157,7 @@ public interface Charset<
    *
    * @since HTML 5
    *
-   * @see #charset(java.lang.String)
+   * @see Charset#charset(java.lang.String)
    */
   default E charset(V charset) throws IOException {
     @SuppressWarnings("unchecked")
@@ -176,7 +176,7 @@ public interface Charset<
    *
    * @since HTML 5
    *
-   * @see #charset(java.lang.Enum)
+   * @see Charset#charset(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E charset(IOSupplierE<V, Ex> charset) throws IOException, Ex {

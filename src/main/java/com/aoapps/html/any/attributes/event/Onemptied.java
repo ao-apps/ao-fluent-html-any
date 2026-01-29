@@ -104,7 +104,7 @@ public interface Onemptied<E extends Element<?, ?, E> & Onemptied<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onemptied(java.lang.Object)
+   * @see Onemptied#onemptied(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onemptied(IOSupplierE<?, Ex> onemptied) throws IOException, Ex {
@@ -123,7 +123,7 @@ public interface Onemptied<E extends Element<?, ?, E> & Onemptied<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #onemptied(java.lang.Object)
+   * @see Onemptied#onemptied(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onemptied(JavaScriptWritable<Ex> onemptied) throws IOException, Ex {

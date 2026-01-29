@@ -82,7 +82,7 @@ public interface Shape<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #shape(java.lang.String)
+   * @see Shape#shape(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E shape(Suppliers.String<Ex> shape) throws IOException, Ex {
@@ -92,7 +92,7 @@ public interface Shape<
   /**
    * See <a href="https://www.w3schools.com/tags/att_shape.asp">HTML shape Attribute</a>.
    *
-   * @see #shape(java.lang.String)
+   * @see Shape#shape(java.lang.String)
    */
   default E shape(V shape) throws IOException {
     @SuppressWarnings("unchecked")
@@ -105,7 +105,7 @@ public interface Shape<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #shape(java.lang.Enum)
+   * @see Shape#shape(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E shape(IOSupplierE<V, Ex> shape) throws IOException, Ex {

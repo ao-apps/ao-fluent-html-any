@@ -100,7 +100,7 @@ public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onblur(java.lang.Object)
+   * @see Onblur#onblur(java.lang.Object)
    */
   default <Ex extends Throwable> E onblur(IOSupplierE<?, Ex> onblur) throws IOException, Ex {
     return onblur((onblur == null) ? null : onblur.get());
@@ -117,7 +117,7 @@ public interface Onblur<E extends Element<?, ?, E> & Onblur<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onblur(java.lang.Object)
+   * @see Onblur#onblur(java.lang.Object)
    */
   default <Ex extends Throwable> E onblur(JavaScriptWritable<Ex> onblur) throws IOException, Ex {
     return onblur((Object) onblur);

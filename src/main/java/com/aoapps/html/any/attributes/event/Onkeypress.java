@@ -100,7 +100,7 @@ public interface Onkeypress<E extends Element<?, ?, E> & Onkeypress<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeypress(java.lang.Object)
+   * @see Onkeypress#onkeypress(java.lang.Object)
    */
   default <Ex extends Throwable> E onkeypress(IOSupplierE<?, Ex> onkeypress) throws IOException, Ex {
     return onkeypress((onkeypress == null) ? null : onkeypress.get());
@@ -117,7 +117,7 @@ public interface Onkeypress<E extends Element<?, ?, E> & Onkeypress<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeypress(java.lang.Object)
+   * @see Onkeypress#onkeypress(java.lang.Object)
    */
   default <Ex extends Throwable> E onkeypress(JavaScriptWritable<Ex> onkeypress) throws IOException, Ex {
     return onkeypress((Object) onkeypress);

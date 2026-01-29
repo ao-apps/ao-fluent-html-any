@@ -96,7 +96,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #coords(java.lang.String)
+   * @see Coords#coords(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E coords(IOSupplierE<String, Ex> coords) throws IOException, Ex {
@@ -157,7 +157,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #coords(java.awt.Rectangle)
+   * @see Coords#coords(java.awt.Rectangle)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E coords(Suppliers.Rectangle<Ex> rect) throws IOException, Ex {
@@ -238,7 +238,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #coords(com.aoapps.html.Circle)
+   * @see Coords#coords(com.aoapps.html.Circle)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E coords(Suppliers.Circle<Ex> circle) throws IOException, Ex {
@@ -318,7 +318,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #coords(java.awt.Polygon)
+   * @see Coords#coords(java.awt.Polygon)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E coords(Suppliers.Polygon<Ex> poly) throws IOException, Ex {
@@ -367,7 +367,7 @@ public interface Coords<E extends Element<?, ?, E> & Coords<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #coords(java.awt.Shape)
+   * @see Coords#coords(java.awt.Shape)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E coords(Suppliers.Shape<Ex> shape) throws IOException, Ex {

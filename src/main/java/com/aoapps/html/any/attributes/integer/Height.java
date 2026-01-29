@@ -63,7 +63,7 @@ public interface Height<E extends Element<?, ?, E> & Height<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #height(java.lang.Integer)
+   * @see Height#height(java.lang.Integer)
    */
   default <Ex extends Throwable> E height(IOSupplierE<Integer, Ex> pixels) throws IOException, Ex {
     return height((pixels == null) ? null : pixels.get());

@@ -89,7 +89,7 @@ public interface OnselectUnexpected<E extends Element<?, ?, E> & OnselectUnexpec
    *
    * @since HTML 5
    *
-   * @see #onselect(java.lang.Object)
+   * @see OnselectUnexpected#onselect(java.lang.Object)
    *
    * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.
@@ -112,7 +112,7 @@ public interface OnselectUnexpected<E extends Element<?, ?, E> & OnselectUnexpec
    *
    * @since HTML 5
    *
-   * @see #onselect(java.lang.Object)
+   * @see OnselectUnexpected#onselect(java.lang.Object)
    *
    * @deprecated  Although the onselect attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyINPUT &lt;input&gt;} and {@linkplain AnyTEXTAREA &lt;textarea&gt;}.

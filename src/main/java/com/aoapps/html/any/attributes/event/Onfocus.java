@@ -100,7 +100,7 @@ public interface Onfocus<E extends Element<?, ?, E> & Onfocus<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onfocus(java.lang.Object)
+   * @see Onfocus#onfocus(java.lang.Object)
    */
   default <Ex extends Throwable> E onfocus(IOSupplierE<?, Ex> onfocus) throws IOException, Ex {
     return onfocus((onfocus == null) ? null : onfocus.get());
@@ -117,7 +117,7 @@ public interface Onfocus<E extends Element<?, ?, E> & Onfocus<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onfocus(java.lang.Object)
+   * @see Onfocus#onfocus(java.lang.Object)
    */
   default <Ex extends Throwable> E onfocus(JavaScriptWritable<Ex> onfocus) throws IOException, Ex {
     return onfocus((Object) onfocus);

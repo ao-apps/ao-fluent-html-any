@@ -99,7 +99,7 @@ public interface Onabort<E extends Element<?, ?, E> & Onabort<E>> extends Onabor
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onabort(java.lang.Object)
+   * @see Onabort#onabort(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onabort(IOSupplierE<?, Ex> onabort) throws IOException, Ex {
@@ -116,7 +116,7 @@ public interface Onabort<E extends Element<?, ?, E> & Onabort<E>> extends Onabor
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onabort(java.lang.Object)
+   * @see Onabort#onabort(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onabort(JavaScriptWritable<Ex> onabort) throws IOException, Ex {

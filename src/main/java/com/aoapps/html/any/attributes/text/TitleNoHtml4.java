@@ -85,7 +85,7 @@ public interface TitleNoHtml4<E extends Element<?, ?, E> & TitleNoHtml4<E>> exte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #title(java.lang.Object)
+   * @see TitleNoHtml4#title(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E title(IOSupplierE<?, Ex> title) throws IOException, Ex {
@@ -105,7 +105,7 @@ public interface TitleNoHtml4<E extends Element<?, ?, E> & TitleNoHtml4<E>> exte
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #title(java.lang.Object)
+   * @see TitleNoHtml4#title(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E title(TextWritable<Ex> title) throws IOException, Ex {

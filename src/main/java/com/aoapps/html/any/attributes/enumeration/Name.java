@@ -83,7 +83,7 @@ public interface Name<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #name(java.lang.String)
+   * @see Name#name(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E name(Suppliers.String<Ex> name) throws IOException, Ex {
@@ -93,7 +93,7 @@ public interface Name<
   /**
    * See <a href="https://www.w3schools.com/tags/att_name.asp">HTML name Attribute</a>.
    *
-   * @see #name(java.lang.String)
+   * @see Name#name(java.lang.String)
    */
   default E name(V name) throws IOException {
     @SuppressWarnings("unchecked")
@@ -106,7 +106,7 @@ public interface Name<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #name(java.lang.Enum)
+   * @see Name#name(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E name(IOSupplierE<V, Ex> name) throws IOException, Ex {

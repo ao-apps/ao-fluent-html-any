@@ -103,7 +103,7 @@ public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends Onse
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onselect(java.lang.Object)
+   * @see Onselect#onselect(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onselect(IOSupplierE<?, Ex> onselect) throws IOException, Ex {
@@ -121,7 +121,7 @@ public interface Onselect<E extends Element<?, ?, E> & Onselect<E>> extends Onse
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onselect(java.lang.Object)
+   * @see Onselect#onselect(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onselect(JavaScriptWritable<Ex> onselect) throws IOException, Ex {

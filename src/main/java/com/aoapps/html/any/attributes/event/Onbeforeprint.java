@@ -84,7 +84,7 @@ public interface Onbeforeprint<E extends Element<?, ?, E> & Onbeforeprint<E>> {
    *
    * @since HTML 5
    *
-   * @see #onbeforeprint(java.lang.Object)
+   * @see Onbeforeprint#onbeforeprint(java.lang.Object)
    */
   default <Ex extends Throwable> E onbeforeprint(IOSupplierE<?, Ex> onbeforeprint) throws IOException, Ex {
     return onbeforeprint((onbeforeprint == null) ? null : onbeforeprint.get());
@@ -97,7 +97,7 @@ public interface Onbeforeprint<E extends Element<?, ?, E> & Onbeforeprint<E>> {
    *
    * @since HTML 5
    *
-   * @see #onbeforeprint(java.lang.Object)
+   * @see Onbeforeprint#onbeforeprint(java.lang.Object)
    */
   default <Ex extends Throwable> E onbeforeprint(JavaScriptWritable<Ex> onbeforeprint) throws IOException, Ex {
     return onbeforeprint((Object) onbeforeprint);

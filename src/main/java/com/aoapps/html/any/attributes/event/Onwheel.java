@@ -109,7 +109,7 @@ public interface Onwheel<E extends Element<?, ?, E> & Onwheel<E>> {
    *
    * @since HTML 5
    *
-   * @see #onwheel(java.lang.Object)
+   * @see Onwheel#onwheel(java.lang.Object)
    */
   default <Ex extends Throwable> E onwheel(IOSupplierE<?, Ex> onwheel) throws IOException, Ex {
     return onwheel((onwheel == null) ? null : onwheel.get());
@@ -128,7 +128,7 @@ public interface Onwheel<E extends Element<?, ?, E> & Onwheel<E>> {
    *
    * @since HTML 5
    *
-   * @see #onwheel(java.lang.Object)
+   * @see Onwheel#onwheel(java.lang.Object)
    */
   default <Ex extends Throwable> E onwheel(JavaScriptWritable<Ex> onwheel) throws IOException, Ex {
     return onwheel((Object) onwheel);

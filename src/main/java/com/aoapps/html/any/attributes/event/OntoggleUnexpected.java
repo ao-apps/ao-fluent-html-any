@@ -85,7 +85,7 @@ public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpec
    *
    * @since HTML 5
    *
-   * @see #ontoggle(java.lang.Object)
+   * @see OntoggleUnexpected#ontoggle(java.lang.Object)
    *
    * @deprecated  Although the ontoggle attribute is global, it is only expected on
    *              {@linkplain AnyDETAILS &lt;details&gt;}.
@@ -107,7 +107,7 @@ public interface OntoggleUnexpected<E extends Element<?, ?, E> & OntoggleUnexpec
    *
    * @since HTML 5
    *
-   * @see #ontoggle(java.lang.Object)
+   * @see OntoggleUnexpected#ontoggle(java.lang.Object)
    *
    * @deprecated  Although the ontoggle attribute is global, it is only expected on
    *              {@linkplain AnyDETAILS &lt;details&gt;}.

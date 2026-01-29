@@ -73,7 +73,7 @@ public interface Rowspan<E extends Element<?, ?, E> & Rowspan<E>> {
    * @param  <Ex>  An arbitrary exception type that may be thrown
    * @param  rowspan  Will not write the attribute when is {@code null} or {@code 1}.
    *
-   * @see #rowspan(java.lang.Integer)
+   * @see Rowspan#rowspan(java.lang.Integer)
    */
   default <Ex extends Throwable> E rowspan(IOSupplierE<Integer, Ex> rowspan) throws IOException, Ex {
     return rowspan((rowspan == null) ? null : rowspan.get());

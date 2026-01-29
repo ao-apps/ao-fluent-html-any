@@ -117,7 +117,7 @@ public abstract class AnyOPTION<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #label(java.lang.Object)
+   * @see AnyOPTION#label(java.lang.Object)
    *
    * @deprecated  Although still part of the HTML specification, there is a
    *              <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=40545">20-year old Firefox bug</a>
@@ -137,7 +137,7 @@ public abstract class AnyOPTION<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #label(java.lang.Object)
+   * @see AnyOPTION#label(java.lang.Object)
    *
    * @deprecated  Although still part of the HTML specification, there is a
    *              <a href="https://bugzilla.mozilla.org/show_bug.cgi?id=40545">20-year old Firefox bug</a>

@@ -98,7 +98,7 @@ public interface Target<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #target(java.lang.String)
+   * @see Target#target(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E target(Suppliers.String<Ex> target) throws IOException, Ex {
@@ -112,7 +112,7 @@ public interface Target<
    * <li>See <a href="https://www.w3schools.com/tags/att_target.asp">HTML target Attribute</a>.</li>
    * </ul>
    *
-   * @see #target(java.lang.String)
+   * @see Target#target(java.lang.String)
    */
   default E target(V target) throws IOException {
     @SuppressWarnings("unchecked")
@@ -129,7 +129,7 @@ public interface Target<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #target(java.lang.Enum)
+   * @see Target#target(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E target(IOSupplierE<V, Ex> target) throws IOException, Ex {

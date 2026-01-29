@@ -103,7 +103,7 @@ public interface List<E extends Element<?, ?, E> & List<E>> {
    *
    * @since HTML 5
    *
-   * @see #list(java.lang.Object)
+   * @see List#list(java.lang.Object)
    */
   default <Ex extends Throwable> E list(IOSupplierE<?, Ex> list) throws IOException, Ex {
     return list((list == null) ? null : list.get());
@@ -120,7 +120,7 @@ public interface List<E extends Element<?, ?, E> & List<E>> {
    *
    * @since HTML 5
    *
-   * @see #list(java.lang.Object)
+   * @see List#list(java.lang.Object)
    */
   default <Ex extends Throwable> E list(TextWritable<Ex> list) throws IOException, Ex {
     return list((Object) list);

@@ -108,7 +108,7 @@ public interface Onerror<E extends Element<?, ?, E> & Onerror<E>> extends Onerro
    *
    * @since HTML 5
    *
-   * @see #onerror(java.lang.Object)
+   * @see Onerror#onerror(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onerror(IOSupplierE<?, Ex> onerror) throws IOException, Ex {
@@ -128,7 +128,7 @@ public interface Onerror<E extends Element<?, ?, E> & Onerror<E>> extends Onerro
    *
    * @since HTML 5
    *
-   * @see #onerror(java.lang.Object)
+   * @see Onerror#onerror(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onerror(JavaScriptWritable<Ex> onerror) throws IOException, Ex {

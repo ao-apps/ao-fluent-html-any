@@ -107,7 +107,7 @@ public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> extends Onch
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onchange(java.lang.Object)
+   * @see Onchange#onchange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onchange(IOSupplierE<?, Ex> onchange) throws IOException, Ex {
@@ -126,7 +126,7 @@ public interface Onchange<E extends Element<?, ?, E> & Onchange<E>> extends Onch
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onchange(java.lang.Object)
+   * @see Onchange#onchange(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E onchange(JavaScriptWritable<Ex> onchange) throws IOException, Ex {

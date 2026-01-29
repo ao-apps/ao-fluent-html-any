@@ -90,7 +90,7 @@ public interface OnabortUnexpected<E extends Element<?, ?, E> & OnabortUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onabort(java.lang.Object)
+   * @see OnabortUnexpected#onabort(java.lang.Object)
    *
    * @deprecated  Although the onabort attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyIMG &lt;img&gt;},
@@ -113,7 +113,7 @@ public interface OnabortUnexpected<E extends Element<?, ?, E> & OnabortUnexpecte
    *
    * @since HTML 5
    *
-   * @see #onabort(java.lang.Object)
+   * @see OnabortUnexpected#onabort(java.lang.Object)
    *
    * @deprecated  Although the onabort attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;}, {@linkplain AnyIMG &lt;img&gt;},

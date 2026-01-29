@@ -81,9 +81,9 @@ public interface Wrap<
 
     /**
      * Validates a wrap attribute.
-     * The value should already be {@linkplain #normalize(java.lang.String) normalized}.
+     * The value should already be {@linkplain wrap#normalize(java.lang.String) normalized}.
      *
-     * @see #normalize(java.lang.String)
+     * @see wrap#normalize(java.lang.String)
      */
     public static ValidationResult validate(String wrap) {
       if (
@@ -123,7 +123,7 @@ public interface Wrap<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #wrap(java.lang.String)
+   * @see Wrap#wrap(java.lang.String)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E wrap(Suppliers.String<Ex> wrap) throws IOException, Ex {
@@ -133,7 +133,7 @@ public interface Wrap<
   /**
    * See <a href="https://html.spec.whatwg.org/multipage/form-elements.html#attr-textarea-wrap">4.10.11 The textarea element / wrap</a>.
    *
-   * @see #wrap(java.lang.String)
+   * @see Wrap#wrap(java.lang.String)
    */
   default E wrap(V wrap) throws IOException {
     @SuppressWarnings("unchecked")
@@ -146,7 +146,7 @@ public interface Wrap<
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #wrap(java.lang.Enum)
+   * @see Wrap#wrap(java.lang.Enum)
    */
   @SuppressWarnings("overloads")
   default <Ex extends Throwable> E wrap(IOSupplierE<V, Ex> wrap) throws IOException, Ex {

@@ -126,7 +126,7 @@ public interface Cellpadding<E extends Element<?, ?, E> & Cellpadding<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #cellpadding(java.lang.String)
+   * @see Cellpadding#cellpadding(java.lang.String)
    *
    * @deprecated  The cellpadding attribute is not supported in HTML5. Use CSS instead.
    */

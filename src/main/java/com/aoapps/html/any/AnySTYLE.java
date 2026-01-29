@@ -316,7 +316,7 @@ public abstract class AnySTYLE<
 
   /**
    * Writes the style, automatically closing the style via
-   * {@link #__()} on {@link StyleWriter#close()}.
+   * {@link AnySTYLE#__()} on {@link StyleWriter#close()}.
    * This is well suited for use in a try-with-resources block.
    */
   // TODO: __() method to end text?  Call it "ContentWriter"?

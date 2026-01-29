@@ -88,7 +88,7 @@ public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpec
    *
    * @since HTML 5
    *
-   * @see #onsubmit(java.lang.Object)
+   * @see OnsubmitUnexpected#onsubmit(java.lang.Object)
    *
    * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.
@@ -111,7 +111,7 @@ public interface OnsubmitUnexpected<E extends Element<?, ?, E> & OnsubmitUnexpec
    *
    * @since HTML 5
    *
-   * @see #onsubmit(java.lang.Object)
+   * @see OnsubmitUnexpected#onsubmit(java.lang.Object)
    *
    * @deprecated  Although the onsubmit attribute is global as of HTML5, it is only expected on
    *              {@linkplain AnyFORM &lt;form&gt;}.

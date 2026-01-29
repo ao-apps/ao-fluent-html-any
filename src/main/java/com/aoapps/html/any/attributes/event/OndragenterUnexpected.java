@@ -110,7 +110,7 @@ public interface OndragenterUnexpected<E extends Element<?, ?, E> & OndragenterU
    *
    * @since HTML 5
    *
-   * @see #ondragenter(java.lang.Object)
+   * @see OndragenterUnexpected#ondragenter(java.lang.Object)
    *
    * @deprecated  Although the ondragenter attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -140,7 +140,7 @@ public interface OndragenterUnexpected<E extends Element<?, ?, E> & OndragenterU
    *
    * @since HTML 5
    *
-   * @see #ondragenter(java.lang.Object)
+   * @see OndragenterUnexpected#ondragenter(java.lang.Object)
    *
    * @deprecated  Although the ondragenter attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

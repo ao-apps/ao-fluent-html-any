@@ -112,7 +112,7 @@ public interface Oninvalid<E extends Element<?, ?, E> & Oninvalid<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #oninvalid(java.lang.Object)
+   * @see Oninvalid#oninvalid(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E oninvalid(IOSupplierE<?, Ex> oninvalid) throws IOException, Ex {
@@ -133,7 +133,7 @@ public interface Oninvalid<E extends Element<?, ?, E> & Oninvalid<E>> extends On
    *
    * @since HTML 5
    *
-   * @see #oninvalid(java.lang.Object)
+   * @see Oninvalid#oninvalid(java.lang.Object)
    */
   @Override
   default <Ex extends Throwable> E oninvalid(JavaScriptWritable<Ex> oninvalid) throws IOException, Ex {

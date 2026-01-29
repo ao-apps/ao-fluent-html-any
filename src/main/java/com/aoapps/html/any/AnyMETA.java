@@ -119,7 +119,7 @@ public abstract class AnyMETA<
    *
    * @see  AnyDocument#encodingContext
    * @see  EncodingContext#getCharacterEncoding()
-   * @see  #charset(java.nio.charset.Charset)
+   * @see  AnyMETA#charset(java.nio.charset.Charset)
    */
   public E charset() throws IOException {
     return charset(document.encodingContext.getCharacterEncoding());
@@ -130,7 +130,7 @@ public abstract class AnyMETA<
    *
    * @since HTML 5
    *
-   * @deprecated  Please use {@link #charset()} for automatic charset.
+   * @deprecated  Please use {@link AnyMETA#charset()} for automatic charset.
    */
   @Deprecated(forRemoval = false)
   @Override
@@ -145,9 +145,9 @@ public abstract class AnyMETA<
    *
    * @since HTML 5
    *
-   * @see #charset(java.lang.String)
+   * @see AnyMETA#charset(java.lang.String)
    *
-   * @deprecated  Please use {@link #charset()} for automatic charset.
+   * @deprecated  Please use {@link AnyMETA#charset()} for automatic charset.
    */
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
@@ -161,9 +161,9 @@ public abstract class AnyMETA<
    *
    * @since HTML 5
    *
-   * @see #charset(java.lang.String)
+   * @see AnyMETA#charset(java.lang.String)
    *
-   * @deprecated  Please use {@link #charset()} for automatic charset.
+   * @deprecated  Please use {@link AnyMETA#charset()} for automatic charset.
    */
   @Deprecated(forRemoval = false)
   @Override
@@ -178,9 +178,9 @@ public abstract class AnyMETA<
    *
    * @since HTML 5
    *
-   * @see #charset(java.nio.charset.Charset)
+   * @see AnyMETA#charset(java.nio.charset.Charset)
    *
-   * @deprecated  Please use {@link #charset()} for automatic charset.
+   * @deprecated  Please use {@link AnyMETA#charset()} for automatic charset.
    */
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
@@ -194,9 +194,9 @@ public abstract class AnyMETA<
    *
    * @since HTML 5
    *
-   * @see #charset(java.lang.String)
+   * @see AnyMETA#charset(java.lang.String)
    *
-   * @deprecated  Please use {@link #charset()} for automatic charset.
+   * @deprecated  Please use {@link AnyMETA#charset()} for automatic charset.
    */
   @Deprecated(forRemoval = false)
   @Override
@@ -211,9 +211,9 @@ public abstract class AnyMETA<
    *
    * @since HTML 5
    *
-   * @see #charset(java.lang.Enum)
+   * @see AnyMETA#charset(java.lang.Enum)
    *
-   * @deprecated  Please use {@link #charset()} for automatic charset.
+   * @deprecated  Please use {@link AnyMETA#charset()} for automatic charset.
    */
   @Deprecated(forRemoval = false)
   @SuppressWarnings("overloads")
@@ -401,7 +401,7 @@ public abstract class AnyMETA<
     CREATOR("creator"),
 
     /**
-     * <code>googlebot</code>, a synonym of {@link #ROBOTS robots},
+     * <code>googlebot</code>, a synonym of {@link Name#ROBOTS robots},
      * is only followed by Googlebot (the indexing crawler for Google).
      */
     GOOGLEBOT("googlebot"),
@@ -421,7 +421,7 @@ public abstract class AnyMETA<
     ROBOTS("robots"),
 
     /**
-     * <code>slurp</code>, is a synonym of {@link #ROBOTS robots},
+     * <code>slurp</code>, is a synonym of {@link Name#ROBOTS robots},
      * but only for Slurp - the crawler for Yahoo Search.
      */
     SLURP("slurp"),

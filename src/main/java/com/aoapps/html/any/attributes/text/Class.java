@@ -125,7 +125,7 @@ public interface Class<E extends Element<?, ?, E> & Class<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #clazz(java.lang.Object)
+   * @see Class#clazz(java.lang.Object)
    */
   default <Ex extends Throwable> E clazz(IOSupplierE<?, Ex> clazz) throws IOException, Ex {
     return clazz((clazz == null) ? null : clazz.get());
@@ -143,7 +143,7 @@ public interface Class<E extends Element<?, ?, E> & Class<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #clazz(java.lang.Object)
+   * @see Class#clazz(java.lang.Object)
    */
   default <Ex extends Throwable> E clazz(TextWritable<Ex> clazz) throws IOException, Ex {
     return clazz((Object) clazz);

@@ -104,7 +104,7 @@ public interface OnkeypressUnexpected<E extends Element<?, ?, E> & OnkeypressUne
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeypress(java.lang.Object)
+   * @see OnkeypressUnexpected#onkeypress(java.lang.Object)
    *
    * @deprecated  Although the onkeypress attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OnkeypressUnexpected<E extends Element<?, ?, E> & OnkeypressUne
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #onkeypress(java.lang.Object)
+   * @see OnkeypressUnexpected#onkeypress(java.lang.Object)
    *
    * @deprecated  Although the onkeypress attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

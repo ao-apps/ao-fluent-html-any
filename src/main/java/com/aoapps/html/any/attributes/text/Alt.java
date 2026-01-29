@@ -79,7 +79,7 @@ public interface Alt<E extends Element<?, ?, E> & Alt<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #alt(java.lang.Object)
+   * @see Alt#alt(java.lang.Object)
    */
   default <Ex extends Throwable> E alt(IOSupplierE<?, Ex> alt) throws IOException, Ex {
     return alt((alt == null) ? null : alt.get());
@@ -90,7 +90,7 @@ public interface Alt<E extends Element<?, ?, E> & Alt<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #alt(java.lang.Object)
+   * @see Alt#alt(java.lang.Object)
    */
   default <Ex extends Throwable> E alt(TextWritable<Ex> alt) throws IOException, Ex {
     return alt((Object) alt);

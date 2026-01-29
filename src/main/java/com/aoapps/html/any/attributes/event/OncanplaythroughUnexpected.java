@@ -89,7 +89,7 @@ public interface OncanplaythroughUnexpected<E extends Element<?, ?, E> & Oncanpl
    *
    * @since HTML 5
    *
-   * @see #oncanplaythrough(java.lang.Object)
+   * @see OncanplaythroughUnexpected#oncanplaythrough(java.lang.Object)
    *
    * @deprecated  Although the oncanplaythrough attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.
@@ -112,7 +112,7 @@ public interface OncanplaythroughUnexpected<E extends Element<?, ?, E> & Oncanpl
    *
    * @since HTML 5
    *
-   * @see #oncanplaythrough(java.lang.Object)
+   * @see OncanplaythroughUnexpected#oncanplaythrough(java.lang.Object)
    *
    * @deprecated  Although the oncanplaythrough attribute is global, it is only expected on
    *              {@linkplain AnyAUDIO &lt;audio&gt;} and {@linkplain AnyVIDEO &lt;video&gt;}.

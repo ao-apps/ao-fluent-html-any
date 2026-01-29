@@ -104,7 +104,7 @@ public interface OncutUnexpected<E extends Element<?, ?, E> & OncutUnexpected<E>
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #oncut(java.lang.Object)
+   * @see OncutUnexpected#oncut(java.lang.Object)
    *
    * @deprecated  Although the oncut attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},
@@ -132,7 +132,7 @@ public interface OncutUnexpected<E extends Element<?, ?, E> & OncutUnexpected<E>
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #oncut(java.lang.Object)
+   * @see OncutUnexpected#oncut(java.lang.Object)
    *
    * @deprecated  Although the oncut attribute is global, it is not expected on
    *              {@linkplain AnyBASE &lt;base&gt;}, {@linkplain AnyBDO &lt;bdo&gt;}, {@linkplain AnyBR &lt;br&gt;},

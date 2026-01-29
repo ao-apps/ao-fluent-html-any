@@ -84,7 +84,7 @@ public interface Name<E extends Element<?, ?, E> & Name<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #name(java.lang.Object)
+   * @see Name#name(java.lang.Object)
    */
   default <Ex extends Throwable> E name(IOSupplierE<?, Ex> name) throws IOException, Ex {
     return name((name == null) ? null : name.get());
@@ -95,7 +95,7 @@ public interface Name<E extends Element<?, ?, E> & Name<E>> {
    *
    * @param  <Ex>  An arbitrary exception type that may be thrown
    *
-   * @see #name(java.lang.Object)
+   * @see Name#name(java.lang.Object)
    */
   default <Ex extends Throwable> E name(TextWritable<Ex> name) throws IOException, Ex {
     return name((Object) name);
