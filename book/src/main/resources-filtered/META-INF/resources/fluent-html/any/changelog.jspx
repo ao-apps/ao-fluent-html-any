@@ -37,9 +37,9 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2021-03-14T22:32:34-05:00"
-    dateModified="2026-01-15T22:52:15Z"
+    dateModified="2026-01-31T11:13:32Z"
   >
-    <c:set var="latestRelease" value="0.8.0" />
+    <c:set var="latestRelease" value="0.9.0" />
     <c:if test="${
       fn:endsWith('@{project.version}', '-SNAPSHOT')
       and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')
@@ -51,14 +51,23 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
         groupId="@{project.groupId}"
         artifactId="@{documented.artifactId}"
         scmUrl="@{project.scm.url}"
-      >
-        <ul>
-          <li>Updated to <ao:a href="https://checkstyle.org/releasenotes.html#Release_13.0.0">Checkstyle 13.0.0</ao:a>.</li>
-          <li>Minimum Java version changed from 1.8 to 11.</li>
-          <li>Internal implementation changes to reduce the number of casts.</li>
-        </ul>
-      </changelog:release>
+      />
     </c:if>
+
+    <changelog:release
+      projectName="@{documented.name}"
+      version="0.9.0"
+      datePublished="2026-01-31T11:13:32Z"
+      groupId="@{project.groupId}"
+      artifactId="@{documented.artifactId}"
+      scmUrl="@{project.scm.url}"
+    >
+      <ul>
+        <li>Updated to <ao:a href="https://checkstyle.org/releasenotes.html#Release_13.0.0">Checkstyle 13.0.0</ao:a>.</li>
+        <li>Minimum Java version changed from 1.8 to 11.</li>
+        <li>Internal implementation changes to reduce the number of casts.</li>
+      </ul>
+    </changelog:release>
 
     <changelog:release
       projectName="@{documented.name}"
