@@ -268,4 +268,7 @@ along with ao-fluent-html-any.  If not, see <https://www.gnu.org/licenses/>.
   <!-- Will not reorder overloads -->
   <suppress checks="OverloadMethodsDeclarationOrder" />
 
+  <!-- Extensively using multiple spaces for vertical alignment -->
+  <suppress checks="SingleSpaceSeparator" />
+
 </suppressions>

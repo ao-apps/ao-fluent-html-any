@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2025  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -62,7 +62,7 @@ public final class FactoryTestHelper {
    * Gets the set of all element factory names.
    */
   public static String[] getAllFactories() {
-    return new String[]{
+    return new String[] {
         "abbr",
         "address",
         "a",

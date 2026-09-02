@@ -1,6 +1,6 @@
 /*
  * ao-fluent-html-any - Base abstract classes and interfaces for Fluent Java DSL for high-performance HTML generation.
- * Copyright (C) 2021, 2022, 2025  AO Industries, Inc.
+ * Copyright (C) 2021, 2022, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -49,7 +49,7 @@ public class AnyUnionContentTest {
    * Gets the set of all <code>Union_*</code> interfaces.
    */
   static Class<? extends Content>[] getAllUnions() {
-    return new Class[]{
+    return new Class[] {
         AnyUnion_COLGROUP_ScriptSupporting.class,
         AnyUnion_DATALIST_OPTGROUP.class,
         AnyUnion_DIV_DL.class,
